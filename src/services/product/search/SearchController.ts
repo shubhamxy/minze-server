@@ -1,10 +1,7 @@
-import { prisma } from "../prisma/generated/prisma-client";
+import { prisma } from "../../prisma/generated/prisma-client";
 export const getProductsByName = async (q: string) => {
   if (q.length < 3) {
-    return {
-      features: [],
-      type: "FeatureCollection",
-    };
+    return [];
   }
 
   const result = await prisma.products({

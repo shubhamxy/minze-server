@@ -1,4 +1,7 @@
-import routes from "./product";
-import searchRoutes from "./search/routes";
+import productRoutes from "./product";
+import userRoutes from "./user";
 
-export default [...searchRoutes, ...routes];
+export default [
+  ...userRoutes,
+  ...productRoutes,
+];

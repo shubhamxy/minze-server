@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { checkSearchParams } from "../../middleware/checks";
+import { checkSearchParams } from "../../../middleware/checks";
 import { getProductsByName } from "./SearchController";
 
 export default [
   {
     method: "get",
-    path: "/search",
+    path: "/products/search",
     handler: [
       checkSearchParams, // <-- this line
       async ({ query }: Request, res: Response) => {

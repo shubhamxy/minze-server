@@ -11,6 +11,8 @@ linterOptions:
 rules:
     max-line-length:
         options: [120]
+    indent: true
+    align: false
     interface-name: false
     new-parens: true
     object-literal-sort-keys: false
