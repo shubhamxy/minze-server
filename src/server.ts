@@ -26,13 +26,13 @@ applyMiddleware(middleware, router);
 applyRoutes(routes, router);
 applyMiddleware(errorHandlers, router);
 
-// const { PORT = 3000 } = process.env;
-// const server = http.createServer(router);
+const { PORT = 3000 } = process.env;
+const server = http.createServer(router);
 
-// server.listen(PORT, () =>
-//   console.log(`Server is running http://localhost:${PORT}...`),
-// );
+server.listen(PORT, () =>
+  console.log(`Server is running http://localhost:${PORT}...`),
+);
 
 // module.exports.http = serverless(router);
 // exports.http = functions.https.onRequest(router);
-module.exports = router;
+// module.exports = router;
