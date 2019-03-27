@@ -3,6 +3,7 @@ import { prisma } from "../prisma/generated/prisma-client";
 import searchRoutes from "./search/routes";
 
 export default [
+  ...searchRoutes,
   {
     method: "get",
     path: "/products/:id",
@@ -18,6 +19,5 @@ export default [
       },
     ],
   },
-  ...searchRoutes,
 ];
 

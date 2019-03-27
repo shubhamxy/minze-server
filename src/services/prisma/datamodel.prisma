@@ -1,19 +1,24 @@
 # User that logins to the App
 type User {
 	id: ID! @unique
-	email: String! @unique
+	email: String @unique
 	name: String!
-	phone_numbers: [PhoneNumber!]!
+	phone_number: [PhoneNumber]
 	user_type: UserType! @default(value: CONSUMER) # or user Role
 	reviews: [Review!]!
 	photos: [UserPhoto!]!
+  # firebase UID
+  uid: String! @unique
 }
+
+
 
 type PhoneNumber {
   user: User!
   code: String! @default(value: "+91")
   phone: String!
 }
+
 enum UserType {
 	ADMIN
 	SELLER

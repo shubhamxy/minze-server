@@ -15,6 +15,7 @@ rules:
     align: false
     interface-name: false
     new-parens: true
+    trailing-comma: false
     object-literal-sort-keys: false
     max-classes-per-file: false
     no-arg: true

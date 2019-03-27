@@ -4,7 +4,7 @@
     "version": "1.0.0"
   },
   "host": "localhost:3000",
-  "basePath": "/api/v1",
+  "basePath": "/",
   "schemes": [
     "http"
   ],
@@ -12,12 +12,40 @@
     "application/json"
   ],
   "paths": {
-    "/search": {
+    "/product/search": {
       "get": {
         "tags": [
           "Search Text"
         ],
-        "summary": "Search by places using opencagedata service",
+        "summary": "Search service",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        },
+        "content": {
+          "application/json": {}
+        },
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Specifies the query string",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/users/search": {
+      "get": {
+        "tags": [
+          "Search Text"
+        ],
+        "summary": "Search service",
         "responses": {
           "200": {
             "description": "OK"

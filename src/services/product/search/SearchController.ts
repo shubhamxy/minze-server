@@ -1,8 +1,8 @@
 import { prisma } from "../../prisma/generated/prisma-client";
 export const getProductsByName = async (q: string) => {
-  if (q.length < 3) {
-    return [];
-  }
+  // if (q.length < 3) {
+  //   return [];
+  // }
 
   const result = await prisma.products({
     where: {

@@ -5,7 +5,7 @@ import { getProductsByName } from "./SearchController";
 export default [
   {
     method: "get",
-    path: "/products/search",
+    path: "/products",
     handler: [
       checkSearchParams, // <-- this line
       async ({ query }: Request, res: Response) => {
