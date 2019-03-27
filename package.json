@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Api Server",
-  "main": "dist/server.js",
+  "main": "./dist/server.js",
   "scripts": {
     "postinstall": "npx tsc",
     "start": "npx pm2 start pm2.yaml",
