@@ -2,6 +2,6 @@
   "version": 2,
   "builds": [{
     "src": "./dist/server.js",
-    "use": "@now/node"
+    "use": "@now/node-server"
   }]
 }
