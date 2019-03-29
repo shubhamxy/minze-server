@@ -1,4 +1,4 @@
-# Minze Server [![Build Status](https://travis-ci.com/mzeroes/minze-server.svg?branch=master)](https://travis-ci.com/mzeroes/minze-server)
+# Minze Server [![Build Status](https://dev.azure.com/mzeroes/minze/_apis/build/status/mzeroes.minze-server?branchName=master)](https://dev.azure.com/mzeroes/minze/_build/latest?definitionId=1&branchName=master)
 
 *Server code for minze application*
 
