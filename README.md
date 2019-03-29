@@ -1,8 +1,8 @@
 # Minze Server [![Build Status](https://travis-ci.com/mzeroes/minze-server.svg?branch=master)](https://travis-ci.com/mzeroes/minze-server)
 
-Server code for minze application
+*Server code for minze application*
 
-### microservices
+## Microservices
 
 - TODO 
 
