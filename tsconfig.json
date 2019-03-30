@@ -69,5 +69,6 @@
         "dist",
         "database",
         "src/__tests__",
+        "bin"
   ]
 }
