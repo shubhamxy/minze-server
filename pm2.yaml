@@ -1,4 +1,5 @@
 apps:
-  - script: ./dist/index.js
-    instances: 1
+  - name: minze-server
+    script: ./dist/index.js
+    instances: max
     exec_mode: cluster
