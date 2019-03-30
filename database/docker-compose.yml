@@ -1,14 +1,14 @@
 version: '3'
 services:
   prisma:
-    image: prismagraphql/prisma:1.32
+    image: prismagraphql/prisma:1.32.2
     restart: always
     ports:
     - "4466:4466"
-    - "5432:5432"
+    # - "5432:5432"
     environment:
       PRISMA_CONFIG: |
-        managementApiSecret: a174bbec5bb40088c66afbd2a9be0a95831ebdc2
+        managementApiSecret: ${PRISMA_MANAGEMENT_API_SECRET}
         port: 4466
         databases:
           default:

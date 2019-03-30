@@ -15,8 +15,9 @@ datamodel:
 # Meaning http://myserver.com/default/default can be written
 # as http://myserver.com.
 
-endpoint: https://minze-prisma-dev-0a32ee614b.herokuapp.com
-# endpoint: ${env:PRISMA_ENDPOINT}
+# endpoint: https://minze-database-de45e879e8.herokuapp.com/
+endpoint: ${env:PRISMA_ENDPOINT}
+# endpoint: http://localhost:4466
 
 # The secret is used to create JSON web tokens (JWTs). These
 # tokens need to be attached in the `Authorization` header
@@ -35,7 +36,7 @@ secret: ${env:PRISMA_SECRET}
 # in `src/generated/prisma.graphql`.
 generate:
   - generator: typescript-client
-    output: ./src/generated/prisma-client/
+    output: ../src/generated/prisma-client/
 
 # A "post-deployment" hook that regenerates relative to root
 # the Prisma client.

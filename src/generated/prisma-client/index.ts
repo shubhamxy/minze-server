@@ -44,6 +44,9 @@ export interface Prisma {
    * Queries
    */
 
+  phoneNumber: (
+    where: PhoneNumberWhereUniqueInput
+  ) => PhoneNumberNullablePromise;
   phoneNumbers: (args?: {
     where?: PhoneNumberWhereInput;
     orderBy?: PhoneNumberOrderByInput;
@@ -102,6 +105,9 @@ export interface Prisma {
     first?: Int;
     last?: Int;
   }) => ProductPhotoConnectionPromise;
+  productRating: (
+    where: ProductRatingWhereUniqueInput
+  ) => ProductRatingNullablePromise;
   productRatings: (args?: {
     where?: ProductRatingWhereInput;
     orderBy?: ProductRatingOrderByInput;
@@ -184,10 +190,20 @@ export interface Prisma {
    */
 
   createPhoneNumber: (data: PhoneNumberCreateInput) => PhoneNumberPromise;
+  updatePhoneNumber: (args: {
+    data: PhoneNumberUpdateInput;
+    where: PhoneNumberWhereUniqueInput;
+  }) => PhoneNumberPromise;
   updateManyPhoneNumbers: (args: {
     data: PhoneNumberUpdateManyMutationInput;
     where?: PhoneNumberWhereInput;
   }) => BatchPayloadPromise;
+  upsertPhoneNumber: (args: {
+    where: PhoneNumberWhereUniqueInput;
+    create: PhoneNumberCreateInput;
+    update: PhoneNumberUpdateInput;
+  }) => PhoneNumberPromise;
+  deletePhoneNumber: (where: PhoneNumberWhereUniqueInput) => PhoneNumberPromise;
   deleteManyPhoneNumbers: (
     where?: PhoneNumberWhereInput
   ) => BatchPayloadPromise;
@@ -228,10 +244,22 @@ export interface Prisma {
     where?: ProductPhotoWhereInput
   ) => BatchPayloadPromise;
   createProductRating: (data: ProductRatingCreateInput) => ProductRatingPromise;
+  updateProductRating: (args: {
+    data: ProductRatingUpdateInput;
+    where: ProductRatingWhereUniqueInput;
+  }) => ProductRatingPromise;
   updateManyProductRatings: (args: {
     data: ProductRatingUpdateManyMutationInput;
     where?: ProductRatingWhereInput;
   }) => BatchPayloadPromise;
+  upsertProductRating: (args: {
+    where: ProductRatingWhereUniqueInput;
+    create: ProductRatingCreateInput;
+    update: ProductRatingUpdateInput;
+  }) => ProductRatingPromise;
+  deleteProductRating: (
+    where: ProductRatingWhereUniqueInput
+  ) => ProductRatingPromise;
   deleteManyProductRatings: (
     where?: ProductRatingWhereInput
   ) => BatchPayloadPromise;
@@ -326,6 +354,8 @@ export interface ClientConstructor<T> {
 export type UserType = "ADMIN" | "SELLER" | "CONSUMER";
 
 export type PhoneNumberOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
   | "code_ASC"
   | "code_DESC"
   | "phone_ASC"
@@ -402,6 +432,8 @@ export type ProductOrderByInput =
   | "photo_count_DESC";
 
 export type ProductRatingOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
   | "aggregate_rating_ASC"
   | "aggregate_rating_DESC"
   | "votes_ASC"
@@ -421,7 +453,25 @@ export type UserOrderByInput =
 
 export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
+export type PhoneNumberWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
 export interface PhoneNumberWhereInput {
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
   user?: Maybe<UserWhereInput>;
   code?: Maybe<String>;
   code_not?: Maybe<String>;
@@ -721,6 +771,20 @@ export interface ProductWhereInput {
 }
 
 export interface ProductRatingWhereInput {
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
   aggregate_rating?: Maybe<Float>;
   aggregate_rating_not?: Maybe<Float>;
   aggregate_rating_in?: Maybe<Float[] | Float>;
@@ -952,6 +1016,10 @@ export type ProductPhotoWhereUniqueInput = AtLeastOne<{
   id: Maybe<ID_Input>;
 }>;
 
+export type ProductRatingWhereUniqueInput = AtLeastOne<{
+  id: Maybe<ID_Input>;
+}>;
+
 export type ReviewWhereUniqueInput = AtLeastOne<{
   id: Maybe<ID_Input>;
 }>;
@@ -967,6 +1035,7 @@ export type UserPhotoWhereUniqueInput = AtLeastOne<{
 }>;
 
 export interface PhoneNumberCreateInput {
+  id?: Maybe<ID_Input>;
   user: UserCreateOneWithoutPhone_numberInput;
   code?: Maybe<String>;
   phone: String;
@@ -978,6 +1047,7 @@ export interface UserCreateOneWithoutPhone_numberInput {
 }
 
 export interface UserCreateWithoutPhone_numberInput {
+  id?: Maybe<ID_Input>;
   email?: Maybe<String>;
   name?: Maybe<String>;
   user_type?: Maybe<UserType>;
@@ -993,6 +1063,7 @@ export interface ReviewCreateManyWithoutUserInput {
 
 export interface ReviewCreateWithoutUserInput {
   product: ProductCreateOneWithoutAll_reviewsInput;
+  id?: Maybe<ID_Input>;
   rating: Int;
   review_text: String;
   review_time_friendly: String;
@@ -1005,6 +1076,7 @@ export interface ProductCreateOneWithoutAll_reviewsInput {
 }
 
 export interface ProductCreateWithoutAll_reviewsInput {
+  id?: Maybe<ID_Input>;
   name: String;
   url: String;
   thumb?: Maybe<String>;
@@ -1020,9 +1092,11 @@ export interface ProductCreateWithoutAll_reviewsInput {
 
 export interface ProductRatingCreateOneInput {
   create?: Maybe<ProductRatingCreateInput>;
+  connect?: Maybe<ProductRatingWhereUniqueInput>;
 }
 
 export interface ProductRatingCreateInput {
+  id?: Maybe<ID_Input>;
   aggregate_rating?: Maybe<Float>;
   votes?: Maybe<Int>;
 }
@@ -1038,6 +1112,7 @@ export interface ProductPhotoCreateManyWithoutProductInput {
 }
 
 export interface ProductPhotoCreateWithoutProductInput {
+  id?: Maybe<ID_Input>;
   url: String;
   thumb_url: String;
   caption: String;
@@ -1055,6 +1130,7 @@ export interface UserPhotoCreateManyWithoutUserInput {
 }
 
 export interface UserPhotoCreateWithoutUserInput {
+  id?: Maybe<ID_Input>;
   url: String;
   thumb_url: String;
   caption: String;
@@ -1064,67 +1140,70 @@ export interface UserPhotoCreateWithoutUserInput {
   height: Int;
 }
 
-export interface PhoneNumberUpdateManyMutationInput {
+export interface PhoneNumberUpdateInput {
+  user?: Maybe<UserUpdateOneRequiredWithoutPhone_numberInput>;
   code?: Maybe<String>;
   phone?: Maybe<String>;
 }
 
-export interface ProductCreateInput {
-  name: String;
-  url: String;
-  thumb?: Maybe<String>;
-  featured_image?: Maybe<String>;
-  photos_url?: Maybe<String>;
-  user_rating: ProductRatingCreateOneInput;
-  has_online_delivery?: Maybe<Boolean>;
-  is_delivering_now?: Maybe<Boolean>;
-  deeplink?: Maybe<String>;
-  photo_count: Int;
-  photos?: Maybe<ProductPhotoCreateManyWithoutProductInput>;
-  all_reviews?: Maybe<ReviewCreateManyWithoutProductInput>;
-}
-
-export interface ReviewCreateManyWithoutProductInput {
-  create?: Maybe<
-    ReviewCreateWithoutProductInput[] | ReviewCreateWithoutProductInput
-  >;
-  connect?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
-}
-
-export interface ReviewCreateWithoutProductInput {
-  user: UserCreateOneWithoutReviewsInput;
-  rating: Int;
-  review_text: String;
-  review_time_friendly: String;
-  timestamp: Int;
-}
-
-export interface UserCreateOneWithoutReviewsInput {
-  create?: Maybe<UserCreateWithoutReviewsInput>;
+export interface UserUpdateOneRequiredWithoutPhone_numberInput {
+  create?: Maybe<UserCreateWithoutPhone_numberInput>;
+  update?: Maybe<UserUpdateWithoutPhone_numberDataInput>;
+  upsert?: Maybe<UserUpsertWithoutPhone_numberInput>;
   connect?: Maybe<UserWhereUniqueInput>;
 }
 
-export interface UserCreateWithoutReviewsInput {
+export interface UserUpdateWithoutPhone_numberDataInput {
   email?: Maybe<String>;
   name?: Maybe<String>;
-  phone_number?: Maybe<PhoneNumberCreateManyWithoutUserInput>;
   user_type?: Maybe<UserType>;
-  photos?: Maybe<UserPhotoCreateManyWithoutUserInput>;
-  uid: String;
+  reviews?: Maybe<ReviewUpdateManyWithoutUserInput>;
+  photos?: Maybe<UserPhotoUpdateManyWithoutUserInput>;
+  uid?: Maybe<String>;
 }
 
-export interface PhoneNumberCreateManyWithoutUserInput {
-  create?: Maybe<
-    PhoneNumberCreateWithoutUserInput[] | PhoneNumberCreateWithoutUserInput
+export interface ReviewUpdateManyWithoutUserInput {
+  create?: Maybe<ReviewCreateWithoutUserInput[] | ReviewCreateWithoutUserInput>;
+  delete?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
+  connect?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
+  set?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
+  disconnect?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
+  update?: Maybe<
+    | ReviewUpdateWithWhereUniqueWithoutUserInput[]
+    | ReviewUpdateWithWhereUniqueWithoutUserInput
+  >;
+  upsert?: Maybe<
+    | ReviewUpsertWithWhereUniqueWithoutUserInput[]
+    | ReviewUpsertWithWhereUniqueWithoutUserInput
+  >;
+  deleteMany?: Maybe<ReviewScalarWhereInput[] | ReviewScalarWhereInput>;
+  updateMany?: Maybe<
+    | ReviewUpdateManyWithWhereNestedInput[]
+    | ReviewUpdateManyWithWhereNestedInput
   >;
 }
 
-export interface PhoneNumberCreateWithoutUserInput {
-  code?: Maybe<String>;
-  phone: String;
+export interface ReviewUpdateWithWhereUniqueWithoutUserInput {
+  where: ReviewWhereUniqueInput;
+  data: ReviewUpdateWithoutUserDataInput;
 }
 
-export interface ProductUpdateInput {
+export interface ReviewUpdateWithoutUserDataInput {
+  product?: Maybe<ProductUpdateOneRequiredWithoutAll_reviewsInput>;
+  rating?: Maybe<Int>;
+  review_text?: Maybe<String>;
+  review_time_friendly?: Maybe<String>;
+  timestamp?: Maybe<Int>;
+}
+
+export interface ProductUpdateOneRequiredWithoutAll_reviewsInput {
+  create?: Maybe<ProductCreateWithoutAll_reviewsInput>;
+  update?: Maybe<ProductUpdateWithoutAll_reviewsDataInput>;
+  upsert?: Maybe<ProductUpsertWithoutAll_reviewsInput>;
+  connect?: Maybe<ProductWhereUniqueInput>;
+}
+
+export interface ProductUpdateWithoutAll_reviewsDataInput {
   name?: Maybe<String>;
   url?: Maybe<String>;
   thumb?: Maybe<String>;
@@ -1136,13 +1215,13 @@ export interface ProductUpdateInput {
   deeplink?: Maybe<String>;
   photo_count?: Maybe<Int>;
   photos?: Maybe<ProductPhotoUpdateManyWithoutProductInput>;
-  all_reviews?: Maybe<ReviewUpdateManyWithoutProductInput>;
 }
 
 export interface ProductRatingUpdateOneRequiredInput {
   create?: Maybe<ProductRatingCreateInput>;
   update?: Maybe<ProductRatingUpdateDataInput>;
   upsert?: Maybe<ProductRatingUpsertNestedInput>;
+  connect?: Maybe<ProductRatingWhereUniqueInput>;
 }
 
 export interface ProductRatingUpdateDataInput {
@@ -1321,113 +1400,91 @@ export interface ProductPhotoUpdateManyDataInput {
   height?: Maybe<Int>;
 }
 
-export interface ReviewUpdateManyWithoutProductInput {
-  create?: Maybe<
-    ReviewCreateWithoutProductInput[] | ReviewCreateWithoutProductInput
-  >;
-  delete?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
-  connect?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
-  set?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
-  disconnect?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
-  update?: Maybe<
-    | ReviewUpdateWithWhereUniqueWithoutProductInput[]
-    | ReviewUpdateWithWhereUniqueWithoutProductInput
-  >;
-  upsert?: Maybe<
-    | ReviewUpsertWithWhereUniqueWithoutProductInput[]
-    | ReviewUpsertWithWhereUniqueWithoutProductInput
-  >;
-  deleteMany?: Maybe<ReviewScalarWhereInput[] | ReviewScalarWhereInput>;
-  updateMany?: Maybe<
-    | ReviewUpdateManyWithWhereNestedInput[]
-    | ReviewUpdateManyWithWhereNestedInput
-  >;
+export interface ProductUpsertWithoutAll_reviewsInput {
+  update: ProductUpdateWithoutAll_reviewsDataInput;
+  create: ProductCreateWithoutAll_reviewsInput;
 }
 
-export interface ReviewUpdateWithWhereUniqueWithoutProductInput {
+export interface ReviewUpsertWithWhereUniqueWithoutUserInput {
   where: ReviewWhereUniqueInput;
-  data: ReviewUpdateWithoutProductDataInput;
+  update: ReviewUpdateWithoutUserDataInput;
+  create: ReviewCreateWithoutUserInput;
 }
 
-export interface ReviewUpdateWithoutProductDataInput {
-  user?: Maybe<UserUpdateOneRequiredWithoutReviewsInput>;
+export interface ReviewScalarWhereInput {
+  id?: Maybe<ID_Input>;
+  id_not?: Maybe<ID_Input>;
+  id_in?: Maybe<ID_Input[] | ID_Input>;
+  id_not_in?: Maybe<ID_Input[] | ID_Input>;
+  id_lt?: Maybe<ID_Input>;
+  id_lte?: Maybe<ID_Input>;
+  id_gt?: Maybe<ID_Input>;
+  id_gte?: Maybe<ID_Input>;
+  id_contains?: Maybe<ID_Input>;
+  id_not_contains?: Maybe<ID_Input>;
+  id_starts_with?: Maybe<ID_Input>;
+  id_not_starts_with?: Maybe<ID_Input>;
+  id_ends_with?: Maybe<ID_Input>;
+  id_not_ends_with?: Maybe<ID_Input>;
+  rating?: Maybe<Int>;
+  rating_not?: Maybe<Int>;
+  rating_in?: Maybe<Int[] | Int>;
+  rating_not_in?: Maybe<Int[] | Int>;
+  rating_lt?: Maybe<Int>;
+  rating_lte?: Maybe<Int>;
+  rating_gt?: Maybe<Int>;
+  rating_gte?: Maybe<Int>;
+  review_text?: Maybe<String>;
+  review_text_not?: Maybe<String>;
+  review_text_in?: Maybe<String[] | String>;
+  review_text_not_in?: Maybe<String[] | String>;
+  review_text_lt?: Maybe<String>;
+  review_text_lte?: Maybe<String>;
+  review_text_gt?: Maybe<String>;
+  review_text_gte?: Maybe<String>;
+  review_text_contains?: Maybe<String>;
+  review_text_not_contains?: Maybe<String>;
+  review_text_starts_with?: Maybe<String>;
+  review_text_not_starts_with?: Maybe<String>;
+  review_text_ends_with?: Maybe<String>;
+  review_text_not_ends_with?: Maybe<String>;
+  review_time_friendly?: Maybe<String>;
+  review_time_friendly_not?: Maybe<String>;
+  review_time_friendly_in?: Maybe<String[] | String>;
+  review_time_friendly_not_in?: Maybe<String[] | String>;
+  review_time_friendly_lt?: Maybe<String>;
+  review_time_friendly_lte?: Maybe<String>;
+  review_time_friendly_gt?: Maybe<String>;
+  review_time_friendly_gte?: Maybe<String>;
+  review_time_friendly_contains?: Maybe<String>;
+  review_time_friendly_not_contains?: Maybe<String>;
+  review_time_friendly_starts_with?: Maybe<String>;
+  review_time_friendly_not_starts_with?: Maybe<String>;
+  review_time_friendly_ends_with?: Maybe<String>;
+  review_time_friendly_not_ends_with?: Maybe<String>;
+  timestamp?: Maybe<Int>;
+  timestamp_not?: Maybe<Int>;
+  timestamp_in?: Maybe<Int[] | Int>;
+  timestamp_not_in?: Maybe<Int[] | Int>;
+  timestamp_lt?: Maybe<Int>;
+  timestamp_lte?: Maybe<Int>;
+  timestamp_gt?: Maybe<Int>;
+  timestamp_gte?: Maybe<Int>;
+  AND?: Maybe<ReviewScalarWhereInput[] | ReviewScalarWhereInput>;
+  OR?: Maybe<ReviewScalarWhereInput[] | ReviewScalarWhereInput>;
+  NOT?: Maybe<ReviewScalarWhereInput[] | ReviewScalarWhereInput>;
+}
+
+export interface ReviewUpdateManyWithWhereNestedInput {
+  where: ReviewScalarWhereInput;
+  data: ReviewUpdateManyDataInput;
+}
+
+export interface ReviewUpdateManyDataInput {
   rating?: Maybe<Int>;
   review_text?: Maybe<String>;
   review_time_friendly?: Maybe<String>;
   timestamp?: Maybe<Int>;
-}
-
-export interface UserUpdateOneRequiredWithoutReviewsInput {
-  create?: Maybe<UserCreateWithoutReviewsInput>;
-  update?: Maybe<UserUpdateWithoutReviewsDataInput>;
-  upsert?: Maybe<UserUpsertWithoutReviewsInput>;
-  connect?: Maybe<UserWhereUniqueInput>;
-}
-
-export interface UserUpdateWithoutReviewsDataInput {
-  email?: Maybe<String>;
-  name?: Maybe<String>;
-  phone_number?: Maybe<PhoneNumberUpdateManyWithoutUserInput>;
-  user_type?: Maybe<UserType>;
-  photos?: Maybe<UserPhotoUpdateManyWithoutUserInput>;
-  uid?: Maybe<String>;
-}
-
-export interface PhoneNumberUpdateManyWithoutUserInput {
-  create?: Maybe<
-    PhoneNumberCreateWithoutUserInput[] | PhoneNumberCreateWithoutUserInput
-  >;
-  deleteMany?: Maybe<
-    PhoneNumberScalarWhereInput[] | PhoneNumberScalarWhereInput
-  >;
-  updateMany?: Maybe<
-    | PhoneNumberUpdateManyWithWhereNestedInput[]
-    | PhoneNumberUpdateManyWithWhereNestedInput
-  >;
-}
-
-export interface PhoneNumberScalarWhereInput {
-  code?: Maybe<String>;
-  code_not?: Maybe<String>;
-  code_in?: Maybe<String[] | String>;
-  code_not_in?: Maybe<String[] | String>;
-  code_lt?: Maybe<String>;
-  code_lte?: Maybe<String>;
-  code_gt?: Maybe<String>;
-  code_gte?: Maybe<String>;
-  code_contains?: Maybe<String>;
-  code_not_contains?: Maybe<String>;
-  code_starts_with?: Maybe<String>;
-  code_not_starts_with?: Maybe<String>;
-  code_ends_with?: Maybe<String>;
-  code_not_ends_with?: Maybe<String>;
-  phone?: Maybe<String>;
-  phone_not?: Maybe<String>;
-  phone_in?: Maybe<String[] | String>;
-  phone_not_in?: Maybe<String[] | String>;
-  phone_lt?: Maybe<String>;
-  phone_lte?: Maybe<String>;
-  phone_gt?: Maybe<String>;
-  phone_gte?: Maybe<String>;
-  phone_contains?: Maybe<String>;
-  phone_not_contains?: Maybe<String>;
-  phone_starts_with?: Maybe<String>;
-  phone_not_starts_with?: Maybe<String>;
-  phone_ends_with?: Maybe<String>;
-  phone_not_ends_with?: Maybe<String>;
-  AND?: Maybe<PhoneNumberScalarWhereInput[] | PhoneNumberScalarWhereInput>;
-  OR?: Maybe<PhoneNumberScalarWhereInput[] | PhoneNumberScalarWhereInput>;
-  NOT?: Maybe<PhoneNumberScalarWhereInput[] | PhoneNumberScalarWhereInput>;
-}
-
-export interface PhoneNumberUpdateManyWithWhereNestedInput {
-  where: PhoneNumberScalarWhereInput;
-  data: PhoneNumberUpdateManyDataInput;
-}
-
-export interface PhoneNumberUpdateManyDataInput {
-  code?: Maybe<String>;
-  phone?: Maybe<String>;
 }
 
 export interface UserPhotoUpdateManyWithoutUserInput {
@@ -1589,18 +1646,187 @@ export interface UserPhotoUpdateManyDataInput {
   height?: Maybe<Int>;
 }
 
-export interface UserUpsertWithoutReviewsInput {
-  update: UserUpdateWithoutReviewsDataInput;
-  create: UserCreateWithoutReviewsInput;
+export interface UserUpsertWithoutPhone_numberInput {
+  update: UserUpdateWithoutPhone_numberDataInput;
+  create: UserCreateWithoutPhone_numberInput;
 }
 
-export interface ReviewUpsertWithWhereUniqueWithoutProductInput {
+export interface PhoneNumberUpdateManyMutationInput {
+  code?: Maybe<String>;
+  phone?: Maybe<String>;
+}
+
+export interface ProductCreateInput {
+  id?: Maybe<ID_Input>;
+  name: String;
+  url: String;
+  thumb?: Maybe<String>;
+  featured_image?: Maybe<String>;
+  photos_url?: Maybe<String>;
+  user_rating: ProductRatingCreateOneInput;
+  has_online_delivery?: Maybe<Boolean>;
+  is_delivering_now?: Maybe<Boolean>;
+  deeplink?: Maybe<String>;
+  photo_count: Int;
+  photos?: Maybe<ProductPhotoCreateManyWithoutProductInput>;
+  all_reviews?: Maybe<ReviewCreateManyWithoutProductInput>;
+}
+
+export interface ReviewCreateManyWithoutProductInput {
+  create?: Maybe<
+    ReviewCreateWithoutProductInput[] | ReviewCreateWithoutProductInput
+  >;
+  connect?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
+}
+
+export interface ReviewCreateWithoutProductInput {
+  user: UserCreateOneWithoutReviewsInput;
+  id?: Maybe<ID_Input>;
+  rating: Int;
+  review_text: String;
+  review_time_friendly: String;
+  timestamp: Int;
+}
+
+export interface UserCreateOneWithoutReviewsInput {
+  create?: Maybe<UserCreateWithoutReviewsInput>;
+  connect?: Maybe<UserWhereUniqueInput>;
+}
+
+export interface UserCreateWithoutReviewsInput {
+  id?: Maybe<ID_Input>;
+  email?: Maybe<String>;
+  name?: Maybe<String>;
+  phone_number?: Maybe<PhoneNumberCreateManyWithoutUserInput>;
+  user_type?: Maybe<UserType>;
+  photos?: Maybe<UserPhotoCreateManyWithoutUserInput>;
+  uid: String;
+}
+
+export interface PhoneNumberCreateManyWithoutUserInput {
+  create?: Maybe<
+    PhoneNumberCreateWithoutUserInput[] | PhoneNumberCreateWithoutUserInput
+  >;
+  connect?: Maybe<PhoneNumberWhereUniqueInput[] | PhoneNumberWhereUniqueInput>;
+}
+
+export interface PhoneNumberCreateWithoutUserInput {
+  id?: Maybe<ID_Input>;
+  code?: Maybe<String>;
+  phone: String;
+}
+
+export interface ProductUpdateInput {
+  name?: Maybe<String>;
+  url?: Maybe<String>;
+  thumb?: Maybe<String>;
+  featured_image?: Maybe<String>;
+  photos_url?: Maybe<String>;
+  user_rating?: Maybe<ProductRatingUpdateOneRequiredInput>;
+  has_online_delivery?: Maybe<Boolean>;
+  is_delivering_now?: Maybe<Boolean>;
+  deeplink?: Maybe<String>;
+  photo_count?: Maybe<Int>;
+  photos?: Maybe<ProductPhotoUpdateManyWithoutProductInput>;
+  all_reviews?: Maybe<ReviewUpdateManyWithoutProductInput>;
+}
+
+export interface ReviewUpdateManyWithoutProductInput {
+  create?: Maybe<
+    ReviewCreateWithoutProductInput[] | ReviewCreateWithoutProductInput
+  >;
+  delete?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
+  connect?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
+  set?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
+  disconnect?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
+  update?: Maybe<
+    | ReviewUpdateWithWhereUniqueWithoutProductInput[]
+    | ReviewUpdateWithWhereUniqueWithoutProductInput
+  >;
+  upsert?: Maybe<
+    | ReviewUpsertWithWhereUniqueWithoutProductInput[]
+    | ReviewUpsertWithWhereUniqueWithoutProductInput
+  >;
+  deleteMany?: Maybe<ReviewScalarWhereInput[] | ReviewScalarWhereInput>;
+  updateMany?: Maybe<
+    | ReviewUpdateManyWithWhereNestedInput[]
+    | ReviewUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface ReviewUpdateWithWhereUniqueWithoutProductInput {
   where: ReviewWhereUniqueInput;
-  update: ReviewUpdateWithoutProductDataInput;
-  create: ReviewCreateWithoutProductInput;
+  data: ReviewUpdateWithoutProductDataInput;
 }
 
-export interface ReviewScalarWhereInput {
+export interface ReviewUpdateWithoutProductDataInput {
+  user?: Maybe<UserUpdateOneRequiredWithoutReviewsInput>;
+  rating?: Maybe<Int>;
+  review_text?: Maybe<String>;
+  review_time_friendly?: Maybe<String>;
+  timestamp?: Maybe<Int>;
+}
+
+export interface UserUpdateOneRequiredWithoutReviewsInput {
+  create?: Maybe<UserCreateWithoutReviewsInput>;
+  update?: Maybe<UserUpdateWithoutReviewsDataInput>;
+  upsert?: Maybe<UserUpsertWithoutReviewsInput>;
+  connect?: Maybe<UserWhereUniqueInput>;
+}
+
+export interface UserUpdateWithoutReviewsDataInput {
+  email?: Maybe<String>;
+  name?: Maybe<String>;
+  phone_number?: Maybe<PhoneNumberUpdateManyWithoutUserInput>;
+  user_type?: Maybe<UserType>;
+  photos?: Maybe<UserPhotoUpdateManyWithoutUserInput>;
+  uid?: Maybe<String>;
+}
+
+export interface PhoneNumberUpdateManyWithoutUserInput {
+  create?: Maybe<
+    PhoneNumberCreateWithoutUserInput[] | PhoneNumberCreateWithoutUserInput
+  >;
+  delete?: Maybe<PhoneNumberWhereUniqueInput[] | PhoneNumberWhereUniqueInput>;
+  connect?: Maybe<PhoneNumberWhereUniqueInput[] | PhoneNumberWhereUniqueInput>;
+  set?: Maybe<PhoneNumberWhereUniqueInput[] | PhoneNumberWhereUniqueInput>;
+  disconnect?: Maybe<
+    PhoneNumberWhereUniqueInput[] | PhoneNumberWhereUniqueInput
+  >;
+  update?: Maybe<
+    | PhoneNumberUpdateWithWhereUniqueWithoutUserInput[]
+    | PhoneNumberUpdateWithWhereUniqueWithoutUserInput
+  >;
+  upsert?: Maybe<
+    | PhoneNumberUpsertWithWhereUniqueWithoutUserInput[]
+    | PhoneNumberUpsertWithWhereUniqueWithoutUserInput
+  >;
+  deleteMany?: Maybe<
+    PhoneNumberScalarWhereInput[] | PhoneNumberScalarWhereInput
+  >;
+  updateMany?: Maybe<
+    | PhoneNumberUpdateManyWithWhereNestedInput[]
+    | PhoneNumberUpdateManyWithWhereNestedInput
+  >;
+}
+
+export interface PhoneNumberUpdateWithWhereUniqueWithoutUserInput {
+  where: PhoneNumberWhereUniqueInput;
+  data: PhoneNumberUpdateWithoutUserDataInput;
+}
+
+export interface PhoneNumberUpdateWithoutUserDataInput {
+  code?: Maybe<String>;
+  phone?: Maybe<String>;
+}
+
+export interface PhoneNumberUpsertWithWhereUniqueWithoutUserInput {
+  where: PhoneNumberWhereUniqueInput;
+  update: PhoneNumberUpdateWithoutUserDataInput;
+  create: PhoneNumberCreateWithoutUserInput;
+}
+
+export interface PhoneNumberScalarWhereInput {
   id?: Maybe<ID_Input>;
   id_not?: Maybe<ID_Input>;
   id_in?: Maybe<ID_Input[] | ID_Input>;
@@ -1615,65 +1841,58 @@ export interface ReviewScalarWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
-  rating?: Maybe<Int>;
-  rating_not?: Maybe<Int>;
-  rating_in?: Maybe<Int[] | Int>;
-  rating_not_in?: Maybe<Int[] | Int>;
-  rating_lt?: Maybe<Int>;
-  rating_lte?: Maybe<Int>;
-  rating_gt?: Maybe<Int>;
-  rating_gte?: Maybe<Int>;
-  review_text?: Maybe<String>;
-  review_text_not?: Maybe<String>;
-  review_text_in?: Maybe<String[] | String>;
-  review_text_not_in?: Maybe<String[] | String>;
-  review_text_lt?: Maybe<String>;
-  review_text_lte?: Maybe<String>;
-  review_text_gt?: Maybe<String>;
-  review_text_gte?: Maybe<String>;
-  review_text_contains?: Maybe<String>;
-  review_text_not_contains?: Maybe<String>;
-  review_text_starts_with?: Maybe<String>;
-  review_text_not_starts_with?: Maybe<String>;
-  review_text_ends_with?: Maybe<String>;
-  review_text_not_ends_with?: Maybe<String>;
-  review_time_friendly?: Maybe<String>;
-  review_time_friendly_not?: Maybe<String>;
-  review_time_friendly_in?: Maybe<String[] | String>;
-  review_time_friendly_not_in?: Maybe<String[] | String>;
-  review_time_friendly_lt?: Maybe<String>;
-  review_time_friendly_lte?: Maybe<String>;
-  review_time_friendly_gt?: Maybe<String>;
-  review_time_friendly_gte?: Maybe<String>;
-  review_time_friendly_contains?: Maybe<String>;
-  review_time_friendly_not_contains?: Maybe<String>;
-  review_time_friendly_starts_with?: Maybe<String>;
-  review_time_friendly_not_starts_with?: Maybe<String>;
-  review_time_friendly_ends_with?: Maybe<String>;
-  review_time_friendly_not_ends_with?: Maybe<String>;
-  timestamp?: Maybe<Int>;
-  timestamp_not?: Maybe<Int>;
-  timestamp_in?: Maybe<Int[] | Int>;
-  timestamp_not_in?: Maybe<Int[] | Int>;
-  timestamp_lt?: Maybe<Int>;
-  timestamp_lte?: Maybe<Int>;
-  timestamp_gt?: Maybe<Int>;
-  timestamp_gte?: Maybe<Int>;
-  AND?: Maybe<ReviewScalarWhereInput[] | ReviewScalarWhereInput>;
-  OR?: Maybe<ReviewScalarWhereInput[] | ReviewScalarWhereInput>;
-  NOT?: Maybe<ReviewScalarWhereInput[] | ReviewScalarWhereInput>;
+  code?: Maybe<String>;
+  code_not?: Maybe<String>;
+  code_in?: Maybe<String[] | String>;
+  code_not_in?: Maybe<String[] | String>;
+  code_lt?: Maybe<String>;
+  code_lte?: Maybe<String>;
+  code_gt?: Maybe<String>;
+  code_gte?: Maybe<String>;
+  code_contains?: Maybe<String>;
+  code_not_contains?: Maybe<String>;
+  code_starts_with?: Maybe<String>;
+  code_not_starts_with?: Maybe<String>;
+  code_ends_with?: Maybe<String>;
+  code_not_ends_with?: Maybe<String>;
+  phone?: Maybe<String>;
+  phone_not?: Maybe<String>;
+  phone_in?: Maybe<String[] | String>;
+  phone_not_in?: Maybe<String[] | String>;
+  phone_lt?: Maybe<String>;
+  phone_lte?: Maybe<String>;
+  phone_gt?: Maybe<String>;
+  phone_gte?: Maybe<String>;
+  phone_contains?: Maybe<String>;
+  phone_not_contains?: Maybe<String>;
+  phone_starts_with?: Maybe<String>;
+  phone_not_starts_with?: Maybe<String>;
+  phone_ends_with?: Maybe<String>;
+  phone_not_ends_with?: Maybe<String>;
+  AND?: Maybe<PhoneNumberScalarWhereInput[] | PhoneNumberScalarWhereInput>;
+  OR?: Maybe<PhoneNumberScalarWhereInput[] | PhoneNumberScalarWhereInput>;
+  NOT?: Maybe<PhoneNumberScalarWhereInput[] | PhoneNumberScalarWhereInput>;
 }
 
-export interface ReviewUpdateManyWithWhereNestedInput {
-  where: ReviewScalarWhereInput;
-  data: ReviewUpdateManyDataInput;
+export interface PhoneNumberUpdateManyWithWhereNestedInput {
+  where: PhoneNumberScalarWhereInput;
+  data: PhoneNumberUpdateManyDataInput;
 }
 
-export interface ReviewUpdateManyDataInput {
-  rating?: Maybe<Int>;
-  review_text?: Maybe<String>;
-  review_time_friendly?: Maybe<String>;
-  timestamp?: Maybe<Int>;
+export interface PhoneNumberUpdateManyDataInput {
+  code?: Maybe<String>;
+  phone?: Maybe<String>;
+}
+
+export interface UserUpsertWithoutReviewsInput {
+  update: UserUpdateWithoutReviewsDataInput;
+  create: UserCreateWithoutReviewsInput;
+}
+
+export interface ReviewUpsertWithWhereUniqueWithoutProductInput {
+  where: ReviewWhereUniqueInput;
+  update: ReviewUpdateWithoutProductDataInput;
+  create: ReviewCreateWithoutProductInput;
 }
 
 export interface ProductUpdateManyMutationInput {
@@ -1689,6 +1908,7 @@ export interface ProductUpdateManyMutationInput {
 }
 
 export interface ProductPhotoCreateInput {
+  id?: Maybe<ID_Input>;
   product: ProductCreateOneWithoutPhotosInput;
   url: String;
   thumb_url: String;
@@ -1705,6 +1925,7 @@ export interface ProductCreateOneWithoutPhotosInput {
 }
 
 export interface ProductCreateWithoutPhotosInput {
+  id?: Maybe<ID_Input>;
   name: String;
   url: String;
   thumb?: Maybe<String>;
@@ -1765,6 +1986,11 @@ export interface ProductPhotoUpdateManyMutationInput {
   height?: Maybe<Int>;
 }
 
+export interface ProductRatingUpdateInput {
+  aggregate_rating?: Maybe<Float>;
+  votes?: Maybe<Int>;
+}
+
 export interface ProductRatingUpdateManyMutationInput {
   aggregate_rating?: Maybe<Float>;
   votes?: Maybe<Int>;
@@ -1773,6 +1999,7 @@ export interface ProductRatingUpdateManyMutationInput {
 export interface ReviewCreateInput {
   user: UserCreateOneWithoutReviewsInput;
   product: ProductCreateOneWithoutAll_reviewsInput;
+  id?: Maybe<ID_Input>;
   rating: Int;
   review_text: String;
   review_time_friendly: String;
@@ -1788,32 +2015,6 @@ export interface ReviewUpdateInput {
   timestamp?: Maybe<Int>;
 }
 
-export interface ProductUpdateOneRequiredWithoutAll_reviewsInput {
-  create?: Maybe<ProductCreateWithoutAll_reviewsInput>;
-  update?: Maybe<ProductUpdateWithoutAll_reviewsDataInput>;
-  upsert?: Maybe<ProductUpsertWithoutAll_reviewsInput>;
-  connect?: Maybe<ProductWhereUniqueInput>;
-}
-
-export interface ProductUpdateWithoutAll_reviewsDataInput {
-  name?: Maybe<String>;
-  url?: Maybe<String>;
-  thumb?: Maybe<String>;
-  featured_image?: Maybe<String>;
-  photos_url?: Maybe<String>;
-  user_rating?: Maybe<ProductRatingUpdateOneRequiredInput>;
-  has_online_delivery?: Maybe<Boolean>;
-  is_delivering_now?: Maybe<Boolean>;
-  deeplink?: Maybe<String>;
-  photo_count?: Maybe<Int>;
-  photos?: Maybe<ProductPhotoUpdateManyWithoutProductInput>;
-}
-
-export interface ProductUpsertWithoutAll_reviewsInput {
-  update: ProductUpdateWithoutAll_reviewsDataInput;
-  create: ProductCreateWithoutAll_reviewsInput;
-}
-
 export interface ReviewUpdateManyMutationInput {
   rating?: Maybe<Int>;
   review_text?: Maybe<String>;
@@ -1822,6 +2023,7 @@ export interface ReviewUpdateManyMutationInput {
 }
 
 export interface UserCreateInput {
+  id?: Maybe<ID_Input>;
   email?: Maybe<String>;
   name?: Maybe<String>;
   phone_number?: Maybe<PhoneNumberCreateManyWithoutUserInput>;
@@ -1841,46 +2043,6 @@ export interface UserUpdateInput {
   uid?: Maybe<String>;
 }
 
-export interface ReviewUpdateManyWithoutUserInput {
-  create?: Maybe<ReviewCreateWithoutUserInput[] | ReviewCreateWithoutUserInput>;
-  delete?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
-  connect?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
-  set?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
-  disconnect?: Maybe<ReviewWhereUniqueInput[] | ReviewWhereUniqueInput>;
-  update?: Maybe<
-    | ReviewUpdateWithWhereUniqueWithoutUserInput[]
-    | ReviewUpdateWithWhereUniqueWithoutUserInput
-  >;
-  upsert?: Maybe<
-    | ReviewUpsertWithWhereUniqueWithoutUserInput[]
-    | ReviewUpsertWithWhereUniqueWithoutUserInput
-  >;
-  deleteMany?: Maybe<ReviewScalarWhereInput[] | ReviewScalarWhereInput>;
-  updateMany?: Maybe<
-    | ReviewUpdateManyWithWhereNestedInput[]
-    | ReviewUpdateManyWithWhereNestedInput
-  >;
-}
-
-export interface ReviewUpdateWithWhereUniqueWithoutUserInput {
-  where: ReviewWhereUniqueInput;
-  data: ReviewUpdateWithoutUserDataInput;
-}
-
-export interface ReviewUpdateWithoutUserDataInput {
-  product?: Maybe<ProductUpdateOneRequiredWithoutAll_reviewsInput>;
-  rating?: Maybe<Int>;
-  review_text?: Maybe<String>;
-  review_time_friendly?: Maybe<String>;
-  timestamp?: Maybe<Int>;
-}
-
-export interface ReviewUpsertWithWhereUniqueWithoutUserInput {
-  where: ReviewWhereUniqueInput;
-  update: ReviewUpdateWithoutUserDataInput;
-  create: ReviewCreateWithoutUserInput;
-}
-
 export interface UserUpdateManyMutationInput {
   email?: Maybe<String>;
   name?: Maybe<String>;
@@ -1889,6 +2051,7 @@ export interface UserUpdateManyMutationInput {
 }
 
 export interface UserPhotoCreateInput {
+  id?: Maybe<ID_Input>;
   user: UserCreateOneWithoutPhotosInput;
   url: String;
   thumb_url: String;
@@ -1905,6 +2068,7 @@ export interface UserCreateOneWithoutPhotosInput {
 }
 
 export interface UserCreateWithoutPhotosInput {
+  id?: Maybe<ID_Input>;
   email?: Maybe<String>;
   name?: Maybe<String>;
   phone_number?: Maybe<PhoneNumberCreateManyWithoutUserInput>;
@@ -2061,11 +2225,13 @@ export interface NodeNode {
 }
 
 export interface PhoneNumber {
+  id: ID_Output;
   code: String;
   phone: String;
 }
 
 export interface PhoneNumberPromise extends Promise<PhoneNumber>, Fragmentable {
+  id: () => Promise<ID_Output>;
   user: <T = UserPromise>() => T;
   code: () => Promise<String>;
   phone: () => Promise<String>;
@@ -2074,6 +2240,7 @@ export interface PhoneNumberPromise extends Promise<PhoneNumber>, Fragmentable {
 export interface PhoneNumberSubscription
   extends Promise<AsyncIterator<PhoneNumber>>,
     Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
   user: <T = UserSubscription>() => T;
   code: () => Promise<AsyncIterator<String>>;
   phone: () => Promise<AsyncIterator<String>>;
@@ -2082,6 +2249,7 @@ export interface PhoneNumberSubscription
 export interface PhoneNumberNullablePromise
   extends Promise<PhoneNumber | null>,
     Fragmentable {
+  id: () => Promise<ID_Output>;
   user: <T = UserPromise>() => T;
   code: () => Promise<String>;
   phone: () => Promise<String>;
@@ -2360,6 +2528,7 @@ export interface ProductNullablePromise
 }
 
 export interface ProductRating {
+  id: ID_Output;
   aggregate_rating: Float;
   votes: Int;
 }
@@ -2367,6 +2536,7 @@ export interface ProductRating {
 export interface ProductRatingPromise
   extends Promise<ProductRating>,
     Fragmentable {
+  id: () => Promise<ID_Output>;
   aggregate_rating: () => Promise<Float>;
   votes: () => Promise<Int>;
 }
@@ -2374,6 +2544,7 @@ export interface ProductRatingPromise
 export interface ProductRatingSubscription
   extends Promise<AsyncIterator<ProductRating>>,
     Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
   aggregate_rating: () => Promise<AsyncIterator<Float>>;
   votes: () => Promise<AsyncIterator<Int>>;
 }
@@ -2381,6 +2552,7 @@ export interface ProductRatingSubscription
 export interface ProductRatingNullablePromise
   extends Promise<ProductRating | null>,
     Fragmentable {
+  id: () => Promise<ID_Output>;
   aggregate_rating: () => Promise<Float>;
   votes: () => Promise<Int>;
 }
@@ -2940,6 +3112,7 @@ export interface PhoneNumberSubscriptionPayloadSubscription
 }
 
 export interface PhoneNumberPreviousValues {
+  id: ID_Output;
   code: String;
   phone: String;
 }
@@ -2947,6 +3120,7 @@ export interface PhoneNumberPreviousValues {
 export interface PhoneNumberPreviousValuesPromise
   extends Promise<PhoneNumberPreviousValues>,
     Fragmentable {
+  id: () => Promise<ID_Output>;
   code: () => Promise<String>;
   phone: () => Promise<String>;
 }
@@ -2954,6 +3128,7 @@ export interface PhoneNumberPreviousValuesPromise
 export interface PhoneNumberPreviousValuesSubscription
   extends Promise<AsyncIterator<PhoneNumberPreviousValues>>,
     Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
   code: () => Promise<AsyncIterator<String>>;
   phone: () => Promise<AsyncIterator<String>>;
 }
@@ -3114,6 +3289,7 @@ export interface ProductRatingSubscriptionPayloadSubscription
 }
 
 export interface ProductRatingPreviousValues {
+  id: ID_Output;
   aggregate_rating: Float;
   votes: Int;
 }
@@ -3121,6 +3297,7 @@ export interface ProductRatingPreviousValues {
 export interface ProductRatingPreviousValuesPromise
   extends Promise<ProductRatingPreviousValues>,
     Fragmentable {
+  id: () => Promise<ID_Output>;
   aggregate_rating: () => Promise<Float>;
   votes: () => Promise<Int>;
 }
@@ -3128,6 +3305,7 @@ export interface ProductRatingPreviousValuesPromise
 export interface ProductRatingPreviousValuesSubscription
   extends Promise<AsyncIterator<ProductRatingPreviousValues>>,
     Fragmentable {
+  id: () => Promise<AsyncIterator<ID_Output>>;
   aggregate_rating: () => Promise<AsyncIterator<Float>>;
   votes: () => Promise<AsyncIterator<Int>>;
 }
@@ -3374,7 +3552,7 @@ export const models: Model[] = [
 export const Prisma = makePrismaClientClass<ClientConstructor<Prisma>>({
   typeDefs,
   models,
-  endpoint: `https://minze-prisma-dev-0a32ee614b.herokuapp.com`,
+  endpoint: `${process.env["PRISMA_ENDPOINT"]}`,
   secret: `${process.env["PRISMA_SECRET"]}`
 });
 export const prisma = new Prisma();

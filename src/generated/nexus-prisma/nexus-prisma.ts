@@ -122,7 +122,9 @@ export interface NexusPrismaTypes {
       ProductRatingWhereInput: ProductRatingWhereInputInputObject
       ProductPhotoWhereInput: ProductPhotoWhereInputInputObject
       UserPhotoWhereInput: UserPhotoWhereInputInputObject
+      PhoneNumberWhereUniqueInput: PhoneNumberWhereUniqueInputInputObject
       ProductWhereUniqueInput: ProductWhereUniqueInputInputObject
+      ProductRatingWhereUniqueInput: ProductRatingWhereUniqueInputInputObject
       ReviewWhereUniqueInput: ReviewWhereUniqueInputInputObject
       ProductPhotoWhereUniqueInput: ProductPhotoWhereUniqueInputInputObject
       UserPhotoWhereUniqueInput: UserPhotoWhereUniqueInputInputObject
@@ -141,6 +143,9 @@ export interface NexusPrismaTypes {
       UserPhotoCreateWithoutUserInput: UserPhotoCreateWithoutUserInputInputObject
       UserUpdateInput: UserUpdateInputInputObject
       PhoneNumberUpdateManyWithoutUserInput: PhoneNumberUpdateManyWithoutUserInputInputObject
+      PhoneNumberUpdateWithWhereUniqueWithoutUserInput: PhoneNumberUpdateWithWhereUniqueWithoutUserInputInputObject
+      PhoneNumberUpdateWithoutUserDataInput: PhoneNumberUpdateWithoutUserDataInputInputObject
+      PhoneNumberUpsertWithWhereUniqueWithoutUserInput: PhoneNumberUpsertWithWhereUniqueWithoutUserInputInputObject
       PhoneNumberScalarWhereInput: PhoneNumberScalarWhereInputInputObject
       PhoneNumberUpdateManyWithWhereNestedInput: PhoneNumberUpdateManyWithWhereNestedInputInputObject
       PhoneNumberUpdateManyDataInput: PhoneNumberUpdateManyDataInputInputObject
@@ -175,6 +180,10 @@ export interface NexusPrismaTypes {
       PhoneNumberCreateInput: PhoneNumberCreateInputInputObject
       UserCreateOneWithoutPhone_numberInput: UserCreateOneWithoutPhone_numberInputInputObject
       UserCreateWithoutPhone_numberInput: UserCreateWithoutPhone_numberInputInputObject
+      PhoneNumberUpdateInput: PhoneNumberUpdateInputInputObject
+      UserUpdateOneRequiredWithoutPhone_numberInput: UserUpdateOneRequiredWithoutPhone_numberInputInputObject
+      UserUpdateWithoutPhone_numberDataInput: UserUpdateWithoutPhone_numberDataInputInputObject
+      UserUpsertWithoutPhone_numberInput: UserUpsertWithoutPhone_numberInputInputObject
       PhoneNumberUpdateManyMutationInput: PhoneNumberUpdateManyMutationInputInputObject
       ProductCreateInput: ProductCreateInputInputObject
       ReviewCreateManyWithoutProductInput: ReviewCreateManyWithoutProductInputInputObject
@@ -190,6 +199,7 @@ export interface NexusPrismaTypes {
       UserUpsertWithoutReviewsInput: UserUpsertWithoutReviewsInputInputObject
       ReviewUpsertWithWhereUniqueWithoutProductInput: ReviewUpsertWithWhereUniqueWithoutProductInputInputObject
       ProductUpdateManyMutationInput: ProductUpdateManyMutationInputInputObject
+      ProductRatingUpdateInput: ProductRatingUpdateInputInputObject
       ProductRatingUpdateManyMutationInput: ProductRatingUpdateManyMutationInputInputObject
       ReviewCreateInput: ReviewCreateInputInputObject
       ReviewUpdateInput: ReviewUpdateInputInputObject
@@ -239,11 +249,13 @@ type QueryObject =
   | { name: 'user', args?: QueryUserArgs[] | false, alias?: string  } 
   | { name: 'users', args?: QueryUsersArgs[] | false, alias?: string  } 
   | { name: 'usersConnection', args?: QueryUsersConnectionArgs[] | false, alias?: string  } 
+  | { name: 'phoneNumber', args?: QueryPhoneNumberArgs[] | false, alias?: string  } 
   | { name: 'phoneNumbers', args?: QueryPhoneNumbersArgs[] | false, alias?: string  } 
   | { name: 'phoneNumbersConnection', args?: QueryPhoneNumbersConnectionArgs[] | false, alias?: string  } 
   | { name: 'product', args?: QueryProductArgs[] | false, alias?: string  } 
   | { name: 'products', args?: QueryProductsArgs[] | false, alias?: string  } 
   | { name: 'productsConnection', args?: QueryProductsConnectionArgs[] | false, alias?: string  } 
+  | { name: 'productRating', args?: QueryProductRatingArgs[] | false, alias?: string  } 
   | { name: 'productRatings', args?: QueryProductRatingsArgs[] | false, alias?: string  } 
   | { name: 'productRatingsConnection', args?: QueryProductRatingsConnectionArgs[] | false, alias?: string  } 
   | { name: 'review', args?: QueryReviewArgs[] | false, alias?: string  } 
@@ -260,11 +272,13 @@ type QueryFields =
   | 'user'
   | 'users'
   | 'usersConnection'
+  | 'phoneNumber'
   | 'phoneNumbers'
   | 'phoneNumbersConnection'
   | 'product'
   | 'products'
   | 'productsConnection'
+  | 'productRating'
   | 'productRatings'
   | 'productRatingsConnection'
   | 'review'
@@ -296,6 +310,8 @@ type QueryUsersConnectionArgs =
   | 'before'
   | 'first'
   | 'last'
+type QueryPhoneNumberArgs =
+  | 'where'
 type QueryPhoneNumbersArgs =
   | 'where'
   | 'orderBy'
@@ -330,6 +346,8 @@ type QueryProductsConnectionArgs =
   | 'before'
   | 'first'
   | 'last'
+type QueryProductRatingArgs =
+  | 'where'
 type QueryProductRatingsArgs =
   | 'where'
   | 'orderBy'
@@ -442,6 +460,19 @@ export interface QueryFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.UserConnection> | prisma.UserConnection
   }
+  phoneNumber: {
+    type: 'PhoneNumber'
+    args: Record<QueryPhoneNumberArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: PhoneNumberWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PhoneNumber | null> | prisma.PhoneNumber | null
+  }
   phoneNumbers: {
     type: 'PhoneNumber'
     args: Record<QueryPhoneNumbersArgs, core.NexusArgDef<string>>
@@ -506,6 +537,19 @@ export interface QueryFieldDetails {
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.ProductConnection> | prisma.ProductConnection
+  }
+  productRating: {
+    type: 'ProductRating'
+    args: Record<QueryProductRatingArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Query">,
+      args: { where: ProductRatingWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.ProductRating | null> | prisma.ProductRating | null
   }
   productRatings: {
     type: 'ProductRating'
@@ -795,11 +839,13 @@ export interface UserFieldDetails {
 
 type PhoneNumberObject =
   | PhoneNumberFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'user', args?: [] | false, alias?: string  } 
   | { name: 'code', args?: [] | false, alias?: string  } 
   | { name: 'phone', args?: [] | false, alias?: string  } 
 
 type PhoneNumberFields =
+  | 'id'
   | 'user'
   | 'code'
   | 'phone'
@@ -809,6 +855,14 @@ type PhoneNumberFields =
   
 
 export interface PhoneNumberFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
   user: {
     type: 'User'
     args: {}
@@ -1115,10 +1169,12 @@ export interface ProductFieldDetails {
 
 type ProductRatingObject =
   | ProductRatingFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'aggregate_rating', args?: [] | false, alias?: string  } 
   | { name: 'votes', args?: [] | false, alias?: string  } 
 
 type ProductRatingFields =
+  | 'id'
   | 'aggregate_rating'
   | 'votes'
 
@@ -1127,6 +1183,14 @@ type ProductRatingFields =
   
 
 export interface ProductRatingFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
   aggregate_rating: {
     type: 'Float'
     args: {}
@@ -2307,7 +2371,10 @@ type MutationObject =
   | { name: 'deleteUser', args?: MutationDeleteUserArgs[] | false, alias?: string  } 
   | { name: 'deleteManyUsers', args?: MutationDeleteManyUsersArgs[] | false, alias?: string  } 
   | { name: 'createPhoneNumber', args?: MutationCreatePhoneNumberArgs[] | false, alias?: string  } 
+  | { name: 'updatePhoneNumber', args?: MutationUpdatePhoneNumberArgs[] | false, alias?: string  } 
   | { name: 'updateManyPhoneNumbers', args?: MutationUpdateManyPhoneNumbersArgs[] | false, alias?: string  } 
+  | { name: 'upsertPhoneNumber', args?: MutationUpsertPhoneNumberArgs[] | false, alias?: string  } 
+  | { name: 'deletePhoneNumber', args?: MutationDeletePhoneNumberArgs[] | false, alias?: string  } 
   | { name: 'deleteManyPhoneNumbers', args?: MutationDeleteManyPhoneNumbersArgs[] | false, alias?: string  } 
   | { name: 'createProduct', args?: MutationCreateProductArgs[] | false, alias?: string  } 
   | { name: 'updateProduct', args?: MutationUpdateProductArgs[] | false, alias?: string  } 
@@ -2316,7 +2383,10 @@ type MutationObject =
   | { name: 'deleteProduct', args?: MutationDeleteProductArgs[] | false, alias?: string  } 
   | { name: 'deleteManyProducts', args?: MutationDeleteManyProductsArgs[] | false, alias?: string  } 
   | { name: 'createProductRating', args?: MutationCreateProductRatingArgs[] | false, alias?: string  } 
+  | { name: 'updateProductRating', args?: MutationUpdateProductRatingArgs[] | false, alias?: string  } 
   | { name: 'updateManyProductRatings', args?: MutationUpdateManyProductRatingsArgs[] | false, alias?: string  } 
+  | { name: 'upsertProductRating', args?: MutationUpsertProductRatingArgs[] | false, alias?: string  } 
+  | { name: 'deleteProductRating', args?: MutationDeleteProductRatingArgs[] | false, alias?: string  } 
   | { name: 'deleteManyProductRatings', args?: MutationDeleteManyProductRatingsArgs[] | false, alias?: string  } 
   | { name: 'createReview', args?: MutationCreateReviewArgs[] | false, alias?: string  } 
   | { name: 'updateReview', args?: MutationUpdateReviewArgs[] | false, alias?: string  } 
@@ -2345,7 +2415,10 @@ type MutationFields =
   | 'deleteUser'
   | 'deleteManyUsers'
   | 'createPhoneNumber'
+  | 'updatePhoneNumber'
   | 'updateManyPhoneNumbers'
+  | 'upsertPhoneNumber'
+  | 'deletePhoneNumber'
   | 'deleteManyPhoneNumbers'
   | 'createProduct'
   | 'updateProduct'
@@ -2354,7 +2427,10 @@ type MutationFields =
   | 'deleteProduct'
   | 'deleteManyProducts'
   | 'createProductRating'
+  | 'updateProductRating'
   | 'updateManyProductRatings'
+  | 'upsertProductRating'
+  | 'deleteProductRating'
   | 'deleteManyProductRatings'
   | 'createReview'
   | 'updateReview'
@@ -2394,8 +2470,17 @@ type MutationDeleteManyUsersArgs =
   | 'where'
 type MutationCreatePhoneNumberArgs =
   | 'data'
+type MutationUpdatePhoneNumberArgs =
+  | 'data'
+  | 'where'
 type MutationUpdateManyPhoneNumbersArgs =
   | 'data'
+  | 'where'
+type MutationUpsertPhoneNumberArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeletePhoneNumberArgs =
   | 'where'
 type MutationDeleteManyPhoneNumbersArgs =
   | 'where'
@@ -2417,8 +2502,17 @@ type MutationDeleteManyProductsArgs =
   | 'where'
 type MutationCreateProductRatingArgs =
   | 'data'
+type MutationUpdateProductRatingArgs =
+  | 'data'
+  | 'where'
 type MutationUpdateManyProductRatingsArgs =
   | 'data'
+  | 'where'
+type MutationUpsertProductRatingArgs =
+  | 'where'
+  | 'create'
+  | 'update'
+type MutationDeleteProductRatingArgs =
   | 'where'
 type MutationDeleteManyProductRatingsArgs =
   | 'where'
@@ -2564,6 +2658,19 @@ export interface MutationFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.PhoneNumber> | prisma.PhoneNumber
   }
+  updatePhoneNumber: {
+    type: 'PhoneNumber'
+    args: Record<MutationUpdatePhoneNumberArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: PhoneNumberUpdateInput, where: PhoneNumberWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PhoneNumber | null> | prisma.PhoneNumber | null
+  }
   updateManyPhoneNumbers: {
     type: 'BatchPayload'
     args: Record<MutationUpdateManyPhoneNumbersArgs, core.NexusArgDef<string>>
@@ -2576,6 +2683,32 @@ export interface MutationFieldDetails {
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertPhoneNumber: {
+    type: 'PhoneNumber'
+    args: Record<MutationUpsertPhoneNumberArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PhoneNumberWhereUniqueInput, create: PhoneNumberCreateInput, update: PhoneNumberUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PhoneNumber> | prisma.PhoneNumber
+  }
+  deletePhoneNumber: {
+    type: 'PhoneNumber'
+    args: Record<MutationDeletePhoneNumberArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: PhoneNumberWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.PhoneNumber | null> | prisma.PhoneNumber | null
   }
   deleteManyPhoneNumbers: {
     type: 'BatchPayload'
@@ -2681,6 +2814,19 @@ export interface MutationFieldDetails {
       info?: GraphQLResolveInfo
     ) => Promise<prisma.ProductRating> | prisma.ProductRating
   }
+  updateProductRating: {
+    type: 'ProductRating'
+    args: Record<MutationUpdateProductRatingArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { data: ProductRatingUpdateInput, where: ProductRatingWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.ProductRating | null> | prisma.ProductRating | null
+  }
   updateManyProductRatings: {
     type: 'BatchPayload'
     args: Record<MutationUpdateManyProductRatingsArgs, core.NexusArgDef<string>>
@@ -2693,6 +2839,32 @@ export interface MutationFieldDetails {
       context: core.GetGen<"context">,
       info?: GraphQLResolveInfo
     ) => Promise<prisma.BatchPayload> | prisma.BatchPayload
+  }
+  upsertProductRating: {
+    type: 'ProductRating'
+    args: Record<MutationUpsertProductRatingArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: false
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: ProductRatingWhereUniqueInput, create: ProductRatingCreateInput, update: ProductRatingUpdateInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.ProductRating> | prisma.ProductRating
+  }
+  deleteProductRating: {
+    type: 'ProductRating'
+    args: Record<MutationDeleteProductRatingArgs, core.NexusArgDef<string>>
+    description: string
+    list: undefined
+    nullable: true
+    resolve: (
+      root: core.RootValue<"Mutation">,
+      args: { where: ProductRatingWhereUniqueInput }  ,
+      context: core.GetGen<"context">,
+      info?: GraphQLResolveInfo
+    ) => Promise<prisma.ProductRating | null> | prisma.ProductRating | null
   }
   deleteManyProductRatings: {
     type: 'BatchPayload'
@@ -3316,10 +3488,12 @@ export interface PhoneNumberSubscriptionPayloadFieldDetails {
 
 type PhoneNumberPreviousValuesObject =
   | PhoneNumberPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'code', args?: [] | false, alias?: string  } 
   | { name: 'phone', args?: [] | false, alias?: string  } 
 
 type PhoneNumberPreviousValuesFields =
+  | 'id'
   | 'code'
   | 'phone'
 
@@ -3328,6 +3502,14 @@ type PhoneNumberPreviousValuesFields =
   
 
 export interface PhoneNumberPreviousValuesFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
   code: {
     type: 'String'
     args: {}
@@ -3606,10 +3788,12 @@ export interface ProductRatingSubscriptionPayloadFieldDetails {
 
 type ProductRatingPreviousValuesObject =
   | ProductRatingPreviousValuesFields
+  | { name: 'id', args?: [] | false, alias?: string  } 
   | { name: 'aggregate_rating', args?: [] | false, alias?: string  } 
   | { name: 'votes', args?: [] | false, alias?: string  } 
 
 type ProductRatingPreviousValuesFields =
+  | 'id'
   | 'aggregate_rating'
   | 'votes'
 
@@ -3618,6 +3802,14 @@ type ProductRatingPreviousValuesFields =
   
 
 export interface ProductRatingPreviousValuesFieldDetails {
+  id: {
+    type: 'ID'
+    args: {}
+    description: string
+    list: undefined
+    nullable: false
+    resolve: undefined
+  }
   aggregate_rating: {
     type: 'Float'
     args: {}
@@ -4115,6 +4307,20 @@ export type UserWhereUniqueInputInputObject =
   | { name: 'uid', alias?: string  } 
   
 export interface PhoneNumberWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
   user?: UserWhereInput | null
   code?: string | null
   code_not?: string | null
@@ -4150,6 +4356,20 @@ export interface PhoneNumberWhereInput {
 }
 export type PhoneNumberWhereInputInputObject =
   | Extract<keyof PhoneNumberWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
   | { name: 'user', alias?: string  } 
   | { name: 'code', alias?: string  } 
   | { name: 'code_not', alias?: string  } 
@@ -4709,6 +4929,20 @@ export type ProductWhereInputInputObject =
   | { name: 'NOT', alias?: string  } 
   
 export interface ProductRatingWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
   aggregate_rating?: number | null
   aggregate_rating_not?: number | null
   aggregate_rating_in?: number[]
@@ -4731,6 +4965,20 @@ export interface ProductRatingWhereInput {
 }
 export type ProductRatingWhereInputInputObject =
   | Extract<keyof ProductRatingWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
   | { name: 'aggregate_rating', alias?: string  } 
   | { name: 'aggregate_rating_not', alias?: string  } 
   | { name: 'aggregate_rating_in', alias?: string  } 
@@ -5153,11 +5401,25 @@ export type UserPhotoWhereInputInputObject =
   | { name: 'OR', alias?: string  } 
   | { name: 'NOT', alias?: string  } 
   
+export interface PhoneNumberWhereUniqueInput {
+  id?: string | null
+}
+export type PhoneNumberWhereUniqueInputInputObject =
+  | Extract<keyof PhoneNumberWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
+  
 export interface ProductWhereUniqueInput {
   id?: string | null
 }
 export type ProductWhereUniqueInputInputObject =
   | Extract<keyof ProductWhereUniqueInput, string>
+  | { name: 'id', alias?: string  } 
+  
+export interface ProductRatingWhereUniqueInput {
+  id?: string | null
+}
+export type ProductRatingWhereUniqueInputInputObject =
+  | Extract<keyof ProductRatingWhereUniqueInput, string>
   | { name: 'id', alias?: string  } 
   
 export interface ReviewWhereUniqueInput {
@@ -5182,6 +5444,7 @@ export type UserPhotoWhereUniqueInputInputObject =
   | { name: 'id', alias?: string  } 
   
 export interface UserCreateInput {
+  id?: string | null
   email?: string | null
   name?: string | null
   phone_number?: PhoneNumberCreateManyWithoutUserInput | null
@@ -5192,6 +5455,7 @@ export interface UserCreateInput {
 }
 export type UserCreateInputInputObject =
   | Extract<keyof UserCreateInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'email', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'phone_number', alias?: string  } 
@@ -5202,17 +5466,21 @@ export type UserCreateInputInputObject =
   
 export interface PhoneNumberCreateManyWithoutUserInput {
   create?: PhoneNumberCreateWithoutUserInput[]
+  connect?: PhoneNumberWhereUniqueInput[]
 }
 export type PhoneNumberCreateManyWithoutUserInputInputObject =
   | Extract<keyof PhoneNumberCreateManyWithoutUserInput, string>
   | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
   
 export interface PhoneNumberCreateWithoutUserInput {
+  id?: string | null
   code?: string | null
   phone?: string
 }
 export type PhoneNumberCreateWithoutUserInputInputObject =
   | Extract<keyof PhoneNumberCreateWithoutUserInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'code', alias?: string  } 
   | { name: 'phone', alias?: string  } 
   
@@ -5227,6 +5495,7 @@ export type ReviewCreateManyWithoutUserInputInputObject =
   
 export interface ReviewCreateWithoutUserInput {
   product?: ProductCreateOneWithoutAll_reviewsInput
+  id?: string | null
   rating?: number
   review_text?: string
   review_time_friendly?: string
@@ -5235,6 +5504,7 @@ export interface ReviewCreateWithoutUserInput {
 export type ReviewCreateWithoutUserInputInputObject =
   | Extract<keyof ReviewCreateWithoutUserInput, string>
   | { name: 'product', alias?: string  } 
+  | { name: 'id', alias?: string  } 
   | { name: 'rating', alias?: string  } 
   | { name: 'review_text', alias?: string  } 
   | { name: 'review_time_friendly', alias?: string  } 
@@ -5250,6 +5520,7 @@ export type ProductCreateOneWithoutAll_reviewsInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface ProductCreateWithoutAll_reviewsInput {
+  id?: string | null
   name?: string
   url?: string
   thumb?: string | null
@@ -5264,6 +5535,7 @@ export interface ProductCreateWithoutAll_reviewsInput {
 }
 export type ProductCreateWithoutAll_reviewsInputInputObject =
   | Extract<keyof ProductCreateWithoutAll_reviewsInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'url', alias?: string  } 
   | { name: 'thumb', alias?: string  } 
@@ -5278,17 +5550,21 @@ export type ProductCreateWithoutAll_reviewsInputInputObject =
   
 export interface ProductRatingCreateOneInput {
   create?: ProductRatingCreateInput | null
+  connect?: ProductRatingWhereUniqueInput | null
 }
 export type ProductRatingCreateOneInputInputObject =
   | Extract<keyof ProductRatingCreateOneInput, string>
   | { name: 'create', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
   
 export interface ProductRatingCreateInput {
+  id?: string | null
   aggregate_rating?: number | null
   votes?: number | null
 }
 export type ProductRatingCreateInputInputObject =
   | Extract<keyof ProductRatingCreateInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'aggregate_rating', alias?: string  } 
   | { name: 'votes', alias?: string  } 
   
@@ -5302,6 +5578,7 @@ export type ProductPhotoCreateManyWithoutProductInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface ProductPhotoCreateWithoutProductInput {
+  id?: string | null
   url?: string
   thumb_url?: string
   caption?: string
@@ -5312,6 +5589,7 @@ export interface ProductPhotoCreateWithoutProductInput {
 }
 export type ProductPhotoCreateWithoutProductInputInputObject =
   | Extract<keyof ProductPhotoCreateWithoutProductInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'url', alias?: string  } 
   | { name: 'thumb_url', alias?: string  } 
   | { name: 'caption', alias?: string  } 
@@ -5330,6 +5608,7 @@ export type UserPhotoCreateManyWithoutUserInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface UserPhotoCreateWithoutUserInput {
+  id?: string | null
   url?: string
   thumb_url?: string
   caption?: string
@@ -5340,6 +5619,7 @@ export interface UserPhotoCreateWithoutUserInput {
 }
 export type UserPhotoCreateWithoutUserInputInputObject =
   | Extract<keyof UserPhotoCreateWithoutUserInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'url', alias?: string  } 
   | { name: 'thumb_url', alias?: string  } 
   | { name: 'caption', alias?: string  } 
@@ -5369,16 +5649,71 @@ export type UserUpdateInputInputObject =
   
 export interface PhoneNumberUpdateManyWithoutUserInput {
   create?: PhoneNumberCreateWithoutUserInput[]
+  delete?: PhoneNumberWhereUniqueInput[]
+  connect?: PhoneNumberWhereUniqueInput[]
+  set?: PhoneNumberWhereUniqueInput[]
+  disconnect?: PhoneNumberWhereUniqueInput[]
+  update?: PhoneNumberUpdateWithWhereUniqueWithoutUserInput[]
+  upsert?: PhoneNumberUpsertWithWhereUniqueWithoutUserInput[]
   deleteMany?: PhoneNumberScalarWhereInput[]
   updateMany?: PhoneNumberUpdateManyWithWhereNestedInput[]
 }
 export type PhoneNumberUpdateManyWithoutUserInputInputObject =
   | Extract<keyof PhoneNumberUpdateManyWithoutUserInput, string>
   | { name: 'create', alias?: string  } 
+  | { name: 'delete', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  | { name: 'set', alias?: string  } 
+  | { name: 'disconnect', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
   | { name: 'deleteMany', alias?: string  } 
   | { name: 'updateMany', alias?: string  } 
   
+export interface PhoneNumberUpdateWithWhereUniqueWithoutUserInput {
+  where?: PhoneNumberWhereUniqueInput
+  data?: PhoneNumberUpdateWithoutUserDataInput
+}
+export type PhoneNumberUpdateWithWhereUniqueWithoutUserInputInputObject =
+  | Extract<keyof PhoneNumberUpdateWithWhereUniqueWithoutUserInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'data', alias?: string  } 
+  
+export interface PhoneNumberUpdateWithoutUserDataInput {
+  code?: string | null
+  phone?: string | null
+}
+export type PhoneNumberUpdateWithoutUserDataInputInputObject =
+  | Extract<keyof PhoneNumberUpdateWithoutUserDataInput, string>
+  | { name: 'code', alias?: string  } 
+  | { name: 'phone', alias?: string  } 
+  
+export interface PhoneNumberUpsertWithWhereUniqueWithoutUserInput {
+  where?: PhoneNumberWhereUniqueInput
+  update?: PhoneNumberUpdateWithoutUserDataInput
+  create?: PhoneNumberCreateWithoutUserInput
+}
+export type PhoneNumberUpsertWithWhereUniqueWithoutUserInputInputObject =
+  | Extract<keyof PhoneNumberUpsertWithWhereUniqueWithoutUserInput, string>
+  | { name: 'where', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
+  
 export interface PhoneNumberScalarWhereInput {
+  id?: string | null
+  id_not?: string | null
+  id_in?: string[]
+  id_not_in?: string[]
+  id_lt?: string | null
+  id_lte?: string | null
+  id_gt?: string | null
+  id_gte?: string | null
+  id_contains?: string | null
+  id_not_contains?: string | null
+  id_starts_with?: string | null
+  id_not_starts_with?: string | null
+  id_ends_with?: string | null
+  id_not_ends_with?: string | null
   code?: string | null
   code_not?: string | null
   code_in?: string[]
@@ -5413,6 +5748,20 @@ export interface PhoneNumberScalarWhereInput {
 }
 export type PhoneNumberScalarWhereInputInputObject =
   | Extract<keyof PhoneNumberScalarWhereInput, string>
+  | { name: 'id', alias?: string  } 
+  | { name: 'id_not', alias?: string  } 
+  | { name: 'id_in', alias?: string  } 
+  | { name: 'id_not_in', alias?: string  } 
+  | { name: 'id_lt', alias?: string  } 
+  | { name: 'id_lte', alias?: string  } 
+  | { name: 'id_gt', alias?: string  } 
+  | { name: 'id_gte', alias?: string  } 
+  | { name: 'id_contains', alias?: string  } 
+  | { name: 'id_not_contains', alias?: string  } 
+  | { name: 'id_starts_with', alias?: string  } 
+  | { name: 'id_not_starts_with', alias?: string  } 
+  | { name: 'id_ends_with', alias?: string  } 
+  | { name: 'id_not_ends_with', alias?: string  } 
   | { name: 'code', alias?: string  } 
   | { name: 'code_not', alias?: string  } 
   | { name: 'code_in', alias?: string  } 
@@ -5554,12 +5903,14 @@ export interface ProductRatingUpdateOneRequiredInput {
   create?: ProductRatingCreateInput | null
   update?: ProductRatingUpdateDataInput | null
   upsert?: ProductRatingUpsertNestedInput | null
+  connect?: ProductRatingWhereUniqueInput | null
 }
 export type ProductRatingUpdateOneRequiredInputInputObject =
   | Extract<keyof ProductRatingUpdateOneRequiredInput, string>
   | { name: 'create', alias?: string  } 
   | { name: 'update', alias?: string  } 
   | { name: 'upsert', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
   
 export interface ProductRatingUpdateDataInput {
   aggregate_rating?: number | null
@@ -6340,12 +6691,14 @@ export type UserUpdateManyMutationInputInputObject =
   | { name: 'uid', alias?: string  } 
   
 export interface PhoneNumberCreateInput {
+  id?: string | null
   user?: UserCreateOneWithoutPhone_numberInput
   code?: string | null
   phone?: string
 }
 export type PhoneNumberCreateInputInputObject =
   | Extract<keyof PhoneNumberCreateInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'user', alias?: string  } 
   | { name: 'code', alias?: string  } 
   | { name: 'phone', alias?: string  } 
@@ -6360,6 +6713,7 @@ export type UserCreateOneWithoutPhone_numberInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface UserCreateWithoutPhone_numberInput {
+  id?: string | null
   email?: string | null
   name?: string | null
   user_type?: prisma.UserType | null
@@ -6369,12 +6723,63 @@ export interface UserCreateWithoutPhone_numberInput {
 }
 export type UserCreateWithoutPhone_numberInputInputObject =
   | Extract<keyof UserCreateWithoutPhone_numberInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'email', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'user_type', alias?: string  } 
   | { name: 'reviews', alias?: string  } 
   | { name: 'photos', alias?: string  } 
   | { name: 'uid', alias?: string  } 
+  
+export interface PhoneNumberUpdateInput {
+  user?: UserUpdateOneRequiredWithoutPhone_numberInput | null
+  code?: string | null
+  phone?: string | null
+}
+export type PhoneNumberUpdateInputInputObject =
+  | Extract<keyof PhoneNumberUpdateInput, string>
+  | { name: 'user', alias?: string  } 
+  | { name: 'code', alias?: string  } 
+  | { name: 'phone', alias?: string  } 
+  
+export interface UserUpdateOneRequiredWithoutPhone_numberInput {
+  create?: UserCreateWithoutPhone_numberInput | null
+  update?: UserUpdateWithoutPhone_numberDataInput | null
+  upsert?: UserUpsertWithoutPhone_numberInput | null
+  connect?: UserWhereUniqueInput | null
+}
+export type UserUpdateOneRequiredWithoutPhone_numberInputInputObject =
+  | Extract<keyof UserUpdateOneRequiredWithoutPhone_numberInput, string>
+  | { name: 'create', alias?: string  } 
+  | { name: 'update', alias?: string  } 
+  | { name: 'upsert', alias?: string  } 
+  | { name: 'connect', alias?: string  } 
+  
+export interface UserUpdateWithoutPhone_numberDataInput {
+  email?: string | null
+  name?: string | null
+  user_type?: prisma.UserType | null
+  reviews?: ReviewUpdateManyWithoutUserInput | null
+  photos?: UserPhotoUpdateManyWithoutUserInput | null
+  uid?: string | null
+}
+export type UserUpdateWithoutPhone_numberDataInputInputObject =
+  | Extract<keyof UserUpdateWithoutPhone_numberDataInput, string>
+  | { name: 'email', alias?: string  } 
+  | { name: 'name', alias?: string  } 
+  | { name: 'user_type', alias?: string  } 
+  | { name: 'reviews', alias?: string  } 
+  | { name: 'photos', alias?: string  } 
+  | { name: 'uid', alias?: string  } 
+  
+export interface UserUpsertWithoutPhone_numberInput {
+  update?: UserUpdateWithoutPhone_numberDataInput
+  create?: UserCreateWithoutPhone_numberInput
+}
+export type UserUpsertWithoutPhone_numberInputInputObject =
+  | Extract<keyof UserUpsertWithoutPhone_numberInput, string>
+  | { name: 'update', alias?: string  } 
+  | { name: 'create', alias?: string  } 
   
 export interface PhoneNumberUpdateManyMutationInput {
   code?: string | null
@@ -6386,6 +6791,7 @@ export type PhoneNumberUpdateManyMutationInputInputObject =
   | { name: 'phone', alias?: string  } 
   
 export interface ProductCreateInput {
+  id?: string | null
   name?: string
   url?: string
   thumb?: string | null
@@ -6401,6 +6807,7 @@ export interface ProductCreateInput {
 }
 export type ProductCreateInputInputObject =
   | Extract<keyof ProductCreateInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'url', alias?: string  } 
   | { name: 'thumb', alias?: string  } 
@@ -6425,6 +6832,7 @@ export type ReviewCreateManyWithoutProductInputInputObject =
   
 export interface ReviewCreateWithoutProductInput {
   user?: UserCreateOneWithoutReviewsInput
+  id?: string | null
   rating?: number
   review_text?: string
   review_time_friendly?: string
@@ -6433,6 +6841,7 @@ export interface ReviewCreateWithoutProductInput {
 export type ReviewCreateWithoutProductInputInputObject =
   | Extract<keyof ReviewCreateWithoutProductInput, string>
   | { name: 'user', alias?: string  } 
+  | { name: 'id', alias?: string  } 
   | { name: 'rating', alias?: string  } 
   | { name: 'review_text', alias?: string  } 
   | { name: 'review_time_friendly', alias?: string  } 
@@ -6448,6 +6857,7 @@ export type UserCreateOneWithoutReviewsInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface UserCreateWithoutReviewsInput {
+  id?: string | null
   email?: string | null
   name?: string | null
   phone_number?: PhoneNumberCreateManyWithoutUserInput | null
@@ -6457,6 +6867,7 @@ export interface UserCreateWithoutReviewsInput {
 }
 export type UserCreateWithoutReviewsInputInputObject =
   | Extract<keyof UserCreateWithoutReviewsInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'email', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'phone_number', alias?: string  } 
@@ -6613,6 +7024,15 @@ export type ProductUpdateManyMutationInputInputObject =
   | { name: 'deeplink', alias?: string  } 
   | { name: 'photo_count', alias?: string  } 
   
+export interface ProductRatingUpdateInput {
+  aggregate_rating?: number | null
+  votes?: number | null
+}
+export type ProductRatingUpdateInputInputObject =
+  | Extract<keyof ProductRatingUpdateInput, string>
+  | { name: 'aggregate_rating', alias?: string  } 
+  | { name: 'votes', alias?: string  } 
+  
 export interface ProductRatingUpdateManyMutationInput {
   aggregate_rating?: number | null
   votes?: number | null
@@ -6625,6 +7045,7 @@ export type ProductRatingUpdateManyMutationInputInputObject =
 export interface ReviewCreateInput {
   user?: UserCreateOneWithoutReviewsInput
   product?: ProductCreateOneWithoutAll_reviewsInput
+  id?: string | null
   rating?: number
   review_text?: string
   review_time_friendly?: string
@@ -6634,6 +7055,7 @@ export type ReviewCreateInputInputObject =
   | Extract<keyof ReviewCreateInput, string>
   | { name: 'user', alias?: string  } 
   | { name: 'product', alias?: string  } 
+  | { name: 'id', alias?: string  } 
   | { name: 'rating', alias?: string  } 
   | { name: 'review_text', alias?: string  } 
   | { name: 'review_time_friendly', alias?: string  } 
@@ -6670,6 +7092,7 @@ export type ReviewUpdateManyMutationInputInputObject =
   | { name: 'timestamp', alias?: string  } 
   
 export interface ProductPhotoCreateInput {
+  id?: string | null
   product?: ProductCreateOneWithoutPhotosInput
   url?: string
   thumb_url?: string
@@ -6681,6 +7104,7 @@ export interface ProductPhotoCreateInput {
 }
 export type ProductPhotoCreateInputInputObject =
   | Extract<keyof ProductPhotoCreateInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'product', alias?: string  } 
   | { name: 'url', alias?: string  } 
   | { name: 'thumb_url', alias?: string  } 
@@ -6700,6 +7124,7 @@ export type ProductCreateOneWithoutPhotosInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface ProductCreateWithoutPhotosInput {
+  id?: string | null
   name?: string
   url?: string
   thumb?: string | null
@@ -6714,6 +7139,7 @@ export interface ProductCreateWithoutPhotosInput {
 }
 export type ProductCreateWithoutPhotosInputInputObject =
   | Extract<keyof ProductCreateWithoutPhotosInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'url', alias?: string  } 
   | { name: 'thumb', alias?: string  } 
@@ -6816,6 +7242,7 @@ export type ProductPhotoUpdateManyMutationInputInputObject =
   | { name: 'height', alias?: string  } 
   
 export interface UserPhotoCreateInput {
+  id?: string | null
   user?: UserCreateOneWithoutPhotosInput
   url?: string
   thumb_url?: string
@@ -6827,6 +7254,7 @@ export interface UserPhotoCreateInput {
 }
 export type UserPhotoCreateInputInputObject =
   | Extract<keyof UserPhotoCreateInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'user', alias?: string  } 
   | { name: 'url', alias?: string  } 
   | { name: 'thumb_url', alias?: string  } 
@@ -6846,6 +7274,7 @@ export type UserCreateOneWithoutPhotosInputInputObject =
   | { name: 'connect', alias?: string  } 
   
 export interface UserCreateWithoutPhotosInput {
+  id?: string | null
   email?: string | null
   name?: string | null
   phone_number?: PhoneNumberCreateManyWithoutUserInput | null
@@ -6855,6 +7284,7 @@ export interface UserCreateWithoutPhotosInput {
 }
 export type UserCreateWithoutPhotosInputInputObject =
   | Extract<keyof UserCreateWithoutPhotosInput, string>
+  | { name: 'id', alias?: string  } 
   | { name: 'email', alias?: string  } 
   | { name: 'name', alias?: string  } 
   | { name: 'phone_number', alias?: string  } 
@@ -7095,12 +7525,12 @@ export type UserTypeValues =
   | 'CONSUMER'
   
 export type PhoneNumberOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
   | 'code_ASC'
   | 'code_DESC'
   | 'phone_ASC'
   | 'phone_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'
@@ -7209,12 +7639,12 @@ export type ProductOrderByInputValues =
   | 'updatedAt_DESC'
   
 export type ProductRatingOrderByInputValues =
+  | 'id_ASC'
+  | 'id_DESC'
   | 'aggregate_rating_ASC'
   | 'aggregate_rating_DESC'
   | 'votes_ASC'
   | 'votes_DESC'
-  | 'id_ASC'
-  | 'id_DESC'
   | 'createdAt_ASC'
   | 'createdAt_DESC'
   | 'updatedAt_ASC'

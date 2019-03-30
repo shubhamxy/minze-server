@@ -7,7 +7,6 @@ import { prisma } from './generated/prisma-client';
 import { schema, permissions } from './services/graphql';
 import { applyMiddleware, applyRoutes } from './utils';
 
-// console.log(JSON.stringify(process.env, null, 4));
 const { PORT = 3000 } = process.env;
 
 process.on('uncaughtException', e => {
@@ -26,7 +25,6 @@ const options = {
   endpoint: '/graphql',
   subscriptions: '/subscriptions',
   playground: '/playground'
-  // applyMiddleware: [middleware, routes , errorHandlers]
 };
 
 const server = new GraphQLServer({
@@ -47,4 +45,3 @@ server.start(options, () => {
   console.log(` 🚀 Server is running http://localhost:${PORT}.`);
 });
 applyMiddleware(errorHandlers, server.express);
-// server.express.use(middleware);

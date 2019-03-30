@@ -38,7 +38,10 @@ scalar Long
 
 type Mutation {
   createPhoneNumber(data: PhoneNumberCreateInput!): PhoneNumber!
+  updatePhoneNumber(data: PhoneNumberUpdateInput!, where: PhoneNumberWhereUniqueInput!): PhoneNumber
   updateManyPhoneNumbers(data: PhoneNumberUpdateManyMutationInput!, where: PhoneNumberWhereInput): BatchPayload!
+  upsertPhoneNumber(where: PhoneNumberWhereUniqueInput!, create: PhoneNumberCreateInput!, update: PhoneNumberUpdateInput!): PhoneNumber!
+  deletePhoneNumber(where: PhoneNumberWhereUniqueInput!): PhoneNumber
   deleteManyPhoneNumbers(where: PhoneNumberWhereInput): BatchPayload!
   createProduct(data: ProductCreateInput!): Product!
   updateProduct(data: ProductUpdateInput!, where: ProductWhereUniqueInput!): Product
@@ -53,7 +56,10 @@ type Mutation {
   deleteProductPhoto(where: ProductPhotoWhereUniqueInput!): ProductPhoto
   deleteManyProductPhotos(where: ProductPhotoWhereInput): BatchPayload!
   createProductRating(data: ProductRatingCreateInput!): ProductRating!
+  updateProductRating(data: ProductRatingUpdateInput!, where: ProductRatingWhereUniqueInput!): ProductRating
   updateManyProductRatings(data: ProductRatingUpdateManyMutationInput!, where: ProductRatingWhereInput): BatchPayload!
+  upsertProductRating(where: ProductRatingWhereUniqueInput!, create: ProductRatingCreateInput!, update: ProductRatingUpdateInput!): ProductRating!
+  deleteProductRating(where: ProductRatingWhereUniqueInput!): ProductRating
   deleteManyProductRatings(where: ProductRatingWhereInput): BatchPayload!
   createReview(data: ReviewCreateInput!): Review!
   updateReview(data: ReviewUpdateInput!, where: ReviewWhereUniqueInput!): Review
@@ -93,6 +99,7 @@ type PageInfo {
 }
 
 type PhoneNumber {
+  id: ID!
   user: User!
   code: String!
   phone: String!
@@ -105,6 +112,7 @@ type PhoneNumberConnection {
 }
 
 input PhoneNumberCreateInput {
+  id: ID
   user: UserCreateOneWithoutPhone_numberInput!
   code: String
   phone: String!
@@ -112,9 +120,11 @@ input PhoneNumberCreateInput {
 
 input PhoneNumberCreateManyWithoutUserInput {
   create: [PhoneNumberCreateWithoutUserInput!]
+  connect: [PhoneNumberWhereUniqueInput!]
 }
 
 input PhoneNumberCreateWithoutUserInput {
+  id: ID
   code: String
   phone: String!
 }
@@ -125,6 +135,8 @@ type PhoneNumberEdge {
 }
 
 enum PhoneNumberOrderByInput {
+  id_ASC
+  id_DESC
   code_ASC
   code_DESC
   phone_ASC
@@ -132,11 +144,26 @@ enum PhoneNumberOrderByInput {
 }
 
 type PhoneNumberPreviousValues {
+  id: ID!
   code: String!
   phone: String!
 }
 
 input PhoneNumberScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
   code: String
   code_not: String
   code_in: [String!]
@@ -188,6 +215,12 @@ input PhoneNumberSubscriptionWhereInput {
   NOT: [PhoneNumberSubscriptionWhereInput!]
 }
 
+input PhoneNumberUpdateInput {
+  user: UserUpdateOneRequiredWithoutPhone_numberInput
+  code: String
+  phone: String
+}
+
 input PhoneNumberUpdateManyDataInput {
   code: String
   phone: String
@@ -200,6 +233,12 @@ input PhoneNumberUpdateManyMutationInput {
 
 input PhoneNumberUpdateManyWithoutUserInput {
   create: [PhoneNumberCreateWithoutUserInput!]
+  delete: [PhoneNumberWhereUniqueInput!]
+  connect: [PhoneNumberWhereUniqueInput!]
+  set: [PhoneNumberWhereUniqueInput!]
+  disconnect: [PhoneNumberWhereUniqueInput!]
+  update: [PhoneNumberUpdateWithWhereUniqueWithoutUserInput!]
+  upsert: [PhoneNumberUpsertWithWhereUniqueWithoutUserInput!]
   deleteMany: [PhoneNumberScalarWhereInput!]
   updateMany: [PhoneNumberUpdateManyWithWhereNestedInput!]
 }
@@ -209,7 +248,37 @@ input PhoneNumberUpdateManyWithWhereNestedInput {
   data: PhoneNumberUpdateManyDataInput!
 }
 
+input PhoneNumberUpdateWithoutUserDataInput {
+  code: String
+  phone: String
+}
+
+input PhoneNumberUpdateWithWhereUniqueWithoutUserInput {
+  where: PhoneNumberWhereUniqueInput!
+  data: PhoneNumberUpdateWithoutUserDataInput!
+}
+
+input PhoneNumberUpsertWithWhereUniqueWithoutUserInput {
+  where: PhoneNumberWhereUniqueInput!
+  update: PhoneNumberUpdateWithoutUserDataInput!
+  create: PhoneNumberCreateWithoutUserInput!
+}
+
 input PhoneNumberWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
   user: UserWhereInput
   code: String
   code_not: String
@@ -244,6 +313,10 @@ input PhoneNumberWhereInput {
   NOT: [PhoneNumberWhereInput!]
 }
 
+input PhoneNumberWhereUniqueInput {
+  id: ID
+}
+
 type Product {
   id: ID!
   name: String!
@@ -267,6 +340,7 @@ type ProductConnection {
 }
 
 input ProductCreateInput {
+  id: ID
   name: String!
   url: String!
   thumb: String
@@ -292,6 +366,7 @@ input ProductCreateOneWithoutPhotosInput {
 }
 
 input ProductCreateWithoutAll_reviewsInput {
+  id: ID
   name: String!
   url: String!
   thumb: String
@@ -306,6 +381,7 @@ input ProductCreateWithoutAll_reviewsInput {
 }
 
 input ProductCreateWithoutPhotosInput {
+  id: ID
   name: String!
   url: String!
   thumb: String
@@ -366,6 +442,7 @@ type ProductPhotoConnection {
 }
 
 input ProductPhotoCreateInput {
+  id: ID
   product: ProductCreateOneWithoutPhotosInput!
   url: String!
   thumb_url: String!
@@ -382,6 +459,7 @@ input ProductPhotoCreateManyWithoutProductInput {
 }
 
 input ProductPhotoCreateWithoutProductInput {
+  id: ID
   url: String!
   thumb_url: String!
   caption: String!
@@ -732,6 +810,7 @@ type ProductPreviousValues {
 }
 
 type ProductRating {
+  id: ID!
   aggregate_rating: Float!
   votes: Int!
 }
@@ -743,12 +822,14 @@ type ProductRatingConnection {
 }
 
 input ProductRatingCreateInput {
+  id: ID
   aggregate_rating: Float
   votes: Int
 }
 
 input ProductRatingCreateOneInput {
   create: ProductRatingCreateInput
+  connect: ProductRatingWhereUniqueInput
 }
 
 type ProductRatingEdge {
@@ -757,6 +838,8 @@ type ProductRatingEdge {
 }
 
 enum ProductRatingOrderByInput {
+  id_ASC
+  id_DESC
   aggregate_rating_ASC
   aggregate_rating_DESC
   votes_ASC
@@ -764,6 +847,7 @@ enum ProductRatingOrderByInput {
 }
 
 type ProductRatingPreviousValues {
+  id: ID!
   aggregate_rating: Float!
   votes: Int!
 }
@@ -791,6 +875,11 @@ input ProductRatingUpdateDataInput {
   votes: Int
 }
 
+input ProductRatingUpdateInput {
+  aggregate_rating: Float
+  votes: Int
+}
+
 input ProductRatingUpdateManyMutationInput {
   aggregate_rating: Float
   votes: Int
@@ -800,6 +889,7 @@ input ProductRatingUpdateOneRequiredInput {
   create: ProductRatingCreateInput
   update: ProductRatingUpdateDataInput
   upsert: ProductRatingUpsertNestedInput
+  connect: ProductRatingWhereUniqueInput
 }
 
 input ProductRatingUpsertNestedInput {
@@ -808,6 +898,20 @@ input ProductRatingUpsertNestedInput {
 }
 
 input ProductRatingWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
   aggregate_rating: Float
   aggregate_rating_not: Float
   aggregate_rating_in: [Float!]
@@ -827,6 +931,10 @@ input ProductRatingWhereInput {
   AND: [ProductRatingWhereInput!]
   OR: [ProductRatingWhereInput!]
   NOT: [ProductRatingWhereInput!]
+}
+
+input ProductRatingWhereUniqueInput {
+  id: ID
 }
 
 type ProductSubscriptionPayload {
@@ -1054,6 +1162,7 @@ input ProductWhereUniqueInput {
 }
 
 type Query {
+  phoneNumber(where: PhoneNumberWhereUniqueInput!): PhoneNumber
   phoneNumbers(where: PhoneNumberWhereInput, orderBy: PhoneNumberOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PhoneNumber]!
   phoneNumbersConnection(where: PhoneNumberWhereInput, orderBy: PhoneNumberOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PhoneNumberConnection!
   product(where: ProductWhereUniqueInput!): Product
@@ -1062,6 +1171,7 @@ type Query {
   productPhoto(where: ProductPhotoWhereUniqueInput!): ProductPhoto
   productPhotos(where: ProductPhotoWhereInput, orderBy: ProductPhotoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ProductPhoto]!
   productPhotosConnection(where: ProductPhotoWhereInput, orderBy: ProductPhotoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ProductPhotoConnection!
+  productRating(where: ProductRatingWhereUniqueInput!): ProductRating
   productRatings(where: ProductRatingWhereInput, orderBy: ProductRatingOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ProductRating]!
   productRatingsConnection(where: ProductRatingWhereInput, orderBy: ProductRatingOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ProductRatingConnection!
   review(where: ReviewWhereUniqueInput!): Review
@@ -1095,6 +1205,7 @@ type ReviewConnection {
 input ReviewCreateInput {
   user: UserCreateOneWithoutReviewsInput!
   product: ProductCreateOneWithoutAll_reviewsInput!
+  id: ID
   rating: Int!
   review_text: String!
   review_time_friendly: String!
@@ -1113,6 +1224,7 @@ input ReviewCreateManyWithoutUserInput {
 
 input ReviewCreateWithoutProductInput {
   user: UserCreateOneWithoutReviewsInput!
+  id: ID
   rating: Int!
   review_text: String!
   review_time_friendly: String!
@@ -1121,6 +1233,7 @@ input ReviewCreateWithoutProductInput {
 
 input ReviewCreateWithoutUserInput {
   product: ProductCreateOneWithoutAll_reviewsInput!
+  id: ID
   rating: Int!
   review_text: String!
   review_time_friendly: String!
@@ -1423,6 +1536,7 @@ type UserConnection {
 }
 
 input UserCreateInput {
+  id: ID
   email: String
   name: String
   phone_number: PhoneNumberCreateManyWithoutUserInput
@@ -1448,6 +1562,7 @@ input UserCreateOneWithoutReviewsInput {
 }
 
 input UserCreateWithoutPhone_numberInput {
+  id: ID
   email: String
   name: String
   user_type: UserType
@@ -1457,6 +1572,7 @@ input UserCreateWithoutPhone_numberInput {
 }
 
 input UserCreateWithoutPhotosInput {
+  id: ID
   email: String
   name: String
   phone_number: PhoneNumberCreateManyWithoutUserInput
@@ -1466,6 +1582,7 @@ input UserCreateWithoutPhotosInput {
 }
 
 input UserCreateWithoutReviewsInput {
+  id: ID
   email: String
   name: String
   phone_number: PhoneNumberCreateManyWithoutUserInput
@@ -1511,6 +1628,7 @@ type UserPhotoConnection {
 }
 
 input UserPhotoCreateInput {
+  id: ID
   user: UserCreateOneWithoutPhotosInput!
   url: String!
   thumb_url: String!
@@ -1527,6 +1645,7 @@ input UserPhotoCreateManyWithoutUserInput {
 }
 
 input UserPhotoCreateWithoutUserInput {
+  id: ID
   url: String!
   thumb_url: String!
   caption: String!
@@ -1912,6 +2031,13 @@ input UserUpdateManyMutationInput {
   uid: String
 }
 
+input UserUpdateOneRequiredWithoutPhone_numberInput {
+  create: UserCreateWithoutPhone_numberInput
+  update: UserUpdateWithoutPhone_numberDataInput
+  upsert: UserUpsertWithoutPhone_numberInput
+  connect: UserWhereUniqueInput
+}
+
 input UserUpdateOneRequiredWithoutPhotosInput {
   create: UserCreateWithoutPhotosInput
   update: UserUpdateWithoutPhotosDataInput
@@ -1924,6 +2050,15 @@ input UserUpdateOneRequiredWithoutReviewsInput {
   update: UserUpdateWithoutReviewsDataInput
   upsert: UserUpsertWithoutReviewsInput
   connect: UserWhereUniqueInput
+}
+
+input UserUpdateWithoutPhone_numberDataInput {
+  email: String
+  name: String
+  user_type: UserType
+  reviews: ReviewUpdateManyWithoutUserInput
+  photos: UserPhotoUpdateManyWithoutUserInput
+  uid: String
 }
 
 input UserUpdateWithoutPhotosDataInput {
@@ -1942,6 +2077,11 @@ input UserUpdateWithoutReviewsDataInput {
   user_type: UserType
   photos: UserPhotoUpdateManyWithoutUserInput
   uid: String
+}
+
+input UserUpsertWithoutPhone_numberInput {
+  update: UserUpdateWithoutPhone_numberDataInput!
+  create: UserCreateWithoutPhone_numberInput!
 }
 
 input UserUpsertWithoutPhotosInput {

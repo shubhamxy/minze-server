@@ -3,7 +3,7 @@
  * Do not make changes to this file directly
  */
 
-import * as types from "../services/graphql/types"
+
 
 
 declare global {
@@ -27,6 +27,20 @@ export interface NexusGenInputs {
     code_not_in?: string[] | null; // [String!]
     code_not_starts_with?: string | null; // String
     code_starts_with?: string | null; // String
+    id?: string | null; // ID
+    id_contains?: string | null; // ID
+    id_ends_with?: string | null; // ID
+    id_gt?: string | null; // ID
+    id_gte?: string | null; // ID
+    id_in?: string[] | null; // [ID!]
+    id_lt?: string | null; // ID
+    id_lte?: string | null; // ID
+    id_not?: string | null; // ID
+    id_not_contains?: string | null; // ID
+    id_not_ends_with?: string | null; // ID
+    id_not_in?: string[] | null; // [ID!]
+    id_not_starts_with?: string | null; // ID
+    id_starts_with?: string | null; // ID
     NOT?: NexusGenInputs['PhoneNumberWhereInput'][] | null; // [PhoneNumberWhereInput!]
     OR?: NexusGenInputs['PhoneNumberWhereInput'][] | null; // [PhoneNumberWhereInput!]
     phone?: string | null; // String
@@ -155,6 +169,20 @@ export interface NexusGenInputs {
     aggregate_rating_not?: number | null; // Float
     aggregate_rating_not_in?: number[] | null; // [Float!]
     AND?: NexusGenInputs['ProductRatingWhereInput'][] | null; // [ProductRatingWhereInput!]
+    id?: string | null; // ID
+    id_contains?: string | null; // ID
+    id_ends_with?: string | null; // ID
+    id_gt?: string | null; // ID
+    id_gte?: string | null; // ID
+    id_in?: string[] | null; // [ID!]
+    id_lt?: string | null; // ID
+    id_lte?: string | null; // ID
+    id_not?: string | null; // ID
+    id_not_contains?: string | null; // ID
+    id_not_ends_with?: string | null; // ID
+    id_not_in?: string[] | null; // [ID!]
+    id_not_starts_with?: string | null; // ID
+    id_starts_with?: string | null; // ID
     NOT?: NexusGenInputs['ProductRatingWhereInput'][] | null; // [ProductRatingWhereInput!]
     OR?: NexusGenInputs['ProductRatingWhereInput'][] | null; // [ProductRatingWhereInput!]
     votes?: number | null; // Int
@@ -545,6 +573,7 @@ export interface NexusGenRootTypes {
   Mutation: {};
   PhoneNumber: { // root type
     code: string; // String!
+    id: string; // ID!
     phone: string; // String!
   }
   Product: { // root type
@@ -571,6 +600,7 @@ export interface NexusGenRootTypes {
   }
   ProductRating: { // root type
     aggregate_rating: number; // Float!
+    id: string; // ID!
     votes: number; // Int!
   }
   Query: {};
@@ -631,6 +661,7 @@ export interface NexusGenFieldTypes {
   }
   PhoneNumber: { // field return type
     code: string; // String!
+    id: string; // ID!
     phone: string; // String!
     user: NexusGenRootTypes['User']; // User!
   }
@@ -662,6 +693,7 @@ export interface NexusGenFieldTypes {
   }
   ProductRating: { // field return type
     aggregate_rating: number; // Float!
+    id: string; // ID!
     votes: number; // Int!
   }
   Query: { // field return type
@@ -777,7 +809,7 @@ export type NexusGenScalarNames = "Boolean" | "Float" | "ID" | "Int" | "String";
 export type NexusGenUnionNames = never;
 
 export interface NexusGenTypes {
-  context: types.Context;
+  context: any;
   inputTypes: NexusGenInputs;
   rootTypes: NexusGenRootTypes;
   argTypes: NexusGenArgTypes;

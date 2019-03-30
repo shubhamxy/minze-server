@@ -9,5 +9,4 @@ const requiredEnvVars: string[] = [];
 );
 
 const errorReporter = new ErrorReporter(requiredEnvVars);
-console.log(process.env);
 export { errorReporter };
