@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import './config';
 import { GraphQLServer } from 'graphql-yoga';
 import routes from './services';
 import middleware from './middleware';
@@ -7,7 +7,7 @@ import { prisma } from './generated/prisma-client';
 import { schema, permissions } from './services/graphql';
 import { applyMiddleware, applyRoutes } from './utils';
 
-dotenv.config();
+// console.log(JSON.stringify(process.env, null, 4));
 const { PORT = 3000 } = process.env;
 
 process.on('uncaughtException', e => {
