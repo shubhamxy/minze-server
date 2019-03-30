@@ -1,0 +1,87 @@
+# User that logins to the App
+type User {
+  id: ID! @unique
+  email: String @unique
+  name: String
+  phone_number: [PhoneNumber]
+  user_type: UserType! @default(value: CONSUMER) # or user Role
+  reviews: [Review!]!
+  photos: [UserPhoto!]!
+  # firebase UID
+  uid: String! @unique
+}
+
+type PhoneNumber {
+  user: User!
+  code: String! @default(value: "+91")
+  phone: String!
+}
+
+# Product on the app
+type Product {
+  id: ID! @unique
+  name: String!
+  url: String!
+  # location: Location!
+  thumb: String! @default(value: "https://picsum.photos/g/50/50")
+  featured_image: String! @default(value: "https://picsum.photos/g/250/250")
+  photos_url: String! @default(value: "https://picsum.photos/g/250/250")
+  user_rating: ProductRating!
+  has_online_delivery: Boolean! @default(value: false)
+  is_delivering_now: Boolean! @default(value: false)
+  deeplink: String
+  photo_count: Int!
+  photos: [ProductPhoto!]!
+  all_reviews: [Review!]!
+}
+
+# type Location {
+# 	id: ID! @unique
+# 	address: String!
+# 	locality: String!
+# 	city: String!
+# 	latitude: Float!
+# 	longitude: Float!
+# 	zipcode: String!
+# 	country_id: String!
+# }
+
+# accumulated rating of product
+type ProductRating {
+  aggregate_rating: Float! @default(value: 0.0)
+  votes: Int! @default(value: 0)
+}
+
+type Review {
+  user: User!
+  product: Product!
+  id: ID! @unique
+  rating: Int!
+  review_text: String!
+  review_time_friendly: String!
+  timestamp: Int!
+}
+
+type ProductPhoto {
+  id: ID! @unique
+  product: Product!
+  url: String!
+  thumb_url: String!
+  caption: String!
+  timestamp: Int!
+  friendly_time: String!
+  width: Int!
+  height: Int!
+}
+
+type UserPhoto {
+  id: ID! @unique
+  user: User!
+  url: String!
+  thumb_url: String!
+  caption: String!
+  timestamp: Int!
+  friendly_time: String!
+  width: Int!
+  height: Int!
+}

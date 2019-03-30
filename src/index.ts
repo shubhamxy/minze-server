@@ -1,5 +1,4 @@
 import dotenv from 'dotenv';
-import express from 'express';
 import { GraphQLServer } from 'graphql-yoga';
 import routes from './services';
 import middleware from './middleware';
@@ -21,8 +20,6 @@ process.on('unhandledRejection', e => {
   process.exit(1);
 });
 
-const router = express();
-
 // graphql setup
 const options = {
   port: PORT,
@@ -43,12 +40,11 @@ const server = new GraphQLServer({
   }
 });
 
+applyMiddleware(middleware, server.express);
+applyRoutes(routes, server.express);
+
 server.start(options, () => {
   console.log(` 🚀 Server is running http://localhost:${PORT}.`);
 });
-
-applyMiddleware(middleware, router);
-applyRoutes(routes, router);
-applyMiddleware(errorHandlers, router);
-
-server.express.use('/', router);
+applyMiddleware(errorHandlers, server.express);
+// server.express.use(middleware);

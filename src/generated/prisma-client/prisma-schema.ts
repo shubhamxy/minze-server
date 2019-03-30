@@ -2,7 +2,23 @@
   // Please don't change this file manually but run `prisma generate` to update it.
   // For more information, please read the docs: https://www.prisma.io/docs/prisma-client/
 
-export const typeDefs = /* GraphQL */ `type AggregatePost {
+export const typeDefs = /* GraphQL */ `type AggregatePhoneNumber {
+  count: Int!
+}
+
+type AggregateProduct {
+  count: Int!
+}
+
+type AggregateProductPhoto {
+  count: Int!
+}
+
+type AggregateProductRating {
+  count: Int!
+}
+
+type AggregateReview {
   count: Int!
 }
 
@@ -10,27 +26,53 @@ type AggregateUser {
   count: Int!
 }
 
+type AggregateUserPhoto {
+  count: Int!
+}
+
 type BatchPayload {
   count: Long!
 }
 
-scalar DateTime
-
 scalar Long
 
 type Mutation {
-  createPost(data: PostCreateInput!): Post!
-  updatePost(data: PostUpdateInput!, where: PostWhereUniqueInput!): Post
-  updateManyPosts(data: PostUpdateManyMutationInput!, where: PostWhereInput): BatchPayload!
-  upsertPost(where: PostWhereUniqueInput!, create: PostCreateInput!, update: PostUpdateInput!): Post!
-  deletePost(where: PostWhereUniqueInput!): Post
-  deleteManyPosts(where: PostWhereInput): BatchPayload!
+  createPhoneNumber(data: PhoneNumberCreateInput!): PhoneNumber!
+  updateManyPhoneNumbers(data: PhoneNumberUpdateManyMutationInput!, where: PhoneNumberWhereInput): BatchPayload!
+  deleteManyPhoneNumbers(where: PhoneNumberWhereInput): BatchPayload!
+  createProduct(data: ProductCreateInput!): Product!
+  updateProduct(data: ProductUpdateInput!, where: ProductWhereUniqueInput!): Product
+  updateManyProducts(data: ProductUpdateManyMutationInput!, where: ProductWhereInput): BatchPayload!
+  upsertProduct(where: ProductWhereUniqueInput!, create: ProductCreateInput!, update: ProductUpdateInput!): Product!
+  deleteProduct(where: ProductWhereUniqueInput!): Product
+  deleteManyProducts(where: ProductWhereInput): BatchPayload!
+  createProductPhoto(data: ProductPhotoCreateInput!): ProductPhoto!
+  updateProductPhoto(data: ProductPhotoUpdateInput!, where: ProductPhotoWhereUniqueInput!): ProductPhoto
+  updateManyProductPhotos(data: ProductPhotoUpdateManyMutationInput!, where: ProductPhotoWhereInput): BatchPayload!
+  upsertProductPhoto(where: ProductPhotoWhereUniqueInput!, create: ProductPhotoCreateInput!, update: ProductPhotoUpdateInput!): ProductPhoto!
+  deleteProductPhoto(where: ProductPhotoWhereUniqueInput!): ProductPhoto
+  deleteManyProductPhotos(where: ProductPhotoWhereInput): BatchPayload!
+  createProductRating(data: ProductRatingCreateInput!): ProductRating!
+  updateManyProductRatings(data: ProductRatingUpdateManyMutationInput!, where: ProductRatingWhereInput): BatchPayload!
+  deleteManyProductRatings(where: ProductRatingWhereInput): BatchPayload!
+  createReview(data: ReviewCreateInput!): Review!
+  updateReview(data: ReviewUpdateInput!, where: ReviewWhereUniqueInput!): Review
+  updateManyReviews(data: ReviewUpdateManyMutationInput!, where: ReviewWhereInput): BatchPayload!
+  upsertReview(where: ReviewWhereUniqueInput!, create: ReviewCreateInput!, update: ReviewUpdateInput!): Review!
+  deleteReview(where: ReviewWhereUniqueInput!): Review
+  deleteManyReviews(where: ReviewWhereInput): BatchPayload!
   createUser(data: UserCreateInput!): User!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
   upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
   deleteUser(where: UserWhereUniqueInput!): User
   deleteManyUsers(where: UserWhereInput): BatchPayload!
+  createUserPhoto(data: UserPhotoCreateInput!): UserPhoto!
+  updateUserPhoto(data: UserPhotoUpdateInput!, where: UserPhotoWhereUniqueInput!): UserPhoto
+  updateManyUserPhotos(data: UserPhotoUpdateManyMutationInput!, where: UserPhotoWhereInput): BatchPayload!
+  upsertUserPhoto(where: UserPhotoWhereUniqueInput!, create: UserPhotoCreateInput!, update: UserPhotoUpdateInput!): UserPhoto!
+  deleteUserPhoto(where: UserPhotoWhereUniqueInput!): UserPhoto
+  deleteManyUserPhotos(where: UserPhotoWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -50,207 +92,341 @@ type PageInfo {
   endCursor: String
 }
 
-type Post {
-  id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  published: Boolean!
-  title: String!
-  content: String
-  author: User!
+type PhoneNumber {
+  user: User!
+  code: String!
+  phone: String!
 }
 
-type PostConnection {
+type PhoneNumberConnection {
   pageInfo: PageInfo!
-  edges: [PostEdge]!
-  aggregate: AggregatePost!
+  edges: [PhoneNumberEdge]!
+  aggregate: AggregatePhoneNumber!
 }
 
-input PostCreateInput {
-  published: Boolean
-  title: String!
-  content: String
-  author: UserCreateOneWithoutPostsInput!
+input PhoneNumberCreateInput {
+  user: UserCreateOneWithoutPhone_numberInput!
+  code: String
+  phone: String!
 }
 
-input PostCreateManyWithoutAuthorInput {
-  create: [PostCreateWithoutAuthorInput!]
-  connect: [PostWhereUniqueInput!]
+input PhoneNumberCreateManyWithoutUserInput {
+  create: [PhoneNumberCreateWithoutUserInput!]
 }
 
-input PostCreateWithoutAuthorInput {
-  published: Boolean
-  title: String!
-  content: String
+input PhoneNumberCreateWithoutUserInput {
+  code: String
+  phone: String!
 }
 
-type PostEdge {
-  node: Post!
+type PhoneNumberEdge {
+  node: PhoneNumber!
   cursor: String!
 }
 
-enum PostOrderByInput {
-  id_ASC
-  id_DESC
-  createdAt_ASC
-  createdAt_DESC
-  updatedAt_ASC
-  updatedAt_DESC
-  published_ASC
-  published_DESC
-  title_ASC
-  title_DESC
-  content_ASC
-  content_DESC
+enum PhoneNumberOrderByInput {
+  code_ASC
+  code_DESC
+  phone_ASC
+  phone_DESC
 }
 
-type PostPreviousValues {
-  id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  published: Boolean!
-  title: String!
-  content: String
+type PhoneNumberPreviousValues {
+  code: String!
+  phone: String!
 }
 
-input PostScalarWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  createdAt: DateTime
-  createdAt_not: DateTime
-  createdAt_in: [DateTime!]
-  createdAt_not_in: [DateTime!]
-  createdAt_lt: DateTime
-  createdAt_lte: DateTime
-  createdAt_gt: DateTime
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-  updatedAt_not: DateTime
-  updatedAt_in: [DateTime!]
-  updatedAt_not_in: [DateTime!]
-  updatedAt_lt: DateTime
-  updatedAt_lte: DateTime
-  updatedAt_gt: DateTime
-  updatedAt_gte: DateTime
-  published: Boolean
-  published_not: Boolean
-  title: String
-  title_not: String
-  title_in: [String!]
-  title_not_in: [String!]
-  title_lt: String
-  title_lte: String
-  title_gt: String
-  title_gte: String
-  title_contains: String
-  title_not_contains: String
-  title_starts_with: String
-  title_not_starts_with: String
-  title_ends_with: String
-  title_not_ends_with: String
-  content: String
-  content_not: String
-  content_in: [String!]
-  content_not_in: [String!]
-  content_lt: String
-  content_lte: String
-  content_gt: String
-  content_gte: String
-  content_contains: String
-  content_not_contains: String
-  content_starts_with: String
-  content_not_starts_with: String
-  content_ends_with: String
-  content_not_ends_with: String
-  AND: [PostScalarWhereInput!]
-  OR: [PostScalarWhereInput!]
-  NOT: [PostScalarWhereInput!]
+input PhoneNumberScalarWhereInput {
+  code: String
+  code_not: String
+  code_in: [String!]
+  code_not_in: [String!]
+  code_lt: String
+  code_lte: String
+  code_gt: String
+  code_gte: String
+  code_contains: String
+  code_not_contains: String
+  code_starts_with: String
+  code_not_starts_with: String
+  code_ends_with: String
+  code_not_ends_with: String
+  phone: String
+  phone_not: String
+  phone_in: [String!]
+  phone_not_in: [String!]
+  phone_lt: String
+  phone_lte: String
+  phone_gt: String
+  phone_gte: String
+  phone_contains: String
+  phone_not_contains: String
+  phone_starts_with: String
+  phone_not_starts_with: String
+  phone_ends_with: String
+  phone_not_ends_with: String
+  AND: [PhoneNumberScalarWhereInput!]
+  OR: [PhoneNumberScalarWhereInput!]
+  NOT: [PhoneNumberScalarWhereInput!]
 }
 
-type PostSubscriptionPayload {
+type PhoneNumberSubscriptionPayload {
   mutation: MutationType!
-  node: Post
+  node: PhoneNumber
   updatedFields: [String!]
-  previousValues: PostPreviousValues
+  previousValues: PhoneNumberPreviousValues
 }
 
-input PostSubscriptionWhereInput {
+input PhoneNumberSubscriptionWhereInput {
   mutation_in: [MutationType!]
   updatedFields_contains: String
   updatedFields_contains_every: [String!]
   updatedFields_contains_some: [String!]
-  node: PostWhereInput
-  AND: [PostSubscriptionWhereInput!]
-  OR: [PostSubscriptionWhereInput!]
-  NOT: [PostSubscriptionWhereInput!]
+  node: PhoneNumberWhereInput
+  AND: [PhoneNumberSubscriptionWhereInput!]
+  OR: [PhoneNumberSubscriptionWhereInput!]
+  NOT: [PhoneNumberSubscriptionWhereInput!]
 }
 
-input PostUpdateInput {
-  published: Boolean
-  title: String
-  content: String
-  author: UserUpdateOneRequiredWithoutPostsInput
+input PhoneNumberUpdateManyDataInput {
+  code: String
+  phone: String
 }
 
-input PostUpdateManyDataInput {
-  published: Boolean
-  title: String
-  content: String
+input PhoneNumberUpdateManyMutationInput {
+  code: String
+  phone: String
 }
 
-input PostUpdateManyMutationInput {
-  published: Boolean
-  title: String
-  content: String
+input PhoneNumberUpdateManyWithoutUserInput {
+  create: [PhoneNumberCreateWithoutUserInput!]
+  deleteMany: [PhoneNumberScalarWhereInput!]
+  updateMany: [PhoneNumberUpdateManyWithWhereNestedInput!]
 }
 
-input PostUpdateManyWithoutAuthorInput {
-  create: [PostCreateWithoutAuthorInput!]
-  delete: [PostWhereUniqueInput!]
-  connect: [PostWhereUniqueInput!]
-  set: [PostWhereUniqueInput!]
-  disconnect: [PostWhereUniqueInput!]
-  update: [PostUpdateWithWhereUniqueWithoutAuthorInput!]
-  upsert: [PostUpsertWithWhereUniqueWithoutAuthorInput!]
-  deleteMany: [PostScalarWhereInput!]
-  updateMany: [PostUpdateManyWithWhereNestedInput!]
+input PhoneNumberUpdateManyWithWhereNestedInput {
+  where: PhoneNumberScalarWhereInput!
+  data: PhoneNumberUpdateManyDataInput!
 }
 
-input PostUpdateManyWithWhereNestedInput {
-  where: PostScalarWhereInput!
-  data: PostUpdateManyDataInput!
+input PhoneNumberWhereInput {
+  user: UserWhereInput
+  code: String
+  code_not: String
+  code_in: [String!]
+  code_not_in: [String!]
+  code_lt: String
+  code_lte: String
+  code_gt: String
+  code_gte: String
+  code_contains: String
+  code_not_contains: String
+  code_starts_with: String
+  code_not_starts_with: String
+  code_ends_with: String
+  code_not_ends_with: String
+  phone: String
+  phone_not: String
+  phone_in: [String!]
+  phone_not_in: [String!]
+  phone_lt: String
+  phone_lte: String
+  phone_gt: String
+  phone_gte: String
+  phone_contains: String
+  phone_not_contains: String
+  phone_starts_with: String
+  phone_not_starts_with: String
+  phone_ends_with: String
+  phone_not_ends_with: String
+  AND: [PhoneNumberWhereInput!]
+  OR: [PhoneNumberWhereInput!]
+  NOT: [PhoneNumberWhereInput!]
 }
 
-input PostUpdateWithoutAuthorDataInput {
-  published: Boolean
-  title: String
-  content: String
+type Product {
+  id: ID!
+  name: String!
+  url: String!
+  thumb: String!
+  featured_image: String!
+  photos_url: String!
+  user_rating: ProductRating!
+  has_online_delivery: Boolean!
+  is_delivering_now: Boolean!
+  deeplink: String
+  photo_count: Int!
+  photos(where: ProductPhotoWhereInput, orderBy: ProductPhotoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ProductPhoto!]
+  all_reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review!]
 }
 
-input PostUpdateWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput!
-  data: PostUpdateWithoutAuthorDataInput!
+type ProductConnection {
+  pageInfo: PageInfo!
+  edges: [ProductEdge]!
+  aggregate: AggregateProduct!
 }
 
-input PostUpsertWithWhereUniqueWithoutAuthorInput {
-  where: PostWhereUniqueInput!
-  update: PostUpdateWithoutAuthorDataInput!
-  create: PostCreateWithoutAuthorInput!
+input ProductCreateInput {
+  name: String!
+  url: String!
+  thumb: String
+  featured_image: String
+  photos_url: String
+  user_rating: ProductRatingCreateOneInput!
+  has_online_delivery: Boolean
+  is_delivering_now: Boolean
+  deeplink: String
+  photo_count: Int!
+  photos: ProductPhotoCreateManyWithoutProductInput
+  all_reviews: ReviewCreateManyWithoutProductInput
 }
 
-input PostWhereInput {
+input ProductCreateOneWithoutAll_reviewsInput {
+  create: ProductCreateWithoutAll_reviewsInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductCreateOneWithoutPhotosInput {
+  create: ProductCreateWithoutPhotosInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductCreateWithoutAll_reviewsInput {
+  name: String!
+  url: String!
+  thumb: String
+  featured_image: String
+  photos_url: String
+  user_rating: ProductRatingCreateOneInput!
+  has_online_delivery: Boolean
+  is_delivering_now: Boolean
+  deeplink: String
+  photo_count: Int!
+  photos: ProductPhotoCreateManyWithoutProductInput
+}
+
+input ProductCreateWithoutPhotosInput {
+  name: String!
+  url: String!
+  thumb: String
+  featured_image: String
+  photos_url: String
+  user_rating: ProductRatingCreateOneInput!
+  has_online_delivery: Boolean
+  is_delivering_now: Boolean
+  deeplink: String
+  photo_count: Int!
+  all_reviews: ReviewCreateManyWithoutProductInput
+}
+
+type ProductEdge {
+  node: Product!
+  cursor: String!
+}
+
+enum ProductOrderByInput {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  url_ASC
+  url_DESC
+  thumb_ASC
+  thumb_DESC
+  featured_image_ASC
+  featured_image_DESC
+  photos_url_ASC
+  photos_url_DESC
+  has_online_delivery_ASC
+  has_online_delivery_DESC
+  is_delivering_now_ASC
+  is_delivering_now_DESC
+  deeplink_ASC
+  deeplink_DESC
+  photo_count_ASC
+  photo_count_DESC
+}
+
+type ProductPhoto {
+  id: ID!
+  product: Product!
+  url: String!
+  thumb_url: String!
+  caption: String!
+  timestamp: Int!
+  friendly_time: String!
+  width: Int!
+  height: Int!
+}
+
+type ProductPhotoConnection {
+  pageInfo: PageInfo!
+  edges: [ProductPhotoEdge]!
+  aggregate: AggregateProductPhoto!
+}
+
+input ProductPhotoCreateInput {
+  product: ProductCreateOneWithoutPhotosInput!
+  url: String!
+  thumb_url: String!
+  caption: String!
+  timestamp: Int!
+  friendly_time: String!
+  width: Int!
+  height: Int!
+}
+
+input ProductPhotoCreateManyWithoutProductInput {
+  create: [ProductPhotoCreateWithoutProductInput!]
+  connect: [ProductPhotoWhereUniqueInput!]
+}
+
+input ProductPhotoCreateWithoutProductInput {
+  url: String!
+  thumb_url: String!
+  caption: String!
+  timestamp: Int!
+  friendly_time: String!
+  width: Int!
+  height: Int!
+}
+
+type ProductPhotoEdge {
+  node: ProductPhoto!
+  cursor: String!
+}
+
+enum ProductPhotoOrderByInput {
+  id_ASC
+  id_DESC
+  url_ASC
+  url_DESC
+  thumb_url_ASC
+  thumb_url_DESC
+  caption_ASC
+  caption_DESC
+  timestamp_ASC
+  timestamp_DESC
+  friendly_time_ASC
+  friendly_time_DESC
+  width_ASC
+  width_DESC
+  height_ASC
+  height_DESC
+}
+
+type ProductPhotoPreviousValues {
+  id: ID!
+  url: String!
+  thumb_url: String!
+  caption: String!
+  timestamp: Int!
+  friendly_time: String!
+  width: Int!
+  height: Int!
+}
+
+input ProductPhotoScalarWhereInput {
   id: ID
   id_not: ID
   id_in: [ID!]
@@ -265,83 +441,979 @@ input PostWhereInput {
   id_not_starts_with: ID
   id_ends_with: ID
   id_not_ends_with: ID
-  createdAt: DateTime
-  createdAt_not: DateTime
-  createdAt_in: [DateTime!]
-  createdAt_not_in: [DateTime!]
-  createdAt_lt: DateTime
-  createdAt_lte: DateTime
-  createdAt_gt: DateTime
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-  updatedAt_not: DateTime
-  updatedAt_in: [DateTime!]
-  updatedAt_not_in: [DateTime!]
-  updatedAt_lt: DateTime
-  updatedAt_lte: DateTime
-  updatedAt_gt: DateTime
-  updatedAt_gte: DateTime
-  published: Boolean
-  published_not: Boolean
-  title: String
-  title_not: String
-  title_in: [String!]
-  title_not_in: [String!]
-  title_lt: String
-  title_lte: String
-  title_gt: String
-  title_gte: String
-  title_contains: String
-  title_not_contains: String
-  title_starts_with: String
-  title_not_starts_with: String
-  title_ends_with: String
-  title_not_ends_with: String
-  content: String
-  content_not: String
-  content_in: [String!]
-  content_not_in: [String!]
-  content_lt: String
-  content_lte: String
-  content_gt: String
-  content_gte: String
-  content_contains: String
-  content_not_contains: String
-  content_starts_with: String
-  content_not_starts_with: String
-  content_ends_with: String
-  content_not_ends_with: String
-  author: UserWhereInput
-  AND: [PostWhereInput!]
-  OR: [PostWhereInput!]
-  NOT: [PostWhereInput!]
+  url: String
+  url_not: String
+  url_in: [String!]
+  url_not_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_gt: String
+  url_gte: String
+  url_contains: String
+  url_not_contains: String
+  url_starts_with: String
+  url_not_starts_with: String
+  url_ends_with: String
+  url_not_ends_with: String
+  thumb_url: String
+  thumb_url_not: String
+  thumb_url_in: [String!]
+  thumb_url_not_in: [String!]
+  thumb_url_lt: String
+  thumb_url_lte: String
+  thumb_url_gt: String
+  thumb_url_gte: String
+  thumb_url_contains: String
+  thumb_url_not_contains: String
+  thumb_url_starts_with: String
+  thumb_url_not_starts_with: String
+  thumb_url_ends_with: String
+  thumb_url_not_ends_with: String
+  caption: String
+  caption_not: String
+  caption_in: [String!]
+  caption_not_in: [String!]
+  caption_lt: String
+  caption_lte: String
+  caption_gt: String
+  caption_gte: String
+  caption_contains: String
+  caption_not_contains: String
+  caption_starts_with: String
+  caption_not_starts_with: String
+  caption_ends_with: String
+  caption_not_ends_with: String
+  timestamp: Int
+  timestamp_not: Int
+  timestamp_in: [Int!]
+  timestamp_not_in: [Int!]
+  timestamp_lt: Int
+  timestamp_lte: Int
+  timestamp_gt: Int
+  timestamp_gte: Int
+  friendly_time: String
+  friendly_time_not: String
+  friendly_time_in: [String!]
+  friendly_time_not_in: [String!]
+  friendly_time_lt: String
+  friendly_time_lte: String
+  friendly_time_gt: String
+  friendly_time_gte: String
+  friendly_time_contains: String
+  friendly_time_not_contains: String
+  friendly_time_starts_with: String
+  friendly_time_not_starts_with: String
+  friendly_time_ends_with: String
+  friendly_time_not_ends_with: String
+  width: Int
+  width_not: Int
+  width_in: [Int!]
+  width_not_in: [Int!]
+  width_lt: Int
+  width_lte: Int
+  width_gt: Int
+  width_gte: Int
+  height: Int
+  height_not: Int
+  height_in: [Int!]
+  height_not_in: [Int!]
+  height_lt: Int
+  height_lte: Int
+  height_gt: Int
+  height_gte: Int
+  AND: [ProductPhotoScalarWhereInput!]
+  OR: [ProductPhotoScalarWhereInput!]
+  NOT: [ProductPhotoScalarWhereInput!]
 }
 
-input PostWhereUniqueInput {
+type ProductPhotoSubscriptionPayload {
+  mutation: MutationType!
+  node: ProductPhoto
+  updatedFields: [String!]
+  previousValues: ProductPhotoPreviousValues
+}
+
+input ProductPhotoSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ProductPhotoWhereInput
+  AND: [ProductPhotoSubscriptionWhereInput!]
+  OR: [ProductPhotoSubscriptionWhereInput!]
+  NOT: [ProductPhotoSubscriptionWhereInput!]
+}
+
+input ProductPhotoUpdateInput {
+  product: ProductUpdateOneRequiredWithoutPhotosInput
+  url: String
+  thumb_url: String
+  caption: String
+  timestamp: Int
+  friendly_time: String
+  width: Int
+  height: Int
+}
+
+input ProductPhotoUpdateManyDataInput {
+  url: String
+  thumb_url: String
+  caption: String
+  timestamp: Int
+  friendly_time: String
+  width: Int
+  height: Int
+}
+
+input ProductPhotoUpdateManyMutationInput {
+  url: String
+  thumb_url: String
+  caption: String
+  timestamp: Int
+  friendly_time: String
+  width: Int
+  height: Int
+}
+
+input ProductPhotoUpdateManyWithoutProductInput {
+  create: [ProductPhotoCreateWithoutProductInput!]
+  delete: [ProductPhotoWhereUniqueInput!]
+  connect: [ProductPhotoWhereUniqueInput!]
+  set: [ProductPhotoWhereUniqueInput!]
+  disconnect: [ProductPhotoWhereUniqueInput!]
+  update: [ProductPhotoUpdateWithWhereUniqueWithoutProductInput!]
+  upsert: [ProductPhotoUpsertWithWhereUniqueWithoutProductInput!]
+  deleteMany: [ProductPhotoScalarWhereInput!]
+  updateMany: [ProductPhotoUpdateManyWithWhereNestedInput!]
+}
+
+input ProductPhotoUpdateManyWithWhereNestedInput {
+  where: ProductPhotoScalarWhereInput!
+  data: ProductPhotoUpdateManyDataInput!
+}
+
+input ProductPhotoUpdateWithoutProductDataInput {
+  url: String
+  thumb_url: String
+  caption: String
+  timestamp: Int
+  friendly_time: String
+  width: Int
+  height: Int
+}
+
+input ProductPhotoUpdateWithWhereUniqueWithoutProductInput {
+  where: ProductPhotoWhereUniqueInput!
+  data: ProductPhotoUpdateWithoutProductDataInput!
+}
+
+input ProductPhotoUpsertWithWhereUniqueWithoutProductInput {
+  where: ProductPhotoWhereUniqueInput!
+  update: ProductPhotoUpdateWithoutProductDataInput!
+  create: ProductPhotoCreateWithoutProductInput!
+}
+
+input ProductPhotoWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  product: ProductWhereInput
+  url: String
+  url_not: String
+  url_in: [String!]
+  url_not_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_gt: String
+  url_gte: String
+  url_contains: String
+  url_not_contains: String
+  url_starts_with: String
+  url_not_starts_with: String
+  url_ends_with: String
+  url_not_ends_with: String
+  thumb_url: String
+  thumb_url_not: String
+  thumb_url_in: [String!]
+  thumb_url_not_in: [String!]
+  thumb_url_lt: String
+  thumb_url_lte: String
+  thumb_url_gt: String
+  thumb_url_gte: String
+  thumb_url_contains: String
+  thumb_url_not_contains: String
+  thumb_url_starts_with: String
+  thumb_url_not_starts_with: String
+  thumb_url_ends_with: String
+  thumb_url_not_ends_with: String
+  caption: String
+  caption_not: String
+  caption_in: [String!]
+  caption_not_in: [String!]
+  caption_lt: String
+  caption_lte: String
+  caption_gt: String
+  caption_gte: String
+  caption_contains: String
+  caption_not_contains: String
+  caption_starts_with: String
+  caption_not_starts_with: String
+  caption_ends_with: String
+  caption_not_ends_with: String
+  timestamp: Int
+  timestamp_not: Int
+  timestamp_in: [Int!]
+  timestamp_not_in: [Int!]
+  timestamp_lt: Int
+  timestamp_lte: Int
+  timestamp_gt: Int
+  timestamp_gte: Int
+  friendly_time: String
+  friendly_time_not: String
+  friendly_time_in: [String!]
+  friendly_time_not_in: [String!]
+  friendly_time_lt: String
+  friendly_time_lte: String
+  friendly_time_gt: String
+  friendly_time_gte: String
+  friendly_time_contains: String
+  friendly_time_not_contains: String
+  friendly_time_starts_with: String
+  friendly_time_not_starts_with: String
+  friendly_time_ends_with: String
+  friendly_time_not_ends_with: String
+  width: Int
+  width_not: Int
+  width_in: [Int!]
+  width_not_in: [Int!]
+  width_lt: Int
+  width_lte: Int
+  width_gt: Int
+  width_gte: Int
+  height: Int
+  height_not: Int
+  height_in: [Int!]
+  height_not_in: [Int!]
+  height_lt: Int
+  height_lte: Int
+  height_gt: Int
+  height_gte: Int
+  AND: [ProductPhotoWhereInput!]
+  OR: [ProductPhotoWhereInput!]
+  NOT: [ProductPhotoWhereInput!]
+}
+
+input ProductPhotoWhereUniqueInput {
+  id: ID
+}
+
+type ProductPreviousValues {
+  id: ID!
+  name: String!
+  url: String!
+  thumb: String!
+  featured_image: String!
+  photos_url: String!
+  has_online_delivery: Boolean!
+  is_delivering_now: Boolean!
+  deeplink: String
+  photo_count: Int!
+}
+
+type ProductRating {
+  aggregate_rating: Float!
+  votes: Int!
+}
+
+type ProductRatingConnection {
+  pageInfo: PageInfo!
+  edges: [ProductRatingEdge]!
+  aggregate: AggregateProductRating!
+}
+
+input ProductRatingCreateInput {
+  aggregate_rating: Float
+  votes: Int
+}
+
+input ProductRatingCreateOneInput {
+  create: ProductRatingCreateInput
+}
+
+type ProductRatingEdge {
+  node: ProductRating!
+  cursor: String!
+}
+
+enum ProductRatingOrderByInput {
+  aggregate_rating_ASC
+  aggregate_rating_DESC
+  votes_ASC
+  votes_DESC
+}
+
+type ProductRatingPreviousValues {
+  aggregate_rating: Float!
+  votes: Int!
+}
+
+type ProductRatingSubscriptionPayload {
+  mutation: MutationType!
+  node: ProductRating
+  updatedFields: [String!]
+  previousValues: ProductRatingPreviousValues
+}
+
+input ProductRatingSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ProductRatingWhereInput
+  AND: [ProductRatingSubscriptionWhereInput!]
+  OR: [ProductRatingSubscriptionWhereInput!]
+  NOT: [ProductRatingSubscriptionWhereInput!]
+}
+
+input ProductRatingUpdateDataInput {
+  aggregate_rating: Float
+  votes: Int
+}
+
+input ProductRatingUpdateManyMutationInput {
+  aggregate_rating: Float
+  votes: Int
+}
+
+input ProductRatingUpdateOneRequiredInput {
+  create: ProductRatingCreateInput
+  update: ProductRatingUpdateDataInput
+  upsert: ProductRatingUpsertNestedInput
+}
+
+input ProductRatingUpsertNestedInput {
+  update: ProductRatingUpdateDataInput!
+  create: ProductRatingCreateInput!
+}
+
+input ProductRatingWhereInput {
+  aggregate_rating: Float
+  aggregate_rating_not: Float
+  aggregate_rating_in: [Float!]
+  aggregate_rating_not_in: [Float!]
+  aggregate_rating_lt: Float
+  aggregate_rating_lte: Float
+  aggregate_rating_gt: Float
+  aggregate_rating_gte: Float
+  votes: Int
+  votes_not: Int
+  votes_in: [Int!]
+  votes_not_in: [Int!]
+  votes_lt: Int
+  votes_lte: Int
+  votes_gt: Int
+  votes_gte: Int
+  AND: [ProductRatingWhereInput!]
+  OR: [ProductRatingWhereInput!]
+  NOT: [ProductRatingWhereInput!]
+}
+
+type ProductSubscriptionPayload {
+  mutation: MutationType!
+  node: Product
+  updatedFields: [String!]
+  previousValues: ProductPreviousValues
+}
+
+input ProductSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ProductWhereInput
+  AND: [ProductSubscriptionWhereInput!]
+  OR: [ProductSubscriptionWhereInput!]
+  NOT: [ProductSubscriptionWhereInput!]
+}
+
+input ProductUpdateInput {
+  name: String
+  url: String
+  thumb: String
+  featured_image: String
+  photos_url: String
+  user_rating: ProductRatingUpdateOneRequiredInput
+  has_online_delivery: Boolean
+  is_delivering_now: Boolean
+  deeplink: String
+  photo_count: Int
+  photos: ProductPhotoUpdateManyWithoutProductInput
+  all_reviews: ReviewUpdateManyWithoutProductInput
+}
+
+input ProductUpdateManyMutationInput {
+  name: String
+  url: String
+  thumb: String
+  featured_image: String
+  photos_url: String
+  has_online_delivery: Boolean
+  is_delivering_now: Boolean
+  deeplink: String
+  photo_count: Int
+}
+
+input ProductUpdateOneRequiredWithoutAll_reviewsInput {
+  create: ProductCreateWithoutAll_reviewsInput
+  update: ProductUpdateWithoutAll_reviewsDataInput
+  upsert: ProductUpsertWithoutAll_reviewsInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductUpdateOneRequiredWithoutPhotosInput {
+  create: ProductCreateWithoutPhotosInput
+  update: ProductUpdateWithoutPhotosDataInput
+  upsert: ProductUpsertWithoutPhotosInput
+  connect: ProductWhereUniqueInput
+}
+
+input ProductUpdateWithoutAll_reviewsDataInput {
+  name: String
+  url: String
+  thumb: String
+  featured_image: String
+  photos_url: String
+  user_rating: ProductRatingUpdateOneRequiredInput
+  has_online_delivery: Boolean
+  is_delivering_now: Boolean
+  deeplink: String
+  photo_count: Int
+  photos: ProductPhotoUpdateManyWithoutProductInput
+}
+
+input ProductUpdateWithoutPhotosDataInput {
+  name: String
+  url: String
+  thumb: String
+  featured_image: String
+  photos_url: String
+  user_rating: ProductRatingUpdateOneRequiredInput
+  has_online_delivery: Boolean
+  is_delivering_now: Boolean
+  deeplink: String
+  photo_count: Int
+  all_reviews: ReviewUpdateManyWithoutProductInput
+}
+
+input ProductUpsertWithoutAll_reviewsInput {
+  update: ProductUpdateWithoutAll_reviewsDataInput!
+  create: ProductCreateWithoutAll_reviewsInput!
+}
+
+input ProductUpsertWithoutPhotosInput {
+  update: ProductUpdateWithoutPhotosDataInput!
+  create: ProductCreateWithoutPhotosInput!
+}
+
+input ProductWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  url: String
+  url_not: String
+  url_in: [String!]
+  url_not_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_gt: String
+  url_gte: String
+  url_contains: String
+  url_not_contains: String
+  url_starts_with: String
+  url_not_starts_with: String
+  url_ends_with: String
+  url_not_ends_with: String
+  thumb: String
+  thumb_not: String
+  thumb_in: [String!]
+  thumb_not_in: [String!]
+  thumb_lt: String
+  thumb_lte: String
+  thumb_gt: String
+  thumb_gte: String
+  thumb_contains: String
+  thumb_not_contains: String
+  thumb_starts_with: String
+  thumb_not_starts_with: String
+  thumb_ends_with: String
+  thumb_not_ends_with: String
+  featured_image: String
+  featured_image_not: String
+  featured_image_in: [String!]
+  featured_image_not_in: [String!]
+  featured_image_lt: String
+  featured_image_lte: String
+  featured_image_gt: String
+  featured_image_gte: String
+  featured_image_contains: String
+  featured_image_not_contains: String
+  featured_image_starts_with: String
+  featured_image_not_starts_with: String
+  featured_image_ends_with: String
+  featured_image_not_ends_with: String
+  photos_url: String
+  photos_url_not: String
+  photos_url_in: [String!]
+  photos_url_not_in: [String!]
+  photos_url_lt: String
+  photos_url_lte: String
+  photos_url_gt: String
+  photos_url_gte: String
+  photos_url_contains: String
+  photos_url_not_contains: String
+  photos_url_starts_with: String
+  photos_url_not_starts_with: String
+  photos_url_ends_with: String
+  photos_url_not_ends_with: String
+  user_rating: ProductRatingWhereInput
+  has_online_delivery: Boolean
+  has_online_delivery_not: Boolean
+  is_delivering_now: Boolean
+  is_delivering_now_not: Boolean
+  deeplink: String
+  deeplink_not: String
+  deeplink_in: [String!]
+  deeplink_not_in: [String!]
+  deeplink_lt: String
+  deeplink_lte: String
+  deeplink_gt: String
+  deeplink_gte: String
+  deeplink_contains: String
+  deeplink_not_contains: String
+  deeplink_starts_with: String
+  deeplink_not_starts_with: String
+  deeplink_ends_with: String
+  deeplink_not_ends_with: String
+  photo_count: Int
+  photo_count_not: Int
+  photo_count_in: [Int!]
+  photo_count_not_in: [Int!]
+  photo_count_lt: Int
+  photo_count_lte: Int
+  photo_count_gt: Int
+  photo_count_gte: Int
+  photos_every: ProductPhotoWhereInput
+  photos_some: ProductPhotoWhereInput
+  photos_none: ProductPhotoWhereInput
+  all_reviews_every: ReviewWhereInput
+  all_reviews_some: ReviewWhereInput
+  all_reviews_none: ReviewWhereInput
+  AND: [ProductWhereInput!]
+  OR: [ProductWhereInput!]
+  NOT: [ProductWhereInput!]
+}
+
+input ProductWhereUniqueInput {
   id: ID
 }
 
 type Query {
-  post(where: PostWhereUniqueInput!): Post
-  posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post]!
-  postsConnection(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PostConnection!
+  phoneNumbers(where: PhoneNumberWhereInput, orderBy: PhoneNumberOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PhoneNumber]!
+  phoneNumbersConnection(where: PhoneNumberWhereInput, orderBy: PhoneNumberOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PhoneNumberConnection!
+  product(where: ProductWhereUniqueInput!): Product
+  products(where: ProductWhereInput, orderBy: ProductOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Product]!
+  productsConnection(where: ProductWhereInput, orderBy: ProductOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ProductConnection!
+  productPhoto(where: ProductPhotoWhereUniqueInput!): ProductPhoto
+  productPhotos(where: ProductPhotoWhereInput, orderBy: ProductPhotoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ProductPhoto]!
+  productPhotosConnection(where: ProductPhotoWhereInput, orderBy: ProductPhotoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ProductPhotoConnection!
+  productRatings(where: ProductRatingWhereInput, orderBy: ProductRatingOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ProductRating]!
+  productRatingsConnection(where: ProductRatingWhereInput, orderBy: ProductRatingOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ProductRatingConnection!
+  review(where: ReviewWhereUniqueInput!): Review
+  reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review]!
+  reviewsConnection(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ReviewConnection!
   user(where: UserWhereUniqueInput!): User
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
+  userPhoto(where: UserPhotoWhereUniqueInput!): UserPhoto
+  userPhotos(where: UserPhotoWhereInput, orderBy: UserPhotoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [UserPhoto]!
+  userPhotosConnection(where: UserPhotoWhereInput, orderBy: UserPhotoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserPhotoConnection!
   node(id: ID!): Node
 }
 
+type Review {
+  user: User!
+  product: Product!
+  id: ID!
+  rating: Int!
+  review_text: String!
+  review_time_friendly: String!
+  timestamp: Int!
+}
+
+type ReviewConnection {
+  pageInfo: PageInfo!
+  edges: [ReviewEdge]!
+  aggregate: AggregateReview!
+}
+
+input ReviewCreateInput {
+  user: UserCreateOneWithoutReviewsInput!
+  product: ProductCreateOneWithoutAll_reviewsInput!
+  rating: Int!
+  review_text: String!
+  review_time_friendly: String!
+  timestamp: Int!
+}
+
+input ReviewCreateManyWithoutProductInput {
+  create: [ReviewCreateWithoutProductInput!]
+  connect: [ReviewWhereUniqueInput!]
+}
+
+input ReviewCreateManyWithoutUserInput {
+  create: [ReviewCreateWithoutUserInput!]
+  connect: [ReviewWhereUniqueInput!]
+}
+
+input ReviewCreateWithoutProductInput {
+  user: UserCreateOneWithoutReviewsInput!
+  rating: Int!
+  review_text: String!
+  review_time_friendly: String!
+  timestamp: Int!
+}
+
+input ReviewCreateWithoutUserInput {
+  product: ProductCreateOneWithoutAll_reviewsInput!
+  rating: Int!
+  review_text: String!
+  review_time_friendly: String!
+  timestamp: Int!
+}
+
+type ReviewEdge {
+  node: Review!
+  cursor: String!
+}
+
+enum ReviewOrderByInput {
+  id_ASC
+  id_DESC
+  rating_ASC
+  rating_DESC
+  review_text_ASC
+  review_text_DESC
+  review_time_friendly_ASC
+  review_time_friendly_DESC
+  timestamp_ASC
+  timestamp_DESC
+}
+
+type ReviewPreviousValues {
+  id: ID!
+  rating: Int!
+  review_text: String!
+  review_time_friendly: String!
+  timestamp: Int!
+}
+
+input ReviewScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  rating: Int
+  rating_not: Int
+  rating_in: [Int!]
+  rating_not_in: [Int!]
+  rating_lt: Int
+  rating_lte: Int
+  rating_gt: Int
+  rating_gte: Int
+  review_text: String
+  review_text_not: String
+  review_text_in: [String!]
+  review_text_not_in: [String!]
+  review_text_lt: String
+  review_text_lte: String
+  review_text_gt: String
+  review_text_gte: String
+  review_text_contains: String
+  review_text_not_contains: String
+  review_text_starts_with: String
+  review_text_not_starts_with: String
+  review_text_ends_with: String
+  review_text_not_ends_with: String
+  review_time_friendly: String
+  review_time_friendly_not: String
+  review_time_friendly_in: [String!]
+  review_time_friendly_not_in: [String!]
+  review_time_friendly_lt: String
+  review_time_friendly_lte: String
+  review_time_friendly_gt: String
+  review_time_friendly_gte: String
+  review_time_friendly_contains: String
+  review_time_friendly_not_contains: String
+  review_time_friendly_starts_with: String
+  review_time_friendly_not_starts_with: String
+  review_time_friendly_ends_with: String
+  review_time_friendly_not_ends_with: String
+  timestamp: Int
+  timestamp_not: Int
+  timestamp_in: [Int!]
+  timestamp_not_in: [Int!]
+  timestamp_lt: Int
+  timestamp_lte: Int
+  timestamp_gt: Int
+  timestamp_gte: Int
+  AND: [ReviewScalarWhereInput!]
+  OR: [ReviewScalarWhereInput!]
+  NOT: [ReviewScalarWhereInput!]
+}
+
+type ReviewSubscriptionPayload {
+  mutation: MutationType!
+  node: Review
+  updatedFields: [String!]
+  previousValues: ReviewPreviousValues
+}
+
+input ReviewSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: ReviewWhereInput
+  AND: [ReviewSubscriptionWhereInput!]
+  OR: [ReviewSubscriptionWhereInput!]
+  NOT: [ReviewSubscriptionWhereInput!]
+}
+
+input ReviewUpdateInput {
+  user: UserUpdateOneRequiredWithoutReviewsInput
+  product: ProductUpdateOneRequiredWithoutAll_reviewsInput
+  rating: Int
+  review_text: String
+  review_time_friendly: String
+  timestamp: Int
+}
+
+input ReviewUpdateManyDataInput {
+  rating: Int
+  review_text: String
+  review_time_friendly: String
+  timestamp: Int
+}
+
+input ReviewUpdateManyMutationInput {
+  rating: Int
+  review_text: String
+  review_time_friendly: String
+  timestamp: Int
+}
+
+input ReviewUpdateManyWithoutProductInput {
+  create: [ReviewCreateWithoutProductInput!]
+  delete: [ReviewWhereUniqueInput!]
+  connect: [ReviewWhereUniqueInput!]
+  set: [ReviewWhereUniqueInput!]
+  disconnect: [ReviewWhereUniqueInput!]
+  update: [ReviewUpdateWithWhereUniqueWithoutProductInput!]
+  upsert: [ReviewUpsertWithWhereUniqueWithoutProductInput!]
+  deleteMany: [ReviewScalarWhereInput!]
+  updateMany: [ReviewUpdateManyWithWhereNestedInput!]
+}
+
+input ReviewUpdateManyWithoutUserInput {
+  create: [ReviewCreateWithoutUserInput!]
+  delete: [ReviewWhereUniqueInput!]
+  connect: [ReviewWhereUniqueInput!]
+  set: [ReviewWhereUniqueInput!]
+  disconnect: [ReviewWhereUniqueInput!]
+  update: [ReviewUpdateWithWhereUniqueWithoutUserInput!]
+  upsert: [ReviewUpsertWithWhereUniqueWithoutUserInput!]
+  deleteMany: [ReviewScalarWhereInput!]
+  updateMany: [ReviewUpdateManyWithWhereNestedInput!]
+}
+
+input ReviewUpdateManyWithWhereNestedInput {
+  where: ReviewScalarWhereInput!
+  data: ReviewUpdateManyDataInput!
+}
+
+input ReviewUpdateWithoutProductDataInput {
+  user: UserUpdateOneRequiredWithoutReviewsInput
+  rating: Int
+  review_text: String
+  review_time_friendly: String
+  timestamp: Int
+}
+
+input ReviewUpdateWithoutUserDataInput {
+  product: ProductUpdateOneRequiredWithoutAll_reviewsInput
+  rating: Int
+  review_text: String
+  review_time_friendly: String
+  timestamp: Int
+}
+
+input ReviewUpdateWithWhereUniqueWithoutProductInput {
+  where: ReviewWhereUniqueInput!
+  data: ReviewUpdateWithoutProductDataInput!
+}
+
+input ReviewUpdateWithWhereUniqueWithoutUserInput {
+  where: ReviewWhereUniqueInput!
+  data: ReviewUpdateWithoutUserDataInput!
+}
+
+input ReviewUpsertWithWhereUniqueWithoutProductInput {
+  where: ReviewWhereUniqueInput!
+  update: ReviewUpdateWithoutProductDataInput!
+  create: ReviewCreateWithoutProductInput!
+}
+
+input ReviewUpsertWithWhereUniqueWithoutUserInput {
+  where: ReviewWhereUniqueInput!
+  update: ReviewUpdateWithoutUserDataInput!
+  create: ReviewCreateWithoutUserInput!
+}
+
+input ReviewWhereInput {
+  user: UserWhereInput
+  product: ProductWhereInput
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  rating: Int
+  rating_not: Int
+  rating_in: [Int!]
+  rating_not_in: [Int!]
+  rating_lt: Int
+  rating_lte: Int
+  rating_gt: Int
+  rating_gte: Int
+  review_text: String
+  review_text_not: String
+  review_text_in: [String!]
+  review_text_not_in: [String!]
+  review_text_lt: String
+  review_text_lte: String
+  review_text_gt: String
+  review_text_gte: String
+  review_text_contains: String
+  review_text_not_contains: String
+  review_text_starts_with: String
+  review_text_not_starts_with: String
+  review_text_ends_with: String
+  review_text_not_ends_with: String
+  review_time_friendly: String
+  review_time_friendly_not: String
+  review_time_friendly_in: [String!]
+  review_time_friendly_not_in: [String!]
+  review_time_friendly_lt: String
+  review_time_friendly_lte: String
+  review_time_friendly_gt: String
+  review_time_friendly_gte: String
+  review_time_friendly_contains: String
+  review_time_friendly_not_contains: String
+  review_time_friendly_starts_with: String
+  review_time_friendly_not_starts_with: String
+  review_time_friendly_ends_with: String
+  review_time_friendly_not_ends_with: String
+  timestamp: Int
+  timestamp_not: Int
+  timestamp_in: [Int!]
+  timestamp_not_in: [Int!]
+  timestamp_lt: Int
+  timestamp_lte: Int
+  timestamp_gt: Int
+  timestamp_gte: Int
+  AND: [ReviewWhereInput!]
+  OR: [ReviewWhereInput!]
+  NOT: [ReviewWhereInput!]
+}
+
+input ReviewWhereUniqueInput {
+  id: ID
+}
+
 type Subscription {
-  post(where: PostSubscriptionWhereInput): PostSubscriptionPayload
+  phoneNumber(where: PhoneNumberSubscriptionWhereInput): PhoneNumberSubscriptionPayload
+  product(where: ProductSubscriptionWhereInput): ProductSubscriptionPayload
+  productPhoto(where: ProductPhotoSubscriptionWhereInput): ProductPhotoSubscriptionPayload
+  productRating(where: ProductRatingSubscriptionWhereInput): ProductRatingSubscriptionPayload
+  review(where: ReviewSubscriptionWhereInput): ReviewSubscriptionPayload
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
+  userPhoto(where: UserPhotoSubscriptionWhereInput): UserPhotoSubscriptionPayload
 }
 
 type User {
   id: ID!
-  email: String!
-  password: String!
+  email: String
   name: String
-  posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post!]
+  phone_number(where: PhoneNumberWhereInput, orderBy: PhoneNumberOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PhoneNumber!]
+  user_type: UserType!
+  reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review!]
+  photos(where: UserPhotoWhereInput, orderBy: UserPhotoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [UserPhoto!]
+  uid: String!
 }
 
 type UserConnection {
@@ -351,21 +1423,55 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  email: String!
-  password: String!
+  email: String
   name: String
-  posts: PostCreateManyWithoutAuthorInput
+  phone_number: PhoneNumberCreateManyWithoutUserInput
+  user_type: UserType
+  reviews: ReviewCreateManyWithoutUserInput
+  photos: UserPhotoCreateManyWithoutUserInput
+  uid: String!
 }
 
-input UserCreateOneWithoutPostsInput {
-  create: UserCreateWithoutPostsInput
+input UserCreateOneWithoutPhone_numberInput {
+  create: UserCreateWithoutPhone_numberInput
   connect: UserWhereUniqueInput
 }
 
-input UserCreateWithoutPostsInput {
-  email: String!
-  password: String!
+input UserCreateOneWithoutPhotosInput {
+  create: UserCreateWithoutPhotosInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateOneWithoutReviewsInput {
+  create: UserCreateWithoutReviewsInput
+  connect: UserWhereUniqueInput
+}
+
+input UserCreateWithoutPhone_numberInput {
+  email: String
   name: String
+  user_type: UserType
+  reviews: ReviewCreateManyWithoutUserInput
+  photos: UserPhotoCreateManyWithoutUserInput
+  uid: String!
+}
+
+input UserCreateWithoutPhotosInput {
+  email: String
+  name: String
+  phone_number: PhoneNumberCreateManyWithoutUserInput
+  user_type: UserType
+  reviews: ReviewCreateManyWithoutUserInput
+  uid: String!
+}
+
+input UserCreateWithoutReviewsInput {
+  email: String
+  name: String
+  phone_number: PhoneNumberCreateManyWithoutUserInput
+  user_type: UserType
+  photos: UserPhotoCreateManyWithoutUserInput
+  uid: String!
 }
 
 type UserEdge {
@@ -378,17 +1484,391 @@ enum UserOrderByInput {
   id_DESC
   email_ASC
   email_DESC
-  password_ASC
-  password_DESC
   name_ASC
   name_DESC
+  user_type_ASC
+  user_type_DESC
+  uid_ASC
+  uid_DESC
+}
+
+type UserPhoto {
+  id: ID!
+  user: User!
+  url: String!
+  thumb_url: String!
+  caption: String!
+  timestamp: Int!
+  friendly_time: String!
+  width: Int!
+  height: Int!
+}
+
+type UserPhotoConnection {
+  pageInfo: PageInfo!
+  edges: [UserPhotoEdge]!
+  aggregate: AggregateUserPhoto!
+}
+
+input UserPhotoCreateInput {
+  user: UserCreateOneWithoutPhotosInput!
+  url: String!
+  thumb_url: String!
+  caption: String!
+  timestamp: Int!
+  friendly_time: String!
+  width: Int!
+  height: Int!
+}
+
+input UserPhotoCreateManyWithoutUserInput {
+  create: [UserPhotoCreateWithoutUserInput!]
+  connect: [UserPhotoWhereUniqueInput!]
+}
+
+input UserPhotoCreateWithoutUserInput {
+  url: String!
+  thumb_url: String!
+  caption: String!
+  timestamp: Int!
+  friendly_time: String!
+  width: Int!
+  height: Int!
+}
+
+type UserPhotoEdge {
+  node: UserPhoto!
+  cursor: String!
+}
+
+enum UserPhotoOrderByInput {
+  id_ASC
+  id_DESC
+  url_ASC
+  url_DESC
+  thumb_url_ASC
+  thumb_url_DESC
+  caption_ASC
+  caption_DESC
+  timestamp_ASC
+  timestamp_DESC
+  friendly_time_ASC
+  friendly_time_DESC
+  width_ASC
+  width_DESC
+  height_ASC
+  height_DESC
+}
+
+type UserPhotoPreviousValues {
+  id: ID!
+  url: String!
+  thumb_url: String!
+  caption: String!
+  timestamp: Int!
+  friendly_time: String!
+  width: Int!
+  height: Int!
+}
+
+input UserPhotoScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  url: String
+  url_not: String
+  url_in: [String!]
+  url_not_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_gt: String
+  url_gte: String
+  url_contains: String
+  url_not_contains: String
+  url_starts_with: String
+  url_not_starts_with: String
+  url_ends_with: String
+  url_not_ends_with: String
+  thumb_url: String
+  thumb_url_not: String
+  thumb_url_in: [String!]
+  thumb_url_not_in: [String!]
+  thumb_url_lt: String
+  thumb_url_lte: String
+  thumb_url_gt: String
+  thumb_url_gte: String
+  thumb_url_contains: String
+  thumb_url_not_contains: String
+  thumb_url_starts_with: String
+  thumb_url_not_starts_with: String
+  thumb_url_ends_with: String
+  thumb_url_not_ends_with: String
+  caption: String
+  caption_not: String
+  caption_in: [String!]
+  caption_not_in: [String!]
+  caption_lt: String
+  caption_lte: String
+  caption_gt: String
+  caption_gte: String
+  caption_contains: String
+  caption_not_contains: String
+  caption_starts_with: String
+  caption_not_starts_with: String
+  caption_ends_with: String
+  caption_not_ends_with: String
+  timestamp: Int
+  timestamp_not: Int
+  timestamp_in: [Int!]
+  timestamp_not_in: [Int!]
+  timestamp_lt: Int
+  timestamp_lte: Int
+  timestamp_gt: Int
+  timestamp_gte: Int
+  friendly_time: String
+  friendly_time_not: String
+  friendly_time_in: [String!]
+  friendly_time_not_in: [String!]
+  friendly_time_lt: String
+  friendly_time_lte: String
+  friendly_time_gt: String
+  friendly_time_gte: String
+  friendly_time_contains: String
+  friendly_time_not_contains: String
+  friendly_time_starts_with: String
+  friendly_time_not_starts_with: String
+  friendly_time_ends_with: String
+  friendly_time_not_ends_with: String
+  width: Int
+  width_not: Int
+  width_in: [Int!]
+  width_not_in: [Int!]
+  width_lt: Int
+  width_lte: Int
+  width_gt: Int
+  width_gte: Int
+  height: Int
+  height_not: Int
+  height_in: [Int!]
+  height_not_in: [Int!]
+  height_lt: Int
+  height_lte: Int
+  height_gt: Int
+  height_gte: Int
+  AND: [UserPhotoScalarWhereInput!]
+  OR: [UserPhotoScalarWhereInput!]
+  NOT: [UserPhotoScalarWhereInput!]
+}
+
+type UserPhotoSubscriptionPayload {
+  mutation: MutationType!
+  node: UserPhoto
+  updatedFields: [String!]
+  previousValues: UserPhotoPreviousValues
+}
+
+input UserPhotoSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: UserPhotoWhereInput
+  AND: [UserPhotoSubscriptionWhereInput!]
+  OR: [UserPhotoSubscriptionWhereInput!]
+  NOT: [UserPhotoSubscriptionWhereInput!]
+}
+
+input UserPhotoUpdateInput {
+  user: UserUpdateOneRequiredWithoutPhotosInput
+  url: String
+  thumb_url: String
+  caption: String
+  timestamp: Int
+  friendly_time: String
+  width: Int
+  height: Int
+}
+
+input UserPhotoUpdateManyDataInput {
+  url: String
+  thumb_url: String
+  caption: String
+  timestamp: Int
+  friendly_time: String
+  width: Int
+  height: Int
+}
+
+input UserPhotoUpdateManyMutationInput {
+  url: String
+  thumb_url: String
+  caption: String
+  timestamp: Int
+  friendly_time: String
+  width: Int
+  height: Int
+}
+
+input UserPhotoUpdateManyWithoutUserInput {
+  create: [UserPhotoCreateWithoutUserInput!]
+  delete: [UserPhotoWhereUniqueInput!]
+  connect: [UserPhotoWhereUniqueInput!]
+  set: [UserPhotoWhereUniqueInput!]
+  disconnect: [UserPhotoWhereUniqueInput!]
+  update: [UserPhotoUpdateWithWhereUniqueWithoutUserInput!]
+  upsert: [UserPhotoUpsertWithWhereUniqueWithoutUserInput!]
+  deleteMany: [UserPhotoScalarWhereInput!]
+  updateMany: [UserPhotoUpdateManyWithWhereNestedInput!]
+}
+
+input UserPhotoUpdateManyWithWhereNestedInput {
+  where: UserPhotoScalarWhereInput!
+  data: UserPhotoUpdateManyDataInput!
+}
+
+input UserPhotoUpdateWithoutUserDataInput {
+  url: String
+  thumb_url: String
+  caption: String
+  timestamp: Int
+  friendly_time: String
+  width: Int
+  height: Int
+}
+
+input UserPhotoUpdateWithWhereUniqueWithoutUserInput {
+  where: UserPhotoWhereUniqueInput!
+  data: UserPhotoUpdateWithoutUserDataInput!
+}
+
+input UserPhotoUpsertWithWhereUniqueWithoutUserInput {
+  where: UserPhotoWhereUniqueInput!
+  update: UserPhotoUpdateWithoutUserDataInput!
+  create: UserPhotoCreateWithoutUserInput!
+}
+
+input UserPhotoWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  user: UserWhereInput
+  url: String
+  url_not: String
+  url_in: [String!]
+  url_not_in: [String!]
+  url_lt: String
+  url_lte: String
+  url_gt: String
+  url_gte: String
+  url_contains: String
+  url_not_contains: String
+  url_starts_with: String
+  url_not_starts_with: String
+  url_ends_with: String
+  url_not_ends_with: String
+  thumb_url: String
+  thumb_url_not: String
+  thumb_url_in: [String!]
+  thumb_url_not_in: [String!]
+  thumb_url_lt: String
+  thumb_url_lte: String
+  thumb_url_gt: String
+  thumb_url_gte: String
+  thumb_url_contains: String
+  thumb_url_not_contains: String
+  thumb_url_starts_with: String
+  thumb_url_not_starts_with: String
+  thumb_url_ends_with: String
+  thumb_url_not_ends_with: String
+  caption: String
+  caption_not: String
+  caption_in: [String!]
+  caption_not_in: [String!]
+  caption_lt: String
+  caption_lte: String
+  caption_gt: String
+  caption_gte: String
+  caption_contains: String
+  caption_not_contains: String
+  caption_starts_with: String
+  caption_not_starts_with: String
+  caption_ends_with: String
+  caption_not_ends_with: String
+  timestamp: Int
+  timestamp_not: Int
+  timestamp_in: [Int!]
+  timestamp_not_in: [Int!]
+  timestamp_lt: Int
+  timestamp_lte: Int
+  timestamp_gt: Int
+  timestamp_gte: Int
+  friendly_time: String
+  friendly_time_not: String
+  friendly_time_in: [String!]
+  friendly_time_not_in: [String!]
+  friendly_time_lt: String
+  friendly_time_lte: String
+  friendly_time_gt: String
+  friendly_time_gte: String
+  friendly_time_contains: String
+  friendly_time_not_contains: String
+  friendly_time_starts_with: String
+  friendly_time_not_starts_with: String
+  friendly_time_ends_with: String
+  friendly_time_not_ends_with: String
+  width: Int
+  width_not: Int
+  width_in: [Int!]
+  width_not_in: [Int!]
+  width_lt: Int
+  width_lte: Int
+  width_gt: Int
+  width_gte: Int
+  height: Int
+  height_not: Int
+  height_in: [Int!]
+  height_not_in: [Int!]
+  height_lt: Int
+  height_lte: Int
+  height_gt: Int
+  height_gte: Int
+  AND: [UserPhotoWhereInput!]
+  OR: [UserPhotoWhereInput!]
+  NOT: [UserPhotoWhereInput!]
+}
+
+input UserPhotoWhereUniqueInput {
+  id: ID
 }
 
 type UserPreviousValues {
   id: ID!
-  email: String!
-  password: String!
+  email: String
   name: String
+  user_type: UserType!
+  uid: String!
 }
 
 type UserSubscriptionPayload {
@@ -409,35 +1889,69 @@ input UserSubscriptionWhereInput {
   NOT: [UserSubscriptionWhereInput!]
 }
 
+enum UserType {
+  ADMIN
+  SELLER
+  CONSUMER
+}
+
 input UserUpdateInput {
   email: String
-  password: String
   name: String
-  posts: PostUpdateManyWithoutAuthorInput
+  phone_number: PhoneNumberUpdateManyWithoutUserInput
+  user_type: UserType
+  reviews: ReviewUpdateManyWithoutUserInput
+  photos: UserPhotoUpdateManyWithoutUserInput
+  uid: String
 }
 
 input UserUpdateManyMutationInput {
   email: String
-  password: String
   name: String
+  user_type: UserType
+  uid: String
 }
 
-input UserUpdateOneRequiredWithoutPostsInput {
-  create: UserCreateWithoutPostsInput
-  update: UserUpdateWithoutPostsDataInput
-  upsert: UserUpsertWithoutPostsInput
+input UserUpdateOneRequiredWithoutPhotosInput {
+  create: UserCreateWithoutPhotosInput
+  update: UserUpdateWithoutPhotosDataInput
+  upsert: UserUpsertWithoutPhotosInput
   connect: UserWhereUniqueInput
 }
 
-input UserUpdateWithoutPostsDataInput {
-  email: String
-  password: String
-  name: String
+input UserUpdateOneRequiredWithoutReviewsInput {
+  create: UserCreateWithoutReviewsInput
+  update: UserUpdateWithoutReviewsDataInput
+  upsert: UserUpsertWithoutReviewsInput
+  connect: UserWhereUniqueInput
 }
 
-input UserUpsertWithoutPostsInput {
-  update: UserUpdateWithoutPostsDataInput!
-  create: UserCreateWithoutPostsInput!
+input UserUpdateWithoutPhotosDataInput {
+  email: String
+  name: String
+  phone_number: PhoneNumberUpdateManyWithoutUserInput
+  user_type: UserType
+  reviews: ReviewUpdateManyWithoutUserInput
+  uid: String
+}
+
+input UserUpdateWithoutReviewsDataInput {
+  email: String
+  name: String
+  phone_number: PhoneNumberUpdateManyWithoutUserInput
+  user_type: UserType
+  photos: UserPhotoUpdateManyWithoutUserInput
+  uid: String
+}
+
+input UserUpsertWithoutPhotosInput {
+  update: UserUpdateWithoutPhotosDataInput!
+  create: UserCreateWithoutPhotosInput!
+}
+
+input UserUpsertWithoutReviewsInput {
+  update: UserUpdateWithoutReviewsDataInput!
+  create: UserCreateWithoutReviewsInput!
 }
 
 input UserWhereInput {
@@ -469,20 +1983,6 @@ input UserWhereInput {
   email_not_starts_with: String
   email_ends_with: String
   email_not_ends_with: String
-  password: String
-  password_not: String
-  password_in: [String!]
-  password_not_in: [String!]
-  password_lt: String
-  password_lte: String
-  password_gt: String
-  password_gte: String
-  password_contains: String
-  password_not_contains: String
-  password_starts_with: String
-  password_not_starts_with: String
-  password_ends_with: String
-  password_not_ends_with: String
   name: String
   name_not: String
   name_in: [String!]
@@ -497,9 +1997,33 @@ input UserWhereInput {
   name_not_starts_with: String
   name_ends_with: String
   name_not_ends_with: String
-  posts_every: PostWhereInput
-  posts_some: PostWhereInput
-  posts_none: PostWhereInput
+  phone_number_every: PhoneNumberWhereInput
+  phone_number_some: PhoneNumberWhereInput
+  phone_number_none: PhoneNumberWhereInput
+  user_type: UserType
+  user_type_not: UserType
+  user_type_in: [UserType!]
+  user_type_not_in: [UserType!]
+  reviews_every: ReviewWhereInput
+  reviews_some: ReviewWhereInput
+  reviews_none: ReviewWhereInput
+  photos_every: UserPhotoWhereInput
+  photos_some: UserPhotoWhereInput
+  photos_none: UserPhotoWhereInput
+  uid: String
+  uid_not: String
+  uid_in: [String!]
+  uid_not_in: [String!]
+  uid_lt: String
+  uid_lte: String
+  uid_gt: String
+  uid_gte: String
+  uid_contains: String
+  uid_not_contains: String
+  uid_starts_with: String
+  uid_not_starts_with: String
+  uid_ends_with: String
+  uid_not_ends_with: String
   AND: [UserWhereInput!]
   OR: [UserWhereInput!]
   NOT: [UserWhereInput!]
@@ -508,5 +2032,6 @@ input UserWhereInput {
 input UserWhereUniqueInput {
   id: ID
   email: String
+  uid: String
 }
 `
