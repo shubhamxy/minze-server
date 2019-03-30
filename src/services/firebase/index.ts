@@ -12,7 +12,9 @@ admin.initializeApp({
   credential: admin.credential.cert({
     projectId: process.env.FIREBASE_PROJECT_ID || require(KeyLocation).project_id,
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL || require(KeyLocation).client_email,
-    privateKey: process.env.FIREBASE_PRIVATE_KEY || require(KeyLocation).private_key
+    privateKey: process.env.FIREBASE_PRIVATE_KEY
+      ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n')
+      : require(KeyLocation).private_key
   }),
   databaseURL: `${process.env.FIREBASE_PROJECT_ID || 'minze-cf40b'}.firebaseio.com`
 });
