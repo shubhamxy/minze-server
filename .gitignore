@@ -1,4 +1,3 @@
-.env
 # Coverage directory
 .nyc_output
 
@@ -8,5 +7,8 @@ dist
 coverage
 **/*.key*
 .DS_Store
-src/keys/*
-**/keys/**
+src/keys/**
+# keep the keys folder
+!src/keys/.gitkeep
+.env
+.env*

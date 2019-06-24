@@ -8,8 +8,9 @@ class ErrorReporter {
     });
     this.apiKeys = apiKeys;
   }
-  report(err: Error) {
+  report(err?: Error) {
     // could use apiKey here to send error somewhere
+    console.log(this.apiKeys);
   }
 }
 
