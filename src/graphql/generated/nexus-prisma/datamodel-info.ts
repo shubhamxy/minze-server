@@ -15,7 +15,7 @@ export default {
     UserType: []
   },
   embeddedTypes: [],
-  clientPath: 'src/generated/prisma-client',
+  clientPath: 'src/graphql/generated/prisma-client',
   schema: {
   "__schema": {
     "queryType": {

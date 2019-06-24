@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { prisma } from '../../generated/prisma-client';
+import { prisma } from '../../graphql/generated/prisma-client';
 import searchRoutes from './search/routes';
 
 export default [

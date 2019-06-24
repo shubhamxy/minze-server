@@ -1,11 +1,11 @@
-import './config';
+import '../../config';
 import { GraphQLServer } from 'graphql-yoga';
-import routes from './services';
-import middleware from './middleware';
-import errorHandlers from './middleware/errorHandlers';
-import { prisma } from './graphql/generated/prisma-client';
-import { schema, permissions } from './graphql';
-import { applyMiddleware, applyRoutes } from './utils';
+import routes from '../../services';
+import middleware from '../../middleware';
+import errorHandlers from '../../middleware/errorHandlers';
+import { prisma } from '../../graphql/generated/prisma-client';
+import { schema, permissions } from '../../graphql';
+import { applyMiddleware, applyRoutes } from '../../utils';
 
 const { PORT = 3000 } = process.env;
 
@@ -39,9 +39,11 @@ export const server = new GraphQLServer({
 applyMiddleware(middleware, server.express);
 applyRoutes(routes, server.express);
 
-server.start(options, () => {
-  console.log(` 🚀 Server is running http://localhost:${PORT}.`);
-});
+export const httpPromise = Promise.resolve(
+  server.start(options, () => {
+    console.log(` 🚀 Server is running http://localhost:${PORT}.`);
+  })
+);
 
 applyMiddleware(errorHandlers, server.express);
 export default server;

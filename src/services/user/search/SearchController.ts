@@ -1,4 +1,4 @@
-import { prisma } from '../../../generated/prisma-client';
+import { prisma } from '../../../graphql/generated/prisma-client';
 
 export const getUsersByName = async (q: string) => {
   const result = await prisma.users({

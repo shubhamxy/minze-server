@@ -1,7 +1,7 @@
 import { stringArg, mutationType } from 'nexus';
-import { APP_SECRET } from '../utils';
+import { APP_SECRET, getUserId } from '../utils';
 import { sign } from 'jsonwebtoken';
-import { admin } from '../../firebase';
+import { admin } from '../../services/firebase';
 
 export const Mutation = mutationType({
   definition(t) {
@@ -12,17 +12,20 @@ export const Mutation = mutationType({
       },
       resolve: async (parent, { idToken }, ctx) => {
         try {
+          // console.log(idToken);
           // @ts-ignore
           const response = await admin.auth().verifyIdToken(idToken);
           const user = await ctx.prisma.createUser({
             uid: response.uid
           });
+
           return {
-            token: sign({ userId: user.id }, APP_SECRET),
+            token: sign({ user: user }, APP_SECRET),
             user
           };
         } catch (error) {
-          throw new Error(`Error: ` + error);
+          console.error(error);
+          throw new Error(error);
         }
       }
     });
@@ -45,11 +48,18 @@ export const Mutation = mutationType({
             user
           };
         } catch (error) {
-          throw new Error(`Error: ` + error);
+          throw new Error(error);
         }
       }
     });
-
+    t.field('deleteuser', {
+      type: 'User',
+      resolve: (parent, args, ctx) => {
+        console.warn('context: ' + JSON.stringify(ctx, null, 4));
+        const userId = getUserId(ctx);
+        return ctx.prisma.deleteUser({ id: userId });
+      }
+    });
     // t.field('createDraft', {
     //   type: 'Post',
     //   args: {

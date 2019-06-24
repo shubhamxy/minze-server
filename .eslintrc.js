@@ -19,13 +19,6 @@ module.exports = {
     "no-underscore-dangle": "off",
     "react/prefer-stateless-function": "off",
     "no-else-return": "off",
-    parserOptions: {
-      ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
-      sourceType: 'module', // Allows for the use of imports
-      ecmaFeatures: {
-        jsx: true, // Allows for the parsing of JSX
-      },
-    },
     // quotes: ["error", "single"],
     // "object-curly-newline": ["error", {
     //     "ObjectExpression": "always",

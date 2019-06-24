@@ -8,7 +8,7 @@ export const notFoundError = () => {
 
 export const clientError = (err: Error, res: Response, next: NextFunction) => {
   if (err instanceof HTTPClientError) {
-    console.warn('::CLIENTWARN::' + err);
+    // console.info(err);
     res.status(err.statusCode).send(err.message);
   } else {
     next(err);
@@ -16,7 +16,7 @@ export const clientError = (err: Error, res: Response, next: NextFunction) => {
 };
 
 export const serverError = (err: Error, res: Response, next: NextFunction) => {
-  console.warn('::SERVER WARN::' + err);
+  // console.info(err);
   if (process.env.NODE_ENV === 'production') {
     res.status(500).send('Internal Server Error');
   } else {
