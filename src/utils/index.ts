@@ -22,3 +22,5 @@ export const applyRoutes = (routes: Route[], router: Router) => {
     (router as any)[method](path, handler);
   }
 };
+
+export * from './logging';

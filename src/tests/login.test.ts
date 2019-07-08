@@ -3,7 +3,7 @@ import request from 'supertest';
 import { expect } from 'chai';
 import { getAuthResponse, AuthResponse, firebaseApp } from './__mocks__/firebase';
 
-describe('Test Login Flow is Working ', () => {
+describe('Test Login Flow', () => {
   let authResponse: AuthResponse;
   let authToken: string;
   let userId: string;
@@ -21,9 +21,9 @@ describe('Test Login Flow is Working ', () => {
     done();
   });
 
-  test('It should login with test user idToken', async done => {
+  test('should login with test user idToken', async done => {
     expect(authResponse.idToken).to.be.string;
-    console.log(authResponse.idToken);
+    console.log({"idToken": authResponse.idToken});
     const query = {
       query: `
         mutation{
@@ -53,7 +53,7 @@ describe('Test Login Flow is Working ', () => {
     done();
   });
 
-  test('It should query user info from database using Auth header', async done => {
+  test('Should query user info from database using Auth header', async done => {
     const query = {
       query: `{
         me{

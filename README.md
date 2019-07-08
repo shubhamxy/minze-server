@@ -1,5 +1,5 @@
-# Minze Server [![Build Status](https://dev.azure.com/shubhamxy/minze-server/_apis/build/status/shubhamxy.minze-server?branchName=master)](https://dev.azure.com/mzeroes/minze/_build/latest?definitionId=2&branchName=master)
-
+# Minze Server [![Build Status](https://dev.azure.com/shubhamxy/minze-server/_apis/build/status/shubhamxy.minze-server?branchName=master)](https://dev.azure.com/shubhamxy/minze-server/_build/latest?definitionId=3&branchName=master)
+  
 *Server code for minze application*
 
 ## Microservices

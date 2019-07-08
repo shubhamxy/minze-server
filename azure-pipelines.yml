@@ -17,5 +17,6 @@ steps:
 
 - script: |
     yarn install
-    yarn run test
+    yarn run start
+    # yarn run test --runInBand
   displayName: 'yarn install, start and test'

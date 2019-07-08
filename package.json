@@ -1,12 +1,10 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "Api Server",
+  "description": "Minze api server",
   "main": "./dist/index.js",
   "engines": {
-    "node": "10.16.0",
-    "npm": "6.9.0",
-    "yarn": "1.16.0"
+    "node": "10.16.0"
   },
   "keywords": [
     "nodejs",
@@ -14,20 +12,25 @@
     "server"
   ],
   "scripts": {
-    "preinstall": "./prebuild.sh",
     "compose-up": "cd database; docker-compose up -d",
     "dev:ts": "npx ts-node-dev --no-notify --respawn --transpileOnly ./src",
-    "dev": "tsc-watch --onSuccess \"node ./dist/index.js\"",
-    "herokuEnv": "npx heroku-dotenv push",
+    "heroku:env": "npx heroku-dotenv push",
     "kill-process": "docker kill (docker ps -aq); and docker rm (docker ps -aq)",
     "lint:fix": "npx eslint . --ext .ts --fix",
     "lint": "npx eslint . --ext .ts",
     "pm2log": "npx pm2 logs --raw",
+    "preinstall": "./scripts/pre-install.sh",
+    "clean": "rm -rf ./dist; rm -rf src/graphql/generated",
     "postinstall": "npx tsc",
-    "prisma-deploy": "cd database; prisma deploy",
-    "start": "npx pm2 start pm2.yaml",
+    "prisma:deploy": "cd database; prisma deploy",
+    "prisma:generate": "cd database; prisma generate",
+    "start": "npx pm2 start pm2.yaml --env production",
+    "start:staging": "npx pm2 start pm2.yaml --env staging",
+    "start:prod": "NODE_ENV=production tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "start:dev": "NODE_ENV=development tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "start:local": "NODE_ENV=local tsc-watch --onSuccess \"node ./dist/index.js\"",
     "stop": "npx pm2 stop all",
-    "test": "jest --coverage --verbose",
+    "test": "npx jest --coverage --verbose",
     "testServer": "tsc-watch --onSuccess \"node ./dist/index.js\""
   },
   "author": "Shubham Jain <s.shubjain@gmail.com>",
@@ -57,7 +60,9 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "supertest": "^4.0.2",
-    "swagger-ui-express": "^4.0.6"
+    "swagger-ui-express": "^4.0.6",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -68,10 +73,10 @@
     "@types/chai": "^4.1.7",
     "@types/compression": "0.0.36",
     "@types/cors": "^2.8.4",
-    "@types/dotenv": "^6.1.0",
+    "@types/dotenv": "^6.1.1",
     "@types/express": "^4.16.1",
     "@types/graphql": "^14.0.7",
-    "@types/jest": "^24.0.11",
+    "@types/jest": "^24.0.15",
     "@types/mongoose": "^5.3.22",
     "@types/node": "^12.0.10",
     "@types/request-promise": "^4.1.42",

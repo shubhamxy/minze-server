@@ -1,13 +1,13 @@
-import './config';
+import CONFIG from './config'; /* Should be at top */
 import { GraphQLServer } from 'graphql-yoga';
 import routes from './services';
 import middleware from './middleware';
 import errorHandlers from './middleware/errorHandlers';
 import { prisma } from './graphql/generated/prisma-client';
 import { schema, permissions } from './graphql';
-import { applyMiddleware, applyRoutes } from './utils';
+import { logger, applyMiddleware, applyRoutes } from './utils';
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3000 } = CONFIG.ENV_VARS;
 
 process.on('uncaughtException', e => {
   console.log(e);
@@ -40,7 +40,10 @@ applyMiddleware(middleware, server.express);
 applyRoutes(routes, server.express);
 
 server.start(options, () => {
-  console.log(` 🚀 Server is running http://localhost:${PORT}.`);
+  logger.info(`🚀  Server is running http://localhost:${PORT}.`);
+  logger.debug(CONFIG);
+  logger.error("x")
+  logger.warn("x")
 });
 
 applyMiddleware(errorHandlers, server.express);

@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+
 const firebaseConfig = {
   apiKey: 'AIzaSyAJlSZvaaXwiqgPWb7b9gYe9hcQM_aZuoY',
   authDomain: 'minze-cf40b.firebaseapp.com',

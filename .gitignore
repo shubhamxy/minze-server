@@ -9,6 +9,7 @@ coverage
 .DS_Store
 src/keys/**
 # keep the keys folder
-!src/keys/.gitkeep
+!src/keys/index.ts
 .env
 .env*
+logs

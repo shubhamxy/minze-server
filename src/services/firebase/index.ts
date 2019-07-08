@@ -1,17 +1,12 @@
 import * as admin from 'firebase-admin';
-/**
- * serviceAccount Key Location
- */
-
-// const KeyLocation = '../../../keys/serviceAccount.json';
-
+import { serviceAccount } from '../../keys';
 admin.initializeApp({
   credential: admin.credential.cert({
-    projectId: process.env.FIREBASE_PROJECT_ID || '',
-    clientEmail: process.env.FIREBASE_CLIENT_EMAIL || '',
-    privateKey: process.env.FIREBASE_PRIVATE_KEY ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, '\n') : ''
+    projectId: serviceAccount.project_id,
+    clientEmail: serviceAccount.client_email,
+    privateKey: serviceAccount.private_key.replace(/\\n/g, '\n')
   }),
-  databaseURL: `${process.env.FIREBASE_PROJECT_ID || ''}.firebaseio.com`
+  databaseURL: `${serviceAccount.project_id}.firebaseio.com`
 });
 
 export { admin };
