@@ -27,7 +27,7 @@ fi
 if [[ ! -e .env.development ]]; then
   touch .env.development
   ENV_WHITELIST=${ENV_WHITELIST:-"^.*$"}
-  printf "Creating an .env.test file with the following whitelist:\n"
+  printf "Creating an .env.development file with the following whitelist:\n"
   printf "%s\n\n" $ENV_WHITELIST
   set | egrep -e $ENV_WHITELIST | egrep -v "^_" | egrep -v "WHITELIST" > .env.development
 fi
