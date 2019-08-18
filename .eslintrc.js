@@ -1,13 +1,13 @@
 module.exports = {
   // extends: "airbnb",
-  extends: ['plugin:@typescript-eslint/recommended', 'prettier/@typescript-eslint', 'plugin:prettier/recommended',],
+  extends: ["plugin:@typescript-eslint/recommended", "prettier/@typescript-eslint", "plugin:prettier/recommended"],
   parser: "@typescript-eslint/parser",
-  plugins: ['@typescript-eslint'],
+  plugins: ["@typescript-eslint"],
   env: {
     jest: true
   },
   rules: {
-    '@typescript-eslint/camelcase': "off",
+    "@typescript-eslint/camelcase": "off",
     "react/no-multi-comp": "off",
     "no-use-before-define": "off",
     "react/jsx-filename-extension": "off",
@@ -26,25 +26,25 @@ module.exports = {
     //     "ImportDeclaration": "never",
     //     "ExportDeclaration": { "multiline": true, "minProperties": 3 }
     // }],
-    "array-element-newline": "on",
+    "array-element-newline": "off",
     "object-curly-newline": "off",
     "global-require": "off",
-    'no-unused-vars': 'off',
+    "no-unused-vars": "off",
     "import/prefer-default-export": "off",
-    "@typescript-eslint/no-empty-interface": 'off',
-    '@typescript-eslint/explicit-member-accessibility': 'off',
-    '@typescript-eslint/indent': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-unused-vars' : 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-use-before-define': 'off'
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-use-before-define": "off"
   },
   globals: {
     fetch: false
   },
   settings: {
     react: {
-      version: 'detect'
-    },
+      version: "detect"
+    }
   }
 };

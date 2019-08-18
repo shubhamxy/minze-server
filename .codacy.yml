@@ -1,0 +1,8 @@
+exclude_paths:
+  - 'logs/**'
+  - 'benchmarks/**/*'
+  - 'dist/**/*'
+  - 'prisma/**/*'
+  - 'coverage/**/*'
+  - 'src/generated/**/*'
+  - '**/__tests__/**' 

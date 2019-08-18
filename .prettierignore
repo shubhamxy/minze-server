@@ -1,0 +1,6 @@
+build/*
+!build/index.js
+src/generated/*
+dist
+coverage
+node_modules

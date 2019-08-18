@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response, Router } from 'express';
+import { NextFunction, Request, Response, Router } from "express";
 
 type Wrapper = (router: Router) => void;
 
@@ -23,4 +23,5 @@ export const applyRoutes = (routes: Route[], router: Router) => {
   }
 };
 
-export * from './logging';
+export * from "./logging";
+export * from "./context";

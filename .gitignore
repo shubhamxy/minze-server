@@ -1,5 +1,6 @@
 # Coverage directory
 .nyc_output
+secrets/secret
 
 # Dependency directory
 node_modules

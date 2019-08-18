@@ -1,0 +1,50 @@
+# This service is based on the type definitions in the two files
+# `database/types.prisma` and `database/enums.prisma`
+
+datamodel:
+  - datamodel/types.prisma
+  - datamodel/enums.prisma
+
+# The endpoint represents the HTTP endpoint for your Prisma API.
+# It encodes several pieces of information:
+# * Prisma server (`localhost:4466` in this example)
+# * Service name (`myservice` in this example)
+# * Stage (`dev` in this example)
+# NOTE: When service name and stage are set to `default`, they
+# can be omitted.
+# Meaning http://myserver.com/default/default can be written
+# as http://myserver.com.
+
+# endpoint: https://minze-database.herokuapp.com/
+endpoint: ${env:PRISMA_ENDPOINT}
+# endpoint: http://localhost:4466
+
+# The secret is used to create JSON web tokens (JWTs). These
+# tokens need to be attached in the `Authorization` header
+# of HTTP requests made against the Prisma endpoint.
+# WARNING: If the secret is not provided, the Prisma API can
+# be accessed without authentication!
+# generate TOKEN with ```prisma token```
+# {
+#   "Authorization": "Bearer TOKEN"
+# }
+secret: ${env:PRISMA_SECRET}
+
+# Generate a Prisma client in Typescript and store in
+# a folder called `src/generated/prisma-client`.
+# It also downloads the Prisma GraphQL schema and stores it
+# in `src/generated/prisma.graphql`.
+generate:
+  - generator: typescript-client
+    output: ../src/generated/prisma-client/
+
+# Seeds initial data into the database by running a script.
+seed:
+  import: seed.graphql
+# seed:
+#   # import: database/backup.zip
+  
+hooks:
+  post-deploy:
+    - graphql get-schema -p prisma
+    - graphql codegen
