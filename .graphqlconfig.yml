@@ -9,7 +9,7 @@ projects:
     ]
     extensions:
       endpoints:
-        default: http://localhost:3000
+        default: https://minze-database.herokuapp.com/
   prisma:
     schemaPath: src/generated/prisma.graphql
     includes: [

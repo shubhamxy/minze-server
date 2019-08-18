@@ -1,7 +1,4 @@
 #! /bin/bash
-source scripts/common.sh
-source .env
-
 ################################################################################
 # DEPLOY SCRIPT
 ################################################################################
@@ -18,6 +15,7 @@ check_environment(){
 }
 
 DEPLOY_TYPE='soft'
+
 while getopts ":e:t:d:m:" opt; do
   case $opt in
     e) APP_ENV="$OPTARG"
@@ -30,6 +28,9 @@ while getopts ":e:t:d:m:" opt; do
     ;;
   esac
 done
+
+source scripts/common.sh
+source .env
 
 [[ -z $(git status -s) ]] || warn 'Please make sure you deploy with no changes or untracked files. You can run *git stash --include-untracked*.'
 

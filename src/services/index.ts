@@ -1,5 +1,6 @@
-import routes from "./base";
-import userRoutes from "./user";
-import fireroutes from "./firebase/fireroutes";
+import routes from './base';
+import modelrunner from './modelrunner';
 
-export default [...routes, ...userRoutes, ...fireroutes];
+import {fireroutes} from './firebase';
+
+export default [...routes, ...fireroutes, ...modelrunner];

@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response, Router } from "express";
+import {NextFunction, Request, Response, Router} from 'express';
 
 type Wrapper = (router: Router) => void;
 
@@ -8,7 +8,7 @@ export const applyMiddleware = (middlewareWrappers: Wrapper[], router: Router) =
   }
 };
 
-type Handler = (req: Request, res: Response, next: NextFunction) => Promise<void> | void;
+export type Handler = (req: Request, res: Response, next: NextFunction) => Promise<void> | void;
 
 interface Route {
   path: string;
@@ -18,10 +18,10 @@ interface Route {
 
 export const applyRoutes = (routes: Route[], router: Router) => {
   for (const route of routes) {
-    const { method, path, handler } = route;
+    const {method, path, handler} = route;
     (router as any)[method](path, handler);
   }
 };
 
-export * from "./logging";
-export * from "./context";
+export * from './logging';
+export * from './context';

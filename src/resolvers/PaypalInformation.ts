@@ -1,6 +1,6 @@
-import { PaypalInformationResolvers } from "../generated/resolvers";
-import { TypeMap } from "./types/TypeMap";
-import { PaymentAccountParent } from "./PaymentAccount";
+import {PaypalInformationResolvers} from '../generated/resolvers';
+import {TypeMap} from './types/TypeMap';
+import {PaymentAccountParent} from './PaymentAccount';
 
 export interface PaypalInformationParent {
   createdAt: string;

@@ -1,13 +1,13 @@
-import * as firebase from "firebase";
+import * as firebase from 'firebase';
 
 export const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyAJlSZvaaXwiqgPWb7b9gYe9hcQM_aZuoY",
-  authDomain: "minze-cf40b.firebaseapp.com",
-  databaseURL: "https://minze-cf40b.firebaseio.com",
-  projectId: "minze-cf40b",
-  storageBucket: "minze-cf40b.appspot.com",
-  messagingSenderId: "545691223180",
-  appId: "1:545691223180:web:3ceabfe455f8c667"
+  apiKey: 'AIzaSyAJlSZvaaXwiqgPWb7b9gYe9hcQM_aZuoY',
+  authDomain: 'minze-cf40b.firebaseapp.com',
+  databaseURL: 'https://minze-cf40b.firebaseio.com',
+  projectId: 'minze-cf40b',
+  storageBucket: 'minze-cf40b.appspot.com',
+  messagingSenderId: '545691223180',
+  appId: '1:545691223180:web:3ceabfe455f8c667'
 });
 
 export interface UserCredential {
@@ -24,7 +24,7 @@ export interface AuthResponse {
 export const getAuthResponse = async (email?: string, password?: string) => {
   const response = await firebase
     .auth()
-    .signInWithEmailAndPassword(email || "s.shubjain@gmail.com", password || "test123");
+    .signInWithEmailAndPassword(email || 's.shubjain@gmail.com', password || 'test123');
   //@ts-ignore
   const idToken = await firebase.auth().currentUser.getIdToken(/* forceRefresh */ true);
 

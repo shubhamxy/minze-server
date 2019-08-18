@@ -3989,6 +3989,7 @@ input PaytmInformationWhereUniqueInput {
 
 type Picture {
   id: ID!
+  altText: String
   url: String!
 }
 
@@ -4000,6 +4001,7 @@ type PictureConnection {
 
 input PictureCreateInput {
   id: ID
+  altText: String
   url: String!
 }
 
@@ -4021,12 +4023,15 @@ type PictureEdge {
 enum PictureOrderByInput {
   id_ASC
   id_DESC
+  altText_ASC
+  altText_DESC
   url_ASC
   url_DESC
 }
 
 type PicturePreviousValues {
   id: ID!
+  altText: String
   url: String!
 }
 
@@ -4045,6 +4050,20 @@ input PictureScalarWhereInput {
   id_not_starts_with: ID
   id_ends_with: ID
   id_not_ends_with: ID
+  altText: String
+  altText_not: String
+  altText_in: [String!]
+  altText_not_in: [String!]
+  altText_lt: String
+  altText_lte: String
+  altText_gt: String
+  altText_gte: String
+  altText_contains: String
+  altText_not_contains: String
+  altText_starts_with: String
+  altText_not_starts_with: String
+  altText_ends_with: String
+  altText_not_ends_with: String
   url: String
   url_not: String
   url_in: [String!]
@@ -4083,14 +4102,17 @@ input PictureSubscriptionWhereInput {
 }
 
 input PictureUpdateDataInput {
+  altText: String
   url: String
 }
 
 input PictureUpdateInput {
+  altText: String
   url: String
 }
 
 input PictureUpdateManyDataInput {
+  altText: String
   url: String
 }
 
@@ -4107,6 +4129,7 @@ input PictureUpdateManyInput {
 }
 
 input PictureUpdateManyMutationInput {
+  altText: String
   url: String
 }
 
@@ -4162,6 +4185,20 @@ input PictureWhereInput {
   id_not_starts_with: ID
   id_ends_with: ID
   id_not_ends_with: ID
+  altText: String
+  altText_not: String
+  altText_in: [String!]
+  altText_not_in: [String!]
+  altText_lt: String
+  altText_lte: String
+  altText_gt: String
+  altText_gte: String
+  altText_contains: String
+  altText_not_contains: String
+  altText_starts_with: String
+  altText_not_starts_with: String
+  altText_ends_with: String
+  altText_not_ends_with: String
   url: String
   url_not: String
   url_in: [String!]

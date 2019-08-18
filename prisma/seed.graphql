@@ -1,609 +1,234 @@
 mutation {
-  experience: createExperience(
+  createRestaurant_0: createRestaurant(
     data: {
-      popularity: 3
-      pricePerPerson: 33
-      title: "Raise a glass to Prohibition"
-      host: {
+      name: "Barbeque Nation"
+      shortDescription: "North Indian, Chinese, Mediterranean"
+      description: "North Indian, Chinese, Mediterranean"
+      slug: "//restaurant/18805412"
+      maxGuests: 18805412
+      popularity: 18805412
+      pictures: {
         create: {
-          uid: "",
-          phoneNumber: "+1123455667"
-          responseRate: 1
-          responseTime: 5
-          location: {
-            create: {
-              address: "2 Salmon Way, Moss Landing, Monterey County, CA, USA"
-              directions: "Follow the street to the end, then right"
-              lat: 36.805235
-              lng: 121.7892066
-              neighbourHood: {
-                create: {
-                  name: "Monterey Countey"
-                  slug: "monterey-countey"
-                  featured: true
-                  popularity: 1
-                  city: { create: { name: "Moss Landing" } }
-                }
-              }
-            }
-          }
-        }
-      }
-      preview: {
-        create: {
-          url: "https://a0.muscache.com/im/pictures/cb14d34d-65cf-401d-ba7f-585ec37b43ef.jpg"
+          url: "https://b.zmtcdn.com/data/pictures/chains/2/1212/b6429ddad24625e65344caabb921bd57.jpg?output-format=webp"
         }
       }
       location: {
         create: {
-          address: "2 Salmon Way, Moss Landing, Monterey County, CA, USA"
-          directions: "Follow the street to the end, then right"
-          lat: 36.805235
-          lng: 121.7892066
-          neighbourHood: {
-            create: {
-              name: "Monterey Countey"
-              slug: "monterey-countey"
-              featured: true
-              popularity: 1
-              city: { create: { name: "Moss Landing" } }
-            }
-          }
+          address: "Unit 601, 6th Floor, Unity One, MLCP Plot, Rohini West Metro Station Complex, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7151414124
+          lng: 77.1163311973
         }
       }
+      avgPricePerPerson: 700
+      avgRating: 4.8
+      numRatings: 1095
     }
   ) {
     id
   }
-
-  restaurant: createRestaurant(
+  createRestaurant_1: createRestaurant(
     data: {
-      title: "Chumley's"
+      name: "BTW"
+      shortDescription: "South Indian, Street Food, Mithai, North Indian, Beverages"
+      description: "South Indian, Street Food, Mithai, North Indian, Beverages"
+      slug: "//restaurant/9253"
+      maxGuests: 9253
+      popularity: 9253
       pictures: {
         create: {
-          url: "https://a0.muscache.com/pictures/a9a1d433-bcde-4601-88a0-5f16871b8548.jpg"
+          url: "https://b.zmtcdn.com/data/pictures/2/3372/7bb76629ab645d288f0bd6fa8b1e7190.jpg?output-format=webp"
         }
       }
-      slug: "chumleys"
-      popularity: 1
-      avgPricePerPerson: 30
       location: {
         create: {
-          address: "2 Salmon Way, Moss Landing, Monterey County, CA, USA"
-          directions: "Follow the street to the end, then right"
-          lat: 36.805235
-          lng: 121.7892066
-          neighbourHood: {
-            create: {
-              name: "Monterey Countey"
-              slug: "monterey-countey"
-              featured: true
-              popularity: 1
-              city: { create: { name: "Moss Landing" } }
-            }
-          }
+          address: "1, Garg Trade Center, Sector 11, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7345494297
+          lng: 77.114279978
         }
       }
+      avgPricePerPerson: 200
+      avgRating: 4
+      numRatings: 902
     }
   ) {
     id
   }
-
-  firstPlace: createPlace(
+  createRestaurant_2: createRestaurant(
     data: {
-      name: "Mushroom Dome Cabin: #1 on airbnb in the world"
-      shortDescription: "With a geodesic dome loft & a large deck in the trees, you'll feel like you're in a tree house in the woods. We are in a quiet yet convenient location. Shaded by Oak and Madrone trees and next to a Redwood grove, you can enjoy the outdoors from the deck. In the summer, it is cool and in the winter you might get to hear the creek running below."
-      description: "The space\\n\\nWe have 10 acres next to land without fences so you will get to enjoy nature: just hang out on the deck, take a hike in the woods, watch the hummingbirds, pet the goats, go to the beach or gaze at the stars - as long as the moon isn't full. ; ) During the summer, if there isn't any nightly fog, we can see the Milky Way here.\\n\\nTo check our availability, click on the \"Request to Book\" link."
-      maxGuests: 3
-      pictures: {
-        create: {
-          url: "https://a0.muscache.com/im/pictures/140333/3ab8f121_original.jpg?aki_policy=xx_large"
-        }
-      }
-      numBedrooms: 1
-      numBeds: 3
-      numBaths: 1
-      size: ENTIRE_CABIN
-      slug: "mushroom-dome"
-      popularity: 1
-      host: {
-        create: {
-          email: "test@test.com"
-          firstName: "John"
-          lastName: "Doe"
-          isSuperHost: true
-          phone: "+1123455667"
-          password: "secret"
-          responseRate: 1
-          responseTime: 5
-          location: {
-            create: {
-              address: "2 Salmon Way, Moss Landing, Monterey County, CA, USA"
-              directions: "Follow the street to the end, then right"
-              lat: 36.805235
-              lng: 121.7892066
-              neighbourHood: {
-                create: {
-                  name: "Monterey Countey"
-                  slug: "monterey-countey"
-                  featured: true
-                  popularity: 1
-                  city: { create: { name: "Moss Landing" } }
-                }
-              }
-            }
-          }
-        }
-      }
-      amenities: { create: { airConditioning: false, essentials: true } }
-      views: { create: { lastWeek: 0 } }
-      guestRequirements: {
-        create: {
-          recommendationsFromOtherHosts: false
-          guestTripInformation: false
-        }
-      }
-      policies: {
-        create: {
-          checkInStartTime: 11.00
-          checkInEndTime: 20.00
-          checkoutTime: 10.00
-        }
-      }
-      pricing: {
-        create: {
-          averageMonthly: 1000
-          averageWeekly: 300
-          basePrice: 100
-          cleaningFee: 30
-          extraGuests: 80
-          perNight: 100
-          securityDeposit: 500
-          weeklyDiscount: 50
-          smartPricing: false
-          currency: USD
-        }
-      }
-      houseRules: {
-        create: {
-          smokingAllowed: false
-          petsAllowed: true
-          suitableForInfants: false
-        }
-      }
+      name: "Berco's"
+      shortDescription: "Chinese, Thai, Seafood, Desserts, Beverages"
+      description: "Chinese, Thai, Seafood, Desserts, Beverages"
+      slug: "//restaurant/1806"
+      maxGuests: 1806
+      popularity: 1806
+      pictures: {create: {url: ""}}
       location: {
         create: {
-          address: "2 Salmon Way, Moss Landing, Monterey County, CA, USA"
-          directions: "Follow the street to the end, then right"
-          lat: 36.805235
-          lng: 121.7892066
-          neighbourHood: {
-            create: {
-              name: "Monterey Countey"
-              slug: "monterey-countey"
-              featured: true
-              popularity: 1
-              city: { create: { name: "Moss Landing" } }
-            }
-          }
+          address: "GA-06, Metro Walk Mall, Rohini, New Delhi"
+          directions: "Metro Walk Mall, Rohini"
+          lat: 28.7241546367
+          lng: 77.1135772392
         }
       }
+      avgPricePerPerson: 500
+      avgRating: 4.2
+      numRatings: 1408
     }
   ) {
     id
   }
-
-  secondPlace: createPlace(
+  createRestaurant_3: createRestaurant(
     data: {
-      name: "Apartment 1 of 4 with green terrace in Roma Norte"
-      shortDescription: "We offer other options with incredible terraces: Wonderful little loft with enjoyable terrace. Green and relaxing in the heart of the bustling city."
-      description: "We offer other options with incredible terraces: Wonderful little loft with enjoyable terrace. Green and relaxing in the heart of the bustling city."
-      maxGuests: 3
+      name: "Burger King"
+      shortDescription: "Fast Food, Burger, Beverages"
+      description: "Fast Food, Burger, Beverages"
+      slug: "//restaurant/18247003"
+      maxGuests: 18247003
+      popularity: 18247003
       pictures: {
         create: {
-          url: "https://a0.muscache.com/im/pictures/45880516/93bb5931_original.jpg?aki_policy=xx_large"
-        }
-      }
-      numBedrooms: 1
-      numBeds: 3
-      numBaths: 1
-      size: ENTIRE_CABIN
-      slug: "mushroom-dome"
-      popularity: 1
-      host: {
-        create: {
-          email: "test14@test.com"
-          firstName: "Jason"
-          lastName: "Padmakumara"
-          isSuperHost: true
-          phone: "+1123455667"
-          password: "secret"
-          responseRate: 1
-          responseTime: 5
-          location: {
-            create: {
-              address: "2 Salmon Way, Moss Landing, Monterey County, CA, USA"
-              directions: "Follow the street to the end, then right"
-              lat: 36.805235
-              lng: 121.7892066
-              neighbourHood: {
-                create: {
-                  name: "Monterey Countey"
-                  slug: "monterey-countey"
-                  featured: true
-                  popularity: 1
-                  city: { create: { name: "Moss Landing" } }
-                }
-              }
-            }
-          }
-        }
-      }
-      amenities: { create: { airConditioning: false, essentials: true } }
-      views: { create: { lastWeek: 0 } }
-      guestRequirements: {
-        create: {
-          recommendationsFromOtherHosts: false
-          guestTripInformation: false
-        }
-      }
-      policies: {
-        create: {
-          checkInStartTime: 11.00
-          checkInEndTime: 20.00
-          checkoutTime: 10.00
-        }
-      }
-      pricing: {
-        create: {
-          averageMonthly: 1000
-          averageWeekly: 300
-          basePrice: 100
-          cleaningFee: 30
-          extraGuests: 80
-          perNight: 110
-          securityDeposit: 500
-          weeklyDiscount: 50
-          smartPricing: false
-          currency: USD
-        }
-      }
-      houseRules: {
-        create: {
-          smokingAllowed: false
-          petsAllowed: true
-          suitableForInfants: false
+          url: "https://b.zmtcdn.com/data/pictures/chains/8/310078/87dfce2afb78e9adc22411c5984a43e9.jpg?output-format=webp"
         }
       }
       location: {
         create: {
-          address: "Narvarte Oriente, Mexico City, CDMX, Mexico"
-          directions: "Follow the street to the end, then right"
-          lat: 19.398095
-          lng: -99.149452
-          neighbourHood: {
-            create: {
-              name: "Mexico City"
-              slug: "mexico-city"
-              featured: true
-              popularity: 1
-              city: { create: { name: "Mexico City" } }
-            }
-          }
+          address: "Unit 21-24, Ground Floor, D Mall, Twin District Center, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7164469578
+          lng: 77.1139175445
         }
       }
+      avgPricePerPerson: 250
+      avgRating: 3.9
+      numRatings: 980
     }
   ) {
     id
   }
-
-  thirdPlace: createPlace(
+  createRestaurant_4: createRestaurant(
     data: {
-      name: "Urban Farmhouse at Curtis Park"
-      shortDescription: "The Urban Farmhouse circa 1886 - meticulously converted in 2013. Situated adjacent to community garden. The updates afford you all the modern convenience you could ask for and charm you can only get from a building built in 1886. A true Charmer."
-      description: "The Urban Farmhouse circa 1886 - meticulously converted in 2013. Situated adjacent to community garden. The updates afford you all the modern convenience you could ask for and charm you can only get from a building built in 1886. A true Charmer."
-      maxGuests: 3
+      name: "Haldiram's"
+      shortDescription: "North Indian, Mithai, South Indian, Fast Food, Street Food, Chinese, Desserts"
+      description: "North Indian, Mithai, South Indian, Fast Food, Street Food, Chinese, Desserts"
+      slug: "//restaurant/9338"
+      maxGuests: 9338
+      popularity: 9338
       pictures: {
         create: {
-          url: "https://a0.muscache.com/im/pictures/ff6b760d-8782-4ccb-9e03-50aa720e3783.jpg?aki_policy=xx_large"
-        }
-      }
-      numBedrooms: 1
-      numBeds: 3
-      numBaths: 1
-      size: ENTIRE_CABIN
-      slug: "mushroom-dome"
-      popularity: 1
-      host: {
-        create: {
-          email: "test12@test.com"
-          firstName: "Hans"
-          lastName: "Johanson"
-          isSuperHost: true
-          phone: "+1123455667"
-          password: "secret"
-          responseRate: 1
-          responseTime: 5
-          location: {
-            create: {
-              address: "2 Salmon Way, Moss Landing, Monterey County, CA, USA"
-              directions: "Follow the street to the end, then right"
-              lat: 36.805235
-              lng: 121.7892066
-              neighbourHood: {
-                create: {
-                  name: "Monterey Countey"
-                  slug: "monterey-countey"
-                  featured: true
-                  popularity: 1
-                  city: { create: { name: "Moss Landing" } }
-                }
-              }
-            }
-          }
-        }
-      }
-      amenities: { create: { airConditioning: false, essentials: true } }
-      views: { create: { lastWeek: 0 } }
-      guestRequirements: {
-        create: {
-          recommendationsFromOtherHosts: false
-          guestTripInformation: false
-        }
-      }
-      policies: {
-        create: {
-          checkInStartTime: 11.00
-          checkInEndTime: 20.00
-          checkoutTime: 10.00
-        }
-      }
-      pricing: {
-        create: {
-          averageMonthly: 1000
-          averageWeekly: 300
-          basePrice: 100
-          cleaningFee: 30
-          extraGuests: 80
-          perNight: 87
-          securityDeposit: 500
-          weeklyDiscount: 50
-          smartPricing: false
-          currency: USD
-        }
-      }
-      houseRules: {
-        create: {
-          smokingAllowed: false
-          petsAllowed: true
-          suitableForInfants: false
+          url: "https://b.zmtcdn.com/data/res_imagery/550_CHAIN_570d57e75a69ffe5f278a3195e73da9a.jpg?output-format=webp"
         }
       }
       location: {
         create: {
-          address: "W Crestline Ave, Littleton, CO 80120, USA"
-          directions: "Follow the street to the end, then right"
-          lat: 39.619115
-          lng: -105.016560
-          neighbourHood: {
-            create: {
-              name: "Denver"
-              slug: "denver"
-              featured: true
-              popularity: 1
-              city: { create: { name: "Denver" } }
-            }
-          }
+          address: "Ground Floor, D-Mall, Sector 10, Near Rohini West Metro Station, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7160882285
+          lng: 77.1141753718
         }
       }
+      avgPricePerPerson: 175
+      avgRating: 4
+      numRatings: 938
     }
   ) {
     id
   }
-
-  fourthPlace: createPlace(
+  createRestaurant_5: createRestaurant(
     data: {
-      name: "Underground Hygge"
-      shortDescription: "This inspired dwelling nestled right into the breathtaking Columbia River Gorge mountainside. Reverently framed by the iconic round doorway, the wondrous views will entrance your imagination and inspire an unforgettable journey. Every nook of this little habitation will warm your sole, every cranny will charm your expedition of repose. Up the pathway, tucked into the earth, an unbelievable adventure awaits!"
-      description: "This inspired dwelling nestled right into the breathtaking Columbia River Gorge mountainside. Reverently framed by the iconic round doorway, the wondrous views will entrance your imagination and inspire an unforgettable journey. Every nook of this little habitation will warm your sole, every cranny will charm your expedition of repose. Up the pathway, tucked into the earth, an unbelievable adventure awaits!"
-      maxGuests: 3
+      name: "The Beer Cafe"
+      shortDescription: "North Indian, Italian"
+      description: "North Indian, Italian"
+      slug: "//restaurant/18391127"
+      maxGuests: 18391127
+      popularity: 18391127
       pictures: {
-        create: {
-          url: "https://a0.muscache.com/im/pictures/56bff280-aba3-42f3-af42-adc2814a72f4.jpg?aki_policy=xx_large"
-        }
-      }
-      numBedrooms: 1
-      numBeds: 3
-      numBaths: 1
-      size: ENTIRE_CABIN
-      slug: "mushroom-dome"
-      popularity: 1
-      host: {
-        create: {
-          email: "test13@test.com"
-          firstName: "Leah"
-          lastName: "Dyer"
-          isSuperHost: true
-          phone: "+1123455667"
-          password: "secret"
-          responseRate: 1
-          responseTime: 5
-          location: {
-            create: {
-              address: "2 Salmon Way, Moss Landing, Monterey County, CA, USA"
-              directions: "Follow the street to the end, then right"
-              lat: 36.805235
-              lng: 121.7892066
-              neighbourHood: {
-                create: {
-                  name: "Monterey Countey"
-                  slug: "monterey-countey"
-                  featured: true
-                  popularity: 1
-                  city: { create: { name: "Moss Landing" } }
-                }
-              }
-            }
-          }
-        }
-      }
-      amenities: { create: { airConditioning: false, essentials: true } }
-      views: { create: { lastWeek: 0 } }
-      guestRequirements: {
-        create: {
-          recommendationsFromOtherHosts: false
-          guestTripInformation: false
-        }
-      }
-      policies: {
-        create: {
-          checkInStartTime: 11.00
-          checkInEndTime: 20.00
-          checkoutTime: 10.00
-        }
-      }
-      pricing: {
-        create: {
-          averageMonthly: 1000
-          averageWeekly: 300
-          basePrice: 100
-          cleaningFee: 30
-          extraGuests: 80
-          perNight: 69
-          securityDeposit: 500
-          weeklyDiscount: 50
-          smartPricing: false
-          currency: USD
-        }
-      }
-      houseRules: {
-        create: {
-          smokingAllowed: false
-          petsAllowed: true
-          suitableForInfants: false
-        }
+        create: {url: "https://b.zmtcdn.com/data/res_imagery/18391127_RESTAURANT_63aca8aa0a5f996a2f8a53383239c0e0.jpg"}
       }
       location: {
         create: {
-          address: "2600-2712 Entiat Way, Entiat, WA 98822, USA"
-          directions: "Follow the street to the end, then right"
-          lat: 47.631190
-          lng: -120.220822
-          neighbourHood: {
-            create: {
-              name: "Orondo"
-              slug: "orondo"
-              featured: true
-              popularity: 1
-              city: { create: { name: "Orondo" } }
-            }
-          }
+          address: "Unity Mall, Next to Rohini West Metro Station, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7138826041
+          lng: 77.1174201742
         }
       }
+      avgPricePerPerson: 750
+      avgRating: 3.9
+      numRatings: 814
     }
   ) {
     id
   }
-
-  fifthPlace: createPlace(
+  createRestaurant_6: createRestaurant(
     data: {
-      name: "Romantic, Cozy Cottage Next to Downtown"
-      shortDescription: "Comfy, cozy and romantic cottage less than 3 miles from Downtown. The Cleveland Cottage provides a private oasis within city limits that includes full kitchen, Wifi, parking, electric fireplace & entrance through a private courtyard with fire pit."
-      description: "Comfy, cozy and romantic cottage less than 3 miles from Downtown. The Cleveland Cottage provides a private oasis within city limits that includes full kitchen, Wifi, parking, electric fireplace & entrance through a private courtyard with fire pit."
-      maxGuests: 3
-      pictures: {
-        create: {
-          url: "https://a0.muscache.com/im/pictures/100298057/ccd8c843_original.jpg?aki_policy=xx_large"
-        }
-      }
-      numBedrooms: 1
-      numBeds: 3
-      numBaths: 1
-      size: ENTIRE_CABIN
-      slug: "mushroom-dome"
-      popularity: 1
-      host: {
-        create: {
-          email: "test15@test.com"
-          firstName: "Kris"
-          lastName: "Mao"
-          isSuperHost: true
-          phone: "+1123455667"
-          password: "secret"
-          responseRate: 1
-          responseTime: 5
-          location: {
-            create: {
-              address: "2 Salmon Way, Moss Landing, Monterey County, CA, USA"
-              directions: "Follow the street to the end, then right"
-              lat: 36.805235
-              lng: 121.7892066
-              neighbourHood: {
-                create: {
-                  name: "Monterey Countey"
-                  slug: "monterey-countey"
-                  featured: true
-                  popularity: 1
-                  city: { create: { name: "Moss Landing" } }
-                }
-              }
-            }
-          }
-        }
-      }
-      amenities: { create: { airConditioning: false, essentials: true } }
-      views: { create: { lastWeek: 0 } }
-      guestRequirements: {
-        create: {
-          recommendationsFromOtherHosts: false
-          guestTripInformation: false
-        }
-      }
-      policies: {
-        create: {
-          checkInStartTime: 11.00
-          checkInEndTime: 20.00
-          checkoutTime: 10.00
-        }
-      }
-      pricing: {
-        create: {
-          averageMonthly: 1000
-          averageWeekly: 300
-          basePrice: 100
-          cleaningFee: 30
-          extraGuests: 80
-          perNight: 110
-          securityDeposit: 500
-          weeklyDiscount: 50
-          smartPricing: false
-          currency: USD
-        }
-      }
-      houseRules: {
-        create: {
-          smokingAllowed: false
-          petsAllowed: true
-          suitableForInfants: false
-        }
-      }
+      name: "Kebab Xpress"
+      shortDescription: "North Indian, Kebab, Biryani"
+      description: "North Indian, Kebab, Biryani"
+      slug: "//restaurant/309629"
+      maxGuests: 309629
+      popularity: 309629
+      pictures: {create: {url: ""}}
       location: {
         create: {
-          address: "Greenwood, Nashville, TN 37206, USA"
-          directions: "Follow the street to the end, then right"
-          lat: 36.187977
-          lng: -86.751635
-          neighbourHood: {
-            create: {
-              name: "Nashville"
-              slug: "nashville"
-              featured: true
-              popularity: 1
-              city: { create: { name: "Nashville" } }
-            }
-          }
+          address: "118, 1st Floor, Unity Metro Mall, Rohini West Metro Station, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7138917196
+          lng: 77.1174148098
         }
       }
+      avgPricePerPerson: 300
+      avgRating: 4
+      numRatings: 930
+    }
+  ) {
+    id
+  }
+  createRestaurant_7: createRestaurant(
+    data: {
+      name: "New Punjabi Dhaba"
+      shortDescription: "North Indian"
+      description: "North Indian"
+      slug: "//restaurant/18539459"
+      maxGuests: 18539459
+      popularity: 18539459
+      pictures: {create: {url: "https://b.zmtcdn.com/data/pictures/9/18539459/8d57ecd7c8f1288bc9d3b56fa51381d7.jpg"}}
+      location: {
+        create: {
+          address: "B 5/396, Sector 11, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.732265404
+          lng: 77.1144798025
+        }
+      }
+      avgPricePerPerson: 150
+      avgRating: 3.1
+      numRatings: 765
+    }
+  ) {
+    id
+  }
+  createRestaurant_8: createRestaurant(
+    data: {
+      name: "Pind Balluchi"
+      shortDescription: "North Indian, Mughlai, Kebab"
+      description: "North Indian, Mughlai, Kebab"
+      slug: "//restaurant/838"
+      maxGuests: 838
+      popularity: 838
+      pictures: {create: {url: "https://b.zmtcdn.com/data/pictures/chains/6/836/57078c1c95c15ab488a321f9bc89cc65.jpg"}}
+      location: {
+        create: {
+          address: "Shop 9-11, Unitech Metro Walk Mall, Rohini, New Delhi"
+          directions: "Metro Walk Mall, Rohini"
+          lat: 28.7239655828
+          lng: 77.1137965098
+        }
+      }
+      avgPricePerPerson: 500
+      avgRating: 3.7
+      numRatings: 766
     }
   ) {
     id

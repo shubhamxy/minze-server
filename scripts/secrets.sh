@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-source scripts/common.sh
 ########################################################################################
 # Command: ./scripts/secrets.sh -e APP_ENV -m [pack|unpack] -p [APP_SECRET_PASSPHRASE]            #
 # pack: secrets, from the root of the project. Saves the location of the secrets       #
@@ -25,6 +24,8 @@ while getopts ":m:e:p:" opt; do
     ;;
   esac
 done
+
+source scripts/common.sh
 
 FILE_ROOT="${APP_ENV}_app_secrets_with_paths"
 

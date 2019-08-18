@@ -1,5 +1,5 @@
-import { NextFunction, Request, Response, Router } from "express";
-import * as ErrorHandler from "../utils/ErrorHandler";
+import {NextFunction, Request, Response, Router} from 'express';
+import * as ErrorHandler from '../utils/errors/ErrorHandler';
 
 /**
  * Note: These paths are graphql-yoga paths that does'nt need error handling but
@@ -9,10 +9,10 @@ import * as ErrorHandler from "../utils/ErrorHandler";
  */
 
 /* Both GET and POST */
-const IgnorePaths = ["/playground"];
+const IgnorePaths = ['/playground'];
 
 /* Ignore POST request on these paths */
-const IgnorePostPaths = ["/graphql"];
+const IgnorePostPaths = ['/graphql'];
 
 const handle404Error = (router: Router) => {
   router.use((req: Request, res: Response, next: NextFunction) => {
@@ -22,7 +22,7 @@ const handle404Error = (router: Router) => {
         test = false;
       }
     });
-    if (req.method === "post") {
+    if (req.method === 'post') {
       IgnorePostPaths.forEach(item => {
         if (req.path.startsWith(item)) {
           test = false;

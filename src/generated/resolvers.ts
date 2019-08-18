@@ -159,17 +159,6 @@ export namespace QueryResolvers {
 }
 
 export namespace MutationResolvers {
-  export interface ArgsSignup<T extends ITypeMap> {
-    idToken: string;
-  }
-
-  export type SignupResolver<T extends ITypeMap> = (
-    parent: T["MutationParent"],
-    args: ArgsSignup<T>,
-    ctx: T["Context"],
-    info: GraphQLResolveInfo
-  ) => T["AuthPayloadParent"] | Promise<T["AuthPayloadParent"]>;
-
   export interface ArgsLogin<T extends ITypeMap> {
     idToken: string;
   }
@@ -215,12 +204,6 @@ export namespace MutationResolvers {
   ) => T["MutationResultParent"] | Promise<T["MutationResultParent"]>;
 
   export interface Type<T extends ITypeMap> {
-    signup: (
-      parent: T["MutationParent"],
-      args: ArgsSignup<T>,
-      ctx: T["Context"],
-      info: GraphQLResolveInfo
-    ) => T["AuthPayloadParent"] | Promise<T["AuthPayloadParent"]>;
     login: (
       parent: T["MutationParent"],
       args: ArgsLogin<T>,

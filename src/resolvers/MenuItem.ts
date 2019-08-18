@@ -1,8 +1,8 @@
-import { MenuItemResolvers } from "../generated/resolvers";
-import { TypeMap } from "./types/TypeMap";
-import { PricingParent } from "./Pricing";
-import { PictureParent } from "./Picture";
-import { ReviewParent } from "./Review";
+import {MenuItemResolvers} from '../generated/resolvers';
+import {TypeMap} from './types/TypeMap';
+import {PricingParent} from './Pricing';
+import {PictureParent} from './Picture';
+import {ReviewParent} from './Review';
 
 export interface MenuItemParent {
   id: string;

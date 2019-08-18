@@ -1021,7 +1021,13 @@ export type PoliciesOrderByInput =
   | "closingTime_ASC"
   | "closingTime_DESC";
 
-export type PictureOrderByInput = "id_ASC" | "id_DESC" | "url_ASC" | "url_DESC";
+export type PictureOrderByInput =
+  | "id_ASC"
+  | "id_DESC"
+  | "altText_ASC"
+  | "altText_DESC"
+  | "url_ASC"
+  | "url_DESC";
 
 export type PaypalInformationOrderByInput =
   | "id_ASC"
@@ -2209,6 +2215,7 @@ export interface MessageCreateWithoutFromInput {
 }
 
 export interface PictureUpdateInput {
+  altText?: Maybe<String>;
   url?: Maybe<String>;
 }
 
@@ -2986,6 +2993,7 @@ export interface LocationUpdateManyInput {
 
 export interface PictureCreateInput {
   id?: Maybe<ID_Input>;
+  altText?: Maybe<String>;
   url: String;
 }
 
@@ -4089,6 +4097,20 @@ export interface PictureScalarWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
+  altText?: Maybe<String>;
+  altText_not?: Maybe<String>;
+  altText_in?: Maybe<String[] | String>;
+  altText_not_in?: Maybe<String[] | String>;
+  altText_lt?: Maybe<String>;
+  altText_lte?: Maybe<String>;
+  altText_gt?: Maybe<String>;
+  altText_gte?: Maybe<String>;
+  altText_contains?: Maybe<String>;
+  altText_not_contains?: Maybe<String>;
+  altText_starts_with?: Maybe<String>;
+  altText_not_starts_with?: Maybe<String>;
+  altText_ends_with?: Maybe<String>;
+  altText_not_ends_with?: Maybe<String>;
   url?: Maybe<String>;
   url_not?: Maybe<String>;
   url_in?: Maybe<String[] | String>;
@@ -4109,6 +4131,7 @@ export interface PictureScalarWhereInput {
 }
 
 export interface PictureUpdateManyMutationInput {
+  altText?: Maybe<String>;
   url?: Maybe<String>;
 }
 
@@ -4122,6 +4145,7 @@ export interface PaytmInformationUpdateManyMutationInput {
 }
 
 export interface PictureUpdateManyDataInput {
+  altText?: Maybe<String>;
   url?: Maybe<String>;
 }
 
@@ -4362,6 +4386,20 @@ export interface PictureWhereInput {
   id_not_starts_with?: Maybe<ID_Input>;
   id_ends_with?: Maybe<ID_Input>;
   id_not_ends_with?: Maybe<ID_Input>;
+  altText?: Maybe<String>;
+  altText_not?: Maybe<String>;
+  altText_in?: Maybe<String[] | String>;
+  altText_not_in?: Maybe<String[] | String>;
+  altText_lt?: Maybe<String>;
+  altText_lte?: Maybe<String>;
+  altText_gt?: Maybe<String>;
+  altText_gte?: Maybe<String>;
+  altText_contains?: Maybe<String>;
+  altText_not_contains?: Maybe<String>;
+  altText_starts_with?: Maybe<String>;
+  altText_not_starts_with?: Maybe<String>;
+  altText_ends_with?: Maybe<String>;
+  altText_not_ends_with?: Maybe<String>;
   url?: Maybe<String>;
   url_not?: Maybe<String>;
   url_in?: Maybe<String[] | String>;
@@ -4742,6 +4780,7 @@ export interface DebitCardInformationUpdateDataInput {
 }
 
 export interface PictureUpdateDataInput {
+  altText?: Maybe<String>;
   url?: Maybe<String>;
 }
 
@@ -9593,6 +9632,7 @@ export interface AggregateNeighbourhoodSubscription
 
 export interface PicturePreviousValues {
   id: ID_Output;
+  altText?: String;
   url: String;
 }
 
@@ -9600,6 +9640,7 @@ export interface PicturePreviousValuesPromise
   extends Promise<PicturePreviousValues>,
     Fragmentable {
   id: () => Promise<ID_Output>;
+  altText: () => Promise<String>;
   url: () => Promise<String>;
 }
 
@@ -9607,6 +9648,7 @@ export interface PicturePreviousValuesSubscription
   extends Promise<AsyncIterator<PicturePreviousValues>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
+  altText: () => Promise<AsyncIterator<String>>;
   url: () => Promise<AsyncIterator<String>>;
 }
 
@@ -9693,11 +9735,13 @@ export interface PoliciesSubscriptionPayloadSubscription
 
 export interface Picture {
   id: ID_Output;
+  altText?: String;
   url: String;
 }
 
 export interface PicturePromise extends Promise<Picture>, Fragmentable {
   id: () => Promise<ID_Output>;
+  altText: () => Promise<String>;
   url: () => Promise<String>;
 }
 
@@ -9705,6 +9749,7 @@ export interface PictureSubscription
   extends Promise<AsyncIterator<Picture>>,
     Fragmentable {
   id: () => Promise<AsyncIterator<ID_Output>>;
+  altText: () => Promise<AsyncIterator<String>>;
   url: () => Promise<AsyncIterator<String>>;
 }
 
@@ -9712,6 +9757,7 @@ export interface PictureNullablePromise
   extends Promise<Picture | null>,
     Fragmentable {
   id: () => Promise<ID_Output>;
+  altText: () => Promise<String>;
   url: () => Promise<String>;
 }
 

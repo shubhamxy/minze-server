@@ -108,6 +108,7 @@ type City {
 
 type Picture {
   id: ID! @id
+  altText: String
   url: String!
 }
 

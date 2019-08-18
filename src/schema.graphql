@@ -13,7 +13,7 @@ type Query {
 
 type Mutation {
   # Authentication
-  signup(idToken: String!): AuthPayload!
+  # signup(idToken: String!): AuthPayload! // login does the signup now 
   login(idToken: String!): AuthPayload!
   # Payments
   addPaymentMethod(

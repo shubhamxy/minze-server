@@ -1,7 +1,20 @@
 module.exports = {
   semi: true,
-  trailingComma: "none",
-  singleQuote: false,
-  printWidth: 120,
-  tabWidth: 2
+  trailingComma: 'none',
+  singleQuote: true,
+  printWidth: 100,
+  tabWidth: 2,
+  arrowParens: 'avoid',
+  bracketSpacing: false,
+  endOfLine: 'lf',
+  proseWrap: 'preserve',
+  requirePragma: false,
+  overrides: [
+    {
+      files: '*.json',
+      options: {
+        printWidth: 200
+      }
+    }
+  ]
 };

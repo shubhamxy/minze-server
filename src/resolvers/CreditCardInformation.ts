@@ -1,6 +1,6 @@
-import { CreditCardInformationResolvers } from "../generated/resolvers";
-import { TypeMap } from "./types/TypeMap";
-import { PaymentAccountParent } from "./PaymentAccount";
+import {CreditCardInformationResolvers} from '../generated/resolvers';
+import {TypeMap} from './types/TypeMap';
+import {PaymentAccountParent} from './PaymentAccount';
 
 export interface CreditCardInformationParent {
   cardNumber: string;

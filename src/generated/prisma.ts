@@ -4,199 +4,199 @@ import { Options } from 'graphql-binding'
 import { makePrismaBindingClass, BasePrismaOptions } from 'prisma-binding'
 
 export interface Query {
-    users: <T = undefined | null>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    neighbourhoods: <T = undefined | null>(args: { where?: NeighbourhoodWhereInput | null, orderBy?: NeighbourhoodOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    cities: <T = undefined | null>(args: { where?: CityWhereInput | null, orderBy?: CityOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    experiences: <T = undefined | null>(args: { where?: ExperienceWhereInput | null, orderBy?: ExperienceOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    payments: <T = undefined | null>(args: { where?: PaymentWhereInput | null, orderBy?: PaymentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paymentAccounts: <T = undefined | null>(args: { where?: PaymentAccountWhereInput | null, orderBy?: PaymentAccountOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    messages: <T = undefined | null>(args: { where?: MessageWhereInput | null, orderBy?: MessageOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    notifications: <T = undefined | null>(args: { where?: NotificationWhereInput | null, orderBy?: NotificationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    restaurants: <T = undefined | null>(args: { where?: RestaurantWhereInput | null, orderBy?: RestaurantOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    menuItems: <T = undefined | null>(args: { where?: MenuItemWhereInput | null, orderBy?: MenuItemOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paypalInformations: <T = undefined | null>(args: { where?: PaypalInformationWhereInput | null, orderBy?: PaypalInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    policieses: <T = undefined | null>(args: { where?: PoliciesWhereInput | null, orderBy?: PoliciesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    creditCardInformations: <T = undefined | null>(args: { where?: CreditCardInformationWhereInput | null, orderBy?: CreditCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    locations: <T = undefined | null>(args: { where?: LocationWhereInput | null, orderBy?: LocationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    reviews: <T = undefined | null>(args: { where?: ReviewWhereInput | null, orderBy?: ReviewOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    orders: <T = undefined | null>(args: { where?: OrderWhereInput | null, orderBy?: OrderOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    experienceCategories: <T = undefined | null>(args: { where?: ExperienceCategoryWhereInput | null, orderBy?: ExperienceCategoryOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paytmInformations: <T = undefined | null>(args: { where?: PaytmInformationWhereInput | null, orderBy?: PaytmInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    debitCardInformations: <T = undefined | null>(args: { where?: DebitCardInformationWhereInput | null, orderBy?: DebitCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    pricings: <T = undefined | null>(args: { where?: PricingWhereInput | null, orderBy?: PricingOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    pictures: <T = undefined | null>(args: { where?: PictureWhereInput | null, orderBy?: PictureOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    user: <T = User | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    neighbourhood: <T = Neighbourhood | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    city: <T = City | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    experience: <T = Experience | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    payment: <T = Payment | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paymentAccount: <T = PaymentAccount | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    message: <T = Message | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    notification: <T = Notification | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    restaurant: <T = Restaurant | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    menuItem: <T = MenuItem | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paypalInformation: <T = PaypalInformation | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    policies: <T = Policies | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    creditCardInformation: <T = CreditCardInformation | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    location: <T = Location | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    review: <T = Review | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    order: <T = Order | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    experienceCategory: <T = ExperienceCategory | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paytmInformation: <T = PaytmInformation | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    debitCardInformation: <T = DebitCardInformation | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    pricing: <T = Pricing | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    picture: <T = Picture | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    usersConnection: <T = undefined | null>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    neighbourhoodsConnection: <T = undefined | null>(args: { where?: NeighbourhoodWhereInput | null, orderBy?: NeighbourhoodOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    citiesConnection: <T = undefined | null>(args: { where?: CityWhereInput | null, orderBy?: CityOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    experiencesConnection: <T = undefined | null>(args: { where?: ExperienceWhereInput | null, orderBy?: ExperienceOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paymentsConnection: <T = undefined | null>(args: { where?: PaymentWhereInput | null, orderBy?: PaymentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paymentAccountsConnection: <T = undefined | null>(args: { where?: PaymentAccountWhereInput | null, orderBy?: PaymentAccountOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    messagesConnection: <T = undefined | null>(args: { where?: MessageWhereInput | null, orderBy?: MessageOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    notificationsConnection: <T = undefined | null>(args: { where?: NotificationWhereInput | null, orderBy?: NotificationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    restaurantsConnection: <T = undefined | null>(args: { where?: RestaurantWhereInput | null, orderBy?: RestaurantOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    menuItemsConnection: <T = undefined | null>(args: { where?: MenuItemWhereInput | null, orderBy?: MenuItemOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paypalInformationsConnection: <T = undefined | null>(args: { where?: PaypalInformationWhereInput | null, orderBy?: PaypalInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    policiesesConnection: <T = undefined | null>(args: { where?: PoliciesWhereInput | null, orderBy?: PoliciesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    creditCardInformationsConnection: <T = undefined | null>(args: { where?: CreditCardInformationWhereInput | null, orderBy?: CreditCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    locationsConnection: <T = undefined | null>(args: { where?: LocationWhereInput | null, orderBy?: LocationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    reviewsConnection: <T = undefined | null>(args: { where?: ReviewWhereInput | null, orderBy?: ReviewOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    ordersConnection: <T = undefined | null>(args: { where?: OrderWhereInput | null, orderBy?: OrderOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    experienceCategoriesConnection: <T = undefined | null>(args: { where?: ExperienceCategoryWhereInput | null, orderBy?: ExperienceCategoryOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paytmInformationsConnection: <T = undefined | null>(args: { where?: PaytmInformationWhereInput | null, orderBy?: PaytmInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    debitCardInformationsConnection: <T = undefined | null>(args: { where?: DebitCardInformationWhereInput | null, orderBy?: DebitCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    pricingsConnection: <T = undefined | null>(args: { where?: PricingWhereInput | null, orderBy?: PricingOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    picturesConnection: <T = undefined | null>(args: { where?: PictureWhereInput | null, orderBy?: PictureOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    node: <T = Node | null>(args: { id?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> 
+    users: <T = Array<User | null>>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    neighbourhoods: <T = Array<Neighbourhood | null>>(args: { where?: NeighbourhoodWhereInput | null, orderBy?: NeighbourhoodOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    cities: <T = Array<City | null>>(args: { where?: CityWhereInput | null, orderBy?: CityOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    experiences: <T = Array<Experience | null>>(args: { where?: ExperienceWhereInput | null, orderBy?: ExperienceOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    payments: <T = Array<Payment | null>>(args: { where?: PaymentWhereInput | null, orderBy?: PaymentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paymentAccounts: <T = Array<PaymentAccount | null>>(args: { where?: PaymentAccountWhereInput | null, orderBy?: PaymentAccountOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    messages: <T = Array<Message | null>>(args: { where?: MessageWhereInput | null, orderBy?: MessageOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    notifications: <T = Array<Notification | null>>(args: { where?: NotificationWhereInput | null, orderBy?: NotificationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    restaurants: <T = Array<Restaurant | null>>(args: { where?: RestaurantWhereInput | null, orderBy?: RestaurantOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    menuItems: <T = Array<MenuItem | null>>(args: { where?: MenuItemWhereInput | null, orderBy?: MenuItemOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paypalInformations: <T = Array<PaypalInformation | null>>(args: { where?: PaypalInformationWhereInput | null, orderBy?: PaypalInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    policieses: <T = Array<Policies | null>>(args: { where?: PoliciesWhereInput | null, orderBy?: PoliciesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    creditCardInformations: <T = Array<CreditCardInformation | null>>(args: { where?: CreditCardInformationWhereInput | null, orderBy?: CreditCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    locations: <T = Array<Location | null>>(args: { where?: LocationWhereInput | null, orderBy?: LocationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    reviews: <T = Array<Review | null>>(args: { where?: ReviewWhereInput | null, orderBy?: ReviewOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    orders: <T = Array<Order | null>>(args: { where?: OrderWhereInput | null, orderBy?: OrderOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    experienceCategories: <T = Array<ExperienceCategory | null>>(args: { where?: ExperienceCategoryWhereInput | null, orderBy?: ExperienceCategoryOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paytmInformations: <T = Array<PaytmInformation | null>>(args: { where?: PaytmInformationWhereInput | null, orderBy?: PaytmInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    debitCardInformations: <T = Array<DebitCardInformation | null>>(args: { where?: DebitCardInformationWhereInput | null, orderBy?: DebitCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    pricings: <T = Array<Pricing | null>>(args: { where?: PricingWhereInput | null, orderBy?: PricingOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    pictures: <T = Array<Picture | null>>(args: { where?: PictureWhereInput | null, orderBy?: PictureOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    user: <T = User | null>(args: { where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    neighbourhood: <T = Neighbourhood | null>(args: { where: NeighbourhoodWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    city: <T = City | null>(args: { where: CityWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    experience: <T = Experience | null>(args: { where: ExperienceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    payment: <T = Payment | null>(args: { where: PaymentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    paymentAccount: <T = PaymentAccount | null>(args: { where: PaymentAccountWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    message: <T = Message | null>(args: { where: MessageWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    notification: <T = Notification | null>(args: { where: NotificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    restaurant: <T = Restaurant | null>(args: { where: RestaurantWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    menuItem: <T = MenuItem | null>(args: { where: MenuItemWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    paypalInformation: <T = PaypalInformation | null>(args: { where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    policies: <T = Policies | null>(args: { where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    creditCardInformation: <T = CreditCardInformation | null>(args: { where: CreditCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    location: <T = Location | null>(args: { where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    review: <T = Review | null>(args: { where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    order: <T = Order | null>(args: { where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    experienceCategory: <T = ExperienceCategory | null>(args: { where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    paytmInformation: <T = PaytmInformation | null>(args: { where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    debitCardInformation: <T = DebitCardInformation | null>(args: { where: DebitCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    pricing: <T = Pricing | null>(args: { where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    picture: <T = Picture | null>(args: { where: PictureWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    usersConnection: <T = UserConnection>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    neighbourhoodsConnection: <T = NeighbourhoodConnection>(args: { where?: NeighbourhoodWhereInput | null, orderBy?: NeighbourhoodOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    citiesConnection: <T = CityConnection>(args: { where?: CityWhereInput | null, orderBy?: CityOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    experiencesConnection: <T = ExperienceConnection>(args: { where?: ExperienceWhereInput | null, orderBy?: ExperienceOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paymentsConnection: <T = PaymentConnection>(args: { where?: PaymentWhereInput | null, orderBy?: PaymentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paymentAccountsConnection: <T = PaymentAccountConnection>(args: { where?: PaymentAccountWhereInput | null, orderBy?: PaymentAccountOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    messagesConnection: <T = MessageConnection>(args: { where?: MessageWhereInput | null, orderBy?: MessageOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    notificationsConnection: <T = NotificationConnection>(args: { where?: NotificationWhereInput | null, orderBy?: NotificationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    restaurantsConnection: <T = RestaurantConnection>(args: { where?: RestaurantWhereInput | null, orderBy?: RestaurantOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    menuItemsConnection: <T = MenuItemConnection>(args: { where?: MenuItemWhereInput | null, orderBy?: MenuItemOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paypalInformationsConnection: <T = PaypalInformationConnection>(args: { where?: PaypalInformationWhereInput | null, orderBy?: PaypalInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    policiesesConnection: <T = PoliciesConnection>(args: { where?: PoliciesWhereInput | null, orderBy?: PoliciesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    creditCardInformationsConnection: <T = CreditCardInformationConnection>(args: { where?: CreditCardInformationWhereInput | null, orderBy?: CreditCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    locationsConnection: <T = LocationConnection>(args: { where?: LocationWhereInput | null, orderBy?: LocationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    reviewsConnection: <T = ReviewConnection>(args: { where?: ReviewWhereInput | null, orderBy?: ReviewOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    ordersConnection: <T = OrderConnection>(args: { where?: OrderWhereInput | null, orderBy?: OrderOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    experienceCategoriesConnection: <T = ExperienceCategoryConnection>(args: { where?: ExperienceCategoryWhereInput | null, orderBy?: ExperienceCategoryOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paytmInformationsConnection: <T = PaytmInformationConnection>(args: { where?: PaytmInformationWhereInput | null, orderBy?: PaytmInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    debitCardInformationsConnection: <T = DebitCardInformationConnection>(args: { where?: DebitCardInformationWhereInput | null, orderBy?: DebitCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    pricingsConnection: <T = PricingConnection>(args: { where?: PricingWhereInput | null, orderBy?: PricingOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    picturesConnection: <T = PictureConnection>(args: { where?: PictureWhereInput | null, orderBy?: PictureOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    node: <T = Node | null>(args: { id: ID_Output }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> 
   }
 
 export interface Mutation {
-    createUser: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createNeighbourhood: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createCity: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createExperience: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createPayment: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createPaymentAccount: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createMessage: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createNotification: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createRestaurant: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createMenuItem: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createPaypalInformation: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createPolicies: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createCreditCardInformation: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createLocation: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createReview: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createOrder: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createExperienceCategory: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createPaytmInformation: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createDebitCardInformation: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createPricing: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    createPicture: <T = undefined | null>(args: { data?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateUser: <T = User | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateNeighbourhood: <T = Neighbourhood | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateCity: <T = City | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateExperience: <T = Experience | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePayment: <T = Payment | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePaymentAccount: <T = PaymentAccount | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateMessage: <T = Message | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateNotification: <T = Notification | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateRestaurant: <T = Restaurant | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateMenuItem: <T = MenuItem | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePaypalInformation: <T = PaypalInformation | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePolicies: <T = Policies | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateCreditCardInformation: <T = CreditCardInformation | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateLocation: <T = Location | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateReview: <T = Review | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateOrder: <T = Order | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateExperienceCategory: <T = ExperienceCategory | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePaytmInformation: <T = PaytmInformation | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateDebitCardInformation: <T = DebitCardInformation | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePricing: <T = Pricing | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePicture: <T = Picture | null>(args: { data?: undefined | null, where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteUser: <T = User | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteNeighbourhood: <T = Neighbourhood | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteCity: <T = City | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteExperience: <T = Experience | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePayment: <T = Payment | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePaymentAccount: <T = PaymentAccount | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteMessage: <T = Message | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteNotification: <T = Notification | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteRestaurant: <T = Restaurant | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteMenuItem: <T = MenuItem | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePaypalInformation: <T = PaypalInformation | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePolicies: <T = Policies | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteCreditCardInformation: <T = CreditCardInformation | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteLocation: <T = Location | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteReview: <T = Review | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteOrder: <T = Order | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteExperienceCategory: <T = ExperienceCategory | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePaytmInformation: <T = PaytmInformation | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteDebitCardInformation: <T = DebitCardInformation | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePricing: <T = Pricing | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePicture: <T = Picture | null>(args: { where?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertUser: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertNeighbourhood: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertCity: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertExperience: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertPayment: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertPaymentAccount: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertMessage: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertNotification: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertRestaurant: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertMenuItem: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertPaypalInformation: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertPolicies: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertCreditCardInformation: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertLocation: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertReview: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertOrder: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertExperienceCategory: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertPaytmInformation: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertDebitCardInformation: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertPricing: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    upsertPicture: <T = undefined | null>(args: { where?: undefined | null, create?: undefined | null, update?: undefined | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyUsers: <T = undefined | null>(args: { data?: undefined | null, where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyNeighbourhoods: <T = undefined | null>(args: { data?: undefined | null, where?: NeighbourhoodWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyCities: <T = undefined | null>(args: { data?: undefined | null, where?: CityWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyExperiences: <T = undefined | null>(args: { data?: undefined | null, where?: ExperienceWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyPayments: <T = undefined | null>(args: { data?: undefined | null, where?: PaymentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyPaymentAccounts: <T = undefined | null>(args: { data?: undefined | null, where?: PaymentAccountWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyMessages: <T = undefined | null>(args: { data?: undefined | null, where?: MessageWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyNotifications: <T = undefined | null>(args: { data?: undefined | null, where?: NotificationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyRestaurants: <T = undefined | null>(args: { data?: undefined | null, where?: RestaurantWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyMenuItems: <T = undefined | null>(args: { data?: undefined | null, where?: MenuItemWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyPaypalInformations: <T = undefined | null>(args: { data?: undefined | null, where?: PaypalInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyPolicieses: <T = undefined | null>(args: { data?: undefined | null, where?: PoliciesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyCreditCardInformations: <T = undefined | null>(args: { data?: undefined | null, where?: CreditCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyLocations: <T = undefined | null>(args: { data?: undefined | null, where?: LocationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyReviews: <T = undefined | null>(args: { data?: undefined | null, where?: ReviewWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyOrders: <T = undefined | null>(args: { data?: undefined | null, where?: OrderWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyExperienceCategories: <T = undefined | null>(args: { data?: undefined | null, where?: ExperienceCategoryWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyPaytmInformations: <T = undefined | null>(args: { data?: undefined | null, where?: PaytmInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyDebitCardInformations: <T = undefined | null>(args: { data?: undefined | null, where?: DebitCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyPricings: <T = undefined | null>(args: { data?: undefined | null, where?: PricingWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateManyPictures: <T = undefined | null>(args: { data?: undefined | null, where?: PictureWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyUsers: <T = undefined | null>(args: { where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyNeighbourhoods: <T = undefined | null>(args: { where?: NeighbourhoodWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyCities: <T = undefined | null>(args: { where?: CityWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyExperiences: <T = undefined | null>(args: { where?: ExperienceWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyPayments: <T = undefined | null>(args: { where?: PaymentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyPaymentAccounts: <T = undefined | null>(args: { where?: PaymentAccountWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyMessages: <T = undefined | null>(args: { where?: MessageWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyNotifications: <T = undefined | null>(args: { where?: NotificationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyRestaurants: <T = undefined | null>(args: { where?: RestaurantWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyMenuItems: <T = undefined | null>(args: { where?: MenuItemWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyPaypalInformations: <T = undefined | null>(args: { where?: PaypalInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyPolicieses: <T = undefined | null>(args: { where?: PoliciesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyCreditCardInformations: <T = undefined | null>(args: { where?: CreditCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyLocations: <T = undefined | null>(args: { where?: LocationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyReviews: <T = undefined | null>(args: { where?: ReviewWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyOrders: <T = undefined | null>(args: { where?: OrderWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyExperienceCategories: <T = undefined | null>(args: { where?: ExperienceCategoryWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyPaytmInformations: <T = undefined | null>(args: { where?: PaytmInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyDebitCardInformations: <T = undefined | null>(args: { where?: DebitCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyPricings: <T = undefined | null>(args: { where?: PricingWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteManyPictures: <T = undefined | null>(args: { where?: PictureWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> 
+    createUser: <T = User>(args: { data: UserCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createNeighbourhood: <T = Neighbourhood>(args: { data: NeighbourhoodCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createCity: <T = City>(args: { data: CityCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createExperience: <T = Experience>(args: { data: ExperienceCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPayment: <T = Payment>(args: { data: PaymentCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPaymentAccount: <T = PaymentAccount>(args: { data: PaymentAccountCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createMessage: <T = Message>(args: { data: MessageCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createNotification: <T = Notification>(args: { data: NotificationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createRestaurant: <T = Restaurant>(args: { data: RestaurantCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createMenuItem: <T = MenuItem>(args: { data: MenuItemCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPaypalInformation: <T = PaypalInformation>(args: { data: PaypalInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPolicies: <T = Policies>(args: { data: PoliciesCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createCreditCardInformation: <T = CreditCardInformation>(args: { data: CreditCardInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createLocation: <T = Location>(args: { data: LocationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createReview: <T = Review>(args: { data: ReviewCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createOrder: <T = Order>(args: { data: OrderCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createExperienceCategory: <T = ExperienceCategory>(args: { data: ExperienceCategoryCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPaytmInformation: <T = PaytmInformation>(args: { data: PaytmInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createDebitCardInformation: <T = DebitCardInformation>(args: { data: DebitCardInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPricing: <T = Pricing>(args: { data: PricingCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPicture: <T = Picture>(args: { data: PictureCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateUser: <T = User | null>(args: { data: UserUpdateInput, where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateNeighbourhood: <T = Neighbourhood | null>(args: { data: NeighbourhoodUpdateInput, where: NeighbourhoodWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateCity: <T = City | null>(args: { data: CityUpdateInput, where: CityWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateExperience: <T = Experience | null>(args: { data: ExperienceUpdateInput, where: ExperienceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePayment: <T = Payment | null>(args: { data: PaymentUpdateInput, where: PaymentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePaymentAccount: <T = PaymentAccount | null>(args: { data: PaymentAccountUpdateInput, where: PaymentAccountWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateMessage: <T = Message | null>(args: { data: MessageUpdateInput, where: MessageWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateNotification: <T = Notification | null>(args: { data: NotificationUpdateInput, where: NotificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateRestaurant: <T = Restaurant | null>(args: { data: RestaurantUpdateInput, where: RestaurantWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateMenuItem: <T = MenuItem | null>(args: { data: MenuItemUpdateInput, where: MenuItemWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePaypalInformation: <T = PaypalInformation | null>(args: { data: PaypalInformationUpdateInput, where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePolicies: <T = Policies | null>(args: { data: PoliciesUpdateInput, where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateCreditCardInformation: <T = CreditCardInformation | null>(args: { data: CreditCardInformationUpdateInput, where: CreditCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateLocation: <T = Location | null>(args: { data: LocationUpdateInput, where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateReview: <T = Review | null>(args: { data: ReviewUpdateInput, where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateOrder: <T = Order | null>(args: { data: OrderUpdateInput, where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateExperienceCategory: <T = ExperienceCategory | null>(args: { data: ExperienceCategoryUpdateInput, where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePaytmInformation: <T = PaytmInformation | null>(args: { data: PaytmInformationUpdateInput, where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateDebitCardInformation: <T = DebitCardInformation | null>(args: { data: DebitCardInformationUpdateInput, where: DebitCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePricing: <T = Pricing | null>(args: { data: PricingUpdateInput, where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePicture: <T = Picture | null>(args: { data: PictureUpdateInput, where: PictureWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteUser: <T = User | null>(args: { where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteNeighbourhood: <T = Neighbourhood | null>(args: { where: NeighbourhoodWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteCity: <T = City | null>(args: { where: CityWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteExperience: <T = Experience | null>(args: { where: ExperienceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePayment: <T = Payment | null>(args: { where: PaymentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePaymentAccount: <T = PaymentAccount | null>(args: { where: PaymentAccountWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteMessage: <T = Message | null>(args: { where: MessageWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteNotification: <T = Notification | null>(args: { where: NotificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteRestaurant: <T = Restaurant | null>(args: { where: RestaurantWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteMenuItem: <T = MenuItem | null>(args: { where: MenuItemWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePaypalInformation: <T = PaypalInformation | null>(args: { where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePolicies: <T = Policies | null>(args: { where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteCreditCardInformation: <T = CreditCardInformation | null>(args: { where: CreditCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteLocation: <T = Location | null>(args: { where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteReview: <T = Review | null>(args: { where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteOrder: <T = Order | null>(args: { where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteExperienceCategory: <T = ExperienceCategory | null>(args: { where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePaytmInformation: <T = PaytmInformation | null>(args: { where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteDebitCardInformation: <T = DebitCardInformation | null>(args: { where: DebitCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePricing: <T = Pricing | null>(args: { where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePicture: <T = Picture | null>(args: { where: PictureWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    upsertUser: <T = User>(args: { where: UserWhereUniqueInput, create: UserCreateInput, update: UserUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertNeighbourhood: <T = Neighbourhood>(args: { where: NeighbourhoodWhereUniqueInput, create: NeighbourhoodCreateInput, update: NeighbourhoodUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertCity: <T = City>(args: { where: CityWhereUniqueInput, create: CityCreateInput, update: CityUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertExperience: <T = Experience>(args: { where: ExperienceWhereUniqueInput, create: ExperienceCreateInput, update: ExperienceUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPayment: <T = Payment>(args: { where: PaymentWhereUniqueInput, create: PaymentCreateInput, update: PaymentUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPaymentAccount: <T = PaymentAccount>(args: { where: PaymentAccountWhereUniqueInput, create: PaymentAccountCreateInput, update: PaymentAccountUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertMessage: <T = Message>(args: { where: MessageWhereUniqueInput, create: MessageCreateInput, update: MessageUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertNotification: <T = Notification>(args: { where: NotificationWhereUniqueInput, create: NotificationCreateInput, update: NotificationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertRestaurant: <T = Restaurant>(args: { where: RestaurantWhereUniqueInput, create: RestaurantCreateInput, update: RestaurantUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertMenuItem: <T = MenuItem>(args: { where: MenuItemWhereUniqueInput, create: MenuItemCreateInput, update: MenuItemUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPaypalInformation: <T = PaypalInformation>(args: { where: PaypalInformationWhereUniqueInput, create: PaypalInformationCreateInput, update: PaypalInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPolicies: <T = Policies>(args: { where: PoliciesWhereUniqueInput, create: PoliciesCreateInput, update: PoliciesUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertCreditCardInformation: <T = CreditCardInformation>(args: { where: CreditCardInformationWhereUniqueInput, create: CreditCardInformationCreateInput, update: CreditCardInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertLocation: <T = Location>(args: { where: LocationWhereUniqueInput, create: LocationCreateInput, update: LocationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertReview: <T = Review>(args: { where: ReviewWhereUniqueInput, create: ReviewCreateInput, update: ReviewUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertOrder: <T = Order>(args: { where: OrderWhereUniqueInput, create: OrderCreateInput, update: OrderUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertExperienceCategory: <T = ExperienceCategory>(args: { where: ExperienceCategoryWhereUniqueInput, create: ExperienceCategoryCreateInput, update: ExperienceCategoryUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPaytmInformation: <T = PaytmInformation>(args: { where: PaytmInformationWhereUniqueInput, create: PaytmInformationCreateInput, update: PaytmInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertDebitCardInformation: <T = DebitCardInformation>(args: { where: DebitCardInformationWhereUniqueInput, create: DebitCardInformationCreateInput, update: DebitCardInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPricing: <T = Pricing>(args: { where: PricingWhereUniqueInput, create: PricingCreateInput, update: PricingUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPicture: <T = Picture>(args: { where: PictureWhereUniqueInput, create: PictureCreateInput, update: PictureUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyUsers: <T = BatchPayload>(args: { data: UserUpdateManyMutationInput, where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyNeighbourhoods: <T = BatchPayload>(args: { data: NeighbourhoodUpdateManyMutationInput, where?: NeighbourhoodWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyCities: <T = BatchPayload>(args: { data: CityUpdateManyMutationInput, where?: CityWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyExperiences: <T = BatchPayload>(args: { data: ExperienceUpdateManyMutationInput, where?: ExperienceWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPayments: <T = BatchPayload>(args: { data: PaymentUpdateManyMutationInput, where?: PaymentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPaymentAccounts: <T = BatchPayload>(args: { data: PaymentAccountUpdateManyMutationInput, where?: PaymentAccountWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyMessages: <T = BatchPayload>(args: { data: MessageUpdateManyMutationInput, where?: MessageWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyNotifications: <T = BatchPayload>(args: { data: NotificationUpdateManyMutationInput, where?: NotificationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyRestaurants: <T = BatchPayload>(args: { data: RestaurantUpdateManyMutationInput, where?: RestaurantWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyMenuItems: <T = BatchPayload>(args: { data: MenuItemUpdateManyMutationInput, where?: MenuItemWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPaypalInformations: <T = BatchPayload>(args: { data: PaypalInformationUpdateManyMutationInput, where?: PaypalInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPolicieses: <T = BatchPayload>(args: { data: PoliciesUpdateManyMutationInput, where?: PoliciesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyCreditCardInformations: <T = BatchPayload>(args: { data: CreditCardInformationUpdateManyMutationInput, where?: CreditCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyLocations: <T = BatchPayload>(args: { data: LocationUpdateManyMutationInput, where?: LocationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyReviews: <T = BatchPayload>(args: { data: ReviewUpdateManyMutationInput, where?: ReviewWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyOrders: <T = BatchPayload>(args: { data: OrderUpdateManyMutationInput, where?: OrderWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyExperienceCategories: <T = BatchPayload>(args: { data: ExperienceCategoryUpdateManyMutationInput, where?: ExperienceCategoryWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPaytmInformations: <T = BatchPayload>(args: { data: PaytmInformationUpdateManyMutationInput, where?: PaytmInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyDebitCardInformations: <T = BatchPayload>(args: { data: DebitCardInformationUpdateManyMutationInput, where?: DebitCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPricings: <T = BatchPayload>(args: { data: PricingUpdateManyMutationInput, where?: PricingWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPictures: <T = BatchPayload>(args: { data: PictureUpdateManyMutationInput, where?: PictureWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyUsers: <T = BatchPayload>(args: { where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyNeighbourhoods: <T = BatchPayload>(args: { where?: NeighbourhoodWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyCities: <T = BatchPayload>(args: { where?: CityWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyExperiences: <T = BatchPayload>(args: { where?: ExperienceWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPayments: <T = BatchPayload>(args: { where?: PaymentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPaymentAccounts: <T = BatchPayload>(args: { where?: PaymentAccountWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyMessages: <T = BatchPayload>(args: { where?: MessageWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyNotifications: <T = BatchPayload>(args: { where?: NotificationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyRestaurants: <T = BatchPayload>(args: { where?: RestaurantWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyMenuItems: <T = BatchPayload>(args: { where?: MenuItemWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPaypalInformations: <T = BatchPayload>(args: { where?: PaypalInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPolicieses: <T = BatchPayload>(args: { where?: PoliciesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyCreditCardInformations: <T = BatchPayload>(args: { where?: CreditCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyLocations: <T = BatchPayload>(args: { where?: LocationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyReviews: <T = BatchPayload>(args: { where?: ReviewWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyOrders: <T = BatchPayload>(args: { where?: OrderWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyExperienceCategories: <T = BatchPayload>(args: { where?: ExperienceCategoryWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPaytmInformations: <T = BatchPayload>(args: { where?: PaytmInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyDebitCardInformations: <T = BatchPayload>(args: { where?: DebitCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPricings: <T = BatchPayload>(args: { where?: PricingWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPictures: <T = BatchPayload>(args: { where?: PictureWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> 
   }
 
 export interface Subscription {
@@ -428,9 +428,7 @@ input CitySubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [CitySubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -675,9 +673,7 @@ input CreditCardInformationSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [CreditCardInformationSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -1209,9 +1205,7 @@ input DebitCardInformationSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [DebitCardInformationSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -1719,9 +1713,7 @@ input ExperienceCategorySubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [ExperienceCategorySubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -2138,9 +2130,7 @@ input ExperienceSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [ExperienceSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -2710,9 +2700,7 @@ input LocationSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [LocationSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -3374,9 +3362,7 @@ input MenuItemSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [MenuItemSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -3892,9 +3878,7 @@ input MessageSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [MessageSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -4518,9 +4502,7 @@ input NeighbourhoodSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [NeighbourhoodSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -5035,9 +5017,7 @@ input NotificationSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [NotificationSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -5494,9 +5474,7 @@ input OrderSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [OrderSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -5981,9 +5959,7 @@ input PaymentAccountSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [PaymentAccountSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -6405,9 +6381,7 @@ input PaymentSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [PaymentSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -6713,9 +6687,7 @@ input PaypalInformationSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [PaypalInformationSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -6945,9 +6917,7 @@ input PaytmInformationSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [PaytmInformationSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -7112,6 +7082,7 @@ input PaytmInformationWhereUniqueInput {
 
 type Picture implements Node {
   id: ID!
+  altText: String
   url: String!
 }
 
@@ -7127,6 +7098,7 @@ type PictureConnection {
 
 input PictureCreateInput {
   id: ID
+  altText: String
   url: String!
 }
 
@@ -7152,12 +7124,15 @@ type PictureEdge {
 enum PictureOrderByInput {
   id_ASC
   id_DESC
+  altText_ASC
+  altText_DESC
   url_ASC
   url_DESC
 }
 
 type PicturePreviousValues {
   id: ID!
+  altText: String
   url: String!
 }
 
@@ -7210,6 +7185,46 @@ input PictureScalarWhereInput {
 
   """All values not ending with the given string."""
   id_not_ends_with: ID
+  altText: String
+
+  """All values that are not equal to given value."""
+  altText_not: String
+
+  """All values that are contained in given list."""
+  altText_in: [String!]
+
+  """All values that are not contained in given list."""
+  altText_not_in: [String!]
+
+  """All values less than the given value."""
+  altText_lt: String
+
+  """All values less than or equal the given value."""
+  altText_lte: String
+
+  """All values greater than the given value."""
+  altText_gt: String
+
+  """All values greater than or equal the given value."""
+  altText_gte: String
+
+  """All values containing the given string."""
+  altText_contains: String
+
+  """All values not containing the given string."""
+  altText_not_contains: String
+
+  """All values starting with the given string."""
+  altText_starts_with: String
+
+  """All values not starting with the given string."""
+  altText_not_starts_with: String
+
+  """All values ending with the given string."""
+  altText_ends_with: String
+
+  """All values not ending with the given string."""
+  altText_not_ends_with: String
   url: String
 
   """All values that are not equal to given value."""
@@ -7269,9 +7284,7 @@ input PictureSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [PictureSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -7292,14 +7305,17 @@ input PictureSubscriptionWhereInput {
 }
 
 input PictureUpdateDataInput {
+  altText: String
   url: String
 }
 
 input PictureUpdateInput {
+  altText: String
   url: String
 }
 
 input PictureUpdateManyDataInput {
+  altText: String
   url: String
 }
 
@@ -7316,6 +7332,7 @@ input PictureUpdateManyInput {
 }
 
 input PictureUpdateManyMutationInput {
+  altText: String
   url: String
 }
 
@@ -7405,6 +7422,46 @@ input PictureWhereInput {
 
   """All values not ending with the given string."""
   id_not_ends_with: ID
+  altText: String
+
+  """All values that are not equal to given value."""
+  altText_not: String
+
+  """All values that are contained in given list."""
+  altText_in: [String!]
+
+  """All values that are not contained in given list."""
+  altText_not_in: [String!]
+
+  """All values less than the given value."""
+  altText_lt: String
+
+  """All values less than or equal the given value."""
+  altText_lte: String
+
+  """All values greater than the given value."""
+  altText_gt: String
+
+  """All values greater than or equal the given value."""
+  altText_gte: String
+
+  """All values containing the given string."""
+  altText_contains: String
+
+  """All values not containing the given string."""
+  altText_not_contains: String
+
+  """All values starting with the given string."""
+  altText_starts_with: String
+
+  """All values not starting with the given string."""
+  altText_not_starts_with: String
+
+  """All values ending with the given string."""
+  altText_ends_with: String
+
+  """All values not ending with the given string."""
+  altText_not_ends_with: String
   url: String
 
   """All values that are not equal to given value."""
@@ -7527,9 +7584,7 @@ input PoliciesSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [PoliciesSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -7819,9 +7874,7 @@ input PricingSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [PricingSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -8640,9 +8693,7 @@ input RestaurantSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [RestaurantSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -9518,9 +9569,7 @@ input ReviewSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [ReviewSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -10195,9 +10244,7 @@ input UserSubscriptionWhereInput {
   """Logical NOT on all given filters combined by AND."""
   NOT: [UserSubscriptionWhereInput!]
 
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
+  """The subscription event gets dispatched when it's listed in mutation_in"""
   mutation_in: [MutationType!]
 
   """
@@ -10908,6 +10955,8 @@ export type PaytmInformationOrderByInput =   'id_ASC' |
 
 export type PictureOrderByInput =   'id_ASC' |
   'id_DESC' |
+  'altText_ASC' |
+  'altText_DESC' |
   'url_ASC' |
   'url_DESC'
 
@@ -11010,7 +11059,7 @@ export type UserType =   'ADMIN' |
 
 export interface CityCreateInput {
   id?: ID_Input | null
-  name?: undefined | null
+  name: String
   neighbourhoods?: NeighbourhoodCreateManyWithoutCityInput | null
 }
 
@@ -11021,17 +11070,17 @@ export interface CityCreateOneWithoutNeighbourhoodsInput {
 
 export interface CityCreateWithoutNeighbourhoodsInput {
   id?: ID_Input | null
-  name?: undefined | null
+  name: String
 }
 
 export interface CitySubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: CitySubscriptionWhereInput[] | CitySubscriptionWhereInput | null
+  OR?: CitySubscriptionWhereInput[] | CitySubscriptionWhereInput | null
+  NOT?: CitySubscriptionWhereInput[] | CitySubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: CityWhereInput | null
 }
 
@@ -11056,18 +11105,18 @@ export interface CityUpdateWithoutNeighbourhoodsDataInput {
 }
 
 export interface CityUpsertWithoutNeighbourhoodsInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: CityUpdateWithoutNeighbourhoodsDataInput
+  create: CityCreateWithoutNeighbourhoodsInput
 }
 
 export interface CityWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: CityWhereInput[] | CityWhereInput | null
+  OR?: CityWhereInput[] | CityWhereInput | null
+  NOT?: CityWhereInput[] | CityWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -11080,8 +11129,8 @@ export interface CityWhereInput {
   id_not_ends_with?: ID_Input | null
   name?: String | null
   name_not?: String | null
-  name_in?: undefined | null
-  name_not_in?: undefined | null
+  name_in?: String[] | String | null
+  name_not_in?: String[] | String | null
   name_lt?: String | null
   name_lte?: String | null
   name_gt?: String | null
@@ -11103,14 +11152,14 @@ export interface CityWhereUniqueInput {
 
 export interface CreditCardInformationCreateInput {
   id?: ID_Input | null
-  cardNumber?: undefined | null
-  expiresOnMonth?: undefined | null
-  expiresOnYear?: undefined | null
-  securityCode?: undefined | null
-  firstName?: undefined | null
-  lastName?: undefined | null
-  postalCode?: undefined | null
-  country?: undefined | null
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
 }
 
 export interface CreditCardInformationCreateOneInput {
@@ -11119,13 +11168,13 @@ export interface CreditCardInformationCreateOneInput {
 }
 
 export interface CreditCardInformationSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: CreditCardInformationSubscriptionWhereInput[] | CreditCardInformationSubscriptionWhereInput | null
+  OR?: CreditCardInformationSubscriptionWhereInput[] | CreditCardInformationSubscriptionWhereInput | null
+  NOT?: CreditCardInformationSubscriptionWhereInput[] | CreditCardInformationSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: CreditCardInformationWhereInput | null
 }
 
@@ -11172,18 +11221,18 @@ export interface CreditCardInformationUpdateOneInput {
 }
 
 export interface CreditCardInformationUpsertNestedInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: CreditCardInformationUpdateDataInput
+  create: CreditCardInformationCreateInput
 }
 
 export interface CreditCardInformationWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: CreditCardInformationWhereInput[] | CreditCardInformationWhereInput | null
+  OR?: CreditCardInformationWhereInput[] | CreditCardInformationWhereInput | null
+  NOT?: CreditCardInformationWhereInput[] | CreditCardInformationWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -11196,16 +11245,16 @@ export interface CreditCardInformationWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   cardNumber?: String | null
   cardNumber_not?: String | null
-  cardNumber_in?: undefined | null
-  cardNumber_not_in?: undefined | null
+  cardNumber_in?: String[] | String | null
+  cardNumber_not_in?: String[] | String | null
   cardNumber_lt?: String | null
   cardNumber_lte?: String | null
   cardNumber_gt?: String | null
@@ -11218,24 +11267,24 @@ export interface CreditCardInformationWhereInput {
   cardNumber_not_ends_with?: String | null
   expiresOnMonth?: Int | null
   expiresOnMonth_not?: Int | null
-  expiresOnMonth_in?: undefined | null
-  expiresOnMonth_not_in?: undefined | null
+  expiresOnMonth_in?: Int[] | Int | null
+  expiresOnMonth_not_in?: Int[] | Int | null
   expiresOnMonth_lt?: Int | null
   expiresOnMonth_lte?: Int | null
   expiresOnMonth_gt?: Int | null
   expiresOnMonth_gte?: Int | null
   expiresOnYear?: Int | null
   expiresOnYear_not?: Int | null
-  expiresOnYear_in?: undefined | null
-  expiresOnYear_not_in?: undefined | null
+  expiresOnYear_in?: Int[] | Int | null
+  expiresOnYear_not_in?: Int[] | Int | null
   expiresOnYear_lt?: Int | null
   expiresOnYear_lte?: Int | null
   expiresOnYear_gt?: Int | null
   expiresOnYear_gte?: Int | null
   securityCode?: String | null
   securityCode_not?: String | null
-  securityCode_in?: undefined | null
-  securityCode_not_in?: undefined | null
+  securityCode_in?: String[] | String | null
+  securityCode_not_in?: String[] | String | null
   securityCode_lt?: String | null
   securityCode_lte?: String | null
   securityCode_gt?: String | null
@@ -11248,8 +11297,8 @@ export interface CreditCardInformationWhereInput {
   securityCode_not_ends_with?: String | null
   firstName?: String | null
   firstName_not?: String | null
-  firstName_in?: undefined | null
-  firstName_not_in?: undefined | null
+  firstName_in?: String[] | String | null
+  firstName_not_in?: String[] | String | null
   firstName_lt?: String | null
   firstName_lte?: String | null
   firstName_gt?: String | null
@@ -11262,8 +11311,8 @@ export interface CreditCardInformationWhereInput {
   firstName_not_ends_with?: String | null
   lastName?: String | null
   lastName_not?: String | null
-  lastName_in?: undefined | null
-  lastName_not_in?: undefined | null
+  lastName_in?: String[] | String | null
+  lastName_not_in?: String[] | String | null
   lastName_lt?: String | null
   lastName_lte?: String | null
   lastName_gt?: String | null
@@ -11276,8 +11325,8 @@ export interface CreditCardInformationWhereInput {
   lastName_not_ends_with?: String | null
   postalCode?: String | null
   postalCode_not?: String | null
-  postalCode_in?: undefined | null
-  postalCode_not_in?: undefined | null
+  postalCode_in?: String[] | String | null
+  postalCode_not_in?: String[] | String | null
   postalCode_lt?: String | null
   postalCode_lte?: String | null
   postalCode_gt?: String | null
@@ -11290,8 +11339,8 @@ export interface CreditCardInformationWhereInput {
   postalCode_not_ends_with?: String | null
   country?: String | null
   country_not?: String | null
-  country_in?: undefined | null
-  country_not_in?: undefined | null
+  country_in?: String[] | String | null
+  country_not_in?: String[] | String | null
   country_lt?: String | null
   country_lte?: String | null
   country_gt?: String | null
@@ -11310,14 +11359,14 @@ export interface CreditCardInformationWhereUniqueInput {
 
 export interface DebitCardInformationCreateInput {
   id?: ID_Input | null
-  cardNumber?: undefined | null
-  expiresOnMonth?: undefined | null
-  expiresOnYear?: undefined | null
-  securityCode?: undefined | null
-  firstName?: undefined | null
-  lastName?: undefined | null
-  postalCode?: undefined | null
-  country?: undefined | null
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
 }
 
 export interface DebitCardInformationCreateOneInput {
@@ -11326,13 +11375,13 @@ export interface DebitCardInformationCreateOneInput {
 }
 
 export interface DebitCardInformationSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: DebitCardInformationSubscriptionWhereInput[] | DebitCardInformationSubscriptionWhereInput | null
+  OR?: DebitCardInformationSubscriptionWhereInput[] | DebitCardInformationSubscriptionWhereInput | null
+  NOT?: DebitCardInformationSubscriptionWhereInput[] | DebitCardInformationSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: DebitCardInformationWhereInput | null
 }
 
@@ -11379,18 +11428,18 @@ export interface DebitCardInformationUpdateOneInput {
 }
 
 export interface DebitCardInformationUpsertNestedInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: DebitCardInformationUpdateDataInput
+  create: DebitCardInformationCreateInput
 }
 
 export interface DebitCardInformationWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: DebitCardInformationWhereInput[] | DebitCardInformationWhereInput | null
+  OR?: DebitCardInformationWhereInput[] | DebitCardInformationWhereInput | null
+  NOT?: DebitCardInformationWhereInput[] | DebitCardInformationWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -11403,16 +11452,16 @@ export interface DebitCardInformationWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   cardNumber?: String | null
   cardNumber_not?: String | null
-  cardNumber_in?: undefined | null
-  cardNumber_not_in?: undefined | null
+  cardNumber_in?: String[] | String | null
+  cardNumber_not_in?: String[] | String | null
   cardNumber_lt?: String | null
   cardNumber_lte?: String | null
   cardNumber_gt?: String | null
@@ -11425,24 +11474,24 @@ export interface DebitCardInformationWhereInput {
   cardNumber_not_ends_with?: String | null
   expiresOnMonth?: Int | null
   expiresOnMonth_not?: Int | null
-  expiresOnMonth_in?: undefined | null
-  expiresOnMonth_not_in?: undefined | null
+  expiresOnMonth_in?: Int[] | Int | null
+  expiresOnMonth_not_in?: Int[] | Int | null
   expiresOnMonth_lt?: Int | null
   expiresOnMonth_lte?: Int | null
   expiresOnMonth_gt?: Int | null
   expiresOnMonth_gte?: Int | null
   expiresOnYear?: Int | null
   expiresOnYear_not?: Int | null
-  expiresOnYear_in?: undefined | null
-  expiresOnYear_not_in?: undefined | null
+  expiresOnYear_in?: Int[] | Int | null
+  expiresOnYear_not_in?: Int[] | Int | null
   expiresOnYear_lt?: Int | null
   expiresOnYear_lte?: Int | null
   expiresOnYear_gt?: Int | null
   expiresOnYear_gte?: Int | null
   securityCode?: String | null
   securityCode_not?: String | null
-  securityCode_in?: undefined | null
-  securityCode_not_in?: undefined | null
+  securityCode_in?: String[] | String | null
+  securityCode_not_in?: String[] | String | null
   securityCode_lt?: String | null
   securityCode_lte?: String | null
   securityCode_gt?: String | null
@@ -11455,8 +11504,8 @@ export interface DebitCardInformationWhereInput {
   securityCode_not_ends_with?: String | null
   firstName?: String | null
   firstName_not?: String | null
-  firstName_in?: undefined | null
-  firstName_not_in?: undefined | null
+  firstName_in?: String[] | String | null
+  firstName_not_in?: String[] | String | null
   firstName_lt?: String | null
   firstName_lte?: String | null
   firstName_gt?: String | null
@@ -11469,8 +11518,8 @@ export interface DebitCardInformationWhereInput {
   firstName_not_ends_with?: String | null
   lastName?: String | null
   lastName_not?: String | null
-  lastName_in?: undefined | null
-  lastName_not_in?: undefined | null
+  lastName_in?: String[] | String | null
+  lastName_not_in?: String[] | String | null
   lastName_lt?: String | null
   lastName_lte?: String | null
   lastName_gt?: String | null
@@ -11483,8 +11532,8 @@ export interface DebitCardInformationWhereInput {
   lastName_not_ends_with?: String | null
   postalCode?: String | null
   postalCode_not?: String | null
-  postalCode_in?: undefined | null
-  postalCode_not_in?: undefined | null
+  postalCode_in?: String[] | String | null
+  postalCode_not_in?: String[] | String | null
   postalCode_lt?: String | null
   postalCode_lte?: String | null
   postalCode_gt?: String | null
@@ -11497,8 +11546,8 @@ export interface DebitCardInformationWhereInput {
   postalCode_not_ends_with?: String | null
   country?: String | null
   country_not?: String | null
-  country_in?: undefined | null
-  country_not_in?: undefined | null
+  country_in?: String[] | String | null
+  country_not_in?: String[] | String | null
   country_lt?: String | null
   country_lte?: String | null
   country_gt?: String | null
@@ -11518,7 +11567,7 @@ export interface DebitCardInformationWhereUniqueInput {
 export interface ExperienceCategoryCreateInput {
   id?: ID_Input | null
   mainColor?: String | null
-  name?: undefined | null
+  name: String
 }
 
 export interface ExperienceCategoryCreateOneInput {
@@ -11527,13 +11576,13 @@ export interface ExperienceCategoryCreateOneInput {
 }
 
 export interface ExperienceCategorySubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: ExperienceCategorySubscriptionWhereInput[] | ExperienceCategorySubscriptionWhereInput | null
+  OR?: ExperienceCategorySubscriptionWhereInput[] | ExperienceCategorySubscriptionWhereInput | null
+  NOT?: ExperienceCategorySubscriptionWhereInput[] | ExperienceCategorySubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: ExperienceCategoryWhereInput | null
 }
 
@@ -11562,18 +11611,18 @@ export interface ExperienceCategoryUpdateOneInput {
 }
 
 export interface ExperienceCategoryUpsertNestedInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: ExperienceCategoryUpdateDataInput
+  create: ExperienceCategoryCreateInput
 }
 
 export interface ExperienceCategoryWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: ExperienceCategoryWhereInput[] | ExperienceCategoryWhereInput | null
+  OR?: ExperienceCategoryWhereInput[] | ExperienceCategoryWhereInput | null
+  NOT?: ExperienceCategoryWhereInput[] | ExperienceCategoryWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -11586,8 +11635,8 @@ export interface ExperienceCategoryWhereInput {
   id_not_ends_with?: ID_Input | null
   mainColor?: String | null
   mainColor_not?: String | null
-  mainColor_in?: undefined | null
-  mainColor_not_in?: undefined | null
+  mainColor_in?: String[] | String | null
+  mainColor_not_in?: String[] | String | null
   mainColor_lt?: String | null
   mainColor_lte?: String | null
   mainColor_gt?: String | null
@@ -11600,8 +11649,8 @@ export interface ExperienceCategoryWhereInput {
   mainColor_not_ends_with?: String | null
   name?: String | null
   name_not?: String | null
-  name_in?: undefined | null
-  name_not_in?: undefined | null
+  name_in?: String[] | String | null
+  name_not_in?: String[] | String | null
   name_lt?: String | null
   name_lte?: String | null
   name_gt?: String | null
@@ -11620,19 +11669,19 @@ export interface ExperienceCategoryWhereUniqueInput {
 
 export interface ExperienceCreateInput {
   id?: ID_Input | null
-  title?: undefined | null
-  pricePerPerson?: undefined | null
-  popularity?: undefined | null
+  title: String
+  pricePerPerson: Int
+  popularity: Int
   category?: ExperienceCategoryCreateOneInput | null
-  host?: undefined | null
-  location?: undefined | null
+  host: UserCreateOneWithoutExperiencesInput
+  location: LocationCreateOneInput
   reviews?: ReviewCreateManyWithoutExperienceInput | null
-  preview?: undefined | null
+  preview: PictureCreateOneInput
 }
 
 export interface ExperienceCreateManyWithoutHostInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: ExperienceCreateWithoutHostInput[] | ExperienceCreateWithoutHostInput | null
+  connect?: ExperienceWhereUniqueInput[] | ExperienceWhereUniqueInput | null
 }
 
 export interface ExperienceCreateOneWithoutReviewsInput {
@@ -11642,34 +11691,34 @@ export interface ExperienceCreateOneWithoutReviewsInput {
 
 export interface ExperienceCreateWithoutHostInput {
   id?: ID_Input | null
-  title?: undefined | null
-  pricePerPerson?: undefined | null
-  popularity?: undefined | null
+  title: String
+  pricePerPerson: Int
+  popularity: Int
   category?: ExperienceCategoryCreateOneInput | null
-  location?: undefined | null
+  location: LocationCreateOneInput
   reviews?: ReviewCreateManyWithoutExperienceInput | null
-  preview?: undefined | null
+  preview: PictureCreateOneInput
 }
 
 export interface ExperienceCreateWithoutReviewsInput {
   id?: ID_Input | null
-  title?: undefined | null
-  pricePerPerson?: undefined | null
-  popularity?: undefined | null
+  title: String
+  pricePerPerson: Int
+  popularity: Int
   category?: ExperienceCategoryCreateOneInput | null
-  host?: undefined | null
-  location?: undefined | null
-  preview?: undefined | null
+  host: UserCreateOneWithoutExperiencesInput
+  location: LocationCreateOneInput
+  preview: PictureCreateOneInput
 }
 
 export interface ExperienceScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: ExperienceScalarWhereInput[] | ExperienceScalarWhereInput | null
+  OR?: ExperienceScalarWhereInput[] | ExperienceScalarWhereInput | null
+  NOT?: ExperienceScalarWhereInput[] | ExperienceScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -11682,8 +11731,8 @@ export interface ExperienceScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   title?: String | null
   title_not?: String | null
-  title_in?: undefined | null
-  title_not_in?: undefined | null
+  title_in?: String[] | String | null
+  title_not_in?: String[] | String | null
   title_lt?: String | null
   title_lte?: String | null
   title_gt?: String | null
@@ -11696,16 +11745,16 @@ export interface ExperienceScalarWhereInput {
   title_not_ends_with?: String | null
   pricePerPerson?: Int | null
   pricePerPerson_not?: Int | null
-  pricePerPerson_in?: undefined | null
-  pricePerPerson_not_in?: undefined | null
+  pricePerPerson_in?: Int[] | Int | null
+  pricePerPerson_not_in?: Int[] | Int | null
   pricePerPerson_lt?: Int | null
   pricePerPerson_lte?: Int | null
   pricePerPerson_gt?: Int | null
   pricePerPerson_gte?: Int | null
   popularity?: Int | null
   popularity_not?: Int | null
-  popularity_in?: undefined | null
-  popularity_not_in?: undefined | null
+  popularity_in?: Int[] | Int | null
+  popularity_not_in?: Int[] | Int | null
   popularity_lt?: Int | null
   popularity_lte?: Int | null
   popularity_gt?: Int | null
@@ -11713,13 +11762,13 @@ export interface ExperienceScalarWhereInput {
 }
 
 export interface ExperienceSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: ExperienceSubscriptionWhereInput[] | ExperienceSubscriptionWhereInput | null
+  OR?: ExperienceSubscriptionWhereInput[] | ExperienceSubscriptionWhereInput | null
+  NOT?: ExperienceSubscriptionWhereInput[] | ExperienceSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: ExperienceWhereInput | null
 }
 
@@ -11747,20 +11796,20 @@ export interface ExperienceUpdateManyMutationInput {
 }
 
 export interface ExperienceUpdateManyWithoutHostInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: ExperienceCreateWithoutHostInput[] | ExperienceCreateWithoutHostInput | null
+  connect?: ExperienceWhereUniqueInput[] | ExperienceWhereUniqueInput | null
+  set?: ExperienceWhereUniqueInput[] | ExperienceWhereUniqueInput | null
+  disconnect?: ExperienceWhereUniqueInput[] | ExperienceWhereUniqueInput | null
+  delete?: ExperienceWhereUniqueInput[] | ExperienceWhereUniqueInput | null
+  update?: ExperienceUpdateWithWhereUniqueWithoutHostInput[] | ExperienceUpdateWithWhereUniqueWithoutHostInput | null
+  updateMany?: ExperienceUpdateManyWithWhereNestedInput[] | ExperienceUpdateManyWithWhereNestedInput | null
+  deleteMany?: ExperienceScalarWhereInput[] | ExperienceScalarWhereInput | null
+  upsert?: ExperienceUpsertWithWhereUniqueWithoutHostInput[] | ExperienceUpsertWithWhereUniqueWithoutHostInput | null
 }
 
 export interface ExperienceUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: ExperienceScalarWhereInput
+  data: ExperienceUpdateManyDataInput
 }
 
 export interface ExperienceUpdateOneWithoutReviewsInput {
@@ -11793,29 +11842,29 @@ export interface ExperienceUpdateWithoutReviewsDataInput {
 }
 
 export interface ExperienceUpdateWithWhereUniqueWithoutHostInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: ExperienceWhereUniqueInput
+  data: ExperienceUpdateWithoutHostDataInput
 }
 
 export interface ExperienceUpsertWithoutReviewsInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: ExperienceUpdateWithoutReviewsDataInput
+  create: ExperienceCreateWithoutReviewsInput
 }
 
 export interface ExperienceUpsertWithWhereUniqueWithoutHostInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: ExperienceWhereUniqueInput
+  update: ExperienceUpdateWithoutHostDataInput
+  create: ExperienceCreateWithoutHostInput
 }
 
 export interface ExperienceWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: ExperienceWhereInput[] | ExperienceWhereInput | null
+  OR?: ExperienceWhereInput[] | ExperienceWhereInput | null
+  NOT?: ExperienceWhereInput[] | ExperienceWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -11828,8 +11877,8 @@ export interface ExperienceWhereInput {
   id_not_ends_with?: ID_Input | null
   title?: String | null
   title_not?: String | null
-  title_in?: undefined | null
-  title_not_in?: undefined | null
+  title_in?: String[] | String | null
+  title_not_in?: String[] | String | null
   title_lt?: String | null
   title_lte?: String | null
   title_gt?: String | null
@@ -11842,16 +11891,16 @@ export interface ExperienceWhereInput {
   title_not_ends_with?: String | null
   pricePerPerson?: Int | null
   pricePerPerson_not?: Int | null
-  pricePerPerson_in?: undefined | null
-  pricePerPerson_not_in?: undefined | null
+  pricePerPerson_in?: Int[] | Int | null
+  pricePerPerson_not_in?: Int[] | Int | null
   pricePerPerson_lt?: Int | null
   pricePerPerson_lte?: Int | null
   pricePerPerson_gt?: Int | null
   pricePerPerson_gte?: Int | null
   popularity?: Int | null
   popularity_not?: Int | null
-  popularity_in?: undefined | null
-  popularity_not_in?: undefined | null
+  popularity_in?: Int[] | Int | null
+  popularity_not_in?: Int[] | Int | null
   popularity_lt?: Int | null
   popularity_lte?: Int | null
   popularity_gt?: Int | null
@@ -11872,21 +11921,21 @@ export interface ExperienceWhereUniqueInput {
 export interface LocationCreateInput {
   title?: String | null
   id?: ID_Input | null
-  lat?: undefined | null
-  lng?: undefined | null
-  address?: undefined | null
-  directions?: undefined | null
+  lat: Float
+  lng: Float
+  address: String
+  directions: String
   neighbourHood?: NeighbourhoodCreateOneWithoutLocationsInput | null
 }
 
 export interface LocationCreateManyInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: LocationCreateInput[] | LocationCreateInput | null
+  connect?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
 }
 
 export interface LocationCreateManyWithoutNeighbourHoodInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: LocationCreateWithoutNeighbourHoodInput[] | LocationCreateWithoutNeighbourHoodInput | null
+  connect?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
 }
 
 export interface LocationCreateOneInput {
@@ -11897,20 +11946,20 @@ export interface LocationCreateOneInput {
 export interface LocationCreateWithoutNeighbourHoodInput {
   title?: String | null
   id?: ID_Input | null
-  lat?: undefined | null
-  lng?: undefined | null
-  address?: undefined | null
-  directions?: undefined | null
+  lat: Float
+  lng: Float
+  address: String
+  directions: String
 }
 
 export interface LocationScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: LocationScalarWhereInput[] | LocationScalarWhereInput | null
+  OR?: LocationScalarWhereInput[] | LocationScalarWhereInput | null
+  NOT?: LocationScalarWhereInput[] | LocationScalarWhereInput | null
   title?: String | null
   title_not?: String | null
-  title_in?: undefined | null
-  title_not_in?: undefined | null
+  title_in?: String[] | String | null
+  title_not_in?: String[] | String | null
   title_lt?: String | null
   title_lte?: String | null
   title_gt?: String | null
@@ -11923,8 +11972,8 @@ export interface LocationScalarWhereInput {
   title_not_ends_with?: String | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -11937,24 +11986,24 @@ export interface LocationScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   lat?: Float | null
   lat_not?: Float | null
-  lat_in?: undefined | null
-  lat_not_in?: undefined | null
+  lat_in?: Float[] | Float | null
+  lat_not_in?: Float[] | Float | null
   lat_lt?: Float | null
   lat_lte?: Float | null
   lat_gt?: Float | null
   lat_gte?: Float | null
   lng?: Float | null
   lng_not?: Float | null
-  lng_in?: undefined | null
-  lng_not_in?: undefined | null
+  lng_in?: Float[] | Float | null
+  lng_not_in?: Float[] | Float | null
   lng_lt?: Float | null
   lng_lte?: Float | null
   lng_gt?: Float | null
   lng_gte?: Float | null
   address?: String | null
   address_not?: String | null
-  address_in?: undefined | null
-  address_not_in?: undefined | null
+  address_in?: String[] | String | null
+  address_not_in?: String[] | String | null
   address_lt?: String | null
   address_lte?: String | null
   address_gt?: String | null
@@ -11967,8 +12016,8 @@ export interface LocationScalarWhereInput {
   address_not_ends_with?: String | null
   directions?: String | null
   directions_not?: String | null
-  directions_in?: undefined | null
-  directions_not_in?: undefined | null
+  directions_in?: String[] | String | null
+  directions_not_in?: String[] | String | null
   directions_lt?: String | null
   directions_lte?: String | null
   directions_gt?: String | null
@@ -11982,13 +12031,13 @@ export interface LocationScalarWhereInput {
 }
 
 export interface LocationSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: LocationSubscriptionWhereInput[] | LocationSubscriptionWhereInput | null
+  OR?: LocationSubscriptionWhereInput[] | LocationSubscriptionWhereInput | null
+  NOT?: LocationSubscriptionWhereInput[] | LocationSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: LocationWhereInput | null
 }
 
@@ -12019,15 +12068,15 @@ export interface LocationUpdateManyDataInput {
 }
 
 export interface LocationUpdateManyInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: LocationCreateInput[] | LocationCreateInput | null
+  connect?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  set?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  disconnect?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  delete?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  update?: LocationUpdateWithWhereUniqueNestedInput[] | LocationUpdateWithWhereUniqueNestedInput | null
+  updateMany?: LocationUpdateManyWithWhereNestedInput[] | LocationUpdateManyWithWhereNestedInput | null
+  deleteMany?: LocationScalarWhereInput[] | LocationScalarWhereInput | null
+  upsert?: LocationUpsertWithWhereUniqueNestedInput[] | LocationUpsertWithWhereUniqueNestedInput | null
 }
 
 export interface LocationUpdateManyMutationInput {
@@ -12039,20 +12088,20 @@ export interface LocationUpdateManyMutationInput {
 }
 
 export interface LocationUpdateManyWithoutNeighbourHoodInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: LocationCreateWithoutNeighbourHoodInput[] | LocationCreateWithoutNeighbourHoodInput | null
+  connect?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  set?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  disconnect?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  delete?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  update?: LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput[] | LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput | null
+  updateMany?: LocationUpdateManyWithWhereNestedInput[] | LocationUpdateManyWithWhereNestedInput | null
+  deleteMany?: LocationScalarWhereInput[] | LocationScalarWhereInput | null
+  upsert?: LocationUpsertWithWhereUniqueWithoutNeighbourHoodInput[] | LocationUpsertWithWhereUniqueWithoutNeighbourHoodInput | null
 }
 
 export interface LocationUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: LocationScalarWhereInput
+  data: LocationUpdateManyDataInput
 }
 
 export interface LocationUpdateOneInput {
@@ -12080,40 +12129,40 @@ export interface LocationUpdateWithoutNeighbourHoodDataInput {
 }
 
 export interface LocationUpdateWithWhereUniqueNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: LocationWhereUniqueInput
+  data: LocationUpdateDataInput
 }
 
 export interface LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: LocationWhereUniqueInput
+  data: LocationUpdateWithoutNeighbourHoodDataInput
 }
 
 export interface LocationUpsertNestedInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: LocationUpdateDataInput
+  create: LocationCreateInput
 }
 
 export interface LocationUpsertWithWhereUniqueNestedInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: LocationWhereUniqueInput
+  update: LocationUpdateDataInput
+  create: LocationCreateInput
 }
 
 export interface LocationUpsertWithWhereUniqueWithoutNeighbourHoodInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: LocationWhereUniqueInput
+  update: LocationUpdateWithoutNeighbourHoodDataInput
+  create: LocationCreateWithoutNeighbourHoodInput
 }
 
 export interface LocationWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: LocationWhereInput[] | LocationWhereInput | null
+  OR?: LocationWhereInput[] | LocationWhereInput | null
+  NOT?: LocationWhereInput[] | LocationWhereInput | null
   title?: String | null
   title_not?: String | null
-  title_in?: undefined | null
-  title_not_in?: undefined | null
+  title_in?: String[] | String | null
+  title_not_in?: String[] | String | null
   title_lt?: String | null
   title_lte?: String | null
   title_gt?: String | null
@@ -12126,8 +12175,8 @@ export interface LocationWhereInput {
   title_not_ends_with?: String | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -12140,24 +12189,24 @@ export interface LocationWhereInput {
   id_not_ends_with?: ID_Input | null
   lat?: Float | null
   lat_not?: Float | null
-  lat_in?: undefined | null
-  lat_not_in?: undefined | null
+  lat_in?: Float[] | Float | null
+  lat_not_in?: Float[] | Float | null
   lat_lt?: Float | null
   lat_lte?: Float | null
   lat_gt?: Float | null
   lat_gte?: Float | null
   lng?: Float | null
   lng_not?: Float | null
-  lng_in?: undefined | null
-  lng_not_in?: undefined | null
+  lng_in?: Float[] | Float | null
+  lng_not_in?: Float[] | Float | null
   lng_lt?: Float | null
   lng_lte?: Float | null
   lng_gt?: Float | null
   lng_gte?: Float | null
   address?: String | null
   address_not?: String | null
-  address_in?: undefined | null
-  address_not_in?: undefined | null
+  address_in?: String[] | String | null
+  address_not_in?: String[] | String | null
   address_lt?: String | null
   address_lte?: String | null
   address_gt?: String | null
@@ -12170,8 +12219,8 @@ export interface LocationWhereInput {
   address_not_ends_with?: String | null
   directions?: String | null
   directions_not?: String | null
-  directions_in?: undefined | null
-  directions_not_in?: undefined | null
+  directions_in?: String[] | String | null
+  directions_not_in?: String[] | String | null
   directions_lt?: String | null
   directions_lte?: String | null
   directions_gt?: String | null
@@ -12191,27 +12240,27 @@ export interface LocationWhereUniqueInput {
 
 export interface MenuItemCreateInput {
   id?: ID_Input | null
-  shortDescription?: undefined | null
-  title?: undefined | null
-  description?: undefined | null
-  pricing?: undefined | null
+  shortDescription: String
+  title: String
+  description: String
+  pricing: PricingCreateOneInput
   pictures?: PictureCreateManyInput | null
   reviews?: ReviewCreateManyInput | null
 }
 
 export interface MenuItemCreateManyInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: MenuItemCreateInput[] | MenuItemCreateInput | null
+  connect?: MenuItemWhereUniqueInput[] | MenuItemWhereUniqueInput | null
 }
 
 export interface MenuItemScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: MenuItemScalarWhereInput[] | MenuItemScalarWhereInput | null
+  OR?: MenuItemScalarWhereInput[] | MenuItemScalarWhereInput | null
+  NOT?: MenuItemScalarWhereInput[] | MenuItemScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -12224,24 +12273,24 @@ export interface MenuItemScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   updatedAt?: DateTime | null
   updatedAt_not?: DateTime | null
-  updatedAt_in?: undefined | null
-  updatedAt_not_in?: undefined | null
+  updatedAt_in?: DateTime[] | DateTime | null
+  updatedAt_not_in?: DateTime[] | DateTime | null
   updatedAt_lt?: DateTime | null
   updatedAt_lte?: DateTime | null
   updatedAt_gt?: DateTime | null
   updatedAt_gte?: DateTime | null
   shortDescription?: String | null
   shortDescription_not?: String | null
-  shortDescription_in?: undefined | null
-  shortDescription_not_in?: undefined | null
+  shortDescription_in?: String[] | String | null
+  shortDescription_not_in?: String[] | String | null
   shortDescription_lt?: String | null
   shortDescription_lte?: String | null
   shortDescription_gt?: String | null
@@ -12254,8 +12303,8 @@ export interface MenuItemScalarWhereInput {
   shortDescription_not_ends_with?: String | null
   title?: String | null
   title_not?: String | null
-  title_in?: undefined | null
-  title_not_in?: undefined | null
+  title_in?: String[] | String | null
+  title_not_in?: String[] | String | null
   title_lt?: String | null
   title_lte?: String | null
   title_gt?: String | null
@@ -12268,8 +12317,8 @@ export interface MenuItemScalarWhereInput {
   title_not_ends_with?: String | null
   description?: String | null
   description_not?: String | null
-  description_in?: undefined | null
-  description_not_in?: undefined | null
+  description_in?: String[] | String | null
+  description_not_in?: String[] | String | null
   description_lt?: String | null
   description_lte?: String | null
   description_gt?: String | null
@@ -12283,13 +12332,13 @@ export interface MenuItemScalarWhereInput {
 }
 
 export interface MenuItemSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: MenuItemSubscriptionWhereInput[] | MenuItemSubscriptionWhereInput | null
+  OR?: MenuItemSubscriptionWhereInput[] | MenuItemSubscriptionWhereInput | null
+  NOT?: MenuItemSubscriptionWhereInput[] | MenuItemSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: MenuItemWhereInput | null
 }
 
@@ -12318,15 +12367,15 @@ export interface MenuItemUpdateManyDataInput {
 }
 
 export interface MenuItemUpdateManyInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: MenuItemCreateInput[] | MenuItemCreateInput | null
+  connect?: MenuItemWhereUniqueInput[] | MenuItemWhereUniqueInput | null
+  set?: MenuItemWhereUniqueInput[] | MenuItemWhereUniqueInput | null
+  disconnect?: MenuItemWhereUniqueInput[] | MenuItemWhereUniqueInput | null
+  delete?: MenuItemWhereUniqueInput[] | MenuItemWhereUniqueInput | null
+  update?: MenuItemUpdateWithWhereUniqueNestedInput[] | MenuItemUpdateWithWhereUniqueNestedInput | null
+  updateMany?: MenuItemUpdateManyWithWhereNestedInput[] | MenuItemUpdateManyWithWhereNestedInput | null
+  deleteMany?: MenuItemScalarWhereInput[] | MenuItemScalarWhereInput | null
+  upsert?: MenuItemUpsertWithWhereUniqueNestedInput[] | MenuItemUpsertWithWhereUniqueNestedInput | null
 }
 
 export interface MenuItemUpdateManyMutationInput {
@@ -12336,29 +12385,29 @@ export interface MenuItemUpdateManyMutationInput {
 }
 
 export interface MenuItemUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: MenuItemScalarWhereInput
+  data: MenuItemUpdateManyDataInput
 }
 
 export interface MenuItemUpdateWithWhereUniqueNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: MenuItemWhereUniqueInput
+  data: MenuItemUpdateDataInput
 }
 
 export interface MenuItemUpsertWithWhereUniqueNestedInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: MenuItemWhereUniqueInput
+  update: MenuItemUpdateDataInput
+  create: MenuItemCreateInput
 }
 
 export interface MenuItemWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: MenuItemWhereInput[] | MenuItemWhereInput | null
+  OR?: MenuItemWhereInput[] | MenuItemWhereInput | null
+  NOT?: MenuItemWhereInput[] | MenuItemWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -12371,24 +12420,24 @@ export interface MenuItemWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   updatedAt?: DateTime | null
   updatedAt_not?: DateTime | null
-  updatedAt_in?: undefined | null
-  updatedAt_not_in?: undefined | null
+  updatedAt_in?: DateTime[] | DateTime | null
+  updatedAt_not_in?: DateTime[] | DateTime | null
   updatedAt_lt?: DateTime | null
   updatedAt_lte?: DateTime | null
   updatedAt_gt?: DateTime | null
   updatedAt_gte?: DateTime | null
   shortDescription?: String | null
   shortDescription_not?: String | null
-  shortDescription_in?: undefined | null
-  shortDescription_not_in?: undefined | null
+  shortDescription_in?: String[] | String | null
+  shortDescription_not_in?: String[] | String | null
   shortDescription_lt?: String | null
   shortDescription_lte?: String | null
   shortDescription_gt?: String | null
@@ -12401,8 +12450,8 @@ export interface MenuItemWhereInput {
   shortDescription_not_ends_with?: String | null
   title?: String | null
   title_not?: String | null
-  title_in?: undefined | null
-  title_not_in?: undefined | null
+  title_in?: String[] | String | null
+  title_not_in?: String[] | String | null
   title_lt?: String | null
   title_lte?: String | null
   title_gt?: String | null
@@ -12415,8 +12464,8 @@ export interface MenuItemWhereInput {
   title_not_ends_with?: String | null
   description?: String | null
   description_not?: String | null
-  description_in?: undefined | null
-  description_not_in?: undefined | null
+  description_in?: String[] | String | null
+  description_not_in?: String[] | String | null
   description_lt?: String | null
   description_lte?: String | null
   description_gt?: String | null
@@ -12442,44 +12491,44 @@ export interface MenuItemWhereUniqueInput {
 
 export interface MessageCreateInput {
   id?: ID_Input | null
-  deliveredAt?: undefined | null
-  readAt?: undefined | null
-  from?: undefined | null
-  to?: undefined | null
+  deliveredAt: DateTime
+  readAt: DateTime
+  from: UserCreateOneWithoutSentMessagesInput
+  to: UserCreateOneWithoutReceivedMessagesInput
 }
 
 export interface MessageCreateManyWithoutFromInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: MessageCreateWithoutFromInput[] | MessageCreateWithoutFromInput | null
+  connect?: MessageWhereUniqueInput[] | MessageWhereUniqueInput | null
 }
 
 export interface MessageCreateManyWithoutToInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: MessageCreateWithoutToInput[] | MessageCreateWithoutToInput | null
+  connect?: MessageWhereUniqueInput[] | MessageWhereUniqueInput | null
 }
 
 export interface MessageCreateWithoutFromInput {
   id?: ID_Input | null
-  deliveredAt?: undefined | null
-  readAt?: undefined | null
-  to?: undefined | null
+  deliveredAt: DateTime
+  readAt: DateTime
+  to: UserCreateOneWithoutReceivedMessagesInput
 }
 
 export interface MessageCreateWithoutToInput {
   id?: ID_Input | null
-  deliveredAt?: undefined | null
-  readAt?: undefined | null
-  from?: undefined | null
+  deliveredAt: DateTime
+  readAt: DateTime
+  from: UserCreateOneWithoutSentMessagesInput
 }
 
 export interface MessageScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: MessageScalarWhereInput[] | MessageScalarWhereInput | null
+  OR?: MessageScalarWhereInput[] | MessageScalarWhereInput | null
+  NOT?: MessageScalarWhereInput[] | MessageScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -12492,24 +12541,24 @@ export interface MessageScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   deliveredAt?: DateTime | null
   deliveredAt_not?: DateTime | null
-  deliveredAt_in?: undefined | null
-  deliveredAt_not_in?: undefined | null
+  deliveredAt_in?: DateTime[] | DateTime | null
+  deliveredAt_not_in?: DateTime[] | DateTime | null
   deliveredAt_lt?: DateTime | null
   deliveredAt_lte?: DateTime | null
   deliveredAt_gt?: DateTime | null
   deliveredAt_gte?: DateTime | null
   readAt?: DateTime | null
   readAt_not?: DateTime | null
-  readAt_in?: undefined | null
-  readAt_not_in?: undefined | null
+  readAt_in?: DateTime[] | DateTime | null
+  readAt_not_in?: DateTime[] | DateTime | null
   readAt_lt?: DateTime | null
   readAt_lte?: DateTime | null
   readAt_gt?: DateTime | null
@@ -12517,13 +12566,13 @@ export interface MessageScalarWhereInput {
 }
 
 export interface MessageSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: MessageSubscriptionWhereInput[] | MessageSubscriptionWhereInput | null
+  OR?: MessageSubscriptionWhereInput[] | MessageSubscriptionWhereInput | null
+  NOT?: MessageSubscriptionWhereInput[] | MessageSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: MessageWhereInput | null
 }
 
@@ -12545,32 +12594,32 @@ export interface MessageUpdateManyMutationInput {
 }
 
 export interface MessageUpdateManyWithoutFromInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: MessageCreateWithoutFromInput[] | MessageCreateWithoutFromInput | null
+  connect?: MessageWhereUniqueInput[] | MessageWhereUniqueInput | null
+  set?: MessageWhereUniqueInput[] | MessageWhereUniqueInput | null
+  disconnect?: MessageWhereUniqueInput[] | MessageWhereUniqueInput | null
+  delete?: MessageWhereUniqueInput[] | MessageWhereUniqueInput | null
+  update?: MessageUpdateWithWhereUniqueWithoutFromInput[] | MessageUpdateWithWhereUniqueWithoutFromInput | null
+  updateMany?: MessageUpdateManyWithWhereNestedInput[] | MessageUpdateManyWithWhereNestedInput | null
+  deleteMany?: MessageScalarWhereInput[] | MessageScalarWhereInput | null
+  upsert?: MessageUpsertWithWhereUniqueWithoutFromInput[] | MessageUpsertWithWhereUniqueWithoutFromInput | null
 }
 
 export interface MessageUpdateManyWithoutToInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: MessageCreateWithoutToInput[] | MessageCreateWithoutToInput | null
+  connect?: MessageWhereUniqueInput[] | MessageWhereUniqueInput | null
+  set?: MessageWhereUniqueInput[] | MessageWhereUniqueInput | null
+  disconnect?: MessageWhereUniqueInput[] | MessageWhereUniqueInput | null
+  delete?: MessageWhereUniqueInput[] | MessageWhereUniqueInput | null
+  update?: MessageUpdateWithWhereUniqueWithoutToInput[] | MessageUpdateWithWhereUniqueWithoutToInput | null
+  updateMany?: MessageUpdateManyWithWhereNestedInput[] | MessageUpdateManyWithWhereNestedInput | null
+  deleteMany?: MessageScalarWhereInput[] | MessageScalarWhereInput | null
+  upsert?: MessageUpsertWithWhereUniqueWithoutToInput[] | MessageUpsertWithWhereUniqueWithoutToInput | null
 }
 
 export interface MessageUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: MessageScalarWhereInput
+  data: MessageUpdateManyDataInput
 }
 
 export interface MessageUpdateWithoutFromDataInput {
@@ -12586,35 +12635,35 @@ export interface MessageUpdateWithoutToDataInput {
 }
 
 export interface MessageUpdateWithWhereUniqueWithoutFromInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: MessageWhereUniqueInput
+  data: MessageUpdateWithoutFromDataInput
 }
 
 export interface MessageUpdateWithWhereUniqueWithoutToInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: MessageWhereUniqueInput
+  data: MessageUpdateWithoutToDataInput
 }
 
 export interface MessageUpsertWithWhereUniqueWithoutFromInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: MessageWhereUniqueInput
+  update: MessageUpdateWithoutFromDataInput
+  create: MessageCreateWithoutFromInput
 }
 
 export interface MessageUpsertWithWhereUniqueWithoutToInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: MessageWhereUniqueInput
+  update: MessageUpdateWithoutToDataInput
+  create: MessageCreateWithoutToInput
 }
 
 export interface MessageWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: MessageWhereInput[] | MessageWhereInput | null
+  OR?: MessageWhereInput[] | MessageWhereInput | null
+  NOT?: MessageWhereInput[] | MessageWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -12627,24 +12676,24 @@ export interface MessageWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   deliveredAt?: DateTime | null
   deliveredAt_not?: DateTime | null
-  deliveredAt_in?: undefined | null
-  deliveredAt_not_in?: undefined | null
+  deliveredAt_in?: DateTime[] | DateTime | null
+  deliveredAt_not_in?: DateTime[] | DateTime | null
   deliveredAt_lt?: DateTime | null
   deliveredAt_lte?: DateTime | null
   deliveredAt_gt?: DateTime | null
   deliveredAt_gte?: DateTime | null
   readAt?: DateTime | null
   readAt_not?: DateTime | null
-  readAt_in?: undefined | null
-  readAt_not_in?: undefined | null
+  readAt_in?: DateTime[] | DateTime | null
+  readAt_not_in?: DateTime[] | DateTime | null
   readAt_lt?: DateTime | null
   readAt_lte?: DateTime | null
   readAt_gt?: DateTime | null
@@ -12659,18 +12708,18 @@ export interface MessageWhereUniqueInput {
 
 export interface NeighbourhoodCreateInput {
   id?: ID_Input | null
-  name?: undefined | null
-  slug?: undefined | null
-  featured?: undefined | null
-  popularity?: undefined | null
+  name: String
+  slug: String
+  featured: Boolean
+  popularity: Int
   locations?: LocationCreateManyWithoutNeighbourHoodInput | null
   homePreview?: PictureCreateOneInput | null
-  city?: undefined | null
+  city: CityCreateOneWithoutNeighbourhoodsInput
 }
 
 export interface NeighbourhoodCreateManyWithoutCityInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: NeighbourhoodCreateWithoutCityInput[] | NeighbourhoodCreateWithoutCityInput | null
+  connect?: NeighbourhoodWhereUniqueInput[] | NeighbourhoodWhereUniqueInput | null
 }
 
 export interface NeighbourhoodCreateOneWithoutLocationsInput {
@@ -12680,32 +12729,32 @@ export interface NeighbourhoodCreateOneWithoutLocationsInput {
 
 export interface NeighbourhoodCreateWithoutCityInput {
   id?: ID_Input | null
-  name?: undefined | null
-  slug?: undefined | null
-  featured?: undefined | null
-  popularity?: undefined | null
+  name: String
+  slug: String
+  featured: Boolean
+  popularity: Int
   locations?: LocationCreateManyWithoutNeighbourHoodInput | null
   homePreview?: PictureCreateOneInput | null
 }
 
 export interface NeighbourhoodCreateWithoutLocationsInput {
   id?: ID_Input | null
-  name?: undefined | null
-  slug?: undefined | null
-  featured?: undefined | null
-  popularity?: undefined | null
+  name: String
+  slug: String
+  featured: Boolean
+  popularity: Int
   homePreview?: PictureCreateOneInput | null
-  city?: undefined | null
+  city: CityCreateOneWithoutNeighbourhoodsInput
 }
 
 export interface NeighbourhoodScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: NeighbourhoodScalarWhereInput[] | NeighbourhoodScalarWhereInput | null
+  OR?: NeighbourhoodScalarWhereInput[] | NeighbourhoodScalarWhereInput | null
+  NOT?: NeighbourhoodScalarWhereInput[] | NeighbourhoodScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -12718,8 +12767,8 @@ export interface NeighbourhoodScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   name?: String | null
   name_not?: String | null
-  name_in?: undefined | null
-  name_not_in?: undefined | null
+  name_in?: String[] | String | null
+  name_not_in?: String[] | String | null
   name_lt?: String | null
   name_lte?: String | null
   name_gt?: String | null
@@ -12732,8 +12781,8 @@ export interface NeighbourhoodScalarWhereInput {
   name_not_ends_with?: String | null
   slug?: String | null
   slug_not?: String | null
-  slug_in?: undefined | null
-  slug_not_in?: undefined | null
+  slug_in?: String[] | String | null
+  slug_not_in?: String[] | String | null
   slug_lt?: String | null
   slug_lte?: String | null
   slug_gt?: String | null
@@ -12748,8 +12797,8 @@ export interface NeighbourhoodScalarWhereInput {
   featured_not?: Boolean | null
   popularity?: Int | null
   popularity_not?: Int | null
-  popularity_in?: undefined | null
-  popularity_not_in?: undefined | null
+  popularity_in?: Int[] | Int | null
+  popularity_not_in?: Int[] | Int | null
   popularity_lt?: Int | null
   popularity_lte?: Int | null
   popularity_gt?: Int | null
@@ -12757,13 +12806,13 @@ export interface NeighbourhoodScalarWhereInput {
 }
 
 export interface NeighbourhoodSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: NeighbourhoodSubscriptionWhereInput[] | NeighbourhoodSubscriptionWhereInput | null
+  OR?: NeighbourhoodSubscriptionWhereInput[] | NeighbourhoodSubscriptionWhereInput | null
+  NOT?: NeighbourhoodSubscriptionWhereInput[] | NeighbourhoodSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: NeighbourhoodWhereInput | null
 }
 
@@ -12792,20 +12841,20 @@ export interface NeighbourhoodUpdateManyMutationInput {
 }
 
 export interface NeighbourhoodUpdateManyWithoutCityInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: NeighbourhoodCreateWithoutCityInput[] | NeighbourhoodCreateWithoutCityInput | null
+  connect?: NeighbourhoodWhereUniqueInput[] | NeighbourhoodWhereUniqueInput | null
+  set?: NeighbourhoodWhereUniqueInput[] | NeighbourhoodWhereUniqueInput | null
+  disconnect?: NeighbourhoodWhereUniqueInput[] | NeighbourhoodWhereUniqueInput | null
+  delete?: NeighbourhoodWhereUniqueInput[] | NeighbourhoodWhereUniqueInput | null
+  update?: NeighbourhoodUpdateWithWhereUniqueWithoutCityInput[] | NeighbourhoodUpdateWithWhereUniqueWithoutCityInput | null
+  updateMany?: NeighbourhoodUpdateManyWithWhereNestedInput[] | NeighbourhoodUpdateManyWithWhereNestedInput | null
+  deleteMany?: NeighbourhoodScalarWhereInput[] | NeighbourhoodScalarWhereInput | null
+  upsert?: NeighbourhoodUpsertWithWhereUniqueWithoutCityInput[] | NeighbourhoodUpsertWithWhereUniqueWithoutCityInput | null
 }
 
 export interface NeighbourhoodUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: NeighbourhoodScalarWhereInput
+  data: NeighbourhoodUpdateManyDataInput
 }
 
 export interface NeighbourhoodUpdateOneWithoutLocationsInput {
@@ -12836,29 +12885,29 @@ export interface NeighbourhoodUpdateWithoutLocationsDataInput {
 }
 
 export interface NeighbourhoodUpdateWithWhereUniqueWithoutCityInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: NeighbourhoodWhereUniqueInput
+  data: NeighbourhoodUpdateWithoutCityDataInput
 }
 
 export interface NeighbourhoodUpsertWithoutLocationsInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: NeighbourhoodUpdateWithoutLocationsDataInput
+  create: NeighbourhoodCreateWithoutLocationsInput
 }
 
 export interface NeighbourhoodUpsertWithWhereUniqueWithoutCityInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: NeighbourhoodWhereUniqueInput
+  update: NeighbourhoodUpdateWithoutCityDataInput
+  create: NeighbourhoodCreateWithoutCityInput
 }
 
 export interface NeighbourhoodWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: NeighbourhoodWhereInput[] | NeighbourhoodWhereInput | null
+  OR?: NeighbourhoodWhereInput[] | NeighbourhoodWhereInput | null
+  NOT?: NeighbourhoodWhereInput[] | NeighbourhoodWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -12871,8 +12920,8 @@ export interface NeighbourhoodWhereInput {
   id_not_ends_with?: ID_Input | null
   name?: String | null
   name_not?: String | null
-  name_in?: undefined | null
-  name_not_in?: undefined | null
+  name_in?: String[] | String | null
+  name_not_in?: String[] | String | null
   name_lt?: String | null
   name_lte?: String | null
   name_gt?: String | null
@@ -12885,8 +12934,8 @@ export interface NeighbourhoodWhereInput {
   name_not_ends_with?: String | null
   slug?: String | null
   slug_not?: String | null
-  slug_in?: undefined | null
-  slug_not_in?: undefined | null
+  slug_in?: String[] | String | null
+  slug_not_in?: String[] | String | null
   slug_lt?: String | null
   slug_lte?: String | null
   slug_gt?: String | null
@@ -12901,8 +12950,8 @@ export interface NeighbourhoodWhereInput {
   featured_not?: Boolean | null
   popularity?: Int | null
   popularity_not?: Int | null
-  popularity_in?: undefined | null
-  popularity_not_in?: undefined | null
+  popularity_in?: Int[] | Int | null
+  popularity_not_in?: Int[] | Int | null
   popularity_lt?: Int | null
   popularity_lte?: Int | null
   popularity_gt?: Int | null
@@ -12921,31 +12970,31 @@ export interface NeighbourhoodWhereUniqueInput {
 export interface NotificationCreateInput {
   id?: ID_Input | null
   type?: NOTIFICATION_TYPE | null
-  link?: undefined | null
-  readDate?: undefined | null
-  user?: undefined | null
+  link: String
+  readDate: DateTime
+  user: UserCreateOneWithoutNotificationsInput
 }
 
 export interface NotificationCreateManyWithoutUserInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: NotificationCreateWithoutUserInput[] | NotificationCreateWithoutUserInput | null
+  connect?: NotificationWhereUniqueInput[] | NotificationWhereUniqueInput | null
 }
 
 export interface NotificationCreateWithoutUserInput {
   id?: ID_Input | null
   type?: NOTIFICATION_TYPE | null
-  link?: undefined | null
-  readDate?: undefined | null
+  link: String
+  readDate: DateTime
 }
 
 export interface NotificationScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: NotificationScalarWhereInput[] | NotificationScalarWhereInput | null
+  OR?: NotificationScalarWhereInput[] | NotificationScalarWhereInput | null
+  NOT?: NotificationScalarWhereInput[] | NotificationScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -12958,20 +13007,20 @@ export interface NotificationScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   type?: NOTIFICATION_TYPE | null
   type_not?: NOTIFICATION_TYPE | null
-  type_in?: undefined | null
-  type_not_in?: undefined | null
+  type_in?: NOTIFICATION_TYPE[] | NOTIFICATION_TYPE | null
+  type_not_in?: NOTIFICATION_TYPE[] | NOTIFICATION_TYPE | null
   link?: String | null
   link_not?: String | null
-  link_in?: undefined | null
-  link_not_in?: undefined | null
+  link_in?: String[] | String | null
+  link_not_in?: String[] | String | null
   link_lt?: String | null
   link_lte?: String | null
   link_gt?: String | null
@@ -12984,8 +13033,8 @@ export interface NotificationScalarWhereInput {
   link_not_ends_with?: String | null
   readDate?: DateTime | null
   readDate_not?: DateTime | null
-  readDate_in?: undefined | null
-  readDate_not_in?: undefined | null
+  readDate_in?: DateTime[] | DateTime | null
+  readDate_not_in?: DateTime[] | DateTime | null
   readDate_lt?: DateTime | null
   readDate_lte?: DateTime | null
   readDate_gt?: DateTime | null
@@ -12993,13 +13042,13 @@ export interface NotificationScalarWhereInput {
 }
 
 export interface NotificationSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: NotificationSubscriptionWhereInput[] | NotificationSubscriptionWhereInput | null
+  OR?: NotificationSubscriptionWhereInput[] | NotificationSubscriptionWhereInput | null
+  NOT?: NotificationSubscriptionWhereInput[] | NotificationSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: NotificationWhereInput | null
 }
 
@@ -13023,20 +13072,20 @@ export interface NotificationUpdateManyMutationInput {
 }
 
 export interface NotificationUpdateManyWithoutUserInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: NotificationCreateWithoutUserInput[] | NotificationCreateWithoutUserInput | null
+  connect?: NotificationWhereUniqueInput[] | NotificationWhereUniqueInput | null
+  set?: NotificationWhereUniqueInput[] | NotificationWhereUniqueInput | null
+  disconnect?: NotificationWhereUniqueInput[] | NotificationWhereUniqueInput | null
+  delete?: NotificationWhereUniqueInput[] | NotificationWhereUniqueInput | null
+  update?: NotificationUpdateWithWhereUniqueWithoutUserInput[] | NotificationUpdateWithWhereUniqueWithoutUserInput | null
+  updateMany?: NotificationUpdateManyWithWhereNestedInput[] | NotificationUpdateManyWithWhereNestedInput | null
+  deleteMany?: NotificationScalarWhereInput[] | NotificationScalarWhereInput | null
+  upsert?: NotificationUpsertWithWhereUniqueWithoutUserInput[] | NotificationUpsertWithWhereUniqueWithoutUserInput | null
 }
 
 export interface NotificationUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: NotificationScalarWhereInput
+  data: NotificationUpdateManyDataInput
 }
 
 export interface NotificationUpdateWithoutUserDataInput {
@@ -13046,24 +13095,24 @@ export interface NotificationUpdateWithoutUserDataInput {
 }
 
 export interface NotificationUpdateWithWhereUniqueWithoutUserInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: NotificationWhereUniqueInput
+  data: NotificationUpdateWithoutUserDataInput
 }
 
 export interface NotificationUpsertWithWhereUniqueWithoutUserInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: NotificationWhereUniqueInput
+  update: NotificationUpdateWithoutUserDataInput
+  create: NotificationCreateWithoutUserInput
 }
 
 export interface NotificationWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: NotificationWhereInput[] | NotificationWhereInput | null
+  OR?: NotificationWhereInput[] | NotificationWhereInput | null
+  NOT?: NotificationWhereInput[] | NotificationWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -13076,20 +13125,20 @@ export interface NotificationWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   type?: NOTIFICATION_TYPE | null
   type_not?: NOTIFICATION_TYPE | null
-  type_in?: undefined | null
-  type_not_in?: undefined | null
+  type_in?: NOTIFICATION_TYPE[] | NOTIFICATION_TYPE | null
+  type_not_in?: NOTIFICATION_TYPE[] | NOTIFICATION_TYPE | null
   link?: String | null
   link_not?: String | null
-  link_in?: undefined | null
-  link_not_in?: undefined | null
+  link_in?: String[] | String | null
+  link_not_in?: String[] | String | null
   link_lt?: String | null
   link_lte?: String | null
   link_gt?: String | null
@@ -13102,8 +13151,8 @@ export interface NotificationWhereInput {
   link_not_ends_with?: String | null
   readDate?: DateTime | null
   readDate_not?: DateTime | null
-  readDate_in?: undefined | null
-  readDate_not_in?: undefined | null
+  readDate_in?: DateTime[] | DateTime | null
+  readDate_not_in?: DateTime[] | DateTime | null
   readDate_lt?: DateTime | null
   readDate_lte?: DateTime | null
   readDate_gt?: DateTime | null
@@ -13117,21 +13166,21 @@ export interface NotificationWhereUniqueInput {
 
 export interface OrderCreateInput {
   id?: ID_Input | null
-  startDate?: undefined | null
-  endDate?: undefined | null
-  bookee?: undefined | null
-  restaurant?: undefined | null
-  payment?: undefined | null
+  startDate: DateTime
+  endDate: DateTime
+  bookee: UserCreateOneWithoutOrdersInput
+  restaurant: RestaurantCreateOneWithoutOrdersInput
+  payment: PaymentCreateOneWithoutOrderInput
 }
 
 export interface OrderCreateManyWithoutBookeeInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: OrderCreateWithoutBookeeInput[] | OrderCreateWithoutBookeeInput | null
+  connect?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
 }
 
 export interface OrderCreateManyWithoutRestaurantInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: OrderCreateWithoutRestaurantInput[] | OrderCreateWithoutRestaurantInput | null
+  connect?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
 }
 
 export interface OrderCreateOneInput {
@@ -13146,36 +13195,36 @@ export interface OrderCreateOneWithoutPaymentInput {
 
 export interface OrderCreateWithoutBookeeInput {
   id?: ID_Input | null
-  startDate?: undefined | null
-  endDate?: undefined | null
-  restaurant?: undefined | null
-  payment?: undefined | null
+  startDate: DateTime
+  endDate: DateTime
+  restaurant: RestaurantCreateOneWithoutOrdersInput
+  payment: PaymentCreateOneWithoutOrderInput
 }
 
 export interface OrderCreateWithoutPaymentInput {
   id?: ID_Input | null
-  startDate?: undefined | null
-  endDate?: undefined | null
-  bookee?: undefined | null
-  restaurant?: undefined | null
+  startDate: DateTime
+  endDate: DateTime
+  bookee: UserCreateOneWithoutOrdersInput
+  restaurant: RestaurantCreateOneWithoutOrdersInput
 }
 
 export interface OrderCreateWithoutRestaurantInput {
   id?: ID_Input | null
-  startDate?: undefined | null
-  endDate?: undefined | null
-  bookee?: undefined | null
-  payment?: undefined | null
+  startDate: DateTime
+  endDate: DateTime
+  bookee: UserCreateOneWithoutOrdersInput
+  payment: PaymentCreateOneWithoutOrderInput
 }
 
 export interface OrderScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: OrderScalarWhereInput[] | OrderScalarWhereInput | null
+  OR?: OrderScalarWhereInput[] | OrderScalarWhereInput | null
+  NOT?: OrderScalarWhereInput[] | OrderScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -13188,24 +13237,24 @@ export interface OrderScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   startDate?: DateTime | null
   startDate_not?: DateTime | null
-  startDate_in?: undefined | null
-  startDate_not_in?: undefined | null
+  startDate_in?: DateTime[] | DateTime | null
+  startDate_not_in?: DateTime[] | DateTime | null
   startDate_lt?: DateTime | null
   startDate_lte?: DateTime | null
   startDate_gt?: DateTime | null
   startDate_gte?: DateTime | null
   endDate?: DateTime | null
   endDate_not?: DateTime | null
-  endDate_in?: undefined | null
-  endDate_not_in?: undefined | null
+  endDate_in?: DateTime[] | DateTime | null
+  endDate_not_in?: DateTime[] | DateTime | null
   endDate_lt?: DateTime | null
   endDate_lte?: DateTime | null
   endDate_gt?: DateTime | null
@@ -13213,13 +13262,13 @@ export interface OrderScalarWhereInput {
 }
 
 export interface OrderSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: OrderSubscriptionWhereInput[] | OrderSubscriptionWhereInput | null
+  OR?: OrderSubscriptionWhereInput[] | OrderSubscriptionWhereInput | null
+  NOT?: OrderSubscriptionWhereInput[] | OrderSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: OrderWhereInput | null
 }
 
@@ -13250,32 +13299,32 @@ export interface OrderUpdateManyMutationInput {
 }
 
 export interface OrderUpdateManyWithoutBookeeInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: OrderCreateWithoutBookeeInput[] | OrderCreateWithoutBookeeInput | null
+  connect?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
+  set?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
+  disconnect?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
+  delete?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
+  update?: OrderUpdateWithWhereUniqueWithoutBookeeInput[] | OrderUpdateWithWhereUniqueWithoutBookeeInput | null
+  updateMany?: OrderUpdateManyWithWhereNestedInput[] | OrderUpdateManyWithWhereNestedInput | null
+  deleteMany?: OrderScalarWhereInput[] | OrderScalarWhereInput | null
+  upsert?: OrderUpsertWithWhereUniqueWithoutBookeeInput[] | OrderUpsertWithWhereUniqueWithoutBookeeInput | null
 }
 
 export interface OrderUpdateManyWithoutRestaurantInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: OrderCreateWithoutRestaurantInput[] | OrderCreateWithoutRestaurantInput | null
+  connect?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
+  set?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
+  disconnect?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
+  delete?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
+  update?: OrderUpdateWithWhereUniqueWithoutRestaurantInput[] | OrderUpdateWithWhereUniqueWithoutRestaurantInput | null
+  updateMany?: OrderUpdateManyWithWhereNestedInput[] | OrderUpdateManyWithWhereNestedInput | null
+  deleteMany?: OrderScalarWhereInput[] | OrderScalarWhereInput | null
+  upsert?: OrderUpsertWithWhereUniqueWithoutRestaurantInput[] | OrderUpsertWithWhereUniqueWithoutRestaurantInput | null
 }
 
 export interface OrderUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: OrderScalarWhereInput
+  data: OrderUpdateManyDataInput
 }
 
 export interface OrderUpdateOneRequiredInput {
@@ -13314,45 +13363,45 @@ export interface OrderUpdateWithoutRestaurantDataInput {
 }
 
 export interface OrderUpdateWithWhereUniqueWithoutBookeeInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: OrderWhereUniqueInput
+  data: OrderUpdateWithoutBookeeDataInput
 }
 
 export interface OrderUpdateWithWhereUniqueWithoutRestaurantInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: OrderWhereUniqueInput
+  data: OrderUpdateWithoutRestaurantDataInput
 }
 
 export interface OrderUpsertNestedInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: OrderUpdateDataInput
+  create: OrderCreateInput
 }
 
 export interface OrderUpsertWithoutPaymentInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: OrderUpdateWithoutPaymentDataInput
+  create: OrderCreateWithoutPaymentInput
 }
 
 export interface OrderUpsertWithWhereUniqueWithoutBookeeInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: OrderWhereUniqueInput
+  update: OrderUpdateWithoutBookeeDataInput
+  create: OrderCreateWithoutBookeeInput
 }
 
 export interface OrderUpsertWithWhereUniqueWithoutRestaurantInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: OrderWhereUniqueInput
+  update: OrderUpdateWithoutRestaurantDataInput
+  create: OrderCreateWithoutRestaurantInput
 }
 
 export interface OrderWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: OrderWhereInput[] | OrderWhereInput | null
+  OR?: OrderWhereInput[] | OrderWhereInput | null
+  NOT?: OrderWhereInput[] | OrderWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -13365,24 +13414,24 @@ export interface OrderWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   startDate?: DateTime | null
   startDate_not?: DateTime | null
-  startDate_in?: undefined | null
-  startDate_not_in?: undefined | null
+  startDate_in?: DateTime[] | DateTime | null
+  startDate_not_in?: DateTime[] | DateTime | null
   startDate_lt?: DateTime | null
   startDate_lte?: DateTime | null
   startDate_gt?: DateTime | null
   startDate_gte?: DateTime | null
   endDate?: DateTime | null
   endDate_not?: DateTime | null
-  endDate_in?: undefined | null
-  endDate_not_in?: undefined | null
+  endDate_in?: DateTime[] | DateTime | null
+  endDate_not_in?: DateTime[] | DateTime | null
   endDate_lt?: DateTime | null
   endDate_lte?: DateTime | null
   endDate_gt?: DateTime | null
@@ -13399,7 +13448,7 @@ export interface OrderWhereUniqueInput {
 export interface PaymentAccountCreateInput {
   id?: ID_Input | null
   type?: PAYMENT_PROVIDER | null
-  user?: undefined | null
+  user: UserCreateOneWithoutPaymentAccountInput
   payments?: PaymentCreateManyWithoutPaymentMethodInput | null
   paypal?: PaypalInformationCreateOneInput | null
   paytm?: PaytmInformationCreateOneInput | null
@@ -13408,8 +13457,8 @@ export interface PaymentAccountCreateInput {
 }
 
 export interface PaymentAccountCreateManyWithoutUserInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: PaymentAccountCreateWithoutUserInput[] | PaymentAccountCreateWithoutUserInput | null
+  connect?: PaymentAccountWhereUniqueInput[] | PaymentAccountWhereUniqueInput | null
 }
 
 export interface PaymentAccountCreateOneWithoutPaymentsInput {
@@ -13420,7 +13469,7 @@ export interface PaymentAccountCreateOneWithoutPaymentsInput {
 export interface PaymentAccountCreateWithoutPaymentsInput {
   id?: ID_Input | null
   type?: PAYMENT_PROVIDER | null
-  user?: undefined | null
+  user: UserCreateOneWithoutPaymentAccountInput
   paypal?: PaypalInformationCreateOneInput | null
   paytm?: PaytmInformationCreateOneInput | null
   creditcard?: CreditCardInformationCreateOneInput | null
@@ -13438,13 +13487,13 @@ export interface PaymentAccountCreateWithoutUserInput {
 }
 
 export interface PaymentAccountScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: PaymentAccountScalarWhereInput[] | PaymentAccountScalarWhereInput | null
+  OR?: PaymentAccountScalarWhereInput[] | PaymentAccountScalarWhereInput | null
+  NOT?: PaymentAccountScalarWhereInput[] | PaymentAccountScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -13457,26 +13506,26 @@ export interface PaymentAccountScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   type?: PAYMENT_PROVIDER | null
   type_not?: PAYMENT_PROVIDER | null
-  type_in?: undefined | null
-  type_not_in?: undefined | null
+  type_in?: PAYMENT_PROVIDER[] | PAYMENT_PROVIDER | null
+  type_not_in?: PAYMENT_PROVIDER[] | PAYMENT_PROVIDER | null
 }
 
 export interface PaymentAccountSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: PaymentAccountSubscriptionWhereInput[] | PaymentAccountSubscriptionWhereInput | null
+  OR?: PaymentAccountSubscriptionWhereInput[] | PaymentAccountSubscriptionWhereInput | null
+  NOT?: PaymentAccountSubscriptionWhereInput[] | PaymentAccountSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: PaymentAccountWhereInput | null
 }
 
@@ -13499,20 +13548,20 @@ export interface PaymentAccountUpdateManyMutationInput {
 }
 
 export interface PaymentAccountUpdateManyWithoutUserInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: PaymentAccountCreateWithoutUserInput[] | PaymentAccountCreateWithoutUserInput | null
+  connect?: PaymentAccountWhereUniqueInput[] | PaymentAccountWhereUniqueInput | null
+  set?: PaymentAccountWhereUniqueInput[] | PaymentAccountWhereUniqueInput | null
+  disconnect?: PaymentAccountWhereUniqueInput[] | PaymentAccountWhereUniqueInput | null
+  delete?: PaymentAccountWhereUniqueInput[] | PaymentAccountWhereUniqueInput | null
+  update?: PaymentAccountUpdateWithWhereUniqueWithoutUserInput[] | PaymentAccountUpdateWithWhereUniqueWithoutUserInput | null
+  updateMany?: PaymentAccountUpdateManyWithWhereNestedInput[] | PaymentAccountUpdateManyWithWhereNestedInput | null
+  deleteMany?: PaymentAccountScalarWhereInput[] | PaymentAccountScalarWhereInput | null
+  upsert?: PaymentAccountUpsertWithWhereUniqueWithoutUserInput[] | PaymentAccountUpsertWithWhereUniqueWithoutUserInput | null
 }
 
 export interface PaymentAccountUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: PaymentAccountScalarWhereInput
+  data: PaymentAccountUpdateManyDataInput
 }
 
 export interface PaymentAccountUpdateOneRequiredWithoutPaymentsInput {
@@ -13541,29 +13590,29 @@ export interface PaymentAccountUpdateWithoutUserDataInput {
 }
 
 export interface PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: PaymentAccountWhereUniqueInput
+  data: PaymentAccountUpdateWithoutUserDataInput
 }
 
 export interface PaymentAccountUpsertWithoutPaymentsInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: PaymentAccountUpdateWithoutPaymentsDataInput
+  create: PaymentAccountCreateWithoutPaymentsInput
 }
 
 export interface PaymentAccountUpsertWithWhereUniqueWithoutUserInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: PaymentAccountWhereUniqueInput
+  update: PaymentAccountUpdateWithoutUserDataInput
+  create: PaymentAccountCreateWithoutUserInput
 }
 
 export interface PaymentAccountWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: PaymentAccountWhereInput[] | PaymentAccountWhereInput | null
+  OR?: PaymentAccountWhereInput[] | PaymentAccountWhereInput | null
+  NOT?: PaymentAccountWhereInput[] | PaymentAccountWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -13576,16 +13625,16 @@ export interface PaymentAccountWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   type?: PAYMENT_PROVIDER | null
   type_not?: PAYMENT_PROVIDER | null
-  type_in?: undefined | null
-  type_not_in?: undefined | null
+  type_in?: PAYMENT_PROVIDER[] | PAYMENT_PROVIDER | null
+  type_not_in?: PAYMENT_PROVIDER[] | PAYMENT_PROVIDER | null
   user?: UserWhereInput | null
   payments_every?: PaymentWhereInput | null
   payments_some?: PaymentWhereInput | null
@@ -13602,16 +13651,16 @@ export interface PaymentAccountWhereUniqueInput {
 
 export interface PaymentCreateInput {
   id?: ID_Input | null
-  serviceFee?: undefined | null
-  restaurantPrice?: undefined | null
-  totalPrice?: undefined | null
-  order?: undefined | null
-  paymentMethod?: undefined | null
+  serviceFee: Float
+  restaurantPrice: Float
+  totalPrice: Float
+  order: OrderCreateOneWithoutPaymentInput
+  paymentMethod: PaymentAccountCreateOneWithoutPaymentsInput
 }
 
 export interface PaymentCreateManyWithoutPaymentMethodInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: PaymentCreateWithoutPaymentMethodInput[] | PaymentCreateWithoutPaymentMethodInput | null
+  connect?: PaymentWhereUniqueInput[] | PaymentWhereUniqueInput | null
 }
 
 export interface PaymentCreateOneWithoutOrderInput {
@@ -13621,28 +13670,28 @@ export interface PaymentCreateOneWithoutOrderInput {
 
 export interface PaymentCreateWithoutOrderInput {
   id?: ID_Input | null
-  serviceFee?: undefined | null
-  restaurantPrice?: undefined | null
-  totalPrice?: undefined | null
-  paymentMethod?: undefined | null
+  serviceFee: Float
+  restaurantPrice: Float
+  totalPrice: Float
+  paymentMethod: PaymentAccountCreateOneWithoutPaymentsInput
 }
 
 export interface PaymentCreateWithoutPaymentMethodInput {
   id?: ID_Input | null
-  serviceFee?: undefined | null
-  restaurantPrice?: undefined | null
-  totalPrice?: undefined | null
-  order?: undefined | null
+  serviceFee: Float
+  restaurantPrice: Float
+  totalPrice: Float
+  order: OrderCreateOneWithoutPaymentInput
 }
 
 export interface PaymentScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: PaymentScalarWhereInput[] | PaymentScalarWhereInput | null
+  OR?: PaymentScalarWhereInput[] | PaymentScalarWhereInput | null
+  NOT?: PaymentScalarWhereInput[] | PaymentScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -13655,32 +13704,32 @@ export interface PaymentScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   serviceFee?: Float | null
   serviceFee_not?: Float | null
-  serviceFee_in?: undefined | null
-  serviceFee_not_in?: undefined | null
+  serviceFee_in?: Float[] | Float | null
+  serviceFee_not_in?: Float[] | Float | null
   serviceFee_lt?: Float | null
   serviceFee_lte?: Float | null
   serviceFee_gt?: Float | null
   serviceFee_gte?: Float | null
   restaurantPrice?: Float | null
   restaurantPrice_not?: Float | null
-  restaurantPrice_in?: undefined | null
-  restaurantPrice_not_in?: undefined | null
+  restaurantPrice_in?: Float[] | Float | null
+  restaurantPrice_not_in?: Float[] | Float | null
   restaurantPrice_lt?: Float | null
   restaurantPrice_lte?: Float | null
   restaurantPrice_gt?: Float | null
   restaurantPrice_gte?: Float | null
   totalPrice?: Float | null
   totalPrice_not?: Float | null
-  totalPrice_in?: undefined | null
-  totalPrice_not_in?: undefined | null
+  totalPrice_in?: Float[] | Float | null
+  totalPrice_not_in?: Float[] | Float | null
   totalPrice_lt?: Float | null
   totalPrice_lte?: Float | null
   totalPrice_gt?: Float | null
@@ -13688,13 +13737,13 @@ export interface PaymentScalarWhereInput {
 }
 
 export interface PaymentSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: PaymentSubscriptionWhereInput[] | PaymentSubscriptionWhereInput | null
+  OR?: PaymentSubscriptionWhereInput[] | PaymentSubscriptionWhereInput | null
+  NOT?: PaymentSubscriptionWhereInput[] | PaymentSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: PaymentWhereInput | null
 }
 
@@ -13719,20 +13768,20 @@ export interface PaymentUpdateManyMutationInput {
 }
 
 export interface PaymentUpdateManyWithoutPaymentMethodInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: PaymentCreateWithoutPaymentMethodInput[] | PaymentCreateWithoutPaymentMethodInput | null
+  connect?: PaymentWhereUniqueInput[] | PaymentWhereUniqueInput | null
+  set?: PaymentWhereUniqueInput[] | PaymentWhereUniqueInput | null
+  disconnect?: PaymentWhereUniqueInput[] | PaymentWhereUniqueInput | null
+  delete?: PaymentWhereUniqueInput[] | PaymentWhereUniqueInput | null
+  update?: PaymentUpdateWithWhereUniqueWithoutPaymentMethodInput[] | PaymentUpdateWithWhereUniqueWithoutPaymentMethodInput | null
+  updateMany?: PaymentUpdateManyWithWhereNestedInput[] | PaymentUpdateManyWithWhereNestedInput | null
+  deleteMany?: PaymentScalarWhereInput[] | PaymentScalarWhereInput | null
+  upsert?: PaymentUpsertWithWhereUniqueWithoutPaymentMethodInput[] | PaymentUpsertWithWhereUniqueWithoutPaymentMethodInput | null
 }
 
 export interface PaymentUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: PaymentScalarWhereInput
+  data: PaymentUpdateManyDataInput
 }
 
 export interface PaymentUpdateOneRequiredWithoutOrderInput {
@@ -13757,29 +13806,29 @@ export interface PaymentUpdateWithoutPaymentMethodDataInput {
 }
 
 export interface PaymentUpdateWithWhereUniqueWithoutPaymentMethodInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: PaymentWhereUniqueInput
+  data: PaymentUpdateWithoutPaymentMethodDataInput
 }
 
 export interface PaymentUpsertWithoutOrderInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: PaymentUpdateWithoutOrderDataInput
+  create: PaymentCreateWithoutOrderInput
 }
 
 export interface PaymentUpsertWithWhereUniqueWithoutPaymentMethodInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: PaymentWhereUniqueInput
+  update: PaymentUpdateWithoutPaymentMethodDataInput
+  create: PaymentCreateWithoutPaymentMethodInput
 }
 
 export interface PaymentWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: PaymentWhereInput[] | PaymentWhereInput | null
+  OR?: PaymentWhereInput[] | PaymentWhereInput | null
+  NOT?: PaymentWhereInput[] | PaymentWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -13792,32 +13841,32 @@ export interface PaymentWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   serviceFee?: Float | null
   serviceFee_not?: Float | null
-  serviceFee_in?: undefined | null
-  serviceFee_not_in?: undefined | null
+  serviceFee_in?: Float[] | Float | null
+  serviceFee_not_in?: Float[] | Float | null
   serviceFee_lt?: Float | null
   serviceFee_lte?: Float | null
   serviceFee_gt?: Float | null
   serviceFee_gte?: Float | null
   restaurantPrice?: Float | null
   restaurantPrice_not?: Float | null
-  restaurantPrice_in?: undefined | null
-  restaurantPrice_not_in?: undefined | null
+  restaurantPrice_in?: Float[] | Float | null
+  restaurantPrice_not_in?: Float[] | Float | null
   restaurantPrice_lt?: Float | null
   restaurantPrice_lte?: Float | null
   restaurantPrice_gt?: Float | null
   restaurantPrice_gte?: Float | null
   totalPrice?: Float | null
   totalPrice_not?: Float | null
-  totalPrice_in?: undefined | null
-  totalPrice_not_in?: undefined | null
+  totalPrice_in?: Float[] | Float | null
+  totalPrice_not_in?: Float[] | Float | null
   totalPrice_lt?: Float | null
   totalPrice_lte?: Float | null
   totalPrice_gt?: Float | null
@@ -13832,7 +13881,7 @@ export interface PaymentWhereUniqueInput {
 
 export interface PaypalInformationCreateInput {
   id?: ID_Input | null
-  email?: undefined | null
+  email: String
 }
 
 export interface PaypalInformationCreateOneInput {
@@ -13841,13 +13890,13 @@ export interface PaypalInformationCreateOneInput {
 }
 
 export interface PaypalInformationSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: PaypalInformationSubscriptionWhereInput[] | PaypalInformationSubscriptionWhereInput | null
+  OR?: PaypalInformationSubscriptionWhereInput[] | PaypalInformationSubscriptionWhereInput | null
+  NOT?: PaypalInformationSubscriptionWhereInput[] | PaypalInformationSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: PaypalInformationWhereInput | null
 }
 
@@ -13873,18 +13922,18 @@ export interface PaypalInformationUpdateOneInput {
 }
 
 export interface PaypalInformationUpsertNestedInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: PaypalInformationUpdateDataInput
+  create: PaypalInformationCreateInput
 }
 
 export interface PaypalInformationWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: PaypalInformationWhereInput[] | PaypalInformationWhereInput | null
+  OR?: PaypalInformationWhereInput[] | PaypalInformationWhereInput | null
+  NOT?: PaypalInformationWhereInput[] | PaypalInformationWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -13897,16 +13946,16 @@ export interface PaypalInformationWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   email?: String | null
   email_not?: String | null
-  email_in?: undefined | null
-  email_not_in?: undefined | null
+  email_in?: String[] | String | null
+  email_not_in?: String[] | String | null
   email_lt?: String | null
   email_lte?: String | null
   email_gt?: String | null
@@ -13925,7 +13974,7 @@ export interface PaypalInformationWhereUniqueInput {
 
 export interface PaytmInformationCreateInput {
   id?: ID_Input | null
-  phone?: undefined | null
+  phone: String
 }
 
 export interface PaytmInformationCreateOneInput {
@@ -13934,13 +13983,13 @@ export interface PaytmInformationCreateOneInput {
 }
 
 export interface PaytmInformationSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: PaytmInformationSubscriptionWhereInput[] | PaytmInformationSubscriptionWhereInput | null
+  OR?: PaytmInformationSubscriptionWhereInput[] | PaytmInformationSubscriptionWhereInput | null
+  NOT?: PaytmInformationSubscriptionWhereInput[] | PaytmInformationSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: PaytmInformationWhereInput | null
 }
 
@@ -13966,18 +14015,18 @@ export interface PaytmInformationUpdateOneInput {
 }
 
 export interface PaytmInformationUpsertNestedInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: PaytmInformationUpdateDataInput
+  create: PaytmInformationCreateInput
 }
 
 export interface PaytmInformationWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: PaytmInformationWhereInput[] | PaytmInformationWhereInput | null
+  OR?: PaytmInformationWhereInput[] | PaytmInformationWhereInput | null
+  NOT?: PaytmInformationWhereInput[] | PaytmInformationWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -13990,16 +14039,16 @@ export interface PaytmInformationWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   phone?: String | null
   phone_not?: String | null
-  phone_in?: undefined | null
-  phone_not_in?: undefined | null
+  phone_in?: String[] | String | null
+  phone_not_in?: String[] | String | null
   phone_lt?: String | null
   phone_lte?: String | null
   phone_gt?: String | null
@@ -14018,12 +14067,13 @@ export interface PaytmInformationWhereUniqueInput {
 
 export interface PictureCreateInput {
   id?: ID_Input | null
-  url?: undefined | null
+  altText?: String | null
+  url: String
 }
 
 export interface PictureCreateManyInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: PictureCreateInput[] | PictureCreateInput | null
+  connect?: PictureWhereUniqueInput[] | PictureWhereUniqueInput | null
 }
 
 export interface PictureCreateOneInput {
@@ -14032,13 +14082,13 @@ export interface PictureCreateOneInput {
 }
 
 export interface PictureScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: PictureScalarWhereInput[] | PictureScalarWhereInput | null
+  OR?: PictureScalarWhereInput[] | PictureScalarWhereInput | null
+  NOT?: PictureScalarWhereInput[] | PictureScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -14049,10 +14099,24 @@ export interface PictureScalarWhereInput {
   id_not_starts_with?: ID_Input | null
   id_ends_with?: ID_Input | null
   id_not_ends_with?: ID_Input | null
+  altText?: String | null
+  altText_not?: String | null
+  altText_in?: String[] | String | null
+  altText_not_in?: String[] | String | null
+  altText_lt?: String | null
+  altText_lte?: String | null
+  altText_gt?: String | null
+  altText_gte?: String | null
+  altText_contains?: String | null
+  altText_not_contains?: String | null
+  altText_starts_with?: String | null
+  altText_not_starts_with?: String | null
+  altText_ends_with?: String | null
+  altText_not_ends_with?: String | null
   url?: String | null
   url_not?: String | null
-  url_in?: undefined | null
-  url_not_in?: undefined | null
+  url_in?: String[] | String | null
+  url_not_in?: String[] | String | null
   url_lt?: String | null
   url_lte?: String | null
   url_gt?: String | null
@@ -14066,47 +14130,51 @@ export interface PictureScalarWhereInput {
 }
 
 export interface PictureSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: PictureSubscriptionWhereInput[] | PictureSubscriptionWhereInput | null
+  OR?: PictureSubscriptionWhereInput[] | PictureSubscriptionWhereInput | null
+  NOT?: PictureSubscriptionWhereInput[] | PictureSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: PictureWhereInput | null
 }
 
 export interface PictureUpdateDataInput {
+  altText?: String | null
   url?: String | null
 }
 
 export interface PictureUpdateInput {
+  altText?: String | null
   url?: String | null
 }
 
 export interface PictureUpdateManyDataInput {
+  altText?: String | null
   url?: String | null
 }
 
 export interface PictureUpdateManyInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: PictureCreateInput[] | PictureCreateInput | null
+  connect?: PictureWhereUniqueInput[] | PictureWhereUniqueInput | null
+  set?: PictureWhereUniqueInput[] | PictureWhereUniqueInput | null
+  disconnect?: PictureWhereUniqueInput[] | PictureWhereUniqueInput | null
+  delete?: PictureWhereUniqueInput[] | PictureWhereUniqueInput | null
+  update?: PictureUpdateWithWhereUniqueNestedInput[] | PictureUpdateWithWhereUniqueNestedInput | null
+  updateMany?: PictureUpdateManyWithWhereNestedInput[] | PictureUpdateManyWithWhereNestedInput | null
+  deleteMany?: PictureScalarWhereInput[] | PictureScalarWhereInput | null
+  upsert?: PictureUpsertWithWhereUniqueNestedInput[] | PictureUpsertWithWhereUniqueNestedInput | null
 }
 
 export interface PictureUpdateManyMutationInput {
+  altText?: String | null
   url?: String | null
 }
 
 export interface PictureUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: PictureScalarWhereInput
+  data: PictureUpdateManyDataInput
 }
 
 export interface PictureUpdateOneInput {
@@ -14126,29 +14194,29 @@ export interface PictureUpdateOneRequiredInput {
 }
 
 export interface PictureUpdateWithWhereUniqueNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: PictureWhereUniqueInput
+  data: PictureUpdateDataInput
 }
 
 export interface PictureUpsertNestedInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: PictureUpdateDataInput
+  create: PictureCreateInput
 }
 
 export interface PictureUpsertWithWhereUniqueNestedInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: PictureWhereUniqueInput
+  update: PictureUpdateDataInput
+  create: PictureCreateInput
 }
 
 export interface PictureWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: PictureWhereInput[] | PictureWhereInput | null
+  OR?: PictureWhereInput[] | PictureWhereInput | null
+  NOT?: PictureWhereInput[] | PictureWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -14159,10 +14227,24 @@ export interface PictureWhereInput {
   id_not_starts_with?: ID_Input | null
   id_ends_with?: ID_Input | null
   id_not_ends_with?: ID_Input | null
+  altText?: String | null
+  altText_not?: String | null
+  altText_in?: String[] | String | null
+  altText_not_in?: String[] | String | null
+  altText_lt?: String | null
+  altText_lte?: String | null
+  altText_gt?: String | null
+  altText_gte?: String | null
+  altText_contains?: String | null
+  altText_not_contains?: String | null
+  altText_starts_with?: String | null
+  altText_not_starts_with?: String | null
+  altText_ends_with?: String | null
+  altText_not_ends_with?: String | null
   url?: String | null
   url_not?: String | null
-  url_in?: undefined | null
-  url_not_in?: undefined | null
+  url_in?: String[] | String | null
+  url_not_in?: String[] | String | null
   url_lt?: String | null
   url_lte?: String | null
   url_gt?: String | null
@@ -14181,8 +14263,8 @@ export interface PictureWhereUniqueInput {
 
 export interface PoliciesCreateInput {
   id?: ID_Input | null
-  openingTime?: undefined | null
-  closingTime?: undefined | null
+  openingTime: Float
+  closingTime: Float
 }
 
 export interface PoliciesCreateOneInput {
@@ -14191,13 +14273,13 @@ export interface PoliciesCreateOneInput {
 }
 
 export interface PoliciesSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: PoliciesSubscriptionWhereInput[] | PoliciesSubscriptionWhereInput | null
+  OR?: PoliciesSubscriptionWhereInput[] | PoliciesSubscriptionWhereInput | null
+  NOT?: PoliciesSubscriptionWhereInput[] | PoliciesSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: PoliciesWhereInput | null
 }
 
@@ -14226,18 +14308,18 @@ export interface PoliciesUpdateOneInput {
 }
 
 export interface PoliciesUpsertNestedInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: PoliciesUpdateDataInput
+  create: PoliciesCreateInput
 }
 
 export interface PoliciesWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: PoliciesWhereInput[] | PoliciesWhereInput | null
+  OR?: PoliciesWhereInput[] | PoliciesWhereInput | null
+  NOT?: PoliciesWhereInput[] | PoliciesWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -14250,32 +14332,32 @@ export interface PoliciesWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   updatedAt?: DateTime | null
   updatedAt_not?: DateTime | null
-  updatedAt_in?: undefined | null
-  updatedAt_not_in?: undefined | null
+  updatedAt_in?: DateTime[] | DateTime | null
+  updatedAt_not_in?: DateTime[] | DateTime | null
   updatedAt_lt?: DateTime | null
   updatedAt_lte?: DateTime | null
   updatedAt_gt?: DateTime | null
   updatedAt_gte?: DateTime | null
   openingTime?: Float | null
   openingTime_not?: Float | null
-  openingTime_in?: undefined | null
-  openingTime_not_in?: undefined | null
+  openingTime_in?: Float[] | Float | null
+  openingTime_not_in?: Float[] | Float | null
   openingTime_lt?: Float | null
   openingTime_lte?: Float | null
   openingTime_gt?: Float | null
   openingTime_gte?: Float | null
   closingTime?: Float | null
   closingTime_not?: Float | null
-  closingTime_in?: undefined | null
-  closingTime_not_in?: undefined | null
+  closingTime_in?: Float[] | Float | null
+  closingTime_not_in?: Float[] | Float | null
   closingTime_lt?: Float | null
   closingTime_lte?: Float | null
   closingTime_gt?: Float | null
@@ -14290,11 +14372,11 @@ export interface PricingCreateInput {
   id?: ID_Input | null
   monthlyDiscount?: Int | null
   weeklyDiscount?: Int | null
-  price?: undefined | null
+  price: Int
   smartPricing?: Boolean | null
-  basePrice?: undefined | null
-  averageWeekly?: undefined | null
-  averageMonthly?: undefined | null
+  basePrice: Int
+  averageWeekly: Int
+  averageMonthly: Int
   weekendPricing?: Int | null
 }
 
@@ -14304,13 +14386,13 @@ export interface PricingCreateOneInput {
 }
 
 export interface PricingSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: PricingSubscriptionWhereInput[] | PricingSubscriptionWhereInput | null
+  OR?: PricingSubscriptionWhereInput[] | PricingSubscriptionWhereInput | null
+  NOT?: PricingSubscriptionWhereInput[] | PricingSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: PricingWhereInput | null
 }
 
@@ -14355,18 +14437,18 @@ export interface PricingUpdateOneRequiredInput {
 }
 
 export interface PricingUpsertNestedInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: PricingUpdateDataInput
+  create: PricingCreateInput
 }
 
 export interface PricingWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: PricingWhereInput[] | PricingWhereInput | null
+  OR?: PricingWhereInput[] | PricingWhereInput | null
+  NOT?: PricingWhereInput[] | PricingWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -14379,24 +14461,24 @@ export interface PricingWhereInput {
   id_not_ends_with?: ID_Input | null
   monthlyDiscount?: Int | null
   monthlyDiscount_not?: Int | null
-  monthlyDiscount_in?: undefined | null
-  monthlyDiscount_not_in?: undefined | null
+  monthlyDiscount_in?: Int[] | Int | null
+  monthlyDiscount_not_in?: Int[] | Int | null
   monthlyDiscount_lt?: Int | null
   monthlyDiscount_lte?: Int | null
   monthlyDiscount_gt?: Int | null
   monthlyDiscount_gte?: Int | null
   weeklyDiscount?: Int | null
   weeklyDiscount_not?: Int | null
-  weeklyDiscount_in?: undefined | null
-  weeklyDiscount_not_in?: undefined | null
+  weeklyDiscount_in?: Int[] | Int | null
+  weeklyDiscount_not_in?: Int[] | Int | null
   weeklyDiscount_lt?: Int | null
   weeklyDiscount_lte?: Int | null
   weeklyDiscount_gt?: Int | null
   weeklyDiscount_gte?: Int | null
   price?: Int | null
   price_not?: Int | null
-  price_in?: undefined | null
-  price_not_in?: undefined | null
+  price_in?: Int[] | Int | null
+  price_not_in?: Int[] | Int | null
   price_lt?: Int | null
   price_lte?: Int | null
   price_gt?: Int | null
@@ -14405,32 +14487,32 @@ export interface PricingWhereInput {
   smartPricing_not?: Boolean | null
   basePrice?: Int | null
   basePrice_not?: Int | null
-  basePrice_in?: undefined | null
-  basePrice_not_in?: undefined | null
+  basePrice_in?: Int[] | Int | null
+  basePrice_not_in?: Int[] | Int | null
   basePrice_lt?: Int | null
   basePrice_lte?: Int | null
   basePrice_gt?: Int | null
   basePrice_gte?: Int | null
   averageWeekly?: Int | null
   averageWeekly_not?: Int | null
-  averageWeekly_in?: undefined | null
-  averageWeekly_not_in?: undefined | null
+  averageWeekly_in?: Int[] | Int | null
+  averageWeekly_not_in?: Int[] | Int | null
   averageWeekly_lt?: Int | null
   averageWeekly_lte?: Int | null
   averageWeekly_gt?: Int | null
   averageWeekly_gte?: Int | null
   averageMonthly?: Int | null
   averageMonthly_not?: Int | null
-  averageMonthly_in?: undefined | null
-  averageMonthly_not_in?: undefined | null
+  averageMonthly_in?: Int[] | Int | null
+  averageMonthly_not_in?: Int[] | Int | null
   averageMonthly_lt?: Int | null
   averageMonthly_lte?: Int | null
   averageMonthly_gt?: Int | null
   averageMonthly_gte?: Int | null
   weekendPricing?: Int | null
   weekendPricing_not?: Int | null
-  weekendPricing_in?: undefined | null
-  weekendPricing_not_in?: undefined | null
+  weekendPricing_in?: Int[] | Int | null
+  weekendPricing_not_in?: Int[] | Int | null
   weekendPricing_lt?: Int | null
   weekendPricing_lte?: Int | null
   weekendPricing_gt?: Int | null
@@ -14443,15 +14525,15 @@ export interface PricingWhereUniqueInput {
 
 export interface RestaurantCreateInput {
   id?: ID_Input | null
-  name?: undefined | null
-  shortDescription?: undefined | null
-  description?: undefined | null
-  slug?: undefined | null
-  maxGuests?: undefined | null
-  numRatings?: undefined | null
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
   avgRating?: Float | null
-  popularity?: undefined | null
-  avgPricePerPerson?: undefined | null
+  popularity: Int
+  avgPricePerPerson: Int
   isCurated?: Boolean | null
   reviews?: ReviewCreateManyInput | null
   location?: LocationCreateOneInput | null
@@ -14462,8 +14544,8 @@ export interface RestaurantCreateInput {
 }
 
 export interface RestaurantCreateManyInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: RestaurantCreateInput[] | RestaurantCreateInput | null
+  connect?: RestaurantWhereUniqueInput[] | RestaurantWhereUniqueInput | null
 }
 
 export interface RestaurantCreateOneWithoutOrdersInput {
@@ -14473,15 +14555,15 @@ export interface RestaurantCreateOneWithoutOrdersInput {
 
 export interface RestaurantCreateWithoutOrdersInput {
   id?: ID_Input | null
-  name?: undefined | null
-  shortDescription?: undefined | null
-  description?: undefined | null
-  slug?: undefined | null
-  maxGuests?: undefined | null
-  numRatings?: undefined | null
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
   avgRating?: Float | null
-  popularity?: undefined | null
-  avgPricePerPerson?: undefined | null
+  popularity: Int
+  avgPricePerPerson: Int
   isCurated?: Boolean | null
   reviews?: ReviewCreateManyInput | null
   location?: LocationCreateOneInput | null
@@ -14491,13 +14573,13 @@ export interface RestaurantCreateWithoutOrdersInput {
 }
 
 export interface RestaurantScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: RestaurantScalarWhereInput[] | RestaurantScalarWhereInput | null
+  OR?: RestaurantScalarWhereInput[] | RestaurantScalarWhereInput | null
+  NOT?: RestaurantScalarWhereInput[] | RestaurantScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -14510,8 +14592,8 @@ export interface RestaurantScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   name?: String | null
   name_not?: String | null
-  name_in?: undefined | null
-  name_not_in?: undefined | null
+  name_in?: String[] | String | null
+  name_not_in?: String[] | String | null
   name_lt?: String | null
   name_lte?: String | null
   name_gt?: String | null
@@ -14524,8 +14606,8 @@ export interface RestaurantScalarWhereInput {
   name_not_ends_with?: String | null
   shortDescription?: String | null
   shortDescription_not?: String | null
-  shortDescription_in?: undefined | null
-  shortDescription_not_in?: undefined | null
+  shortDescription_in?: String[] | String | null
+  shortDescription_not_in?: String[] | String | null
   shortDescription_lt?: String | null
   shortDescription_lte?: String | null
   shortDescription_gt?: String | null
@@ -14538,8 +14620,8 @@ export interface RestaurantScalarWhereInput {
   shortDescription_not_ends_with?: String | null
   description?: String | null
   description_not?: String | null
-  description_in?: undefined | null
-  description_not_in?: undefined | null
+  description_in?: String[] | String | null
+  description_not_in?: String[] | String | null
   description_lt?: String | null
   description_lte?: String | null
   description_gt?: String | null
@@ -14552,8 +14634,8 @@ export interface RestaurantScalarWhereInput {
   description_not_ends_with?: String | null
   slug?: String | null
   slug_not?: String | null
-  slug_in?: undefined | null
-  slug_not_in?: undefined | null
+  slug_in?: String[] | String | null
+  slug_not_in?: String[] | String | null
   slug_lt?: String | null
   slug_lte?: String | null
   slug_gt?: String | null
@@ -14566,40 +14648,40 @@ export interface RestaurantScalarWhereInput {
   slug_not_ends_with?: String | null
   maxGuests?: Int | null
   maxGuests_not?: Int | null
-  maxGuests_in?: undefined | null
-  maxGuests_not_in?: undefined | null
+  maxGuests_in?: Int[] | Int | null
+  maxGuests_not_in?: Int[] | Int | null
   maxGuests_lt?: Int | null
   maxGuests_lte?: Int | null
   maxGuests_gt?: Int | null
   maxGuests_gte?: Int | null
   numRatings?: Int | null
   numRatings_not?: Int | null
-  numRatings_in?: undefined | null
-  numRatings_not_in?: undefined | null
+  numRatings_in?: Int[] | Int | null
+  numRatings_not_in?: Int[] | Int | null
   numRatings_lt?: Int | null
   numRatings_lte?: Int | null
   numRatings_gt?: Int | null
   numRatings_gte?: Int | null
   avgRating?: Float | null
   avgRating_not?: Float | null
-  avgRating_in?: undefined | null
-  avgRating_not_in?: undefined | null
+  avgRating_in?: Float[] | Float | null
+  avgRating_not_in?: Float[] | Float | null
   avgRating_lt?: Float | null
   avgRating_lte?: Float | null
   avgRating_gt?: Float | null
   avgRating_gte?: Float | null
   popularity?: Int | null
   popularity_not?: Int | null
-  popularity_in?: undefined | null
-  popularity_not_in?: undefined | null
+  popularity_in?: Int[] | Int | null
+  popularity_not_in?: Int[] | Int | null
   popularity_lt?: Int | null
   popularity_lte?: Int | null
   popularity_gt?: Int | null
   popularity_gte?: Int | null
   avgPricePerPerson?: Int | null
   avgPricePerPerson_not?: Int | null
-  avgPricePerPerson_in?: undefined | null
-  avgPricePerPerson_not_in?: undefined | null
+  avgPricePerPerson_in?: Int[] | Int | null
+  avgPricePerPerson_not_in?: Int[] | Int | null
   avgPricePerPerson_lt?: Int | null
   avgPricePerPerson_lte?: Int | null
   avgPricePerPerson_gt?: Int | null
@@ -14609,13 +14691,13 @@ export interface RestaurantScalarWhereInput {
 }
 
 export interface RestaurantSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: RestaurantSubscriptionWhereInput[] | RestaurantSubscriptionWhereInput | null
+  OR?: RestaurantSubscriptionWhereInput[] | RestaurantSubscriptionWhereInput | null
+  NOT?: RestaurantSubscriptionWhereInput[] | RestaurantSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: RestaurantWhereInput | null
 }
 
@@ -14671,15 +14753,15 @@ export interface RestaurantUpdateManyDataInput {
 }
 
 export interface RestaurantUpdateManyInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: RestaurantCreateInput[] | RestaurantCreateInput | null
+  connect?: RestaurantWhereUniqueInput[] | RestaurantWhereUniqueInput | null
+  set?: RestaurantWhereUniqueInput[] | RestaurantWhereUniqueInput | null
+  disconnect?: RestaurantWhereUniqueInput[] | RestaurantWhereUniqueInput | null
+  delete?: RestaurantWhereUniqueInput[] | RestaurantWhereUniqueInput | null
+  update?: RestaurantUpdateWithWhereUniqueNestedInput[] | RestaurantUpdateWithWhereUniqueNestedInput | null
+  updateMany?: RestaurantUpdateManyWithWhereNestedInput[] | RestaurantUpdateManyWithWhereNestedInput | null
+  deleteMany?: RestaurantScalarWhereInput[] | RestaurantScalarWhereInput | null
+  upsert?: RestaurantUpsertWithWhereUniqueNestedInput[] | RestaurantUpsertWithWhereUniqueNestedInput | null
 }
 
 export interface RestaurantUpdateManyMutationInput {
@@ -14696,8 +14778,8 @@ export interface RestaurantUpdateManyMutationInput {
 }
 
 export interface RestaurantUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: RestaurantScalarWhereInput
+  data: RestaurantUpdateManyDataInput
 }
 
 export interface RestaurantUpdateOneRequiredWithoutOrdersInput {
@@ -14726,29 +14808,29 @@ export interface RestaurantUpdateWithoutOrdersDataInput {
 }
 
 export interface RestaurantUpdateWithWhereUniqueNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: RestaurantWhereUniqueInput
+  data: RestaurantUpdateDataInput
 }
 
 export interface RestaurantUpsertWithoutOrdersInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: RestaurantUpdateWithoutOrdersDataInput
+  create: RestaurantCreateWithoutOrdersInput
 }
 
 export interface RestaurantUpsertWithWhereUniqueNestedInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: RestaurantWhereUniqueInput
+  update: RestaurantUpdateDataInput
+  create: RestaurantCreateInput
 }
 
 export interface RestaurantWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: RestaurantWhereInput[] | RestaurantWhereInput | null
+  OR?: RestaurantWhereInput[] | RestaurantWhereInput | null
+  NOT?: RestaurantWhereInput[] | RestaurantWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -14761,8 +14843,8 @@ export interface RestaurantWhereInput {
   id_not_ends_with?: ID_Input | null
   name?: String | null
   name_not?: String | null
-  name_in?: undefined | null
-  name_not_in?: undefined | null
+  name_in?: String[] | String | null
+  name_not_in?: String[] | String | null
   name_lt?: String | null
   name_lte?: String | null
   name_gt?: String | null
@@ -14775,8 +14857,8 @@ export interface RestaurantWhereInput {
   name_not_ends_with?: String | null
   shortDescription?: String | null
   shortDescription_not?: String | null
-  shortDescription_in?: undefined | null
-  shortDescription_not_in?: undefined | null
+  shortDescription_in?: String[] | String | null
+  shortDescription_not_in?: String[] | String | null
   shortDescription_lt?: String | null
   shortDescription_lte?: String | null
   shortDescription_gt?: String | null
@@ -14789,8 +14871,8 @@ export interface RestaurantWhereInput {
   shortDescription_not_ends_with?: String | null
   description?: String | null
   description_not?: String | null
-  description_in?: undefined | null
-  description_not_in?: undefined | null
+  description_in?: String[] | String | null
+  description_not_in?: String[] | String | null
   description_lt?: String | null
   description_lte?: String | null
   description_gt?: String | null
@@ -14803,8 +14885,8 @@ export interface RestaurantWhereInput {
   description_not_ends_with?: String | null
   slug?: String | null
   slug_not?: String | null
-  slug_in?: undefined | null
-  slug_not_in?: undefined | null
+  slug_in?: String[] | String | null
+  slug_not_in?: String[] | String | null
   slug_lt?: String | null
   slug_lte?: String | null
   slug_gt?: String | null
@@ -14817,40 +14899,40 @@ export interface RestaurantWhereInput {
   slug_not_ends_with?: String | null
   maxGuests?: Int | null
   maxGuests_not?: Int | null
-  maxGuests_in?: undefined | null
-  maxGuests_not_in?: undefined | null
+  maxGuests_in?: Int[] | Int | null
+  maxGuests_not_in?: Int[] | Int | null
   maxGuests_lt?: Int | null
   maxGuests_lte?: Int | null
   maxGuests_gt?: Int | null
   maxGuests_gte?: Int | null
   numRatings?: Int | null
   numRatings_not?: Int | null
-  numRatings_in?: undefined | null
-  numRatings_not_in?: undefined | null
+  numRatings_in?: Int[] | Int | null
+  numRatings_not_in?: Int[] | Int | null
   numRatings_lt?: Int | null
   numRatings_lte?: Int | null
   numRatings_gt?: Int | null
   numRatings_gte?: Int | null
   avgRating?: Float | null
   avgRating_not?: Float | null
-  avgRating_in?: undefined | null
-  avgRating_not_in?: undefined | null
+  avgRating_in?: Float[] | Float | null
+  avgRating_not_in?: Float[] | Float | null
   avgRating_lt?: Float | null
   avgRating_lte?: Float | null
   avgRating_gt?: Float | null
   avgRating_gte?: Float | null
   popularity?: Int | null
   popularity_not?: Int | null
-  popularity_in?: undefined | null
-  popularity_not_in?: undefined | null
+  popularity_in?: Int[] | Int | null
+  popularity_not_in?: Int[] | Int | null
   popularity_lt?: Int | null
   popularity_lte?: Int | null
   popularity_gt?: Int | null
   popularity_gte?: Int | null
   avgPricePerPerson?: Int | null
   avgPricePerPerson_not?: Int | null
-  avgPricePerPerson_in?: undefined | null
-  avgPricePerPerson_not_in?: undefined | null
+  avgPricePerPerson_in?: Int[] | Int | null
+  avgPricePerPerson_not_in?: Int[] | Int | null
   avgPricePerPerson_lt?: Int | null
   avgPricePerPerson_lte?: Int | null
   avgPricePerPerson_gt?: Int | null
@@ -14879,49 +14961,49 @@ export interface RestaurantWhereUniqueInput {
 
 export interface ReviewCreateInput {
   id?: ID_Input | null
-  text?: undefined | null
-  stars?: undefined | null
-  accuracy?: undefined | null
-  location?: undefined | null
-  checkIn?: undefined | null
-  value?: undefined | null
-  cleanliness?: undefined | null
-  communication?: undefined | null
-  order?: undefined | null
+  text: String
+  stars: Int
+  accuracy: Int
+  location: Int
+  checkIn: Int
+  value: Int
+  cleanliness: Int
+  communication: Int
+  order: OrderCreateOneInput
   experience?: ExperienceCreateOneWithoutReviewsInput | null
 }
 
 export interface ReviewCreateManyInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: ReviewCreateInput[] | ReviewCreateInput | null
+  connect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
 }
 
 export interface ReviewCreateManyWithoutExperienceInput {
-  create?: undefined | null
-  connect?: undefined | null
+  create?: ReviewCreateWithoutExperienceInput[] | ReviewCreateWithoutExperienceInput | null
+  connect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
 }
 
 export interface ReviewCreateWithoutExperienceInput {
   id?: ID_Input | null
-  text?: undefined | null
-  stars?: undefined | null
-  accuracy?: undefined | null
-  location?: undefined | null
-  checkIn?: undefined | null
-  value?: undefined | null
-  cleanliness?: undefined | null
-  communication?: undefined | null
-  order?: undefined | null
+  text: String
+  stars: Int
+  accuracy: Int
+  location: Int
+  checkIn: Int
+  value: Int
+  cleanliness: Int
+  communication: Int
+  order: OrderCreateOneInput
 }
 
 export interface ReviewScalarWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: ReviewScalarWhereInput[] | ReviewScalarWhereInput | null
+  OR?: ReviewScalarWhereInput[] | ReviewScalarWhereInput | null
+  NOT?: ReviewScalarWhereInput[] | ReviewScalarWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -14934,16 +15016,16 @@ export interface ReviewScalarWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   text?: String | null
   text_not?: String | null
-  text_in?: undefined | null
-  text_not_in?: undefined | null
+  text_in?: String[] | String | null
+  text_not_in?: String[] | String | null
   text_lt?: String | null
   text_lte?: String | null
   text_gt?: String | null
@@ -14956,56 +15038,56 @@ export interface ReviewScalarWhereInput {
   text_not_ends_with?: String | null
   stars?: Int | null
   stars_not?: Int | null
-  stars_in?: undefined | null
-  stars_not_in?: undefined | null
+  stars_in?: Int[] | Int | null
+  stars_not_in?: Int[] | Int | null
   stars_lt?: Int | null
   stars_lte?: Int | null
   stars_gt?: Int | null
   stars_gte?: Int | null
   accuracy?: Int | null
   accuracy_not?: Int | null
-  accuracy_in?: undefined | null
-  accuracy_not_in?: undefined | null
+  accuracy_in?: Int[] | Int | null
+  accuracy_not_in?: Int[] | Int | null
   accuracy_lt?: Int | null
   accuracy_lte?: Int | null
   accuracy_gt?: Int | null
   accuracy_gte?: Int | null
   location?: Int | null
   location_not?: Int | null
-  location_in?: undefined | null
-  location_not_in?: undefined | null
+  location_in?: Int[] | Int | null
+  location_not_in?: Int[] | Int | null
   location_lt?: Int | null
   location_lte?: Int | null
   location_gt?: Int | null
   location_gte?: Int | null
   checkIn?: Int | null
   checkIn_not?: Int | null
-  checkIn_in?: undefined | null
-  checkIn_not_in?: undefined | null
+  checkIn_in?: Int[] | Int | null
+  checkIn_not_in?: Int[] | Int | null
   checkIn_lt?: Int | null
   checkIn_lte?: Int | null
   checkIn_gt?: Int | null
   checkIn_gte?: Int | null
   value?: Int | null
   value_not?: Int | null
-  value_in?: undefined | null
-  value_not_in?: undefined | null
+  value_in?: Int[] | Int | null
+  value_not_in?: Int[] | Int | null
   value_lt?: Int | null
   value_lte?: Int | null
   value_gt?: Int | null
   value_gte?: Int | null
   cleanliness?: Int | null
   cleanliness_not?: Int | null
-  cleanliness_in?: undefined | null
-  cleanliness_not_in?: undefined | null
+  cleanliness_in?: Int[] | Int | null
+  cleanliness_not_in?: Int[] | Int | null
   cleanliness_lt?: Int | null
   cleanliness_lte?: Int | null
   cleanliness_gt?: Int | null
   cleanliness_gte?: Int | null
   communication?: Int | null
   communication_not?: Int | null
-  communication_in?: undefined | null
-  communication_not_in?: undefined | null
+  communication_in?: Int[] | Int | null
+  communication_not_in?: Int[] | Int | null
   communication_lt?: Int | null
   communication_lte?: Int | null
   communication_gt?: Int | null
@@ -15013,13 +15095,13 @@ export interface ReviewScalarWhereInput {
 }
 
 export interface ReviewSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: ReviewSubscriptionWhereInput[] | ReviewSubscriptionWhereInput | null
+  OR?: ReviewSubscriptionWhereInput[] | ReviewSubscriptionWhereInput | null
+  NOT?: ReviewSubscriptionWhereInput[] | ReviewSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: ReviewWhereInput | null
 }
 
@@ -15061,15 +15143,15 @@ export interface ReviewUpdateManyDataInput {
 }
 
 export interface ReviewUpdateManyInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: ReviewCreateInput[] | ReviewCreateInput | null
+  connect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  set?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  disconnect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  delete?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  update?: ReviewUpdateWithWhereUniqueNestedInput[] | ReviewUpdateWithWhereUniqueNestedInput | null
+  updateMany?: ReviewUpdateManyWithWhereNestedInput[] | ReviewUpdateManyWithWhereNestedInput | null
+  deleteMany?: ReviewScalarWhereInput[] | ReviewScalarWhereInput | null
+  upsert?: ReviewUpsertWithWhereUniqueNestedInput[] | ReviewUpsertWithWhereUniqueNestedInput | null
 }
 
 export interface ReviewUpdateManyMutationInput {
@@ -15084,20 +15166,20 @@ export interface ReviewUpdateManyMutationInput {
 }
 
 export interface ReviewUpdateManyWithoutExperienceInput {
-  create?: undefined | null
-  connect?: undefined | null
-  set?: undefined | null
-  disconnect?: undefined | null
-  delete?: undefined | null
-  update?: undefined | null
-  updateMany?: undefined | null
-  deleteMany?: undefined | null
-  upsert?: undefined | null
+  create?: ReviewCreateWithoutExperienceInput[] | ReviewCreateWithoutExperienceInput | null
+  connect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  set?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  disconnect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  delete?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  update?: ReviewUpdateWithWhereUniqueWithoutExperienceInput[] | ReviewUpdateWithWhereUniqueWithoutExperienceInput | null
+  updateMany?: ReviewUpdateManyWithWhereNestedInput[] | ReviewUpdateManyWithWhereNestedInput | null
+  deleteMany?: ReviewScalarWhereInput[] | ReviewScalarWhereInput | null
+  upsert?: ReviewUpsertWithWhereUniqueWithoutExperienceInput[] | ReviewUpsertWithWhereUniqueWithoutExperienceInput | null
 }
 
 export interface ReviewUpdateManyWithWhereNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: ReviewScalarWhereInput
+  data: ReviewUpdateManyDataInput
 }
 
 export interface ReviewUpdateWithoutExperienceDataInput {
@@ -15113,35 +15195,35 @@ export interface ReviewUpdateWithoutExperienceDataInput {
 }
 
 export interface ReviewUpdateWithWhereUniqueNestedInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: ReviewWhereUniqueInput
+  data: ReviewUpdateDataInput
 }
 
 export interface ReviewUpdateWithWhereUniqueWithoutExperienceInput {
-  where?: undefined | null
-  data?: undefined | null
+  where: ReviewWhereUniqueInput
+  data: ReviewUpdateWithoutExperienceDataInput
 }
 
 export interface ReviewUpsertWithWhereUniqueNestedInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: ReviewWhereUniqueInput
+  update: ReviewUpdateDataInput
+  create: ReviewCreateInput
 }
 
 export interface ReviewUpsertWithWhereUniqueWithoutExperienceInput {
-  where?: undefined | null
-  update?: undefined | null
-  create?: undefined | null
+  where: ReviewWhereUniqueInput
+  update: ReviewUpdateWithoutExperienceDataInput
+  create: ReviewCreateWithoutExperienceInput
 }
 
 export interface ReviewWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: ReviewWhereInput[] | ReviewWhereInput | null
+  OR?: ReviewWhereInput[] | ReviewWhereInput | null
+  NOT?: ReviewWhereInput[] | ReviewWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -15154,16 +15236,16 @@ export interface ReviewWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   text?: String | null
   text_not?: String | null
-  text_in?: undefined | null
-  text_not_in?: undefined | null
+  text_in?: String[] | String | null
+  text_not_in?: String[] | String | null
   text_lt?: String | null
   text_lte?: String | null
   text_gt?: String | null
@@ -15176,56 +15258,56 @@ export interface ReviewWhereInput {
   text_not_ends_with?: String | null
   stars?: Int | null
   stars_not?: Int | null
-  stars_in?: undefined | null
-  stars_not_in?: undefined | null
+  stars_in?: Int[] | Int | null
+  stars_not_in?: Int[] | Int | null
   stars_lt?: Int | null
   stars_lte?: Int | null
   stars_gt?: Int | null
   stars_gte?: Int | null
   accuracy?: Int | null
   accuracy_not?: Int | null
-  accuracy_in?: undefined | null
-  accuracy_not_in?: undefined | null
+  accuracy_in?: Int[] | Int | null
+  accuracy_not_in?: Int[] | Int | null
   accuracy_lt?: Int | null
   accuracy_lte?: Int | null
   accuracy_gt?: Int | null
   accuracy_gte?: Int | null
   location?: Int | null
   location_not?: Int | null
-  location_in?: undefined | null
-  location_not_in?: undefined | null
+  location_in?: Int[] | Int | null
+  location_not_in?: Int[] | Int | null
   location_lt?: Int | null
   location_lte?: Int | null
   location_gt?: Int | null
   location_gte?: Int | null
   checkIn?: Int | null
   checkIn_not?: Int | null
-  checkIn_in?: undefined | null
-  checkIn_not_in?: undefined | null
+  checkIn_in?: Int[] | Int | null
+  checkIn_not_in?: Int[] | Int | null
   checkIn_lt?: Int | null
   checkIn_lte?: Int | null
   checkIn_gt?: Int | null
   checkIn_gte?: Int | null
   value?: Int | null
   value_not?: Int | null
-  value_in?: undefined | null
-  value_not_in?: undefined | null
+  value_in?: Int[] | Int | null
+  value_not_in?: Int[] | Int | null
   value_lt?: Int | null
   value_lte?: Int | null
   value_gt?: Int | null
   value_gte?: Int | null
   cleanliness?: Int | null
   cleanliness_not?: Int | null
-  cleanliness_in?: undefined | null
-  cleanliness_not_in?: undefined | null
+  cleanliness_in?: Int[] | Int | null
+  cleanliness_not_in?: Int[] | Int | null
   cleanliness_lt?: Int | null
   cleanliness_lte?: Int | null
   cleanliness_gt?: Int | null
   cleanliness_gte?: Int | null
   communication?: Int | null
   communication_not?: Int | null
-  communication_in?: undefined | null
-  communication_not_in?: undefined | null
+  communication_in?: Int[] | Int | null
+  communication_not_in?: Int[] | Int | null
   communication_lt?: Int | null
   communication_lte?: Int | null
   communication_gt?: Int | null
@@ -15240,12 +15322,12 @@ export interface ReviewWhereUniqueInput {
 
 export interface UserCreateInput {
   id?: ID_Input | null
-  displayName?: undefined | null
-  phoneNumber?: undefined | null
+  displayName: String
+  phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
   accountType?: UserType | null
-  uid?: undefined | null
+  uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
   location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
@@ -15289,12 +15371,12 @@ export interface UserCreateOneWithoutSentMessagesInput {
 
 export interface UserCreateWithoutExperiencesInput {
   id?: ID_Input | null
-  displayName?: undefined | null
-  phoneNumber?: undefined | null
+  displayName: String
+  phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
   accountType?: UserType | null
-  uid?: undefined | null
+  uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
   location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
@@ -15307,12 +15389,12 @@ export interface UserCreateWithoutExperiencesInput {
 
 export interface UserCreateWithoutNotificationsInput {
   id?: ID_Input | null
-  displayName?: undefined | null
-  phoneNumber?: undefined | null
+  displayName: String
+  phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
   accountType?: UserType | null
-  uid?: undefined | null
+  uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
   location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
@@ -15325,12 +15407,12 @@ export interface UserCreateWithoutNotificationsInput {
 
 export interface UserCreateWithoutOrdersInput {
   id?: ID_Input | null
-  displayName?: undefined | null
-  phoneNumber?: undefined | null
+  displayName: String
+  phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
   accountType?: UserType | null
-  uid?: undefined | null
+  uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
   location?: LocationCreateManyInput | null
   paymentAccount?: PaymentAccountCreateManyWithoutUserInput | null
@@ -15343,12 +15425,12 @@ export interface UserCreateWithoutOrdersInput {
 
 export interface UserCreateWithoutPaymentAccountInput {
   id?: ID_Input | null
-  displayName?: undefined | null
-  phoneNumber?: undefined | null
+  displayName: String
+  phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
   accountType?: UserType | null
-  uid?: undefined | null
+  uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
   location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
@@ -15361,12 +15443,12 @@ export interface UserCreateWithoutPaymentAccountInput {
 
 export interface UserCreateWithoutReceivedMessagesInput {
   id?: ID_Input | null
-  displayName?: undefined | null
-  phoneNumber?: undefined | null
+  displayName: String
+  phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
   accountType?: UserType | null
-  uid?: undefined | null
+  uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
   location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
@@ -15379,12 +15461,12 @@ export interface UserCreateWithoutReceivedMessagesInput {
 
 export interface UserCreateWithoutSentMessagesInput {
   id?: ID_Input | null
-  displayName?: undefined | null
-  phoneNumber?: undefined | null
+  displayName: String
+  phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
   accountType?: UserType | null
-  uid?: undefined | null
+  uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
   location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
@@ -15396,13 +15478,13 @@ export interface UserCreateWithoutSentMessagesInput {
 }
 
 export interface UserSubscriptionWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
-  mutation_in?: undefined | null
+  AND?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput | null
+  OR?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput | null
+  NOT?: UserSubscriptionWhereInput[] | UserSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
   updatedFields_contains?: String | null
-  updatedFields_contains_every?: undefined | null
-  updatedFields_contains_some?: undefined | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
   node?: UserWhereInput | null
 }
 
@@ -15578,43 +15660,43 @@ export interface UserUpdateWithoutSentMessagesDataInput {
 }
 
 export interface UserUpsertWithoutExperiencesInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: UserUpdateWithoutExperiencesDataInput
+  create: UserCreateWithoutExperiencesInput
 }
 
 export interface UserUpsertWithoutNotificationsInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: UserUpdateWithoutNotificationsDataInput
+  create: UserCreateWithoutNotificationsInput
 }
 
 export interface UserUpsertWithoutOrdersInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: UserUpdateWithoutOrdersDataInput
+  create: UserCreateWithoutOrdersInput
 }
 
 export interface UserUpsertWithoutPaymentAccountInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: UserUpdateWithoutPaymentAccountDataInput
+  create: UserCreateWithoutPaymentAccountInput
 }
 
 export interface UserUpsertWithoutReceivedMessagesInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: UserUpdateWithoutReceivedMessagesDataInput
+  create: UserCreateWithoutReceivedMessagesInput
 }
 
 export interface UserUpsertWithoutSentMessagesInput {
-  update?: undefined | null
-  create?: undefined | null
+  update: UserUpdateWithoutSentMessagesDataInput
+  create: UserCreateWithoutSentMessagesInput
 }
 
 export interface UserWhereInput {
-  AND?: undefined | null
-  OR?: undefined | null
-  NOT?: undefined | null
+  AND?: UserWhereInput[] | UserWhereInput | null
+  OR?: UserWhereInput[] | UserWhereInput | null
+  NOT?: UserWhereInput[] | UserWhereInput | null
   id?: ID_Input | null
   id_not?: ID_Input | null
-  id_in?: undefined | null
-  id_not_in?: undefined | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
   id_lt?: ID_Input | null
   id_lte?: ID_Input | null
   id_gt?: ID_Input | null
@@ -15627,24 +15709,24 @@ export interface UserWhereInput {
   id_not_ends_with?: ID_Input | null
   createdAt?: DateTime | null
   createdAt_not?: DateTime | null
-  createdAt_in?: undefined | null
-  createdAt_not_in?: undefined | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
   createdAt_lt?: DateTime | null
   createdAt_lte?: DateTime | null
   createdAt_gt?: DateTime | null
   createdAt_gte?: DateTime | null
   updatedAt?: DateTime | null
   updatedAt_not?: DateTime | null
-  updatedAt_in?: undefined | null
-  updatedAt_not_in?: undefined | null
+  updatedAt_in?: DateTime[] | DateTime | null
+  updatedAt_not_in?: DateTime[] | DateTime | null
   updatedAt_lt?: DateTime | null
   updatedAt_lte?: DateTime | null
   updatedAt_gt?: DateTime | null
   updatedAt_gte?: DateTime | null
   displayName?: String | null
   displayName_not?: String | null
-  displayName_in?: undefined | null
-  displayName_not_in?: undefined | null
+  displayName_in?: String[] | String | null
+  displayName_not_in?: String[] | String | null
   displayName_lt?: String | null
   displayName_lte?: String | null
   displayName_gt?: String | null
@@ -15657,8 +15739,8 @@ export interface UserWhereInput {
   displayName_not_ends_with?: String | null
   phoneNumber?: String | null
   phoneNumber_not?: String | null
-  phoneNumber_in?: undefined | null
-  phoneNumber_not_in?: undefined | null
+  phoneNumber_in?: String[] | String | null
+  phoneNumber_not_in?: String[] | String | null
   phoneNumber_lt?: String | null
   phoneNumber_lte?: String | null
   phoneNumber_gt?: String | null
@@ -15671,28 +15753,28 @@ export interface UserWhereInput {
   phoneNumber_not_ends_with?: String | null
   responseRate?: Float | null
   responseRate_not?: Float | null
-  responseRate_in?: undefined | null
-  responseRate_not_in?: undefined | null
+  responseRate_in?: Float[] | Float | null
+  responseRate_not_in?: Float[] | Float | null
   responseRate_lt?: Float | null
   responseRate_lte?: Float | null
   responseRate_gt?: Float | null
   responseRate_gte?: Float | null
   responseTime?: Int | null
   responseTime_not?: Int | null
-  responseTime_in?: undefined | null
-  responseTime_not_in?: undefined | null
+  responseTime_in?: Int[] | Int | null
+  responseTime_not_in?: Int[] | Int | null
   responseTime_lt?: Int | null
   responseTime_lte?: Int | null
   responseTime_gt?: Int | null
   responseTime_gte?: Int | null
   accountType?: UserType | null
   accountType_not?: UserType | null
-  accountType_in?: undefined | null
-  accountType_not_in?: undefined | null
+  accountType_in?: UserType[] | UserType | null
+  accountType_not_in?: UserType[] | UserType | null
   uid?: String | null
   uid_not?: String | null
-  uid_in?: undefined | null
-  uid_not_in?: undefined | null
+  uid_in?: String[] | String | null
+  uid_not_in?: String[] | String | null
   uid_lt?: String | null
   uid_lte?: String | null
   uid_gt?: String | null
@@ -15740,101 +15822,101 @@ export interface UserWhereUniqueInput {
 
  */
 export interface Node {
-  id?: undefined | null
+  id: ID_Output
 }
 
 export interface AggregateCity {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateCreditCardInformation {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateDebitCardInformation {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateExperience {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateExperienceCategory {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateLocation {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateMenuItem {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateMessage {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateNeighbourhood {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateNotification {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateOrder {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregatePayment {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregatePaymentAccount {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregatePaypalInformation {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregatePaytmInformation {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregatePicture {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregatePolicies {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregatePricing {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateRestaurant {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateReview {
-  count?: undefined | null
+  count: Int
 }
 
 export interface AggregateUser {
-  count?: undefined | null
+  count: Int
 }
 
 export interface BatchPayload {
-  count?: undefined | null
+  count: Long
 }
 
-export interface City {
-  id?: undefined | null
-  name?: undefined | null
-  neighbourhoods?: undefined | null
+export interface City extends Node {
+  id: ID_Output
+  name: String
+  neighbourhoods?: Array<Neighbourhood> | null
 }
 
 /*
@@ -15842,9 +15924,9 @@ export interface City {
 
  */
 export interface CityConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<CityEdge | null>
+  aggregate: AggregateCity
 }
 
 /*
@@ -15852,33 +15934,33 @@ export interface CityConnection {
 
  */
 export interface CityEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: City
+  cursor: String
 }
 
 export interface CityPreviousValues {
-  id?: undefined | null
-  name?: undefined | null
+  id: ID_Output
+  name: String
 }
 
 export interface CitySubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: City | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: CityPreviousValues | null
 }
 
-export interface CreditCardInformation {
-  id?: undefined | null
-  createdAt?: undefined | null
-  cardNumber?: undefined | null
-  expiresOnMonth?: undefined | null
-  expiresOnYear?: undefined | null
-  securityCode?: undefined | null
-  firstName?: undefined | null
-  lastName?: undefined | null
-  postalCode?: undefined | null
-  country?: undefined | null
+export interface CreditCardInformation extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
 }
 
 /*
@@ -15886,9 +15968,9 @@ export interface CreditCardInformation {
 
  */
 export interface CreditCardInformationConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<CreditCardInformationEdge | null>
+  aggregate: AggregateCreditCardInformation
 }
 
 /*
@@ -15896,41 +15978,41 @@ export interface CreditCardInformationConnection {
 
  */
 export interface CreditCardInformationEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: CreditCardInformation
+  cursor: String
 }
 
 export interface CreditCardInformationPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  cardNumber?: undefined | null
-  expiresOnMonth?: undefined | null
-  expiresOnYear?: undefined | null
-  securityCode?: undefined | null
-  firstName?: undefined | null
-  lastName?: undefined | null
-  postalCode?: undefined | null
-  country?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
 }
 
 export interface CreditCardInformationSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: CreditCardInformation | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: CreditCardInformationPreviousValues | null
 }
 
-export interface DebitCardInformation {
-  id?: undefined | null
-  createdAt?: undefined | null
-  cardNumber?: undefined | null
-  expiresOnMonth?: undefined | null
-  expiresOnYear?: undefined | null
-  securityCode?: undefined | null
-  firstName?: undefined | null
-  lastName?: undefined | null
-  postalCode?: undefined | null
-  country?: undefined | null
+export interface DebitCardInformation extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
 }
 
 /*
@@ -15938,9 +16020,9 @@ export interface DebitCardInformation {
 
  */
 export interface DebitCardInformationConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<DebitCardInformationEdge | null>
+  aggregate: AggregateDebitCardInformation
 }
 
 /*
@@ -15948,46 +16030,46 @@ export interface DebitCardInformationConnection {
 
  */
 export interface DebitCardInformationEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: DebitCardInformation
+  cursor: String
 }
 
 export interface DebitCardInformationPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  cardNumber?: undefined | null
-  expiresOnMonth?: undefined | null
-  expiresOnYear?: undefined | null
-  securityCode?: undefined | null
-  firstName?: undefined | null
-  lastName?: undefined | null
-  postalCode?: undefined | null
-  country?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
 }
 
 export interface DebitCardInformationSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: DebitCardInformation | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: DebitCardInformationPreviousValues | null
 }
 
-export interface Experience {
-  id?: undefined | null
+export interface Experience extends Node {
+  id: ID_Output
   category?: ExperienceCategory | null
-  title?: undefined | null
-  host?: undefined | null
-  location?: undefined | null
-  pricePerPerson?: undefined | null
-  reviews?: undefined | null
-  preview?: undefined | null
-  popularity?: undefined | null
+  title: String
+  host: User
+  location: Location
+  pricePerPerson: Int
+  reviews?: Array<Review> | null
+  preview: Picture
+  popularity: Int
 }
 
-export interface ExperienceCategory {
-  id?: undefined | null
-  mainColor?: undefined | null
-  name?: undefined | null
+export interface ExperienceCategory extends Node {
+  id: ID_Output
+  mainColor: String
+  name: String
 }
 
 /*
@@ -15995,9 +16077,9 @@ export interface ExperienceCategory {
 
  */
 export interface ExperienceCategoryConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<ExperienceCategoryEdge | null>
+  aggregate: AggregateExperienceCategory
 }
 
 /*
@@ -16005,20 +16087,20 @@ export interface ExperienceCategoryConnection {
 
  */
 export interface ExperienceCategoryEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: ExperienceCategory
+  cursor: String
 }
 
 export interface ExperienceCategoryPreviousValues {
-  id?: undefined | null
-  mainColor?: undefined | null
-  name?: undefined | null
+  id: ID_Output
+  mainColor: String
+  name: String
 }
 
 export interface ExperienceCategorySubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: ExperienceCategory | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: ExperienceCategoryPreviousValues | null
 }
 
@@ -16027,9 +16109,9 @@ export interface ExperienceCategorySubscriptionPayload {
 
  */
 export interface ExperienceConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<ExperienceEdge | null>
+  aggregate: AggregateExperience
 }
 
 /*
@@ -16037,32 +16119,32 @@ export interface ExperienceConnection {
 
  */
 export interface ExperienceEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Experience
+  cursor: String
 }
 
 export interface ExperiencePreviousValues {
-  id?: undefined | null
-  title?: undefined | null
-  pricePerPerson?: undefined | null
-  popularity?: undefined | null
+  id: ID_Output
+  title: String
+  pricePerPerson: Int
+  popularity: Int
 }
 
 export interface ExperienceSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Experience | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: ExperiencePreviousValues | null
 }
 
-export interface Location {
+export interface Location extends Node {
   title?: String | null
-  id?: undefined | null
-  lat?: undefined | null
-  lng?: undefined | null
+  id: ID_Output
+  lat: Float
+  lng: Float
   neighbourHood?: Neighbourhood | null
-  address?: undefined | null
-  directions?: undefined | null
+  address: String
+  directions: String
 }
 
 /*
@@ -16070,9 +16152,9 @@ export interface Location {
 
  */
 export interface LocationConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<LocationEdge | null>
+  aggregate: AggregateLocation
 }
 
 /*
@@ -16080,36 +16162,36 @@ export interface LocationConnection {
 
  */
 export interface LocationEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Location
+  cursor: String
 }
 
 export interface LocationPreviousValues {
   title?: String | null
-  id?: undefined | null
-  lat?: undefined | null
-  lng?: undefined | null
-  address?: undefined | null
-  directions?: undefined | null
+  id: ID_Output
+  lat: Float
+  lng: Float
+  address: String
+  directions: String
 }
 
 export interface LocationSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Location | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: LocationPreviousValues | null
 }
 
-export interface MenuItem {
-  id?: undefined | null
-  createdAt?: undefined | null
-  updatedAt?: undefined | null
-  shortDescription?: undefined | null
-  title?: undefined | null
-  description?: undefined | null
-  pricing?: undefined | null
-  pictures?: undefined | null
-  reviews?: undefined | null
+export interface MenuItem extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  updatedAt: DateTime
+  shortDescription: String
+  title: String
+  description: String
+  pricing: Pricing
+  pictures?: Array<Picture> | null
+  reviews?: Array<Review> | null
 }
 
 /*
@@ -16117,9 +16199,9 @@ export interface MenuItem {
 
  */
 export interface MenuItemConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<MenuItemEdge | null>
+  aggregate: AggregateMenuItem
 }
 
 /*
@@ -16127,33 +16209,33 @@ export interface MenuItemConnection {
 
  */
 export interface MenuItemEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: MenuItem
+  cursor: String
 }
 
 export interface MenuItemPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  updatedAt?: undefined | null
-  shortDescription?: undefined | null
-  title?: undefined | null
-  description?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  updatedAt: DateTime
+  shortDescription: String
+  title: String
+  description: String
 }
 
 export interface MenuItemSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: MenuItem | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: MenuItemPreviousValues | null
 }
 
-export interface Message {
-  id?: undefined | null
-  createdAt?: undefined | null
-  from?: undefined | null
-  to?: undefined | null
-  deliveredAt?: undefined | null
-  readAt?: undefined | null
+export interface Message extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  from: User
+  to: User
+  deliveredAt: DateTime
+  readAt: DateTime
 }
 
 /*
@@ -16161,9 +16243,9 @@ export interface Message {
 
  */
 export interface MessageConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<MessageEdge | null>
+  aggregate: AggregateMessage
 }
 
 /*
@@ -16171,33 +16253,33 @@ export interface MessageConnection {
 
  */
 export interface MessageEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Message
+  cursor: String
 }
 
 export interface MessagePreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  deliveredAt?: undefined | null
-  readAt?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  deliveredAt: DateTime
+  readAt: DateTime
 }
 
 export interface MessageSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Message | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: MessagePreviousValues | null
 }
 
-export interface Neighbourhood {
-  id?: undefined | null
-  locations?: undefined | null
-  name?: undefined | null
-  slug?: undefined | null
+export interface Neighbourhood extends Node {
+  id: ID_Output
+  locations?: Array<Location> | null
+  name: String
+  slug: String
   homePreview?: Picture | null
-  city?: undefined | null
-  featured?: undefined | null
-  popularity?: undefined | null
+  city: City
+  featured: Boolean
+  popularity: Int
 }
 
 /*
@@ -16205,9 +16287,9 @@ export interface Neighbourhood {
 
  */
 export interface NeighbourhoodConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<NeighbourhoodEdge | null>
+  aggregate: AggregateNeighbourhood
 }
 
 /*
@@ -16215,32 +16297,32 @@ export interface NeighbourhoodConnection {
 
  */
 export interface NeighbourhoodEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Neighbourhood
+  cursor: String
 }
 
 export interface NeighbourhoodPreviousValues {
-  id?: undefined | null
-  name?: undefined | null
-  slug?: undefined | null
-  featured?: undefined | null
-  popularity?: undefined | null
+  id: ID_Output
+  name: String
+  slug: String
+  featured: Boolean
+  popularity: Int
 }
 
 export interface NeighbourhoodSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Neighbourhood | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: NeighbourhoodPreviousValues | null
 }
 
-export interface Notification {
-  id?: undefined | null
-  createdAt?: undefined | null
+export interface Notification extends Node {
+  id: ID_Output
+  createdAt: DateTime
   type?: NOTIFICATION_TYPE | null
-  user?: undefined | null
-  link?: undefined | null
-  readDate?: undefined | null
+  user: User
+  link: String
+  readDate: DateTime
 }
 
 /*
@@ -16248,9 +16330,9 @@ export interface Notification {
 
  */
 export interface NotificationConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<NotificationEdge | null>
+  aggregate: AggregateNotification
 }
 
 /*
@@ -16258,33 +16340,33 @@ export interface NotificationConnection {
 
  */
 export interface NotificationEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Notification
+  cursor: String
 }
 
 export interface NotificationPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
   type?: NOTIFICATION_TYPE | null
-  link?: undefined | null
-  readDate?: undefined | null
+  link: String
+  readDate: DateTime
 }
 
 export interface NotificationSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Notification | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: NotificationPreviousValues | null
 }
 
-export interface Order {
-  id?: undefined | null
-  createdAt?: undefined | null
-  bookee?: undefined | null
-  restaurant?: undefined | null
-  startDate?: undefined | null
-  endDate?: undefined | null
-  payment?: undefined | null
+export interface Order extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  bookee: User
+  restaurant: Restaurant
+  startDate: DateTime
+  endDate: DateTime
+  payment: Payment
 }
 
 /*
@@ -16292,9 +16374,9 @@ export interface Order {
 
  */
 export interface OrderConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<OrderEdge | null>
+  aggregate: AggregateOrder
 }
 
 /*
@@ -16302,21 +16384,21 @@ export interface OrderConnection {
 
  */
 export interface OrderEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Order
+  cursor: String
 }
 
 export interface OrderPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  startDate?: undefined | null
-  endDate?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  startDate: DateTime
+  endDate: DateTime
 }
 
 export interface OrderSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Order | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: OrderPreviousValues | null
 }
 
@@ -16325,28 +16407,28 @@ export interface OrderSubscriptionPayload {
 
  */
 export interface PageInfo {
-  hasNextPage?: undefined | null
-  hasPreviousPage?: undefined | null
+  hasNextPage: Boolean
+  hasPreviousPage: Boolean
   startCursor?: String | null
   endCursor?: String | null
 }
 
-export interface Payment {
-  id?: undefined | null
-  createdAt?: undefined | null
-  serviceFee?: undefined | null
-  restaurantPrice?: undefined | null
-  totalPrice?: undefined | null
-  order?: undefined | null
-  paymentMethod?: undefined | null
+export interface Payment extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  serviceFee: Float
+  restaurantPrice: Float
+  totalPrice: Float
+  order: Order
+  paymentMethod: PaymentAccount
 }
 
-export interface PaymentAccount {
-  id?: undefined | null
-  createdAt?: undefined | null
+export interface PaymentAccount extends Node {
+  id: ID_Output
+  createdAt: DateTime
   type?: PAYMENT_PROVIDER | null
-  user?: undefined | null
-  payments?: undefined | null
+  user: User
+  payments?: Array<Payment> | null
   paypal?: PaypalInformation | null
   paytm?: PaytmInformation | null
   creditcard?: CreditCardInformation | null
@@ -16358,9 +16440,9 @@ export interface PaymentAccount {
 
  */
 export interface PaymentAccountConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<PaymentAccountEdge | null>
+  aggregate: AggregatePaymentAccount
 }
 
 /*
@@ -16368,20 +16450,20 @@ export interface PaymentAccountConnection {
 
  */
 export interface PaymentAccountEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: PaymentAccount
+  cursor: String
 }
 
 export interface PaymentAccountPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
   type?: PAYMENT_PROVIDER | null
 }
 
 export interface PaymentAccountSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: PaymentAccount | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: PaymentAccountPreviousValues | null
 }
 
@@ -16390,9 +16472,9 @@ export interface PaymentAccountSubscriptionPayload {
 
  */
 export interface PaymentConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<PaymentEdge | null>
+  aggregate: AggregatePayment
 }
 
 /*
@@ -16400,29 +16482,29 @@ export interface PaymentConnection {
 
  */
 export interface PaymentEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Payment
+  cursor: String
 }
 
 export interface PaymentPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  serviceFee?: undefined | null
-  restaurantPrice?: undefined | null
-  totalPrice?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  serviceFee: Float
+  restaurantPrice: Float
+  totalPrice: Float
 }
 
 export interface PaymentSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Payment | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: PaymentPreviousValues | null
 }
 
-export interface PaypalInformation {
-  id?: undefined | null
-  createdAt?: undefined | null
-  email?: undefined | null
+export interface PaypalInformation extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  email: String
 }
 
 /*
@@ -16430,9 +16512,9 @@ export interface PaypalInformation {
 
  */
 export interface PaypalInformationConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<PaypalInformationEdge | null>
+  aggregate: AggregatePaypalInformation
 }
 
 /*
@@ -16440,27 +16522,27 @@ export interface PaypalInformationConnection {
 
  */
 export interface PaypalInformationEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: PaypalInformation
+  cursor: String
 }
 
 export interface PaypalInformationPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  email?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  email: String
 }
 
 export interface PaypalInformationSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: PaypalInformation | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: PaypalInformationPreviousValues | null
 }
 
-export interface PaytmInformation {
-  id?: undefined | null
-  createdAt?: undefined | null
-  phone?: undefined | null
+export interface PaytmInformation extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  phone: String
 }
 
 /*
@@ -16468,9 +16550,9 @@ export interface PaytmInformation {
 
  */
 export interface PaytmInformationConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<PaytmInformationEdge | null>
+  aggregate: AggregatePaytmInformation
 }
 
 /*
@@ -16478,26 +16560,27 @@ export interface PaytmInformationConnection {
 
  */
 export interface PaytmInformationEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: PaytmInformation
+  cursor: String
 }
 
 export interface PaytmInformationPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  phone?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  phone: String
 }
 
 export interface PaytmInformationSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: PaytmInformation | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: PaytmInformationPreviousValues | null
 }
 
-export interface Picture {
-  id?: undefined | null
-  url?: undefined | null
+export interface Picture extends Node {
+  id: ID_Output
+  altText?: String | null
+  url: String
 }
 
 /*
@@ -16505,9 +16588,9 @@ export interface Picture {
 
  */
 export interface PictureConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<PictureEdge | null>
+  aggregate: AggregatePicture
 }
 
 /*
@@ -16515,28 +16598,29 @@ export interface PictureConnection {
 
  */
 export interface PictureEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Picture
+  cursor: String
 }
 
 export interface PicturePreviousValues {
-  id?: undefined | null
-  url?: undefined | null
+  id: ID_Output
+  altText?: String | null
+  url: String
 }
 
 export interface PictureSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Picture | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: PicturePreviousValues | null
 }
 
-export interface Policies {
-  id?: undefined | null
-  createdAt?: undefined | null
-  updatedAt?: undefined | null
-  openingTime?: undefined | null
-  closingTime?: undefined | null
+export interface Policies extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  updatedAt: DateTime
+  openingTime: Float
+  closingTime: Float
 }
 
 /*
@@ -16544,9 +16628,9 @@ export interface Policies {
 
  */
 export interface PoliciesConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<PoliciesEdge | null>
+  aggregate: AggregatePolicies
 }
 
 /*
@@ -16554,34 +16638,34 @@ export interface PoliciesConnection {
 
  */
 export interface PoliciesEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Policies
+  cursor: String
 }
 
 export interface PoliciesPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  updatedAt?: undefined | null
-  openingTime?: undefined | null
-  closingTime?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  updatedAt: DateTime
+  openingTime: Float
+  closingTime: Float
 }
 
 export interface PoliciesSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Policies | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: PoliciesPreviousValues | null
 }
 
-export interface Pricing {
-  id?: undefined | null
+export interface Pricing extends Node {
+  id: ID_Output
   monthlyDiscount?: Int | null
   weeklyDiscount?: Int | null
-  price?: undefined | null
-  smartPricing?: undefined | null
-  basePrice?: undefined | null
-  averageWeekly?: undefined | null
-  averageMonthly?: undefined | null
+  price: Int
+  smartPricing: Boolean
+  basePrice: Int
+  averageWeekly: Int
+  averageMonthly: Int
   weekendPricing?: Int | null
 }
 
@@ -16590,9 +16674,9 @@ export interface Pricing {
 
  */
 export interface PricingConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<PricingEdge | null>
+  aggregate: AggregatePricing
 }
 
 /*
@@ -16600,47 +16684,47 @@ export interface PricingConnection {
 
  */
 export interface PricingEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Pricing
+  cursor: String
 }
 
 export interface PricingPreviousValues {
-  id?: undefined | null
+  id: ID_Output
   monthlyDiscount?: Int | null
   weeklyDiscount?: Int | null
-  price?: undefined | null
-  smartPricing?: undefined | null
-  basePrice?: undefined | null
-  averageWeekly?: undefined | null
-  averageMonthly?: undefined | null
+  price: Int
+  smartPricing: Boolean
+  basePrice: Int
+  averageWeekly: Int
+  averageMonthly: Int
   weekendPricing?: Int | null
 }
 
 export interface PricingSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Pricing | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: PricingPreviousValues | null
 }
 
-export interface Restaurant {
-  id?: undefined | null
-  name?: undefined | null
-  shortDescription?: undefined | null
-  description?: undefined | null
-  slug?: undefined | null
-  maxGuests?: undefined | null
-  numRatings?: undefined | null
+export interface Restaurant extends Node {
+  id: ID_Output
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
   avgRating?: Float | null
-  reviews?: undefined | null
+  reviews?: Array<Review> | null
   location?: Location | null
   policies?: Policies | null
-  menu?: undefined | null
-  orders?: undefined | null
-  pictures?: undefined | null
-  popularity?: undefined | null
-  avgPricePerPerson?: undefined | null
-  isCurated?: undefined | null
+  menu?: Array<MenuItem> | null
+  orders?: Array<Order> | null
+  pictures?: Array<Picture> | null
+  popularity: Int
+  avgPricePerPerson: Int
+  isCurated: Boolean
 }
 
 /*
@@ -16648,9 +16732,9 @@ export interface Restaurant {
 
  */
 export interface RestaurantConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<RestaurantEdge | null>
+  aggregate: AggregateRestaurant
 }
 
 /*
@@ -16658,43 +16742,43 @@ export interface RestaurantConnection {
 
  */
 export interface RestaurantEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Restaurant
+  cursor: String
 }
 
 export interface RestaurantPreviousValues {
-  id?: undefined | null
-  name?: undefined | null
-  shortDescription?: undefined | null
-  description?: undefined | null
-  slug?: undefined | null
-  maxGuests?: undefined | null
-  numRatings?: undefined | null
+  id: ID_Output
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
   avgRating?: Float | null
-  popularity?: undefined | null
-  avgPricePerPerson?: undefined | null
-  isCurated?: undefined | null
+  popularity: Int
+  avgPricePerPerson: Int
+  isCurated: Boolean
 }
 
 export interface RestaurantSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Restaurant | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: RestaurantPreviousValues | null
 }
 
-export interface Review {
-  id?: undefined | null
-  createdAt?: undefined | null
-  text?: undefined | null
-  stars?: undefined | null
-  accuracy?: undefined | null
-  location?: undefined | null
-  checkIn?: undefined | null
-  value?: undefined | null
-  cleanliness?: undefined | null
-  communication?: undefined | null
-  order?: undefined | null
+export interface Review extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  text: String
+  stars: Int
+  accuracy: Int
+  location: Int
+  checkIn: Int
+  value: Int
+  cleanliness: Int
+  communication: Int
+  order: Order
   experience?: Experience | null
 }
 
@@ -16703,9 +16787,9 @@ export interface Review {
 
  */
 export interface ReviewConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<ReviewEdge | null>
+  aggregate: AggregateReview
 }
 
 /*
@@ -16713,49 +16797,49 @@ export interface ReviewConnection {
 
  */
 export interface ReviewEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: Review
+  cursor: String
 }
 
 export interface ReviewPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  text?: undefined | null
-  stars?: undefined | null
-  accuracy?: undefined | null
-  location?: undefined | null
-  checkIn?: undefined | null
-  value?: undefined | null
-  cleanliness?: undefined | null
-  communication?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  text: String
+  stars: Int
+  accuracy: Int
+  location: Int
+  checkIn: Int
+  value: Int
+  cleanliness: Int
+  communication: Int
 }
 
 export interface ReviewSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: Review | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: ReviewPreviousValues | null
 }
 
-export interface User {
-  id?: undefined | null
-  createdAt?: undefined | null
-  updatedAt?: undefined | null
-  displayName?: undefined | null
-  phoneNumber?: undefined | null
+export interface User extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  updatedAt: DateTime
+  displayName: String
+  phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
-  ownedRestaurant?: undefined | null
-  location?: undefined | null
-  orders?: undefined | null
-  paymentAccount?: undefined | null
-  sentMessages?: undefined | null
-  receivedMessages?: undefined | null
-  notifications?: undefined | null
+  ownedRestaurant?: Array<Restaurant> | null
+  location?: Array<Location> | null
+  orders?: Array<Order> | null
+  paymentAccount?: Array<PaymentAccount> | null
+  sentMessages?: Array<Message> | null
+  receivedMessages?: Array<Message> | null
+  notifications?: Array<Notification> | null
   profilePicture?: Picture | null
-  experiences?: undefined | null
+  experiences?: Array<Experience> | null
   accountType?: UserType | null
-  uid?: undefined | null
+  uid: String
 }
 
 /*
@@ -16763,9 +16847,9 @@ export interface User {
 
  */
 export interface UserConnection {
-  pageInfo?: undefined | null
-  edges?: undefined | null
-  aggregate?: undefined | null
+  pageInfo: PageInfo
+  edges: Array<UserEdge | null>
+  aggregate: AggregateUser
 }
 
 /*
@@ -16773,26 +16857,26 @@ export interface UserConnection {
 
  */
 export interface UserEdge {
-  node?: undefined | null
-  cursor?: undefined | null
+  node: User
+  cursor: String
 }
 
 export interface UserPreviousValues {
-  id?: undefined | null
-  createdAt?: undefined | null
-  updatedAt?: undefined | null
-  displayName?: undefined | null
-  phoneNumber?: undefined | null
+  id: ID_Output
+  createdAt: DateTime
+  updatedAt: DateTime
+  displayName: String
+  phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
   accountType?: UserType | null
-  uid?: undefined | null
+  uid: String
 }
 
 export interface UserSubscriptionPayload {
-  mutation?: undefined | null
+  mutation: MutationType
   node?: User | null
-  updatedFields?: undefined | null
+  updatedFields?: Array<String> | null
   previousValues?: UserPreviousValues | null
 }
 
@@ -16804,7 +16888,7 @@ export type Boolean = boolean
 export type DateTime = Date | string
 
 /*
-The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). 
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point).
 */
 export type Float = number
 
@@ -16815,7 +16899,7 @@ export type ID_Input = string | number
 export type ID_Output = string
 
 /*
-The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. 
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
 */
 export type Int = number
 

@@ -1,6 +1,6 @@
-import { AuthPayloadResolvers } from "../generated/resolvers";
-import { TypeMap } from "./types/TypeMap";
-import { UserParent } from "./User";
+import {AuthPayloadResolvers} from '../generated/resolvers';
+import {TypeMap} from './types/TypeMap';
+import {UserParent} from './User';
 
 export interface AuthPayloadParent {
   id: string;
@@ -9,5 +9,5 @@ export interface AuthPayloadParent {
 // AuthPayloadResolvers.Type<TypeMap>
 export const AuthPayload: any = {
   token: parent => parent.token,
-  user: (parent, _args, ctx) => ctx.db.user({ id: parent.id })
+  user: (parent, _args, ctx) => ctx.db.user({id: parent.id})
 };

@@ -1,1 +1,1 @@
-export * from "./runtimeEnvTest";
+export * from './runtimeEnvTest';
