@@ -2,9 +2,9 @@ import React from 'react'
 // import { Button } from 'antd'
 // import { FormattedMessage } from 'react-intl'
 // import HomeMenu from './HomeMenu'
-import ProjectManagement from './ProjectManagement'
+// import ProjectManagement from './ProjectManagement'
 // import IssuesHistory from './IssuesHistory'
-// import LiveSearch from './LiveSearch'
+import LiveSearch from './LiveSearch'
 // import BitcoinPrice from './BitcoinPrice'
 import ProfileMenu from './ProfileMenu'
 // import LanguageSelector from './LanguageSelector'
@@ -22,11 +22,10 @@ class TopBar extends React.Component {
           {/* <Breadcrumb /> */}
           {/* <ProjectManagement /> */}
         </div>
-        {/* <div className="mr-auto">
+        <div className="mr-auto">
           <LiveSearch />
-        </div> */}
+        </div>
         {/* <a
-          href="https://themeforest.net/item/clean-ui-admin-template-react-redux-ant-design-fully-responsive-freebies/21938700"
           target="_blank"
           rel="noopener noreferrer"
           className="mr-4 d-none d-sm-inline"

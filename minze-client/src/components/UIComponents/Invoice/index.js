@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table, Button, Icon } from 'antd'
-import invoiceData from './data.json'
+import invoiceData from './data.json.js'
 
 class Invoice extends React.Component {
   state = {

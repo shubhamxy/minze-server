@@ -34,12 +34,12 @@ const routes = [
 
   // Dashboards
   {
-    path: '/dashboard',
+    path: '/u/dashboard',
     component: loadable(() => import('pages/dashboard')),
   },
   // AntDesign
   {
-    path: '/antd',
+    path: '/u/info',
     component: loadable(() => import('pages/info')),
     exact: true,
   },
@@ -52,7 +52,7 @@ class Router extends React.Component {
       <ConnectedRouter history={history}>
         <IndexLayout>
           <Switch>
-            <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
+            <Route exact path="/" render={() => <Redirect to="/u/dashboard" />} />
             {routes.map(route => (
               <Route
                 path={route.path}

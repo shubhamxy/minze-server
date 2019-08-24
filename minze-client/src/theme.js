@@ -2,7 +2,7 @@
 // you should restart dev server after variables changes
 // ref: https://github.com/ant-design/ant-design/blob/master/components/style/themes/default.less
 module.exports = {
-  '@body-background': '#f6f6f6',
+  '@body-background': '#f0f1f6',
   '@font-size-base': '13px',
   '@font-size-lg': '15px',
 
@@ -37,8 +37,8 @@ module.exports = {
   '@shadow-1-right': '10px 0 35px -5px rgba(0,0,0,.15)',
   '@shadow-2': '0 0px 35px -5px rgba(0,0,0,.15)',
 
-  '@table-header-bg': '#f6f6f6',
-  '@table-header-sort-bg': '#f6f6f6',
+  '@table-header-bg': '#f0f1f6',
+  '@table-header-sort-bg': '#f0f1f6',
   '@table-row-hover-bg': '#e4e9f0',
   '@table-padding-vertical': '12px',
   '@table-padding-horizontal': '8px',

@@ -1,10 +1,10 @@
 // Colors
-$white: #fefefe;
+$white: #f0f1f6;
 
-$text: #f9fafc;
-$text-lighten: #f9fafc;
-$text-darken: #ccc;
-$text-darken-more: #aaa;
+$text: #191820;
+$text-lighten: rgb(180, 180, 180);
+$text-darken: #a3a3a3;
+$text-darken-more: #a3a3a3;
 
 $gray: #aaa;
 $gray-lighten: #bbb;
@@ -13,12 +13,12 @@ $gray-lighten-more-more: #e9ebee;
 $gray-darken: #b8beca;
 $gray-border: #e4e9f0;
 
-$black: #0e0b20;
+$black: #05040e;
 $black-lighten: #1f1f1f;
 $black-lighten-more: #1f1f1f;
 
-$blue: #3c5998;
-$blue-darken: #3c5998;
+$blue: #75819b;
+$blue-darken: #112246;
 $orange: #f2a654;
 $yellow: yellow;
 
@@ -26,9 +26,9 @@ $menuBg: #1f1f1f;
 $menuBg-darken: #1f1f1f;
 
 // Accent colors
-$default: #1f1f1f;
+$default: #a3a3a3;
 $primary: #121212;
-$secondary: #2c8080;
+$secondary: #47596e;
 $success: #46be8a;
 $info: #0887c9;
 $warning: #f39834;

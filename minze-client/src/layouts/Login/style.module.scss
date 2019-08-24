@@ -3,10 +3,7 @@
 .layout {
   display: flex;
   flex-direction: column;
-  // justify-content: space-evenly;
   min-height: 100vh;
-  background-color: $gray-lighten-more;
-  background-size: cover;
   transition: background-image 0.4s linear;
 
   @media (max-width: $sm-max-width) {
@@ -65,11 +62,11 @@
 }
 
 .logo {
-  max-height: rem(80);
+  max-height: rem(180);
   flex-shrink: 0;
 
   img {
-    max-height: rem(40);
+    max-height: rem(80);
   }
 }
 
@@ -142,7 +139,8 @@
 
 .content {
   align-self: middle;
-  // background: $primary;
+  // flex: 1;
+  min-width: 60%;
 }
 
 .footer {

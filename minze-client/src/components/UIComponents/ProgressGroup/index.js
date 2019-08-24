@@ -1,6 +1,6 @@
 import React from 'react'
 import { Progress } from 'antd'
-import { progressGroup } from './data.json'
+import { progressGroup } from './data.json.js'
 
 class ProgressGroup extends React.Component {
   render() {

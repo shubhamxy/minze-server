@@ -1,5 +1,5 @@
 import React from 'react'
-import { stats, commerceStats } from './data.json'
+import { stats, commerceStats } from './data.json.js'
 import styles from './style.module.scss'
 
 class InfoCard extends React.Component {

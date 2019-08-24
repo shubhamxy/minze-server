@@ -1,8 +1,8 @@
 [![Expo](/minze-client/public/resources/images/logo.png)](https://expo.io)
 
 <p align="center">
-    <a aria-label="Circle CI" href="https://github.com/shubhamxy/minze-server/workflows">
-    <img alt="Main CI" src="https://github.com/shubhamxy/minze-server/workflows/MainCI/badge.svg">
+    <a aria-label="Circle CI" href="https://github.com/shubhamxy/minze-server/actions">
+    <img alt="Main CI" src="https://github.com/shubhamxy/minze-server/workflows/minze-ci/badge.svg">
   </a>
       <a aria-label="Code Review" href="https://www.codacy.com/manual/shubhamxy/minze-server?utm_source=github.com&utm_medium=referral&utm_content=shubhamxy/minze-server&utm_campaign=Badge_Grade">
     <img alt="Main CI" src="https://api.codacy.com/project/badge/Grade/f8d16537be3d419083f4dc388f3f7601">
@@ -48,7 +48,7 @@
 
 - [`minze-client`](/minze-client) react frontend for dashboard
 
-- [`minze-server`](/minze-server) react frontend for dashboard
+- [`minze-server`](/minze-server) Server code
 
 ## License
 
