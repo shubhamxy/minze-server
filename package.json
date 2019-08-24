@@ -1,124 +1,46 @@
 {
-  "name": "server",
+  "name": "minze",
+  "private": true,
   "version": "1.0.0",
   "description": "Minze api server",
-  "main": "./dist/index.js",
   "engines": {
-    "node": "10.16.0"
+    "node": "10.16"
   },
   "keywords": [
-    "nodejs",
-    "typescript",
     "server"
   ],
   "scripts": {
-    "compose-up": "cd database; docker-compose up -d",
-    "dev:ts": "npx ts-node-dev --no-notify --respawn --transpileOnly ./src",
-    "heroku:env": "npx heroku-dotenv push",
-    "kill-process": "docker kill (docker ps -aq); and docker rm (docker ps -aq)",
-    "lint:fix": "npx eslint . --ext .ts --fix",
-    "lint": "npx eslint . --ext .ts",
-    "pm2log": "npx pm2 logs --raw",
-    "preinstall": "./scripts/pre-install.sh",
-    "clean": "rm -rf ./dist; rm -rf src/graphql/generated",
-    "postinstall": "npx tsc",
-    "prisma:deploy": "cd database; prisma deploy",
-    "prisma:generate": "cd database; prisma generate",
-    "start": "npx pm2 start pm2.yaml --env production",
-    "start:staging": "npx pm2 start pm2.yaml --env staging",
-    "start:prod": "NODE_ENV=production tsc-watch --onSuccess \"node ./dist/index.js\"",
-    "start:dev": "NODE_ENV=development tsc-watch --onSuccess \"node ./dist/index.js\"",
-    "start:local": "NODE_ENV=local tsc-watch --onSuccess \"node ./dist/index.js\"",
-    "stop": "npx pm2 stop all",
-    "test": "npx jest --coverage --verbose",
-    "testServer": "tsc-watch --onSuccess \"node ./dist/index.js\""
+    "prestart": "./scripts/build.sh",
+    "build": "npm-run-all build:*",
+    "test": "npm-run-all test:*",
+    "build:client": "yarn workspace minze-client build",
+    "build:server": "yarn workspace minze-server build",
+    "test:server": "yarn workspace minze-server test",
+    "start": "pm2 start pm2.yaml",
+    "start:node": "./scripts/build.sh; node ./build/index.js",
+    "stop": "pm2 stop all",
+    "heroku:release": "git push heroku master",
+    "pm2log": "pm2 logs --raw"
   },
-  "author": "Shubham Jain <s.shubjain@gmail.com>",
-  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn workspace minze-server precommit; yarn workspace minze-client precommit;"
+    }
+  },
   "dependencies": {
-    "babel-plugin-module-resolver": "^3.2.0",
-    "bcrypt": "^3.0.6",
-    "body-parser": "^1.19.0",
-    "compression": "^1.7.4",
-    "cors": "^2.8.5",
-    "dotenv": "^8.0.0",
-    "express": "^5.0.0-alpha.7",
-    "firebase": "^6.2.2",
-    "firebase-admin": "^8.2.0",
-    "firebase-functions": "^3.0.1",
-    "graphql": "^0.13.0",
-    "graphql-middleware": "^3.0.2",
-    "graphql-shield": "^5.7.1",
-    "graphql-yoga": "^1.18.0",
-    "jsonwebtoken": "^8.5.1",
-    "nexus": "^0.12.0-beta.6",
-    "nexus-prisma": "^0.3.7",
-    "pg": "^7.11.0",
-    "pm2": "^3.5.1",
-    "prisma-client-lib": "^1.34.0",
-    "reflect-metadata": "^0.1.13",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.4",
-    "supertest": "^4.0.2",
-    "swagger-ui-express": "^4.0.6",
-    "winston": "^3.2.1",
-    "winston-daily-rotate-file": "^3.9.0"
+    "husky": "^3.0.9",
+    "pm2": "^3.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@firebase/app-types": "^0.4.0",
-    "@firebase/util": "^0.2.20",
-    "@types/aws-lambda": "^8.10.23",
-    "@types/bcrypt": "^3.0.0",
-    "@types/chai": "^4.1.7",
-    "@types/compression": "0.0.36",
-    "@types/cors": "^2.8.4",
-    "@types/dotenv": "^6.1.1",
-    "@types/express": "^4.16.1",
-    "@types/graphql": "^14.0.7",
-    "@types/jest": "^24.0.15",
-    "@types/mongoose": "^5.3.22",
-    "@types/node": "^12.0.10",
-    "@types/request-promise": "^4.1.42",
-    "@types/supertest": "^2.0.7",
-    "@types/swagger-ui-express": "^3.0.1",
-    "@types/ws": "^6.0.1",
-    "@typescript-eslint/eslint-plugin": "^1.11.0",
-    "@typescript-eslint/parser": "^1.11.0",
-    "babel-eslint": "^10.0.2",
-    "babel-jest": "^24.8.0",
-    "chai": "^4.2.0",
-    "concurrently": "^4.1.0",
-    "eslint": "^5.3.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^5.0.0",
-    "eslint-import-resolver-babel-module": "^5.1.0",
-    "eslint-plugin-import": "^2.17.3",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.1",
-    "heroku-dotenv": "^0.4.1",
-    "jest": "^24.8.0",
-    "prettier": "^1.18.2",
-    "ts-jest": "^24.0.2",
-    "ts-node-dev": "^1.0.0-pre.40",
-    "tsc-watch": "^2.2.1",
-    "tslint": "^5.18.0",
-    "typescript": "^3.5.2"
+    "npm-run-all": "4.1.5"
   },
-  "jest": {
-    "verbose": true,
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
+  "workspaces": {
+    "packages": [
+      "minze-client",
+      "minze-server"
+    ],
+    "nohoist": [
+      "**/husky"
     ]
   }
 }

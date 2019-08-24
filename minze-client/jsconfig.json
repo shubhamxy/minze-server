@@ -1,0 +1,4 @@
+{
+  "typeAcquisition": {"enable": true},
+  "compilerOptions": {"experimentalDecorators": true}
+}

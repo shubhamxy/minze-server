@@ -1,0 +1,236 @@
+mutation {
+  createRestaurant_0: createRestaurant(
+    data: {
+      name: "Barbeque Nation"
+      shortDescription: "North Indian, Chinese, Mediterranean"
+      description: "North Indian, Chinese, Mediterranean"
+      slug: "//restaurant/18805412"
+      maxGuests: 18805412
+      popularity: 18805412
+      pictures: {
+        create: {
+          url: "https://b.zmtcdn.com/data/pictures/chains/2/1212/b6429ddad24625e65344caabb921bd57.jpg?output-format=webp"
+        }
+      }
+      location: {
+        create: {
+          address: "Unit 601, 6th Floor, Unity One, MLCP Plot, Rohini West Metro Station Complex, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7151414124
+          lng: 77.1163311973
+        }
+      }
+      avgPricePerPerson: 700
+      avgRating: 4.8
+      numRatings: 1095
+    }
+  ) {
+    id
+  }
+  createRestaurant_1: createRestaurant(
+    data: {
+      name: "BTW"
+      shortDescription: "South Indian, Street Food, Mithai, North Indian, Beverages"
+      description: "South Indian, Street Food, Mithai, North Indian, Beverages"
+      slug: "//restaurant/9253"
+      maxGuests: 9253
+      popularity: 9253
+      pictures: {
+        create: {
+          url: "https://b.zmtcdn.com/data/pictures/2/3372/7bb76629ab645d288f0bd6fa8b1e7190.jpg?output-format=webp"
+        }
+      }
+      location: {
+        create: {
+          address: "1, Garg Trade Center, Sector 11, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7345494297
+          lng: 77.114279978
+        }
+      }
+      avgPricePerPerson: 200
+      avgRating: 4
+      numRatings: 902
+    }
+  ) {
+    id
+  }
+  createRestaurant_2: createRestaurant(
+    data: {
+      name: "Berco's"
+      shortDescription: "Chinese, Thai, Seafood, Desserts, Beverages"
+      description: "Chinese, Thai, Seafood, Desserts, Beverages"
+      slug: "//restaurant/1806"
+      maxGuests: 1806
+      popularity: 1806
+      pictures: {create: {url: ""}}
+      location: {
+        create: {
+          address: "GA-06, Metro Walk Mall, Rohini, New Delhi"
+          directions: "Metro Walk Mall, Rohini"
+          lat: 28.7241546367
+          lng: 77.1135772392
+        }
+      }
+      avgPricePerPerson: 500
+      avgRating: 4.2
+      numRatings: 1408
+    }
+  ) {
+    id
+  }
+  createRestaurant_3: createRestaurant(
+    data: {
+      name: "Burger King"
+      shortDescription: "Fast Food, Burger, Beverages"
+      description: "Fast Food, Burger, Beverages"
+      slug: "//restaurant/18247003"
+      maxGuests: 18247003
+      popularity: 18247003
+      pictures: {
+        create: {
+          url: "https://b.zmtcdn.com/data/pictures/chains/8/310078/87dfce2afb78e9adc22411c5984a43e9.jpg?output-format=webp"
+        }
+      }
+      location: {
+        create: {
+          address: "Unit 21-24, Ground Floor, D Mall, Twin District Center, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7164469578
+          lng: 77.1139175445
+        }
+      }
+      avgPricePerPerson: 250
+      avgRating: 3.9
+      numRatings: 980
+    }
+  ) {
+    id
+  }
+  createRestaurant_4: createRestaurant(
+    data: {
+      name: "Haldiram's"
+      shortDescription: "North Indian, Mithai, South Indian, Fast Food, Street Food, Chinese, Desserts"
+      description: "North Indian, Mithai, South Indian, Fast Food, Street Food, Chinese, Desserts"
+      slug: "//restaurant/9338"
+      maxGuests: 9338
+      popularity: 9338
+      pictures: {
+        create: {
+          url: "https://b.zmtcdn.com/data/res_imagery/550_CHAIN_570d57e75a69ffe5f278a3195e73da9a.jpg?output-format=webp"
+        }
+      }
+      location: {
+        create: {
+          address: "Ground Floor, D-Mall, Sector 10, Near Rohini West Metro Station, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7160882285
+          lng: 77.1141753718
+        }
+      }
+      avgPricePerPerson: 175
+      avgRating: 4
+      numRatings: 938
+    }
+  ) {
+    id
+  }
+  createRestaurant_5: createRestaurant(
+    data: {
+      name: "The Beer Cafe"
+      shortDescription: "North Indian, Italian"
+      description: "North Indian, Italian"
+      slug: "//restaurant/18391127"
+      maxGuests: 18391127
+      popularity: 18391127
+      pictures: {
+        create: {url: "https://b.zmtcdn.com/data/res_imagery/18391127_RESTAURANT_63aca8aa0a5f996a2f8a53383239c0e0.jpg"}
+      }
+      location: {
+        create: {
+          address: "Unity Mall, Next to Rohini West Metro Station, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7138826041
+          lng: 77.1174201742
+        }
+      }
+      avgPricePerPerson: 750
+      avgRating: 3.9
+      numRatings: 814
+    }
+  ) {
+    id
+  }
+  createRestaurant_6: createRestaurant(
+    data: {
+      name: "Kebab Xpress"
+      shortDescription: "North Indian, Kebab, Biryani"
+      description: "North Indian, Kebab, Biryani"
+      slug: "//restaurant/309629"
+      maxGuests: 309629
+      popularity: 309629
+      pictures: {create: {url: ""}}
+      location: {
+        create: {
+          address: "118, 1st Floor, Unity Metro Mall, Rohini West Metro Station, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.7138917196
+          lng: 77.1174148098
+        }
+      }
+      avgPricePerPerson: 300
+      avgRating: 4
+      numRatings: 930
+    }
+  ) {
+    id
+  }
+  createRestaurant_7: createRestaurant(
+    data: {
+      name: "New Punjabi Dhaba"
+      shortDescription: "North Indian"
+      description: "North Indian"
+      slug: "//restaurant/18539459"
+      maxGuests: 18539459
+      popularity: 18539459
+      pictures: {create: {url: "https://b.zmtcdn.com/data/pictures/9/18539459/8d57ecd7c8f1288bc9d3b56fa51381d7.jpg"}}
+      location: {
+        create: {
+          address: "B 5/396, Sector 11, Rohini, New Delhi"
+          directions: "Rohini"
+          lat: 28.732265404
+          lng: 77.1144798025
+        }
+      }
+      avgPricePerPerson: 150
+      avgRating: 3.1
+      numRatings: 765
+    }
+  ) {
+    id
+  }
+  createRestaurant_8: createRestaurant(
+    data: {
+      name: "Pind Balluchi"
+      shortDescription: "North Indian, Mughlai, Kebab"
+      description: "North Indian, Mughlai, Kebab"
+      slug: "//restaurant/838"
+      maxGuests: 838
+      popularity: 838
+      pictures: {create: {url: "https://b.zmtcdn.com/data/pictures/chains/6/836/57078c1c95c15ab488a321f9bc89cc65.jpg"}}
+      location: {
+        create: {
+          address: "Shop 9-11, Unitech Metro Walk Mall, Rohini, New Delhi"
+          directions: "Metro Walk Mall, Rohini"
+          lat: 28.7239655828
+          lng: 77.1137965098
+        }
+      }
+      avgPricePerPerson: 500
+      avgRating: 3.7
+      numRatings: 766
+    }
+  ) {
+    id
+  }
+}

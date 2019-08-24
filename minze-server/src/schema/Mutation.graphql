@@ -1,0 +1,19 @@
+
+type Mutation {
+  # Authentication
+  # signup(idToken: String!): AuthPayload! // login does the signup also
+  login(idToken: String!): AuthPayload!
+  # Payments
+  addPaymentMethod(
+    cardNumber: String!
+    expiresOnMonth: Int!
+    expiresOnYear: Int!
+    securityCode: String!
+    firstName: String!
+    lastName: String!
+    postalCode: String!
+    country: String!
+  ): MutationResult!
+  # Order
+  book(restaurantId: ID!, checkIn: String!, checkOut: String!, paymentId: String!, numGuests: Int!): MutationResult!
+}

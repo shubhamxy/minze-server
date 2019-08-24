@@ -1,0 +1,164 @@
+{
+  "name": "minze-server",
+  "version": "1.0.0",
+  "description": "Minze api server",
+  "main": "./dist/index.js",
+  "engines": {
+    "node": "10.16"
+  },
+  "keywords": [
+    "server"
+  ],
+  "scripts": {
+    "clean": "rm -rf ./dist; rm -rf src/schema/generated",
+    "db:deploy": "cd prisma; prisma deploy",
+    "db:generate": "cd prisma; prisma generate",
+    "deploy": "./scripts/deploy.sh",
+    "docker:kill": "docker kill (docker ps -aq); docker rm (docker ps -aq)",
+    "docker:stop": "docker stop (docker ps -aq);",
+    "docker:up": "docker-compose up -d",
+    "generate": "npm-run-all *:generate",
+    "lint-staged": "lint-staged",
+    "lint:fix": "eslint . --ext .ts,js --fix",
+    "lint:ts": "eslint src --fix --ext .js,.ts",
+    "lint": "npm-run-all lint:*",
+    "build": "npx tsc; yarn run copyFiles",
+    "copyFiles": "copyfiles -u 1 src/schema/*.graphql src/schema/**/*.graphql dist",
+    "postinstall": "./scripts/post-install.sh; yarn run build",
+    "prettier:js": "prettier --write {.,**}/*.js",
+    "prettier:json": "prettier --write {.,**}/*.json",
+    "prettier:md": "prettier --write {.,**}/*.md",
+    "prettier:ts": "prettier --write {.,**}/*.ts",
+    "prettier": "npm-run-all prettier:*",
+    "precommit": "./scripts/pre-commit.sh; yarn run lint-staged;",
+    "heroku:build_image": "./build.sh 1.34 minze-database",
+    "heroku:release_db": "heroku container:release web -a minze-database",
+    "resolver:interfaces": "graphql-resolver-codegen interfaces -s src/schema/index.graphql -o ./src/schema/generated/resolvers.ts",
+    "resolver:scaffold": "graphql-resolver-codegen scaffold -s src/schema/index.graphql -o ./src/resolvers/ -i ../schema/generated/resolvers",
+    "resolver:generate": "npm-run-all resolver:interfaces resolver:scaffold",
+    "secrets:pack": "./scripts/secrets.sh -m pack",
+    "secrets:unpack": "./scripts/secrets.sh",
+    "start:dev": "NODE_ENV=development tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "start:prod": "NODE_ENV=production tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "start:staging": "pm2 start pm2.yaml --env production",
+    "test": "NODE_ENV=production jest --coverage --verbose --runInBand --forceExit",
+    "test:watch": "jest --coverage --verbose --runInBand --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubhamxy/minze-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shubhamxy/minze-server/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run precommit"
+    }
+  },
+  "lint-staged": {
+    "app/**/*.{js,ts,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "author": "Shubham Jain <s.shubjain@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.9.5",
+    "apollo-server-express": "^2.9.6",
+    "bcryptjs": "2.4.3",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^5.0.0-alpha.7",
+    "firebase": "^7.0.0",
+    "firebase-admin": "^8.2.0",
+    "firebase-functions": "^3.0.1",
+    "graphql": "^14.5.8",
+    "graphql-middleware": "^4.0.1",
+    "graphql-shield": "^6.1.0",
+    "graphql-tag": "2.10.1",
+    "graphql-tools": "4.0.5",
+    "graphql-yoga": "1.18.3",
+    "jsonwebtoken": "8.5.1",
+    "nexus": "^0.12.0-beta.6",
+    "nexus-prisma": "^0.4.2",
+    "pg": "^7.11.0",
+    "prisma-binding": "2.3.16",
+    "prisma-client-lib": "^1.34.8",
+    "reflect-metadata": "^0.1.13",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "supertest": "^4.0.2",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@firebase/app-types": "^0.4.4",
+    "@firebase/util": "^0.2.20",
+    "@types/aws-lambda": "^8.10.33",
+    "@types/bcryptjs": "2.4.2",
+    "@types/chai": "^4.1.7",
+    "@types/compression": "1.0.1",
+    "@types/cors": "^2.8.4",
+    "@types/dotenv": "^6.1.1",
+    "@types/express": "^4.16.1",
+    "@types/jest": "^24.0.15",
+    "@types/jsonwebtoken": "8.3.4",
+    "@types/mongoose": "^5.5.18",
+    "@types/node": "^12.7.9",
+    "@types/request-promise": "^4.1.42",
+    "@types/supertest": "^2.0.7",
+    "@types/ws": "^6.0.1",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "chai": "^4.2.0",
+    "concurrently": "^4.1.0",
+    "copyfiles": "^2.1.1",
+    "eslint": "^5.3.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-import-resolver-babel-module": "^5.1.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "graphql-cli": "3.0.14",
+    "graphql-import-loader": "^0.2.1",
+    "graphql-resolver-codegen": "0.3.1",
+    "husky": "^3.0.8",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.3.0",
+    "nodemon": "1.19.2",
+    "npm-run-all": "4.1.5",
+    "prettier": "^1.18.2",
+    "prisma": "1.34.8",
+    "ts-jest": "^24.0.2",
+    "ts-node": "8.4.1",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "tsc-watch": "^4.0.0",
+    "tslint": "^5.18.0",
+    "typescript": "3.6.3"
+  },
+  "resolutions": {
+    "graphql": "^14.5.7"
+  },
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}

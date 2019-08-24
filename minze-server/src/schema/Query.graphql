@@ -1,0 +1,10 @@
+type Query {
+  topExperiences: [Experience!]!
+  topRestaurants: [Restaurant!]!
+  restaurantsInPriceRange(min: Int!, max: Int!): [Restaurant!]!
+  topReservations: [Reservation!]!
+  featuredDestinations: [Neighbourhood!]!
+  experiencesByCity(cities: [String!]!): [ExperiencesByCity!]!
+  viewer: Viewer
+  myLocation: Location
+}
