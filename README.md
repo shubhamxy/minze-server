@@ -48,7 +48,7 @@
 
 - [`minze-client`](/minze-client) react frontend for dashboard
 
-- [`minze-server`](/minze-server) react frontend for dashboard
+- [`minze-server`](/minze-server) Server code
 
 ## License
 

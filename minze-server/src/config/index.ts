@@ -20,12 +20,14 @@ const CONFIG = ((env = process.env.NODE_ENV) => {
   }
 })();
 
-dotenv.config({
-  path: resolve(
-    __dirname,
-    process.env.NODE_ENV === 'production' ? '../../.env' : '../../.env.development'
-  )
-});
+dotenv.config()
+
+// dotenv.config({
+//   path: resolve(
+//     __dirname,
+//     process.env.NODE_ENV === 'production' ? '../../.env' : '../../.env.development'
+//   )
+// });
 // required variables
 const ENV_VARS = {
   NODE_ENV: '',
