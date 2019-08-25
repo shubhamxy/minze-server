@@ -36,16 +36,16 @@ class LoginLayout extends React.PureComponent {
             className={backgroundEnabled ? `${styles.layout} ${styles.light}` : `${styles.layout}`}
             style={{
               backgroundImage: backgroundEnabled
-                ? `url('resources/images/photos/${backgroundNumber}.jpeg')`
+                ? `url('/resources/images/photos/${backgroundNumber}.jpeg')`
                 : `none`,
             }}
           >
             <div className={styles.header}>
               <div className={styles.logo}>
                 <Link to="/">
-                  {!backgroundEnabled && <img src="resources/images/logo.png" alt="Minze Admin" />}
+                  {!backgroundEnabled && <img src="/resources/images/logo.png" alt="Minze Admin" />}
                   {backgroundEnabled && (
-                    <img src="resources/images/logo-inverse.png" alt="Minze Admin" />
+                    <img src="/resources/images/logo-inverse.png" alt="Minze Admin" />
                   )}
                 </Link>
               </div>

@@ -78,7 +78,7 @@ class LiveSearch extends React.Component {
           <div className="container-fluid">
             <div className={styles.wrapper}>
               <div className={styles.logoContainer}>
-                <img className={styles.logo} src="resources/images/logo.png" alt="" />
+                <img className={styles.logo} src="/resources/images/logo.png" alt="" />
               </div>
               <input
                 type="search"
@@ -104,7 +104,7 @@ class LiveSearch extends React.Component {
                     <div className={styles.resultContent}>
                       <div
                         className={styles.resultThumb}
-                        style={{ backgroundImage: 'url(resources/images/photos/1.jpeg)' }}
+                        style={{ backgroundImage: 'url(/resources/images/photos/1.jpeg)' }}
                       >
                         #1
                       </div>
@@ -116,7 +116,7 @@ class LiveSearch extends React.Component {
                     <div className={styles.resultContent}>
                       <div
                         className={styles.resultThumb}
-                        style={{ backgroundImage: 'url(resources/images/photos/2.jpeg)' }}
+                        style={{ backgroundImage: 'url(/resources/images/photos/2.jpeg)' }}
                       >
                         KF
                       </div>
@@ -128,7 +128,7 @@ class LiveSearch extends React.Component {
                     <div className={styles.resultContent}>
                       <div
                         className={styles.resultThumb}
-                        style={{ backgroundImage: 'url(resources/images/photos/3.jpeg)' }}
+                        style={{ backgroundImage: 'url(/resources/images/photos/3.jpeg)' }}
                       >
                         GF
                       </div>

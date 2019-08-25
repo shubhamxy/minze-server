@@ -33,7 +33,20 @@ applyMiddleware(expressMiddlewares, server);
 applyRoutes(routes, server);
 
 // Handles any requests that don't match the ones above
-server.use(express.static(path.join(__dirname.replace('/server', "/"), 'public')));
+const baseDir = __dirname.replace('/server', "/");
+
+server.use(express.static(path.join(baseDir, 'public')));
+
+server.get('/', function (req, res) {
+  res.sendFile(path.join(baseDir, 'public', 'index.html'));
+});
+
+server.get('/resources', express.static(path.join(baseDir, 'public/resources')));
+server.get('/static', express.static(path.join(baseDir, 'public/static')));
+
+server.all('*', function(req, res) {
+  res.sendFile(path.join(baseDir, 'public', 'index.html'));
+});
 
 applyMiddleware(errorHandlers, server);
 
