@@ -2,45 +2,40 @@
   "name": "minze",
   "private": true,
   "version": "1.0.0",
-  "description": "Minze api server",
+  "description": "Minze Mono Repo",
   "engines": {
-    "node": "10.16"
+    "node": "10.x"
   },
   "keywords": [
-    "server"
+    "server",
+    "web",
+    "mobile"
   ],
   "scripts": {
-    "prestart": "./scripts/build.sh",
-    "build": "npm-run-all build:*",
-    "test": "npm-run-all test:*",
-    "build:client": "yarn workspace minze-client build",
-    "build:server": "yarn workspace minze-server build",
-    "test:server": "yarn workspace minze-server test",
-    "start": "pm2 start pm2.yaml",
-    "start:node": "./scripts/build.sh; node ./build/index.js",
-    "stop": "pm2 stop all",
-    "heroku:release": "git push heroku master",
-    "pm2log": "pm2 logs --raw"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn workspace minze-server precommit; yarn workspace minze-client precommit;"
-    }
+    "clean": "lerna run clean --scope minze-*; rm -rf ./packages/*/node_modules",
+    "reset": "yarn run clean; yarn clean-locks",
+    "bootstrap": "lerna bootstrap",
+    "clean-locks": "rm -rf ./packages/*/yarn.lock",
+    "setup": "lerna run setup:production --scope minze-server",
+    "build": "yarn run setup; lerna run build --scope minze-server --scope minze-web; ./scripts/build.sh",
+    "test": "lerna run test --scope minze-server --scope minze-web",
+    "start": "node --optimize_for_size --max_old_space_size=460 --gc_interval=100 ./build/index.js",
+    "start:dev": "lerna run start --scope minze-server --scope minze-web",
+    "pm2:start": "pm2 start pm2.yaml",
+    "pm2:stop": "pm2 stop all",
+    "pm2:logs": "pm2 logs --raw"
   },
   "dependencies": {
-    "husky": "^3.0.9",
     "pm2": "^3.5.1"
   },
   "devDependencies": {
+    "lerna": "^3.18.3",
     "npm-run-all": "4.1.5"
   },
-  "workspaces": {
-    "packages": [
-      "minze-client",
-      "minze-server"
-    ],
-    "nohoist": [
-      "**/husky"
-    ]
-  }
+  "resolutions": {
+    "@types/react": "16.8.22"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

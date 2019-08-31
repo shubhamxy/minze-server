@@ -1,0 +1,7 @@
+build/*
+src/schema/generated/*
+src/resolvers/generated/*
+src/database/generated/*
+build/*
+coverage
+node_modules

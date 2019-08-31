@@ -1,0 +1,28 @@
+projects:
+  app:
+    schemaPath: src/schema/Schema.graphql
+    includes: [
+      "Enums.graphql",
+      "Schema.graphql", 
+      "Query.graphql",
+      "Mutation.graphql",
+      "Subscription.graphql"
+    ]
+    extensions:
+      endpoints:
+        default: https://minze-database.herokuapp.com/
+  prisma:
+    schemaPath: "./src/database/generated/prisma.graphql"
+    includes: [
+      "prisma.graphql", 
+      "seed.graphql", 
+      "datamodel/types.prisma",
+      "datamodel/enums.prisma",
+    ]
+    extensions:
+      prisma: prisma/prisma.yml
+      codegen:
+      - generator: prisma-binding
+        language: typescript
+        output:
+          binding: src/database/generated/prisma.ts

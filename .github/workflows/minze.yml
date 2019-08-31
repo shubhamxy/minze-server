@@ -27,5 +27,7 @@ jobs:
         APP_SECRET_PASSPHRASE: ${{ secrets.APP_SECRET_PASSPHRASE }}
 
       run: |
-        yarn install
-        yarn run test
+        yarn
+        yarn run setup
+        yarn run build
+        # yarn run test

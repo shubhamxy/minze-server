@@ -14,13 +14,10 @@ check_environment(){
   fi
 }
 
-DEPLOY_TYPE='soft'
 
-while getopts ":e:t:d:m:" opt; do
+while getopts ":e:d:m:" opt; do
   case $opt in
     e) APP_ENV="$OPTARG"
-    ;;
-    t) DEPLOY_TYPE="$OPTARG"
     ;;
     d) DEV=1
     ;;
@@ -30,15 +27,16 @@ while getopts ":e:t:d:m:" opt; do
 done
 
 source scripts/common.sh
-source .env
+
 
 # [[ -z $(git status -s) ]] || warn 'Please make sure you deploy with no changes or untracked files. You can run *git stash --include-untracked*.'
 
 # check_environment $APP_ENV
-yarn run build
 rm -rf build
 mkdir -p build build/public
-cp -a minze-server/dist/. build
-cp -a minze-client/build/. build/public
-cp -a minze-server/.env . 2>/dev/null || :
+cp -a packages/minze-server/build/. build
+cp -a packages/minze-web/build/. build/public
+cp -a packages/minze-server/.env . 2>/dev/null || :
+
+source .env
 success "📦  Build and copy succeeded."
