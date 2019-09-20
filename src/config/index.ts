@@ -2,45 +2,37 @@ import dotenv from 'dotenv';
 import { resolve } from 'path';
 import { runtimeEnvTest } from '../utils/runtimetests';
 
-type APP_STAGE = 'development' | 'production';
-type LOGGER = 'File' | 'Console';
-
-const getConfig = (env: string | undefined) => {
-  const CONFIG = {
-    DEBUG: false,
-    LOGGING: 'Console'
-  };
+const CONFIG = ((env = process.env.NODE_ENV) => {
   if (env == 'production') {
-    // prod CONFIG
     return {
-      ...CONFIG,
+      DEBUG: false,
+      LOGGING: 'File',
       APP_ENV: 'production'
     };
-  } else {
-    return {
-      ...CONFIG,
-      DEBUG: true,
-      APP_ENV: 'development'
-    };
   }
-};
+  return {
+    DEBUG: true,
+    LOGGING: 'Console',
+    APP_ENV: 'development'
+  };
+})();
 
-const CONFIG = getConfig(process.env.NODE_ENV);
 dotenv.config({
-  path: resolve(__dirname, process.env.NODE_ENV === 'production' ? '../../.env.production' : '../../.env')
+  path: resolve(__dirname, CONFIG.APP_ENV === 'production' ? '../../.env.production' : '../../.env')
 });
 
-const requiredEnvVars = [
-  'NODE_ENV',
-  'APP_SECRET',
-  'PORT',
-  'PRISMA_ENDPOINT',
-  'PRISMA_SECRET',
-  'PRISMA_MANAGEMENT_API_SECRET'
-];
-// ENV_VARS contains all the vars needed in the app
-const ENV_VARS: { [key: string]: string } = {};
-requiredEnvVars.forEach((item: string) => (ENV_VARS[item] = process.env[item] || ''));
+const ENV_VARS = {
+  NODE_ENV: '',
+  APP_SECRET: '',
+  PORT: '',
+  PRISMA_ENDPOINT: '',
+  PRISMA_SECRET: '',
+  PRISMA_MANAGEMENT_API_SECRET: ''
+};
+
+Object.keys(ENV_VARS).forEach((key: string) => {
+  ENV_VARS[key] = process.env[key] || '';
+});
 
 runtimeEnvTest(ENV_VARS);
 

@@ -6,7 +6,6 @@ import { logger, applyMiddleware, applyRoutes } from './utils';
 import { GraphQLServer } from 'graphql-yoga'
 import { Prisma } from './generated/prisma-client'
 import { resolvers } from './resolvers'
-const { PORT = 3000 } = CONFIG.ENV_VARS;
 
 process.on('uncaughtException', e => {
   console.log(e);
@@ -20,7 +19,7 @@ process.on('unhandledRejection', e => {
 
 
 const db = new Prisma({
-  endpoint: "http://localhost:4466",
+  endpoint: CONFIG.ENV_VARS.PRISMA_ENDPOINT,
   secret: "mysecret123",
   debug: true,
 })
@@ -33,18 +32,18 @@ export const server = new GraphQLServer({
 
 // graphql setup
 export const options = {
-  port: PORT,
+  port: CONFIG.ENV_VARS.PORT || 3000,
   endpoint: '/graphql',
   subscriptions: '/subscriptions',
   playground: '/playground',
-  debug: false
+  debug: CONFIG.DEBUG
 };
 
 applyMiddleware(middleware, server.express);
 applyRoutes(routes, server.express);
 
 server.start(options, () => {
-  logger.info(`🚀  Server is running  ${JSON.stringify(server.options, null, 4)}`);
+  logger.info(`🚀  Server is running on PORT:${CONFIG.ENV_VARS.PORT}`);
 });
 
 applyMiddleware(errorHandlers, server.express);
