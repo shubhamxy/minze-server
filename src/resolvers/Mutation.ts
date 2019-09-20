@@ -1,9 +1,7 @@
-import * as bcrypt from 'bcryptjs'
 import * as jwt from 'jsonwebtoken'
 import { MutationResolvers } from '../generated/resolvers'
 import { getUserId } from '../utils'
 import { TypeMap } from './types/TypeMap'
-import config from '../config'
 import { admin } from '../services/firebase';
 
 export interface MutationParent {}
@@ -44,7 +42,7 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
       token,
     }
   },
-  addPaymentMethod: (parent, args) => {
+  addPaymentMethod: () => {
     throw new Error('Resolver not implemented')
   },
   book: async (_parent, args, ctx) => {
@@ -74,7 +72,7 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
       where: {
         startDate_gte: args.checkIn,
         startDate_lte: args.checkOut,
-        place: { id: args.placeId },
+        restaurant: { id: args.restaurantId },
       },
     })
 
@@ -82,17 +80,10 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
       throw new Error(`The requested time is not free.`)
     }
 
-    // const days = daysBetween(new Date(args.checkIn), new Date(args.checkOut))
 
-    const pricing = await ctx.db.place({ id: args.placeId }).pricing()
-
-    if (!pricing) {
-      throw new Error(`No such place/pricing found`)
-    }
-
-    // const placePrice = days * pricing.perNight
-    // const totalPrice = placePrice * 1.2
-    // const serviceFee = placePrice * 0.2
+    // const restaurantPrice = days * pricing.perNight
+    // const totalPrice = restaurantPrice * 1.2
+    // const serviceFee = restaurantPrice * 0.2
 
     // TODO implement real stripe
     // await payWithStripe()
@@ -101,7 +92,7 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
       startDate: args.checkIn,
       endDate: args.checkOut,
       bookee: { connect: { id: userId } },
-      place: { connect: { id: args.placeId } },
+      restaurant: { connect: { id: args.restaurantId } },
     })
 
     return { success: true }

@@ -5,19 +5,10 @@ import { makePrismaBindingClass, BasePrismaOptions } from 'prisma-binding'
 
 export interface Query {
     users: <T = Array<User | null>>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    places: <T = Array<Place | null>>(args: { where?: PlaceWhereInput | null, orderBy?: PlaceOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    pricings: <T = Array<Pricing | null>>(args: { where?: PricingWhereInput | null, orderBy?: PricingOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    guestRequirementses: <T = Array<GuestRequirements | null>>(args: { where?: GuestRequirementsWhereInput | null, orderBy?: GuestRequirementsOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    policieses: <T = Array<Policies | null>>(args: { where?: PoliciesWhereInput | null, orderBy?: PoliciesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    viewses: <T = Array<Views | null>>(args: { where?: ViewsWhereInput | null, orderBy?: ViewsOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    locations: <T = Array<Location | null>>(args: { where?: LocationWhereInput | null, orderBy?: LocationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     neighbourhoods: <T = Array<Neighbourhood | null>>(args: { where?: NeighbourhoodWhereInput | null, orderBy?: NeighbourhoodOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     cities: <T = Array<City | null>>(args: { where?: CityWhereInput | null, orderBy?: CityOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     experiences: <T = Array<Experience | null>>(args: { where?: ExperienceWhereInput | null, orderBy?: ExperienceOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     experienceCategories: <T = Array<ExperienceCategory | null>>(args: { where?: ExperienceCategoryWhereInput | null, orderBy?: ExperienceCategoryOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    amenitieses: <T = Array<Amenities | null>>(args: { where?: AmenitiesWhereInput | null, orderBy?: AmenitiesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    reviews: <T = Array<Review | null>>(args: { where?: ReviewWhereInput | null, orderBy?: ReviewOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    orders: <T = Array<Order | null>>(args: { where?: OrderWhereInput | null, orderBy?: OrderOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     payments: <T = Array<Payment | null>>(args: { where?: PaymentWhereInput | null, orderBy?: PaymentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     paypalInformations: <T = Array<PaypalInformation | null>>(args: { where?: PaypalInformationWhereInput | null, orderBy?: PaypalInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     paytmInformations: <T = Array<PaytmInformation | null>>(args: { where?: PaytmInformationWhereInput | null, orderBy?: PaytmInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -26,23 +17,19 @@ export interface Query {
     messages: <T = Array<Message | null>>(args: { where?: MessageWhereInput | null, orderBy?: MessageOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     notifications: <T = Array<Notification | null>>(args: { where?: NotificationWhereInput | null, orderBy?: NotificationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     restaurants: <T = Array<Restaurant | null>>(args: { where?: RestaurantWhereInput | null, orderBy?: RestaurantOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    houseRuleses: <T = Array<HouseRules | null>>(args: { where?: HouseRulesWhereInput | null, orderBy?: HouseRulesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    menuItems: <T = Array<MenuItem | null>>(args: { where?: MenuItemWhereInput | null, orderBy?: MenuItemOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     paymentAccounts: <T = Array<PaymentAccount | null>>(args: { where?: PaymentAccountWhereInput | null, orderBy?: PaymentAccountOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    policieses: <T = Array<Policies | null>>(args: { where?: PoliciesWhereInput | null, orderBy?: PoliciesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    locations: <T = Array<Location | null>>(args: { where?: LocationWhereInput | null, orderBy?: LocationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    reviews: <T = Array<Review | null>>(args: { where?: ReviewWhereInput | null, orderBy?: ReviewOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    orders: <T = Array<Order | null>>(args: { where?: OrderWhereInput | null, orderBy?: OrderOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    pricings: <T = Array<Pricing | null>>(args: { where?: PricingWhereInput | null, orderBy?: PricingOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     pictures: <T = Array<Picture | null>>(args: { where?: PictureWhereInput | null, orderBy?: PictureOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     user: <T = User | null>(args: { where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    place: <T = Place | null>(args: { where: PlaceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    pricing: <T = Pricing | null>(args: { where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    guestRequirements: <T = GuestRequirements | null>(args: { where: GuestRequirementsWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    policies: <T = Policies | null>(args: { where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    views: <T = Views | null>(args: { where: ViewsWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    location: <T = Location | null>(args: { where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     neighbourhood: <T = Neighbourhood | null>(args: { where: NeighbourhoodWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     city: <T = City | null>(args: { where: CityWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     experience: <T = Experience | null>(args: { where: ExperienceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     experienceCategory: <T = ExperienceCategory | null>(args: { where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    amenities: <T = Amenities | null>(args: { where: AmenitiesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    review: <T = Review | null>(args: { where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    order: <T = Order | null>(args: { where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     payment: <T = Payment | null>(args: { where: PaymentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     paypalInformation: <T = PaypalInformation | null>(args: { where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     paytmInformation: <T = PaytmInformation | null>(args: { where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
@@ -51,23 +38,19 @@ export interface Query {
     message: <T = Message | null>(args: { where: MessageWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     notification: <T = Notification | null>(args: { where: NotificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     restaurant: <T = Restaurant | null>(args: { where: RestaurantWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    houseRules: <T = HouseRules | null>(args: { where: HouseRulesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    menuItem: <T = MenuItem | null>(args: { where: MenuItemWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     paymentAccount: <T = PaymentAccount | null>(args: { where: PaymentAccountWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    policies: <T = Policies | null>(args: { where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    location: <T = Location | null>(args: { where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    review: <T = Review | null>(args: { where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    order: <T = Order | null>(args: { where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    pricing: <T = Pricing | null>(args: { where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     picture: <T = Picture | null>(args: { where: PictureWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     usersConnection: <T = UserConnection>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    placesConnection: <T = PlaceConnection>(args: { where?: PlaceWhereInput | null, orderBy?: PlaceOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    pricingsConnection: <T = PricingConnection>(args: { where?: PricingWhereInput | null, orderBy?: PricingOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    guestRequirementsesConnection: <T = GuestRequirementsConnection>(args: { where?: GuestRequirementsWhereInput | null, orderBy?: GuestRequirementsOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    policiesesConnection: <T = PoliciesConnection>(args: { where?: PoliciesWhereInput | null, orderBy?: PoliciesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    viewsesConnection: <T = ViewsConnection>(args: { where?: ViewsWhereInput | null, orderBy?: ViewsOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    locationsConnection: <T = LocationConnection>(args: { where?: LocationWhereInput | null, orderBy?: LocationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     neighbourhoodsConnection: <T = NeighbourhoodConnection>(args: { where?: NeighbourhoodWhereInput | null, orderBy?: NeighbourhoodOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     citiesConnection: <T = CityConnection>(args: { where?: CityWhereInput | null, orderBy?: CityOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     experiencesConnection: <T = ExperienceConnection>(args: { where?: ExperienceWhereInput | null, orderBy?: ExperienceOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     experienceCategoriesConnection: <T = ExperienceCategoryConnection>(args: { where?: ExperienceCategoryWhereInput | null, orderBy?: ExperienceCategoryOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    amenitiesesConnection: <T = AmenitiesConnection>(args: { where?: AmenitiesWhereInput | null, orderBy?: AmenitiesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    reviewsConnection: <T = ReviewConnection>(args: { where?: ReviewWhereInput | null, orderBy?: ReviewOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    ordersConnection: <T = OrderConnection>(args: { where?: OrderWhereInput | null, orderBy?: OrderOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     paymentsConnection: <T = PaymentConnection>(args: { where?: PaymentWhereInput | null, orderBy?: PaymentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     paypalInformationsConnection: <T = PaypalInformationConnection>(args: { where?: PaypalInformationWhereInput | null, orderBy?: PaypalInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     paytmInformationsConnection: <T = PaytmInformationConnection>(args: { where?: PaytmInformationWhereInput | null, orderBy?: PaytmInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -76,27 +59,23 @@ export interface Query {
     messagesConnection: <T = MessageConnection>(args: { where?: MessageWhereInput | null, orderBy?: MessageOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     notificationsConnection: <T = NotificationConnection>(args: { where?: NotificationWhereInput | null, orderBy?: NotificationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     restaurantsConnection: <T = RestaurantConnection>(args: { where?: RestaurantWhereInput | null, orderBy?: RestaurantOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    houseRulesesConnection: <T = HouseRulesConnection>(args: { where?: HouseRulesWhereInput | null, orderBy?: HouseRulesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    menuItemsConnection: <T = MenuItemConnection>(args: { where?: MenuItemWhereInput | null, orderBy?: MenuItemOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     paymentAccountsConnection: <T = PaymentAccountConnection>(args: { where?: PaymentAccountWhereInput | null, orderBy?: PaymentAccountOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    policiesesConnection: <T = PoliciesConnection>(args: { where?: PoliciesWhereInput | null, orderBy?: PoliciesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    locationsConnection: <T = LocationConnection>(args: { where?: LocationWhereInput | null, orderBy?: LocationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    reviewsConnection: <T = ReviewConnection>(args: { where?: ReviewWhereInput | null, orderBy?: ReviewOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    ordersConnection: <T = OrderConnection>(args: { where?: OrderWhereInput | null, orderBy?: OrderOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    pricingsConnection: <T = PricingConnection>(args: { where?: PricingWhereInput | null, orderBy?: PricingOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     picturesConnection: <T = PictureConnection>(args: { where?: PictureWhereInput | null, orderBy?: PictureOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     node: <T = Node | null>(args: { id: ID_Output }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> 
   }
 
 export interface Mutation {
     createUser: <T = User>(args: { data: UserCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createPlace: <T = Place>(args: { data: PlaceCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createPricing: <T = Pricing>(args: { data: PricingCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createGuestRequirements: <T = GuestRequirements>(args: { data: GuestRequirementsCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createPolicies: <T = Policies>(args: { data: PoliciesCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createViews: <T = Views>(args: { data: ViewsCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createLocation: <T = Location>(args: { data: LocationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createNeighbourhood: <T = Neighbourhood>(args: { data: NeighbourhoodCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createCity: <T = City>(args: { data: CityCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createExperience: <T = Experience>(args: { data: ExperienceCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createExperienceCategory: <T = ExperienceCategory>(args: { data: ExperienceCategoryCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createAmenities: <T = Amenities>(args: { data: AmenitiesCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createReview: <T = Review>(args: { data: ReviewCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createOrder: <T = Order>(args: { data: OrderCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPayment: <T = Payment>(args: { data: PaymentCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPaypalInformation: <T = PaypalInformation>(args: { data: PaypalInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPaytmInformation: <T = PaytmInformation>(args: { data: PaytmInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -105,23 +84,19 @@ export interface Mutation {
     createMessage: <T = Message>(args: { data: MessageCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createNotification: <T = Notification>(args: { data: NotificationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createRestaurant: <T = Restaurant>(args: { data: RestaurantCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createHouseRules: <T = HouseRules>(args: { data: HouseRulesCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createMenuItem: <T = MenuItem>(args: { data: MenuItemCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPaymentAccount: <T = PaymentAccount>(args: { data: PaymentAccountCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPolicies: <T = Policies>(args: { data: PoliciesCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createLocation: <T = Location>(args: { data: LocationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createReview: <T = Review>(args: { data: ReviewCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createOrder: <T = Order>(args: { data: OrderCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPricing: <T = Pricing>(args: { data: PricingCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPicture: <T = Picture>(args: { data: PictureCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateUser: <T = User | null>(args: { data: UserUpdateInput, where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePlace: <T = Place | null>(args: { data: PlaceUpdateInput, where: PlaceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePricing: <T = Pricing | null>(args: { data: PricingUpdateInput, where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateGuestRequirements: <T = GuestRequirements | null>(args: { data: GuestRequirementsUpdateInput, where: GuestRequirementsWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePolicies: <T = Policies | null>(args: { data: PoliciesUpdateInput, where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateViews: <T = Views | null>(args: { data: ViewsUpdateInput, where: ViewsWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateLocation: <T = Location | null>(args: { data: LocationUpdateInput, where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateNeighbourhood: <T = Neighbourhood | null>(args: { data: NeighbourhoodUpdateInput, where: NeighbourhoodWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateCity: <T = City | null>(args: { data: CityUpdateInput, where: CityWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateExperience: <T = Experience | null>(args: { data: ExperienceUpdateInput, where: ExperienceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateExperienceCategory: <T = ExperienceCategory | null>(args: { data: ExperienceCategoryUpdateInput, where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateAmenities: <T = Amenities | null>(args: { data: AmenitiesUpdateInput, where: AmenitiesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateReview: <T = Review | null>(args: { data: ReviewUpdateInput, where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateOrder: <T = Order | null>(args: { data: OrderUpdateInput, where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePayment: <T = Payment | null>(args: { data: PaymentUpdateInput, where: PaymentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePaypalInformation: <T = PaypalInformation | null>(args: { data: PaypalInformationUpdateInput, where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePaytmInformation: <T = PaytmInformation | null>(args: { data: PaytmInformationUpdateInput, where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
@@ -130,23 +105,19 @@ export interface Mutation {
     updateMessage: <T = Message | null>(args: { data: MessageUpdateInput, where: MessageWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateNotification: <T = Notification | null>(args: { data: NotificationUpdateInput, where: NotificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateRestaurant: <T = Restaurant | null>(args: { data: RestaurantUpdateInput, where: RestaurantWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateHouseRules: <T = HouseRules | null>(args: { data: HouseRulesUpdateInput, where: HouseRulesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateMenuItem: <T = MenuItem | null>(args: { data: MenuItemUpdateInput, where: MenuItemWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePaymentAccount: <T = PaymentAccount | null>(args: { data: PaymentAccountUpdateInput, where: PaymentAccountWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePolicies: <T = Policies | null>(args: { data: PoliciesUpdateInput, where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateLocation: <T = Location | null>(args: { data: LocationUpdateInput, where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateReview: <T = Review | null>(args: { data: ReviewUpdateInput, where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateOrder: <T = Order | null>(args: { data: OrderUpdateInput, where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePricing: <T = Pricing | null>(args: { data: PricingUpdateInput, where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePicture: <T = Picture | null>(args: { data: PictureUpdateInput, where: PictureWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteUser: <T = User | null>(args: { where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePlace: <T = Place | null>(args: { where: PlaceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePricing: <T = Pricing | null>(args: { where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteGuestRequirements: <T = GuestRequirements | null>(args: { where: GuestRequirementsWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePolicies: <T = Policies | null>(args: { where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteViews: <T = Views | null>(args: { where: ViewsWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteLocation: <T = Location | null>(args: { where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteNeighbourhood: <T = Neighbourhood | null>(args: { where: NeighbourhoodWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteCity: <T = City | null>(args: { where: CityWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteExperience: <T = Experience | null>(args: { where: ExperienceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteExperienceCategory: <T = ExperienceCategory | null>(args: { where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteAmenities: <T = Amenities | null>(args: { where: AmenitiesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteReview: <T = Review | null>(args: { where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteOrder: <T = Order | null>(args: { where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePayment: <T = Payment | null>(args: { where: PaymentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePaypalInformation: <T = PaypalInformation | null>(args: { where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePaytmInformation: <T = PaytmInformation | null>(args: { where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
@@ -155,23 +126,19 @@ export interface Mutation {
     deleteMessage: <T = Message | null>(args: { where: MessageWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteNotification: <T = Notification | null>(args: { where: NotificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteRestaurant: <T = Restaurant | null>(args: { where: RestaurantWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteHouseRules: <T = HouseRules | null>(args: { where: HouseRulesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteMenuItem: <T = MenuItem | null>(args: { where: MenuItemWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePaymentAccount: <T = PaymentAccount | null>(args: { where: PaymentAccountWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePolicies: <T = Policies | null>(args: { where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteLocation: <T = Location | null>(args: { where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteReview: <T = Review | null>(args: { where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteOrder: <T = Order | null>(args: { where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePricing: <T = Pricing | null>(args: { where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePicture: <T = Picture | null>(args: { where: PictureWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     upsertUser: <T = User>(args: { where: UserWhereUniqueInput, create: UserCreateInput, update: UserUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertPlace: <T = Place>(args: { where: PlaceWhereUniqueInput, create: PlaceCreateInput, update: PlaceUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertPricing: <T = Pricing>(args: { where: PricingWhereUniqueInput, create: PricingCreateInput, update: PricingUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertGuestRequirements: <T = GuestRequirements>(args: { where: GuestRequirementsWhereUniqueInput, create: GuestRequirementsCreateInput, update: GuestRequirementsUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertPolicies: <T = Policies>(args: { where: PoliciesWhereUniqueInput, create: PoliciesCreateInput, update: PoliciesUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertViews: <T = Views>(args: { where: ViewsWhereUniqueInput, create: ViewsCreateInput, update: ViewsUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertLocation: <T = Location>(args: { where: LocationWhereUniqueInput, create: LocationCreateInput, update: LocationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertNeighbourhood: <T = Neighbourhood>(args: { where: NeighbourhoodWhereUniqueInput, create: NeighbourhoodCreateInput, update: NeighbourhoodUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertCity: <T = City>(args: { where: CityWhereUniqueInput, create: CityCreateInput, update: CityUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertExperience: <T = Experience>(args: { where: ExperienceWhereUniqueInput, create: ExperienceCreateInput, update: ExperienceUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertExperienceCategory: <T = ExperienceCategory>(args: { where: ExperienceCategoryWhereUniqueInput, create: ExperienceCategoryCreateInput, update: ExperienceCategoryUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertAmenities: <T = Amenities>(args: { where: AmenitiesWhereUniqueInput, create: AmenitiesCreateInput, update: AmenitiesUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertReview: <T = Review>(args: { where: ReviewWhereUniqueInput, create: ReviewCreateInput, update: ReviewUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertOrder: <T = Order>(args: { where: OrderWhereUniqueInput, create: OrderCreateInput, update: OrderUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPayment: <T = Payment>(args: { where: PaymentWhereUniqueInput, create: PaymentCreateInput, update: PaymentUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPaypalInformation: <T = PaypalInformation>(args: { where: PaypalInformationWhereUniqueInput, create: PaypalInformationCreateInput, update: PaypalInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPaytmInformation: <T = PaytmInformation>(args: { where: PaytmInformationWhereUniqueInput, create: PaytmInformationCreateInput, update: PaytmInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -180,23 +147,19 @@ export interface Mutation {
     upsertMessage: <T = Message>(args: { where: MessageWhereUniqueInput, create: MessageCreateInput, update: MessageUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertNotification: <T = Notification>(args: { where: NotificationWhereUniqueInput, create: NotificationCreateInput, update: NotificationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertRestaurant: <T = Restaurant>(args: { where: RestaurantWhereUniqueInput, create: RestaurantCreateInput, update: RestaurantUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertHouseRules: <T = HouseRules>(args: { where: HouseRulesWhereUniqueInput, create: HouseRulesCreateInput, update: HouseRulesUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertMenuItem: <T = MenuItem>(args: { where: MenuItemWhereUniqueInput, create: MenuItemCreateInput, update: MenuItemUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPaymentAccount: <T = PaymentAccount>(args: { where: PaymentAccountWhereUniqueInput, create: PaymentAccountCreateInput, update: PaymentAccountUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPolicies: <T = Policies>(args: { where: PoliciesWhereUniqueInput, create: PoliciesCreateInput, update: PoliciesUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertLocation: <T = Location>(args: { where: LocationWhereUniqueInput, create: LocationCreateInput, update: LocationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertReview: <T = Review>(args: { where: ReviewWhereUniqueInput, create: ReviewCreateInput, update: ReviewUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertOrder: <T = Order>(args: { where: OrderWhereUniqueInput, create: OrderCreateInput, update: OrderUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPricing: <T = Pricing>(args: { where: PricingWhereUniqueInput, create: PricingCreateInput, update: PricingUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPicture: <T = Picture>(args: { where: PictureWhereUniqueInput, create: PictureCreateInput, update: PictureUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyUsers: <T = BatchPayload>(args: { data: UserUpdateManyMutationInput, where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyPlaces: <T = BatchPayload>(args: { data: PlaceUpdateManyMutationInput, where?: PlaceWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyPricings: <T = BatchPayload>(args: { data: PricingUpdateManyMutationInput, where?: PricingWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyGuestRequirementses: <T = BatchPayload>(args: { data: GuestRequirementsUpdateManyMutationInput, where?: GuestRequirementsWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyPolicieses: <T = BatchPayload>(args: { data: PoliciesUpdateManyMutationInput, where?: PoliciesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyViewses: <T = BatchPayload>(args: { data: ViewsUpdateManyMutationInput, where?: ViewsWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyLocations: <T = BatchPayload>(args: { data: LocationUpdateManyMutationInput, where?: LocationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyNeighbourhoods: <T = BatchPayload>(args: { data: NeighbourhoodUpdateManyMutationInput, where?: NeighbourhoodWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCities: <T = BatchPayload>(args: { data: CityUpdateManyMutationInput, where?: CityWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyExperiences: <T = BatchPayload>(args: { data: ExperienceUpdateManyMutationInput, where?: ExperienceWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyExperienceCategories: <T = BatchPayload>(args: { data: ExperienceCategoryUpdateManyMutationInput, where?: ExperienceCategoryWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyAmenitieses: <T = BatchPayload>(args: { data: AmenitiesUpdateManyMutationInput, where?: AmenitiesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyReviews: <T = BatchPayload>(args: { data: ReviewUpdateManyMutationInput, where?: ReviewWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyOrders: <T = BatchPayload>(args: { data: OrderUpdateManyMutationInput, where?: OrderWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPayments: <T = BatchPayload>(args: { data: PaymentUpdateManyMutationInput, where?: PaymentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPaypalInformations: <T = BatchPayload>(args: { data: PaypalInformationUpdateManyMutationInput, where?: PaypalInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPaytmInformations: <T = BatchPayload>(args: { data: PaytmInformationUpdateManyMutationInput, where?: PaytmInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -205,23 +168,19 @@ export interface Mutation {
     updateManyMessages: <T = BatchPayload>(args: { data: MessageUpdateManyMutationInput, where?: MessageWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyNotifications: <T = BatchPayload>(args: { data: NotificationUpdateManyMutationInput, where?: NotificationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyRestaurants: <T = BatchPayload>(args: { data: RestaurantUpdateManyMutationInput, where?: RestaurantWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyHouseRuleses: <T = BatchPayload>(args: { data: HouseRulesUpdateManyMutationInput, where?: HouseRulesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyMenuItems: <T = BatchPayload>(args: { data: MenuItemUpdateManyMutationInput, where?: MenuItemWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPaymentAccounts: <T = BatchPayload>(args: { data: PaymentAccountUpdateManyMutationInput, where?: PaymentAccountWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPolicieses: <T = BatchPayload>(args: { data: PoliciesUpdateManyMutationInput, where?: PoliciesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyLocations: <T = BatchPayload>(args: { data: LocationUpdateManyMutationInput, where?: LocationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyReviews: <T = BatchPayload>(args: { data: ReviewUpdateManyMutationInput, where?: ReviewWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyOrders: <T = BatchPayload>(args: { data: OrderUpdateManyMutationInput, where?: OrderWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPricings: <T = BatchPayload>(args: { data: PricingUpdateManyMutationInput, where?: PricingWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPictures: <T = BatchPayload>(args: { data: PictureUpdateManyMutationInput, where?: PictureWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyUsers: <T = BatchPayload>(args: { where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyPlaces: <T = BatchPayload>(args: { where?: PlaceWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyPricings: <T = BatchPayload>(args: { where?: PricingWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyGuestRequirementses: <T = BatchPayload>(args: { where?: GuestRequirementsWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyPolicieses: <T = BatchPayload>(args: { where?: PoliciesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyViewses: <T = BatchPayload>(args: { where?: ViewsWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyLocations: <T = BatchPayload>(args: { where?: LocationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyNeighbourhoods: <T = BatchPayload>(args: { where?: NeighbourhoodWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyCities: <T = BatchPayload>(args: { where?: CityWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyExperiences: <T = BatchPayload>(args: { where?: ExperienceWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyExperienceCategories: <T = BatchPayload>(args: { where?: ExperienceCategoryWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyAmenitieses: <T = BatchPayload>(args: { where?: AmenitiesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyReviews: <T = BatchPayload>(args: { where?: ReviewWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyOrders: <T = BatchPayload>(args: { where?: OrderWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPayments: <T = BatchPayload>(args: { where?: PaymentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPaypalInformations: <T = BatchPayload>(args: { where?: PaypalInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPaytmInformations: <T = BatchPayload>(args: { where?: PaytmInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
@@ -230,26 +189,22 @@ export interface Mutation {
     deleteManyMessages: <T = BatchPayload>(args: { where?: MessageWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyNotifications: <T = BatchPayload>(args: { where?: NotificationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyRestaurants: <T = BatchPayload>(args: { where?: RestaurantWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyHouseRuleses: <T = BatchPayload>(args: { where?: HouseRulesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyMenuItems: <T = BatchPayload>(args: { where?: MenuItemWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPaymentAccounts: <T = BatchPayload>(args: { where?: PaymentAccountWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPolicieses: <T = BatchPayload>(args: { where?: PoliciesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyLocations: <T = BatchPayload>(args: { where?: LocationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyReviews: <T = BatchPayload>(args: { where?: ReviewWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyOrders: <T = BatchPayload>(args: { where?: OrderWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPricings: <T = BatchPayload>(args: { where?: PricingWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPictures: <T = BatchPayload>(args: { where?: PictureWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> 
   }
 
 export interface Subscription {
     user: <T = UserSubscriptionPayload | null>(args: { where?: UserSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    place: <T = PlaceSubscriptionPayload | null>(args: { where?: PlaceSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    pricing: <T = PricingSubscriptionPayload | null>(args: { where?: PricingSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    guestRequirements: <T = GuestRequirementsSubscriptionPayload | null>(args: { where?: GuestRequirementsSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    policies: <T = PoliciesSubscriptionPayload | null>(args: { where?: PoliciesSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    views: <T = ViewsSubscriptionPayload | null>(args: { where?: ViewsSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    location: <T = LocationSubscriptionPayload | null>(args: { where?: LocationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     neighbourhood: <T = NeighbourhoodSubscriptionPayload | null>(args: { where?: NeighbourhoodSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     city: <T = CitySubscriptionPayload | null>(args: { where?: CitySubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     experience: <T = ExperienceSubscriptionPayload | null>(args: { where?: ExperienceSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     experienceCategory: <T = ExperienceCategorySubscriptionPayload | null>(args: { where?: ExperienceCategorySubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    amenities: <T = AmenitiesSubscriptionPayload | null>(args: { where?: AmenitiesSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    review: <T = ReviewSubscriptionPayload | null>(args: { where?: ReviewSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    order: <T = OrderSubscriptionPayload | null>(args: { where?: OrderSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     payment: <T = PaymentSubscriptionPayload | null>(args: { where?: PaymentSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     paypalInformation: <T = PaypalInformationSubscriptionPayload | null>(args: { where?: PaypalInformationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     paytmInformation: <T = PaytmInformationSubscriptionPayload | null>(args: { where?: PaytmInformationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
@@ -258,26 +213,22 @@ export interface Subscription {
     message: <T = MessageSubscriptionPayload | null>(args: { where?: MessageSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     notification: <T = NotificationSubscriptionPayload | null>(args: { where?: NotificationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     restaurant: <T = RestaurantSubscriptionPayload | null>(args: { where?: RestaurantSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    houseRules: <T = HouseRulesSubscriptionPayload | null>(args: { where?: HouseRulesSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    menuItem: <T = MenuItemSubscriptionPayload | null>(args: { where?: MenuItemSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     paymentAccount: <T = PaymentAccountSubscriptionPayload | null>(args: { where?: PaymentAccountSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    policies: <T = PoliciesSubscriptionPayload | null>(args: { where?: PoliciesSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    location: <T = LocationSubscriptionPayload | null>(args: { where?: LocationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    review: <T = ReviewSubscriptionPayload | null>(args: { where?: ReviewSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    order: <T = OrderSubscriptionPayload | null>(args: { where?: OrderSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    pricing: <T = PricingSubscriptionPayload | null>(args: { where?: PricingSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     picture: <T = PictureSubscriptionPayload | null>(args: { where?: PictureSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> 
   }
 
 export interface Exists {
   User: (where?: UserWhereInput) => Promise<boolean>
-  Place: (where?: PlaceWhereInput) => Promise<boolean>
-  Pricing: (where?: PricingWhereInput) => Promise<boolean>
-  GuestRequirements: (where?: GuestRequirementsWhereInput) => Promise<boolean>
-  Policies: (where?: PoliciesWhereInput) => Promise<boolean>
-  Views: (where?: ViewsWhereInput) => Promise<boolean>
-  Location: (where?: LocationWhereInput) => Promise<boolean>
   Neighbourhood: (where?: NeighbourhoodWhereInput) => Promise<boolean>
   City: (where?: CityWhereInput) => Promise<boolean>
   Experience: (where?: ExperienceWhereInput) => Promise<boolean>
   ExperienceCategory: (where?: ExperienceCategoryWhereInput) => Promise<boolean>
-  Amenities: (where?: AmenitiesWhereInput) => Promise<boolean>
-  Review: (where?: ReviewWhereInput) => Promise<boolean>
-  Order: (where?: OrderWhereInput) => Promise<boolean>
   Payment: (where?: PaymentWhereInput) => Promise<boolean>
   PaypalInformation: (where?: PaypalInformationWhereInput) => Promise<boolean>
   PaytmInformation: (where?: PaytmInformationWhereInput) => Promise<boolean>
@@ -286,8 +237,13 @@ export interface Exists {
   Message: (where?: MessageWhereInput) => Promise<boolean>
   Notification: (where?: NotificationWhereInput) => Promise<boolean>
   Restaurant: (where?: RestaurantWhereInput) => Promise<boolean>
-  HouseRules: (where?: HouseRulesWhereInput) => Promise<boolean>
+  MenuItem: (where?: MenuItemWhereInput) => Promise<boolean>
   PaymentAccount: (where?: PaymentAccountWhereInput) => Promise<boolean>
+  Policies: (where?: PoliciesWhereInput) => Promise<boolean>
+  Location: (where?: LocationWhereInput) => Promise<boolean>
+  Review: (where?: ReviewWhereInput) => Promise<boolean>
+  Order: (where?: OrderWhereInput) => Promise<boolean>
+  Pricing: (where?: PricingWhereInput) => Promise<boolean>
   Picture: (where?: PictureWhereInput) => Promise<boolean>
 }
 
@@ -313,11 +269,7 @@ export interface BindingConstructor<T> {
  * Type Defs
 */
 
-const typeDefs = `type AggregateAmenities {
-  count: Int!
-}
-
-type AggregateCity {
+const typeDefs = `type AggregateCity {
   count: Int!
 }
 
@@ -337,15 +289,11 @@ type AggregateExperienceCategory {
   count: Int!
 }
 
-type AggregateGuestRequirements {
-  count: Int!
-}
-
-type AggregateHouseRules {
-  count: Int!
-}
-
 type AggregateLocation {
+  count: Int!
+}
+
+type AggregateMenuItem {
   count: Int!
 }
 
@@ -385,10 +333,6 @@ type AggregatePicture {
   count: Int!
 }
 
-type AggregatePlace {
-  count: Int!
-}
-
 type AggregatePolicies {
   count: Int!
 }
@@ -407,694 +351,6 @@ type AggregateReview {
 
 type AggregateUser {
   count: Int!
-}
-
-type AggregateViews {
-  count: Int!
-}
-
-type Amenities implements Node {
-  id: ID!
-  place: Place!
-  elevator: Boolean!
-  petsAllowed: Boolean!
-  internet: Boolean!
-  kitchen: Boolean!
-  wirelessInternet: Boolean!
-  familyKidFriendly: Boolean!
-  freeParkingOnPremises: Boolean!
-  hotTub: Boolean!
-  pool: Boolean!
-  smokingAllowed: Boolean!
-  wheelchairAccessible: Boolean!
-  breakfast: Boolean!
-  cableTv: Boolean!
-  suitableForEvents: Boolean!
-  dryer: Boolean!
-  washer: Boolean!
-  indoorFireplace: Boolean!
-  tv: Boolean!
-  heating: Boolean!
-  hangers: Boolean!
-  iron: Boolean!
-  hairDryer: Boolean!
-  doorman: Boolean!
-  paidParkingOffPremises: Boolean!
-  freeParkingOnStreet: Boolean!
-  gym: Boolean!
-  airConditioning: Boolean!
-  shampoo: Boolean!
-  essentials: Boolean!
-  laptopFriendlyWorkspace: Boolean!
-  privateEntrance: Boolean!
-  buzzerWirelessIntercom: Boolean!
-  babyBath: Boolean!
-  babyMonitor: Boolean!
-  babysitterRecommendations: Boolean!
-  bathtub: Boolean!
-  changingTable: Boolean!
-  childrensBooksAndToys: Boolean!
-  childrensDinnerware: Boolean!
-  crib: Boolean!
-}
-
-"""A connection to a list of items."""
-type AmenitiesConnection {
-  """Information to aid in pagination."""
-  pageInfo: PageInfo!
-
-  """A list of edges."""
-  edges: [AmenitiesEdge]!
-  aggregate: AggregateAmenities!
-}
-
-input AmenitiesCreateInput {
-  id: ID
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-  place: PlaceCreateOneWithoutAmenitiesInput!
-}
-
-input AmenitiesCreateOneWithoutPlaceInput {
-  create: AmenitiesCreateWithoutPlaceInput
-  connect: AmenitiesWhereUniqueInput
-}
-
-input AmenitiesCreateWithoutPlaceInput {
-  id: ID
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-}
-
-"""An edge in a connection."""
-type AmenitiesEdge {
-  """The item at the end of the edge."""
-  node: Amenities!
-
-  """A cursor for use in pagination."""
-  cursor: String!
-}
-
-enum AmenitiesOrderByInput {
-  id_ASC
-  id_DESC
-  elevator_ASC
-  elevator_DESC
-  petsAllowed_ASC
-  petsAllowed_DESC
-  internet_ASC
-  internet_DESC
-  kitchen_ASC
-  kitchen_DESC
-  wirelessInternet_ASC
-  wirelessInternet_DESC
-  familyKidFriendly_ASC
-  familyKidFriendly_DESC
-  freeParkingOnPremises_ASC
-  freeParkingOnPremises_DESC
-  hotTub_ASC
-  hotTub_DESC
-  pool_ASC
-  pool_DESC
-  smokingAllowed_ASC
-  smokingAllowed_DESC
-  wheelchairAccessible_ASC
-  wheelchairAccessible_DESC
-  breakfast_ASC
-  breakfast_DESC
-  cableTv_ASC
-  cableTv_DESC
-  suitableForEvents_ASC
-  suitableForEvents_DESC
-  dryer_ASC
-  dryer_DESC
-  washer_ASC
-  washer_DESC
-  indoorFireplace_ASC
-  indoorFireplace_DESC
-  tv_ASC
-  tv_DESC
-  heating_ASC
-  heating_DESC
-  hangers_ASC
-  hangers_DESC
-  iron_ASC
-  iron_DESC
-  hairDryer_ASC
-  hairDryer_DESC
-  doorman_ASC
-  doorman_DESC
-  paidParkingOffPremises_ASC
-  paidParkingOffPremises_DESC
-  freeParkingOnStreet_ASC
-  freeParkingOnStreet_DESC
-  gym_ASC
-  gym_DESC
-  airConditioning_ASC
-  airConditioning_DESC
-  shampoo_ASC
-  shampoo_DESC
-  essentials_ASC
-  essentials_DESC
-  laptopFriendlyWorkspace_ASC
-  laptopFriendlyWorkspace_DESC
-  privateEntrance_ASC
-  privateEntrance_DESC
-  buzzerWirelessIntercom_ASC
-  buzzerWirelessIntercom_DESC
-  babyBath_ASC
-  babyBath_DESC
-  babyMonitor_ASC
-  babyMonitor_DESC
-  babysitterRecommendations_ASC
-  babysitterRecommendations_DESC
-  bathtub_ASC
-  bathtub_DESC
-  changingTable_ASC
-  changingTable_DESC
-  childrensBooksAndToys_ASC
-  childrensBooksAndToys_DESC
-  childrensDinnerware_ASC
-  childrensDinnerware_DESC
-  crib_ASC
-  crib_DESC
-}
-
-type AmenitiesPreviousValues {
-  id: ID!
-  elevator: Boolean!
-  petsAllowed: Boolean!
-  internet: Boolean!
-  kitchen: Boolean!
-  wirelessInternet: Boolean!
-  familyKidFriendly: Boolean!
-  freeParkingOnPremises: Boolean!
-  hotTub: Boolean!
-  pool: Boolean!
-  smokingAllowed: Boolean!
-  wheelchairAccessible: Boolean!
-  breakfast: Boolean!
-  cableTv: Boolean!
-  suitableForEvents: Boolean!
-  dryer: Boolean!
-  washer: Boolean!
-  indoorFireplace: Boolean!
-  tv: Boolean!
-  heating: Boolean!
-  hangers: Boolean!
-  iron: Boolean!
-  hairDryer: Boolean!
-  doorman: Boolean!
-  paidParkingOffPremises: Boolean!
-  freeParkingOnStreet: Boolean!
-  gym: Boolean!
-  airConditioning: Boolean!
-  shampoo: Boolean!
-  essentials: Boolean!
-  laptopFriendlyWorkspace: Boolean!
-  privateEntrance: Boolean!
-  buzzerWirelessIntercom: Boolean!
-  babyBath: Boolean!
-  babyMonitor: Boolean!
-  babysitterRecommendations: Boolean!
-  bathtub: Boolean!
-  changingTable: Boolean!
-  childrensBooksAndToys: Boolean!
-  childrensDinnerware: Boolean!
-  crib: Boolean!
-}
-
-type AmenitiesSubscriptionPayload {
-  mutation: MutationType!
-  node: Amenities
-  updatedFields: [String!]
-  previousValues: AmenitiesPreviousValues
-}
-
-input AmenitiesSubscriptionWhereInput {
-  """Logical AND on all given filters."""
-  AND: [AmenitiesSubscriptionWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [AmenitiesSubscriptionWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [AmenitiesSubscriptionWhereInput!]
-
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
-  mutation_in: [MutationType!]
-
-  """
-  The subscription event gets only dispatched when one of the updated fields names is included in this list
-  """
-  updatedFields_contains: String
-
-  """
-  The subscription event gets only dispatched when all of the field names included in this list have been updated
-  """
-  updatedFields_contains_every: [String!]
-
-  """
-  The subscription event gets only dispatched when some of the field names included in this list have been updated
-  """
-  updatedFields_contains_some: [String!]
-  node: AmenitiesWhereInput
-}
-
-input AmenitiesUpdateInput {
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-  place: PlaceUpdateOneRequiredWithoutAmenitiesInput
-}
-
-input AmenitiesUpdateManyMutationInput {
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-}
-
-input AmenitiesUpdateOneRequiredWithoutPlaceInput {
-  create: AmenitiesCreateWithoutPlaceInput
-  connect: AmenitiesWhereUniqueInput
-  update: AmenitiesUpdateWithoutPlaceDataInput
-  upsert: AmenitiesUpsertWithoutPlaceInput
-}
-
-input AmenitiesUpdateWithoutPlaceDataInput {
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-}
-
-input AmenitiesUpsertWithoutPlaceInput {
-  update: AmenitiesUpdateWithoutPlaceDataInput!
-  create: AmenitiesCreateWithoutPlaceInput!
-}
-
-input AmenitiesWhereInput {
-  """Logical AND on all given filters."""
-  AND: [AmenitiesWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [AmenitiesWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [AmenitiesWhereInput!]
-  id: ID
-
-  """All values that are not equal to given value."""
-  id_not: ID
-
-  """All values that are contained in given list."""
-  id_in: [ID!]
-
-  """All values that are not contained in given list."""
-  id_not_in: [ID!]
-
-  """All values less than the given value."""
-  id_lt: ID
-
-  """All values less than or equal the given value."""
-  id_lte: ID
-
-  """All values greater than the given value."""
-  id_gt: ID
-
-  """All values greater than or equal the given value."""
-  id_gte: ID
-
-  """All values containing the given string."""
-  id_contains: ID
-
-  """All values not containing the given string."""
-  id_not_contains: ID
-
-  """All values starting with the given string."""
-  id_starts_with: ID
-
-  """All values not starting with the given string."""
-  id_not_starts_with: ID
-
-  """All values ending with the given string."""
-  id_ends_with: ID
-
-  """All values not ending with the given string."""
-  id_not_ends_with: ID
-  elevator: Boolean
-
-  """All values that are not equal to given value."""
-  elevator_not: Boolean
-  petsAllowed: Boolean
-
-  """All values that are not equal to given value."""
-  petsAllowed_not: Boolean
-  internet: Boolean
-
-  """All values that are not equal to given value."""
-  internet_not: Boolean
-  kitchen: Boolean
-
-  """All values that are not equal to given value."""
-  kitchen_not: Boolean
-  wirelessInternet: Boolean
-
-  """All values that are not equal to given value."""
-  wirelessInternet_not: Boolean
-  familyKidFriendly: Boolean
-
-  """All values that are not equal to given value."""
-  familyKidFriendly_not: Boolean
-  freeParkingOnPremises: Boolean
-
-  """All values that are not equal to given value."""
-  freeParkingOnPremises_not: Boolean
-  hotTub: Boolean
-
-  """All values that are not equal to given value."""
-  hotTub_not: Boolean
-  pool: Boolean
-
-  """All values that are not equal to given value."""
-  pool_not: Boolean
-  smokingAllowed: Boolean
-
-  """All values that are not equal to given value."""
-  smokingAllowed_not: Boolean
-  wheelchairAccessible: Boolean
-
-  """All values that are not equal to given value."""
-  wheelchairAccessible_not: Boolean
-  breakfast: Boolean
-
-  """All values that are not equal to given value."""
-  breakfast_not: Boolean
-  cableTv: Boolean
-
-  """All values that are not equal to given value."""
-  cableTv_not: Boolean
-  suitableForEvents: Boolean
-
-  """All values that are not equal to given value."""
-  suitableForEvents_not: Boolean
-  dryer: Boolean
-
-  """All values that are not equal to given value."""
-  dryer_not: Boolean
-  washer: Boolean
-
-  """All values that are not equal to given value."""
-  washer_not: Boolean
-  indoorFireplace: Boolean
-
-  """All values that are not equal to given value."""
-  indoorFireplace_not: Boolean
-  tv: Boolean
-
-  """All values that are not equal to given value."""
-  tv_not: Boolean
-  heating: Boolean
-
-  """All values that are not equal to given value."""
-  heating_not: Boolean
-  hangers: Boolean
-
-  """All values that are not equal to given value."""
-  hangers_not: Boolean
-  iron: Boolean
-
-  """All values that are not equal to given value."""
-  iron_not: Boolean
-  hairDryer: Boolean
-
-  """All values that are not equal to given value."""
-  hairDryer_not: Boolean
-  doorman: Boolean
-
-  """All values that are not equal to given value."""
-  doorman_not: Boolean
-  paidParkingOffPremises: Boolean
-
-  """All values that are not equal to given value."""
-  paidParkingOffPremises_not: Boolean
-  freeParkingOnStreet: Boolean
-
-  """All values that are not equal to given value."""
-  freeParkingOnStreet_not: Boolean
-  gym: Boolean
-
-  """All values that are not equal to given value."""
-  gym_not: Boolean
-  airConditioning: Boolean
-
-  """All values that are not equal to given value."""
-  airConditioning_not: Boolean
-  shampoo: Boolean
-
-  """All values that are not equal to given value."""
-  shampoo_not: Boolean
-  essentials: Boolean
-
-  """All values that are not equal to given value."""
-  essentials_not: Boolean
-  laptopFriendlyWorkspace: Boolean
-
-  """All values that are not equal to given value."""
-  laptopFriendlyWorkspace_not: Boolean
-  privateEntrance: Boolean
-
-  """All values that are not equal to given value."""
-  privateEntrance_not: Boolean
-  buzzerWirelessIntercom: Boolean
-
-  """All values that are not equal to given value."""
-  buzzerWirelessIntercom_not: Boolean
-  babyBath: Boolean
-
-  """All values that are not equal to given value."""
-  babyBath_not: Boolean
-  babyMonitor: Boolean
-
-  """All values that are not equal to given value."""
-  babyMonitor_not: Boolean
-  babysitterRecommendations: Boolean
-
-  """All values that are not equal to given value."""
-  babysitterRecommendations_not: Boolean
-  bathtub: Boolean
-
-  """All values that are not equal to given value."""
-  bathtub_not: Boolean
-  changingTable: Boolean
-
-  """All values that are not equal to given value."""
-  changingTable_not: Boolean
-  childrensBooksAndToys: Boolean
-
-  """All values that are not equal to given value."""
-  childrensBooksAndToys_not: Boolean
-  childrensDinnerware: Boolean
-
-  """All values that are not equal to given value."""
-  childrensDinnerware_not: Boolean
-  crib: Boolean
-
-  """All values that are not equal to given value."""
-  crib_not: Boolean
-  place: PlaceWhereInput
-}
-
-input AmenitiesWhereUniqueInput {
-  id: ID
 }
 
 type BatchPayload {
@@ -1865,16 +1121,6 @@ input CreditCardInformationWhereUniqueInput {
   id: ID
 }
 
-enum CURRENCY {
-  CAD
-  INR
-  CHF
-  EUR
-  JPY
-  USD
-  ZAR
-}
-
 scalar DateTime
 
 type DebitCardInformation implements Node {
@@ -2399,7 +1645,7 @@ type ExperienceCategory implements Node {
   id: ID!
   mainColor: String!
   name: String!
-  experience: Experience
+  experience: Experience!
 }
 
 """A connection to a list of items."""
@@ -2416,7 +1662,7 @@ input ExperienceCategoryCreateInput {
   id: ID
   mainColor: String
   name: String!
-  experience: ExperienceCreateOneWithoutCategoryInput
+  experience: ExperienceCreateOneWithoutCategoryInput!
 }
 
 input ExperienceCategoryCreateOneWithoutExperienceInput {
@@ -2496,7 +1742,7 @@ input ExperienceCategorySubscriptionWhereInput {
 input ExperienceCategoryUpdateInput {
   mainColor: String
   name: String
-  experience: ExperienceUpdateOneWithoutCategoryInput
+  experience: ExperienceUpdateOneRequiredWithoutCategoryInput
 }
 
 input ExperienceCategoryUpdateManyMutationInput {
@@ -2986,11 +2232,9 @@ input ExperienceUpdateManyWithWhereNestedInput {
   data: ExperienceUpdateManyDataInput!
 }
 
-input ExperienceUpdateOneWithoutCategoryInput {
+input ExperienceUpdateOneRequiredWithoutCategoryInput {
   create: ExperienceCreateWithoutCategoryInput
   connect: ExperienceWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
   update: ExperienceUpdateWithoutCategoryDataInput
   upsert: ExperienceUpsertWithoutCategoryInput
 }
@@ -3225,540 +2469,15 @@ input ExperienceWhereUniqueInput {
   id: ID
 }
 
-type GuestRequirements implements Node {
-  id: ID!
-  govIssuedId: Boolean!
-  recommendationsFromOtherHosts: Boolean!
-  guestTripInformation: Boolean!
-  place: Place!
-}
-
-"""A connection to a list of items."""
-type GuestRequirementsConnection {
-  """Information to aid in pagination."""
-  pageInfo: PageInfo!
-
-  """A list of edges."""
-  edges: [GuestRequirementsEdge]!
-  aggregate: AggregateGuestRequirements!
-}
-
-input GuestRequirementsCreateInput {
-  id: ID
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-  place: PlaceCreateOneWithoutGuestRequirementsInput!
-}
-
-input GuestRequirementsCreateOneWithoutPlaceInput {
-  create: GuestRequirementsCreateWithoutPlaceInput
-  connect: GuestRequirementsWhereUniqueInput
-}
-
-input GuestRequirementsCreateWithoutPlaceInput {
-  id: ID
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-}
-
-"""An edge in a connection."""
-type GuestRequirementsEdge {
-  """The item at the end of the edge."""
-  node: GuestRequirements!
-
-  """A cursor for use in pagination."""
-  cursor: String!
-}
-
-enum GuestRequirementsOrderByInput {
-  id_ASC
-  id_DESC
-  govIssuedId_ASC
-  govIssuedId_DESC
-  recommendationsFromOtherHosts_ASC
-  recommendationsFromOtherHosts_DESC
-  guestTripInformation_ASC
-  guestTripInformation_DESC
-}
-
-type GuestRequirementsPreviousValues {
-  id: ID!
-  govIssuedId: Boolean!
-  recommendationsFromOtherHosts: Boolean!
-  guestTripInformation: Boolean!
-}
-
-type GuestRequirementsSubscriptionPayload {
-  mutation: MutationType!
-  node: GuestRequirements
-  updatedFields: [String!]
-  previousValues: GuestRequirementsPreviousValues
-}
-
-input GuestRequirementsSubscriptionWhereInput {
-  """Logical AND on all given filters."""
-  AND: [GuestRequirementsSubscriptionWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [GuestRequirementsSubscriptionWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [GuestRequirementsSubscriptionWhereInput!]
-
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
-  mutation_in: [MutationType!]
-
-  """
-  The subscription event gets only dispatched when one of the updated fields names is included in this list
-  """
-  updatedFields_contains: String
-
-  """
-  The subscription event gets only dispatched when all of the field names included in this list have been updated
-  """
-  updatedFields_contains_every: [String!]
-
-  """
-  The subscription event gets only dispatched when some of the field names included in this list have been updated
-  """
-  updatedFields_contains_some: [String!]
-  node: GuestRequirementsWhereInput
-}
-
-input GuestRequirementsUpdateInput {
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-  place: PlaceUpdateOneRequiredWithoutGuestRequirementsInput
-}
-
-input GuestRequirementsUpdateManyMutationInput {
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-}
-
-input GuestRequirementsUpdateOneWithoutPlaceInput {
-  create: GuestRequirementsCreateWithoutPlaceInput
-  connect: GuestRequirementsWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
-  update: GuestRequirementsUpdateWithoutPlaceDataInput
-  upsert: GuestRequirementsUpsertWithoutPlaceInput
-}
-
-input GuestRequirementsUpdateWithoutPlaceDataInput {
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-}
-
-input GuestRequirementsUpsertWithoutPlaceInput {
-  update: GuestRequirementsUpdateWithoutPlaceDataInput!
-  create: GuestRequirementsCreateWithoutPlaceInput!
-}
-
-input GuestRequirementsWhereInput {
-  """Logical AND on all given filters."""
-  AND: [GuestRequirementsWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [GuestRequirementsWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [GuestRequirementsWhereInput!]
-  id: ID
-
-  """All values that are not equal to given value."""
-  id_not: ID
-
-  """All values that are contained in given list."""
-  id_in: [ID!]
-
-  """All values that are not contained in given list."""
-  id_not_in: [ID!]
-
-  """All values less than the given value."""
-  id_lt: ID
-
-  """All values less than or equal the given value."""
-  id_lte: ID
-
-  """All values greater than the given value."""
-  id_gt: ID
-
-  """All values greater than or equal the given value."""
-  id_gte: ID
-
-  """All values containing the given string."""
-  id_contains: ID
-
-  """All values not containing the given string."""
-  id_not_contains: ID
-
-  """All values starting with the given string."""
-  id_starts_with: ID
-
-  """All values not starting with the given string."""
-  id_not_starts_with: ID
-
-  """All values ending with the given string."""
-  id_ends_with: ID
-
-  """All values not ending with the given string."""
-  id_not_ends_with: ID
-  govIssuedId: Boolean
-
-  """All values that are not equal to given value."""
-  govIssuedId_not: Boolean
-  recommendationsFromOtherHosts: Boolean
-
-  """All values that are not equal to given value."""
-  recommendationsFromOtherHosts_not: Boolean
-  guestTripInformation: Boolean
-
-  """All values that are not equal to given value."""
-  guestTripInformation_not: Boolean
-  place: PlaceWhereInput
-}
-
-input GuestRequirementsWhereUniqueInput {
-  id: ID
-}
-
-type HouseRules implements Node {
-  id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-"""A connection to a list of items."""
-type HouseRulesConnection {
-  """Information to aid in pagination."""
-  pageInfo: PageInfo!
-
-  """A list of edges."""
-  edges: [HouseRulesEdge]!
-  aggregate: AggregateHouseRules!
-}
-
-input HouseRulesCreateInput {
-  id: ID
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-input HouseRulesCreateOneInput {
-  create: HouseRulesCreateInput
-  connect: HouseRulesWhereUniqueInput
-}
-
-"""An edge in a connection."""
-type HouseRulesEdge {
-  """The item at the end of the edge."""
-  node: HouseRules!
-
-  """A cursor for use in pagination."""
-  cursor: String!
-}
-
-enum HouseRulesOrderByInput {
-  id_ASC
-  id_DESC
-  createdAt_ASC
-  createdAt_DESC
-  updatedAt_ASC
-  updatedAt_DESC
-  suitableForChildren_ASC
-  suitableForChildren_DESC
-  suitableForInfants_ASC
-  suitableForInfants_DESC
-  petsAllowed_ASC
-  petsAllowed_DESC
-  smokingAllowed_ASC
-  smokingAllowed_DESC
-  partiesAndEventsAllowed_ASC
-  partiesAndEventsAllowed_DESC
-  additionalRules_ASC
-  additionalRules_DESC
-}
-
-type HouseRulesPreviousValues {
-  id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-type HouseRulesSubscriptionPayload {
-  mutation: MutationType!
-  node: HouseRules
-  updatedFields: [String!]
-  previousValues: HouseRulesPreviousValues
-}
-
-input HouseRulesSubscriptionWhereInput {
-  """Logical AND on all given filters."""
-  AND: [HouseRulesSubscriptionWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [HouseRulesSubscriptionWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [HouseRulesSubscriptionWhereInput!]
-
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
-  mutation_in: [MutationType!]
-
-  """
-  The subscription event gets only dispatched when one of the updated fields names is included in this list
-  """
-  updatedFields_contains: String
-
-  """
-  The subscription event gets only dispatched when all of the field names included in this list have been updated
-  """
-  updatedFields_contains_every: [String!]
-
-  """
-  The subscription event gets only dispatched when some of the field names included in this list have been updated
-  """
-  updatedFields_contains_some: [String!]
-  node: HouseRulesWhereInput
-}
-
-input HouseRulesUpdateDataInput {
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-input HouseRulesUpdateInput {
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-input HouseRulesUpdateManyMutationInput {
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-input HouseRulesUpdateOneInput {
-  create: HouseRulesCreateInput
-  connect: HouseRulesWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
-  update: HouseRulesUpdateDataInput
-  upsert: HouseRulesUpsertNestedInput
-}
-
-input HouseRulesUpsertNestedInput {
-  update: HouseRulesUpdateDataInput!
-  create: HouseRulesCreateInput!
-}
-
-input HouseRulesWhereInput {
-  """Logical AND on all given filters."""
-  AND: [HouseRulesWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [HouseRulesWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [HouseRulesWhereInput!]
-  id: ID
-
-  """All values that are not equal to given value."""
-  id_not: ID
-
-  """All values that are contained in given list."""
-  id_in: [ID!]
-
-  """All values that are not contained in given list."""
-  id_not_in: [ID!]
-
-  """All values less than the given value."""
-  id_lt: ID
-
-  """All values less than or equal the given value."""
-  id_lte: ID
-
-  """All values greater than the given value."""
-  id_gt: ID
-
-  """All values greater than or equal the given value."""
-  id_gte: ID
-
-  """All values containing the given string."""
-  id_contains: ID
-
-  """All values not containing the given string."""
-  id_not_contains: ID
-
-  """All values starting with the given string."""
-  id_starts_with: ID
-
-  """All values not starting with the given string."""
-  id_not_starts_with: ID
-
-  """All values ending with the given string."""
-  id_ends_with: ID
-
-  """All values not ending with the given string."""
-  id_not_ends_with: ID
-  createdAt: DateTime
-
-  """All values that are not equal to given value."""
-  createdAt_not: DateTime
-
-  """All values that are contained in given list."""
-  createdAt_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  createdAt_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  createdAt_lt: DateTime
-
-  """All values less than or equal the given value."""
-  createdAt_lte: DateTime
-
-  """All values greater than the given value."""
-  createdAt_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-
-  """All values that are not equal to given value."""
-  updatedAt_not: DateTime
-
-  """All values that are contained in given list."""
-  updatedAt_in: [DateTime!]
-
-  """All values that are not contained in given list."""
-  updatedAt_not_in: [DateTime!]
-
-  """All values less than the given value."""
-  updatedAt_lt: DateTime
-
-  """All values less than or equal the given value."""
-  updatedAt_lte: DateTime
-
-  """All values greater than the given value."""
-  updatedAt_gt: DateTime
-
-  """All values greater than or equal the given value."""
-  updatedAt_gte: DateTime
-  suitableForChildren: Boolean
-
-  """All values that are not equal to given value."""
-  suitableForChildren_not: Boolean
-  suitableForInfants: Boolean
-
-  """All values that are not equal to given value."""
-  suitableForInfants_not: Boolean
-  petsAllowed: Boolean
-
-  """All values that are not equal to given value."""
-  petsAllowed_not: Boolean
-  smokingAllowed: Boolean
-
-  """All values that are not equal to given value."""
-  smokingAllowed_not: Boolean
-  partiesAndEventsAllowed: Boolean
-
-  """All values that are not equal to given value."""
-  partiesAndEventsAllowed_not: Boolean
-  additionalRules: String
-
-  """All values that are not equal to given value."""
-  additionalRules_not: String
-
-  """All values that are contained in given list."""
-  additionalRules_in: [String!]
-
-  """All values that are not contained in given list."""
-  additionalRules_not_in: [String!]
-
-  """All values less than the given value."""
-  additionalRules_lt: String
-
-  """All values less than or equal the given value."""
-  additionalRules_lte: String
-
-  """All values greater than the given value."""
-  additionalRules_gt: String
-
-  """All values greater than or equal the given value."""
-  additionalRules_gte: String
-
-  """All values containing the given string."""
-  additionalRules_contains: String
-
-  """All values not containing the given string."""
-  additionalRules_not_contains: String
-
-  """All values starting with the given string."""
-  additionalRules_starts_with: String
-
-  """All values not starting with the given string."""
-  additionalRules_not_starts_with: String
-
-  """All values ending with the given string."""
-  additionalRules_ends_with: String
-
-  """All values not ending with the given string."""
-  additionalRules_not_ends_with: String
-}
-
-input HouseRulesWhereUniqueInput {
-  id: ID
-}
-
 type Location implements Node {
+  title: String
   id: ID!
   lat: Float!
   lng: Float!
   neighbourHood: Neighbourhood
-  user: User
-  place: Place
   address: String!
   directions: String!
   experience: Experience
-  restaurant: Restaurant
 }
 
 """A connection to a list of items."""
@@ -3772,16 +2491,19 @@ type LocationConnection {
 }
 
 input LocationCreateInput {
+  title: String
   id: ID
   lat: Float!
   lng: Float!
   address: String!
   directions: String!
   neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  user: UserCreateOneWithoutLocationInput
-  place: PlaceCreateOneWithoutLocationInput
   experience: ExperienceCreateOneWithoutLocationInput
-  restaurant: RestaurantCreateOneWithoutLocationInput
+}
+
+input LocationCreateManyInput {
+  create: [LocationCreateInput!]
+  connect: [LocationWhereUniqueInput!]
 }
 
 input LocationCreateManyWithoutNeighbourHoodInput {
@@ -3789,84 +2511,34 @@ input LocationCreateManyWithoutNeighbourHoodInput {
   connect: [LocationWhereUniqueInput!]
 }
 
+input LocationCreateOneInput {
+  create: LocationCreateInput
+  connect: LocationWhereUniqueInput
+}
+
 input LocationCreateOneWithoutExperienceInput {
   create: LocationCreateWithoutExperienceInput
   connect: LocationWhereUniqueInput
 }
 
-input LocationCreateOneWithoutPlaceInput {
-  create: LocationCreateWithoutPlaceInput
-  connect: LocationWhereUniqueInput
-}
-
-input LocationCreateOneWithoutRestaurantInput {
-  create: LocationCreateWithoutRestaurantInput
-  connect: LocationWhereUniqueInput
-}
-
-input LocationCreateOneWithoutUserInput {
-  create: LocationCreateWithoutUserInput
-  connect: LocationWhereUniqueInput
-}
-
 input LocationCreateWithoutExperienceInput {
+  title: String
   id: ID
   lat: Float!
   lng: Float!
   address: String!
   directions: String!
   neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  user: UserCreateOneWithoutLocationInput
-  place: PlaceCreateOneWithoutLocationInput
-  restaurant: RestaurantCreateOneWithoutLocationInput
 }
 
 input LocationCreateWithoutNeighbourHoodInput {
+  title: String
   id: ID
   lat: Float!
   lng: Float!
   address: String!
   directions: String!
-  user: UserCreateOneWithoutLocationInput
-  place: PlaceCreateOneWithoutLocationInput
   experience: ExperienceCreateOneWithoutLocationInput
-  restaurant: RestaurantCreateOneWithoutLocationInput
-}
-
-input LocationCreateWithoutPlaceInput {
-  id: ID
-  lat: Float!
-  lng: Float!
-  address: String!
-  directions: String!
-  neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  user: UserCreateOneWithoutLocationInput
-  experience: ExperienceCreateOneWithoutLocationInput
-  restaurant: RestaurantCreateOneWithoutLocationInput
-}
-
-input LocationCreateWithoutRestaurantInput {
-  id: ID
-  lat: Float!
-  lng: Float!
-  address: String!
-  directions: String!
-  neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  user: UserCreateOneWithoutLocationInput
-  place: PlaceCreateOneWithoutLocationInput
-  experience: ExperienceCreateOneWithoutLocationInput
-}
-
-input LocationCreateWithoutUserInput {
-  id: ID
-  lat: Float!
-  lng: Float!
-  address: String!
-  directions: String!
-  neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  place: PlaceCreateOneWithoutLocationInput
-  experience: ExperienceCreateOneWithoutLocationInput
-  restaurant: RestaurantCreateOneWithoutLocationInput
 }
 
 """An edge in a connection."""
@@ -3879,6 +2551,8 @@ type LocationEdge {
 }
 
 enum LocationOrderByInput {
+  title_ASC
+  title_DESC
   id_ASC
   id_DESC
   lat_ASC
@@ -3892,6 +2566,7 @@ enum LocationOrderByInput {
 }
 
 type LocationPreviousValues {
+  title: String
   id: ID!
   lat: Float!
   lng: Float!
@@ -3908,6 +2583,46 @@ input LocationScalarWhereInput {
 
   """Logical NOT on all given filters combined by AND."""
   NOT: [LocationScalarWhereInput!]
+  title: String
+
+  """All values that are not equal to given value."""
+  title_not: String
+
+  """All values that are contained in given list."""
+  title_in: [String!]
+
+  """All values that are not contained in given list."""
+  title_not_in: [String!]
+
+  """All values less than the given value."""
+  title_lt: String
+
+  """All values less than or equal the given value."""
+  title_lte: String
+
+  """All values greater than the given value."""
+  title_gt: String
+
+  """All values greater than or equal the given value."""
+  title_gte: String
+
+  """All values containing the given string."""
+  title_contains: String
+
+  """All values not containing the given string."""
+  title_not_contains: String
+
+  """All values starting with the given string."""
+  title_starts_with: String
+
+  """All values not starting with the given string."""
+  title_not_starts_with: String
+
+  """All values ending with the given string."""
+  title_ends_with: String
+
+  """All values not ending with the given string."""
+  title_not_ends_with: String
   id: ID
 
   """All values that are not equal to given value."""
@@ -4113,26 +2828,48 @@ input LocationSubscriptionWhereInput {
   node: LocationWhereInput
 }
 
-input LocationUpdateInput {
+input LocationUpdateDataInput {
+  title: String
   lat: Float
   lng: Float
   address: String
   directions: String
   neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  user: UserUpdateOneWithoutLocationInput
-  place: PlaceUpdateOneWithoutLocationInput
   experience: ExperienceUpdateOneWithoutLocationInput
-  restaurant: RestaurantUpdateOneWithoutLocationInput
+}
+
+input LocationUpdateInput {
+  title: String
+  lat: Float
+  lng: Float
+  address: String
+  directions: String
+  neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
+  experience: ExperienceUpdateOneWithoutLocationInput
 }
 
 input LocationUpdateManyDataInput {
+  title: String
   lat: Float
   lng: Float
   address: String
   directions: String
 }
 
+input LocationUpdateManyInput {
+  create: [LocationCreateInput!]
+  connect: [LocationWhereUniqueInput!]
+  set: [LocationWhereUniqueInput!]
+  disconnect: [LocationWhereUniqueInput!]
+  delete: [LocationWhereUniqueInput!]
+  update: [LocationUpdateWithWhereUniqueNestedInput!]
+  updateMany: [LocationUpdateManyWithWhereNestedInput!]
+  deleteMany: [LocationScalarWhereInput!]
+  upsert: [LocationUpsertWithWhereUniqueNestedInput!]
+}
+
 input LocationUpdateManyMutationInput {
+  title: String
   lat: Float
   lng: Float
   address: String
@@ -4156,6 +2893,15 @@ input LocationUpdateManyWithWhereNestedInput {
   data: LocationUpdateManyDataInput!
 }
 
+input LocationUpdateOneInput {
+  create: LocationCreateInput
+  connect: LocationWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: LocationUpdateDataInput
+  upsert: LocationUpsertNestedInput
+}
+
 input LocationUpdateOneRequiredWithoutExperienceInput {
   create: LocationCreateWithoutExperienceInput
   connect: LocationWhereUniqueInput
@@ -4163,82 +2909,27 @@ input LocationUpdateOneRequiredWithoutExperienceInput {
   upsert: LocationUpsertWithoutExperienceInput
 }
 
-input LocationUpdateOneRequiredWithoutPlaceInput {
-  create: LocationCreateWithoutPlaceInput
-  connect: LocationWhereUniqueInput
-  update: LocationUpdateWithoutPlaceDataInput
-  upsert: LocationUpsertWithoutPlaceInput
-}
-
-input LocationUpdateOneRequiredWithoutRestaurantInput {
-  create: LocationCreateWithoutRestaurantInput
-  connect: LocationWhereUniqueInput
-  update: LocationUpdateWithoutRestaurantDataInput
-  upsert: LocationUpsertWithoutRestaurantInput
-}
-
-input LocationUpdateOneWithoutUserInput {
-  create: LocationCreateWithoutUserInput
-  connect: LocationWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
-  update: LocationUpdateWithoutUserDataInput
-  upsert: LocationUpsertWithoutUserInput
-}
-
 input LocationUpdateWithoutExperienceDataInput {
+  title: String
   lat: Float
   lng: Float
   address: String
   directions: String
   neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  user: UserUpdateOneWithoutLocationInput
-  place: PlaceUpdateOneWithoutLocationInput
-  restaurant: RestaurantUpdateOneWithoutLocationInput
 }
 
 input LocationUpdateWithoutNeighbourHoodDataInput {
+  title: String
   lat: Float
   lng: Float
   address: String
   directions: String
-  user: UserUpdateOneWithoutLocationInput
-  place: PlaceUpdateOneWithoutLocationInput
-  experience: ExperienceUpdateOneWithoutLocationInput
-  restaurant: RestaurantUpdateOneWithoutLocationInput
-}
-
-input LocationUpdateWithoutPlaceDataInput {
-  lat: Float
-  lng: Float
-  address: String
-  directions: String
-  neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  user: UserUpdateOneWithoutLocationInput
-  experience: ExperienceUpdateOneWithoutLocationInput
-  restaurant: RestaurantUpdateOneWithoutLocationInput
-}
-
-input LocationUpdateWithoutRestaurantDataInput {
-  lat: Float
-  lng: Float
-  address: String
-  directions: String
-  neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  user: UserUpdateOneWithoutLocationInput
-  place: PlaceUpdateOneWithoutLocationInput
   experience: ExperienceUpdateOneWithoutLocationInput
 }
 
-input LocationUpdateWithoutUserDataInput {
-  lat: Float
-  lng: Float
-  address: String
-  directions: String
-  neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  place: PlaceUpdateOneWithoutLocationInput
-  experience: ExperienceUpdateOneWithoutLocationInput
-  restaurant: RestaurantUpdateOneWithoutLocationInput
+input LocationUpdateWithWhereUniqueNestedInput {
+  where: LocationWhereUniqueInput!
+  data: LocationUpdateDataInput!
 }
 
 input LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput {
@@ -4246,24 +2937,20 @@ input LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput {
   data: LocationUpdateWithoutNeighbourHoodDataInput!
 }
 
+input LocationUpsertNestedInput {
+  update: LocationUpdateDataInput!
+  create: LocationCreateInput!
+}
+
 input LocationUpsertWithoutExperienceInput {
   update: LocationUpdateWithoutExperienceDataInput!
   create: LocationCreateWithoutExperienceInput!
 }
 
-input LocationUpsertWithoutPlaceInput {
-  update: LocationUpdateWithoutPlaceDataInput!
-  create: LocationCreateWithoutPlaceInput!
-}
-
-input LocationUpsertWithoutRestaurantInput {
-  update: LocationUpdateWithoutRestaurantDataInput!
-  create: LocationCreateWithoutRestaurantInput!
-}
-
-input LocationUpsertWithoutUserInput {
-  update: LocationUpdateWithoutUserDataInput!
-  create: LocationCreateWithoutUserInput!
+input LocationUpsertWithWhereUniqueNestedInput {
+  where: LocationWhereUniqueInput!
+  update: LocationUpdateDataInput!
+  create: LocationCreateInput!
 }
 
 input LocationUpsertWithWhereUniqueWithoutNeighbourHoodInput {
@@ -4281,6 +2968,46 @@ input LocationWhereInput {
 
   """Logical NOT on all given filters combined by AND."""
   NOT: [LocationWhereInput!]
+  title: String
+
+  """All values that are not equal to given value."""
+  title_not: String
+
+  """All values that are contained in given list."""
+  title_in: [String!]
+
+  """All values that are not contained in given list."""
+  title_not_in: [String!]
+
+  """All values less than the given value."""
+  title_lt: String
+
+  """All values less than or equal the given value."""
+  title_lte: String
+
+  """All values greater than the given value."""
+  title_gt: String
+
+  """All values greater than or equal the given value."""
+  title_gte: String
+
+  """All values containing the given string."""
+  title_contains: String
+
+  """All values not containing the given string."""
+  title_not_contains: String
+
+  """All values starting with the given string."""
+  title_starts_with: String
+
+  """All values not starting with the given string."""
+  title_not_starts_with: String
+
+  """All values ending with the given string."""
+  title_ends_with: String
+
+  """All values not ending with the given string."""
+  title_not_ends_with: String
   id: ID
 
   """All values that are not equal to given value."""
@@ -4446,10 +3173,7 @@ input LocationWhereInput {
   """All values not ending with the given string."""
   directions_not_ends_with: String
   neighbourHood: NeighbourhoodWhereInput
-  user: UserWhereInput
-  place: PlaceWhereInput
   experience: ExperienceWhereInput
-  restaurant: RestaurantWhereInput
 }
 
 input LocationWhereUniqueInput {
@@ -4461,6 +3185,614 @@ The \`Long\` scalar type represents non-fractional signed whole numeric values.
 Long can represent values between -(2^63) and 2^63 - 1.
 """
 scalar Long
+
+type MenuItem implements Node {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  shortDescription: String!
+  title: String!
+  description: String!
+  pricing: Pricing!
+  pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture!]
+  reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review!]
+}
+
+"""A connection to a list of items."""
+type MenuItemConnection {
+  """Information to aid in pagination."""
+  pageInfo: PageInfo!
+
+  """A list of edges."""
+  edges: [MenuItemEdge]!
+  aggregate: AggregateMenuItem!
+}
+
+input MenuItemCreateInput {
+  id: ID
+  shortDescription: String!
+  title: String!
+  description: String!
+  pricing: PricingCreateOneInput!
+  pictures: PictureCreateManyInput
+  reviews: ReviewCreateManyInput
+}
+
+input MenuItemCreateManyInput {
+  create: [MenuItemCreateInput!]
+  connect: [MenuItemWhereUniqueInput!]
+}
+
+"""An edge in a connection."""
+type MenuItemEdge {
+  """The item at the end of the edge."""
+  node: MenuItem!
+
+  """A cursor for use in pagination."""
+  cursor: String!
+}
+
+enum MenuItemOrderByInput {
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  shortDescription_ASC
+  shortDescription_DESC
+  title_ASC
+  title_DESC
+  description_ASC
+  description_DESC
+}
+
+type MenuItemPreviousValues {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  shortDescription: String!
+  title: String!
+  description: String!
+}
+
+input MenuItemScalarWhereInput {
+  """Logical AND on all given filters."""
+  AND: [MenuItemScalarWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [MenuItemScalarWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [MenuItemScalarWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+
+  """All values that are not equal to given value."""
+  updatedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  updatedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  updatedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  updatedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  updatedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  updatedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  updatedAt_gte: DateTime
+  shortDescription: String
+
+  """All values that are not equal to given value."""
+  shortDescription_not: String
+
+  """All values that are contained in given list."""
+  shortDescription_in: [String!]
+
+  """All values that are not contained in given list."""
+  shortDescription_not_in: [String!]
+
+  """All values less than the given value."""
+  shortDescription_lt: String
+
+  """All values less than or equal the given value."""
+  shortDescription_lte: String
+
+  """All values greater than the given value."""
+  shortDescription_gt: String
+
+  """All values greater than or equal the given value."""
+  shortDescription_gte: String
+
+  """All values containing the given string."""
+  shortDescription_contains: String
+
+  """All values not containing the given string."""
+  shortDescription_not_contains: String
+
+  """All values starting with the given string."""
+  shortDescription_starts_with: String
+
+  """All values not starting with the given string."""
+  shortDescription_not_starts_with: String
+
+  """All values ending with the given string."""
+  shortDescription_ends_with: String
+
+  """All values not ending with the given string."""
+  shortDescription_not_ends_with: String
+  title: String
+
+  """All values that are not equal to given value."""
+  title_not: String
+
+  """All values that are contained in given list."""
+  title_in: [String!]
+
+  """All values that are not contained in given list."""
+  title_not_in: [String!]
+
+  """All values less than the given value."""
+  title_lt: String
+
+  """All values less than or equal the given value."""
+  title_lte: String
+
+  """All values greater than the given value."""
+  title_gt: String
+
+  """All values greater than or equal the given value."""
+  title_gte: String
+
+  """All values containing the given string."""
+  title_contains: String
+
+  """All values not containing the given string."""
+  title_not_contains: String
+
+  """All values starting with the given string."""
+  title_starts_with: String
+
+  """All values not starting with the given string."""
+  title_not_starts_with: String
+
+  """All values ending with the given string."""
+  title_ends_with: String
+
+  """All values not ending with the given string."""
+  title_not_ends_with: String
+  description: String
+
+  """All values that are not equal to given value."""
+  description_not: String
+
+  """All values that are contained in given list."""
+  description_in: [String!]
+
+  """All values that are not contained in given list."""
+  description_not_in: [String!]
+
+  """All values less than the given value."""
+  description_lt: String
+
+  """All values less than or equal the given value."""
+  description_lte: String
+
+  """All values greater than the given value."""
+  description_gt: String
+
+  """All values greater than or equal the given value."""
+  description_gte: String
+
+  """All values containing the given string."""
+  description_contains: String
+
+  """All values not containing the given string."""
+  description_not_contains: String
+
+  """All values starting with the given string."""
+  description_starts_with: String
+
+  """All values not starting with the given string."""
+  description_not_starts_with: String
+
+  """All values ending with the given string."""
+  description_ends_with: String
+
+  """All values not ending with the given string."""
+  description_not_ends_with: String
+}
+
+type MenuItemSubscriptionPayload {
+  mutation: MutationType!
+  node: MenuItem
+  updatedFields: [String!]
+  previousValues: MenuItemPreviousValues
+}
+
+input MenuItemSubscriptionWhereInput {
+  """Logical AND on all given filters."""
+  AND: [MenuItemSubscriptionWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [MenuItemSubscriptionWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [MenuItemSubscriptionWhereInput!]
+
+  """
+  The subscription event gets dispatched when it's listed in mutation_in
+  """
+  mutation_in: [MutationType!]
+
+  """
+  The subscription event gets only dispatched when one of the updated fields names is included in this list
+  """
+  updatedFields_contains: String
+
+  """
+  The subscription event gets only dispatched when all of the field names included in this list have been updated
+  """
+  updatedFields_contains_every: [String!]
+
+  """
+  The subscription event gets only dispatched when some of the field names included in this list have been updated
+  """
+  updatedFields_contains_some: [String!]
+  node: MenuItemWhereInput
+}
+
+input MenuItemUpdateDataInput {
+  shortDescription: String
+  title: String
+  description: String
+  pricing: PricingUpdateOneRequiredInput
+  pictures: PictureUpdateManyInput
+  reviews: ReviewUpdateManyInput
+}
+
+input MenuItemUpdateInput {
+  shortDescription: String
+  title: String
+  description: String
+  pricing: PricingUpdateOneRequiredInput
+  pictures: PictureUpdateManyInput
+  reviews: ReviewUpdateManyInput
+}
+
+input MenuItemUpdateManyDataInput {
+  shortDescription: String
+  title: String
+  description: String
+}
+
+input MenuItemUpdateManyInput {
+  create: [MenuItemCreateInput!]
+  connect: [MenuItemWhereUniqueInput!]
+  set: [MenuItemWhereUniqueInput!]
+  disconnect: [MenuItemWhereUniqueInput!]
+  delete: [MenuItemWhereUniqueInput!]
+  update: [MenuItemUpdateWithWhereUniqueNestedInput!]
+  updateMany: [MenuItemUpdateManyWithWhereNestedInput!]
+  deleteMany: [MenuItemScalarWhereInput!]
+  upsert: [MenuItemUpsertWithWhereUniqueNestedInput!]
+}
+
+input MenuItemUpdateManyMutationInput {
+  shortDescription: String
+  title: String
+  description: String
+}
+
+input MenuItemUpdateManyWithWhereNestedInput {
+  where: MenuItemScalarWhereInput!
+  data: MenuItemUpdateManyDataInput!
+}
+
+input MenuItemUpdateWithWhereUniqueNestedInput {
+  where: MenuItemWhereUniqueInput!
+  data: MenuItemUpdateDataInput!
+}
+
+input MenuItemUpsertWithWhereUniqueNestedInput {
+  where: MenuItemWhereUniqueInput!
+  update: MenuItemUpdateDataInput!
+  create: MenuItemCreateInput!
+}
+
+input MenuItemWhereInput {
+  """Logical AND on all given filters."""
+  AND: [MenuItemWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [MenuItemWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [MenuItemWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+
+  """All values that are not equal to given value."""
+  updatedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  updatedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  updatedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  updatedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  updatedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  updatedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  updatedAt_gte: DateTime
+  shortDescription: String
+
+  """All values that are not equal to given value."""
+  shortDescription_not: String
+
+  """All values that are contained in given list."""
+  shortDescription_in: [String!]
+
+  """All values that are not contained in given list."""
+  shortDescription_not_in: [String!]
+
+  """All values less than the given value."""
+  shortDescription_lt: String
+
+  """All values less than or equal the given value."""
+  shortDescription_lte: String
+
+  """All values greater than the given value."""
+  shortDescription_gt: String
+
+  """All values greater than or equal the given value."""
+  shortDescription_gte: String
+
+  """All values containing the given string."""
+  shortDescription_contains: String
+
+  """All values not containing the given string."""
+  shortDescription_not_contains: String
+
+  """All values starting with the given string."""
+  shortDescription_starts_with: String
+
+  """All values not starting with the given string."""
+  shortDescription_not_starts_with: String
+
+  """All values ending with the given string."""
+  shortDescription_ends_with: String
+
+  """All values not ending with the given string."""
+  shortDescription_not_ends_with: String
+  title: String
+
+  """All values that are not equal to given value."""
+  title_not: String
+
+  """All values that are contained in given list."""
+  title_in: [String!]
+
+  """All values that are not contained in given list."""
+  title_not_in: [String!]
+
+  """All values less than the given value."""
+  title_lt: String
+
+  """All values less than or equal the given value."""
+  title_lte: String
+
+  """All values greater than the given value."""
+  title_gt: String
+
+  """All values greater than or equal the given value."""
+  title_gte: String
+
+  """All values containing the given string."""
+  title_contains: String
+
+  """All values not containing the given string."""
+  title_not_contains: String
+
+  """All values starting with the given string."""
+  title_starts_with: String
+
+  """All values not starting with the given string."""
+  title_not_starts_with: String
+
+  """All values ending with the given string."""
+  title_ends_with: String
+
+  """All values not ending with the given string."""
+  title_not_ends_with: String
+  description: String
+
+  """All values that are not equal to given value."""
+  description_not: String
+
+  """All values that are contained in given list."""
+  description_in: [String!]
+
+  """All values that are not contained in given list."""
+  description_not_in: [String!]
+
+  """All values less than the given value."""
+  description_lt: String
+
+  """All values less than or equal the given value."""
+  description_lte: String
+
+  """All values greater than the given value."""
+  description_gt: String
+
+  """All values greater than or equal the given value."""
+  description_gte: String
+
+  """All values containing the given string."""
+  description_contains: String
+
+  """All values not containing the given string."""
+  description_not_contains: String
+
+  """All values starting with the given string."""
+  description_starts_with: String
+
+  """All values not starting with the given string."""
+  description_not_starts_with: String
+
+  """All values ending with the given string."""
+  description_ends_with: String
+
+  """All values not ending with the given string."""
+  description_not_ends_with: String
+  pricing: PricingWhereInput
+  pictures_every: PictureWhereInput
+  pictures_some: PictureWhereInput
+  pictures_none: PictureWhereInput
+  reviews_every: ReviewWhereInput
+  reviews_some: ReviewWhereInput
+  reviews_none: ReviewWhereInput
+}
+
+input MenuItemWhereUniqueInput {
+  id: ID
+}
 
 type Message implements Node {
   id: ID!
@@ -4901,19 +4233,10 @@ input MessageWhereUniqueInput {
 
 type Mutation {
   createUser(data: UserCreateInput!): User!
-  createPlace(data: PlaceCreateInput!): Place!
-  createPricing(data: PricingCreateInput!): Pricing!
-  createGuestRequirements(data: GuestRequirementsCreateInput!): GuestRequirements!
-  createPolicies(data: PoliciesCreateInput!): Policies!
-  createViews(data: ViewsCreateInput!): Views!
-  createLocation(data: LocationCreateInput!): Location!
   createNeighbourhood(data: NeighbourhoodCreateInput!): Neighbourhood!
   createCity(data: CityCreateInput!): City!
   createExperience(data: ExperienceCreateInput!): Experience!
   createExperienceCategory(data: ExperienceCategoryCreateInput!): ExperienceCategory!
-  createAmenities(data: AmenitiesCreateInput!): Amenities!
-  createReview(data: ReviewCreateInput!): Review!
-  createOrder(data: OrderCreateInput!): Order!
   createPayment(data: PaymentCreateInput!): Payment!
   createPaypalInformation(data: PaypalInformationCreateInput!): PaypalInformation!
   createPaytmInformation(data: PaytmInformationCreateInput!): PaytmInformation!
@@ -4922,23 +4245,19 @@ type Mutation {
   createMessage(data: MessageCreateInput!): Message!
   createNotification(data: NotificationCreateInput!): Notification!
   createRestaurant(data: RestaurantCreateInput!): Restaurant!
-  createHouseRules(data: HouseRulesCreateInput!): HouseRules!
+  createMenuItem(data: MenuItemCreateInput!): MenuItem!
   createPaymentAccount(data: PaymentAccountCreateInput!): PaymentAccount!
+  createPolicies(data: PoliciesCreateInput!): Policies!
+  createLocation(data: LocationCreateInput!): Location!
+  createReview(data: ReviewCreateInput!): Review!
+  createOrder(data: OrderCreateInput!): Order!
+  createPricing(data: PricingCreateInput!): Pricing!
   createPicture(data: PictureCreateInput!): Picture!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
-  updatePlace(data: PlaceUpdateInput!, where: PlaceWhereUniqueInput!): Place
-  updatePricing(data: PricingUpdateInput!, where: PricingWhereUniqueInput!): Pricing
-  updateGuestRequirements(data: GuestRequirementsUpdateInput!, where: GuestRequirementsWhereUniqueInput!): GuestRequirements
-  updatePolicies(data: PoliciesUpdateInput!, where: PoliciesWhereUniqueInput!): Policies
-  updateViews(data: ViewsUpdateInput!, where: ViewsWhereUniqueInput!): Views
-  updateLocation(data: LocationUpdateInput!, where: LocationWhereUniqueInput!): Location
   updateNeighbourhood(data: NeighbourhoodUpdateInput!, where: NeighbourhoodWhereUniqueInput!): Neighbourhood
   updateCity(data: CityUpdateInput!, where: CityWhereUniqueInput!): City
   updateExperience(data: ExperienceUpdateInput!, where: ExperienceWhereUniqueInput!): Experience
   updateExperienceCategory(data: ExperienceCategoryUpdateInput!, where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
-  updateAmenities(data: AmenitiesUpdateInput!, where: AmenitiesWhereUniqueInput!): Amenities
-  updateReview(data: ReviewUpdateInput!, where: ReviewWhereUniqueInput!): Review
-  updateOrder(data: OrderUpdateInput!, where: OrderWhereUniqueInput!): Order
   updatePayment(data: PaymentUpdateInput!, where: PaymentWhereUniqueInput!): Payment
   updatePaypalInformation(data: PaypalInformationUpdateInput!, where: PaypalInformationWhereUniqueInput!): PaypalInformation
   updatePaytmInformation(data: PaytmInformationUpdateInput!, where: PaytmInformationWhereUniqueInput!): PaytmInformation
@@ -4947,23 +4266,19 @@ type Mutation {
   updateMessage(data: MessageUpdateInput!, where: MessageWhereUniqueInput!): Message
   updateNotification(data: NotificationUpdateInput!, where: NotificationWhereUniqueInput!): Notification
   updateRestaurant(data: RestaurantUpdateInput!, where: RestaurantWhereUniqueInput!): Restaurant
-  updateHouseRules(data: HouseRulesUpdateInput!, where: HouseRulesWhereUniqueInput!): HouseRules
+  updateMenuItem(data: MenuItemUpdateInput!, where: MenuItemWhereUniqueInput!): MenuItem
   updatePaymentAccount(data: PaymentAccountUpdateInput!, where: PaymentAccountWhereUniqueInput!): PaymentAccount
+  updatePolicies(data: PoliciesUpdateInput!, where: PoliciesWhereUniqueInput!): Policies
+  updateLocation(data: LocationUpdateInput!, where: LocationWhereUniqueInput!): Location
+  updateReview(data: ReviewUpdateInput!, where: ReviewWhereUniqueInput!): Review
+  updateOrder(data: OrderUpdateInput!, where: OrderWhereUniqueInput!): Order
+  updatePricing(data: PricingUpdateInput!, where: PricingWhereUniqueInput!): Pricing
   updatePicture(data: PictureUpdateInput!, where: PictureWhereUniqueInput!): Picture
   deleteUser(where: UserWhereUniqueInput!): User
-  deletePlace(where: PlaceWhereUniqueInput!): Place
-  deletePricing(where: PricingWhereUniqueInput!): Pricing
-  deleteGuestRequirements(where: GuestRequirementsWhereUniqueInput!): GuestRequirements
-  deletePolicies(where: PoliciesWhereUniqueInput!): Policies
-  deleteViews(where: ViewsWhereUniqueInput!): Views
-  deleteLocation(where: LocationWhereUniqueInput!): Location
   deleteNeighbourhood(where: NeighbourhoodWhereUniqueInput!): Neighbourhood
   deleteCity(where: CityWhereUniqueInput!): City
   deleteExperience(where: ExperienceWhereUniqueInput!): Experience
   deleteExperienceCategory(where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
-  deleteAmenities(where: AmenitiesWhereUniqueInput!): Amenities
-  deleteReview(where: ReviewWhereUniqueInput!): Review
-  deleteOrder(where: OrderWhereUniqueInput!): Order
   deletePayment(where: PaymentWhereUniqueInput!): Payment
   deletePaypalInformation(where: PaypalInformationWhereUniqueInput!): PaypalInformation
   deletePaytmInformation(where: PaytmInformationWhereUniqueInput!): PaytmInformation
@@ -4972,23 +4287,19 @@ type Mutation {
   deleteMessage(where: MessageWhereUniqueInput!): Message
   deleteNotification(where: NotificationWhereUniqueInput!): Notification
   deleteRestaurant(where: RestaurantWhereUniqueInput!): Restaurant
-  deleteHouseRules(where: HouseRulesWhereUniqueInput!): HouseRules
+  deleteMenuItem(where: MenuItemWhereUniqueInput!): MenuItem
   deletePaymentAccount(where: PaymentAccountWhereUniqueInput!): PaymentAccount
+  deletePolicies(where: PoliciesWhereUniqueInput!): Policies
+  deleteLocation(where: LocationWhereUniqueInput!): Location
+  deleteReview(where: ReviewWhereUniqueInput!): Review
+  deleteOrder(where: OrderWhereUniqueInput!): Order
+  deletePricing(where: PricingWhereUniqueInput!): Pricing
   deletePicture(where: PictureWhereUniqueInput!): Picture
   upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
-  upsertPlace(where: PlaceWhereUniqueInput!, create: PlaceCreateInput!, update: PlaceUpdateInput!): Place!
-  upsertPricing(where: PricingWhereUniqueInput!, create: PricingCreateInput!, update: PricingUpdateInput!): Pricing!
-  upsertGuestRequirements(where: GuestRequirementsWhereUniqueInput!, create: GuestRequirementsCreateInput!, update: GuestRequirementsUpdateInput!): GuestRequirements!
-  upsertPolicies(where: PoliciesWhereUniqueInput!, create: PoliciesCreateInput!, update: PoliciesUpdateInput!): Policies!
-  upsertViews(where: ViewsWhereUniqueInput!, create: ViewsCreateInput!, update: ViewsUpdateInput!): Views!
-  upsertLocation(where: LocationWhereUniqueInput!, create: LocationCreateInput!, update: LocationUpdateInput!): Location!
   upsertNeighbourhood(where: NeighbourhoodWhereUniqueInput!, create: NeighbourhoodCreateInput!, update: NeighbourhoodUpdateInput!): Neighbourhood!
   upsertCity(where: CityWhereUniqueInput!, create: CityCreateInput!, update: CityUpdateInput!): City!
   upsertExperience(where: ExperienceWhereUniqueInput!, create: ExperienceCreateInput!, update: ExperienceUpdateInput!): Experience!
   upsertExperienceCategory(where: ExperienceCategoryWhereUniqueInput!, create: ExperienceCategoryCreateInput!, update: ExperienceCategoryUpdateInput!): ExperienceCategory!
-  upsertAmenities(where: AmenitiesWhereUniqueInput!, create: AmenitiesCreateInput!, update: AmenitiesUpdateInput!): Amenities!
-  upsertReview(where: ReviewWhereUniqueInput!, create: ReviewCreateInput!, update: ReviewUpdateInput!): Review!
-  upsertOrder(where: OrderWhereUniqueInput!, create: OrderCreateInput!, update: OrderUpdateInput!): Order!
   upsertPayment(where: PaymentWhereUniqueInput!, create: PaymentCreateInput!, update: PaymentUpdateInput!): Payment!
   upsertPaypalInformation(where: PaypalInformationWhereUniqueInput!, create: PaypalInformationCreateInput!, update: PaypalInformationUpdateInput!): PaypalInformation!
   upsertPaytmInformation(where: PaytmInformationWhereUniqueInput!, create: PaytmInformationCreateInput!, update: PaytmInformationUpdateInput!): PaytmInformation!
@@ -4997,23 +4308,19 @@ type Mutation {
   upsertMessage(where: MessageWhereUniqueInput!, create: MessageCreateInput!, update: MessageUpdateInput!): Message!
   upsertNotification(where: NotificationWhereUniqueInput!, create: NotificationCreateInput!, update: NotificationUpdateInput!): Notification!
   upsertRestaurant(where: RestaurantWhereUniqueInput!, create: RestaurantCreateInput!, update: RestaurantUpdateInput!): Restaurant!
-  upsertHouseRules(where: HouseRulesWhereUniqueInput!, create: HouseRulesCreateInput!, update: HouseRulesUpdateInput!): HouseRules!
+  upsertMenuItem(where: MenuItemWhereUniqueInput!, create: MenuItemCreateInput!, update: MenuItemUpdateInput!): MenuItem!
   upsertPaymentAccount(where: PaymentAccountWhereUniqueInput!, create: PaymentAccountCreateInput!, update: PaymentAccountUpdateInput!): PaymentAccount!
+  upsertPolicies(where: PoliciesWhereUniqueInput!, create: PoliciesCreateInput!, update: PoliciesUpdateInput!): Policies!
+  upsertLocation(where: LocationWhereUniqueInput!, create: LocationCreateInput!, update: LocationUpdateInput!): Location!
+  upsertReview(where: ReviewWhereUniqueInput!, create: ReviewCreateInput!, update: ReviewUpdateInput!): Review!
+  upsertOrder(where: OrderWhereUniqueInput!, create: OrderCreateInput!, update: OrderUpdateInput!): Order!
+  upsertPricing(where: PricingWhereUniqueInput!, create: PricingCreateInput!, update: PricingUpdateInput!): Pricing!
   upsertPicture(where: PictureWhereUniqueInput!, create: PictureCreateInput!, update: PictureUpdateInput!): Picture!
   updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
-  updateManyPlaces(data: PlaceUpdateManyMutationInput!, where: PlaceWhereInput): BatchPayload!
-  updateManyPricings(data: PricingUpdateManyMutationInput!, where: PricingWhereInput): BatchPayload!
-  updateManyGuestRequirementses(data: GuestRequirementsUpdateManyMutationInput!, where: GuestRequirementsWhereInput): BatchPayload!
-  updateManyPolicieses(data: PoliciesUpdateManyMutationInput!, where: PoliciesWhereInput): BatchPayload!
-  updateManyViewses(data: ViewsUpdateManyMutationInput!, where: ViewsWhereInput): BatchPayload!
-  updateManyLocations(data: LocationUpdateManyMutationInput!, where: LocationWhereInput): BatchPayload!
   updateManyNeighbourhoods(data: NeighbourhoodUpdateManyMutationInput!, where: NeighbourhoodWhereInput): BatchPayload!
   updateManyCities(data: CityUpdateManyMutationInput!, where: CityWhereInput): BatchPayload!
   updateManyExperiences(data: ExperienceUpdateManyMutationInput!, where: ExperienceWhereInput): BatchPayload!
   updateManyExperienceCategories(data: ExperienceCategoryUpdateManyMutationInput!, where: ExperienceCategoryWhereInput): BatchPayload!
-  updateManyAmenitieses(data: AmenitiesUpdateManyMutationInput!, where: AmenitiesWhereInput): BatchPayload!
-  updateManyReviews(data: ReviewUpdateManyMutationInput!, where: ReviewWhereInput): BatchPayload!
-  updateManyOrders(data: OrderUpdateManyMutationInput!, where: OrderWhereInput): BatchPayload!
   updateManyPayments(data: PaymentUpdateManyMutationInput!, where: PaymentWhereInput): BatchPayload!
   updateManyPaypalInformations(data: PaypalInformationUpdateManyMutationInput!, where: PaypalInformationWhereInput): BatchPayload!
   updateManyPaytmInformations(data: PaytmInformationUpdateManyMutationInput!, where: PaytmInformationWhereInput): BatchPayload!
@@ -5022,23 +4329,19 @@ type Mutation {
   updateManyMessages(data: MessageUpdateManyMutationInput!, where: MessageWhereInput): BatchPayload!
   updateManyNotifications(data: NotificationUpdateManyMutationInput!, where: NotificationWhereInput): BatchPayload!
   updateManyRestaurants(data: RestaurantUpdateManyMutationInput!, where: RestaurantWhereInput): BatchPayload!
-  updateManyHouseRuleses(data: HouseRulesUpdateManyMutationInput!, where: HouseRulesWhereInput): BatchPayload!
+  updateManyMenuItems(data: MenuItemUpdateManyMutationInput!, where: MenuItemWhereInput): BatchPayload!
   updateManyPaymentAccounts(data: PaymentAccountUpdateManyMutationInput!, where: PaymentAccountWhereInput): BatchPayload!
+  updateManyPolicieses(data: PoliciesUpdateManyMutationInput!, where: PoliciesWhereInput): BatchPayload!
+  updateManyLocations(data: LocationUpdateManyMutationInput!, where: LocationWhereInput): BatchPayload!
+  updateManyReviews(data: ReviewUpdateManyMutationInput!, where: ReviewWhereInput): BatchPayload!
+  updateManyOrders(data: OrderUpdateManyMutationInput!, where: OrderWhereInput): BatchPayload!
+  updateManyPricings(data: PricingUpdateManyMutationInput!, where: PricingWhereInput): BatchPayload!
   updateManyPictures(data: PictureUpdateManyMutationInput!, where: PictureWhereInput): BatchPayload!
   deleteManyUsers(where: UserWhereInput): BatchPayload!
-  deleteManyPlaces(where: PlaceWhereInput): BatchPayload!
-  deleteManyPricings(where: PricingWhereInput): BatchPayload!
-  deleteManyGuestRequirementses(where: GuestRequirementsWhereInput): BatchPayload!
-  deleteManyPolicieses(where: PoliciesWhereInput): BatchPayload!
-  deleteManyViewses(where: ViewsWhereInput): BatchPayload!
-  deleteManyLocations(where: LocationWhereInput): BatchPayload!
   deleteManyNeighbourhoods(where: NeighbourhoodWhereInput): BatchPayload!
   deleteManyCities(where: CityWhereInput): BatchPayload!
   deleteManyExperiences(where: ExperienceWhereInput): BatchPayload!
   deleteManyExperienceCategories(where: ExperienceCategoryWhereInput): BatchPayload!
-  deleteManyAmenitieses(where: AmenitiesWhereInput): BatchPayload!
-  deleteManyReviews(where: ReviewWhereInput): BatchPayload!
-  deleteManyOrders(where: OrderWhereInput): BatchPayload!
   deleteManyPayments(where: PaymentWhereInput): BatchPayload!
   deleteManyPaypalInformations(where: PaypalInformationWhereInput): BatchPayload!
   deleteManyPaytmInformations(where: PaytmInformationWhereInput): BatchPayload!
@@ -5047,8 +4350,13 @@ type Mutation {
   deleteManyMessages(where: MessageWhereInput): BatchPayload!
   deleteManyNotifications(where: NotificationWhereInput): BatchPayload!
   deleteManyRestaurants(where: RestaurantWhereInput): BatchPayload!
-  deleteManyHouseRuleses(where: HouseRulesWhereInput): BatchPayload!
+  deleteManyMenuItems(where: MenuItemWhereInput): BatchPayload!
   deleteManyPaymentAccounts(where: PaymentAccountWhereInput): BatchPayload!
+  deleteManyPolicieses(where: PoliciesWhereInput): BatchPayload!
+  deleteManyLocations(where: LocationWhereInput): BatchPayload!
+  deleteManyReviews(where: ReviewWhereInput): BatchPayload!
+  deleteManyOrders(where: OrderWhereInput): BatchPayload!
+  deleteManyPricings(where: PricingWhereInput): BatchPayload!
   deleteManyPictures(where: PictureWhereInput): BatchPayload!
 }
 
@@ -6070,7 +5378,7 @@ type Order implements Node {
   id: ID!
   createdAt: DateTime!
   bookee: User!
-  place: Place!
+  restaurant: Restaurant!
   startDate: DateTime!
   endDate: DateTime!
   payment: Payment
@@ -6091,7 +5399,7 @@ input OrderCreateInput {
   startDate: DateTime!
   endDate: DateTime!
   bookee: UserCreateOneWithoutOrdersInput!
-  place: PlaceCreateOneWithoutOrdersInput!
+  restaurant: RestaurantCreateOneWithoutOrdersInput!
   payment: PaymentCreateOneWithoutOrderInput
 }
 
@@ -6100,9 +5408,14 @@ input OrderCreateManyWithoutBookeeInput {
   connect: [OrderWhereUniqueInput!]
 }
 
-input OrderCreateManyWithoutPlaceInput {
-  create: [OrderCreateWithoutPlaceInput!]
+input OrderCreateManyWithoutRestaurantInput {
+  create: [OrderCreateWithoutRestaurantInput!]
   connect: [OrderWhereUniqueInput!]
+}
+
+input OrderCreateOneInput {
+  create: OrderCreateInput
+  connect: OrderWhereUniqueInput
 }
 
 input OrderCreateOneWithoutPaymentInput {
@@ -6114,7 +5427,7 @@ input OrderCreateWithoutBookeeInput {
   id: ID
   startDate: DateTime!
   endDate: DateTime!
-  place: PlaceCreateOneWithoutOrdersInput!
+  restaurant: RestaurantCreateOneWithoutOrdersInput!
   payment: PaymentCreateOneWithoutOrderInput
 }
 
@@ -6123,10 +5436,10 @@ input OrderCreateWithoutPaymentInput {
   startDate: DateTime!
   endDate: DateTime!
   bookee: UserCreateOneWithoutOrdersInput!
-  place: PlaceCreateOneWithoutOrdersInput!
+  restaurant: RestaurantCreateOneWithoutOrdersInput!
 }
 
-input OrderCreateWithoutPlaceInput {
+input OrderCreateWithoutRestaurantInput {
   id: ID
   startDate: DateTime!
   endDate: DateTime!
@@ -6317,11 +5630,19 @@ input OrderSubscriptionWhereInput {
   node: OrderWhereInput
 }
 
+input OrderUpdateDataInput {
+  startDate: DateTime
+  endDate: DateTime
+  bookee: UserUpdateOneRequiredWithoutOrdersInput
+  restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
+  payment: PaymentUpdateOneWithoutOrderInput
+}
+
 input OrderUpdateInput {
   startDate: DateTime
   endDate: DateTime
   bookee: UserUpdateOneRequiredWithoutOrdersInput
-  place: PlaceUpdateOneRequiredWithoutOrdersInput
+  restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
   payment: PaymentUpdateOneWithoutOrderInput
 }
 
@@ -6347,21 +5668,28 @@ input OrderUpdateManyWithoutBookeeInput {
   upsert: [OrderUpsertWithWhereUniqueWithoutBookeeInput!]
 }
 
-input OrderUpdateManyWithoutPlaceInput {
-  create: [OrderCreateWithoutPlaceInput!]
+input OrderUpdateManyWithoutRestaurantInput {
+  create: [OrderCreateWithoutRestaurantInput!]
   connect: [OrderWhereUniqueInput!]
   set: [OrderWhereUniqueInput!]
   disconnect: [OrderWhereUniqueInput!]
   delete: [OrderWhereUniqueInput!]
-  update: [OrderUpdateWithWhereUniqueWithoutPlaceInput!]
+  update: [OrderUpdateWithWhereUniqueWithoutRestaurantInput!]
   updateMany: [OrderUpdateManyWithWhereNestedInput!]
   deleteMany: [OrderScalarWhereInput!]
-  upsert: [OrderUpsertWithWhereUniqueWithoutPlaceInput!]
+  upsert: [OrderUpsertWithWhereUniqueWithoutRestaurantInput!]
 }
 
 input OrderUpdateManyWithWhereNestedInput {
   where: OrderScalarWhereInput!
   data: OrderUpdateManyDataInput!
+}
+
+input OrderUpdateOneRequiredInput {
+  create: OrderCreateInput
+  connect: OrderWhereUniqueInput
+  update: OrderUpdateDataInput
+  upsert: OrderUpsertNestedInput
 }
 
 input OrderUpdateOneRequiredWithoutPaymentInput {
@@ -6374,7 +5702,7 @@ input OrderUpdateOneRequiredWithoutPaymentInput {
 input OrderUpdateWithoutBookeeDataInput {
   startDate: DateTime
   endDate: DateTime
-  place: PlaceUpdateOneRequiredWithoutOrdersInput
+  restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
   payment: PaymentUpdateOneWithoutOrderInput
 }
 
@@ -6382,10 +5710,10 @@ input OrderUpdateWithoutPaymentDataInput {
   startDate: DateTime
   endDate: DateTime
   bookee: UserUpdateOneRequiredWithoutOrdersInput
-  place: PlaceUpdateOneRequiredWithoutOrdersInput
+  restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
 }
 
-input OrderUpdateWithoutPlaceDataInput {
+input OrderUpdateWithoutRestaurantDataInput {
   startDate: DateTime
   endDate: DateTime
   bookee: UserUpdateOneRequiredWithoutOrdersInput
@@ -6397,9 +5725,14 @@ input OrderUpdateWithWhereUniqueWithoutBookeeInput {
   data: OrderUpdateWithoutBookeeDataInput!
 }
 
-input OrderUpdateWithWhereUniqueWithoutPlaceInput {
+input OrderUpdateWithWhereUniqueWithoutRestaurantInput {
   where: OrderWhereUniqueInput!
-  data: OrderUpdateWithoutPlaceDataInput!
+  data: OrderUpdateWithoutRestaurantDataInput!
+}
+
+input OrderUpsertNestedInput {
+  update: OrderUpdateDataInput!
+  create: OrderCreateInput!
 }
 
 input OrderUpsertWithoutPaymentInput {
@@ -6413,10 +5746,10 @@ input OrderUpsertWithWhereUniqueWithoutBookeeInput {
   create: OrderCreateWithoutBookeeInput!
 }
 
-input OrderUpsertWithWhereUniqueWithoutPlaceInput {
+input OrderUpsertWithWhereUniqueWithoutRestaurantInput {
   where: OrderWhereUniqueInput!
-  update: OrderUpdateWithoutPlaceDataInput!
-  create: OrderCreateWithoutPlaceInput!
+  update: OrderUpdateWithoutRestaurantDataInput!
+  create: OrderCreateWithoutRestaurantInput!
 }
 
 input OrderWhereInput {
@@ -6535,7 +5868,7 @@ input OrderWhereInput {
   """All values greater than or equal the given value."""
   endDate_gte: DateTime
   bookee: UserWhereInput
-  place: PlaceWhereInput
+  restaurant: RestaurantWhereInput
   payment: PaymentWhereInput
 }
 
@@ -6562,7 +5895,7 @@ type Payment implements Node {
   id: ID!
   createdAt: DateTime!
   serviceFee: Float!
-  placePrice: Float!
+  restaurantPrice: Float!
   totalPrice: Float!
   order: Order!
   paymentMethod: PaymentAccount!
@@ -7052,7 +6385,7 @@ type PaymentConnection {
 input PaymentCreateInput {
   id: ID
   serviceFee: Float!
-  placePrice: Float!
+  restaurantPrice: Float!
   totalPrice: Float!
   order: OrderCreateOneWithoutPaymentInput!
   paymentMethod: PaymentAccountCreateOneWithoutPaymentsInput!
@@ -7071,7 +6404,7 @@ input PaymentCreateOneWithoutOrderInput {
 input PaymentCreateWithoutOrderInput {
   id: ID
   serviceFee: Float!
-  placePrice: Float!
+  restaurantPrice: Float!
   totalPrice: Float!
   paymentMethod: PaymentAccountCreateOneWithoutPaymentsInput!
 }
@@ -7079,7 +6412,7 @@ input PaymentCreateWithoutOrderInput {
 input PaymentCreateWithoutPaymentMethodInput {
   id: ID
   serviceFee: Float!
-  placePrice: Float!
+  restaurantPrice: Float!
   totalPrice: Float!
   order: OrderCreateOneWithoutPaymentInput!
 }
@@ -7100,8 +6433,8 @@ enum PaymentOrderByInput {
   createdAt_DESC
   serviceFee_ASC
   serviceFee_DESC
-  placePrice_ASC
-  placePrice_DESC
+  restaurantPrice_ASC
+  restaurantPrice_DESC
   totalPrice_ASC
   totalPrice_DESC
 }
@@ -7110,7 +6443,7 @@ type PaymentPreviousValues {
   id: ID!
   createdAt: DateTime!
   serviceFee: Float!
-  placePrice: Float!
+  restaurantPrice: Float!
   totalPrice: Float!
 }
 
@@ -7207,28 +6540,28 @@ input PaymentScalarWhereInput {
 
   """All values greater than or equal the given value."""
   serviceFee_gte: Float
-  placePrice: Float
+  restaurantPrice: Float
 
   """All values that are not equal to given value."""
-  placePrice_not: Float
+  restaurantPrice_not: Float
 
   """All values that are contained in given list."""
-  placePrice_in: [Float!]
+  restaurantPrice_in: [Float!]
 
   """All values that are not contained in given list."""
-  placePrice_not_in: [Float!]
+  restaurantPrice_not_in: [Float!]
 
   """All values less than the given value."""
-  placePrice_lt: Float
+  restaurantPrice_lt: Float
 
   """All values less than or equal the given value."""
-  placePrice_lte: Float
+  restaurantPrice_lte: Float
 
   """All values greater than the given value."""
-  placePrice_gt: Float
+  restaurantPrice_gt: Float
 
   """All values greater than or equal the given value."""
-  placePrice_gte: Float
+  restaurantPrice_gte: Float
   totalPrice: Float
 
   """All values that are not equal to given value."""
@@ -7294,7 +6627,7 @@ input PaymentSubscriptionWhereInput {
 
 input PaymentUpdateInput {
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
   order: OrderUpdateOneRequiredWithoutPaymentInput
   paymentMethod: PaymentAccountUpdateOneRequiredWithoutPaymentsInput
@@ -7302,13 +6635,13 @@ input PaymentUpdateInput {
 
 input PaymentUpdateManyDataInput {
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
 }
 
 input PaymentUpdateManyMutationInput {
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
 }
 
@@ -7340,14 +6673,14 @@ input PaymentUpdateOneWithoutOrderInput {
 
 input PaymentUpdateWithoutOrderDataInput {
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
   paymentMethod: PaymentAccountUpdateOneRequiredWithoutPaymentsInput
 }
 
 input PaymentUpdateWithoutPaymentMethodDataInput {
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
   order: OrderUpdateOneRequiredWithoutPaymentInput
 }
@@ -7461,28 +6794,28 @@ input PaymentWhereInput {
 
   """All values greater than or equal the given value."""
   serviceFee_gte: Float
-  placePrice: Float
+  restaurantPrice: Float
 
   """All values that are not equal to given value."""
-  placePrice_not: Float
+  restaurantPrice_not: Float
 
   """All values that are contained in given list."""
-  placePrice_in: [Float!]
+  restaurantPrice_in: [Float!]
 
   """All values that are not contained in given list."""
-  placePrice_not_in: [Float!]
+  restaurantPrice_not_in: [Float!]
 
   """All values less than the given value."""
-  placePrice_lt: Float
+  restaurantPrice_lt: Float
 
   """All values less than or equal the given value."""
-  placePrice_lte: Float
+  restaurantPrice_lte: Float
 
   """All values greater than the given value."""
-  placePrice_gt: Float
+  restaurantPrice_gt: Float
 
   """All values greater than or equal the given value."""
-  placePrice_gte: Float
+  restaurantPrice_gte: Float
   totalPrice: Float
 
   """All values that are not equal to given value."""
@@ -8308,1499 +7641,12 @@ input PictureWhereUniqueInput {
   id: ID
 }
 
-type Place implements Node {
-  id: ID!
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review!]
-  amenities: Amenities!
-  host: User!
-  pricing: Pricing!
-  location: Location!
-  views: Views!
-  guestRequirements: GuestRequirements
-  policies: Policies
-  houseRules: HouseRules
-  orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order!]
-  pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture!]
-  popularity: Int!
-}
-
-enum PLACE_SIZES {
-  ENTIRE_HOUSE
-  ENTIRE_APARTMENT
-  ENTIRE_EARTH_HOUSE
-  ENTIRE_CABIN
-  ENTIRE_VILLA
-  ENTIRE_PLACE
-  ENTIRE_BOAT
-  PRIVATE_ROOM
-}
-
-"""A connection to a list of items."""
-type PlaceConnection {
-  """Information to aid in pagination."""
-  pageInfo: PageInfo!
-
-  """A list of edges."""
-  edges: [PlaceEdge]!
-  aggregate: AggregatePlace!
-}
-
-input PlaceCreateInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-}
-
-input PlaceCreateManyWithoutHostInput {
-  create: [PlaceCreateWithoutHostInput!]
-  connect: [PlaceWhereUniqueInput!]
-}
-
-input PlaceCreateOneWithoutAmenitiesInput {
-  create: PlaceCreateWithoutAmenitiesInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutGuestRequirementsInput {
-  create: PlaceCreateWithoutGuestRequirementsInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutLocationInput {
-  create: PlaceCreateWithoutLocationInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutOrdersInput {
-  create: PlaceCreateWithoutOrdersInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutPoliciesInput {
-  create: PlaceCreateWithoutPoliciesInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutPricingInput {
-  create: PlaceCreateWithoutPricingInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutReviewsInput {
-  create: PlaceCreateWithoutReviewsInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutViewsInput {
-  create: PlaceCreateWithoutViewsInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateWithoutAmenitiesInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-}
-
-input PlaceCreateWithoutGuestRequirementsInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-}
-
-input PlaceCreateWithoutHostInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-}
-
-input PlaceCreateWithoutLocationInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-}
-
-input PlaceCreateWithoutOrdersInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  pictures: PictureCreateManyInput
-}
-
-input PlaceCreateWithoutPoliciesInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-}
-
-input PlaceCreateWithoutPricingInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-}
-
-input PlaceCreateWithoutReviewsInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-}
-
-input PlaceCreateWithoutViewsInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-}
-
-"""An edge in a connection."""
-type PlaceEdge {
-  """The item at the end of the edge."""
-  node: Place!
-
-  """A cursor for use in pagination."""
-  cursor: String!
-}
-
-enum PlaceOrderByInput {
-  id_ASC
-  id_DESC
-  name_ASC
-  name_DESC
-  size_ASC
-  size_DESC
-  shortDescription_ASC
-  shortDescription_DESC
-  description_ASC
-  description_DESC
-  slug_ASC
-  slug_DESC
-  maxGuests_ASC
-  maxGuests_DESC
-  numBedrooms_ASC
-  numBedrooms_DESC
-  numBeds_ASC
-  numBeds_DESC
-  numBaths_ASC
-  numBaths_DESC
-  popularity_ASC
-  popularity_DESC
-}
-
-type PlacePreviousValues {
-  id: ID!
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-}
-
-input PlaceScalarWhereInput {
-  """Logical AND on all given filters."""
-  AND: [PlaceScalarWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [PlaceScalarWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [PlaceScalarWhereInput!]
-  id: ID
-
-  """All values that are not equal to given value."""
-  id_not: ID
-
-  """All values that are contained in given list."""
-  id_in: [ID!]
-
-  """All values that are not contained in given list."""
-  id_not_in: [ID!]
-
-  """All values less than the given value."""
-  id_lt: ID
-
-  """All values less than or equal the given value."""
-  id_lte: ID
-
-  """All values greater than the given value."""
-  id_gt: ID
-
-  """All values greater than or equal the given value."""
-  id_gte: ID
-
-  """All values containing the given string."""
-  id_contains: ID
-
-  """All values not containing the given string."""
-  id_not_contains: ID
-
-  """All values starting with the given string."""
-  id_starts_with: ID
-
-  """All values not starting with the given string."""
-  id_not_starts_with: ID
-
-  """All values ending with the given string."""
-  id_ends_with: ID
-
-  """All values not ending with the given string."""
-  id_not_ends_with: ID
-  name: String
-
-  """All values that are not equal to given value."""
-  name_not: String
-
-  """All values that are contained in given list."""
-  name_in: [String!]
-
-  """All values that are not contained in given list."""
-  name_not_in: [String!]
-
-  """All values less than the given value."""
-  name_lt: String
-
-  """All values less than or equal the given value."""
-  name_lte: String
-
-  """All values greater than the given value."""
-  name_gt: String
-
-  """All values greater than or equal the given value."""
-  name_gte: String
-
-  """All values containing the given string."""
-  name_contains: String
-
-  """All values not containing the given string."""
-  name_not_contains: String
-
-  """All values starting with the given string."""
-  name_starts_with: String
-
-  """All values not starting with the given string."""
-  name_not_starts_with: String
-
-  """All values ending with the given string."""
-  name_ends_with: String
-
-  """All values not ending with the given string."""
-  name_not_ends_with: String
-  size: PLACE_SIZES
-
-  """All values that are not equal to given value."""
-  size_not: PLACE_SIZES
-
-  """All values that are contained in given list."""
-  size_in: [PLACE_SIZES!]
-
-  """All values that are not contained in given list."""
-  size_not_in: [PLACE_SIZES!]
-  shortDescription: String
-
-  """All values that are not equal to given value."""
-  shortDescription_not: String
-
-  """All values that are contained in given list."""
-  shortDescription_in: [String!]
-
-  """All values that are not contained in given list."""
-  shortDescription_not_in: [String!]
-
-  """All values less than the given value."""
-  shortDescription_lt: String
-
-  """All values less than or equal the given value."""
-  shortDescription_lte: String
-
-  """All values greater than the given value."""
-  shortDescription_gt: String
-
-  """All values greater than or equal the given value."""
-  shortDescription_gte: String
-
-  """All values containing the given string."""
-  shortDescription_contains: String
-
-  """All values not containing the given string."""
-  shortDescription_not_contains: String
-
-  """All values starting with the given string."""
-  shortDescription_starts_with: String
-
-  """All values not starting with the given string."""
-  shortDescription_not_starts_with: String
-
-  """All values ending with the given string."""
-  shortDescription_ends_with: String
-
-  """All values not ending with the given string."""
-  shortDescription_not_ends_with: String
-  description: String
-
-  """All values that are not equal to given value."""
-  description_not: String
-
-  """All values that are contained in given list."""
-  description_in: [String!]
-
-  """All values that are not contained in given list."""
-  description_not_in: [String!]
-
-  """All values less than the given value."""
-  description_lt: String
-
-  """All values less than or equal the given value."""
-  description_lte: String
-
-  """All values greater than the given value."""
-  description_gt: String
-
-  """All values greater than or equal the given value."""
-  description_gte: String
-
-  """All values containing the given string."""
-  description_contains: String
-
-  """All values not containing the given string."""
-  description_not_contains: String
-
-  """All values starting with the given string."""
-  description_starts_with: String
-
-  """All values not starting with the given string."""
-  description_not_starts_with: String
-
-  """All values ending with the given string."""
-  description_ends_with: String
-
-  """All values not ending with the given string."""
-  description_not_ends_with: String
-  slug: String
-
-  """All values that are not equal to given value."""
-  slug_not: String
-
-  """All values that are contained in given list."""
-  slug_in: [String!]
-
-  """All values that are not contained in given list."""
-  slug_not_in: [String!]
-
-  """All values less than the given value."""
-  slug_lt: String
-
-  """All values less than or equal the given value."""
-  slug_lte: String
-
-  """All values greater than the given value."""
-  slug_gt: String
-
-  """All values greater than or equal the given value."""
-  slug_gte: String
-
-  """All values containing the given string."""
-  slug_contains: String
-
-  """All values not containing the given string."""
-  slug_not_contains: String
-
-  """All values starting with the given string."""
-  slug_starts_with: String
-
-  """All values not starting with the given string."""
-  slug_not_starts_with: String
-
-  """All values ending with the given string."""
-  slug_ends_with: String
-
-  """All values not ending with the given string."""
-  slug_not_ends_with: String
-  maxGuests: Int
-
-  """All values that are not equal to given value."""
-  maxGuests_not: Int
-
-  """All values that are contained in given list."""
-  maxGuests_in: [Int!]
-
-  """All values that are not contained in given list."""
-  maxGuests_not_in: [Int!]
-
-  """All values less than the given value."""
-  maxGuests_lt: Int
-
-  """All values less than or equal the given value."""
-  maxGuests_lte: Int
-
-  """All values greater than the given value."""
-  maxGuests_gt: Int
-
-  """All values greater than or equal the given value."""
-  maxGuests_gte: Int
-  numBedrooms: Int
-
-  """All values that are not equal to given value."""
-  numBedrooms_not: Int
-
-  """All values that are contained in given list."""
-  numBedrooms_in: [Int!]
-
-  """All values that are not contained in given list."""
-  numBedrooms_not_in: [Int!]
-
-  """All values less than the given value."""
-  numBedrooms_lt: Int
-
-  """All values less than or equal the given value."""
-  numBedrooms_lte: Int
-
-  """All values greater than the given value."""
-  numBedrooms_gt: Int
-
-  """All values greater than or equal the given value."""
-  numBedrooms_gte: Int
-  numBeds: Int
-
-  """All values that are not equal to given value."""
-  numBeds_not: Int
-
-  """All values that are contained in given list."""
-  numBeds_in: [Int!]
-
-  """All values that are not contained in given list."""
-  numBeds_not_in: [Int!]
-
-  """All values less than the given value."""
-  numBeds_lt: Int
-
-  """All values less than or equal the given value."""
-  numBeds_lte: Int
-
-  """All values greater than the given value."""
-  numBeds_gt: Int
-
-  """All values greater than or equal the given value."""
-  numBeds_gte: Int
-  numBaths: Int
-
-  """All values that are not equal to given value."""
-  numBaths_not: Int
-
-  """All values that are contained in given list."""
-  numBaths_in: [Int!]
-
-  """All values that are not contained in given list."""
-  numBaths_not_in: [Int!]
-
-  """All values less than the given value."""
-  numBaths_lt: Int
-
-  """All values less than or equal the given value."""
-  numBaths_lte: Int
-
-  """All values greater than the given value."""
-  numBaths_gt: Int
-
-  """All values greater than or equal the given value."""
-  numBaths_gte: Int
-  popularity: Int
-
-  """All values that are not equal to given value."""
-  popularity_not: Int
-
-  """All values that are contained in given list."""
-  popularity_in: [Int!]
-
-  """All values that are not contained in given list."""
-  popularity_not_in: [Int!]
-
-  """All values less than the given value."""
-  popularity_lt: Int
-
-  """All values less than or equal the given value."""
-  popularity_lte: Int
-
-  """All values greater than the given value."""
-  popularity_gt: Int
-
-  """All values greater than or equal the given value."""
-  popularity_gte: Int
-}
-
-type PlaceSubscriptionPayload {
-  mutation: MutationType!
-  node: Place
-  updatedFields: [String!]
-  previousValues: PlacePreviousValues
-}
-
-input PlaceSubscriptionWhereInput {
-  """Logical AND on all given filters."""
-  AND: [PlaceSubscriptionWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [PlaceSubscriptionWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [PlaceSubscriptionWhereInput!]
-
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
-  mutation_in: [MutationType!]
-
-  """
-  The subscription event gets only dispatched when one of the updated fields names is included in this list
-  """
-  updatedFields_contains: String
-
-  """
-  The subscription event gets only dispatched when all of the field names included in this list have been updated
-  """
-  updatedFields_contains_every: [String!]
-
-  """
-  The subscription event gets only dispatched when some of the field names included in this list have been updated
-  """
-  updatedFields_contains_some: [String!]
-  node: PlaceWhereInput
-}
-
-input PlaceUpdateInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-}
-
-input PlaceUpdateManyDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-}
-
-input PlaceUpdateManyMutationInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-}
-
-input PlaceUpdateManyWithoutHostInput {
-  create: [PlaceCreateWithoutHostInput!]
-  connect: [PlaceWhereUniqueInput!]
-  set: [PlaceWhereUniqueInput!]
-  disconnect: [PlaceWhereUniqueInput!]
-  delete: [PlaceWhereUniqueInput!]
-  update: [PlaceUpdateWithWhereUniqueWithoutHostInput!]
-  updateMany: [PlaceUpdateManyWithWhereNestedInput!]
-  deleteMany: [PlaceScalarWhereInput!]
-  upsert: [PlaceUpsertWithWhereUniqueWithoutHostInput!]
-}
-
-input PlaceUpdateManyWithWhereNestedInput {
-  where: PlaceScalarWhereInput!
-  data: PlaceUpdateManyDataInput!
-}
-
-input PlaceUpdateOneRequiredWithoutAmenitiesInput {
-  create: PlaceCreateWithoutAmenitiesInput
-  connect: PlaceWhereUniqueInput
-  update: PlaceUpdateWithoutAmenitiesDataInput
-  upsert: PlaceUpsertWithoutAmenitiesInput
-}
-
-input PlaceUpdateOneRequiredWithoutGuestRequirementsInput {
-  create: PlaceCreateWithoutGuestRequirementsInput
-  connect: PlaceWhereUniqueInput
-  update: PlaceUpdateWithoutGuestRequirementsDataInput
-  upsert: PlaceUpsertWithoutGuestRequirementsInput
-}
-
-input PlaceUpdateOneRequiredWithoutOrdersInput {
-  create: PlaceCreateWithoutOrdersInput
-  connect: PlaceWhereUniqueInput
-  update: PlaceUpdateWithoutOrdersDataInput
-  upsert: PlaceUpsertWithoutOrdersInput
-}
-
-input PlaceUpdateOneRequiredWithoutPoliciesInput {
-  create: PlaceCreateWithoutPoliciesInput
-  connect: PlaceWhereUniqueInput
-  update: PlaceUpdateWithoutPoliciesDataInput
-  upsert: PlaceUpsertWithoutPoliciesInput
-}
-
-input PlaceUpdateOneRequiredWithoutPricingInput {
-  create: PlaceCreateWithoutPricingInput
-  connect: PlaceWhereUniqueInput
-  update: PlaceUpdateWithoutPricingDataInput
-  upsert: PlaceUpsertWithoutPricingInput
-}
-
-input PlaceUpdateOneRequiredWithoutReviewsInput {
-  create: PlaceCreateWithoutReviewsInput
-  connect: PlaceWhereUniqueInput
-  update: PlaceUpdateWithoutReviewsDataInput
-  upsert: PlaceUpsertWithoutReviewsInput
-}
-
-input PlaceUpdateOneRequiredWithoutViewsInput {
-  create: PlaceCreateWithoutViewsInput
-  connect: PlaceWhereUniqueInput
-  update: PlaceUpdateWithoutViewsDataInput
-  upsert: PlaceUpsertWithoutViewsInput
-}
-
-input PlaceUpdateOneWithoutLocationInput {
-  create: PlaceCreateWithoutLocationInput
-  connect: PlaceWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
-  update: PlaceUpdateWithoutLocationDataInput
-  upsert: PlaceUpsertWithoutLocationInput
-}
-
-input PlaceUpdateWithoutAmenitiesDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-}
-
-input PlaceUpdateWithoutGuestRequirementsDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-}
-
-input PlaceUpdateWithoutHostDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-}
-
-input PlaceUpdateWithoutLocationDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-}
-
-input PlaceUpdateWithoutOrdersDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  pictures: PictureUpdateManyInput
-}
-
-input PlaceUpdateWithoutPoliciesDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-}
-
-input PlaceUpdateWithoutPricingDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-}
-
-input PlaceUpdateWithoutReviewsDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-}
-
-input PlaceUpdateWithoutViewsDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-}
-
-input PlaceUpdateWithWhereUniqueWithoutHostInput {
-  where: PlaceWhereUniqueInput!
-  data: PlaceUpdateWithoutHostDataInput!
-}
-
-input PlaceUpsertWithoutAmenitiesInput {
-  update: PlaceUpdateWithoutAmenitiesDataInput!
-  create: PlaceCreateWithoutAmenitiesInput!
-}
-
-input PlaceUpsertWithoutGuestRequirementsInput {
-  update: PlaceUpdateWithoutGuestRequirementsDataInput!
-  create: PlaceCreateWithoutGuestRequirementsInput!
-}
-
-input PlaceUpsertWithoutLocationInput {
-  update: PlaceUpdateWithoutLocationDataInput!
-  create: PlaceCreateWithoutLocationInput!
-}
-
-input PlaceUpsertWithoutOrdersInput {
-  update: PlaceUpdateWithoutOrdersDataInput!
-  create: PlaceCreateWithoutOrdersInput!
-}
-
-input PlaceUpsertWithoutPoliciesInput {
-  update: PlaceUpdateWithoutPoliciesDataInput!
-  create: PlaceCreateWithoutPoliciesInput!
-}
-
-input PlaceUpsertWithoutPricingInput {
-  update: PlaceUpdateWithoutPricingDataInput!
-  create: PlaceCreateWithoutPricingInput!
-}
-
-input PlaceUpsertWithoutReviewsInput {
-  update: PlaceUpdateWithoutReviewsDataInput!
-  create: PlaceCreateWithoutReviewsInput!
-}
-
-input PlaceUpsertWithoutViewsInput {
-  update: PlaceUpdateWithoutViewsDataInput!
-  create: PlaceCreateWithoutViewsInput!
-}
-
-input PlaceUpsertWithWhereUniqueWithoutHostInput {
-  where: PlaceWhereUniqueInput!
-  update: PlaceUpdateWithoutHostDataInput!
-  create: PlaceCreateWithoutHostInput!
-}
-
-input PlaceWhereInput {
-  """Logical AND on all given filters."""
-  AND: [PlaceWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [PlaceWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [PlaceWhereInput!]
-  id: ID
-
-  """All values that are not equal to given value."""
-  id_not: ID
-
-  """All values that are contained in given list."""
-  id_in: [ID!]
-
-  """All values that are not contained in given list."""
-  id_not_in: [ID!]
-
-  """All values less than the given value."""
-  id_lt: ID
-
-  """All values less than or equal the given value."""
-  id_lte: ID
-
-  """All values greater than the given value."""
-  id_gt: ID
-
-  """All values greater than or equal the given value."""
-  id_gte: ID
-
-  """All values containing the given string."""
-  id_contains: ID
-
-  """All values not containing the given string."""
-  id_not_contains: ID
-
-  """All values starting with the given string."""
-  id_starts_with: ID
-
-  """All values not starting with the given string."""
-  id_not_starts_with: ID
-
-  """All values ending with the given string."""
-  id_ends_with: ID
-
-  """All values not ending with the given string."""
-  id_not_ends_with: ID
-  name: String
-
-  """All values that are not equal to given value."""
-  name_not: String
-
-  """All values that are contained in given list."""
-  name_in: [String!]
-
-  """All values that are not contained in given list."""
-  name_not_in: [String!]
-
-  """All values less than the given value."""
-  name_lt: String
-
-  """All values less than or equal the given value."""
-  name_lte: String
-
-  """All values greater than the given value."""
-  name_gt: String
-
-  """All values greater than or equal the given value."""
-  name_gte: String
-
-  """All values containing the given string."""
-  name_contains: String
-
-  """All values not containing the given string."""
-  name_not_contains: String
-
-  """All values starting with the given string."""
-  name_starts_with: String
-
-  """All values not starting with the given string."""
-  name_not_starts_with: String
-
-  """All values ending with the given string."""
-  name_ends_with: String
-
-  """All values not ending with the given string."""
-  name_not_ends_with: String
-  size: PLACE_SIZES
-
-  """All values that are not equal to given value."""
-  size_not: PLACE_SIZES
-
-  """All values that are contained in given list."""
-  size_in: [PLACE_SIZES!]
-
-  """All values that are not contained in given list."""
-  size_not_in: [PLACE_SIZES!]
-  shortDescription: String
-
-  """All values that are not equal to given value."""
-  shortDescription_not: String
-
-  """All values that are contained in given list."""
-  shortDescription_in: [String!]
-
-  """All values that are not contained in given list."""
-  shortDescription_not_in: [String!]
-
-  """All values less than the given value."""
-  shortDescription_lt: String
-
-  """All values less than or equal the given value."""
-  shortDescription_lte: String
-
-  """All values greater than the given value."""
-  shortDescription_gt: String
-
-  """All values greater than or equal the given value."""
-  shortDescription_gte: String
-
-  """All values containing the given string."""
-  shortDescription_contains: String
-
-  """All values not containing the given string."""
-  shortDescription_not_contains: String
-
-  """All values starting with the given string."""
-  shortDescription_starts_with: String
-
-  """All values not starting with the given string."""
-  shortDescription_not_starts_with: String
-
-  """All values ending with the given string."""
-  shortDescription_ends_with: String
-
-  """All values not ending with the given string."""
-  shortDescription_not_ends_with: String
-  description: String
-
-  """All values that are not equal to given value."""
-  description_not: String
-
-  """All values that are contained in given list."""
-  description_in: [String!]
-
-  """All values that are not contained in given list."""
-  description_not_in: [String!]
-
-  """All values less than the given value."""
-  description_lt: String
-
-  """All values less than or equal the given value."""
-  description_lte: String
-
-  """All values greater than the given value."""
-  description_gt: String
-
-  """All values greater than or equal the given value."""
-  description_gte: String
-
-  """All values containing the given string."""
-  description_contains: String
-
-  """All values not containing the given string."""
-  description_not_contains: String
-
-  """All values starting with the given string."""
-  description_starts_with: String
-
-  """All values not starting with the given string."""
-  description_not_starts_with: String
-
-  """All values ending with the given string."""
-  description_ends_with: String
-
-  """All values not ending with the given string."""
-  description_not_ends_with: String
-  slug: String
-
-  """All values that are not equal to given value."""
-  slug_not: String
-
-  """All values that are contained in given list."""
-  slug_in: [String!]
-
-  """All values that are not contained in given list."""
-  slug_not_in: [String!]
-
-  """All values less than the given value."""
-  slug_lt: String
-
-  """All values less than or equal the given value."""
-  slug_lte: String
-
-  """All values greater than the given value."""
-  slug_gt: String
-
-  """All values greater than or equal the given value."""
-  slug_gte: String
-
-  """All values containing the given string."""
-  slug_contains: String
-
-  """All values not containing the given string."""
-  slug_not_contains: String
-
-  """All values starting with the given string."""
-  slug_starts_with: String
-
-  """All values not starting with the given string."""
-  slug_not_starts_with: String
-
-  """All values ending with the given string."""
-  slug_ends_with: String
-
-  """All values not ending with the given string."""
-  slug_not_ends_with: String
-  maxGuests: Int
-
-  """All values that are not equal to given value."""
-  maxGuests_not: Int
-
-  """All values that are contained in given list."""
-  maxGuests_in: [Int!]
-
-  """All values that are not contained in given list."""
-  maxGuests_not_in: [Int!]
-
-  """All values less than the given value."""
-  maxGuests_lt: Int
-
-  """All values less than or equal the given value."""
-  maxGuests_lte: Int
-
-  """All values greater than the given value."""
-  maxGuests_gt: Int
-
-  """All values greater than or equal the given value."""
-  maxGuests_gte: Int
-  numBedrooms: Int
-
-  """All values that are not equal to given value."""
-  numBedrooms_not: Int
-
-  """All values that are contained in given list."""
-  numBedrooms_in: [Int!]
-
-  """All values that are not contained in given list."""
-  numBedrooms_not_in: [Int!]
-
-  """All values less than the given value."""
-  numBedrooms_lt: Int
-
-  """All values less than or equal the given value."""
-  numBedrooms_lte: Int
-
-  """All values greater than the given value."""
-  numBedrooms_gt: Int
-
-  """All values greater than or equal the given value."""
-  numBedrooms_gte: Int
-  numBeds: Int
-
-  """All values that are not equal to given value."""
-  numBeds_not: Int
-
-  """All values that are contained in given list."""
-  numBeds_in: [Int!]
-
-  """All values that are not contained in given list."""
-  numBeds_not_in: [Int!]
-
-  """All values less than the given value."""
-  numBeds_lt: Int
-
-  """All values less than or equal the given value."""
-  numBeds_lte: Int
-
-  """All values greater than the given value."""
-  numBeds_gt: Int
-
-  """All values greater than or equal the given value."""
-  numBeds_gte: Int
-  numBaths: Int
-
-  """All values that are not equal to given value."""
-  numBaths_not: Int
-
-  """All values that are contained in given list."""
-  numBaths_in: [Int!]
-
-  """All values that are not contained in given list."""
-  numBaths_not_in: [Int!]
-
-  """All values less than the given value."""
-  numBaths_lt: Int
-
-  """All values less than or equal the given value."""
-  numBaths_lte: Int
-
-  """All values greater than the given value."""
-  numBaths_gt: Int
-
-  """All values greater than or equal the given value."""
-  numBaths_gte: Int
-  popularity: Int
-
-  """All values that are not equal to given value."""
-  popularity_not: Int
-
-  """All values that are contained in given list."""
-  popularity_in: [Int!]
-
-  """All values that are not contained in given list."""
-  popularity_not_in: [Int!]
-
-  """All values less than the given value."""
-  popularity_lt: Int
-
-  """All values less than or equal the given value."""
-  popularity_lte: Int
-
-  """All values greater than the given value."""
-  popularity_gt: Int
-
-  """All values greater than or equal the given value."""
-  popularity_gte: Int
-  reviews_every: ReviewWhereInput
-  reviews_some: ReviewWhereInput
-  reviews_none: ReviewWhereInput
-  amenities: AmenitiesWhereInput
-  host: UserWhereInput
-  pricing: PricingWhereInput
-  location: LocationWhereInput
-  views: ViewsWhereInput
-  guestRequirements: GuestRequirementsWhereInput
-  policies: PoliciesWhereInput
-  houseRules: HouseRulesWhereInput
-  orders_every: OrderWhereInput
-  orders_some: OrderWhereInput
-  orders_none: OrderWhereInput
-  pictures_every: PictureWhereInput
-  pictures_some: PictureWhereInput
-  pictures_none: PictureWhereInput
-}
-
-input PlaceWhereUniqueInput {
-  id: ID
-}
-
 type Policies implements Node {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  checkInStartTime: Float!
-  checkInEndTime: Float!
-  checkoutTime: Float!
-  place: Place!
+  openingTime: Float!
+  closingTime: Float!
 }
 
 """A connection to a list of items."""
@@ -9815,22 +7661,13 @@ type PoliciesConnection {
 
 input PoliciesCreateInput {
   id: ID
-  checkInStartTime: Float!
-  checkInEndTime: Float!
-  checkoutTime: Float!
-  place: PlaceCreateOneWithoutPoliciesInput!
+  openingTime: Float!
+  closingTime: Float!
 }
 
-input PoliciesCreateOneWithoutPlaceInput {
-  create: PoliciesCreateWithoutPlaceInput
+input PoliciesCreateOneInput {
+  create: PoliciesCreateInput
   connect: PoliciesWhereUniqueInput
-}
-
-input PoliciesCreateWithoutPlaceInput {
-  id: ID
-  checkInStartTime: Float!
-  checkInEndTime: Float!
-  checkoutTime: Float!
 }
 
 """An edge in a connection."""
@@ -9849,21 +7686,18 @@ enum PoliciesOrderByInput {
   createdAt_DESC
   updatedAt_ASC
   updatedAt_DESC
-  checkInStartTime_ASC
-  checkInStartTime_DESC
-  checkInEndTime_ASC
-  checkInEndTime_DESC
-  checkoutTime_ASC
-  checkoutTime_DESC
+  openingTime_ASC
+  openingTime_DESC
+  closingTime_ASC
+  closingTime_DESC
 }
 
 type PoliciesPreviousValues {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  checkInStartTime: Float!
-  checkInEndTime: Float!
-  checkoutTime: Float!
+  openingTime: Float!
+  closingTime: Float!
 }
 
 type PoliciesSubscriptionPayload {
@@ -9905,37 +7739,33 @@ input PoliciesSubscriptionWhereInput {
   node: PoliciesWhereInput
 }
 
+input PoliciesUpdateDataInput {
+  openingTime: Float
+  closingTime: Float
+}
+
 input PoliciesUpdateInput {
-  checkInStartTime: Float
-  checkInEndTime: Float
-  checkoutTime: Float
-  place: PlaceUpdateOneRequiredWithoutPoliciesInput
+  openingTime: Float
+  closingTime: Float
 }
 
 input PoliciesUpdateManyMutationInput {
-  checkInStartTime: Float
-  checkInEndTime: Float
-  checkoutTime: Float
+  openingTime: Float
+  closingTime: Float
 }
 
-input PoliciesUpdateOneWithoutPlaceInput {
-  create: PoliciesCreateWithoutPlaceInput
+input PoliciesUpdateOneInput {
+  create: PoliciesCreateInput
   connect: PoliciesWhereUniqueInput
   disconnect: Boolean
   delete: Boolean
-  update: PoliciesUpdateWithoutPlaceDataInput
-  upsert: PoliciesUpsertWithoutPlaceInput
+  update: PoliciesUpdateDataInput
+  upsert: PoliciesUpsertNestedInput
 }
 
-input PoliciesUpdateWithoutPlaceDataInput {
-  checkInStartTime: Float
-  checkInEndTime: Float
-  checkoutTime: Float
-}
-
-input PoliciesUpsertWithoutPlaceInput {
-  update: PoliciesUpdateWithoutPlaceDataInput!
-  create: PoliciesCreateWithoutPlaceInput!
+input PoliciesUpsertNestedInput {
+  update: PoliciesUpdateDataInput!
+  create: PoliciesCreateInput!
 }
 
 input PoliciesWhereInput {
@@ -10031,73 +7861,50 @@ input PoliciesWhereInput {
 
   """All values greater than or equal the given value."""
   updatedAt_gte: DateTime
-  checkInStartTime: Float
+  openingTime: Float
 
   """All values that are not equal to given value."""
-  checkInStartTime_not: Float
+  openingTime_not: Float
 
   """All values that are contained in given list."""
-  checkInStartTime_in: [Float!]
+  openingTime_in: [Float!]
 
   """All values that are not contained in given list."""
-  checkInStartTime_not_in: [Float!]
+  openingTime_not_in: [Float!]
 
   """All values less than the given value."""
-  checkInStartTime_lt: Float
+  openingTime_lt: Float
 
   """All values less than or equal the given value."""
-  checkInStartTime_lte: Float
+  openingTime_lte: Float
 
   """All values greater than the given value."""
-  checkInStartTime_gt: Float
+  openingTime_gt: Float
 
   """All values greater than or equal the given value."""
-  checkInStartTime_gte: Float
-  checkInEndTime: Float
+  openingTime_gte: Float
+  closingTime: Float
 
   """All values that are not equal to given value."""
-  checkInEndTime_not: Float
+  closingTime_not: Float
 
   """All values that are contained in given list."""
-  checkInEndTime_in: [Float!]
+  closingTime_in: [Float!]
 
   """All values that are not contained in given list."""
-  checkInEndTime_not_in: [Float!]
+  closingTime_not_in: [Float!]
 
   """All values less than the given value."""
-  checkInEndTime_lt: Float
+  closingTime_lt: Float
 
   """All values less than or equal the given value."""
-  checkInEndTime_lte: Float
+  closingTime_lte: Float
 
   """All values greater than the given value."""
-  checkInEndTime_gt: Float
+  closingTime_gt: Float
 
   """All values greater than or equal the given value."""
-  checkInEndTime_gte: Float
-  checkoutTime: Float
-
-  """All values that are not equal to given value."""
-  checkoutTime_not: Float
-
-  """All values that are contained in given list."""
-  checkoutTime_in: [Float!]
-
-  """All values that are not contained in given list."""
-  checkoutTime_not_in: [Float!]
-
-  """All values less than the given value."""
-  checkoutTime_lt: Float
-
-  """All values less than or equal the given value."""
-  checkoutTime_lte: Float
-
-  """All values greater than the given value."""
-  checkoutTime_gt: Float
-
-  """All values greater than or equal the given value."""
-  checkoutTime_gte: Float
-  place: PlaceWhereInput
+  closingTime_gte: Float
 }
 
 input PoliciesWhereUniqueInput {
@@ -10106,19 +7913,14 @@ input PoliciesWhereUniqueInput {
 
 type Pricing implements Node {
   id: ID!
-  place: Place!
   monthlyDiscount: Int
   weeklyDiscount: Int
-  perNight: Int!
+  price: Int!
   smartPricing: Boolean!
   basePrice: Int!
   averageWeekly: Int!
   averageMonthly: Int!
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
   weekendPricing: Int
-  currency: CURRENCY
 }
 
 """A connection to a list of items."""
@@ -10135,38 +7937,17 @@ input PricingCreateInput {
   id: ID
   monthlyDiscount: Int
   weeklyDiscount: Int
-  perNight: Int!
+  price: Int!
   smartPricing: Boolean
   basePrice: Int!
   averageWeekly: Int!
   averageMonthly: Int!
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
   weekendPricing: Int
-  currency: CURRENCY
-  place: PlaceCreateOneWithoutPricingInput!
 }
 
-input PricingCreateOneWithoutPlaceInput {
-  create: PricingCreateWithoutPlaceInput
+input PricingCreateOneInput {
+  create: PricingCreateInput
   connect: PricingWhereUniqueInput
-}
-
-input PricingCreateWithoutPlaceInput {
-  id: ID
-  monthlyDiscount: Int
-  weeklyDiscount: Int
-  perNight: Int!
-  smartPricing: Boolean
-  basePrice: Int!
-  averageWeekly: Int!
-  averageMonthly: Int!
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
-  weekendPricing: Int
-  currency: CURRENCY
 }
 
 """An edge in a connection."""
@@ -10185,8 +7966,8 @@ enum PricingOrderByInput {
   monthlyDiscount_DESC
   weeklyDiscount_ASC
   weeklyDiscount_DESC
-  perNight_ASC
-  perNight_DESC
+  price_ASC
+  price_DESC
   smartPricing_ASC
   smartPricing_DESC
   basePrice_ASC
@@ -10195,32 +7976,20 @@ enum PricingOrderByInput {
   averageWeekly_DESC
   averageMonthly_ASC
   averageMonthly_DESC
-  cleaningFee_ASC
-  cleaningFee_DESC
-  securityDeposit_ASC
-  securityDeposit_DESC
-  extraGuests_ASC
-  extraGuests_DESC
   weekendPricing_ASC
   weekendPricing_DESC
-  currency_ASC
-  currency_DESC
 }
 
 type PricingPreviousValues {
   id: ID!
   monthlyDiscount: Int
   weeklyDiscount: Int
-  perNight: Int!
+  price: Int!
   smartPricing: Boolean!
   basePrice: Int!
   averageWeekly: Int!
   averageMonthly: Int!
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
   weekendPricing: Int
-  currency: CURRENCY
 }
 
 type PricingSubscriptionPayload {
@@ -10262,62 +8031,49 @@ input PricingSubscriptionWhereInput {
   node: PricingWhereInput
 }
 
-input PricingUpdateInput {
+input PricingUpdateDataInput {
   monthlyDiscount: Int
   weeklyDiscount: Int
-  perNight: Int
+  price: Int
   smartPricing: Boolean
   basePrice: Int
   averageWeekly: Int
   averageMonthly: Int
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
   weekendPricing: Int
-  currency: CURRENCY
-  place: PlaceUpdateOneRequiredWithoutPricingInput
+}
+
+input PricingUpdateInput {
+  monthlyDiscount: Int
+  weeklyDiscount: Int
+  price: Int
+  smartPricing: Boolean
+  basePrice: Int
+  averageWeekly: Int
+  averageMonthly: Int
+  weekendPricing: Int
 }
 
 input PricingUpdateManyMutationInput {
   monthlyDiscount: Int
   weeklyDiscount: Int
-  perNight: Int
+  price: Int
   smartPricing: Boolean
   basePrice: Int
   averageWeekly: Int
   averageMonthly: Int
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
   weekendPricing: Int
-  currency: CURRENCY
 }
 
-input PricingUpdateOneRequiredWithoutPlaceInput {
-  create: PricingCreateWithoutPlaceInput
+input PricingUpdateOneRequiredInput {
+  create: PricingCreateInput
   connect: PricingWhereUniqueInput
-  update: PricingUpdateWithoutPlaceDataInput
-  upsert: PricingUpsertWithoutPlaceInput
+  update: PricingUpdateDataInput
+  upsert: PricingUpsertNestedInput
 }
 
-input PricingUpdateWithoutPlaceDataInput {
-  monthlyDiscount: Int
-  weeklyDiscount: Int
-  perNight: Int
-  smartPricing: Boolean
-  basePrice: Int
-  averageWeekly: Int
-  averageMonthly: Int
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
-  weekendPricing: Int
-  currency: CURRENCY
-}
-
-input PricingUpsertWithoutPlaceInput {
-  update: PricingUpdateWithoutPlaceDataInput!
-  create: PricingCreateWithoutPlaceInput!
+input PricingUpsertNestedInput {
+  update: PricingUpdateDataInput!
+  create: PricingCreateInput!
 }
 
 input PricingWhereInput {
@@ -10413,28 +8169,28 @@ input PricingWhereInput {
 
   """All values greater than or equal the given value."""
   weeklyDiscount_gte: Int
-  perNight: Int
+  price: Int
 
   """All values that are not equal to given value."""
-  perNight_not: Int
+  price_not: Int
 
   """All values that are contained in given list."""
-  perNight_in: [Int!]
+  price_in: [Int!]
 
   """All values that are not contained in given list."""
-  perNight_not_in: [Int!]
+  price_not_in: [Int!]
 
   """All values less than the given value."""
-  perNight_lt: Int
+  price_lt: Int
 
   """All values less than or equal the given value."""
-  perNight_lte: Int
+  price_lte: Int
 
   """All values greater than the given value."""
-  perNight_gt: Int
+  price_gt: Int
 
   """All values greater than or equal the given value."""
-  perNight_gte: Int
+  price_gte: Int
   smartPricing: Boolean
 
   """All values that are not equal to given value."""
@@ -10505,72 +8261,6 @@ input PricingWhereInput {
 
   """All values greater than or equal the given value."""
   averageMonthly_gte: Int
-  cleaningFee: Int
-
-  """All values that are not equal to given value."""
-  cleaningFee_not: Int
-
-  """All values that are contained in given list."""
-  cleaningFee_in: [Int!]
-
-  """All values that are not contained in given list."""
-  cleaningFee_not_in: [Int!]
-
-  """All values less than the given value."""
-  cleaningFee_lt: Int
-
-  """All values less than or equal the given value."""
-  cleaningFee_lte: Int
-
-  """All values greater than the given value."""
-  cleaningFee_gt: Int
-
-  """All values greater than or equal the given value."""
-  cleaningFee_gte: Int
-  securityDeposit: Int
-
-  """All values that are not equal to given value."""
-  securityDeposit_not: Int
-
-  """All values that are contained in given list."""
-  securityDeposit_in: [Int!]
-
-  """All values that are not contained in given list."""
-  securityDeposit_not_in: [Int!]
-
-  """All values less than the given value."""
-  securityDeposit_lt: Int
-
-  """All values less than or equal the given value."""
-  securityDeposit_lte: Int
-
-  """All values greater than the given value."""
-  securityDeposit_gt: Int
-
-  """All values greater than or equal the given value."""
-  securityDeposit_gte: Int
-  extraGuests: Int
-
-  """All values that are not equal to given value."""
-  extraGuests_not: Int
-
-  """All values that are contained in given list."""
-  extraGuests_in: [Int!]
-
-  """All values that are not contained in given list."""
-  extraGuests_not_in: [Int!]
-
-  """All values less than the given value."""
-  extraGuests_lt: Int
-
-  """All values less than or equal the given value."""
-  extraGuests_lte: Int
-
-  """All values greater than the given value."""
-  extraGuests_gt: Int
-
-  """All values greater than or equal the given value."""
-  extraGuests_gte: Int
   weekendPricing: Int
 
   """All values that are not equal to given value."""
@@ -10593,17 +8283,6 @@ input PricingWhereInput {
 
   """All values greater than or equal the given value."""
   weekendPricing_gte: Int
-  currency: CURRENCY
-
-  """All values that are not equal to given value."""
-  currency_not: CURRENCY
-
-  """All values that are contained in given list."""
-  currency_in: [CURRENCY!]
-
-  """All values that are not contained in given list."""
-  currency_not_in: [CURRENCY!]
-  place: PlaceWhereInput
 }
 
 input PricingWhereUniqueInput {
@@ -10612,19 +8291,10 @@ input PricingWhereUniqueInput {
 
 type Query {
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
-  places(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Place]!
-  pricings(where: PricingWhereInput, orderBy: PricingOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Pricing]!
-  guestRequirementses(where: GuestRequirementsWhereInput, orderBy: GuestRequirementsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [GuestRequirements]!
-  policieses(where: PoliciesWhereInput, orderBy: PoliciesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Policies]!
-  viewses(where: ViewsWhereInput, orderBy: ViewsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Views]!
-  locations(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Location]!
   neighbourhoods(where: NeighbourhoodWhereInput, orderBy: NeighbourhoodOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Neighbourhood]!
   cities(where: CityWhereInput, orderBy: CityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [City]!
   experiences(where: ExperienceWhereInput, orderBy: ExperienceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Experience]!
   experienceCategories(where: ExperienceCategoryWhereInput, orderBy: ExperienceCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ExperienceCategory]!
-  amenitieses(where: AmenitiesWhereInput, orderBy: AmenitiesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Amenities]!
-  reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review]!
-  orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order]!
   payments(where: PaymentWhereInput, orderBy: PaymentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Payment]!
   paypalInformations(where: PaypalInformationWhereInput, orderBy: PaypalInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaypalInformation]!
   paytmInformations(where: PaytmInformationWhereInput, orderBy: PaytmInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaytmInformation]!
@@ -10633,23 +8303,19 @@ type Query {
   messages(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Message]!
   notifications(where: NotificationWhereInput, orderBy: NotificationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Notification]!
   restaurants(where: RestaurantWhereInput, orderBy: RestaurantOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Restaurant]!
-  houseRuleses(where: HouseRulesWhereInput, orderBy: HouseRulesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [HouseRules]!
+  menuItems(where: MenuItemWhereInput, orderBy: MenuItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [MenuItem]!
   paymentAccounts(where: PaymentAccountWhereInput, orderBy: PaymentAccountOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaymentAccount]!
+  policieses(where: PoliciesWhereInput, orderBy: PoliciesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Policies]!
+  locations(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Location]!
+  reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review]!
+  orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order]!
+  pricings(where: PricingWhereInput, orderBy: PricingOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Pricing]!
   pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture]!
   user(where: UserWhereUniqueInput!): User
-  place(where: PlaceWhereUniqueInput!): Place
-  pricing(where: PricingWhereUniqueInput!): Pricing
-  guestRequirements(where: GuestRequirementsWhereUniqueInput!): GuestRequirements
-  policies(where: PoliciesWhereUniqueInput!): Policies
-  views(where: ViewsWhereUniqueInput!): Views
-  location(where: LocationWhereUniqueInput!): Location
   neighbourhood(where: NeighbourhoodWhereUniqueInput!): Neighbourhood
   city(where: CityWhereUniqueInput!): City
   experience(where: ExperienceWhereUniqueInput!): Experience
   experienceCategory(where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
-  amenities(where: AmenitiesWhereUniqueInput!): Amenities
-  review(where: ReviewWhereUniqueInput!): Review
-  order(where: OrderWhereUniqueInput!): Order
   payment(where: PaymentWhereUniqueInput!): Payment
   paypalInformation(where: PaypalInformationWhereUniqueInput!): PaypalInformation
   paytmInformation(where: PaytmInformationWhereUniqueInput!): PaytmInformation
@@ -10658,23 +8324,19 @@ type Query {
   message(where: MessageWhereUniqueInput!): Message
   notification(where: NotificationWhereUniqueInput!): Notification
   restaurant(where: RestaurantWhereUniqueInput!): Restaurant
-  houseRules(where: HouseRulesWhereUniqueInput!): HouseRules
+  menuItem(where: MenuItemWhereUniqueInput!): MenuItem
   paymentAccount(where: PaymentAccountWhereUniqueInput!): PaymentAccount
+  policies(where: PoliciesWhereUniqueInput!): Policies
+  location(where: LocationWhereUniqueInput!): Location
+  review(where: ReviewWhereUniqueInput!): Review
+  order(where: OrderWhereUniqueInput!): Order
+  pricing(where: PricingWhereUniqueInput!): Pricing
   picture(where: PictureWhereUniqueInput!): Picture
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
-  placesConnection(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PlaceConnection!
-  pricingsConnection(where: PricingWhereInput, orderBy: PricingOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PricingConnection!
-  guestRequirementsesConnection(where: GuestRequirementsWhereInput, orderBy: GuestRequirementsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): GuestRequirementsConnection!
-  policiesesConnection(where: PoliciesWhereInput, orderBy: PoliciesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PoliciesConnection!
-  viewsesConnection(where: ViewsWhereInput, orderBy: ViewsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ViewsConnection!
-  locationsConnection(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LocationConnection!
   neighbourhoodsConnection(where: NeighbourhoodWhereInput, orderBy: NeighbourhoodOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NeighbourhoodConnection!
   citiesConnection(where: CityWhereInput, orderBy: CityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CityConnection!
   experiencesConnection(where: ExperienceWhereInput, orderBy: ExperienceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ExperienceConnection!
   experienceCategoriesConnection(where: ExperienceCategoryWhereInput, orderBy: ExperienceCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ExperienceCategoryConnection!
-  amenitiesesConnection(where: AmenitiesWhereInput, orderBy: AmenitiesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): AmenitiesConnection!
-  reviewsConnection(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ReviewConnection!
-  ordersConnection(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): OrderConnection!
   paymentsConnection(where: PaymentWhereInput, orderBy: PaymentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaymentConnection!
   paypalInformationsConnection(where: PaypalInformationWhereInput, orderBy: PaypalInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaypalInformationConnection!
   paytmInformationsConnection(where: PaytmInformationWhereInput, orderBy: PaytmInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaytmInformationConnection!
@@ -10683,8 +8345,13 @@ type Query {
   messagesConnection(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MessageConnection!
   notificationsConnection(where: NotificationWhereInput, orderBy: NotificationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NotificationConnection!
   restaurantsConnection(where: RestaurantWhereInput, orderBy: RestaurantOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RestaurantConnection!
-  houseRulesesConnection(where: HouseRulesWhereInput, orderBy: HouseRulesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): HouseRulesConnection!
+  menuItemsConnection(where: MenuItemWhereInput, orderBy: MenuItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MenuItemConnection!
   paymentAccountsConnection(where: PaymentAccountWhereInput, orderBy: PaymentAccountOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaymentAccountConnection!
+  policiesesConnection(where: PoliciesWhereInput, orderBy: PoliciesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PoliciesConnection!
+  locationsConnection(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LocationConnection!
+  reviewsConnection(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ReviewConnection!
+  ordersConnection(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): OrderConnection!
+  pricingsConnection(where: PricingWhereInput, orderBy: PricingOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PricingConnection!
   picturesConnection(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PictureConnection!
 
   """Fetches an object given its ID"""
@@ -10696,14 +8363,22 @@ type Query {
 
 type Restaurant implements Node {
   id: ID!
-  createdAt: DateTime!
-  title: String!
-  avgPricePerPerson: Int!
-  pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture!]
-  location: Location!
-  isCurated: Boolean!
+  name: String!
+  shortDescription: String!
+  description: String!
   slug: String!
+  maxGuests: Int!
+  numRatings: Int!
+  avgRating: Float
+  reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review!]
+  location: Location
+  policies: Policies
+  menu(where: MenuItemWhereInput, orderBy: MenuItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [MenuItem!]
+  orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order!]
+  pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture!]
   popularity: Int!
+  avgPricePerPerson: Int!
+  isCurated: Boolean!
 }
 
 """A connection to a list of items."""
@@ -10718,27 +8393,50 @@ type RestaurantConnection {
 
 input RestaurantCreateInput {
   id: ID
-  title: String!
+  name: String!
+  shortDescription: String!
+  description: String!
+  slug: String!
+  maxGuests: Int!
+  numRatings: Int!
+  avgRating: Float
+  popularity: Int!
   avgPricePerPerson: Int!
   isCurated: Boolean
-  slug: String!
-  popularity: Int!
+  reviews: ReviewCreateManyInput
+  location: LocationCreateOneInput
+  policies: PoliciesCreateOneInput
+  menu: MenuItemCreateManyInput
+  orders: OrderCreateManyWithoutRestaurantInput
   pictures: PictureCreateManyInput
-  location: LocationCreateOneWithoutRestaurantInput!
 }
 
-input RestaurantCreateOneWithoutLocationInput {
-  create: RestaurantCreateWithoutLocationInput
+input RestaurantCreateManyInput {
+  create: [RestaurantCreateInput!]
+  connect: [RestaurantWhereUniqueInput!]
+}
+
+input RestaurantCreateOneWithoutOrdersInput {
+  create: RestaurantCreateWithoutOrdersInput
   connect: RestaurantWhereUniqueInput
 }
 
-input RestaurantCreateWithoutLocationInput {
+input RestaurantCreateWithoutOrdersInput {
   id: ID
-  title: String!
+  name: String!
+  shortDescription: String!
+  description: String!
+  slug: String!
+  maxGuests: Int!
+  numRatings: Int!
+  avgRating: Float
+  popularity: Int!
   avgPricePerPerson: Int!
   isCurated: Boolean
-  slug: String!
-  popularity: Int!
+  reviews: ReviewCreateManyInput
+  location: LocationCreateOneInput
+  policies: PoliciesCreateOneInput
+  menu: MenuItemCreateManyInput
   pictures: PictureCreateManyInput
 }
 
@@ -10754,28 +8452,365 @@ type RestaurantEdge {
 enum RestaurantOrderByInput {
   id_ASC
   id_DESC
-  createdAt_ASC
-  createdAt_DESC
-  title_ASC
-  title_DESC
+  name_ASC
+  name_DESC
+  shortDescription_ASC
+  shortDescription_DESC
+  description_ASC
+  description_DESC
+  slug_ASC
+  slug_DESC
+  maxGuests_ASC
+  maxGuests_DESC
+  numRatings_ASC
+  numRatings_DESC
+  avgRating_ASC
+  avgRating_DESC
+  popularity_ASC
+  popularity_DESC
   avgPricePerPerson_ASC
   avgPricePerPerson_DESC
   isCurated_ASC
   isCurated_DESC
-  slug_ASC
-  slug_DESC
-  popularity_ASC
-  popularity_DESC
 }
 
 type RestaurantPreviousValues {
   id: ID!
-  createdAt: DateTime!
-  title: String!
+  name: String!
+  shortDescription: String!
+  description: String!
+  slug: String!
+  maxGuests: Int!
+  numRatings: Int!
+  avgRating: Float
+  popularity: Int!
   avgPricePerPerson: Int!
   isCurated: Boolean!
-  slug: String!
-  popularity: Int!
+}
+
+input RestaurantScalarWhereInput {
+  """Logical AND on all given filters."""
+  AND: [RestaurantScalarWhereInput!]
+
+  """Logical OR on all given filters."""
+  OR: [RestaurantScalarWhereInput!]
+
+  """Logical NOT on all given filters combined by AND."""
+  NOT: [RestaurantScalarWhereInput!]
+  id: ID
+
+  """All values that are not equal to given value."""
+  id_not: ID
+
+  """All values that are contained in given list."""
+  id_in: [ID!]
+
+  """All values that are not contained in given list."""
+  id_not_in: [ID!]
+
+  """All values less than the given value."""
+  id_lt: ID
+
+  """All values less than or equal the given value."""
+  id_lte: ID
+
+  """All values greater than the given value."""
+  id_gt: ID
+
+  """All values greater than or equal the given value."""
+  id_gte: ID
+
+  """All values containing the given string."""
+  id_contains: ID
+
+  """All values not containing the given string."""
+  id_not_contains: ID
+
+  """All values starting with the given string."""
+  id_starts_with: ID
+
+  """All values not starting with the given string."""
+  id_not_starts_with: ID
+
+  """All values ending with the given string."""
+  id_ends_with: ID
+
+  """All values not ending with the given string."""
+  id_not_ends_with: ID
+  name: String
+
+  """All values that are not equal to given value."""
+  name_not: String
+
+  """All values that are contained in given list."""
+  name_in: [String!]
+
+  """All values that are not contained in given list."""
+  name_not_in: [String!]
+
+  """All values less than the given value."""
+  name_lt: String
+
+  """All values less than or equal the given value."""
+  name_lte: String
+
+  """All values greater than the given value."""
+  name_gt: String
+
+  """All values greater than or equal the given value."""
+  name_gte: String
+
+  """All values containing the given string."""
+  name_contains: String
+
+  """All values not containing the given string."""
+  name_not_contains: String
+
+  """All values starting with the given string."""
+  name_starts_with: String
+
+  """All values not starting with the given string."""
+  name_not_starts_with: String
+
+  """All values ending with the given string."""
+  name_ends_with: String
+
+  """All values not ending with the given string."""
+  name_not_ends_with: String
+  shortDescription: String
+
+  """All values that are not equal to given value."""
+  shortDescription_not: String
+
+  """All values that are contained in given list."""
+  shortDescription_in: [String!]
+
+  """All values that are not contained in given list."""
+  shortDescription_not_in: [String!]
+
+  """All values less than the given value."""
+  shortDescription_lt: String
+
+  """All values less than or equal the given value."""
+  shortDescription_lte: String
+
+  """All values greater than the given value."""
+  shortDescription_gt: String
+
+  """All values greater than or equal the given value."""
+  shortDescription_gte: String
+
+  """All values containing the given string."""
+  shortDescription_contains: String
+
+  """All values not containing the given string."""
+  shortDescription_not_contains: String
+
+  """All values starting with the given string."""
+  shortDescription_starts_with: String
+
+  """All values not starting with the given string."""
+  shortDescription_not_starts_with: String
+
+  """All values ending with the given string."""
+  shortDescription_ends_with: String
+
+  """All values not ending with the given string."""
+  shortDescription_not_ends_with: String
+  description: String
+
+  """All values that are not equal to given value."""
+  description_not: String
+
+  """All values that are contained in given list."""
+  description_in: [String!]
+
+  """All values that are not contained in given list."""
+  description_not_in: [String!]
+
+  """All values less than the given value."""
+  description_lt: String
+
+  """All values less than or equal the given value."""
+  description_lte: String
+
+  """All values greater than the given value."""
+  description_gt: String
+
+  """All values greater than or equal the given value."""
+  description_gte: String
+
+  """All values containing the given string."""
+  description_contains: String
+
+  """All values not containing the given string."""
+  description_not_contains: String
+
+  """All values starting with the given string."""
+  description_starts_with: String
+
+  """All values not starting with the given string."""
+  description_not_starts_with: String
+
+  """All values ending with the given string."""
+  description_ends_with: String
+
+  """All values not ending with the given string."""
+  description_not_ends_with: String
+  slug: String
+
+  """All values that are not equal to given value."""
+  slug_not: String
+
+  """All values that are contained in given list."""
+  slug_in: [String!]
+
+  """All values that are not contained in given list."""
+  slug_not_in: [String!]
+
+  """All values less than the given value."""
+  slug_lt: String
+
+  """All values less than or equal the given value."""
+  slug_lte: String
+
+  """All values greater than the given value."""
+  slug_gt: String
+
+  """All values greater than or equal the given value."""
+  slug_gte: String
+
+  """All values containing the given string."""
+  slug_contains: String
+
+  """All values not containing the given string."""
+  slug_not_contains: String
+
+  """All values starting with the given string."""
+  slug_starts_with: String
+
+  """All values not starting with the given string."""
+  slug_not_starts_with: String
+
+  """All values ending with the given string."""
+  slug_ends_with: String
+
+  """All values not ending with the given string."""
+  slug_not_ends_with: String
+  maxGuests: Int
+
+  """All values that are not equal to given value."""
+  maxGuests_not: Int
+
+  """All values that are contained in given list."""
+  maxGuests_in: [Int!]
+
+  """All values that are not contained in given list."""
+  maxGuests_not_in: [Int!]
+
+  """All values less than the given value."""
+  maxGuests_lt: Int
+
+  """All values less than or equal the given value."""
+  maxGuests_lte: Int
+
+  """All values greater than the given value."""
+  maxGuests_gt: Int
+
+  """All values greater than or equal the given value."""
+  maxGuests_gte: Int
+  numRatings: Int
+
+  """All values that are not equal to given value."""
+  numRatings_not: Int
+
+  """All values that are contained in given list."""
+  numRatings_in: [Int!]
+
+  """All values that are not contained in given list."""
+  numRatings_not_in: [Int!]
+
+  """All values less than the given value."""
+  numRatings_lt: Int
+
+  """All values less than or equal the given value."""
+  numRatings_lte: Int
+
+  """All values greater than the given value."""
+  numRatings_gt: Int
+
+  """All values greater than or equal the given value."""
+  numRatings_gte: Int
+  avgRating: Float
+
+  """All values that are not equal to given value."""
+  avgRating_not: Float
+
+  """All values that are contained in given list."""
+  avgRating_in: [Float!]
+
+  """All values that are not contained in given list."""
+  avgRating_not_in: [Float!]
+
+  """All values less than the given value."""
+  avgRating_lt: Float
+
+  """All values less than or equal the given value."""
+  avgRating_lte: Float
+
+  """All values greater than the given value."""
+  avgRating_gt: Float
+
+  """All values greater than or equal the given value."""
+  avgRating_gte: Float
+  popularity: Int
+
+  """All values that are not equal to given value."""
+  popularity_not: Int
+
+  """All values that are contained in given list."""
+  popularity_in: [Int!]
+
+  """All values that are not contained in given list."""
+  popularity_not_in: [Int!]
+
+  """All values less than the given value."""
+  popularity_lt: Int
+
+  """All values less than or equal the given value."""
+  popularity_lte: Int
+
+  """All values greater than the given value."""
+  popularity_gt: Int
+
+  """All values greater than or equal the given value."""
+  popularity_gte: Int
+  avgPricePerPerson: Int
+
+  """All values that are not equal to given value."""
+  avgPricePerPerson_not: Int
+
+  """All values that are contained in given list."""
+  avgPricePerPerson_in: [Int!]
+
+  """All values that are not contained in given list."""
+  avgPricePerPerson_not_in: [Int!]
+
+  """All values less than the given value."""
+  avgPricePerPerson_lt: Int
+
+  """All values less than or equal the given value."""
+  avgPricePerPerson_lte: Int
+
+  """All values greater than the given value."""
+  avgPricePerPerson_gt: Int
+
+  """All values greater than or equal the given value."""
+  avgPricePerPerson_gte: Int
+  isCurated: Boolean
+
+  """All values that are not equal to given value."""
+  isCurated_not: Boolean
 }
 
 type RestaurantSubscriptionPayload {
@@ -10817,45 +8852,126 @@ input RestaurantSubscriptionWhereInput {
   node: RestaurantWhereInput
 }
 
-input RestaurantUpdateInput {
-  title: String
+input RestaurantUpdateDataInput {
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating: Float
+  popularity: Int
   avgPricePerPerson: Int
   isCurated: Boolean
-  slug: String
-  popularity: Int
+  reviews: ReviewUpdateManyInput
+  location: LocationUpdateOneInput
+  policies: PoliciesUpdateOneInput
+  menu: MenuItemUpdateManyInput
+  orders: OrderUpdateManyWithoutRestaurantInput
   pictures: PictureUpdateManyInput
-  location: LocationUpdateOneRequiredWithoutRestaurantInput
+}
+
+input RestaurantUpdateInput {
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating: Float
+  popularity: Int
+  avgPricePerPerson: Int
+  isCurated: Boolean
+  reviews: ReviewUpdateManyInput
+  location: LocationUpdateOneInput
+  policies: PoliciesUpdateOneInput
+  menu: MenuItemUpdateManyInput
+  orders: OrderUpdateManyWithoutRestaurantInput
+  pictures: PictureUpdateManyInput
+}
+
+input RestaurantUpdateManyDataInput {
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating: Float
+  popularity: Int
+  avgPricePerPerson: Int
+  isCurated: Boolean
+}
+
+input RestaurantUpdateManyInput {
+  create: [RestaurantCreateInput!]
+  connect: [RestaurantWhereUniqueInput!]
+  set: [RestaurantWhereUniqueInput!]
+  disconnect: [RestaurantWhereUniqueInput!]
+  delete: [RestaurantWhereUniqueInput!]
+  update: [RestaurantUpdateWithWhereUniqueNestedInput!]
+  updateMany: [RestaurantUpdateManyWithWhereNestedInput!]
+  deleteMany: [RestaurantScalarWhereInput!]
+  upsert: [RestaurantUpsertWithWhereUniqueNestedInput!]
 }
 
 input RestaurantUpdateManyMutationInput {
-  title: String
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating: Float
+  popularity: Int
   avgPricePerPerson: Int
   isCurated: Boolean
-  slug: String
-  popularity: Int
 }
 
-input RestaurantUpdateOneWithoutLocationInput {
-  create: RestaurantCreateWithoutLocationInput
+input RestaurantUpdateManyWithWhereNestedInput {
+  where: RestaurantScalarWhereInput!
+  data: RestaurantUpdateManyDataInput!
+}
+
+input RestaurantUpdateOneRequiredWithoutOrdersInput {
+  create: RestaurantCreateWithoutOrdersInput
   connect: RestaurantWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
-  update: RestaurantUpdateWithoutLocationDataInput
-  upsert: RestaurantUpsertWithoutLocationInput
+  update: RestaurantUpdateWithoutOrdersDataInput
+  upsert: RestaurantUpsertWithoutOrdersInput
 }
 
-input RestaurantUpdateWithoutLocationDataInput {
-  title: String
+input RestaurantUpdateWithoutOrdersDataInput {
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating: Float
+  popularity: Int
   avgPricePerPerson: Int
   isCurated: Boolean
-  slug: String
-  popularity: Int
+  reviews: ReviewUpdateManyInput
+  location: LocationUpdateOneInput
+  policies: PoliciesUpdateOneInput
+  menu: MenuItemUpdateManyInput
   pictures: PictureUpdateManyInput
 }
 
-input RestaurantUpsertWithoutLocationInput {
-  update: RestaurantUpdateWithoutLocationDataInput!
-  create: RestaurantCreateWithoutLocationInput!
+input RestaurantUpdateWithWhereUniqueNestedInput {
+  where: RestaurantWhereUniqueInput!
+  data: RestaurantUpdateDataInput!
+}
+
+input RestaurantUpsertWithoutOrdersInput {
+  update: RestaurantUpdateWithoutOrdersDataInput!
+  create: RestaurantCreateWithoutOrdersInput!
+}
+
+input RestaurantUpsertWithWhereUniqueNestedInput {
+  where: RestaurantWhereUniqueInput!
+  update: RestaurantUpdateDataInput!
+  create: RestaurantCreateInput!
 }
 
 input RestaurantWhereInput {
@@ -10907,94 +9023,126 @@ input RestaurantWhereInput {
 
   """All values not ending with the given string."""
   id_not_ends_with: ID
-  createdAt: DateTime
+  name: String
 
   """All values that are not equal to given value."""
-  createdAt_not: DateTime
+  name_not: String
 
   """All values that are contained in given list."""
-  createdAt_in: [DateTime!]
+  name_in: [String!]
 
   """All values that are not contained in given list."""
-  createdAt_not_in: [DateTime!]
+  name_not_in: [String!]
 
   """All values less than the given value."""
-  createdAt_lt: DateTime
+  name_lt: String
 
   """All values less than or equal the given value."""
-  createdAt_lte: DateTime
+  name_lte: String
 
   """All values greater than the given value."""
-  createdAt_gt: DateTime
+  name_gt: String
 
   """All values greater than or equal the given value."""
-  createdAt_gte: DateTime
-  title: String
-
-  """All values that are not equal to given value."""
-  title_not: String
-
-  """All values that are contained in given list."""
-  title_in: [String!]
-
-  """All values that are not contained in given list."""
-  title_not_in: [String!]
-
-  """All values less than the given value."""
-  title_lt: String
-
-  """All values less than or equal the given value."""
-  title_lte: String
-
-  """All values greater than the given value."""
-  title_gt: String
-
-  """All values greater than or equal the given value."""
-  title_gte: String
+  name_gte: String
 
   """All values containing the given string."""
-  title_contains: String
+  name_contains: String
 
   """All values not containing the given string."""
-  title_not_contains: String
+  name_not_contains: String
 
   """All values starting with the given string."""
-  title_starts_with: String
+  name_starts_with: String
 
   """All values not starting with the given string."""
-  title_not_starts_with: String
+  name_not_starts_with: String
 
   """All values ending with the given string."""
-  title_ends_with: String
+  name_ends_with: String
 
   """All values not ending with the given string."""
-  title_not_ends_with: String
-  avgPricePerPerson: Int
+  name_not_ends_with: String
+  shortDescription: String
 
   """All values that are not equal to given value."""
-  avgPricePerPerson_not: Int
+  shortDescription_not: String
 
   """All values that are contained in given list."""
-  avgPricePerPerson_in: [Int!]
+  shortDescription_in: [String!]
 
   """All values that are not contained in given list."""
-  avgPricePerPerson_not_in: [Int!]
+  shortDescription_not_in: [String!]
 
   """All values less than the given value."""
-  avgPricePerPerson_lt: Int
+  shortDescription_lt: String
 
   """All values less than or equal the given value."""
-  avgPricePerPerson_lte: Int
+  shortDescription_lte: String
 
   """All values greater than the given value."""
-  avgPricePerPerson_gt: Int
+  shortDescription_gt: String
 
   """All values greater than or equal the given value."""
-  avgPricePerPerson_gte: Int
-  isCurated: Boolean
+  shortDescription_gte: String
+
+  """All values containing the given string."""
+  shortDescription_contains: String
+
+  """All values not containing the given string."""
+  shortDescription_not_contains: String
+
+  """All values starting with the given string."""
+  shortDescription_starts_with: String
+
+  """All values not starting with the given string."""
+  shortDescription_not_starts_with: String
+
+  """All values ending with the given string."""
+  shortDescription_ends_with: String
+
+  """All values not ending with the given string."""
+  shortDescription_not_ends_with: String
+  description: String
 
   """All values that are not equal to given value."""
-  isCurated_not: Boolean
+  description_not: String
+
+  """All values that are contained in given list."""
+  description_in: [String!]
+
+  """All values that are not contained in given list."""
+  description_not_in: [String!]
+
+  """All values less than the given value."""
+  description_lt: String
+
+  """All values less than or equal the given value."""
+  description_lte: String
+
+  """All values greater than the given value."""
+  description_gt: String
+
+  """All values greater than or equal the given value."""
+  description_gte: String
+
+  """All values containing the given string."""
+  description_contains: String
+
+  """All values not containing the given string."""
+  description_not_contains: String
+
+  """All values starting with the given string."""
+  description_starts_with: String
+
+  """All values not starting with the given string."""
+  description_not_starts_with: String
+
+  """All values ending with the given string."""
+  description_ends_with: String
+
+  """All values not ending with the given string."""
+  description_not_ends_with: String
   slug: String
 
   """All values that are not equal to given value."""
@@ -11035,6 +9183,72 @@ input RestaurantWhereInput {
 
   """All values not ending with the given string."""
   slug_not_ends_with: String
+  maxGuests: Int
+
+  """All values that are not equal to given value."""
+  maxGuests_not: Int
+
+  """All values that are contained in given list."""
+  maxGuests_in: [Int!]
+
+  """All values that are not contained in given list."""
+  maxGuests_not_in: [Int!]
+
+  """All values less than the given value."""
+  maxGuests_lt: Int
+
+  """All values less than or equal the given value."""
+  maxGuests_lte: Int
+
+  """All values greater than the given value."""
+  maxGuests_gt: Int
+
+  """All values greater than or equal the given value."""
+  maxGuests_gte: Int
+  numRatings: Int
+
+  """All values that are not equal to given value."""
+  numRatings_not: Int
+
+  """All values that are contained in given list."""
+  numRatings_in: [Int!]
+
+  """All values that are not contained in given list."""
+  numRatings_not_in: [Int!]
+
+  """All values less than the given value."""
+  numRatings_lt: Int
+
+  """All values less than or equal the given value."""
+  numRatings_lte: Int
+
+  """All values greater than the given value."""
+  numRatings_gt: Int
+
+  """All values greater than or equal the given value."""
+  numRatings_gte: Int
+  avgRating: Float
+
+  """All values that are not equal to given value."""
+  avgRating_not: Float
+
+  """All values that are contained in given list."""
+  avgRating_in: [Float!]
+
+  """All values that are not contained in given list."""
+  avgRating_not_in: [Float!]
+
+  """All values less than the given value."""
+  avgRating_lt: Float
+
+  """All values less than or equal the given value."""
+  avgRating_lte: Float
+
+  """All values greater than the given value."""
+  avgRating_gt: Float
+
+  """All values greater than or equal the given value."""
+  avgRating_gte: Float
   popularity: Int
 
   """All values that are not equal to given value."""
@@ -11057,10 +9271,46 @@ input RestaurantWhereInput {
 
   """All values greater than or equal the given value."""
   popularity_gte: Int
+  avgPricePerPerson: Int
+
+  """All values that are not equal to given value."""
+  avgPricePerPerson_not: Int
+
+  """All values that are contained in given list."""
+  avgPricePerPerson_in: [Int!]
+
+  """All values that are not contained in given list."""
+  avgPricePerPerson_not_in: [Int!]
+
+  """All values less than the given value."""
+  avgPricePerPerson_lt: Int
+
+  """All values less than or equal the given value."""
+  avgPricePerPerson_lte: Int
+
+  """All values greater than the given value."""
+  avgPricePerPerson_gt: Int
+
+  """All values greater than or equal the given value."""
+  avgPricePerPerson_gte: Int
+  isCurated: Boolean
+
+  """All values that are not equal to given value."""
+  isCurated_not: Boolean
+  reviews_every: ReviewWhereInput
+  reviews_some: ReviewWhereInput
+  reviews_none: ReviewWhereInput
+  location: LocationWhereInput
+  policies: PoliciesWhereInput
+  menu_every: MenuItemWhereInput
+  menu_some: MenuItemWhereInput
+  menu_none: MenuItemWhereInput
+  orders_every: OrderWhereInput
+  orders_some: OrderWhereInput
+  orders_none: OrderWhereInput
   pictures_every: PictureWhereInput
   pictures_some: PictureWhereInput
   pictures_none: PictureWhereInput
-  location: LocationWhereInput
 }
 
 input RestaurantWhereUniqueInput {
@@ -11078,7 +9328,7 @@ type Review implements Node {
   value: Int!
   cleanliness: Int!
   communication: Int!
-  place: Place!
+  order: Order!
   experience: Experience
 }
 
@@ -11102,17 +9352,17 @@ input ReviewCreateInput {
   value: Int!
   cleanliness: Int!
   communication: Int!
-  place: PlaceCreateOneWithoutReviewsInput!
+  order: OrderCreateOneInput!
   experience: ExperienceCreateOneWithoutReviewsInput
+}
+
+input ReviewCreateManyInput {
+  create: [ReviewCreateInput!]
+  connect: [ReviewWhereUniqueInput!]
 }
 
 input ReviewCreateManyWithoutExperienceInput {
   create: [ReviewCreateWithoutExperienceInput!]
-  connect: [ReviewWhereUniqueInput!]
-}
-
-input ReviewCreateManyWithoutPlaceInput {
-  create: [ReviewCreateWithoutPlaceInput!]
   connect: [ReviewWhereUniqueInput!]
 }
 
@@ -11126,20 +9376,7 @@ input ReviewCreateWithoutExperienceInput {
   value: Int!
   cleanliness: Int!
   communication: Int!
-  place: PlaceCreateOneWithoutReviewsInput!
-}
-
-input ReviewCreateWithoutPlaceInput {
-  id: ID
-  text: String!
-  stars: Int!
-  accuracy: Int!
-  location: Int!
-  checkIn: Int!
-  value: Int!
-  cleanliness: Int!
-  communication: Int!
-  experience: ExperienceCreateOneWithoutReviewsInput
+  order: OrderCreateOneInput!
 }
 
 """An edge in a connection."""
@@ -11493,6 +9730,19 @@ input ReviewSubscriptionWhereInput {
   node: ReviewWhereInput
 }
 
+input ReviewUpdateDataInput {
+  text: String
+  stars: Int
+  accuracy: Int
+  location: Int
+  checkIn: Int
+  value: Int
+  cleanliness: Int
+  communication: Int
+  order: OrderUpdateOneRequiredInput
+  experience: ExperienceUpdateOneWithoutReviewsInput
+}
+
 input ReviewUpdateInput {
   text: String
   stars: Int
@@ -11502,7 +9752,7 @@ input ReviewUpdateInput {
   value: Int
   cleanliness: Int
   communication: Int
-  place: PlaceUpdateOneRequiredWithoutReviewsInput
+  order: OrderUpdateOneRequiredInput
   experience: ExperienceUpdateOneWithoutReviewsInput
 }
 
@@ -11515,6 +9765,18 @@ input ReviewUpdateManyDataInput {
   value: Int
   cleanliness: Int
   communication: Int
+}
+
+input ReviewUpdateManyInput {
+  create: [ReviewCreateInput!]
+  connect: [ReviewWhereUniqueInput!]
+  set: [ReviewWhereUniqueInput!]
+  disconnect: [ReviewWhereUniqueInput!]
+  delete: [ReviewWhereUniqueInput!]
+  update: [ReviewUpdateWithWhereUniqueNestedInput!]
+  updateMany: [ReviewUpdateManyWithWhereNestedInput!]
+  deleteMany: [ReviewScalarWhereInput!]
+  upsert: [ReviewUpsertWithWhereUniqueNestedInput!]
 }
 
 input ReviewUpdateManyMutationInput {
@@ -11540,18 +9802,6 @@ input ReviewUpdateManyWithoutExperienceInput {
   upsert: [ReviewUpsertWithWhereUniqueWithoutExperienceInput!]
 }
 
-input ReviewUpdateManyWithoutPlaceInput {
-  create: [ReviewCreateWithoutPlaceInput!]
-  connect: [ReviewWhereUniqueInput!]
-  set: [ReviewWhereUniqueInput!]
-  disconnect: [ReviewWhereUniqueInput!]
-  delete: [ReviewWhereUniqueInput!]
-  update: [ReviewUpdateWithWhereUniqueWithoutPlaceInput!]
-  updateMany: [ReviewUpdateManyWithWhereNestedInput!]
-  deleteMany: [ReviewScalarWhereInput!]
-  upsert: [ReviewUpsertWithWhereUniqueWithoutPlaceInput!]
-}
-
 input ReviewUpdateManyWithWhereNestedInput {
   where: ReviewScalarWhereInput!
   data: ReviewUpdateManyDataInput!
@@ -11566,19 +9816,12 @@ input ReviewUpdateWithoutExperienceDataInput {
   value: Int
   cleanliness: Int
   communication: Int
-  place: PlaceUpdateOneRequiredWithoutReviewsInput
+  order: OrderUpdateOneRequiredInput
 }
 
-input ReviewUpdateWithoutPlaceDataInput {
-  text: String
-  stars: Int
-  accuracy: Int
-  location: Int
-  checkIn: Int
-  value: Int
-  cleanliness: Int
-  communication: Int
-  experience: ExperienceUpdateOneWithoutReviewsInput
+input ReviewUpdateWithWhereUniqueNestedInput {
+  where: ReviewWhereUniqueInput!
+  data: ReviewUpdateDataInput!
 }
 
 input ReviewUpdateWithWhereUniqueWithoutExperienceInput {
@@ -11586,21 +9829,16 @@ input ReviewUpdateWithWhereUniqueWithoutExperienceInput {
   data: ReviewUpdateWithoutExperienceDataInput!
 }
 
-input ReviewUpdateWithWhereUniqueWithoutPlaceInput {
+input ReviewUpsertWithWhereUniqueNestedInput {
   where: ReviewWhereUniqueInput!
-  data: ReviewUpdateWithoutPlaceDataInput!
+  update: ReviewUpdateDataInput!
+  create: ReviewCreateInput!
 }
 
 input ReviewUpsertWithWhereUniqueWithoutExperienceInput {
   where: ReviewWhereUniqueInput!
   update: ReviewUpdateWithoutExperienceDataInput!
   create: ReviewCreateWithoutExperienceInput!
-}
-
-input ReviewUpsertWithWhereUniqueWithoutPlaceInput {
-  where: ReviewWhereUniqueInput!
-  update: ReviewUpdateWithoutPlaceDataInput!
-  create: ReviewCreateWithoutPlaceInput!
 }
 
 input ReviewWhereInput {
@@ -11868,7 +10106,7 @@ input ReviewWhereInput {
 
   """All values greater than or equal the given value."""
   communication_gte: Int
-  place: PlaceWhereInput
+  order: OrderWhereInput
   experience: ExperienceWhereInput
 }
 
@@ -11878,19 +10116,10 @@ input ReviewWhereUniqueInput {
 
 type Subscription {
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
-  place(where: PlaceSubscriptionWhereInput): PlaceSubscriptionPayload
-  pricing(where: PricingSubscriptionWhereInput): PricingSubscriptionPayload
-  guestRequirements(where: GuestRequirementsSubscriptionWhereInput): GuestRequirementsSubscriptionPayload
-  policies(where: PoliciesSubscriptionWhereInput): PoliciesSubscriptionPayload
-  views(where: ViewsSubscriptionWhereInput): ViewsSubscriptionPayload
-  location(where: LocationSubscriptionWhereInput): LocationSubscriptionPayload
   neighbourhood(where: NeighbourhoodSubscriptionWhereInput): NeighbourhoodSubscriptionPayload
   city(where: CitySubscriptionWhereInput): CitySubscriptionPayload
   experience(where: ExperienceSubscriptionWhereInput): ExperienceSubscriptionPayload
   experienceCategory(where: ExperienceCategorySubscriptionWhereInput): ExperienceCategorySubscriptionPayload
-  amenities(where: AmenitiesSubscriptionWhereInput): AmenitiesSubscriptionPayload
-  review(where: ReviewSubscriptionWhereInput): ReviewSubscriptionPayload
-  order(where: OrderSubscriptionWhereInput): OrderSubscriptionPayload
   payment(where: PaymentSubscriptionWhereInput): PaymentSubscriptionPayload
   paypalInformation(where: PaypalInformationSubscriptionWhereInput): PaypalInformationSubscriptionPayload
   paytmInformation(where: PaytmInformationSubscriptionWhereInput): PaytmInformationSubscriptionPayload
@@ -11899,8 +10128,13 @@ type Subscription {
   message(where: MessageSubscriptionWhereInput): MessageSubscriptionPayload
   notification(where: NotificationSubscriptionWhereInput): NotificationSubscriptionPayload
   restaurant(where: RestaurantSubscriptionWhereInput): RestaurantSubscriptionPayload
-  houseRules(where: HouseRulesSubscriptionWhereInput): HouseRulesSubscriptionPayload
+  menuItem(where: MenuItemSubscriptionWhereInput): MenuItemSubscriptionPayload
   paymentAccount(where: PaymentAccountSubscriptionWhereInput): PaymentAccountSubscriptionPayload
+  policies(where: PoliciesSubscriptionWhereInput): PoliciesSubscriptionPayload
+  location(where: LocationSubscriptionWhereInput): LocationSubscriptionPayload
+  review(where: ReviewSubscriptionWhereInput): ReviewSubscriptionPayload
+  order(where: OrderSubscriptionWhereInput): OrderSubscriptionPayload
+  pricing(where: PricingSubscriptionWhereInput): PricingSubscriptionPayload
   picture(where: PictureSubscriptionWhereInput): PictureSubscriptionPayload
 }
 
@@ -11913,8 +10147,8 @@ type User implements Node {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean!
-  ownedPlaces(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Place!]
-  location: Location
+  ownedRestaurant(where: RestaurantWhereInput, orderBy: RestaurantOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Restaurant!]
+  location(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Location!]
   orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order!]
   paymentAccount(where: PaymentAccountWhereInput, orderBy: PaymentAccountOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaymentAccount!]
   sentMessages(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Message!]
@@ -11945,8 +10179,8 @@ input UserCreateInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String!
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   sentMessages: MessageCreateManyWithoutFromInput
@@ -11961,11 +10195,6 @@ input UserCreateOneWithoutHostingExperiencesInput {
   connect: UserWhereUniqueInput
 }
 
-input UserCreateOneWithoutLocationInput {
-  create: UserCreateWithoutLocationInput
-  connect: UserWhereUniqueInput
-}
-
 input UserCreateOneWithoutNotificationsInput {
   create: UserCreateWithoutNotificationsInput
   connect: UserWhereUniqueInput
@@ -11973,11 +10202,6 @@ input UserCreateOneWithoutNotificationsInput {
 
 input UserCreateOneWithoutOrdersInput {
   create: UserCreateWithoutOrdersInput
-  connect: UserWhereUniqueInput
-}
-
-input UserCreateOneWithoutOwnedPlacesInput {
-  create: UserCreateWithoutOwnedPlacesInput
   connect: UserWhereUniqueInput
 }
 
@@ -12005,33 +10229,14 @@ input UserCreateWithoutHostingExperiencesInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String!
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   sentMessages: MessageCreateManyWithoutFromInput
   receivedMessages: MessageCreateManyWithoutToInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-}
-
-input UserCreateWithoutLocationInput {
-  id: ID
-  displayName: String!
-  phoneNumber: String!
-  responseRate: Float
-  responseTime: Int
-  isSuperHost: Boolean
-  accountType: UserType
-  uid: String!
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  orders: OrderCreateManyWithoutBookeeInput
-  paymentAccount: PaymentAccountCreateManyWithoutUserInput
-  sentMessages: MessageCreateManyWithoutFromInput
-  receivedMessages: MessageCreateManyWithoutToInput
-  notifications: NotificationCreateManyWithoutUserInput
-  profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
 }
 
 input UserCreateWithoutNotificationsInput {
@@ -12043,8 +10248,8 @@ input UserCreateWithoutNotificationsInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String!
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   sentMessages: MessageCreateManyWithoutFromInput
@@ -12062,27 +10267,8 @@ input UserCreateWithoutOrdersInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String!
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
-  paymentAccount: PaymentAccountCreateManyWithoutUserInput
-  sentMessages: MessageCreateManyWithoutFromInput
-  receivedMessages: MessageCreateManyWithoutToInput
-  notifications: NotificationCreateManyWithoutUserInput
-  profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
-}
-
-input UserCreateWithoutOwnedPlacesInput {
-  id: ID
-  displayName: String!
-  phoneNumber: String!
-  responseRate: Float
-  responseTime: Int
-  isSuperHost: Boolean
-  accountType: UserType
-  uid: String!
-  location: LocationCreateOneWithoutUserInput
-  orders: OrderCreateManyWithoutBookeeInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   sentMessages: MessageCreateManyWithoutFromInput
   receivedMessages: MessageCreateManyWithoutToInput
@@ -12100,8 +10286,8 @@ input UserCreateWithoutPaymentAccountInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String!
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   sentMessages: MessageCreateManyWithoutFromInput
   receivedMessages: MessageCreateManyWithoutToInput
@@ -12119,8 +10305,8 @@ input UserCreateWithoutReceivedMessagesInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String!
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   sentMessages: MessageCreateManyWithoutFromInput
@@ -12138,8 +10324,8 @@ input UserCreateWithoutSentMessagesInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String!
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   receivedMessages: MessageCreateManyWithoutToInput
@@ -12246,8 +10432,8 @@ input UserUpdateInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   sentMessages: MessageUpdateManyWithoutFromInput
@@ -12288,13 +10474,6 @@ input UserUpdateOneRequiredWithoutOrdersInput {
   upsert: UserUpsertWithoutOrdersInput
 }
 
-input UserUpdateOneRequiredWithoutOwnedPlacesInput {
-  create: UserCreateWithoutOwnedPlacesInput
-  connect: UserWhereUniqueInput
-  update: UserUpdateWithoutOwnedPlacesDataInput
-  upsert: UserUpsertWithoutOwnedPlacesInput
-}
-
 input UserUpdateOneRequiredWithoutPaymentAccountInput {
   create: UserCreateWithoutPaymentAccountInput
   connect: UserWhereUniqueInput
@@ -12316,15 +10495,6 @@ input UserUpdateOneRequiredWithoutSentMessagesInput {
   upsert: UserUpsertWithoutSentMessagesInput
 }
 
-input UserUpdateOneWithoutLocationInput {
-  create: UserCreateWithoutLocationInput
-  connect: UserWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
-  update: UserUpdateWithoutLocationDataInput
-  upsert: UserUpsertWithoutLocationInput
-}
-
 input UserUpdateWithoutHostingExperiencesDataInput {
   displayName: String
   phoneNumber: String
@@ -12333,32 +10503,14 @@ input UserUpdateWithoutHostingExperiencesDataInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   sentMessages: MessageUpdateManyWithoutFromInput
   receivedMessages: MessageUpdateManyWithoutToInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-}
-
-input UserUpdateWithoutLocationDataInput {
-  displayName: String
-  phoneNumber: String
-  responseRate: Float
-  responseTime: Int
-  isSuperHost: Boolean
-  accountType: UserType
-  uid: String
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  orders: OrderUpdateManyWithoutBookeeInput
-  paymentAccount: PaymentAccountUpdateManyWithoutUserInput
-  sentMessages: MessageUpdateManyWithoutFromInput
-  receivedMessages: MessageUpdateManyWithoutToInput
-  notifications: NotificationUpdateManyWithoutUserInput
-  profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
 }
 
 input UserUpdateWithoutNotificationsDataInput {
@@ -12369,8 +10521,8 @@ input UserUpdateWithoutNotificationsDataInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   sentMessages: MessageUpdateManyWithoutFromInput
@@ -12387,26 +10539,8 @@ input UserUpdateWithoutOrdersDataInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
-  paymentAccount: PaymentAccountUpdateManyWithoutUserInput
-  sentMessages: MessageUpdateManyWithoutFromInput
-  receivedMessages: MessageUpdateManyWithoutToInput
-  notifications: NotificationUpdateManyWithoutUserInput
-  profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
-}
-
-input UserUpdateWithoutOwnedPlacesDataInput {
-  displayName: String
-  phoneNumber: String
-  responseRate: Float
-  responseTime: Int
-  isSuperHost: Boolean
-  accountType: UserType
-  uid: String
-  location: LocationUpdateOneWithoutUserInput
-  orders: OrderUpdateManyWithoutBookeeInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   sentMessages: MessageUpdateManyWithoutFromInput
   receivedMessages: MessageUpdateManyWithoutToInput
@@ -12423,8 +10557,8 @@ input UserUpdateWithoutPaymentAccountDataInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   sentMessages: MessageUpdateManyWithoutFromInput
   receivedMessages: MessageUpdateManyWithoutToInput
@@ -12441,8 +10575,8 @@ input UserUpdateWithoutReceivedMessagesDataInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   sentMessages: MessageUpdateManyWithoutFromInput
@@ -12459,8 +10593,8 @@ input UserUpdateWithoutSentMessagesDataInput {
   isSuperHost: Boolean
   accountType: UserType
   uid: String
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   receivedMessages: MessageUpdateManyWithoutToInput
@@ -12474,11 +10608,6 @@ input UserUpsertWithoutHostingExperiencesInput {
   create: UserCreateWithoutHostingExperiencesInput!
 }
 
-input UserUpsertWithoutLocationInput {
-  update: UserUpdateWithoutLocationDataInput!
-  create: UserCreateWithoutLocationInput!
-}
-
 input UserUpsertWithoutNotificationsInput {
   update: UserUpdateWithoutNotificationsDataInput!
   create: UserCreateWithoutNotificationsInput!
@@ -12487,11 +10616,6 @@ input UserUpsertWithoutNotificationsInput {
 input UserUpsertWithoutOrdersInput {
   update: UserUpdateWithoutOrdersDataInput!
   create: UserCreateWithoutOrdersInput!
-}
-
-input UserUpsertWithoutOwnedPlacesInput {
-  update: UserUpdateWithoutOwnedPlacesDataInput!
-  create: UserCreateWithoutOwnedPlacesInput!
 }
 
 input UserUpsertWithoutPaymentAccountInput {
@@ -12780,10 +10904,12 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   uid_not_ends_with: String
-  ownedPlaces_every: PlaceWhereInput
-  ownedPlaces_some: PlaceWhereInput
-  ownedPlaces_none: PlaceWhereInput
-  location: LocationWhereInput
+  ownedRestaurant_every: RestaurantWhereInput
+  ownedRestaurant_some: RestaurantWhereInput
+  ownedRestaurant_none: RestaurantWhereInput
+  location_every: LocationWhereInput
+  location_some: LocationWhereInput
+  location_none: LocationWhereInput
   orders_every: OrderWhereInput
   orders_some: OrderWhereInput
   orders_none: OrderWhereInput
@@ -12809,201 +10935,6 @@ input UserWhereUniqueInput {
   id: ID
   uid: String
 }
-
-type Views implements Node {
-  id: ID!
-  lastWeek: Int!
-  place: Place!
-}
-
-"""A connection to a list of items."""
-type ViewsConnection {
-  """Information to aid in pagination."""
-  pageInfo: PageInfo!
-
-  """A list of edges."""
-  edges: [ViewsEdge]!
-  aggregate: AggregateViews!
-}
-
-input ViewsCreateInput {
-  id: ID
-  lastWeek: Int!
-  place: PlaceCreateOneWithoutViewsInput!
-}
-
-input ViewsCreateOneWithoutPlaceInput {
-  create: ViewsCreateWithoutPlaceInput
-  connect: ViewsWhereUniqueInput
-}
-
-input ViewsCreateWithoutPlaceInput {
-  id: ID
-  lastWeek: Int!
-}
-
-"""An edge in a connection."""
-type ViewsEdge {
-  """The item at the end of the edge."""
-  node: Views!
-
-  """A cursor for use in pagination."""
-  cursor: String!
-}
-
-enum ViewsOrderByInput {
-  id_ASC
-  id_DESC
-  lastWeek_ASC
-  lastWeek_DESC
-}
-
-type ViewsPreviousValues {
-  id: ID!
-  lastWeek: Int!
-}
-
-type ViewsSubscriptionPayload {
-  mutation: MutationType!
-  node: Views
-  updatedFields: [String!]
-  previousValues: ViewsPreviousValues
-}
-
-input ViewsSubscriptionWhereInput {
-  """Logical AND on all given filters."""
-  AND: [ViewsSubscriptionWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [ViewsSubscriptionWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [ViewsSubscriptionWhereInput!]
-
-  """
-  The subscription event gets dispatched when it's listed in mutation_in
-  """
-  mutation_in: [MutationType!]
-
-  """
-  The subscription event gets only dispatched when one of the updated fields names is included in this list
-  """
-  updatedFields_contains: String
-
-  """
-  The subscription event gets only dispatched when all of the field names included in this list have been updated
-  """
-  updatedFields_contains_every: [String!]
-
-  """
-  The subscription event gets only dispatched when some of the field names included in this list have been updated
-  """
-  updatedFields_contains_some: [String!]
-  node: ViewsWhereInput
-}
-
-input ViewsUpdateInput {
-  lastWeek: Int
-  place: PlaceUpdateOneRequiredWithoutViewsInput
-}
-
-input ViewsUpdateManyMutationInput {
-  lastWeek: Int
-}
-
-input ViewsUpdateOneRequiredWithoutPlaceInput {
-  create: ViewsCreateWithoutPlaceInput
-  connect: ViewsWhereUniqueInput
-  update: ViewsUpdateWithoutPlaceDataInput
-  upsert: ViewsUpsertWithoutPlaceInput
-}
-
-input ViewsUpdateWithoutPlaceDataInput {
-  lastWeek: Int
-}
-
-input ViewsUpsertWithoutPlaceInput {
-  update: ViewsUpdateWithoutPlaceDataInput!
-  create: ViewsCreateWithoutPlaceInput!
-}
-
-input ViewsWhereInput {
-  """Logical AND on all given filters."""
-  AND: [ViewsWhereInput!]
-
-  """Logical OR on all given filters."""
-  OR: [ViewsWhereInput!]
-
-  """Logical NOT on all given filters combined by AND."""
-  NOT: [ViewsWhereInput!]
-  id: ID
-
-  """All values that are not equal to given value."""
-  id_not: ID
-
-  """All values that are contained in given list."""
-  id_in: [ID!]
-
-  """All values that are not contained in given list."""
-  id_not_in: [ID!]
-
-  """All values less than the given value."""
-  id_lt: ID
-
-  """All values less than or equal the given value."""
-  id_lte: ID
-
-  """All values greater than the given value."""
-  id_gt: ID
-
-  """All values greater than or equal the given value."""
-  id_gte: ID
-
-  """All values containing the given string."""
-  id_contains: ID
-
-  """All values not containing the given string."""
-  id_not_contains: ID
-
-  """All values starting with the given string."""
-  id_starts_with: ID
-
-  """All values not starting with the given string."""
-  id_not_starts_with: ID
-
-  """All values ending with the given string."""
-  id_ends_with: ID
-
-  """All values not ending with the given string."""
-  id_not_ends_with: ID
-  lastWeek: Int
-
-  """All values that are not equal to given value."""
-  lastWeek_not: Int
-
-  """All values that are contained in given list."""
-  lastWeek_in: [Int!]
-
-  """All values that are not contained in given list."""
-  lastWeek_not_in: [Int!]
-
-  """All values less than the given value."""
-  lastWeek_lt: Int
-
-  """All values less than or equal the given value."""
-  lastWeek_lte: Int
-
-  """All values greater than the given value."""
-  lastWeek_gt: Int
-
-  """All values greater than or equal the given value."""
-  lastWeek_gte: Int
-  place: PlaceWhereInput
-}
-
-input ViewsWhereUniqueInput {
-  id: ID
-}
 `
 
 export const Prisma = makePrismaBindingClass<BindingConstructor<Prisma>>({typeDefs})
@@ -13011,89 +10942,6 @@ export const Prisma = makePrismaBindingClass<BindingConstructor<Prisma>>({typeDe
 /**
  * Types
 */
-
-export type AmenitiesOrderByInput =   'id_ASC' |
-  'id_DESC' |
-  'elevator_ASC' |
-  'elevator_DESC' |
-  'petsAllowed_ASC' |
-  'petsAllowed_DESC' |
-  'internet_ASC' |
-  'internet_DESC' |
-  'kitchen_ASC' |
-  'kitchen_DESC' |
-  'wirelessInternet_ASC' |
-  'wirelessInternet_DESC' |
-  'familyKidFriendly_ASC' |
-  'familyKidFriendly_DESC' |
-  'freeParkingOnPremises_ASC' |
-  'freeParkingOnPremises_DESC' |
-  'hotTub_ASC' |
-  'hotTub_DESC' |
-  'pool_ASC' |
-  'pool_DESC' |
-  'smokingAllowed_ASC' |
-  'smokingAllowed_DESC' |
-  'wheelchairAccessible_ASC' |
-  'wheelchairAccessible_DESC' |
-  'breakfast_ASC' |
-  'breakfast_DESC' |
-  'cableTv_ASC' |
-  'cableTv_DESC' |
-  'suitableForEvents_ASC' |
-  'suitableForEvents_DESC' |
-  'dryer_ASC' |
-  'dryer_DESC' |
-  'washer_ASC' |
-  'washer_DESC' |
-  'indoorFireplace_ASC' |
-  'indoorFireplace_DESC' |
-  'tv_ASC' |
-  'tv_DESC' |
-  'heating_ASC' |
-  'heating_DESC' |
-  'hangers_ASC' |
-  'hangers_DESC' |
-  'iron_ASC' |
-  'iron_DESC' |
-  'hairDryer_ASC' |
-  'hairDryer_DESC' |
-  'doorman_ASC' |
-  'doorman_DESC' |
-  'paidParkingOffPremises_ASC' |
-  'paidParkingOffPremises_DESC' |
-  'freeParkingOnStreet_ASC' |
-  'freeParkingOnStreet_DESC' |
-  'gym_ASC' |
-  'gym_DESC' |
-  'airConditioning_ASC' |
-  'airConditioning_DESC' |
-  'shampoo_ASC' |
-  'shampoo_DESC' |
-  'essentials_ASC' |
-  'essentials_DESC' |
-  'laptopFriendlyWorkspace_ASC' |
-  'laptopFriendlyWorkspace_DESC' |
-  'privateEntrance_ASC' |
-  'privateEntrance_DESC' |
-  'buzzerWirelessIntercom_ASC' |
-  'buzzerWirelessIntercom_DESC' |
-  'babyBath_ASC' |
-  'babyBath_DESC' |
-  'babyMonitor_ASC' |
-  'babyMonitor_DESC' |
-  'babysitterRecommendations_ASC' |
-  'babysitterRecommendations_DESC' |
-  'bathtub_ASC' |
-  'bathtub_DESC' |
-  'changingTable_ASC' |
-  'changingTable_DESC' |
-  'childrensBooksAndToys_ASC' |
-  'childrensBooksAndToys_DESC' |
-  'childrensDinnerware_ASC' |
-  'childrensDinnerware_DESC' |
-  'crib_ASC' |
-  'crib_DESC'
 
 export type CityOrderByInput =   'id_ASC' |
   'id_DESC' |
@@ -13120,14 +10968,6 @@ export type CreditCardInformationOrderByInput =   'id_ASC' |
   'postalCode_DESC' |
   'country_ASC' |
   'country_DESC'
-
-export type CURRENCY =   'CAD' |
-  'INR' |
-  'CHF' |
-  'EUR' |
-  'JPY' |
-  'USD' |
-  'ZAR'
 
 export type DebitCardInformationOrderByInput =   'id_ASC' |
   'id_DESC' |
@@ -13166,35 +11006,9 @@ export type ExperienceOrderByInput =   'id_ASC' |
   'popularity_ASC' |
   'popularity_DESC'
 
-export type GuestRequirementsOrderByInput =   'id_ASC' |
-  'id_DESC' |
-  'govIssuedId_ASC' |
-  'govIssuedId_DESC' |
-  'recommendationsFromOtherHosts_ASC' |
-  'recommendationsFromOtherHosts_DESC' |
-  'guestTripInformation_ASC' |
-  'guestTripInformation_DESC'
-
-export type HouseRulesOrderByInput =   'id_ASC' |
-  'id_DESC' |
-  'createdAt_ASC' |
-  'createdAt_DESC' |
-  'updatedAt_ASC' |
-  'updatedAt_DESC' |
-  'suitableForChildren_ASC' |
-  'suitableForChildren_DESC' |
-  'suitableForInfants_ASC' |
-  'suitableForInfants_DESC' |
-  'petsAllowed_ASC' |
-  'petsAllowed_DESC' |
-  'smokingAllowed_ASC' |
-  'smokingAllowed_DESC' |
-  'partiesAndEventsAllowed_ASC' |
-  'partiesAndEventsAllowed_DESC' |
-  'additionalRules_ASC' |
-  'additionalRules_DESC'
-
-export type LocationOrderByInput =   'id_ASC' |
+export type LocationOrderByInput =   'title_ASC' |
+  'title_DESC' |
+  'id_ASC' |
   'id_DESC' |
   'lat_ASC' |
   'lat_DESC' |
@@ -13204,6 +11018,19 @@ export type LocationOrderByInput =   'id_ASC' |
   'address_DESC' |
   'directions_ASC' |
   'directions_DESC'
+
+export type MenuItemOrderByInput =   'id_ASC' |
+  'id_DESC' |
+  'createdAt_ASC' |
+  'createdAt_DESC' |
+  'updatedAt_ASC' |
+  'updatedAt_DESC' |
+  'shortDescription_ASC' |
+  'shortDescription_DESC' |
+  'title_ASC' |
+  'title_DESC' |
+  'description_ASC' |
+  'description_DESC'
 
 export type MessageOrderByInput =   'id_ASC' |
   'id_DESC' |
@@ -13273,8 +11100,8 @@ export type PaymentOrderByInput =   'id_ASC' |
   'createdAt_DESC' |
   'serviceFee_ASC' |
   'serviceFee_DESC' |
-  'placePrice_ASC' |
-  'placePrice_DESC' |
+  'restaurantPrice_ASC' |
+  'restaurantPrice_DESC' |
   'totalPrice_ASC' |
   'totalPrice_DESC'
 
@@ -13297,50 +11124,16 @@ export type PictureOrderByInput =   'id_ASC' |
   'url_ASC' |
   'url_DESC'
 
-export type PLACE_SIZES =   'ENTIRE_HOUSE' |
-  'ENTIRE_APARTMENT' |
-  'ENTIRE_EARTH_HOUSE' |
-  'ENTIRE_CABIN' |
-  'ENTIRE_VILLA' |
-  'ENTIRE_PLACE' |
-  'ENTIRE_BOAT' |
-  'PRIVATE_ROOM'
-
-export type PlaceOrderByInput =   'id_ASC' |
-  'id_DESC' |
-  'name_ASC' |
-  'name_DESC' |
-  'size_ASC' |
-  'size_DESC' |
-  'shortDescription_ASC' |
-  'shortDescription_DESC' |
-  'description_ASC' |
-  'description_DESC' |
-  'slug_ASC' |
-  'slug_DESC' |
-  'maxGuests_ASC' |
-  'maxGuests_DESC' |
-  'numBedrooms_ASC' |
-  'numBedrooms_DESC' |
-  'numBeds_ASC' |
-  'numBeds_DESC' |
-  'numBaths_ASC' |
-  'numBaths_DESC' |
-  'popularity_ASC' |
-  'popularity_DESC'
-
 export type PoliciesOrderByInput =   'id_ASC' |
   'id_DESC' |
   'createdAt_ASC' |
   'createdAt_DESC' |
   'updatedAt_ASC' |
   'updatedAt_DESC' |
-  'checkInStartTime_ASC' |
-  'checkInStartTime_DESC' |
-  'checkInEndTime_ASC' |
-  'checkInEndTime_DESC' |
-  'checkoutTime_ASC' |
-  'checkoutTime_DESC'
+  'openingTime_ASC' |
+  'openingTime_DESC' |
+  'closingTime_ASC' |
+  'closingTime_DESC'
 
 export type PricingOrderByInput =   'id_ASC' |
   'id_DESC' |
@@ -13348,8 +11141,8 @@ export type PricingOrderByInput =   'id_ASC' |
   'monthlyDiscount_DESC' |
   'weeklyDiscount_ASC' |
   'weeklyDiscount_DESC' |
-  'perNight_ASC' |
-  'perNight_DESC' |
+  'price_ASC' |
+  'price_DESC' |
   'smartPricing_ASC' |
   'smartPricing_DESC' |
   'basePrice_ASC' |
@@ -13358,31 +11151,31 @@ export type PricingOrderByInput =   'id_ASC' |
   'averageWeekly_DESC' |
   'averageMonthly_ASC' |
   'averageMonthly_DESC' |
-  'cleaningFee_ASC' |
-  'cleaningFee_DESC' |
-  'securityDeposit_ASC' |
-  'securityDeposit_DESC' |
-  'extraGuests_ASC' |
-  'extraGuests_DESC' |
   'weekendPricing_ASC' |
-  'weekendPricing_DESC' |
-  'currency_ASC' |
-  'currency_DESC'
+  'weekendPricing_DESC'
 
 export type RestaurantOrderByInput =   'id_ASC' |
   'id_DESC' |
-  'createdAt_ASC' |
-  'createdAt_DESC' |
-  'title_ASC' |
-  'title_DESC' |
+  'name_ASC' |
+  'name_DESC' |
+  'shortDescription_ASC' |
+  'shortDescription_DESC' |
+  'description_ASC' |
+  'description_DESC' |
+  'slug_ASC' |
+  'slug_DESC' |
+  'maxGuests_ASC' |
+  'maxGuests_DESC' |
+  'numRatings_ASC' |
+  'numRatings_DESC' |
+  'avgRating_ASC' |
+  'avgRating_DESC' |
+  'popularity_ASC' |
+  'popularity_DESC' |
   'avgPricePerPerson_ASC' |
   'avgPricePerPerson_DESC' |
   'isCurated_ASC' |
-  'isCurated_DESC' |
-  'slug_ASC' |
-  'slug_DESC' |
-  'popularity_ASC' |
-  'popularity_DESC'
+  'isCurated_DESC'
 
 export type ReviewOrderByInput =   'id_ASC' |
   'id_DESC' |
@@ -13429,363 +11222,6 @@ export type UserOrderByInput =   'id_ASC' |
 export type UserType =   'ADMIN' |
   'SELLER' |
   'CONSUMER'
-
-export type ViewsOrderByInput =   'id_ASC' |
-  'id_DESC' |
-  'lastWeek_ASC' |
-  'lastWeek_DESC'
-
-export interface AmenitiesCreateInput {
-  id?: ID_Input | null
-  elevator?: Boolean | null
-  petsAllowed?: Boolean | null
-  internet?: Boolean | null
-  kitchen?: Boolean | null
-  wirelessInternet?: Boolean | null
-  familyKidFriendly?: Boolean | null
-  freeParkingOnPremises?: Boolean | null
-  hotTub?: Boolean | null
-  pool?: Boolean | null
-  smokingAllowed?: Boolean | null
-  wheelchairAccessible?: Boolean | null
-  breakfast?: Boolean | null
-  cableTv?: Boolean | null
-  suitableForEvents?: Boolean | null
-  dryer?: Boolean | null
-  washer?: Boolean | null
-  indoorFireplace?: Boolean | null
-  tv?: Boolean | null
-  heating?: Boolean | null
-  hangers?: Boolean | null
-  iron?: Boolean | null
-  hairDryer?: Boolean | null
-  doorman?: Boolean | null
-  paidParkingOffPremises?: Boolean | null
-  freeParkingOnStreet?: Boolean | null
-  gym?: Boolean | null
-  airConditioning?: Boolean | null
-  shampoo?: Boolean | null
-  essentials?: Boolean | null
-  laptopFriendlyWorkspace?: Boolean | null
-  privateEntrance?: Boolean | null
-  buzzerWirelessIntercom?: Boolean | null
-  babyBath?: Boolean | null
-  babyMonitor?: Boolean | null
-  babysitterRecommendations?: Boolean | null
-  bathtub?: Boolean | null
-  changingTable?: Boolean | null
-  childrensBooksAndToys?: Boolean | null
-  childrensDinnerware?: Boolean | null
-  crib?: Boolean | null
-  place: PlaceCreateOneWithoutAmenitiesInput
-}
-
-export interface AmenitiesCreateOneWithoutPlaceInput {
-  create?: AmenitiesCreateWithoutPlaceInput | null
-  connect?: AmenitiesWhereUniqueInput | null
-}
-
-export interface AmenitiesCreateWithoutPlaceInput {
-  id?: ID_Input | null
-  elevator?: Boolean | null
-  petsAllowed?: Boolean | null
-  internet?: Boolean | null
-  kitchen?: Boolean | null
-  wirelessInternet?: Boolean | null
-  familyKidFriendly?: Boolean | null
-  freeParkingOnPremises?: Boolean | null
-  hotTub?: Boolean | null
-  pool?: Boolean | null
-  smokingAllowed?: Boolean | null
-  wheelchairAccessible?: Boolean | null
-  breakfast?: Boolean | null
-  cableTv?: Boolean | null
-  suitableForEvents?: Boolean | null
-  dryer?: Boolean | null
-  washer?: Boolean | null
-  indoorFireplace?: Boolean | null
-  tv?: Boolean | null
-  heating?: Boolean | null
-  hangers?: Boolean | null
-  iron?: Boolean | null
-  hairDryer?: Boolean | null
-  doorman?: Boolean | null
-  paidParkingOffPremises?: Boolean | null
-  freeParkingOnStreet?: Boolean | null
-  gym?: Boolean | null
-  airConditioning?: Boolean | null
-  shampoo?: Boolean | null
-  essentials?: Boolean | null
-  laptopFriendlyWorkspace?: Boolean | null
-  privateEntrance?: Boolean | null
-  buzzerWirelessIntercom?: Boolean | null
-  babyBath?: Boolean | null
-  babyMonitor?: Boolean | null
-  babysitterRecommendations?: Boolean | null
-  bathtub?: Boolean | null
-  changingTable?: Boolean | null
-  childrensBooksAndToys?: Boolean | null
-  childrensDinnerware?: Boolean | null
-  crib?: Boolean | null
-}
-
-export interface AmenitiesSubscriptionWhereInput {
-  AND?: AmenitiesSubscriptionWhereInput[] | AmenitiesSubscriptionWhereInput | null
-  OR?: AmenitiesSubscriptionWhereInput[] | AmenitiesSubscriptionWhereInput | null
-  NOT?: AmenitiesSubscriptionWhereInput[] | AmenitiesSubscriptionWhereInput | null
-  mutation_in?: MutationType[] | MutationType | null
-  updatedFields_contains?: String | null
-  updatedFields_contains_every?: String[] | String | null
-  updatedFields_contains_some?: String[] | String | null
-  node?: AmenitiesWhereInput | null
-}
-
-export interface AmenitiesUpdateInput {
-  elevator?: Boolean | null
-  petsAllowed?: Boolean | null
-  internet?: Boolean | null
-  kitchen?: Boolean | null
-  wirelessInternet?: Boolean | null
-  familyKidFriendly?: Boolean | null
-  freeParkingOnPremises?: Boolean | null
-  hotTub?: Boolean | null
-  pool?: Boolean | null
-  smokingAllowed?: Boolean | null
-  wheelchairAccessible?: Boolean | null
-  breakfast?: Boolean | null
-  cableTv?: Boolean | null
-  suitableForEvents?: Boolean | null
-  dryer?: Boolean | null
-  washer?: Boolean | null
-  indoorFireplace?: Boolean | null
-  tv?: Boolean | null
-  heating?: Boolean | null
-  hangers?: Boolean | null
-  iron?: Boolean | null
-  hairDryer?: Boolean | null
-  doorman?: Boolean | null
-  paidParkingOffPremises?: Boolean | null
-  freeParkingOnStreet?: Boolean | null
-  gym?: Boolean | null
-  airConditioning?: Boolean | null
-  shampoo?: Boolean | null
-  essentials?: Boolean | null
-  laptopFriendlyWorkspace?: Boolean | null
-  privateEntrance?: Boolean | null
-  buzzerWirelessIntercom?: Boolean | null
-  babyBath?: Boolean | null
-  babyMonitor?: Boolean | null
-  babysitterRecommendations?: Boolean | null
-  bathtub?: Boolean | null
-  changingTable?: Boolean | null
-  childrensBooksAndToys?: Boolean | null
-  childrensDinnerware?: Boolean | null
-  crib?: Boolean | null
-  place?: PlaceUpdateOneRequiredWithoutAmenitiesInput | null
-}
-
-export interface AmenitiesUpdateManyMutationInput {
-  elevator?: Boolean | null
-  petsAllowed?: Boolean | null
-  internet?: Boolean | null
-  kitchen?: Boolean | null
-  wirelessInternet?: Boolean | null
-  familyKidFriendly?: Boolean | null
-  freeParkingOnPremises?: Boolean | null
-  hotTub?: Boolean | null
-  pool?: Boolean | null
-  smokingAllowed?: Boolean | null
-  wheelchairAccessible?: Boolean | null
-  breakfast?: Boolean | null
-  cableTv?: Boolean | null
-  suitableForEvents?: Boolean | null
-  dryer?: Boolean | null
-  washer?: Boolean | null
-  indoorFireplace?: Boolean | null
-  tv?: Boolean | null
-  heating?: Boolean | null
-  hangers?: Boolean | null
-  iron?: Boolean | null
-  hairDryer?: Boolean | null
-  doorman?: Boolean | null
-  paidParkingOffPremises?: Boolean | null
-  freeParkingOnStreet?: Boolean | null
-  gym?: Boolean | null
-  airConditioning?: Boolean | null
-  shampoo?: Boolean | null
-  essentials?: Boolean | null
-  laptopFriendlyWorkspace?: Boolean | null
-  privateEntrance?: Boolean | null
-  buzzerWirelessIntercom?: Boolean | null
-  babyBath?: Boolean | null
-  babyMonitor?: Boolean | null
-  babysitterRecommendations?: Boolean | null
-  bathtub?: Boolean | null
-  changingTable?: Boolean | null
-  childrensBooksAndToys?: Boolean | null
-  childrensDinnerware?: Boolean | null
-  crib?: Boolean | null
-}
-
-export interface AmenitiesUpdateOneRequiredWithoutPlaceInput {
-  create?: AmenitiesCreateWithoutPlaceInput | null
-  connect?: AmenitiesWhereUniqueInput | null
-  update?: AmenitiesUpdateWithoutPlaceDataInput | null
-  upsert?: AmenitiesUpsertWithoutPlaceInput | null
-}
-
-export interface AmenitiesUpdateWithoutPlaceDataInput {
-  elevator?: Boolean | null
-  petsAllowed?: Boolean | null
-  internet?: Boolean | null
-  kitchen?: Boolean | null
-  wirelessInternet?: Boolean | null
-  familyKidFriendly?: Boolean | null
-  freeParkingOnPremises?: Boolean | null
-  hotTub?: Boolean | null
-  pool?: Boolean | null
-  smokingAllowed?: Boolean | null
-  wheelchairAccessible?: Boolean | null
-  breakfast?: Boolean | null
-  cableTv?: Boolean | null
-  suitableForEvents?: Boolean | null
-  dryer?: Boolean | null
-  washer?: Boolean | null
-  indoorFireplace?: Boolean | null
-  tv?: Boolean | null
-  heating?: Boolean | null
-  hangers?: Boolean | null
-  iron?: Boolean | null
-  hairDryer?: Boolean | null
-  doorman?: Boolean | null
-  paidParkingOffPremises?: Boolean | null
-  freeParkingOnStreet?: Boolean | null
-  gym?: Boolean | null
-  airConditioning?: Boolean | null
-  shampoo?: Boolean | null
-  essentials?: Boolean | null
-  laptopFriendlyWorkspace?: Boolean | null
-  privateEntrance?: Boolean | null
-  buzzerWirelessIntercom?: Boolean | null
-  babyBath?: Boolean | null
-  babyMonitor?: Boolean | null
-  babysitterRecommendations?: Boolean | null
-  bathtub?: Boolean | null
-  changingTable?: Boolean | null
-  childrensBooksAndToys?: Boolean | null
-  childrensDinnerware?: Boolean | null
-  crib?: Boolean | null
-}
-
-export interface AmenitiesUpsertWithoutPlaceInput {
-  update: AmenitiesUpdateWithoutPlaceDataInput
-  create: AmenitiesCreateWithoutPlaceInput
-}
-
-export interface AmenitiesWhereInput {
-  AND?: AmenitiesWhereInput[] | AmenitiesWhereInput | null
-  OR?: AmenitiesWhereInput[] | AmenitiesWhereInput | null
-  NOT?: AmenitiesWhereInput[] | AmenitiesWhereInput | null
-  id?: ID_Input | null
-  id_not?: ID_Input | null
-  id_in?: ID_Output[] | ID_Output | null
-  id_not_in?: ID_Output[] | ID_Output | null
-  id_lt?: ID_Input | null
-  id_lte?: ID_Input | null
-  id_gt?: ID_Input | null
-  id_gte?: ID_Input | null
-  id_contains?: ID_Input | null
-  id_not_contains?: ID_Input | null
-  id_starts_with?: ID_Input | null
-  id_not_starts_with?: ID_Input | null
-  id_ends_with?: ID_Input | null
-  id_not_ends_with?: ID_Input | null
-  elevator?: Boolean | null
-  elevator_not?: Boolean | null
-  petsAllowed?: Boolean | null
-  petsAllowed_not?: Boolean | null
-  internet?: Boolean | null
-  internet_not?: Boolean | null
-  kitchen?: Boolean | null
-  kitchen_not?: Boolean | null
-  wirelessInternet?: Boolean | null
-  wirelessInternet_not?: Boolean | null
-  familyKidFriendly?: Boolean | null
-  familyKidFriendly_not?: Boolean | null
-  freeParkingOnPremises?: Boolean | null
-  freeParkingOnPremises_not?: Boolean | null
-  hotTub?: Boolean | null
-  hotTub_not?: Boolean | null
-  pool?: Boolean | null
-  pool_not?: Boolean | null
-  smokingAllowed?: Boolean | null
-  smokingAllowed_not?: Boolean | null
-  wheelchairAccessible?: Boolean | null
-  wheelchairAccessible_not?: Boolean | null
-  breakfast?: Boolean | null
-  breakfast_not?: Boolean | null
-  cableTv?: Boolean | null
-  cableTv_not?: Boolean | null
-  suitableForEvents?: Boolean | null
-  suitableForEvents_not?: Boolean | null
-  dryer?: Boolean | null
-  dryer_not?: Boolean | null
-  washer?: Boolean | null
-  washer_not?: Boolean | null
-  indoorFireplace?: Boolean | null
-  indoorFireplace_not?: Boolean | null
-  tv?: Boolean | null
-  tv_not?: Boolean | null
-  heating?: Boolean | null
-  heating_not?: Boolean | null
-  hangers?: Boolean | null
-  hangers_not?: Boolean | null
-  iron?: Boolean | null
-  iron_not?: Boolean | null
-  hairDryer?: Boolean | null
-  hairDryer_not?: Boolean | null
-  doorman?: Boolean | null
-  doorman_not?: Boolean | null
-  paidParkingOffPremises?: Boolean | null
-  paidParkingOffPremises_not?: Boolean | null
-  freeParkingOnStreet?: Boolean | null
-  freeParkingOnStreet_not?: Boolean | null
-  gym?: Boolean | null
-  gym_not?: Boolean | null
-  airConditioning?: Boolean | null
-  airConditioning_not?: Boolean | null
-  shampoo?: Boolean | null
-  shampoo_not?: Boolean | null
-  essentials?: Boolean | null
-  essentials_not?: Boolean | null
-  laptopFriendlyWorkspace?: Boolean | null
-  laptopFriendlyWorkspace_not?: Boolean | null
-  privateEntrance?: Boolean | null
-  privateEntrance_not?: Boolean | null
-  buzzerWirelessIntercom?: Boolean | null
-  buzzerWirelessIntercom_not?: Boolean | null
-  babyBath?: Boolean | null
-  babyBath_not?: Boolean | null
-  babyMonitor?: Boolean | null
-  babyMonitor_not?: Boolean | null
-  babysitterRecommendations?: Boolean | null
-  babysitterRecommendations_not?: Boolean | null
-  bathtub?: Boolean | null
-  bathtub_not?: Boolean | null
-  changingTable?: Boolean | null
-  changingTable_not?: Boolean | null
-  childrensBooksAndToys?: Boolean | null
-  childrensBooksAndToys_not?: Boolean | null
-  childrensDinnerware?: Boolean | null
-  childrensDinnerware_not?: Boolean | null
-  crib?: Boolean | null
-  crib_not?: Boolean | null
-  place?: PlaceWhereInput | null
-}
-
-export interface AmenitiesWhereUniqueInput {
-  id?: ID_Input | null
-}
 
 export interface CityCreateInput {
   id?: ID_Input | null
@@ -14286,7 +11722,7 @@ export interface ExperienceCategoryCreateInput {
   id?: ID_Input | null
   mainColor?: String | null
   name: String
-  experience?: ExperienceCreateOneWithoutCategoryInput | null
+  experience: ExperienceCreateOneWithoutCategoryInput
 }
 
 export interface ExperienceCategoryCreateOneWithoutExperienceInput {
@@ -14314,7 +11750,7 @@ export interface ExperienceCategorySubscriptionWhereInput {
 export interface ExperienceCategoryUpdateInput {
   mainColor?: String | null
   name?: String | null
-  experience?: ExperienceUpdateOneWithoutCategoryInput | null
+  experience?: ExperienceUpdateOneRequiredWithoutCategoryInput | null
 }
 
 export interface ExperienceCategoryUpdateManyMutationInput {
@@ -14571,11 +12007,9 @@ export interface ExperienceUpdateManyWithWhereNestedInput {
   data: ExperienceUpdateManyDataInput
 }
 
-export interface ExperienceUpdateOneWithoutCategoryInput {
+export interface ExperienceUpdateOneRequiredWithoutCategoryInput {
   create?: ExperienceCreateWithoutCategoryInput | null
   connect?: ExperienceWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
   update?: ExperienceUpdateWithoutCategoryDataInput | null
   upsert?: ExperienceUpsertWithoutCategoryInput | null
 }
@@ -14725,243 +12159,20 @@ export interface ExperienceWhereUniqueInput {
   id?: ID_Input | null
 }
 
-export interface GuestRequirementsCreateInput {
-  id?: ID_Input | null
-  govIssuedId?: Boolean | null
-  recommendationsFromOtherHosts?: Boolean | null
-  guestTripInformation?: Boolean | null
-  place: PlaceCreateOneWithoutGuestRequirementsInput
-}
-
-export interface GuestRequirementsCreateOneWithoutPlaceInput {
-  create?: GuestRequirementsCreateWithoutPlaceInput | null
-  connect?: GuestRequirementsWhereUniqueInput | null
-}
-
-export interface GuestRequirementsCreateWithoutPlaceInput {
-  id?: ID_Input | null
-  govIssuedId?: Boolean | null
-  recommendationsFromOtherHosts?: Boolean | null
-  guestTripInformation?: Boolean | null
-}
-
-export interface GuestRequirementsSubscriptionWhereInput {
-  AND?: GuestRequirementsSubscriptionWhereInput[] | GuestRequirementsSubscriptionWhereInput | null
-  OR?: GuestRequirementsSubscriptionWhereInput[] | GuestRequirementsSubscriptionWhereInput | null
-  NOT?: GuestRequirementsSubscriptionWhereInput[] | GuestRequirementsSubscriptionWhereInput | null
-  mutation_in?: MutationType[] | MutationType | null
-  updatedFields_contains?: String | null
-  updatedFields_contains_every?: String[] | String | null
-  updatedFields_contains_some?: String[] | String | null
-  node?: GuestRequirementsWhereInput | null
-}
-
-export interface GuestRequirementsUpdateInput {
-  govIssuedId?: Boolean | null
-  recommendationsFromOtherHosts?: Boolean | null
-  guestTripInformation?: Boolean | null
-  place?: PlaceUpdateOneRequiredWithoutGuestRequirementsInput | null
-}
-
-export interface GuestRequirementsUpdateManyMutationInput {
-  govIssuedId?: Boolean | null
-  recommendationsFromOtherHosts?: Boolean | null
-  guestTripInformation?: Boolean | null
-}
-
-export interface GuestRequirementsUpdateOneWithoutPlaceInput {
-  create?: GuestRequirementsCreateWithoutPlaceInput | null
-  connect?: GuestRequirementsWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
-  update?: GuestRequirementsUpdateWithoutPlaceDataInput | null
-  upsert?: GuestRequirementsUpsertWithoutPlaceInput | null
-}
-
-export interface GuestRequirementsUpdateWithoutPlaceDataInput {
-  govIssuedId?: Boolean | null
-  recommendationsFromOtherHosts?: Boolean | null
-  guestTripInformation?: Boolean | null
-}
-
-export interface GuestRequirementsUpsertWithoutPlaceInput {
-  update: GuestRequirementsUpdateWithoutPlaceDataInput
-  create: GuestRequirementsCreateWithoutPlaceInput
-}
-
-export interface GuestRequirementsWhereInput {
-  AND?: GuestRequirementsWhereInput[] | GuestRequirementsWhereInput | null
-  OR?: GuestRequirementsWhereInput[] | GuestRequirementsWhereInput | null
-  NOT?: GuestRequirementsWhereInput[] | GuestRequirementsWhereInput | null
-  id?: ID_Input | null
-  id_not?: ID_Input | null
-  id_in?: ID_Output[] | ID_Output | null
-  id_not_in?: ID_Output[] | ID_Output | null
-  id_lt?: ID_Input | null
-  id_lte?: ID_Input | null
-  id_gt?: ID_Input | null
-  id_gte?: ID_Input | null
-  id_contains?: ID_Input | null
-  id_not_contains?: ID_Input | null
-  id_starts_with?: ID_Input | null
-  id_not_starts_with?: ID_Input | null
-  id_ends_with?: ID_Input | null
-  id_not_ends_with?: ID_Input | null
-  govIssuedId?: Boolean | null
-  govIssuedId_not?: Boolean | null
-  recommendationsFromOtherHosts?: Boolean | null
-  recommendationsFromOtherHosts_not?: Boolean | null
-  guestTripInformation?: Boolean | null
-  guestTripInformation_not?: Boolean | null
-  place?: PlaceWhereInput | null
-}
-
-export interface GuestRequirementsWhereUniqueInput {
-  id?: ID_Input | null
-}
-
-export interface HouseRulesCreateInput {
-  id?: ID_Input | null
-  suitableForChildren?: Boolean | null
-  suitableForInfants?: Boolean | null
-  petsAllowed?: Boolean | null
-  smokingAllowed?: Boolean | null
-  partiesAndEventsAllowed?: Boolean | null
-  additionalRules?: String | null
-}
-
-export interface HouseRulesCreateOneInput {
-  create?: HouseRulesCreateInput | null
-  connect?: HouseRulesWhereUniqueInput | null
-}
-
-export interface HouseRulesSubscriptionWhereInput {
-  AND?: HouseRulesSubscriptionWhereInput[] | HouseRulesSubscriptionWhereInput | null
-  OR?: HouseRulesSubscriptionWhereInput[] | HouseRulesSubscriptionWhereInput | null
-  NOT?: HouseRulesSubscriptionWhereInput[] | HouseRulesSubscriptionWhereInput | null
-  mutation_in?: MutationType[] | MutationType | null
-  updatedFields_contains?: String | null
-  updatedFields_contains_every?: String[] | String | null
-  updatedFields_contains_some?: String[] | String | null
-  node?: HouseRulesWhereInput | null
-}
-
-export interface HouseRulesUpdateDataInput {
-  suitableForChildren?: Boolean | null
-  suitableForInfants?: Boolean | null
-  petsAllowed?: Boolean | null
-  smokingAllowed?: Boolean | null
-  partiesAndEventsAllowed?: Boolean | null
-  additionalRules?: String | null
-}
-
-export interface HouseRulesUpdateInput {
-  suitableForChildren?: Boolean | null
-  suitableForInfants?: Boolean | null
-  petsAllowed?: Boolean | null
-  smokingAllowed?: Boolean | null
-  partiesAndEventsAllowed?: Boolean | null
-  additionalRules?: String | null
-}
-
-export interface HouseRulesUpdateManyMutationInput {
-  suitableForChildren?: Boolean | null
-  suitableForInfants?: Boolean | null
-  petsAllowed?: Boolean | null
-  smokingAllowed?: Boolean | null
-  partiesAndEventsAllowed?: Boolean | null
-  additionalRules?: String | null
-}
-
-export interface HouseRulesUpdateOneInput {
-  create?: HouseRulesCreateInput | null
-  connect?: HouseRulesWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
-  update?: HouseRulesUpdateDataInput | null
-  upsert?: HouseRulesUpsertNestedInput | null
-}
-
-export interface HouseRulesUpsertNestedInput {
-  update: HouseRulesUpdateDataInput
-  create: HouseRulesCreateInput
-}
-
-export interface HouseRulesWhereInput {
-  AND?: HouseRulesWhereInput[] | HouseRulesWhereInput | null
-  OR?: HouseRulesWhereInput[] | HouseRulesWhereInput | null
-  NOT?: HouseRulesWhereInput[] | HouseRulesWhereInput | null
-  id?: ID_Input | null
-  id_not?: ID_Input | null
-  id_in?: ID_Output[] | ID_Output | null
-  id_not_in?: ID_Output[] | ID_Output | null
-  id_lt?: ID_Input | null
-  id_lte?: ID_Input | null
-  id_gt?: ID_Input | null
-  id_gte?: ID_Input | null
-  id_contains?: ID_Input | null
-  id_not_contains?: ID_Input | null
-  id_starts_with?: ID_Input | null
-  id_not_starts_with?: ID_Input | null
-  id_ends_with?: ID_Input | null
-  id_not_ends_with?: ID_Input | null
-  createdAt?: DateTime | null
-  createdAt_not?: DateTime | null
-  createdAt_in?: DateTime[] | DateTime | null
-  createdAt_not_in?: DateTime[] | DateTime | null
-  createdAt_lt?: DateTime | null
-  createdAt_lte?: DateTime | null
-  createdAt_gt?: DateTime | null
-  createdAt_gte?: DateTime | null
-  updatedAt?: DateTime | null
-  updatedAt_not?: DateTime | null
-  updatedAt_in?: DateTime[] | DateTime | null
-  updatedAt_not_in?: DateTime[] | DateTime | null
-  updatedAt_lt?: DateTime | null
-  updatedAt_lte?: DateTime | null
-  updatedAt_gt?: DateTime | null
-  updatedAt_gte?: DateTime | null
-  suitableForChildren?: Boolean | null
-  suitableForChildren_not?: Boolean | null
-  suitableForInfants?: Boolean | null
-  suitableForInfants_not?: Boolean | null
-  petsAllowed?: Boolean | null
-  petsAllowed_not?: Boolean | null
-  smokingAllowed?: Boolean | null
-  smokingAllowed_not?: Boolean | null
-  partiesAndEventsAllowed?: Boolean | null
-  partiesAndEventsAllowed_not?: Boolean | null
-  additionalRules?: String | null
-  additionalRules_not?: String | null
-  additionalRules_in?: String[] | String | null
-  additionalRules_not_in?: String[] | String | null
-  additionalRules_lt?: String | null
-  additionalRules_lte?: String | null
-  additionalRules_gt?: String | null
-  additionalRules_gte?: String | null
-  additionalRules_contains?: String | null
-  additionalRules_not_contains?: String | null
-  additionalRules_starts_with?: String | null
-  additionalRules_not_starts_with?: String | null
-  additionalRules_ends_with?: String | null
-  additionalRules_not_ends_with?: String | null
-}
-
-export interface HouseRulesWhereUniqueInput {
-  id?: ID_Input | null
-}
-
 export interface LocationCreateInput {
+  title?: String | null
   id?: ID_Input | null
   lat: Float
   lng: Float
   address: String
   directions: String
   neighbourHood?: NeighbourhoodCreateOneWithoutLocationsInput | null
-  user?: UserCreateOneWithoutLocationInput | null
-  place?: PlaceCreateOneWithoutLocationInput | null
   experience?: ExperienceCreateOneWithoutLocationInput | null
-  restaurant?: RestaurantCreateOneWithoutLocationInput | null
+}
+
+export interface LocationCreateManyInput {
+  create?: LocationCreateInput[] | LocationCreateInput | null
+  connect?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
 }
 
 export interface LocationCreateManyWithoutNeighbourHoodInput {
@@ -14969,90 +12180,54 @@ export interface LocationCreateManyWithoutNeighbourHoodInput {
   connect?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
 }
 
+export interface LocationCreateOneInput {
+  create?: LocationCreateInput | null
+  connect?: LocationWhereUniqueInput | null
+}
+
 export interface LocationCreateOneWithoutExperienceInput {
   create?: LocationCreateWithoutExperienceInput | null
   connect?: LocationWhereUniqueInput | null
 }
 
-export interface LocationCreateOneWithoutPlaceInput {
-  create?: LocationCreateWithoutPlaceInput | null
-  connect?: LocationWhereUniqueInput | null
-}
-
-export interface LocationCreateOneWithoutRestaurantInput {
-  create?: LocationCreateWithoutRestaurantInput | null
-  connect?: LocationWhereUniqueInput | null
-}
-
-export interface LocationCreateOneWithoutUserInput {
-  create?: LocationCreateWithoutUserInput | null
-  connect?: LocationWhereUniqueInput | null
-}
-
 export interface LocationCreateWithoutExperienceInput {
+  title?: String | null
   id?: ID_Input | null
   lat: Float
   lng: Float
   address: String
   directions: String
   neighbourHood?: NeighbourhoodCreateOneWithoutLocationsInput | null
-  user?: UserCreateOneWithoutLocationInput | null
-  place?: PlaceCreateOneWithoutLocationInput | null
-  restaurant?: RestaurantCreateOneWithoutLocationInput | null
 }
 
 export interface LocationCreateWithoutNeighbourHoodInput {
+  title?: String | null
   id?: ID_Input | null
   lat: Float
   lng: Float
   address: String
   directions: String
-  user?: UserCreateOneWithoutLocationInput | null
-  place?: PlaceCreateOneWithoutLocationInput | null
   experience?: ExperienceCreateOneWithoutLocationInput | null
-  restaurant?: RestaurantCreateOneWithoutLocationInput | null
-}
-
-export interface LocationCreateWithoutPlaceInput {
-  id?: ID_Input | null
-  lat: Float
-  lng: Float
-  address: String
-  directions: String
-  neighbourHood?: NeighbourhoodCreateOneWithoutLocationsInput | null
-  user?: UserCreateOneWithoutLocationInput | null
-  experience?: ExperienceCreateOneWithoutLocationInput | null
-  restaurant?: RestaurantCreateOneWithoutLocationInput | null
-}
-
-export interface LocationCreateWithoutRestaurantInput {
-  id?: ID_Input | null
-  lat: Float
-  lng: Float
-  address: String
-  directions: String
-  neighbourHood?: NeighbourhoodCreateOneWithoutLocationsInput | null
-  user?: UserCreateOneWithoutLocationInput | null
-  place?: PlaceCreateOneWithoutLocationInput | null
-  experience?: ExperienceCreateOneWithoutLocationInput | null
-}
-
-export interface LocationCreateWithoutUserInput {
-  id?: ID_Input | null
-  lat: Float
-  lng: Float
-  address: String
-  directions: String
-  neighbourHood?: NeighbourhoodCreateOneWithoutLocationsInput | null
-  place?: PlaceCreateOneWithoutLocationInput | null
-  experience?: ExperienceCreateOneWithoutLocationInput | null
-  restaurant?: RestaurantCreateOneWithoutLocationInput | null
 }
 
 export interface LocationScalarWhereInput {
   AND?: LocationScalarWhereInput[] | LocationScalarWhereInput | null
   OR?: LocationScalarWhereInput[] | LocationScalarWhereInput | null
   NOT?: LocationScalarWhereInput[] | LocationScalarWhereInput | null
+  title?: String | null
+  title_not?: String | null
+  title_in?: String[] | String | null
+  title_not_in?: String[] | String | null
+  title_lt?: String | null
+  title_lte?: String | null
+  title_gt?: String | null
+  title_gte?: String | null
+  title_contains?: String | null
+  title_not_contains?: String | null
+  title_starts_with?: String | null
+  title_not_starts_with?: String | null
+  title_ends_with?: String | null
+  title_not_ends_with?: String | null
   id?: ID_Input | null
   id_not?: ID_Input | null
   id_in?: ID_Output[] | ID_Output | null
@@ -15124,26 +12299,48 @@ export interface LocationSubscriptionWhereInput {
   node?: LocationWhereInput | null
 }
 
-export interface LocationUpdateInput {
+export interface LocationUpdateDataInput {
+  title?: String | null
   lat?: Float | null
   lng?: Float | null
   address?: String | null
   directions?: String | null
   neighbourHood?: NeighbourhoodUpdateOneWithoutLocationsInput | null
-  user?: UserUpdateOneWithoutLocationInput | null
-  place?: PlaceUpdateOneWithoutLocationInput | null
   experience?: ExperienceUpdateOneWithoutLocationInput | null
-  restaurant?: RestaurantUpdateOneWithoutLocationInput | null
+}
+
+export interface LocationUpdateInput {
+  title?: String | null
+  lat?: Float | null
+  lng?: Float | null
+  address?: String | null
+  directions?: String | null
+  neighbourHood?: NeighbourhoodUpdateOneWithoutLocationsInput | null
+  experience?: ExperienceUpdateOneWithoutLocationInput | null
 }
 
 export interface LocationUpdateManyDataInput {
+  title?: String | null
   lat?: Float | null
   lng?: Float | null
   address?: String | null
   directions?: String | null
 }
 
+export interface LocationUpdateManyInput {
+  create?: LocationCreateInput[] | LocationCreateInput | null
+  connect?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  set?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  disconnect?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  delete?: LocationWhereUniqueInput[] | LocationWhereUniqueInput | null
+  update?: LocationUpdateWithWhereUniqueNestedInput[] | LocationUpdateWithWhereUniqueNestedInput | null
+  updateMany?: LocationUpdateManyWithWhereNestedInput[] | LocationUpdateManyWithWhereNestedInput | null
+  deleteMany?: LocationScalarWhereInput[] | LocationScalarWhereInput | null
+  upsert?: LocationUpsertWithWhereUniqueNestedInput[] | LocationUpsertWithWhereUniqueNestedInput | null
+}
+
 export interface LocationUpdateManyMutationInput {
+  title?: String | null
   lat?: Float | null
   lng?: Float | null
   address?: String | null
@@ -15167,6 +12364,15 @@ export interface LocationUpdateManyWithWhereNestedInput {
   data: LocationUpdateManyDataInput
 }
 
+export interface LocationUpdateOneInput {
+  create?: LocationCreateInput | null
+  connect?: LocationWhereUniqueInput | null
+  disconnect?: Boolean | null
+  delete?: Boolean | null
+  update?: LocationUpdateDataInput | null
+  upsert?: LocationUpsertNestedInput | null
+}
+
 export interface LocationUpdateOneRequiredWithoutExperienceInput {
   create?: LocationCreateWithoutExperienceInput | null
   connect?: LocationWhereUniqueInput | null
@@ -15174,82 +12380,27 @@ export interface LocationUpdateOneRequiredWithoutExperienceInput {
   upsert?: LocationUpsertWithoutExperienceInput | null
 }
 
-export interface LocationUpdateOneRequiredWithoutPlaceInput {
-  create?: LocationCreateWithoutPlaceInput | null
-  connect?: LocationWhereUniqueInput | null
-  update?: LocationUpdateWithoutPlaceDataInput | null
-  upsert?: LocationUpsertWithoutPlaceInput | null
-}
-
-export interface LocationUpdateOneRequiredWithoutRestaurantInput {
-  create?: LocationCreateWithoutRestaurantInput | null
-  connect?: LocationWhereUniqueInput | null
-  update?: LocationUpdateWithoutRestaurantDataInput | null
-  upsert?: LocationUpsertWithoutRestaurantInput | null
-}
-
-export interface LocationUpdateOneWithoutUserInput {
-  create?: LocationCreateWithoutUserInput | null
-  connect?: LocationWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
-  update?: LocationUpdateWithoutUserDataInput | null
-  upsert?: LocationUpsertWithoutUserInput | null
-}
-
 export interface LocationUpdateWithoutExperienceDataInput {
+  title?: String | null
   lat?: Float | null
   lng?: Float | null
   address?: String | null
   directions?: String | null
   neighbourHood?: NeighbourhoodUpdateOneWithoutLocationsInput | null
-  user?: UserUpdateOneWithoutLocationInput | null
-  place?: PlaceUpdateOneWithoutLocationInput | null
-  restaurant?: RestaurantUpdateOneWithoutLocationInput | null
 }
 
 export interface LocationUpdateWithoutNeighbourHoodDataInput {
+  title?: String | null
   lat?: Float | null
   lng?: Float | null
   address?: String | null
   directions?: String | null
-  user?: UserUpdateOneWithoutLocationInput | null
-  place?: PlaceUpdateOneWithoutLocationInput | null
-  experience?: ExperienceUpdateOneWithoutLocationInput | null
-  restaurant?: RestaurantUpdateOneWithoutLocationInput | null
-}
-
-export interface LocationUpdateWithoutPlaceDataInput {
-  lat?: Float | null
-  lng?: Float | null
-  address?: String | null
-  directions?: String | null
-  neighbourHood?: NeighbourhoodUpdateOneWithoutLocationsInput | null
-  user?: UserUpdateOneWithoutLocationInput | null
-  experience?: ExperienceUpdateOneWithoutLocationInput | null
-  restaurant?: RestaurantUpdateOneWithoutLocationInput | null
-}
-
-export interface LocationUpdateWithoutRestaurantDataInput {
-  lat?: Float | null
-  lng?: Float | null
-  address?: String | null
-  directions?: String | null
-  neighbourHood?: NeighbourhoodUpdateOneWithoutLocationsInput | null
-  user?: UserUpdateOneWithoutLocationInput | null
-  place?: PlaceUpdateOneWithoutLocationInput | null
   experience?: ExperienceUpdateOneWithoutLocationInput | null
 }
 
-export interface LocationUpdateWithoutUserDataInput {
-  lat?: Float | null
-  lng?: Float | null
-  address?: String | null
-  directions?: String | null
-  neighbourHood?: NeighbourhoodUpdateOneWithoutLocationsInput | null
-  place?: PlaceUpdateOneWithoutLocationInput | null
-  experience?: ExperienceUpdateOneWithoutLocationInput | null
-  restaurant?: RestaurantUpdateOneWithoutLocationInput | null
+export interface LocationUpdateWithWhereUniqueNestedInput {
+  where: LocationWhereUniqueInput
+  data: LocationUpdateDataInput
 }
 
 export interface LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput {
@@ -15257,24 +12408,20 @@ export interface LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput {
   data: LocationUpdateWithoutNeighbourHoodDataInput
 }
 
+export interface LocationUpsertNestedInput {
+  update: LocationUpdateDataInput
+  create: LocationCreateInput
+}
+
 export interface LocationUpsertWithoutExperienceInput {
   update: LocationUpdateWithoutExperienceDataInput
   create: LocationCreateWithoutExperienceInput
 }
 
-export interface LocationUpsertWithoutPlaceInput {
-  update: LocationUpdateWithoutPlaceDataInput
-  create: LocationCreateWithoutPlaceInput
-}
-
-export interface LocationUpsertWithoutRestaurantInput {
-  update: LocationUpdateWithoutRestaurantDataInput
-  create: LocationCreateWithoutRestaurantInput
-}
-
-export interface LocationUpsertWithoutUserInput {
-  update: LocationUpdateWithoutUserDataInput
-  create: LocationCreateWithoutUserInput
+export interface LocationUpsertWithWhereUniqueNestedInput {
+  where: LocationWhereUniqueInput
+  update: LocationUpdateDataInput
+  create: LocationCreateInput
 }
 
 export interface LocationUpsertWithWhereUniqueWithoutNeighbourHoodInput {
@@ -15287,6 +12434,20 @@ export interface LocationWhereInput {
   AND?: LocationWhereInput[] | LocationWhereInput | null
   OR?: LocationWhereInput[] | LocationWhereInput | null
   NOT?: LocationWhereInput[] | LocationWhereInput | null
+  title?: String | null
+  title_not?: String | null
+  title_in?: String[] | String | null
+  title_not_in?: String[] | String | null
+  title_lt?: String | null
+  title_lte?: String | null
+  title_gt?: String | null
+  title_gte?: String | null
+  title_contains?: String | null
+  title_not_contains?: String | null
+  title_starts_with?: String | null
+  title_not_starts_with?: String | null
+  title_ends_with?: String | null
+  title_not_ends_with?: String | null
   id?: ID_Input | null
   id_not?: ID_Input | null
   id_in?: ID_Output[] | ID_Output | null
@@ -15346,13 +12507,261 @@ export interface LocationWhereInput {
   directions_ends_with?: String | null
   directions_not_ends_with?: String | null
   neighbourHood?: NeighbourhoodWhereInput | null
-  user?: UserWhereInput | null
-  place?: PlaceWhereInput | null
   experience?: ExperienceWhereInput | null
-  restaurant?: RestaurantWhereInput | null
 }
 
 export interface LocationWhereUniqueInput {
+  id?: ID_Input | null
+}
+
+export interface MenuItemCreateInput {
+  id?: ID_Input | null
+  shortDescription: String
+  title: String
+  description: String
+  pricing: PricingCreateOneInput
+  pictures?: PictureCreateManyInput | null
+  reviews?: ReviewCreateManyInput | null
+}
+
+export interface MenuItemCreateManyInput {
+  create?: MenuItemCreateInput[] | MenuItemCreateInput | null
+  connect?: MenuItemWhereUniqueInput[] | MenuItemWhereUniqueInput | null
+}
+
+export interface MenuItemScalarWhereInput {
+  AND?: MenuItemScalarWhereInput[] | MenuItemScalarWhereInput | null
+  OR?: MenuItemScalarWhereInput[] | MenuItemScalarWhereInput | null
+  NOT?: MenuItemScalarWhereInput[] | MenuItemScalarWhereInput | null
+  id?: ID_Input | null
+  id_not?: ID_Input | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
+  id_lt?: ID_Input | null
+  id_lte?: ID_Input | null
+  id_gt?: ID_Input | null
+  id_gte?: ID_Input | null
+  id_contains?: ID_Input | null
+  id_not_contains?: ID_Input | null
+  id_starts_with?: ID_Input | null
+  id_not_starts_with?: ID_Input | null
+  id_ends_with?: ID_Input | null
+  id_not_ends_with?: ID_Input | null
+  createdAt?: DateTime | null
+  createdAt_not?: DateTime | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
+  createdAt_lt?: DateTime | null
+  createdAt_lte?: DateTime | null
+  createdAt_gt?: DateTime | null
+  createdAt_gte?: DateTime | null
+  updatedAt?: DateTime | null
+  updatedAt_not?: DateTime | null
+  updatedAt_in?: DateTime[] | DateTime | null
+  updatedAt_not_in?: DateTime[] | DateTime | null
+  updatedAt_lt?: DateTime | null
+  updatedAt_lte?: DateTime | null
+  updatedAt_gt?: DateTime | null
+  updatedAt_gte?: DateTime | null
+  shortDescription?: String | null
+  shortDescription_not?: String | null
+  shortDescription_in?: String[] | String | null
+  shortDescription_not_in?: String[] | String | null
+  shortDescription_lt?: String | null
+  shortDescription_lte?: String | null
+  shortDescription_gt?: String | null
+  shortDescription_gte?: String | null
+  shortDescription_contains?: String | null
+  shortDescription_not_contains?: String | null
+  shortDescription_starts_with?: String | null
+  shortDescription_not_starts_with?: String | null
+  shortDescription_ends_with?: String | null
+  shortDescription_not_ends_with?: String | null
+  title?: String | null
+  title_not?: String | null
+  title_in?: String[] | String | null
+  title_not_in?: String[] | String | null
+  title_lt?: String | null
+  title_lte?: String | null
+  title_gt?: String | null
+  title_gte?: String | null
+  title_contains?: String | null
+  title_not_contains?: String | null
+  title_starts_with?: String | null
+  title_not_starts_with?: String | null
+  title_ends_with?: String | null
+  title_not_ends_with?: String | null
+  description?: String | null
+  description_not?: String | null
+  description_in?: String[] | String | null
+  description_not_in?: String[] | String | null
+  description_lt?: String | null
+  description_lte?: String | null
+  description_gt?: String | null
+  description_gte?: String | null
+  description_contains?: String | null
+  description_not_contains?: String | null
+  description_starts_with?: String | null
+  description_not_starts_with?: String | null
+  description_ends_with?: String | null
+  description_not_ends_with?: String | null
+}
+
+export interface MenuItemSubscriptionWhereInput {
+  AND?: MenuItemSubscriptionWhereInput[] | MenuItemSubscriptionWhereInput | null
+  OR?: MenuItemSubscriptionWhereInput[] | MenuItemSubscriptionWhereInput | null
+  NOT?: MenuItemSubscriptionWhereInput[] | MenuItemSubscriptionWhereInput | null
+  mutation_in?: MutationType[] | MutationType | null
+  updatedFields_contains?: String | null
+  updatedFields_contains_every?: String[] | String | null
+  updatedFields_contains_some?: String[] | String | null
+  node?: MenuItemWhereInput | null
+}
+
+export interface MenuItemUpdateDataInput {
+  shortDescription?: String | null
+  title?: String | null
+  description?: String | null
+  pricing?: PricingUpdateOneRequiredInput | null
+  pictures?: PictureUpdateManyInput | null
+  reviews?: ReviewUpdateManyInput | null
+}
+
+export interface MenuItemUpdateInput {
+  shortDescription?: String | null
+  title?: String | null
+  description?: String | null
+  pricing?: PricingUpdateOneRequiredInput | null
+  pictures?: PictureUpdateManyInput | null
+  reviews?: ReviewUpdateManyInput | null
+}
+
+export interface MenuItemUpdateManyDataInput {
+  shortDescription?: String | null
+  title?: String | null
+  description?: String | null
+}
+
+export interface MenuItemUpdateManyInput {
+  create?: MenuItemCreateInput[] | MenuItemCreateInput | null
+  connect?: MenuItemWhereUniqueInput[] | MenuItemWhereUniqueInput | null
+  set?: MenuItemWhereUniqueInput[] | MenuItemWhereUniqueInput | null
+  disconnect?: MenuItemWhereUniqueInput[] | MenuItemWhereUniqueInput | null
+  delete?: MenuItemWhereUniqueInput[] | MenuItemWhereUniqueInput | null
+  update?: MenuItemUpdateWithWhereUniqueNestedInput[] | MenuItemUpdateWithWhereUniqueNestedInput | null
+  updateMany?: MenuItemUpdateManyWithWhereNestedInput[] | MenuItemUpdateManyWithWhereNestedInput | null
+  deleteMany?: MenuItemScalarWhereInput[] | MenuItemScalarWhereInput | null
+  upsert?: MenuItemUpsertWithWhereUniqueNestedInput[] | MenuItemUpsertWithWhereUniqueNestedInput | null
+}
+
+export interface MenuItemUpdateManyMutationInput {
+  shortDescription?: String | null
+  title?: String | null
+  description?: String | null
+}
+
+export interface MenuItemUpdateManyWithWhereNestedInput {
+  where: MenuItemScalarWhereInput
+  data: MenuItemUpdateManyDataInput
+}
+
+export interface MenuItemUpdateWithWhereUniqueNestedInput {
+  where: MenuItemWhereUniqueInput
+  data: MenuItemUpdateDataInput
+}
+
+export interface MenuItemUpsertWithWhereUniqueNestedInput {
+  where: MenuItemWhereUniqueInput
+  update: MenuItemUpdateDataInput
+  create: MenuItemCreateInput
+}
+
+export interface MenuItemWhereInput {
+  AND?: MenuItemWhereInput[] | MenuItemWhereInput | null
+  OR?: MenuItemWhereInput[] | MenuItemWhereInput | null
+  NOT?: MenuItemWhereInput[] | MenuItemWhereInput | null
+  id?: ID_Input | null
+  id_not?: ID_Input | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
+  id_lt?: ID_Input | null
+  id_lte?: ID_Input | null
+  id_gt?: ID_Input | null
+  id_gte?: ID_Input | null
+  id_contains?: ID_Input | null
+  id_not_contains?: ID_Input | null
+  id_starts_with?: ID_Input | null
+  id_not_starts_with?: ID_Input | null
+  id_ends_with?: ID_Input | null
+  id_not_ends_with?: ID_Input | null
+  createdAt?: DateTime | null
+  createdAt_not?: DateTime | null
+  createdAt_in?: DateTime[] | DateTime | null
+  createdAt_not_in?: DateTime[] | DateTime | null
+  createdAt_lt?: DateTime | null
+  createdAt_lte?: DateTime | null
+  createdAt_gt?: DateTime | null
+  createdAt_gte?: DateTime | null
+  updatedAt?: DateTime | null
+  updatedAt_not?: DateTime | null
+  updatedAt_in?: DateTime[] | DateTime | null
+  updatedAt_not_in?: DateTime[] | DateTime | null
+  updatedAt_lt?: DateTime | null
+  updatedAt_lte?: DateTime | null
+  updatedAt_gt?: DateTime | null
+  updatedAt_gte?: DateTime | null
+  shortDescription?: String | null
+  shortDescription_not?: String | null
+  shortDescription_in?: String[] | String | null
+  shortDescription_not_in?: String[] | String | null
+  shortDescription_lt?: String | null
+  shortDescription_lte?: String | null
+  shortDescription_gt?: String | null
+  shortDescription_gte?: String | null
+  shortDescription_contains?: String | null
+  shortDescription_not_contains?: String | null
+  shortDescription_starts_with?: String | null
+  shortDescription_not_starts_with?: String | null
+  shortDescription_ends_with?: String | null
+  shortDescription_not_ends_with?: String | null
+  title?: String | null
+  title_not?: String | null
+  title_in?: String[] | String | null
+  title_not_in?: String[] | String | null
+  title_lt?: String | null
+  title_lte?: String | null
+  title_gt?: String | null
+  title_gte?: String | null
+  title_contains?: String | null
+  title_not_contains?: String | null
+  title_starts_with?: String | null
+  title_not_starts_with?: String | null
+  title_ends_with?: String | null
+  title_not_ends_with?: String | null
+  description?: String | null
+  description_not?: String | null
+  description_in?: String[] | String | null
+  description_not_in?: String[] | String | null
+  description_lt?: String | null
+  description_lte?: String | null
+  description_gt?: String | null
+  description_gte?: String | null
+  description_contains?: String | null
+  description_not_contains?: String | null
+  description_starts_with?: String | null
+  description_not_starts_with?: String | null
+  description_ends_with?: String | null
+  description_not_ends_with?: String | null
+  pricing?: PricingWhereInput | null
+  pictures_every?: PictureWhereInput | null
+  pictures_some?: PictureWhereInput | null
+  pictures_none?: PictureWhereInput | null
+  reviews_every?: ReviewWhereInput | null
+  reviews_some?: ReviewWhereInput | null
+  reviews_none?: ReviewWhereInput | null
+}
+
+export interface MenuItemWhereUniqueInput {
   id?: ID_Input | null
 }
 
@@ -16036,7 +13445,7 @@ export interface OrderCreateInput {
   startDate: DateTime
   endDate: DateTime
   bookee: UserCreateOneWithoutOrdersInput
-  place: PlaceCreateOneWithoutOrdersInput
+  restaurant: RestaurantCreateOneWithoutOrdersInput
   payment?: PaymentCreateOneWithoutOrderInput | null
 }
 
@@ -16045,9 +13454,14 @@ export interface OrderCreateManyWithoutBookeeInput {
   connect?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
 }
 
-export interface OrderCreateManyWithoutPlaceInput {
-  create?: OrderCreateWithoutPlaceInput[] | OrderCreateWithoutPlaceInput | null
+export interface OrderCreateManyWithoutRestaurantInput {
+  create?: OrderCreateWithoutRestaurantInput[] | OrderCreateWithoutRestaurantInput | null
   connect?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
+}
+
+export interface OrderCreateOneInput {
+  create?: OrderCreateInput | null
+  connect?: OrderWhereUniqueInput | null
 }
 
 export interface OrderCreateOneWithoutPaymentInput {
@@ -16059,7 +13473,7 @@ export interface OrderCreateWithoutBookeeInput {
   id?: ID_Input | null
   startDate: DateTime
   endDate: DateTime
-  place: PlaceCreateOneWithoutOrdersInput
+  restaurant: RestaurantCreateOneWithoutOrdersInput
   payment?: PaymentCreateOneWithoutOrderInput | null
 }
 
@@ -16068,10 +13482,10 @@ export interface OrderCreateWithoutPaymentInput {
   startDate: DateTime
   endDate: DateTime
   bookee: UserCreateOneWithoutOrdersInput
-  place: PlaceCreateOneWithoutOrdersInput
+  restaurant: RestaurantCreateOneWithoutOrdersInput
 }
 
-export interface OrderCreateWithoutPlaceInput {
+export interface OrderCreateWithoutRestaurantInput {
   id?: ID_Input | null
   startDate: DateTime
   endDate: DateTime
@@ -16134,11 +13548,19 @@ export interface OrderSubscriptionWhereInput {
   node?: OrderWhereInput | null
 }
 
+export interface OrderUpdateDataInput {
+  startDate?: DateTime | null
+  endDate?: DateTime | null
+  bookee?: UserUpdateOneRequiredWithoutOrdersInput | null
+  restaurant?: RestaurantUpdateOneRequiredWithoutOrdersInput | null
+  payment?: PaymentUpdateOneWithoutOrderInput | null
+}
+
 export interface OrderUpdateInput {
   startDate?: DateTime | null
   endDate?: DateTime | null
   bookee?: UserUpdateOneRequiredWithoutOrdersInput | null
-  place?: PlaceUpdateOneRequiredWithoutOrdersInput | null
+  restaurant?: RestaurantUpdateOneRequiredWithoutOrdersInput | null
   payment?: PaymentUpdateOneWithoutOrderInput | null
 }
 
@@ -16164,21 +13586,28 @@ export interface OrderUpdateManyWithoutBookeeInput {
   upsert?: OrderUpsertWithWhereUniqueWithoutBookeeInput[] | OrderUpsertWithWhereUniqueWithoutBookeeInput | null
 }
 
-export interface OrderUpdateManyWithoutPlaceInput {
-  create?: OrderCreateWithoutPlaceInput[] | OrderCreateWithoutPlaceInput | null
+export interface OrderUpdateManyWithoutRestaurantInput {
+  create?: OrderCreateWithoutRestaurantInput[] | OrderCreateWithoutRestaurantInput | null
   connect?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
   set?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
   disconnect?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
   delete?: OrderWhereUniqueInput[] | OrderWhereUniqueInput | null
-  update?: OrderUpdateWithWhereUniqueWithoutPlaceInput[] | OrderUpdateWithWhereUniqueWithoutPlaceInput | null
+  update?: OrderUpdateWithWhereUniqueWithoutRestaurantInput[] | OrderUpdateWithWhereUniqueWithoutRestaurantInput | null
   updateMany?: OrderUpdateManyWithWhereNestedInput[] | OrderUpdateManyWithWhereNestedInput | null
   deleteMany?: OrderScalarWhereInput[] | OrderScalarWhereInput | null
-  upsert?: OrderUpsertWithWhereUniqueWithoutPlaceInput[] | OrderUpsertWithWhereUniqueWithoutPlaceInput | null
+  upsert?: OrderUpsertWithWhereUniqueWithoutRestaurantInput[] | OrderUpsertWithWhereUniqueWithoutRestaurantInput | null
 }
 
 export interface OrderUpdateManyWithWhereNestedInput {
   where: OrderScalarWhereInput
   data: OrderUpdateManyDataInput
+}
+
+export interface OrderUpdateOneRequiredInput {
+  create?: OrderCreateInput | null
+  connect?: OrderWhereUniqueInput | null
+  update?: OrderUpdateDataInput | null
+  upsert?: OrderUpsertNestedInput | null
 }
 
 export interface OrderUpdateOneRequiredWithoutPaymentInput {
@@ -16191,7 +13620,7 @@ export interface OrderUpdateOneRequiredWithoutPaymentInput {
 export interface OrderUpdateWithoutBookeeDataInput {
   startDate?: DateTime | null
   endDate?: DateTime | null
-  place?: PlaceUpdateOneRequiredWithoutOrdersInput | null
+  restaurant?: RestaurantUpdateOneRequiredWithoutOrdersInput | null
   payment?: PaymentUpdateOneWithoutOrderInput | null
 }
 
@@ -16199,10 +13628,10 @@ export interface OrderUpdateWithoutPaymentDataInput {
   startDate?: DateTime | null
   endDate?: DateTime | null
   bookee?: UserUpdateOneRequiredWithoutOrdersInput | null
-  place?: PlaceUpdateOneRequiredWithoutOrdersInput | null
+  restaurant?: RestaurantUpdateOneRequiredWithoutOrdersInput | null
 }
 
-export interface OrderUpdateWithoutPlaceDataInput {
+export interface OrderUpdateWithoutRestaurantDataInput {
   startDate?: DateTime | null
   endDate?: DateTime | null
   bookee?: UserUpdateOneRequiredWithoutOrdersInput | null
@@ -16214,9 +13643,14 @@ export interface OrderUpdateWithWhereUniqueWithoutBookeeInput {
   data: OrderUpdateWithoutBookeeDataInput
 }
 
-export interface OrderUpdateWithWhereUniqueWithoutPlaceInput {
+export interface OrderUpdateWithWhereUniqueWithoutRestaurantInput {
   where: OrderWhereUniqueInput
-  data: OrderUpdateWithoutPlaceDataInput
+  data: OrderUpdateWithoutRestaurantDataInput
+}
+
+export interface OrderUpsertNestedInput {
+  update: OrderUpdateDataInput
+  create: OrderCreateInput
 }
 
 export interface OrderUpsertWithoutPaymentInput {
@@ -16230,10 +13664,10 @@ export interface OrderUpsertWithWhereUniqueWithoutBookeeInput {
   create: OrderCreateWithoutBookeeInput
 }
 
-export interface OrderUpsertWithWhereUniqueWithoutPlaceInput {
+export interface OrderUpsertWithWhereUniqueWithoutRestaurantInput {
   where: OrderWhereUniqueInput
-  update: OrderUpdateWithoutPlaceDataInput
-  create: OrderCreateWithoutPlaceInput
+  update: OrderUpdateWithoutRestaurantDataInput
+  create: OrderCreateWithoutRestaurantInput
 }
 
 export interface OrderWhereInput {
@@ -16279,7 +13713,7 @@ export interface OrderWhereInput {
   endDate_gt?: DateTime | null
   endDate_gte?: DateTime | null
   bookee?: UserWhereInput | null
-  place?: PlaceWhereInput | null
+  restaurant?: RestaurantWhereInput | null
   payment?: PaymentWhereInput | null
 }
 
@@ -16580,7 +14014,7 @@ export interface PaymentAccountWhereUniqueInput {
 export interface PaymentCreateInput {
   id?: ID_Input | null
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
   order: OrderCreateOneWithoutPaymentInput
   paymentMethod: PaymentAccountCreateOneWithoutPaymentsInput
@@ -16599,7 +14033,7 @@ export interface PaymentCreateOneWithoutOrderInput {
 export interface PaymentCreateWithoutOrderInput {
   id?: ID_Input | null
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
   paymentMethod: PaymentAccountCreateOneWithoutPaymentsInput
 }
@@ -16607,7 +14041,7 @@ export interface PaymentCreateWithoutOrderInput {
 export interface PaymentCreateWithoutPaymentMethodInput {
   id?: ID_Input | null
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
   order: OrderCreateOneWithoutPaymentInput
 }
@@ -16646,14 +14080,14 @@ export interface PaymentScalarWhereInput {
   serviceFee_lte?: Float | null
   serviceFee_gt?: Float | null
   serviceFee_gte?: Float | null
-  placePrice?: Float | null
-  placePrice_not?: Float | null
-  placePrice_in?: Float[] | Float | null
-  placePrice_not_in?: Float[] | Float | null
-  placePrice_lt?: Float | null
-  placePrice_lte?: Float | null
-  placePrice_gt?: Float | null
-  placePrice_gte?: Float | null
+  restaurantPrice?: Float | null
+  restaurantPrice_not?: Float | null
+  restaurantPrice_in?: Float[] | Float | null
+  restaurantPrice_not_in?: Float[] | Float | null
+  restaurantPrice_lt?: Float | null
+  restaurantPrice_lte?: Float | null
+  restaurantPrice_gt?: Float | null
+  restaurantPrice_gte?: Float | null
   totalPrice?: Float | null
   totalPrice_not?: Float | null
   totalPrice_in?: Float[] | Float | null
@@ -16677,7 +14111,7 @@ export interface PaymentSubscriptionWhereInput {
 
 export interface PaymentUpdateInput {
   serviceFee?: Float | null
-  placePrice?: Float | null
+  restaurantPrice?: Float | null
   totalPrice?: Float | null
   order?: OrderUpdateOneRequiredWithoutPaymentInput | null
   paymentMethod?: PaymentAccountUpdateOneRequiredWithoutPaymentsInput | null
@@ -16685,13 +14119,13 @@ export interface PaymentUpdateInput {
 
 export interface PaymentUpdateManyDataInput {
   serviceFee?: Float | null
-  placePrice?: Float | null
+  restaurantPrice?: Float | null
   totalPrice?: Float | null
 }
 
 export interface PaymentUpdateManyMutationInput {
   serviceFee?: Float | null
-  placePrice?: Float | null
+  restaurantPrice?: Float | null
   totalPrice?: Float | null
 }
 
@@ -16723,14 +14157,14 @@ export interface PaymentUpdateOneWithoutOrderInput {
 
 export interface PaymentUpdateWithoutOrderDataInput {
   serviceFee?: Float | null
-  placePrice?: Float | null
+  restaurantPrice?: Float | null
   totalPrice?: Float | null
   paymentMethod?: PaymentAccountUpdateOneRequiredWithoutPaymentsInput | null
 }
 
 export interface PaymentUpdateWithoutPaymentMethodDataInput {
   serviceFee?: Float | null
-  placePrice?: Float | null
+  restaurantPrice?: Float | null
   totalPrice?: Float | null
   order?: OrderUpdateOneRequiredWithoutPaymentInput | null
 }
@@ -16785,14 +14219,14 @@ export interface PaymentWhereInput {
   serviceFee_lte?: Float | null
   serviceFee_gt?: Float | null
   serviceFee_gte?: Float | null
-  placePrice?: Float | null
-  placePrice_not?: Float | null
-  placePrice_in?: Float[] | Float | null
-  placePrice_not_in?: Float[] | Float | null
-  placePrice_lt?: Float | null
-  placePrice_lte?: Float | null
-  placePrice_gt?: Float | null
-  placePrice_gte?: Float | null
+  restaurantPrice?: Float | null
+  restaurantPrice_not?: Float | null
+  restaurantPrice_in?: Float[] | Float | null
+  restaurantPrice_not_in?: Float[] | Float | null
+  restaurantPrice_lt?: Float | null
+  restaurantPrice_lte?: Float | null
+  restaurantPrice_gt?: Float | null
+  restaurantPrice_gte?: Float | null
   totalPrice?: Float | null
   totalPrice_not?: Float | null
   totalPrice_in?: Float[] | Float | null
@@ -17146,965 +14580,15 @@ export interface PictureWhereUniqueInput {
   id?: ID_Input | null
 }
 
-export interface PlaceCreateInput {
-  id?: ID_Input | null
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews?: ReviewCreateManyWithoutPlaceInput | null
-  amenities: AmenitiesCreateOneWithoutPlaceInput
-  host: UserCreateOneWithoutOwnedPlacesInput
-  pricing: PricingCreateOneWithoutPlaceInput
-  location: LocationCreateOneWithoutPlaceInput
-  views: ViewsCreateOneWithoutPlaceInput
-  guestRequirements?: GuestRequirementsCreateOneWithoutPlaceInput | null
-  policies?: PoliciesCreateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesCreateOneInput | null
-  orders?: OrderCreateManyWithoutPlaceInput | null
-  pictures?: PictureCreateManyInput | null
-}
-
-export interface PlaceCreateManyWithoutHostInput {
-  create?: PlaceCreateWithoutHostInput[] | PlaceCreateWithoutHostInput | null
-  connect?: PlaceWhereUniqueInput[] | PlaceWhereUniqueInput | null
-}
-
-export interface PlaceCreateOneWithoutAmenitiesInput {
-  create?: PlaceCreateWithoutAmenitiesInput | null
-  connect?: PlaceWhereUniqueInput | null
-}
-
-export interface PlaceCreateOneWithoutGuestRequirementsInput {
-  create?: PlaceCreateWithoutGuestRequirementsInput | null
-  connect?: PlaceWhereUniqueInput | null
-}
-
-export interface PlaceCreateOneWithoutLocationInput {
-  create?: PlaceCreateWithoutLocationInput | null
-  connect?: PlaceWhereUniqueInput | null
-}
-
-export interface PlaceCreateOneWithoutOrdersInput {
-  create?: PlaceCreateWithoutOrdersInput | null
-  connect?: PlaceWhereUniqueInput | null
-}
-
-export interface PlaceCreateOneWithoutPoliciesInput {
-  create?: PlaceCreateWithoutPoliciesInput | null
-  connect?: PlaceWhereUniqueInput | null
-}
-
-export interface PlaceCreateOneWithoutPricingInput {
-  create?: PlaceCreateWithoutPricingInput | null
-  connect?: PlaceWhereUniqueInput | null
-}
-
-export interface PlaceCreateOneWithoutReviewsInput {
-  create?: PlaceCreateWithoutReviewsInput | null
-  connect?: PlaceWhereUniqueInput | null
-}
-
-export interface PlaceCreateOneWithoutViewsInput {
-  create?: PlaceCreateWithoutViewsInput | null
-  connect?: PlaceWhereUniqueInput | null
-}
-
-export interface PlaceCreateWithoutAmenitiesInput {
-  id?: ID_Input | null
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews?: ReviewCreateManyWithoutPlaceInput | null
-  host: UserCreateOneWithoutOwnedPlacesInput
-  pricing: PricingCreateOneWithoutPlaceInput
-  location: LocationCreateOneWithoutPlaceInput
-  views: ViewsCreateOneWithoutPlaceInput
-  guestRequirements?: GuestRequirementsCreateOneWithoutPlaceInput | null
-  policies?: PoliciesCreateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesCreateOneInput | null
-  orders?: OrderCreateManyWithoutPlaceInput | null
-  pictures?: PictureCreateManyInput | null
-}
-
-export interface PlaceCreateWithoutGuestRequirementsInput {
-  id?: ID_Input | null
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews?: ReviewCreateManyWithoutPlaceInput | null
-  amenities: AmenitiesCreateOneWithoutPlaceInput
-  host: UserCreateOneWithoutOwnedPlacesInput
-  pricing: PricingCreateOneWithoutPlaceInput
-  location: LocationCreateOneWithoutPlaceInput
-  views: ViewsCreateOneWithoutPlaceInput
-  policies?: PoliciesCreateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesCreateOneInput | null
-  orders?: OrderCreateManyWithoutPlaceInput | null
-  pictures?: PictureCreateManyInput | null
-}
-
-export interface PlaceCreateWithoutHostInput {
-  id?: ID_Input | null
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews?: ReviewCreateManyWithoutPlaceInput | null
-  amenities: AmenitiesCreateOneWithoutPlaceInput
-  pricing: PricingCreateOneWithoutPlaceInput
-  location: LocationCreateOneWithoutPlaceInput
-  views: ViewsCreateOneWithoutPlaceInput
-  guestRequirements?: GuestRequirementsCreateOneWithoutPlaceInput | null
-  policies?: PoliciesCreateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesCreateOneInput | null
-  orders?: OrderCreateManyWithoutPlaceInput | null
-  pictures?: PictureCreateManyInput | null
-}
-
-export interface PlaceCreateWithoutLocationInput {
-  id?: ID_Input | null
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews?: ReviewCreateManyWithoutPlaceInput | null
-  amenities: AmenitiesCreateOneWithoutPlaceInput
-  host: UserCreateOneWithoutOwnedPlacesInput
-  pricing: PricingCreateOneWithoutPlaceInput
-  views: ViewsCreateOneWithoutPlaceInput
-  guestRequirements?: GuestRequirementsCreateOneWithoutPlaceInput | null
-  policies?: PoliciesCreateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesCreateOneInput | null
-  orders?: OrderCreateManyWithoutPlaceInput | null
-  pictures?: PictureCreateManyInput | null
-}
-
-export interface PlaceCreateWithoutOrdersInput {
-  id?: ID_Input | null
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews?: ReviewCreateManyWithoutPlaceInput | null
-  amenities: AmenitiesCreateOneWithoutPlaceInput
-  host: UserCreateOneWithoutOwnedPlacesInput
-  pricing: PricingCreateOneWithoutPlaceInput
-  location: LocationCreateOneWithoutPlaceInput
-  views: ViewsCreateOneWithoutPlaceInput
-  guestRequirements?: GuestRequirementsCreateOneWithoutPlaceInput | null
-  policies?: PoliciesCreateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesCreateOneInput | null
-  pictures?: PictureCreateManyInput | null
-}
-
-export interface PlaceCreateWithoutPoliciesInput {
-  id?: ID_Input | null
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews?: ReviewCreateManyWithoutPlaceInput | null
-  amenities: AmenitiesCreateOneWithoutPlaceInput
-  host: UserCreateOneWithoutOwnedPlacesInput
-  pricing: PricingCreateOneWithoutPlaceInput
-  location: LocationCreateOneWithoutPlaceInput
-  views: ViewsCreateOneWithoutPlaceInput
-  guestRequirements?: GuestRequirementsCreateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesCreateOneInput | null
-  orders?: OrderCreateManyWithoutPlaceInput | null
-  pictures?: PictureCreateManyInput | null
-}
-
-export interface PlaceCreateWithoutPricingInput {
-  id?: ID_Input | null
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews?: ReviewCreateManyWithoutPlaceInput | null
-  amenities: AmenitiesCreateOneWithoutPlaceInput
-  host: UserCreateOneWithoutOwnedPlacesInput
-  location: LocationCreateOneWithoutPlaceInput
-  views: ViewsCreateOneWithoutPlaceInput
-  guestRequirements?: GuestRequirementsCreateOneWithoutPlaceInput | null
-  policies?: PoliciesCreateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesCreateOneInput | null
-  orders?: OrderCreateManyWithoutPlaceInput | null
-  pictures?: PictureCreateManyInput | null
-}
-
-export interface PlaceCreateWithoutReviewsInput {
-  id?: ID_Input | null
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  amenities: AmenitiesCreateOneWithoutPlaceInput
-  host: UserCreateOneWithoutOwnedPlacesInput
-  pricing: PricingCreateOneWithoutPlaceInput
-  location: LocationCreateOneWithoutPlaceInput
-  views: ViewsCreateOneWithoutPlaceInput
-  guestRequirements?: GuestRequirementsCreateOneWithoutPlaceInput | null
-  policies?: PoliciesCreateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesCreateOneInput | null
-  orders?: OrderCreateManyWithoutPlaceInput | null
-  pictures?: PictureCreateManyInput | null
-}
-
-export interface PlaceCreateWithoutViewsInput {
-  id?: ID_Input | null
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-  reviews?: ReviewCreateManyWithoutPlaceInput | null
-  amenities: AmenitiesCreateOneWithoutPlaceInput
-  host: UserCreateOneWithoutOwnedPlacesInput
-  pricing: PricingCreateOneWithoutPlaceInput
-  location: LocationCreateOneWithoutPlaceInput
-  guestRequirements?: GuestRequirementsCreateOneWithoutPlaceInput | null
-  policies?: PoliciesCreateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesCreateOneInput | null
-  orders?: OrderCreateManyWithoutPlaceInput | null
-  pictures?: PictureCreateManyInput | null
-}
-
-export interface PlaceScalarWhereInput {
-  AND?: PlaceScalarWhereInput[] | PlaceScalarWhereInput | null
-  OR?: PlaceScalarWhereInput[] | PlaceScalarWhereInput | null
-  NOT?: PlaceScalarWhereInput[] | PlaceScalarWhereInput | null
-  id?: ID_Input | null
-  id_not?: ID_Input | null
-  id_in?: ID_Output[] | ID_Output | null
-  id_not_in?: ID_Output[] | ID_Output | null
-  id_lt?: ID_Input | null
-  id_lte?: ID_Input | null
-  id_gt?: ID_Input | null
-  id_gte?: ID_Input | null
-  id_contains?: ID_Input | null
-  id_not_contains?: ID_Input | null
-  id_starts_with?: ID_Input | null
-  id_not_starts_with?: ID_Input | null
-  id_ends_with?: ID_Input | null
-  id_not_ends_with?: ID_Input | null
-  name?: String | null
-  name_not?: String | null
-  name_in?: String[] | String | null
-  name_not_in?: String[] | String | null
-  name_lt?: String | null
-  name_lte?: String | null
-  name_gt?: String | null
-  name_gte?: String | null
-  name_contains?: String | null
-  name_not_contains?: String | null
-  name_starts_with?: String | null
-  name_not_starts_with?: String | null
-  name_ends_with?: String | null
-  name_not_ends_with?: String | null
-  size?: PLACE_SIZES | null
-  size_not?: PLACE_SIZES | null
-  size_in?: PLACE_SIZES[] | PLACE_SIZES | null
-  size_not_in?: PLACE_SIZES[] | PLACE_SIZES | null
-  shortDescription?: String | null
-  shortDescription_not?: String | null
-  shortDescription_in?: String[] | String | null
-  shortDescription_not_in?: String[] | String | null
-  shortDescription_lt?: String | null
-  shortDescription_lte?: String | null
-  shortDescription_gt?: String | null
-  shortDescription_gte?: String | null
-  shortDescription_contains?: String | null
-  shortDescription_not_contains?: String | null
-  shortDescription_starts_with?: String | null
-  shortDescription_not_starts_with?: String | null
-  shortDescription_ends_with?: String | null
-  shortDescription_not_ends_with?: String | null
-  description?: String | null
-  description_not?: String | null
-  description_in?: String[] | String | null
-  description_not_in?: String[] | String | null
-  description_lt?: String | null
-  description_lte?: String | null
-  description_gt?: String | null
-  description_gte?: String | null
-  description_contains?: String | null
-  description_not_contains?: String | null
-  description_starts_with?: String | null
-  description_not_starts_with?: String | null
-  description_ends_with?: String | null
-  description_not_ends_with?: String | null
-  slug?: String | null
-  slug_not?: String | null
-  slug_in?: String[] | String | null
-  slug_not_in?: String[] | String | null
-  slug_lt?: String | null
-  slug_lte?: String | null
-  slug_gt?: String | null
-  slug_gte?: String | null
-  slug_contains?: String | null
-  slug_not_contains?: String | null
-  slug_starts_with?: String | null
-  slug_not_starts_with?: String | null
-  slug_ends_with?: String | null
-  slug_not_ends_with?: String | null
-  maxGuests?: Int | null
-  maxGuests_not?: Int | null
-  maxGuests_in?: Int[] | Int | null
-  maxGuests_not_in?: Int[] | Int | null
-  maxGuests_lt?: Int | null
-  maxGuests_lte?: Int | null
-  maxGuests_gt?: Int | null
-  maxGuests_gte?: Int | null
-  numBedrooms?: Int | null
-  numBedrooms_not?: Int | null
-  numBedrooms_in?: Int[] | Int | null
-  numBedrooms_not_in?: Int[] | Int | null
-  numBedrooms_lt?: Int | null
-  numBedrooms_lte?: Int | null
-  numBedrooms_gt?: Int | null
-  numBedrooms_gte?: Int | null
-  numBeds?: Int | null
-  numBeds_not?: Int | null
-  numBeds_in?: Int[] | Int | null
-  numBeds_not_in?: Int[] | Int | null
-  numBeds_lt?: Int | null
-  numBeds_lte?: Int | null
-  numBeds_gt?: Int | null
-  numBeds_gte?: Int | null
-  numBaths?: Int | null
-  numBaths_not?: Int | null
-  numBaths_in?: Int[] | Int | null
-  numBaths_not_in?: Int[] | Int | null
-  numBaths_lt?: Int | null
-  numBaths_lte?: Int | null
-  numBaths_gt?: Int | null
-  numBaths_gte?: Int | null
-  popularity?: Int | null
-  popularity_not?: Int | null
-  popularity_in?: Int[] | Int | null
-  popularity_not_in?: Int[] | Int | null
-  popularity_lt?: Int | null
-  popularity_lte?: Int | null
-  popularity_gt?: Int | null
-  popularity_gte?: Int | null
-}
-
-export interface PlaceSubscriptionWhereInput {
-  AND?: PlaceSubscriptionWhereInput[] | PlaceSubscriptionWhereInput | null
-  OR?: PlaceSubscriptionWhereInput[] | PlaceSubscriptionWhereInput | null
-  NOT?: PlaceSubscriptionWhereInput[] | PlaceSubscriptionWhereInput | null
-  mutation_in?: MutationType[] | MutationType | null
-  updatedFields_contains?: String | null
-  updatedFields_contains_every?: String[] | String | null
-  updatedFields_contains_some?: String[] | String | null
-  node?: PlaceWhereInput | null
-}
-
-export interface PlaceUpdateInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-  reviews?: ReviewUpdateManyWithoutPlaceInput | null
-  amenities?: AmenitiesUpdateOneRequiredWithoutPlaceInput | null
-  host?: UserUpdateOneRequiredWithoutOwnedPlacesInput | null
-  pricing?: PricingUpdateOneRequiredWithoutPlaceInput | null
-  location?: LocationUpdateOneRequiredWithoutPlaceInput | null
-  views?: ViewsUpdateOneRequiredWithoutPlaceInput | null
-  guestRequirements?: GuestRequirementsUpdateOneWithoutPlaceInput | null
-  policies?: PoliciesUpdateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesUpdateOneInput | null
-  orders?: OrderUpdateManyWithoutPlaceInput | null
-  pictures?: PictureUpdateManyInput | null
-}
-
-export interface PlaceUpdateManyDataInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-}
-
-export interface PlaceUpdateManyMutationInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-}
-
-export interface PlaceUpdateManyWithoutHostInput {
-  create?: PlaceCreateWithoutHostInput[] | PlaceCreateWithoutHostInput | null
-  connect?: PlaceWhereUniqueInput[] | PlaceWhereUniqueInput | null
-  set?: PlaceWhereUniqueInput[] | PlaceWhereUniqueInput | null
-  disconnect?: PlaceWhereUniqueInput[] | PlaceWhereUniqueInput | null
-  delete?: PlaceWhereUniqueInput[] | PlaceWhereUniqueInput | null
-  update?: PlaceUpdateWithWhereUniqueWithoutHostInput[] | PlaceUpdateWithWhereUniqueWithoutHostInput | null
-  updateMany?: PlaceUpdateManyWithWhereNestedInput[] | PlaceUpdateManyWithWhereNestedInput | null
-  deleteMany?: PlaceScalarWhereInput[] | PlaceScalarWhereInput | null
-  upsert?: PlaceUpsertWithWhereUniqueWithoutHostInput[] | PlaceUpsertWithWhereUniqueWithoutHostInput | null
-}
-
-export interface PlaceUpdateManyWithWhereNestedInput {
-  where: PlaceScalarWhereInput
-  data: PlaceUpdateManyDataInput
-}
-
-export interface PlaceUpdateOneRequiredWithoutAmenitiesInput {
-  create?: PlaceCreateWithoutAmenitiesInput | null
-  connect?: PlaceWhereUniqueInput | null
-  update?: PlaceUpdateWithoutAmenitiesDataInput | null
-  upsert?: PlaceUpsertWithoutAmenitiesInput | null
-}
-
-export interface PlaceUpdateOneRequiredWithoutGuestRequirementsInput {
-  create?: PlaceCreateWithoutGuestRequirementsInput | null
-  connect?: PlaceWhereUniqueInput | null
-  update?: PlaceUpdateWithoutGuestRequirementsDataInput | null
-  upsert?: PlaceUpsertWithoutGuestRequirementsInput | null
-}
-
-export interface PlaceUpdateOneRequiredWithoutOrdersInput {
-  create?: PlaceCreateWithoutOrdersInput | null
-  connect?: PlaceWhereUniqueInput | null
-  update?: PlaceUpdateWithoutOrdersDataInput | null
-  upsert?: PlaceUpsertWithoutOrdersInput | null
-}
-
-export interface PlaceUpdateOneRequiredWithoutPoliciesInput {
-  create?: PlaceCreateWithoutPoliciesInput | null
-  connect?: PlaceWhereUniqueInput | null
-  update?: PlaceUpdateWithoutPoliciesDataInput | null
-  upsert?: PlaceUpsertWithoutPoliciesInput | null
-}
-
-export interface PlaceUpdateOneRequiredWithoutPricingInput {
-  create?: PlaceCreateWithoutPricingInput | null
-  connect?: PlaceWhereUniqueInput | null
-  update?: PlaceUpdateWithoutPricingDataInput | null
-  upsert?: PlaceUpsertWithoutPricingInput | null
-}
-
-export interface PlaceUpdateOneRequiredWithoutReviewsInput {
-  create?: PlaceCreateWithoutReviewsInput | null
-  connect?: PlaceWhereUniqueInput | null
-  update?: PlaceUpdateWithoutReviewsDataInput | null
-  upsert?: PlaceUpsertWithoutReviewsInput | null
-}
-
-export interface PlaceUpdateOneRequiredWithoutViewsInput {
-  create?: PlaceCreateWithoutViewsInput | null
-  connect?: PlaceWhereUniqueInput | null
-  update?: PlaceUpdateWithoutViewsDataInput | null
-  upsert?: PlaceUpsertWithoutViewsInput | null
-}
-
-export interface PlaceUpdateOneWithoutLocationInput {
-  create?: PlaceCreateWithoutLocationInput | null
-  connect?: PlaceWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
-  update?: PlaceUpdateWithoutLocationDataInput | null
-  upsert?: PlaceUpsertWithoutLocationInput | null
-}
-
-export interface PlaceUpdateWithoutAmenitiesDataInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-  reviews?: ReviewUpdateManyWithoutPlaceInput | null
-  host?: UserUpdateOneRequiredWithoutOwnedPlacesInput | null
-  pricing?: PricingUpdateOneRequiredWithoutPlaceInput | null
-  location?: LocationUpdateOneRequiredWithoutPlaceInput | null
-  views?: ViewsUpdateOneRequiredWithoutPlaceInput | null
-  guestRequirements?: GuestRequirementsUpdateOneWithoutPlaceInput | null
-  policies?: PoliciesUpdateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesUpdateOneInput | null
-  orders?: OrderUpdateManyWithoutPlaceInput | null
-  pictures?: PictureUpdateManyInput | null
-}
-
-export interface PlaceUpdateWithoutGuestRequirementsDataInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-  reviews?: ReviewUpdateManyWithoutPlaceInput | null
-  amenities?: AmenitiesUpdateOneRequiredWithoutPlaceInput | null
-  host?: UserUpdateOneRequiredWithoutOwnedPlacesInput | null
-  pricing?: PricingUpdateOneRequiredWithoutPlaceInput | null
-  location?: LocationUpdateOneRequiredWithoutPlaceInput | null
-  views?: ViewsUpdateOneRequiredWithoutPlaceInput | null
-  policies?: PoliciesUpdateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesUpdateOneInput | null
-  orders?: OrderUpdateManyWithoutPlaceInput | null
-  pictures?: PictureUpdateManyInput | null
-}
-
-export interface PlaceUpdateWithoutHostDataInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-  reviews?: ReviewUpdateManyWithoutPlaceInput | null
-  amenities?: AmenitiesUpdateOneRequiredWithoutPlaceInput | null
-  pricing?: PricingUpdateOneRequiredWithoutPlaceInput | null
-  location?: LocationUpdateOneRequiredWithoutPlaceInput | null
-  views?: ViewsUpdateOneRequiredWithoutPlaceInput | null
-  guestRequirements?: GuestRequirementsUpdateOneWithoutPlaceInput | null
-  policies?: PoliciesUpdateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesUpdateOneInput | null
-  orders?: OrderUpdateManyWithoutPlaceInput | null
-  pictures?: PictureUpdateManyInput | null
-}
-
-export interface PlaceUpdateWithoutLocationDataInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-  reviews?: ReviewUpdateManyWithoutPlaceInput | null
-  amenities?: AmenitiesUpdateOneRequiredWithoutPlaceInput | null
-  host?: UserUpdateOneRequiredWithoutOwnedPlacesInput | null
-  pricing?: PricingUpdateOneRequiredWithoutPlaceInput | null
-  views?: ViewsUpdateOneRequiredWithoutPlaceInput | null
-  guestRequirements?: GuestRequirementsUpdateOneWithoutPlaceInput | null
-  policies?: PoliciesUpdateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesUpdateOneInput | null
-  orders?: OrderUpdateManyWithoutPlaceInput | null
-  pictures?: PictureUpdateManyInput | null
-}
-
-export interface PlaceUpdateWithoutOrdersDataInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-  reviews?: ReviewUpdateManyWithoutPlaceInput | null
-  amenities?: AmenitiesUpdateOneRequiredWithoutPlaceInput | null
-  host?: UserUpdateOneRequiredWithoutOwnedPlacesInput | null
-  pricing?: PricingUpdateOneRequiredWithoutPlaceInput | null
-  location?: LocationUpdateOneRequiredWithoutPlaceInput | null
-  views?: ViewsUpdateOneRequiredWithoutPlaceInput | null
-  guestRequirements?: GuestRequirementsUpdateOneWithoutPlaceInput | null
-  policies?: PoliciesUpdateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesUpdateOneInput | null
-  pictures?: PictureUpdateManyInput | null
-}
-
-export interface PlaceUpdateWithoutPoliciesDataInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-  reviews?: ReviewUpdateManyWithoutPlaceInput | null
-  amenities?: AmenitiesUpdateOneRequiredWithoutPlaceInput | null
-  host?: UserUpdateOneRequiredWithoutOwnedPlacesInput | null
-  pricing?: PricingUpdateOneRequiredWithoutPlaceInput | null
-  location?: LocationUpdateOneRequiredWithoutPlaceInput | null
-  views?: ViewsUpdateOneRequiredWithoutPlaceInput | null
-  guestRequirements?: GuestRequirementsUpdateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesUpdateOneInput | null
-  orders?: OrderUpdateManyWithoutPlaceInput | null
-  pictures?: PictureUpdateManyInput | null
-}
-
-export interface PlaceUpdateWithoutPricingDataInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-  reviews?: ReviewUpdateManyWithoutPlaceInput | null
-  amenities?: AmenitiesUpdateOneRequiredWithoutPlaceInput | null
-  host?: UserUpdateOneRequiredWithoutOwnedPlacesInput | null
-  location?: LocationUpdateOneRequiredWithoutPlaceInput | null
-  views?: ViewsUpdateOneRequiredWithoutPlaceInput | null
-  guestRequirements?: GuestRequirementsUpdateOneWithoutPlaceInput | null
-  policies?: PoliciesUpdateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesUpdateOneInput | null
-  orders?: OrderUpdateManyWithoutPlaceInput | null
-  pictures?: PictureUpdateManyInput | null
-}
-
-export interface PlaceUpdateWithoutReviewsDataInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-  amenities?: AmenitiesUpdateOneRequiredWithoutPlaceInput | null
-  host?: UserUpdateOneRequiredWithoutOwnedPlacesInput | null
-  pricing?: PricingUpdateOneRequiredWithoutPlaceInput | null
-  location?: LocationUpdateOneRequiredWithoutPlaceInput | null
-  views?: ViewsUpdateOneRequiredWithoutPlaceInput | null
-  guestRequirements?: GuestRequirementsUpdateOneWithoutPlaceInput | null
-  policies?: PoliciesUpdateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesUpdateOneInput | null
-  orders?: OrderUpdateManyWithoutPlaceInput | null
-  pictures?: PictureUpdateManyInput | null
-}
-
-export interface PlaceUpdateWithoutViewsDataInput {
-  name?: String | null
-  size?: PLACE_SIZES | null
-  shortDescription?: String | null
-  description?: String | null
-  slug?: String | null
-  maxGuests?: Int | null
-  numBedrooms?: Int | null
-  numBeds?: Int | null
-  numBaths?: Int | null
-  popularity?: Int | null
-  reviews?: ReviewUpdateManyWithoutPlaceInput | null
-  amenities?: AmenitiesUpdateOneRequiredWithoutPlaceInput | null
-  host?: UserUpdateOneRequiredWithoutOwnedPlacesInput | null
-  pricing?: PricingUpdateOneRequiredWithoutPlaceInput | null
-  location?: LocationUpdateOneRequiredWithoutPlaceInput | null
-  guestRequirements?: GuestRequirementsUpdateOneWithoutPlaceInput | null
-  policies?: PoliciesUpdateOneWithoutPlaceInput | null
-  houseRules?: HouseRulesUpdateOneInput | null
-  orders?: OrderUpdateManyWithoutPlaceInput | null
-  pictures?: PictureUpdateManyInput | null
-}
-
-export interface PlaceUpdateWithWhereUniqueWithoutHostInput {
-  where: PlaceWhereUniqueInput
-  data: PlaceUpdateWithoutHostDataInput
-}
-
-export interface PlaceUpsertWithoutAmenitiesInput {
-  update: PlaceUpdateWithoutAmenitiesDataInput
-  create: PlaceCreateWithoutAmenitiesInput
-}
-
-export interface PlaceUpsertWithoutGuestRequirementsInput {
-  update: PlaceUpdateWithoutGuestRequirementsDataInput
-  create: PlaceCreateWithoutGuestRequirementsInput
-}
-
-export interface PlaceUpsertWithoutLocationInput {
-  update: PlaceUpdateWithoutLocationDataInput
-  create: PlaceCreateWithoutLocationInput
-}
-
-export interface PlaceUpsertWithoutOrdersInput {
-  update: PlaceUpdateWithoutOrdersDataInput
-  create: PlaceCreateWithoutOrdersInput
-}
-
-export interface PlaceUpsertWithoutPoliciesInput {
-  update: PlaceUpdateWithoutPoliciesDataInput
-  create: PlaceCreateWithoutPoliciesInput
-}
-
-export interface PlaceUpsertWithoutPricingInput {
-  update: PlaceUpdateWithoutPricingDataInput
-  create: PlaceCreateWithoutPricingInput
-}
-
-export interface PlaceUpsertWithoutReviewsInput {
-  update: PlaceUpdateWithoutReviewsDataInput
-  create: PlaceCreateWithoutReviewsInput
-}
-
-export interface PlaceUpsertWithoutViewsInput {
-  update: PlaceUpdateWithoutViewsDataInput
-  create: PlaceCreateWithoutViewsInput
-}
-
-export interface PlaceUpsertWithWhereUniqueWithoutHostInput {
-  where: PlaceWhereUniqueInput
-  update: PlaceUpdateWithoutHostDataInput
-  create: PlaceCreateWithoutHostInput
-}
-
-export interface PlaceWhereInput {
-  AND?: PlaceWhereInput[] | PlaceWhereInput | null
-  OR?: PlaceWhereInput[] | PlaceWhereInput | null
-  NOT?: PlaceWhereInput[] | PlaceWhereInput | null
-  id?: ID_Input | null
-  id_not?: ID_Input | null
-  id_in?: ID_Output[] | ID_Output | null
-  id_not_in?: ID_Output[] | ID_Output | null
-  id_lt?: ID_Input | null
-  id_lte?: ID_Input | null
-  id_gt?: ID_Input | null
-  id_gte?: ID_Input | null
-  id_contains?: ID_Input | null
-  id_not_contains?: ID_Input | null
-  id_starts_with?: ID_Input | null
-  id_not_starts_with?: ID_Input | null
-  id_ends_with?: ID_Input | null
-  id_not_ends_with?: ID_Input | null
-  name?: String | null
-  name_not?: String | null
-  name_in?: String[] | String | null
-  name_not_in?: String[] | String | null
-  name_lt?: String | null
-  name_lte?: String | null
-  name_gt?: String | null
-  name_gte?: String | null
-  name_contains?: String | null
-  name_not_contains?: String | null
-  name_starts_with?: String | null
-  name_not_starts_with?: String | null
-  name_ends_with?: String | null
-  name_not_ends_with?: String | null
-  size?: PLACE_SIZES | null
-  size_not?: PLACE_SIZES | null
-  size_in?: PLACE_SIZES[] | PLACE_SIZES | null
-  size_not_in?: PLACE_SIZES[] | PLACE_SIZES | null
-  shortDescription?: String | null
-  shortDescription_not?: String | null
-  shortDescription_in?: String[] | String | null
-  shortDescription_not_in?: String[] | String | null
-  shortDescription_lt?: String | null
-  shortDescription_lte?: String | null
-  shortDescription_gt?: String | null
-  shortDescription_gte?: String | null
-  shortDescription_contains?: String | null
-  shortDescription_not_contains?: String | null
-  shortDescription_starts_with?: String | null
-  shortDescription_not_starts_with?: String | null
-  shortDescription_ends_with?: String | null
-  shortDescription_not_ends_with?: String | null
-  description?: String | null
-  description_not?: String | null
-  description_in?: String[] | String | null
-  description_not_in?: String[] | String | null
-  description_lt?: String | null
-  description_lte?: String | null
-  description_gt?: String | null
-  description_gte?: String | null
-  description_contains?: String | null
-  description_not_contains?: String | null
-  description_starts_with?: String | null
-  description_not_starts_with?: String | null
-  description_ends_with?: String | null
-  description_not_ends_with?: String | null
-  slug?: String | null
-  slug_not?: String | null
-  slug_in?: String[] | String | null
-  slug_not_in?: String[] | String | null
-  slug_lt?: String | null
-  slug_lte?: String | null
-  slug_gt?: String | null
-  slug_gte?: String | null
-  slug_contains?: String | null
-  slug_not_contains?: String | null
-  slug_starts_with?: String | null
-  slug_not_starts_with?: String | null
-  slug_ends_with?: String | null
-  slug_not_ends_with?: String | null
-  maxGuests?: Int | null
-  maxGuests_not?: Int | null
-  maxGuests_in?: Int[] | Int | null
-  maxGuests_not_in?: Int[] | Int | null
-  maxGuests_lt?: Int | null
-  maxGuests_lte?: Int | null
-  maxGuests_gt?: Int | null
-  maxGuests_gte?: Int | null
-  numBedrooms?: Int | null
-  numBedrooms_not?: Int | null
-  numBedrooms_in?: Int[] | Int | null
-  numBedrooms_not_in?: Int[] | Int | null
-  numBedrooms_lt?: Int | null
-  numBedrooms_lte?: Int | null
-  numBedrooms_gt?: Int | null
-  numBedrooms_gte?: Int | null
-  numBeds?: Int | null
-  numBeds_not?: Int | null
-  numBeds_in?: Int[] | Int | null
-  numBeds_not_in?: Int[] | Int | null
-  numBeds_lt?: Int | null
-  numBeds_lte?: Int | null
-  numBeds_gt?: Int | null
-  numBeds_gte?: Int | null
-  numBaths?: Int | null
-  numBaths_not?: Int | null
-  numBaths_in?: Int[] | Int | null
-  numBaths_not_in?: Int[] | Int | null
-  numBaths_lt?: Int | null
-  numBaths_lte?: Int | null
-  numBaths_gt?: Int | null
-  numBaths_gte?: Int | null
-  popularity?: Int | null
-  popularity_not?: Int | null
-  popularity_in?: Int[] | Int | null
-  popularity_not_in?: Int[] | Int | null
-  popularity_lt?: Int | null
-  popularity_lte?: Int | null
-  popularity_gt?: Int | null
-  popularity_gte?: Int | null
-  reviews_every?: ReviewWhereInput | null
-  reviews_some?: ReviewWhereInput | null
-  reviews_none?: ReviewWhereInput | null
-  amenities?: AmenitiesWhereInput | null
-  host?: UserWhereInput | null
-  pricing?: PricingWhereInput | null
-  location?: LocationWhereInput | null
-  views?: ViewsWhereInput | null
-  guestRequirements?: GuestRequirementsWhereInput | null
-  policies?: PoliciesWhereInput | null
-  houseRules?: HouseRulesWhereInput | null
-  orders_every?: OrderWhereInput | null
-  orders_some?: OrderWhereInput | null
-  orders_none?: OrderWhereInput | null
-  pictures_every?: PictureWhereInput | null
-  pictures_some?: PictureWhereInput | null
-  pictures_none?: PictureWhereInput | null
-}
-
-export interface PlaceWhereUniqueInput {
-  id?: ID_Input | null
-}
-
 export interface PoliciesCreateInput {
   id?: ID_Input | null
-  checkInStartTime: Float
-  checkInEndTime: Float
-  checkoutTime: Float
-  place: PlaceCreateOneWithoutPoliciesInput
+  openingTime: Float
+  closingTime: Float
 }
 
-export interface PoliciesCreateOneWithoutPlaceInput {
-  create?: PoliciesCreateWithoutPlaceInput | null
+export interface PoliciesCreateOneInput {
+  create?: PoliciesCreateInput | null
   connect?: PoliciesWhereUniqueInput | null
-}
-
-export interface PoliciesCreateWithoutPlaceInput {
-  id?: ID_Input | null
-  checkInStartTime: Float
-  checkInEndTime: Float
-  checkoutTime: Float
 }
 
 export interface PoliciesSubscriptionWhereInput {
@@ -18118,37 +14602,33 @@ export interface PoliciesSubscriptionWhereInput {
   node?: PoliciesWhereInput | null
 }
 
+export interface PoliciesUpdateDataInput {
+  openingTime?: Float | null
+  closingTime?: Float | null
+}
+
 export interface PoliciesUpdateInput {
-  checkInStartTime?: Float | null
-  checkInEndTime?: Float | null
-  checkoutTime?: Float | null
-  place?: PlaceUpdateOneRequiredWithoutPoliciesInput | null
+  openingTime?: Float | null
+  closingTime?: Float | null
 }
 
 export interface PoliciesUpdateManyMutationInput {
-  checkInStartTime?: Float | null
-  checkInEndTime?: Float | null
-  checkoutTime?: Float | null
+  openingTime?: Float | null
+  closingTime?: Float | null
 }
 
-export interface PoliciesUpdateOneWithoutPlaceInput {
-  create?: PoliciesCreateWithoutPlaceInput | null
+export interface PoliciesUpdateOneInput {
+  create?: PoliciesCreateInput | null
   connect?: PoliciesWhereUniqueInput | null
   disconnect?: Boolean | null
   delete?: Boolean | null
-  update?: PoliciesUpdateWithoutPlaceDataInput | null
-  upsert?: PoliciesUpsertWithoutPlaceInput | null
+  update?: PoliciesUpdateDataInput | null
+  upsert?: PoliciesUpsertNestedInput | null
 }
 
-export interface PoliciesUpdateWithoutPlaceDataInput {
-  checkInStartTime?: Float | null
-  checkInEndTime?: Float | null
-  checkoutTime?: Float | null
-}
-
-export interface PoliciesUpsertWithoutPlaceInput {
-  update: PoliciesUpdateWithoutPlaceDataInput
-  create: PoliciesCreateWithoutPlaceInput
+export interface PoliciesUpsertNestedInput {
+  update: PoliciesUpdateDataInput
+  create: PoliciesCreateInput
 }
 
 export interface PoliciesWhereInput {
@@ -18185,31 +14665,22 @@ export interface PoliciesWhereInput {
   updatedAt_lte?: DateTime | null
   updatedAt_gt?: DateTime | null
   updatedAt_gte?: DateTime | null
-  checkInStartTime?: Float | null
-  checkInStartTime_not?: Float | null
-  checkInStartTime_in?: Float[] | Float | null
-  checkInStartTime_not_in?: Float[] | Float | null
-  checkInStartTime_lt?: Float | null
-  checkInStartTime_lte?: Float | null
-  checkInStartTime_gt?: Float | null
-  checkInStartTime_gte?: Float | null
-  checkInEndTime?: Float | null
-  checkInEndTime_not?: Float | null
-  checkInEndTime_in?: Float[] | Float | null
-  checkInEndTime_not_in?: Float[] | Float | null
-  checkInEndTime_lt?: Float | null
-  checkInEndTime_lte?: Float | null
-  checkInEndTime_gt?: Float | null
-  checkInEndTime_gte?: Float | null
-  checkoutTime?: Float | null
-  checkoutTime_not?: Float | null
-  checkoutTime_in?: Float[] | Float | null
-  checkoutTime_not_in?: Float[] | Float | null
-  checkoutTime_lt?: Float | null
-  checkoutTime_lte?: Float | null
-  checkoutTime_gt?: Float | null
-  checkoutTime_gte?: Float | null
-  place?: PlaceWhereInput | null
+  openingTime?: Float | null
+  openingTime_not?: Float | null
+  openingTime_in?: Float[] | Float | null
+  openingTime_not_in?: Float[] | Float | null
+  openingTime_lt?: Float | null
+  openingTime_lte?: Float | null
+  openingTime_gt?: Float | null
+  openingTime_gte?: Float | null
+  closingTime?: Float | null
+  closingTime_not?: Float | null
+  closingTime_in?: Float[] | Float | null
+  closingTime_not_in?: Float[] | Float | null
+  closingTime_lt?: Float | null
+  closingTime_lte?: Float | null
+  closingTime_gt?: Float | null
+  closingTime_gte?: Float | null
 }
 
 export interface PoliciesWhereUniqueInput {
@@ -18220,38 +14691,17 @@ export interface PricingCreateInput {
   id?: ID_Input | null
   monthlyDiscount?: Int | null
   weeklyDiscount?: Int | null
-  perNight: Int
+  price: Int
   smartPricing?: Boolean | null
   basePrice: Int
   averageWeekly: Int
   averageMonthly: Int
-  cleaningFee?: Int | null
-  securityDeposit?: Int | null
-  extraGuests?: Int | null
   weekendPricing?: Int | null
-  currency?: CURRENCY | null
-  place: PlaceCreateOneWithoutPricingInput
 }
 
-export interface PricingCreateOneWithoutPlaceInput {
-  create?: PricingCreateWithoutPlaceInput | null
+export interface PricingCreateOneInput {
+  create?: PricingCreateInput | null
   connect?: PricingWhereUniqueInput | null
-}
-
-export interface PricingCreateWithoutPlaceInput {
-  id?: ID_Input | null
-  monthlyDiscount?: Int | null
-  weeklyDiscount?: Int | null
-  perNight: Int
-  smartPricing?: Boolean | null
-  basePrice: Int
-  averageWeekly: Int
-  averageMonthly: Int
-  cleaningFee?: Int | null
-  securityDeposit?: Int | null
-  extraGuests?: Int | null
-  weekendPricing?: Int | null
-  currency?: CURRENCY | null
 }
 
 export interface PricingSubscriptionWhereInput {
@@ -18265,62 +14715,49 @@ export interface PricingSubscriptionWhereInput {
   node?: PricingWhereInput | null
 }
 
-export interface PricingUpdateInput {
+export interface PricingUpdateDataInput {
   monthlyDiscount?: Int | null
   weeklyDiscount?: Int | null
-  perNight?: Int | null
+  price?: Int | null
   smartPricing?: Boolean | null
   basePrice?: Int | null
   averageWeekly?: Int | null
   averageMonthly?: Int | null
-  cleaningFee?: Int | null
-  securityDeposit?: Int | null
-  extraGuests?: Int | null
   weekendPricing?: Int | null
-  currency?: CURRENCY | null
-  place?: PlaceUpdateOneRequiredWithoutPricingInput | null
+}
+
+export interface PricingUpdateInput {
+  monthlyDiscount?: Int | null
+  weeklyDiscount?: Int | null
+  price?: Int | null
+  smartPricing?: Boolean | null
+  basePrice?: Int | null
+  averageWeekly?: Int | null
+  averageMonthly?: Int | null
+  weekendPricing?: Int | null
 }
 
 export interface PricingUpdateManyMutationInput {
   monthlyDiscount?: Int | null
   weeklyDiscount?: Int | null
-  perNight?: Int | null
+  price?: Int | null
   smartPricing?: Boolean | null
   basePrice?: Int | null
   averageWeekly?: Int | null
   averageMonthly?: Int | null
-  cleaningFee?: Int | null
-  securityDeposit?: Int | null
-  extraGuests?: Int | null
   weekendPricing?: Int | null
-  currency?: CURRENCY | null
 }
 
-export interface PricingUpdateOneRequiredWithoutPlaceInput {
-  create?: PricingCreateWithoutPlaceInput | null
+export interface PricingUpdateOneRequiredInput {
+  create?: PricingCreateInput | null
   connect?: PricingWhereUniqueInput | null
-  update?: PricingUpdateWithoutPlaceDataInput | null
-  upsert?: PricingUpsertWithoutPlaceInput | null
+  update?: PricingUpdateDataInput | null
+  upsert?: PricingUpsertNestedInput | null
 }
 
-export interface PricingUpdateWithoutPlaceDataInput {
-  monthlyDiscount?: Int | null
-  weeklyDiscount?: Int | null
-  perNight?: Int | null
-  smartPricing?: Boolean | null
-  basePrice?: Int | null
-  averageWeekly?: Int | null
-  averageMonthly?: Int | null
-  cleaningFee?: Int | null
-  securityDeposit?: Int | null
-  extraGuests?: Int | null
-  weekendPricing?: Int | null
-  currency?: CURRENCY | null
-}
-
-export interface PricingUpsertWithoutPlaceInput {
-  update: PricingUpdateWithoutPlaceDataInput
-  create: PricingCreateWithoutPlaceInput
+export interface PricingUpsertNestedInput {
+  update: PricingUpdateDataInput
+  create: PricingCreateInput
 }
 
 export interface PricingWhereInput {
@@ -18357,14 +14794,14 @@ export interface PricingWhereInput {
   weeklyDiscount_lte?: Int | null
   weeklyDiscount_gt?: Int | null
   weeklyDiscount_gte?: Int | null
-  perNight?: Int | null
-  perNight_not?: Int | null
-  perNight_in?: Int[] | Int | null
-  perNight_not_in?: Int[] | Int | null
-  perNight_lt?: Int | null
-  perNight_lte?: Int | null
-  perNight_gt?: Int | null
-  perNight_gte?: Int | null
+  price?: Int | null
+  price_not?: Int | null
+  price_in?: Int[] | Int | null
+  price_not_in?: Int[] | Int | null
+  price_lt?: Int | null
+  price_lte?: Int | null
+  price_gt?: Int | null
+  price_gte?: Int | null
   smartPricing?: Boolean | null
   smartPricing_not?: Boolean | null
   basePrice?: Int | null
@@ -18391,30 +14828,6 @@ export interface PricingWhereInput {
   averageMonthly_lte?: Int | null
   averageMonthly_gt?: Int | null
   averageMonthly_gte?: Int | null
-  cleaningFee?: Int | null
-  cleaningFee_not?: Int | null
-  cleaningFee_in?: Int[] | Int | null
-  cleaningFee_not_in?: Int[] | Int | null
-  cleaningFee_lt?: Int | null
-  cleaningFee_lte?: Int | null
-  cleaningFee_gt?: Int | null
-  cleaningFee_gte?: Int | null
-  securityDeposit?: Int | null
-  securityDeposit_not?: Int | null
-  securityDeposit_in?: Int[] | Int | null
-  securityDeposit_not_in?: Int[] | Int | null
-  securityDeposit_lt?: Int | null
-  securityDeposit_lte?: Int | null
-  securityDeposit_gt?: Int | null
-  securityDeposit_gte?: Int | null
-  extraGuests?: Int | null
-  extraGuests_not?: Int | null
-  extraGuests_in?: Int[] | Int | null
-  extraGuests_not_in?: Int[] | Int | null
-  extraGuests_lt?: Int | null
-  extraGuests_lte?: Int | null
-  extraGuests_gt?: Int | null
-  extraGuests_gte?: Int | null
   weekendPricing?: Int | null
   weekendPricing_not?: Int | null
   weekendPricing_in?: Int[] | Int | null
@@ -18423,11 +14836,6 @@ export interface PricingWhereInput {
   weekendPricing_lte?: Int | null
   weekendPricing_gt?: Int | null
   weekendPricing_gte?: Int | null
-  currency?: CURRENCY | null
-  currency_not?: CURRENCY | null
-  currency_in?: CURRENCY[] | CURRENCY | null
-  currency_not_in?: CURRENCY[] | CURRENCY | null
-  place?: PlaceWhereInput | null
 }
 
 export interface PricingWhereUniqueInput {
@@ -18436,28 +14844,169 @@ export interface PricingWhereUniqueInput {
 
 export interface RestaurantCreateInput {
   id?: ID_Input | null
-  title: String
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating?: Float | null
+  popularity: Int
   avgPricePerPerson: Int
   isCurated?: Boolean | null
-  slug: String
-  popularity: Int
+  reviews?: ReviewCreateManyInput | null
+  location?: LocationCreateOneInput | null
+  policies?: PoliciesCreateOneInput | null
+  menu?: MenuItemCreateManyInput | null
+  orders?: OrderCreateManyWithoutRestaurantInput | null
   pictures?: PictureCreateManyInput | null
-  location: LocationCreateOneWithoutRestaurantInput
 }
 
-export interface RestaurantCreateOneWithoutLocationInput {
-  create?: RestaurantCreateWithoutLocationInput | null
+export interface RestaurantCreateManyInput {
+  create?: RestaurantCreateInput[] | RestaurantCreateInput | null
+  connect?: RestaurantWhereUniqueInput[] | RestaurantWhereUniqueInput | null
+}
+
+export interface RestaurantCreateOneWithoutOrdersInput {
+  create?: RestaurantCreateWithoutOrdersInput | null
   connect?: RestaurantWhereUniqueInput | null
 }
 
-export interface RestaurantCreateWithoutLocationInput {
+export interface RestaurantCreateWithoutOrdersInput {
   id?: ID_Input | null
-  title: String
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating?: Float | null
+  popularity: Int
   avgPricePerPerson: Int
   isCurated?: Boolean | null
-  slug: String
-  popularity: Int
+  reviews?: ReviewCreateManyInput | null
+  location?: LocationCreateOneInput | null
+  policies?: PoliciesCreateOneInput | null
+  menu?: MenuItemCreateManyInput | null
   pictures?: PictureCreateManyInput | null
+}
+
+export interface RestaurantScalarWhereInput {
+  AND?: RestaurantScalarWhereInput[] | RestaurantScalarWhereInput | null
+  OR?: RestaurantScalarWhereInput[] | RestaurantScalarWhereInput | null
+  NOT?: RestaurantScalarWhereInput[] | RestaurantScalarWhereInput | null
+  id?: ID_Input | null
+  id_not?: ID_Input | null
+  id_in?: ID_Output[] | ID_Output | null
+  id_not_in?: ID_Output[] | ID_Output | null
+  id_lt?: ID_Input | null
+  id_lte?: ID_Input | null
+  id_gt?: ID_Input | null
+  id_gte?: ID_Input | null
+  id_contains?: ID_Input | null
+  id_not_contains?: ID_Input | null
+  id_starts_with?: ID_Input | null
+  id_not_starts_with?: ID_Input | null
+  id_ends_with?: ID_Input | null
+  id_not_ends_with?: ID_Input | null
+  name?: String | null
+  name_not?: String | null
+  name_in?: String[] | String | null
+  name_not_in?: String[] | String | null
+  name_lt?: String | null
+  name_lte?: String | null
+  name_gt?: String | null
+  name_gte?: String | null
+  name_contains?: String | null
+  name_not_contains?: String | null
+  name_starts_with?: String | null
+  name_not_starts_with?: String | null
+  name_ends_with?: String | null
+  name_not_ends_with?: String | null
+  shortDescription?: String | null
+  shortDescription_not?: String | null
+  shortDescription_in?: String[] | String | null
+  shortDescription_not_in?: String[] | String | null
+  shortDescription_lt?: String | null
+  shortDescription_lte?: String | null
+  shortDescription_gt?: String | null
+  shortDescription_gte?: String | null
+  shortDescription_contains?: String | null
+  shortDescription_not_contains?: String | null
+  shortDescription_starts_with?: String | null
+  shortDescription_not_starts_with?: String | null
+  shortDescription_ends_with?: String | null
+  shortDescription_not_ends_with?: String | null
+  description?: String | null
+  description_not?: String | null
+  description_in?: String[] | String | null
+  description_not_in?: String[] | String | null
+  description_lt?: String | null
+  description_lte?: String | null
+  description_gt?: String | null
+  description_gte?: String | null
+  description_contains?: String | null
+  description_not_contains?: String | null
+  description_starts_with?: String | null
+  description_not_starts_with?: String | null
+  description_ends_with?: String | null
+  description_not_ends_with?: String | null
+  slug?: String | null
+  slug_not?: String | null
+  slug_in?: String[] | String | null
+  slug_not_in?: String[] | String | null
+  slug_lt?: String | null
+  slug_lte?: String | null
+  slug_gt?: String | null
+  slug_gte?: String | null
+  slug_contains?: String | null
+  slug_not_contains?: String | null
+  slug_starts_with?: String | null
+  slug_not_starts_with?: String | null
+  slug_ends_with?: String | null
+  slug_not_ends_with?: String | null
+  maxGuests?: Int | null
+  maxGuests_not?: Int | null
+  maxGuests_in?: Int[] | Int | null
+  maxGuests_not_in?: Int[] | Int | null
+  maxGuests_lt?: Int | null
+  maxGuests_lte?: Int | null
+  maxGuests_gt?: Int | null
+  maxGuests_gte?: Int | null
+  numRatings?: Int | null
+  numRatings_not?: Int | null
+  numRatings_in?: Int[] | Int | null
+  numRatings_not_in?: Int[] | Int | null
+  numRatings_lt?: Int | null
+  numRatings_lte?: Int | null
+  numRatings_gt?: Int | null
+  numRatings_gte?: Int | null
+  avgRating?: Float | null
+  avgRating_not?: Float | null
+  avgRating_in?: Float[] | Float | null
+  avgRating_not_in?: Float[] | Float | null
+  avgRating_lt?: Float | null
+  avgRating_lte?: Float | null
+  avgRating_gt?: Float | null
+  avgRating_gte?: Float | null
+  popularity?: Int | null
+  popularity_not?: Int | null
+  popularity_in?: Int[] | Int | null
+  popularity_not_in?: Int[] | Int | null
+  popularity_lt?: Int | null
+  popularity_lte?: Int | null
+  popularity_gt?: Int | null
+  popularity_gte?: Int | null
+  avgPricePerPerson?: Int | null
+  avgPricePerPerson_not?: Int | null
+  avgPricePerPerson_in?: Int[] | Int | null
+  avgPricePerPerson_not_in?: Int[] | Int | null
+  avgPricePerPerson_lt?: Int | null
+  avgPricePerPerson_lte?: Int | null
+  avgPricePerPerson_gt?: Int | null
+  avgPricePerPerson_gte?: Int | null
+  isCurated?: Boolean | null
+  isCurated_not?: Boolean | null
 }
 
 export interface RestaurantSubscriptionWhereInput {
@@ -18471,45 +15020,126 @@ export interface RestaurantSubscriptionWhereInput {
   node?: RestaurantWhereInput | null
 }
 
-export interface RestaurantUpdateInput {
-  title?: String | null
+export interface RestaurantUpdateDataInput {
+  name?: String | null
+  shortDescription?: String | null
+  description?: String | null
+  slug?: String | null
+  maxGuests?: Int | null
+  numRatings?: Int | null
+  avgRating?: Float | null
+  popularity?: Int | null
   avgPricePerPerson?: Int | null
   isCurated?: Boolean | null
-  slug?: String | null
-  popularity?: Int | null
+  reviews?: ReviewUpdateManyInput | null
+  location?: LocationUpdateOneInput | null
+  policies?: PoliciesUpdateOneInput | null
+  menu?: MenuItemUpdateManyInput | null
+  orders?: OrderUpdateManyWithoutRestaurantInput | null
   pictures?: PictureUpdateManyInput | null
-  location?: LocationUpdateOneRequiredWithoutRestaurantInput | null
+}
+
+export interface RestaurantUpdateInput {
+  name?: String | null
+  shortDescription?: String | null
+  description?: String | null
+  slug?: String | null
+  maxGuests?: Int | null
+  numRatings?: Int | null
+  avgRating?: Float | null
+  popularity?: Int | null
+  avgPricePerPerson?: Int | null
+  isCurated?: Boolean | null
+  reviews?: ReviewUpdateManyInput | null
+  location?: LocationUpdateOneInput | null
+  policies?: PoliciesUpdateOneInput | null
+  menu?: MenuItemUpdateManyInput | null
+  orders?: OrderUpdateManyWithoutRestaurantInput | null
+  pictures?: PictureUpdateManyInput | null
+}
+
+export interface RestaurantUpdateManyDataInput {
+  name?: String | null
+  shortDescription?: String | null
+  description?: String | null
+  slug?: String | null
+  maxGuests?: Int | null
+  numRatings?: Int | null
+  avgRating?: Float | null
+  popularity?: Int | null
+  avgPricePerPerson?: Int | null
+  isCurated?: Boolean | null
+}
+
+export interface RestaurantUpdateManyInput {
+  create?: RestaurantCreateInput[] | RestaurantCreateInput | null
+  connect?: RestaurantWhereUniqueInput[] | RestaurantWhereUniqueInput | null
+  set?: RestaurantWhereUniqueInput[] | RestaurantWhereUniqueInput | null
+  disconnect?: RestaurantWhereUniqueInput[] | RestaurantWhereUniqueInput | null
+  delete?: RestaurantWhereUniqueInput[] | RestaurantWhereUniqueInput | null
+  update?: RestaurantUpdateWithWhereUniqueNestedInput[] | RestaurantUpdateWithWhereUniqueNestedInput | null
+  updateMany?: RestaurantUpdateManyWithWhereNestedInput[] | RestaurantUpdateManyWithWhereNestedInput | null
+  deleteMany?: RestaurantScalarWhereInput[] | RestaurantScalarWhereInput | null
+  upsert?: RestaurantUpsertWithWhereUniqueNestedInput[] | RestaurantUpsertWithWhereUniqueNestedInput | null
 }
 
 export interface RestaurantUpdateManyMutationInput {
-  title?: String | null
+  name?: String | null
+  shortDescription?: String | null
+  description?: String | null
+  slug?: String | null
+  maxGuests?: Int | null
+  numRatings?: Int | null
+  avgRating?: Float | null
+  popularity?: Int | null
   avgPricePerPerson?: Int | null
   isCurated?: Boolean | null
-  slug?: String | null
-  popularity?: Int | null
 }
 
-export interface RestaurantUpdateOneWithoutLocationInput {
-  create?: RestaurantCreateWithoutLocationInput | null
+export interface RestaurantUpdateManyWithWhereNestedInput {
+  where: RestaurantScalarWhereInput
+  data: RestaurantUpdateManyDataInput
+}
+
+export interface RestaurantUpdateOneRequiredWithoutOrdersInput {
+  create?: RestaurantCreateWithoutOrdersInput | null
   connect?: RestaurantWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
-  update?: RestaurantUpdateWithoutLocationDataInput | null
-  upsert?: RestaurantUpsertWithoutLocationInput | null
+  update?: RestaurantUpdateWithoutOrdersDataInput | null
+  upsert?: RestaurantUpsertWithoutOrdersInput | null
 }
 
-export interface RestaurantUpdateWithoutLocationDataInput {
-  title?: String | null
+export interface RestaurantUpdateWithoutOrdersDataInput {
+  name?: String | null
+  shortDescription?: String | null
+  description?: String | null
+  slug?: String | null
+  maxGuests?: Int | null
+  numRatings?: Int | null
+  avgRating?: Float | null
+  popularity?: Int | null
   avgPricePerPerson?: Int | null
   isCurated?: Boolean | null
-  slug?: String | null
-  popularity?: Int | null
+  reviews?: ReviewUpdateManyInput | null
+  location?: LocationUpdateOneInput | null
+  policies?: PoliciesUpdateOneInput | null
+  menu?: MenuItemUpdateManyInput | null
   pictures?: PictureUpdateManyInput | null
 }
 
-export interface RestaurantUpsertWithoutLocationInput {
-  update: RestaurantUpdateWithoutLocationDataInput
-  create: RestaurantCreateWithoutLocationInput
+export interface RestaurantUpdateWithWhereUniqueNestedInput {
+  where: RestaurantWhereUniqueInput
+  data: RestaurantUpdateDataInput
+}
+
+export interface RestaurantUpsertWithoutOrdersInput {
+  update: RestaurantUpdateWithoutOrdersDataInput
+  create: RestaurantCreateWithoutOrdersInput
+}
+
+export interface RestaurantUpsertWithWhereUniqueNestedInput {
+  where: RestaurantWhereUniqueInput
+  update: RestaurantUpdateDataInput
+  create: RestaurantCreateInput
 }
 
 export interface RestaurantWhereInput {
@@ -18530,38 +15160,48 @@ export interface RestaurantWhereInput {
   id_not_starts_with?: ID_Input | null
   id_ends_with?: ID_Input | null
   id_not_ends_with?: ID_Input | null
-  createdAt?: DateTime | null
-  createdAt_not?: DateTime | null
-  createdAt_in?: DateTime[] | DateTime | null
-  createdAt_not_in?: DateTime[] | DateTime | null
-  createdAt_lt?: DateTime | null
-  createdAt_lte?: DateTime | null
-  createdAt_gt?: DateTime | null
-  createdAt_gte?: DateTime | null
-  title?: String | null
-  title_not?: String | null
-  title_in?: String[] | String | null
-  title_not_in?: String[] | String | null
-  title_lt?: String | null
-  title_lte?: String | null
-  title_gt?: String | null
-  title_gte?: String | null
-  title_contains?: String | null
-  title_not_contains?: String | null
-  title_starts_with?: String | null
-  title_not_starts_with?: String | null
-  title_ends_with?: String | null
-  title_not_ends_with?: String | null
-  avgPricePerPerson?: Int | null
-  avgPricePerPerson_not?: Int | null
-  avgPricePerPerson_in?: Int[] | Int | null
-  avgPricePerPerson_not_in?: Int[] | Int | null
-  avgPricePerPerson_lt?: Int | null
-  avgPricePerPerson_lte?: Int | null
-  avgPricePerPerson_gt?: Int | null
-  avgPricePerPerson_gte?: Int | null
-  isCurated?: Boolean | null
-  isCurated_not?: Boolean | null
+  name?: String | null
+  name_not?: String | null
+  name_in?: String[] | String | null
+  name_not_in?: String[] | String | null
+  name_lt?: String | null
+  name_lte?: String | null
+  name_gt?: String | null
+  name_gte?: String | null
+  name_contains?: String | null
+  name_not_contains?: String | null
+  name_starts_with?: String | null
+  name_not_starts_with?: String | null
+  name_ends_with?: String | null
+  name_not_ends_with?: String | null
+  shortDescription?: String | null
+  shortDescription_not?: String | null
+  shortDescription_in?: String[] | String | null
+  shortDescription_not_in?: String[] | String | null
+  shortDescription_lt?: String | null
+  shortDescription_lte?: String | null
+  shortDescription_gt?: String | null
+  shortDescription_gte?: String | null
+  shortDescription_contains?: String | null
+  shortDescription_not_contains?: String | null
+  shortDescription_starts_with?: String | null
+  shortDescription_not_starts_with?: String | null
+  shortDescription_ends_with?: String | null
+  shortDescription_not_ends_with?: String | null
+  description?: String | null
+  description_not?: String | null
+  description_in?: String[] | String | null
+  description_not_in?: String[] | String | null
+  description_lt?: String | null
+  description_lte?: String | null
+  description_gt?: String | null
+  description_gte?: String | null
+  description_contains?: String | null
+  description_not_contains?: String | null
+  description_starts_with?: String | null
+  description_not_starts_with?: String | null
+  description_ends_with?: String | null
+  description_not_ends_with?: String | null
   slug?: String | null
   slug_not?: String | null
   slug_in?: String[] | String | null
@@ -18576,6 +15216,30 @@ export interface RestaurantWhereInput {
   slug_not_starts_with?: String | null
   slug_ends_with?: String | null
   slug_not_ends_with?: String | null
+  maxGuests?: Int | null
+  maxGuests_not?: Int | null
+  maxGuests_in?: Int[] | Int | null
+  maxGuests_not_in?: Int[] | Int | null
+  maxGuests_lt?: Int | null
+  maxGuests_lte?: Int | null
+  maxGuests_gt?: Int | null
+  maxGuests_gte?: Int | null
+  numRatings?: Int | null
+  numRatings_not?: Int | null
+  numRatings_in?: Int[] | Int | null
+  numRatings_not_in?: Int[] | Int | null
+  numRatings_lt?: Int | null
+  numRatings_lte?: Int | null
+  numRatings_gt?: Int | null
+  numRatings_gte?: Int | null
+  avgRating?: Float | null
+  avgRating_not?: Float | null
+  avgRating_in?: Float[] | Float | null
+  avgRating_not_in?: Float[] | Float | null
+  avgRating_lt?: Float | null
+  avgRating_lte?: Float | null
+  avgRating_gt?: Float | null
+  avgRating_gte?: Float | null
   popularity?: Int | null
   popularity_not?: Int | null
   popularity_in?: Int[] | Int | null
@@ -18584,10 +15248,30 @@ export interface RestaurantWhereInput {
   popularity_lte?: Int | null
   popularity_gt?: Int | null
   popularity_gte?: Int | null
+  avgPricePerPerson?: Int | null
+  avgPricePerPerson_not?: Int | null
+  avgPricePerPerson_in?: Int[] | Int | null
+  avgPricePerPerson_not_in?: Int[] | Int | null
+  avgPricePerPerson_lt?: Int | null
+  avgPricePerPerson_lte?: Int | null
+  avgPricePerPerson_gt?: Int | null
+  avgPricePerPerson_gte?: Int | null
+  isCurated?: Boolean | null
+  isCurated_not?: Boolean | null
+  reviews_every?: ReviewWhereInput | null
+  reviews_some?: ReviewWhereInput | null
+  reviews_none?: ReviewWhereInput | null
+  location?: LocationWhereInput | null
+  policies?: PoliciesWhereInput | null
+  menu_every?: MenuItemWhereInput | null
+  menu_some?: MenuItemWhereInput | null
+  menu_none?: MenuItemWhereInput | null
+  orders_every?: OrderWhereInput | null
+  orders_some?: OrderWhereInput | null
+  orders_none?: OrderWhereInput | null
   pictures_every?: PictureWhereInput | null
   pictures_some?: PictureWhereInput | null
   pictures_none?: PictureWhereInput | null
-  location?: LocationWhereInput | null
 }
 
 export interface RestaurantWhereUniqueInput {
@@ -18604,17 +15288,17 @@ export interface ReviewCreateInput {
   value: Int
   cleanliness: Int
   communication: Int
-  place: PlaceCreateOneWithoutReviewsInput
+  order: OrderCreateOneInput
   experience?: ExperienceCreateOneWithoutReviewsInput | null
+}
+
+export interface ReviewCreateManyInput {
+  create?: ReviewCreateInput[] | ReviewCreateInput | null
+  connect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
 }
 
 export interface ReviewCreateManyWithoutExperienceInput {
   create?: ReviewCreateWithoutExperienceInput[] | ReviewCreateWithoutExperienceInput | null
-  connect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
-}
-
-export interface ReviewCreateManyWithoutPlaceInput {
-  create?: ReviewCreateWithoutPlaceInput[] | ReviewCreateWithoutPlaceInput | null
   connect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
 }
 
@@ -18628,20 +15312,7 @@ export interface ReviewCreateWithoutExperienceInput {
   value: Int
   cleanliness: Int
   communication: Int
-  place: PlaceCreateOneWithoutReviewsInput
-}
-
-export interface ReviewCreateWithoutPlaceInput {
-  id?: ID_Input | null
-  text: String
-  stars: Int
-  accuracy: Int
-  location: Int
-  checkIn: Int
-  value: Int
-  cleanliness: Int
-  communication: Int
-  experience?: ExperienceCreateOneWithoutReviewsInput | null
+  order: OrderCreateOneInput
 }
 
 export interface ReviewScalarWhereInput {
@@ -18753,6 +15424,19 @@ export interface ReviewSubscriptionWhereInput {
   node?: ReviewWhereInput | null
 }
 
+export interface ReviewUpdateDataInput {
+  text?: String | null
+  stars?: Int | null
+  accuracy?: Int | null
+  location?: Int | null
+  checkIn?: Int | null
+  value?: Int | null
+  cleanliness?: Int | null
+  communication?: Int | null
+  order?: OrderUpdateOneRequiredInput | null
+  experience?: ExperienceUpdateOneWithoutReviewsInput | null
+}
+
 export interface ReviewUpdateInput {
   text?: String | null
   stars?: Int | null
@@ -18762,7 +15446,7 @@ export interface ReviewUpdateInput {
   value?: Int | null
   cleanliness?: Int | null
   communication?: Int | null
-  place?: PlaceUpdateOneRequiredWithoutReviewsInput | null
+  order?: OrderUpdateOneRequiredInput | null
   experience?: ExperienceUpdateOneWithoutReviewsInput | null
 }
 
@@ -18775,6 +15459,18 @@ export interface ReviewUpdateManyDataInput {
   value?: Int | null
   cleanliness?: Int | null
   communication?: Int | null
+}
+
+export interface ReviewUpdateManyInput {
+  create?: ReviewCreateInput[] | ReviewCreateInput | null
+  connect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  set?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  disconnect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  delete?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
+  update?: ReviewUpdateWithWhereUniqueNestedInput[] | ReviewUpdateWithWhereUniqueNestedInput | null
+  updateMany?: ReviewUpdateManyWithWhereNestedInput[] | ReviewUpdateManyWithWhereNestedInput | null
+  deleteMany?: ReviewScalarWhereInput[] | ReviewScalarWhereInput | null
+  upsert?: ReviewUpsertWithWhereUniqueNestedInput[] | ReviewUpsertWithWhereUniqueNestedInput | null
 }
 
 export interface ReviewUpdateManyMutationInput {
@@ -18800,18 +15496,6 @@ export interface ReviewUpdateManyWithoutExperienceInput {
   upsert?: ReviewUpsertWithWhereUniqueWithoutExperienceInput[] | ReviewUpsertWithWhereUniqueWithoutExperienceInput | null
 }
 
-export interface ReviewUpdateManyWithoutPlaceInput {
-  create?: ReviewCreateWithoutPlaceInput[] | ReviewCreateWithoutPlaceInput | null
-  connect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
-  set?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
-  disconnect?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
-  delete?: ReviewWhereUniqueInput[] | ReviewWhereUniqueInput | null
-  update?: ReviewUpdateWithWhereUniqueWithoutPlaceInput[] | ReviewUpdateWithWhereUniqueWithoutPlaceInput | null
-  updateMany?: ReviewUpdateManyWithWhereNestedInput[] | ReviewUpdateManyWithWhereNestedInput | null
-  deleteMany?: ReviewScalarWhereInput[] | ReviewScalarWhereInput | null
-  upsert?: ReviewUpsertWithWhereUniqueWithoutPlaceInput[] | ReviewUpsertWithWhereUniqueWithoutPlaceInput | null
-}
-
 export interface ReviewUpdateManyWithWhereNestedInput {
   where: ReviewScalarWhereInput
   data: ReviewUpdateManyDataInput
@@ -18826,19 +15510,12 @@ export interface ReviewUpdateWithoutExperienceDataInput {
   value?: Int | null
   cleanliness?: Int | null
   communication?: Int | null
-  place?: PlaceUpdateOneRequiredWithoutReviewsInput | null
+  order?: OrderUpdateOneRequiredInput | null
 }
 
-export interface ReviewUpdateWithoutPlaceDataInput {
-  text?: String | null
-  stars?: Int | null
-  accuracy?: Int | null
-  location?: Int | null
-  checkIn?: Int | null
-  value?: Int | null
-  cleanliness?: Int | null
-  communication?: Int | null
-  experience?: ExperienceUpdateOneWithoutReviewsInput | null
+export interface ReviewUpdateWithWhereUniqueNestedInput {
+  where: ReviewWhereUniqueInput
+  data: ReviewUpdateDataInput
 }
 
 export interface ReviewUpdateWithWhereUniqueWithoutExperienceInput {
@@ -18846,21 +15523,16 @@ export interface ReviewUpdateWithWhereUniqueWithoutExperienceInput {
   data: ReviewUpdateWithoutExperienceDataInput
 }
 
-export interface ReviewUpdateWithWhereUniqueWithoutPlaceInput {
+export interface ReviewUpsertWithWhereUniqueNestedInput {
   where: ReviewWhereUniqueInput
-  data: ReviewUpdateWithoutPlaceDataInput
+  update: ReviewUpdateDataInput
+  create: ReviewCreateInput
 }
 
 export interface ReviewUpsertWithWhereUniqueWithoutExperienceInput {
   where: ReviewWhereUniqueInput
   update: ReviewUpdateWithoutExperienceDataInput
   create: ReviewCreateWithoutExperienceInput
-}
-
-export interface ReviewUpsertWithWhereUniqueWithoutPlaceInput {
-  where: ReviewWhereUniqueInput
-  update: ReviewUpdateWithoutPlaceDataInput
-  create: ReviewCreateWithoutPlaceInput
 }
 
 export interface ReviewWhereInput {
@@ -18959,7 +15631,7 @@ export interface ReviewWhereInput {
   communication_lte?: Int | null
   communication_gt?: Int | null
   communication_gte?: Int | null
-  place?: PlaceWhereInput | null
+  order?: OrderWhereInput | null
   experience?: ExperienceWhereInput | null
 }
 
@@ -18976,8 +15648,8 @@ export interface UserCreateInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
-  ownedPlaces?: PlaceCreateManyWithoutHostInput | null
-  location?: LocationCreateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantCreateManyInput | null
+  location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
   paymentAccount?: PaymentAccountCreateManyWithoutUserInput | null
   sentMessages?: MessageCreateManyWithoutFromInput | null
@@ -18992,11 +15664,6 @@ export interface UserCreateOneWithoutHostingExperiencesInput {
   connect?: UserWhereUniqueInput | null
 }
 
-export interface UserCreateOneWithoutLocationInput {
-  create?: UserCreateWithoutLocationInput | null
-  connect?: UserWhereUniqueInput | null
-}
-
 export interface UserCreateOneWithoutNotificationsInput {
   create?: UserCreateWithoutNotificationsInput | null
   connect?: UserWhereUniqueInput | null
@@ -19004,11 +15671,6 @@ export interface UserCreateOneWithoutNotificationsInput {
 
 export interface UserCreateOneWithoutOrdersInput {
   create?: UserCreateWithoutOrdersInput | null
-  connect?: UserWhereUniqueInput | null
-}
-
-export interface UserCreateOneWithoutOwnedPlacesInput {
-  create?: UserCreateWithoutOwnedPlacesInput | null
   connect?: UserWhereUniqueInput | null
 }
 
@@ -19036,33 +15698,14 @@ export interface UserCreateWithoutHostingExperiencesInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
-  ownedPlaces?: PlaceCreateManyWithoutHostInput | null
-  location?: LocationCreateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantCreateManyInput | null
+  location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
   paymentAccount?: PaymentAccountCreateManyWithoutUserInput | null
   sentMessages?: MessageCreateManyWithoutFromInput | null
   receivedMessages?: MessageCreateManyWithoutToInput | null
   notifications?: NotificationCreateManyWithoutUserInput | null
   profilePicture?: PictureCreateOneInput | null
-}
-
-export interface UserCreateWithoutLocationInput {
-  id?: ID_Input | null
-  displayName: String
-  phoneNumber: String
-  responseRate?: Float | null
-  responseTime?: Int | null
-  isSuperHost?: Boolean | null
-  accountType?: UserType | null
-  uid: String
-  ownedPlaces?: PlaceCreateManyWithoutHostInput | null
-  orders?: OrderCreateManyWithoutBookeeInput | null
-  paymentAccount?: PaymentAccountCreateManyWithoutUserInput | null
-  sentMessages?: MessageCreateManyWithoutFromInput | null
-  receivedMessages?: MessageCreateManyWithoutToInput | null
-  notifications?: NotificationCreateManyWithoutUserInput | null
-  profilePicture?: PictureCreateOneInput | null
-  hostingExperiences?: ExperienceCreateManyWithoutHostInput | null
 }
 
 export interface UserCreateWithoutNotificationsInput {
@@ -19074,8 +15717,8 @@ export interface UserCreateWithoutNotificationsInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
-  ownedPlaces?: PlaceCreateManyWithoutHostInput | null
-  location?: LocationCreateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantCreateManyInput | null
+  location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
   paymentAccount?: PaymentAccountCreateManyWithoutUserInput | null
   sentMessages?: MessageCreateManyWithoutFromInput | null
@@ -19093,27 +15736,8 @@ export interface UserCreateWithoutOrdersInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
-  ownedPlaces?: PlaceCreateManyWithoutHostInput | null
-  location?: LocationCreateOneWithoutUserInput | null
-  paymentAccount?: PaymentAccountCreateManyWithoutUserInput | null
-  sentMessages?: MessageCreateManyWithoutFromInput | null
-  receivedMessages?: MessageCreateManyWithoutToInput | null
-  notifications?: NotificationCreateManyWithoutUserInput | null
-  profilePicture?: PictureCreateOneInput | null
-  hostingExperiences?: ExperienceCreateManyWithoutHostInput | null
-}
-
-export interface UserCreateWithoutOwnedPlacesInput {
-  id?: ID_Input | null
-  displayName: String
-  phoneNumber: String
-  responseRate?: Float | null
-  responseTime?: Int | null
-  isSuperHost?: Boolean | null
-  accountType?: UserType | null
-  uid: String
-  location?: LocationCreateOneWithoutUserInput | null
-  orders?: OrderCreateManyWithoutBookeeInput | null
+  ownedRestaurant?: RestaurantCreateManyInput | null
+  location?: LocationCreateManyInput | null
   paymentAccount?: PaymentAccountCreateManyWithoutUserInput | null
   sentMessages?: MessageCreateManyWithoutFromInput | null
   receivedMessages?: MessageCreateManyWithoutToInput | null
@@ -19131,8 +15755,8 @@ export interface UserCreateWithoutPaymentAccountInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
-  ownedPlaces?: PlaceCreateManyWithoutHostInput | null
-  location?: LocationCreateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantCreateManyInput | null
+  location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
   sentMessages?: MessageCreateManyWithoutFromInput | null
   receivedMessages?: MessageCreateManyWithoutToInput | null
@@ -19150,8 +15774,8 @@ export interface UserCreateWithoutReceivedMessagesInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
-  ownedPlaces?: PlaceCreateManyWithoutHostInput | null
-  location?: LocationCreateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantCreateManyInput | null
+  location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
   paymentAccount?: PaymentAccountCreateManyWithoutUserInput | null
   sentMessages?: MessageCreateManyWithoutFromInput | null
@@ -19169,8 +15793,8 @@ export interface UserCreateWithoutSentMessagesInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
-  ownedPlaces?: PlaceCreateManyWithoutHostInput | null
-  location?: LocationCreateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantCreateManyInput | null
+  location?: LocationCreateManyInput | null
   orders?: OrderCreateManyWithoutBookeeInput | null
   paymentAccount?: PaymentAccountCreateManyWithoutUserInput | null
   receivedMessages?: MessageCreateManyWithoutToInput | null
@@ -19198,8 +15822,8 @@ export interface UserUpdateInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
-  ownedPlaces?: PlaceUpdateManyWithoutHostInput | null
-  location?: LocationUpdateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantUpdateManyInput | null
+  location?: LocationUpdateManyInput | null
   orders?: OrderUpdateManyWithoutBookeeInput | null
   paymentAccount?: PaymentAccountUpdateManyWithoutUserInput | null
   sentMessages?: MessageUpdateManyWithoutFromInput | null
@@ -19240,13 +15864,6 @@ export interface UserUpdateOneRequiredWithoutOrdersInput {
   upsert?: UserUpsertWithoutOrdersInput | null
 }
 
-export interface UserUpdateOneRequiredWithoutOwnedPlacesInput {
-  create?: UserCreateWithoutOwnedPlacesInput | null
-  connect?: UserWhereUniqueInput | null
-  update?: UserUpdateWithoutOwnedPlacesDataInput | null
-  upsert?: UserUpsertWithoutOwnedPlacesInput | null
-}
-
 export interface UserUpdateOneRequiredWithoutPaymentAccountInput {
   create?: UserCreateWithoutPaymentAccountInput | null
   connect?: UserWhereUniqueInput | null
@@ -19268,15 +15885,6 @@ export interface UserUpdateOneRequiredWithoutSentMessagesInput {
   upsert?: UserUpsertWithoutSentMessagesInput | null
 }
 
-export interface UserUpdateOneWithoutLocationInput {
-  create?: UserCreateWithoutLocationInput | null
-  connect?: UserWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
-  update?: UserUpdateWithoutLocationDataInput | null
-  upsert?: UserUpsertWithoutLocationInput | null
-}
-
 export interface UserUpdateWithoutHostingExperiencesDataInput {
   displayName?: String | null
   phoneNumber?: String | null
@@ -19285,32 +15893,14 @@ export interface UserUpdateWithoutHostingExperiencesDataInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
-  ownedPlaces?: PlaceUpdateManyWithoutHostInput | null
-  location?: LocationUpdateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantUpdateManyInput | null
+  location?: LocationUpdateManyInput | null
   orders?: OrderUpdateManyWithoutBookeeInput | null
   paymentAccount?: PaymentAccountUpdateManyWithoutUserInput | null
   sentMessages?: MessageUpdateManyWithoutFromInput | null
   receivedMessages?: MessageUpdateManyWithoutToInput | null
   notifications?: NotificationUpdateManyWithoutUserInput | null
   profilePicture?: PictureUpdateOneInput | null
-}
-
-export interface UserUpdateWithoutLocationDataInput {
-  displayName?: String | null
-  phoneNumber?: String | null
-  responseRate?: Float | null
-  responseTime?: Int | null
-  isSuperHost?: Boolean | null
-  accountType?: UserType | null
-  uid?: String | null
-  ownedPlaces?: PlaceUpdateManyWithoutHostInput | null
-  orders?: OrderUpdateManyWithoutBookeeInput | null
-  paymentAccount?: PaymentAccountUpdateManyWithoutUserInput | null
-  sentMessages?: MessageUpdateManyWithoutFromInput | null
-  receivedMessages?: MessageUpdateManyWithoutToInput | null
-  notifications?: NotificationUpdateManyWithoutUserInput | null
-  profilePicture?: PictureUpdateOneInput | null
-  hostingExperiences?: ExperienceUpdateManyWithoutHostInput | null
 }
 
 export interface UserUpdateWithoutNotificationsDataInput {
@@ -19321,8 +15911,8 @@ export interface UserUpdateWithoutNotificationsDataInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
-  ownedPlaces?: PlaceUpdateManyWithoutHostInput | null
-  location?: LocationUpdateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantUpdateManyInput | null
+  location?: LocationUpdateManyInput | null
   orders?: OrderUpdateManyWithoutBookeeInput | null
   paymentAccount?: PaymentAccountUpdateManyWithoutUserInput | null
   sentMessages?: MessageUpdateManyWithoutFromInput | null
@@ -19339,26 +15929,8 @@ export interface UserUpdateWithoutOrdersDataInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
-  ownedPlaces?: PlaceUpdateManyWithoutHostInput | null
-  location?: LocationUpdateOneWithoutUserInput | null
-  paymentAccount?: PaymentAccountUpdateManyWithoutUserInput | null
-  sentMessages?: MessageUpdateManyWithoutFromInput | null
-  receivedMessages?: MessageUpdateManyWithoutToInput | null
-  notifications?: NotificationUpdateManyWithoutUserInput | null
-  profilePicture?: PictureUpdateOneInput | null
-  hostingExperiences?: ExperienceUpdateManyWithoutHostInput | null
-}
-
-export interface UserUpdateWithoutOwnedPlacesDataInput {
-  displayName?: String | null
-  phoneNumber?: String | null
-  responseRate?: Float | null
-  responseTime?: Int | null
-  isSuperHost?: Boolean | null
-  accountType?: UserType | null
-  uid?: String | null
-  location?: LocationUpdateOneWithoutUserInput | null
-  orders?: OrderUpdateManyWithoutBookeeInput | null
+  ownedRestaurant?: RestaurantUpdateManyInput | null
+  location?: LocationUpdateManyInput | null
   paymentAccount?: PaymentAccountUpdateManyWithoutUserInput | null
   sentMessages?: MessageUpdateManyWithoutFromInput | null
   receivedMessages?: MessageUpdateManyWithoutToInput | null
@@ -19375,8 +15947,8 @@ export interface UserUpdateWithoutPaymentAccountDataInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
-  ownedPlaces?: PlaceUpdateManyWithoutHostInput | null
-  location?: LocationUpdateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantUpdateManyInput | null
+  location?: LocationUpdateManyInput | null
   orders?: OrderUpdateManyWithoutBookeeInput | null
   sentMessages?: MessageUpdateManyWithoutFromInput | null
   receivedMessages?: MessageUpdateManyWithoutToInput | null
@@ -19393,8 +15965,8 @@ export interface UserUpdateWithoutReceivedMessagesDataInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
-  ownedPlaces?: PlaceUpdateManyWithoutHostInput | null
-  location?: LocationUpdateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantUpdateManyInput | null
+  location?: LocationUpdateManyInput | null
   orders?: OrderUpdateManyWithoutBookeeInput | null
   paymentAccount?: PaymentAccountUpdateManyWithoutUserInput | null
   sentMessages?: MessageUpdateManyWithoutFromInput | null
@@ -19411,8 +15983,8 @@ export interface UserUpdateWithoutSentMessagesDataInput {
   isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
-  ownedPlaces?: PlaceUpdateManyWithoutHostInput | null
-  location?: LocationUpdateOneWithoutUserInput | null
+  ownedRestaurant?: RestaurantUpdateManyInput | null
+  location?: LocationUpdateManyInput | null
   orders?: OrderUpdateManyWithoutBookeeInput | null
   paymentAccount?: PaymentAccountUpdateManyWithoutUserInput | null
   receivedMessages?: MessageUpdateManyWithoutToInput | null
@@ -19426,11 +15998,6 @@ export interface UserUpsertWithoutHostingExperiencesInput {
   create: UserCreateWithoutHostingExperiencesInput
 }
 
-export interface UserUpsertWithoutLocationInput {
-  update: UserUpdateWithoutLocationDataInput
-  create: UserCreateWithoutLocationInput
-}
-
 export interface UserUpsertWithoutNotificationsInput {
   update: UserUpdateWithoutNotificationsDataInput
   create: UserCreateWithoutNotificationsInput
@@ -19439,11 +16006,6 @@ export interface UserUpsertWithoutNotificationsInput {
 export interface UserUpsertWithoutOrdersInput {
   update: UserUpdateWithoutOrdersDataInput
   create: UserCreateWithoutOrdersInput
-}
-
-export interface UserUpsertWithoutOwnedPlacesInput {
-  update: UserUpdateWithoutOwnedPlacesDataInput
-  create: UserCreateWithoutOwnedPlacesInput
 }
 
 export interface UserUpsertWithoutPaymentAccountInput {
@@ -19559,10 +16121,12 @@ export interface UserWhereInput {
   uid_not_starts_with?: String | null
   uid_ends_with?: String | null
   uid_not_ends_with?: String | null
-  ownedPlaces_every?: PlaceWhereInput | null
-  ownedPlaces_some?: PlaceWhereInput | null
-  ownedPlaces_none?: PlaceWhereInput | null
-  location?: LocationWhereInput | null
+  ownedRestaurant_every?: RestaurantWhereInput | null
+  ownedRestaurant_some?: RestaurantWhereInput | null
+  ownedRestaurant_none?: RestaurantWhereInput | null
+  location_every?: LocationWhereInput | null
+  location_some?: LocationWhereInput | null
+  location_none?: LocationWhereInput | null
   orders_every?: OrderWhereInput | null
   orders_some?: OrderWhereInput | null
   orders_none?: OrderWhereInput | null
@@ -19589,101 +16153,12 @@ export interface UserWhereUniqueInput {
   uid?: String | null
 }
 
-export interface ViewsCreateInput {
-  id?: ID_Input | null
-  lastWeek: Int
-  place: PlaceCreateOneWithoutViewsInput
-}
-
-export interface ViewsCreateOneWithoutPlaceInput {
-  create?: ViewsCreateWithoutPlaceInput | null
-  connect?: ViewsWhereUniqueInput | null
-}
-
-export interface ViewsCreateWithoutPlaceInput {
-  id?: ID_Input | null
-  lastWeek: Int
-}
-
-export interface ViewsSubscriptionWhereInput {
-  AND?: ViewsSubscriptionWhereInput[] | ViewsSubscriptionWhereInput | null
-  OR?: ViewsSubscriptionWhereInput[] | ViewsSubscriptionWhereInput | null
-  NOT?: ViewsSubscriptionWhereInput[] | ViewsSubscriptionWhereInput | null
-  mutation_in?: MutationType[] | MutationType | null
-  updatedFields_contains?: String | null
-  updatedFields_contains_every?: String[] | String | null
-  updatedFields_contains_some?: String[] | String | null
-  node?: ViewsWhereInput | null
-}
-
-export interface ViewsUpdateInput {
-  lastWeek?: Int | null
-  place?: PlaceUpdateOneRequiredWithoutViewsInput | null
-}
-
-export interface ViewsUpdateManyMutationInput {
-  lastWeek?: Int | null
-}
-
-export interface ViewsUpdateOneRequiredWithoutPlaceInput {
-  create?: ViewsCreateWithoutPlaceInput | null
-  connect?: ViewsWhereUniqueInput | null
-  update?: ViewsUpdateWithoutPlaceDataInput | null
-  upsert?: ViewsUpsertWithoutPlaceInput | null
-}
-
-export interface ViewsUpdateWithoutPlaceDataInput {
-  lastWeek?: Int | null
-}
-
-export interface ViewsUpsertWithoutPlaceInput {
-  update: ViewsUpdateWithoutPlaceDataInput
-  create: ViewsCreateWithoutPlaceInput
-}
-
-export interface ViewsWhereInput {
-  AND?: ViewsWhereInput[] | ViewsWhereInput | null
-  OR?: ViewsWhereInput[] | ViewsWhereInput | null
-  NOT?: ViewsWhereInput[] | ViewsWhereInput | null
-  id?: ID_Input | null
-  id_not?: ID_Input | null
-  id_in?: ID_Output[] | ID_Output | null
-  id_not_in?: ID_Output[] | ID_Output | null
-  id_lt?: ID_Input | null
-  id_lte?: ID_Input | null
-  id_gt?: ID_Input | null
-  id_gte?: ID_Input | null
-  id_contains?: ID_Input | null
-  id_not_contains?: ID_Input | null
-  id_starts_with?: ID_Input | null
-  id_not_starts_with?: ID_Input | null
-  id_ends_with?: ID_Input | null
-  id_not_ends_with?: ID_Input | null
-  lastWeek?: Int | null
-  lastWeek_not?: Int | null
-  lastWeek_in?: Int[] | Int | null
-  lastWeek_not_in?: Int[] | Int | null
-  lastWeek_lt?: Int | null
-  lastWeek_lte?: Int | null
-  lastWeek_gt?: Int | null
-  lastWeek_gte?: Int | null
-  place?: PlaceWhereInput | null
-}
-
-export interface ViewsWhereUniqueInput {
-  id?: ID_Input | null
-}
-
 /*
  * An object with an ID
 
  */
 export interface Node {
   id: ID_Output
-}
-
-export interface AggregateAmenities {
-  count: Int
 }
 
 export interface AggregateCity {
@@ -19706,15 +16181,11 @@ export interface AggregateExperienceCategory {
   count: Int
 }
 
-export interface AggregateGuestRequirements {
-  count: Int
-}
-
-export interface AggregateHouseRules {
-  count: Int
-}
-
 export interface AggregateLocation {
+  count: Int
+}
+
+export interface AggregateMenuItem {
   count: Int
 }
 
@@ -19754,10 +16225,6 @@ export interface AggregatePicture {
   count: Int
 }
 
-export interface AggregatePlace {
-  count: Int
-}
-
 export interface AggregatePolicies {
   count: Int
 }
@@ -19776,125 +16243,6 @@ export interface AggregateReview {
 
 export interface AggregateUser {
   count: Int
-}
-
-export interface AggregateViews {
-  count: Int
-}
-
-export interface Amenities extends Node {
-  id: ID_Output
-  place: Place
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-}
-
-/*
- * A connection to a list of items.
-
- */
-export interface AmenitiesConnection {
-  pageInfo: PageInfo
-  edges: Array<AmenitiesEdge | null>
-  aggregate: AggregateAmenities
-}
-
-/*
- * An edge in a connection.
-
- */
-export interface AmenitiesEdge {
-  node: Amenities
-  cursor: String
-}
-
-export interface AmenitiesPreviousValues {
-  id: ID_Output
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-}
-
-export interface AmenitiesSubscriptionPayload {
-  mutation: MutationType
-  node?: Amenities | null
-  updatedFields?: Array<String> | null
-  previousValues?: AmenitiesPreviousValues | null
 }
 
 export interface BatchPayload {
@@ -20060,7 +16408,7 @@ export interface ExperienceCategory extends Node {
   id: ID_Output
   mainColor: String
   name: String
-  experience?: Experience | null
+  experience: Experience
 }
 
 /*
@@ -20128,108 +16476,15 @@ export interface ExperienceSubscriptionPayload {
   previousValues?: ExperiencePreviousValues | null
 }
 
-export interface GuestRequirements extends Node {
-  id: ID_Output
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-  place: Place
-}
-
-/*
- * A connection to a list of items.
-
- */
-export interface GuestRequirementsConnection {
-  pageInfo: PageInfo
-  edges: Array<GuestRequirementsEdge | null>
-  aggregate: AggregateGuestRequirements
-}
-
-/*
- * An edge in a connection.
-
- */
-export interface GuestRequirementsEdge {
-  node: GuestRequirements
-  cursor: String
-}
-
-export interface GuestRequirementsPreviousValues {
-  id: ID_Output
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-}
-
-export interface GuestRequirementsSubscriptionPayload {
-  mutation: MutationType
-  node?: GuestRequirements | null
-  updatedFields?: Array<String> | null
-  previousValues?: GuestRequirementsPreviousValues | null
-}
-
-export interface HouseRules extends Node {
-  id: ID_Output
-  createdAt: DateTime
-  updatedAt: DateTime
-  suitableForChildren?: Boolean | null
-  suitableForInfants?: Boolean | null
-  petsAllowed?: Boolean | null
-  smokingAllowed?: Boolean | null
-  partiesAndEventsAllowed?: Boolean | null
-  additionalRules?: String | null
-}
-
-/*
- * A connection to a list of items.
-
- */
-export interface HouseRulesConnection {
-  pageInfo: PageInfo
-  edges: Array<HouseRulesEdge | null>
-  aggregate: AggregateHouseRules
-}
-
-/*
- * An edge in a connection.
-
- */
-export interface HouseRulesEdge {
-  node: HouseRules
-  cursor: String
-}
-
-export interface HouseRulesPreviousValues {
-  id: ID_Output
-  createdAt: DateTime
-  updatedAt: DateTime
-  suitableForChildren?: Boolean | null
-  suitableForInfants?: Boolean | null
-  petsAllowed?: Boolean | null
-  smokingAllowed?: Boolean | null
-  partiesAndEventsAllowed?: Boolean | null
-  additionalRules?: String | null
-}
-
-export interface HouseRulesSubscriptionPayload {
-  mutation: MutationType
-  node?: HouseRules | null
-  updatedFields?: Array<String> | null
-  previousValues?: HouseRulesPreviousValues | null
-}
-
 export interface Location extends Node {
+  title?: String | null
   id: ID_Output
   lat: Float
   lng: Float
   neighbourHood?: Neighbourhood | null
-  user?: User | null
-  place?: Place | null
   address: String
   directions: String
   experience?: Experience | null
-  restaurant?: Restaurant | null
 }
 
 /*
@@ -20252,6 +16507,7 @@ export interface LocationEdge {
 }
 
 export interface LocationPreviousValues {
+  title?: String | null
   id: ID_Output
   lat: Float
   lng: Float
@@ -20264,6 +16520,53 @@ export interface LocationSubscriptionPayload {
   node?: Location | null
   updatedFields?: Array<String> | null
   previousValues?: LocationPreviousValues | null
+}
+
+export interface MenuItem extends Node {
+  id: ID_Output
+  createdAt: DateTime
+  updatedAt: DateTime
+  shortDescription: String
+  title: String
+  description: String
+  pricing: Pricing
+  pictures?: Array<Picture> | null
+  reviews?: Array<Review> | null
+}
+
+/*
+ * A connection to a list of items.
+
+ */
+export interface MenuItemConnection {
+  pageInfo: PageInfo
+  edges: Array<MenuItemEdge | null>
+  aggregate: AggregateMenuItem
+}
+
+/*
+ * An edge in a connection.
+
+ */
+export interface MenuItemEdge {
+  node: MenuItem
+  cursor: String
+}
+
+export interface MenuItemPreviousValues {
+  id: ID_Output
+  createdAt: DateTime
+  updatedAt: DateTime
+  shortDescription: String
+  title: String
+  description: String
+}
+
+export interface MenuItemSubscriptionPayload {
+  mutation: MutationType
+  node?: MenuItem | null
+  updatedFields?: Array<String> | null
+  previousValues?: MenuItemPreviousValues | null
 }
 
 export interface Message extends Node {
@@ -20400,7 +16703,7 @@ export interface Order extends Node {
   id: ID_Output
   createdAt: DateTime
   bookee: User
-  place: Place
+  restaurant: Restaurant
   startDate: DateTime
   endDate: DateTime
   payment?: Payment | null
@@ -20454,7 +16757,7 @@ export interface Payment extends Node {
   id: ID_Output
   createdAt: DateTime
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
   order: Order
   paymentMethod: PaymentAccount
@@ -20525,7 +16828,7 @@ export interface PaymentPreviousValues {
   id: ID_Output
   createdAt: DateTime
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
 }
 
@@ -20650,79 +16953,12 @@ export interface PictureSubscriptionPayload {
   previousValues?: PicturePreviousValues | null
 }
 
-export interface Place extends Node {
-  id: ID_Output
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  reviews?: Array<Review> | null
-  amenities: Amenities
-  host: User
-  pricing: Pricing
-  location: Location
-  views: Views
-  guestRequirements?: GuestRequirements | null
-  policies?: Policies | null
-  houseRules?: HouseRules | null
-  orders?: Array<Order> | null
-  pictures?: Array<Picture> | null
-  popularity: Int
-}
-
-/*
- * A connection to a list of items.
-
- */
-export interface PlaceConnection {
-  pageInfo: PageInfo
-  edges: Array<PlaceEdge | null>
-  aggregate: AggregatePlace
-}
-
-/*
- * An edge in a connection.
-
- */
-export interface PlaceEdge {
-  node: Place
-  cursor: String
-}
-
-export interface PlacePreviousValues {
-  id: ID_Output
-  name: String
-  size?: PLACE_SIZES | null
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-}
-
-export interface PlaceSubscriptionPayload {
-  mutation: MutationType
-  node?: Place | null
-  updatedFields?: Array<String> | null
-  previousValues?: PlacePreviousValues | null
-}
-
 export interface Policies extends Node {
   id: ID_Output
   createdAt: DateTime
   updatedAt: DateTime
-  checkInStartTime: Float
-  checkInEndTime: Float
-  checkoutTime: Float
-  place: Place
+  openingTime: Float
+  closingTime: Float
 }
 
 /*
@@ -20748,9 +16984,8 @@ export interface PoliciesPreviousValues {
   id: ID_Output
   createdAt: DateTime
   updatedAt: DateTime
-  checkInStartTime: Float
-  checkInEndTime: Float
-  checkoutTime: Float
+  openingTime: Float
+  closingTime: Float
 }
 
 export interface PoliciesSubscriptionPayload {
@@ -20762,19 +16997,14 @@ export interface PoliciesSubscriptionPayload {
 
 export interface Pricing extends Node {
   id: ID_Output
-  place: Place
   monthlyDiscount?: Int | null
   weeklyDiscount?: Int | null
-  perNight: Int
+  price: Int
   smartPricing: Boolean
   basePrice: Int
   averageWeekly: Int
   averageMonthly: Int
-  cleaningFee?: Int | null
-  securityDeposit?: Int | null
-  extraGuests?: Int | null
   weekendPricing?: Int | null
-  currency?: CURRENCY | null
 }
 
 /*
@@ -20800,16 +17030,12 @@ export interface PricingPreviousValues {
   id: ID_Output
   monthlyDiscount?: Int | null
   weeklyDiscount?: Int | null
-  perNight: Int
+  price: Int
   smartPricing: Boolean
   basePrice: Int
   averageWeekly: Int
   averageMonthly: Int
-  cleaningFee?: Int | null
-  securityDeposit?: Int | null
-  extraGuests?: Int | null
   weekendPricing?: Int | null
-  currency?: CURRENCY | null
 }
 
 export interface PricingSubscriptionPayload {
@@ -20821,14 +17047,22 @@ export interface PricingSubscriptionPayload {
 
 export interface Restaurant extends Node {
   id: ID_Output
-  createdAt: DateTime
-  title: String
-  avgPricePerPerson: Int
-  pictures?: Array<Picture> | null
-  location: Location
-  isCurated: Boolean
+  name: String
+  shortDescription: String
+  description: String
   slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating?: Float | null
+  reviews?: Array<Review> | null
+  location?: Location | null
+  policies?: Policies | null
+  menu?: Array<MenuItem> | null
+  orders?: Array<Order> | null
+  pictures?: Array<Picture> | null
   popularity: Int
+  avgPricePerPerson: Int
+  isCurated: Boolean
 }
 
 /*
@@ -20852,12 +17086,16 @@ export interface RestaurantEdge {
 
 export interface RestaurantPreviousValues {
   id: ID_Output
-  createdAt: DateTime
-  title: String
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating?: Float | null
+  popularity: Int
   avgPricePerPerson: Int
   isCurated: Boolean
-  slug: String
-  popularity: Int
 }
 
 export interface RestaurantSubscriptionPayload {
@@ -20878,7 +17116,7 @@ export interface Review extends Node {
   value: Int
   cleanliness: Int
   communication: Int
-  place: Place
+  order: Order
   experience?: Experience | null
 }
 
@@ -20930,8 +17168,8 @@ export interface User extends Node {
   responseRate?: Float | null
   responseTime?: Int | null
   isSuperHost: Boolean
-  ownedPlaces?: Array<Place> | null
-  location?: Location | null
+  ownedRestaurant?: Array<Restaurant> | null
+  location?: Array<Location> | null
   orders?: Array<Order> | null
   paymentAccount?: Array<PaymentAccount> | null
   sentMessages?: Array<Message> | null
@@ -20980,43 +17218,6 @@ export interface UserSubscriptionPayload {
   node?: User | null
   updatedFields?: Array<String> | null
   previousValues?: UserPreviousValues | null
-}
-
-export interface Views extends Node {
-  id: ID_Output
-  lastWeek: Int
-  place: Place
-}
-
-/*
- * A connection to a list of items.
-
- */
-export interface ViewsConnection {
-  pageInfo: PageInfo
-  edges: Array<ViewsEdge | null>
-  aggregate: AggregateViews
-}
-
-/*
- * An edge in a connection.
-
- */
-export interface ViewsEdge {
-  node: Views
-  cursor: String
-}
-
-export interface ViewsPreviousValues {
-  id: ID_Output
-  lastWeek: Int
-}
-
-export interface ViewsSubscriptionPayload {
-  mutation: MutationType
-  node?: Views | null
-  updatedFields?: Array<String> | null
-  previousValues?: ViewsPreviousValues | null
 }
 
 /*

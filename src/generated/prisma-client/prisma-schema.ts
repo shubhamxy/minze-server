@@ -2,11 +2,7 @@
   // Please don't change this file manually but run `prisma generate` to update it.
   // For more information, please read the docs: https://www.prisma.io/docs/prisma-client/
 
-export const typeDefs = /* GraphQL */ `type AggregateAmenities {
-  count: Int!
-}
-
-type AggregateCity {
+export const typeDefs = /* GraphQL */ `type AggregateCity {
   count: Int!
 }
 
@@ -26,15 +22,11 @@ type AggregateExperienceCategory {
   count: Int!
 }
 
-type AggregateGuestRequirements {
-  count: Int!
-}
-
-type AggregateHouseRules {
-  count: Int!
-}
-
 type AggregateLocation {
+  count: Int!
+}
+
+type AggregateMenuItem {
   count: Int!
 }
 
@@ -74,10 +66,6 @@ type AggregatePicture {
   count: Int!
 }
 
-type AggregatePlace {
-  count: Int!
-}
-
 type AggregatePolicies {
   count: Int!
 }
@@ -96,554 +84,6 @@ type AggregateReview {
 
 type AggregateUser {
   count: Int!
-}
-
-type AggregateViews {
-  count: Int!
-}
-
-type Amenities {
-  id: ID!
-  place: Place!
-  elevator: Boolean!
-  petsAllowed: Boolean!
-  internet: Boolean!
-  kitchen: Boolean!
-  wirelessInternet: Boolean!
-  familyKidFriendly: Boolean!
-  freeParkingOnPremises: Boolean!
-  hotTub: Boolean!
-  pool: Boolean!
-  smokingAllowed: Boolean!
-  wheelchairAccessible: Boolean!
-  breakfast: Boolean!
-  cableTv: Boolean!
-  suitableForEvents: Boolean!
-  dryer: Boolean!
-  washer: Boolean!
-  indoorFireplace: Boolean!
-  tv: Boolean!
-  heating: Boolean!
-  hangers: Boolean!
-  iron: Boolean!
-  hairDryer: Boolean!
-  doorman: Boolean!
-  paidParkingOffPremises: Boolean!
-  freeParkingOnStreet: Boolean!
-  gym: Boolean!
-  airConditioning: Boolean!
-  shampoo: Boolean!
-  essentials: Boolean!
-  laptopFriendlyWorkspace: Boolean!
-  privateEntrance: Boolean!
-  buzzerWirelessIntercom: Boolean!
-  babyBath: Boolean!
-  babyMonitor: Boolean!
-  babysitterRecommendations: Boolean!
-  bathtub: Boolean!
-  changingTable: Boolean!
-  childrensBooksAndToys: Boolean!
-  childrensDinnerware: Boolean!
-  crib: Boolean!
-}
-
-type AmenitiesConnection {
-  pageInfo: PageInfo!
-  edges: [AmenitiesEdge]!
-  aggregate: AggregateAmenities!
-}
-
-input AmenitiesCreateInput {
-  id: ID
-  place: PlaceCreateOneWithoutAmenitiesInput!
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-}
-
-input AmenitiesCreateOneWithoutPlaceInput {
-  create: AmenitiesCreateWithoutPlaceInput
-  connect: AmenitiesWhereUniqueInput
-}
-
-input AmenitiesCreateWithoutPlaceInput {
-  id: ID
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-}
-
-type AmenitiesEdge {
-  node: Amenities!
-  cursor: String!
-}
-
-enum AmenitiesOrderByInput {
-  id_ASC
-  id_DESC
-  elevator_ASC
-  elevator_DESC
-  petsAllowed_ASC
-  petsAllowed_DESC
-  internet_ASC
-  internet_DESC
-  kitchen_ASC
-  kitchen_DESC
-  wirelessInternet_ASC
-  wirelessInternet_DESC
-  familyKidFriendly_ASC
-  familyKidFriendly_DESC
-  freeParkingOnPremises_ASC
-  freeParkingOnPremises_DESC
-  hotTub_ASC
-  hotTub_DESC
-  pool_ASC
-  pool_DESC
-  smokingAllowed_ASC
-  smokingAllowed_DESC
-  wheelchairAccessible_ASC
-  wheelchairAccessible_DESC
-  breakfast_ASC
-  breakfast_DESC
-  cableTv_ASC
-  cableTv_DESC
-  suitableForEvents_ASC
-  suitableForEvents_DESC
-  dryer_ASC
-  dryer_DESC
-  washer_ASC
-  washer_DESC
-  indoorFireplace_ASC
-  indoorFireplace_DESC
-  tv_ASC
-  tv_DESC
-  heating_ASC
-  heating_DESC
-  hangers_ASC
-  hangers_DESC
-  iron_ASC
-  iron_DESC
-  hairDryer_ASC
-  hairDryer_DESC
-  doorman_ASC
-  doorman_DESC
-  paidParkingOffPremises_ASC
-  paidParkingOffPremises_DESC
-  freeParkingOnStreet_ASC
-  freeParkingOnStreet_DESC
-  gym_ASC
-  gym_DESC
-  airConditioning_ASC
-  airConditioning_DESC
-  shampoo_ASC
-  shampoo_DESC
-  essentials_ASC
-  essentials_DESC
-  laptopFriendlyWorkspace_ASC
-  laptopFriendlyWorkspace_DESC
-  privateEntrance_ASC
-  privateEntrance_DESC
-  buzzerWirelessIntercom_ASC
-  buzzerWirelessIntercom_DESC
-  babyBath_ASC
-  babyBath_DESC
-  babyMonitor_ASC
-  babyMonitor_DESC
-  babysitterRecommendations_ASC
-  babysitterRecommendations_DESC
-  bathtub_ASC
-  bathtub_DESC
-  changingTable_ASC
-  changingTable_DESC
-  childrensBooksAndToys_ASC
-  childrensBooksAndToys_DESC
-  childrensDinnerware_ASC
-  childrensDinnerware_DESC
-  crib_ASC
-  crib_DESC
-}
-
-type AmenitiesPreviousValues {
-  id: ID!
-  elevator: Boolean!
-  petsAllowed: Boolean!
-  internet: Boolean!
-  kitchen: Boolean!
-  wirelessInternet: Boolean!
-  familyKidFriendly: Boolean!
-  freeParkingOnPremises: Boolean!
-  hotTub: Boolean!
-  pool: Boolean!
-  smokingAllowed: Boolean!
-  wheelchairAccessible: Boolean!
-  breakfast: Boolean!
-  cableTv: Boolean!
-  suitableForEvents: Boolean!
-  dryer: Boolean!
-  washer: Boolean!
-  indoorFireplace: Boolean!
-  tv: Boolean!
-  heating: Boolean!
-  hangers: Boolean!
-  iron: Boolean!
-  hairDryer: Boolean!
-  doorman: Boolean!
-  paidParkingOffPremises: Boolean!
-  freeParkingOnStreet: Boolean!
-  gym: Boolean!
-  airConditioning: Boolean!
-  shampoo: Boolean!
-  essentials: Boolean!
-  laptopFriendlyWorkspace: Boolean!
-  privateEntrance: Boolean!
-  buzzerWirelessIntercom: Boolean!
-  babyBath: Boolean!
-  babyMonitor: Boolean!
-  babysitterRecommendations: Boolean!
-  bathtub: Boolean!
-  changingTable: Boolean!
-  childrensBooksAndToys: Boolean!
-  childrensDinnerware: Boolean!
-  crib: Boolean!
-}
-
-type AmenitiesSubscriptionPayload {
-  mutation: MutationType!
-  node: Amenities
-  updatedFields: [String!]
-  previousValues: AmenitiesPreviousValues
-}
-
-input AmenitiesSubscriptionWhereInput {
-  mutation_in: [MutationType!]
-  updatedFields_contains: String
-  updatedFields_contains_every: [String!]
-  updatedFields_contains_some: [String!]
-  node: AmenitiesWhereInput
-  AND: [AmenitiesSubscriptionWhereInput!]
-  OR: [AmenitiesSubscriptionWhereInput!]
-  NOT: [AmenitiesSubscriptionWhereInput!]
-}
-
-input AmenitiesUpdateInput {
-  place: PlaceUpdateOneRequiredWithoutAmenitiesInput
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-}
-
-input AmenitiesUpdateManyMutationInput {
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-}
-
-input AmenitiesUpdateOneRequiredWithoutPlaceInput {
-  create: AmenitiesCreateWithoutPlaceInput
-  update: AmenitiesUpdateWithoutPlaceDataInput
-  upsert: AmenitiesUpsertWithoutPlaceInput
-  connect: AmenitiesWhereUniqueInput
-}
-
-input AmenitiesUpdateWithoutPlaceDataInput {
-  elevator: Boolean
-  petsAllowed: Boolean
-  internet: Boolean
-  kitchen: Boolean
-  wirelessInternet: Boolean
-  familyKidFriendly: Boolean
-  freeParkingOnPremises: Boolean
-  hotTub: Boolean
-  pool: Boolean
-  smokingAllowed: Boolean
-  wheelchairAccessible: Boolean
-  breakfast: Boolean
-  cableTv: Boolean
-  suitableForEvents: Boolean
-  dryer: Boolean
-  washer: Boolean
-  indoorFireplace: Boolean
-  tv: Boolean
-  heating: Boolean
-  hangers: Boolean
-  iron: Boolean
-  hairDryer: Boolean
-  doorman: Boolean
-  paidParkingOffPremises: Boolean
-  freeParkingOnStreet: Boolean
-  gym: Boolean
-  airConditioning: Boolean
-  shampoo: Boolean
-  essentials: Boolean
-  laptopFriendlyWorkspace: Boolean
-  privateEntrance: Boolean
-  buzzerWirelessIntercom: Boolean
-  babyBath: Boolean
-  babyMonitor: Boolean
-  babysitterRecommendations: Boolean
-  bathtub: Boolean
-  changingTable: Boolean
-  childrensBooksAndToys: Boolean
-  childrensDinnerware: Boolean
-  crib: Boolean
-}
-
-input AmenitiesUpsertWithoutPlaceInput {
-  update: AmenitiesUpdateWithoutPlaceDataInput!
-  create: AmenitiesCreateWithoutPlaceInput!
-}
-
-input AmenitiesWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  place: PlaceWhereInput
-  elevator: Boolean
-  elevator_not: Boolean
-  petsAllowed: Boolean
-  petsAllowed_not: Boolean
-  internet: Boolean
-  internet_not: Boolean
-  kitchen: Boolean
-  kitchen_not: Boolean
-  wirelessInternet: Boolean
-  wirelessInternet_not: Boolean
-  familyKidFriendly: Boolean
-  familyKidFriendly_not: Boolean
-  freeParkingOnPremises: Boolean
-  freeParkingOnPremises_not: Boolean
-  hotTub: Boolean
-  hotTub_not: Boolean
-  pool: Boolean
-  pool_not: Boolean
-  smokingAllowed: Boolean
-  smokingAllowed_not: Boolean
-  wheelchairAccessible: Boolean
-  wheelchairAccessible_not: Boolean
-  breakfast: Boolean
-  breakfast_not: Boolean
-  cableTv: Boolean
-  cableTv_not: Boolean
-  suitableForEvents: Boolean
-  suitableForEvents_not: Boolean
-  dryer: Boolean
-  dryer_not: Boolean
-  washer: Boolean
-  washer_not: Boolean
-  indoorFireplace: Boolean
-  indoorFireplace_not: Boolean
-  tv: Boolean
-  tv_not: Boolean
-  heating: Boolean
-  heating_not: Boolean
-  hangers: Boolean
-  hangers_not: Boolean
-  iron: Boolean
-  iron_not: Boolean
-  hairDryer: Boolean
-  hairDryer_not: Boolean
-  doorman: Boolean
-  doorman_not: Boolean
-  paidParkingOffPremises: Boolean
-  paidParkingOffPremises_not: Boolean
-  freeParkingOnStreet: Boolean
-  freeParkingOnStreet_not: Boolean
-  gym: Boolean
-  gym_not: Boolean
-  airConditioning: Boolean
-  airConditioning_not: Boolean
-  shampoo: Boolean
-  shampoo_not: Boolean
-  essentials: Boolean
-  essentials_not: Boolean
-  laptopFriendlyWorkspace: Boolean
-  laptopFriendlyWorkspace_not: Boolean
-  privateEntrance: Boolean
-  privateEntrance_not: Boolean
-  buzzerWirelessIntercom: Boolean
-  buzzerWirelessIntercom_not: Boolean
-  babyBath: Boolean
-  babyBath_not: Boolean
-  babyMonitor: Boolean
-  babyMonitor_not: Boolean
-  babysitterRecommendations: Boolean
-  babysitterRecommendations_not: Boolean
-  bathtub: Boolean
-  bathtub_not: Boolean
-  changingTable: Boolean
-  changingTable_not: Boolean
-  childrensBooksAndToys: Boolean
-  childrensBooksAndToys_not: Boolean
-  childrensDinnerware: Boolean
-  childrensDinnerware_not: Boolean
-  crib: Boolean
-  crib_not: Boolean
-  AND: [AmenitiesWhereInput!]
-  OR: [AmenitiesWhereInput!]
-  NOT: [AmenitiesWhereInput!]
-}
-
-input AmenitiesWhereUniqueInput {
-  id: ID
 }
 
 type BatchPayload {
@@ -1069,16 +509,6 @@ input CreditCardInformationWhereUniqueInput {
   id: ID
 }
 
-enum CURRENCY {
-  CAD
-  INR
-  CHF
-  EUR
-  JPY
-  USD
-  ZAR
-}
-
 scalar DateTime
 
 type DebitCardInformation {
@@ -1111,7 +541,24 @@ input DebitCardInformationCreateInput {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccountCreateOneInput
+  paymentAccount: PaymentAccountCreateOneWithoutDebitcardInput
+}
+
+input DebitCardInformationCreateOneWithoutPaymentAccountInput {
+  create: DebitCardInformationCreateWithoutPaymentAccountInput
+  connect: DebitCardInformationWhereUniqueInput
+}
+
+input DebitCardInformationCreateWithoutPaymentAccountInput {
+  id: ID
+  cardNumber: String!
+  expiresOnMonth: Int!
+  expiresOnYear: Int!
+  securityCode: String!
+  firstName: String!
+  lastName: String!
+  postalCode: String!
+  country: String!
 }
 
 type DebitCardInformationEdge {
@@ -1182,7 +629,7 @@ input DebitCardInformationUpdateInput {
   lastName: String
   postalCode: String
   country: String
-  paymentAccount: PaymentAccountUpdateOneInput
+  paymentAccount: PaymentAccountUpdateOneWithoutDebitcardInput
 }
 
 input DebitCardInformationUpdateManyMutationInput {
@@ -1194,6 +641,31 @@ input DebitCardInformationUpdateManyMutationInput {
   lastName: String
   postalCode: String
   country: String
+}
+
+input DebitCardInformationUpdateOneWithoutPaymentAccountInput {
+  create: DebitCardInformationCreateWithoutPaymentAccountInput
+  update: DebitCardInformationUpdateWithoutPaymentAccountDataInput
+  upsert: DebitCardInformationUpsertWithoutPaymentAccountInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: DebitCardInformationWhereUniqueInput
+}
+
+input DebitCardInformationUpdateWithoutPaymentAccountDataInput {
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
+}
+
+input DebitCardInformationUpsertWithoutPaymentAccountInput {
+  update: DebitCardInformationUpdateWithoutPaymentAccountDataInput!
+  create: DebitCardInformationCreateWithoutPaymentAccountInput!
 }
 
 input DebitCardInformationWhereInput {
@@ -1345,7 +817,7 @@ type ExperienceCategory {
   id: ID!
   mainColor: String!
   name: String!
-  experience: Experience
+  experience: Experience!
 }
 
 type ExperienceCategoryConnection {
@@ -1358,7 +830,7 @@ input ExperienceCategoryCreateInput {
   id: ID
   mainColor: String
   name: String!
-  experience: ExperienceCreateOneWithoutCategoryInput
+  experience: ExperienceCreateOneWithoutCategoryInput!
 }
 
 input ExperienceCategoryCreateOneWithoutExperienceInput {
@@ -1413,7 +885,7 @@ input ExperienceCategorySubscriptionWhereInput {
 input ExperienceCategoryUpdateInput {
   mainColor: String
   name: String
-  experience: ExperienceUpdateOneWithoutCategoryInput
+  experience: ExperienceUpdateOneRequiredWithoutCategoryInput
 }
 
 input ExperienceCategoryUpdateManyMutationInput {
@@ -1706,12 +1178,10 @@ input ExperienceUpdateManyWithWhereNestedInput {
   data: ExperienceUpdateManyDataInput!
 }
 
-input ExperienceUpdateOneWithoutCategoryInput {
+input ExperienceUpdateOneRequiredWithoutCategoryInput {
   create: ExperienceCreateWithoutCategoryInput
   update: ExperienceUpdateWithoutCategoryDataInput
   upsert: ExperienceUpsertWithoutCategoryInput
-  delete: Boolean
-  disconnect: Boolean
   connect: ExperienceWhereUniqueInput
 }
 
@@ -1860,350 +1330,15 @@ input ExperienceWhereUniqueInput {
   id: ID
 }
 
-type GuestRequirements {
-  id: ID!
-  govIssuedId: Boolean!
-  recommendationsFromOtherHosts: Boolean!
-  guestTripInformation: Boolean!
-  place: Place!
-}
-
-type GuestRequirementsConnection {
-  pageInfo: PageInfo!
-  edges: [GuestRequirementsEdge]!
-  aggregate: AggregateGuestRequirements!
-}
-
-input GuestRequirementsCreateInput {
-  id: ID
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-  place: PlaceCreateOneWithoutGuestRequirementsInput!
-}
-
-input GuestRequirementsCreateOneWithoutPlaceInput {
-  create: GuestRequirementsCreateWithoutPlaceInput
-  connect: GuestRequirementsWhereUniqueInput
-}
-
-input GuestRequirementsCreateWithoutPlaceInput {
-  id: ID
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-}
-
-type GuestRequirementsEdge {
-  node: GuestRequirements!
-  cursor: String!
-}
-
-enum GuestRequirementsOrderByInput {
-  id_ASC
-  id_DESC
-  govIssuedId_ASC
-  govIssuedId_DESC
-  recommendationsFromOtherHosts_ASC
-  recommendationsFromOtherHosts_DESC
-  guestTripInformation_ASC
-  guestTripInformation_DESC
-}
-
-type GuestRequirementsPreviousValues {
-  id: ID!
-  govIssuedId: Boolean!
-  recommendationsFromOtherHosts: Boolean!
-  guestTripInformation: Boolean!
-}
-
-type GuestRequirementsSubscriptionPayload {
-  mutation: MutationType!
-  node: GuestRequirements
-  updatedFields: [String!]
-  previousValues: GuestRequirementsPreviousValues
-}
-
-input GuestRequirementsSubscriptionWhereInput {
-  mutation_in: [MutationType!]
-  updatedFields_contains: String
-  updatedFields_contains_every: [String!]
-  updatedFields_contains_some: [String!]
-  node: GuestRequirementsWhereInput
-  AND: [GuestRequirementsSubscriptionWhereInput!]
-  OR: [GuestRequirementsSubscriptionWhereInput!]
-  NOT: [GuestRequirementsSubscriptionWhereInput!]
-}
-
-input GuestRequirementsUpdateInput {
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-  place: PlaceUpdateOneRequiredWithoutGuestRequirementsInput
-}
-
-input GuestRequirementsUpdateManyMutationInput {
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-}
-
-input GuestRequirementsUpdateOneWithoutPlaceInput {
-  create: GuestRequirementsCreateWithoutPlaceInput
-  update: GuestRequirementsUpdateWithoutPlaceDataInput
-  upsert: GuestRequirementsUpsertWithoutPlaceInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: GuestRequirementsWhereUniqueInput
-}
-
-input GuestRequirementsUpdateWithoutPlaceDataInput {
-  govIssuedId: Boolean
-  recommendationsFromOtherHosts: Boolean
-  guestTripInformation: Boolean
-}
-
-input GuestRequirementsUpsertWithoutPlaceInput {
-  update: GuestRequirementsUpdateWithoutPlaceDataInput!
-  create: GuestRequirementsCreateWithoutPlaceInput!
-}
-
-input GuestRequirementsWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  govIssuedId: Boolean
-  govIssuedId_not: Boolean
-  recommendationsFromOtherHosts: Boolean
-  recommendationsFromOtherHosts_not: Boolean
-  guestTripInformation: Boolean
-  guestTripInformation_not: Boolean
-  place: PlaceWhereInput
-  AND: [GuestRequirementsWhereInput!]
-  OR: [GuestRequirementsWhereInput!]
-  NOT: [GuestRequirementsWhereInput!]
-}
-
-input GuestRequirementsWhereUniqueInput {
-  id: ID
-}
-
-type HouseRules {
-  id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-type HouseRulesConnection {
-  pageInfo: PageInfo!
-  edges: [HouseRulesEdge]!
-  aggregate: AggregateHouseRules!
-}
-
-input HouseRulesCreateInput {
-  id: ID
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-input HouseRulesCreateOneInput {
-  create: HouseRulesCreateInput
-  connect: HouseRulesWhereUniqueInput
-}
-
-type HouseRulesEdge {
-  node: HouseRules!
-  cursor: String!
-}
-
-enum HouseRulesOrderByInput {
-  id_ASC
-  id_DESC
-  createdAt_ASC
-  createdAt_DESC
-  updatedAt_ASC
-  updatedAt_DESC
-  suitableForChildren_ASC
-  suitableForChildren_DESC
-  suitableForInfants_ASC
-  suitableForInfants_DESC
-  petsAllowed_ASC
-  petsAllowed_DESC
-  smokingAllowed_ASC
-  smokingAllowed_DESC
-  partiesAndEventsAllowed_ASC
-  partiesAndEventsAllowed_DESC
-  additionalRules_ASC
-  additionalRules_DESC
-}
-
-type HouseRulesPreviousValues {
-  id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-type HouseRulesSubscriptionPayload {
-  mutation: MutationType!
-  node: HouseRules
-  updatedFields: [String!]
-  previousValues: HouseRulesPreviousValues
-}
-
-input HouseRulesSubscriptionWhereInput {
-  mutation_in: [MutationType!]
-  updatedFields_contains: String
-  updatedFields_contains_every: [String!]
-  updatedFields_contains_some: [String!]
-  node: HouseRulesWhereInput
-  AND: [HouseRulesSubscriptionWhereInput!]
-  OR: [HouseRulesSubscriptionWhereInput!]
-  NOT: [HouseRulesSubscriptionWhereInput!]
-}
-
-input HouseRulesUpdateDataInput {
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-input HouseRulesUpdateInput {
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-input HouseRulesUpdateManyMutationInput {
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  partiesAndEventsAllowed: Boolean
-  additionalRules: String
-}
-
-input HouseRulesUpdateOneInput {
-  create: HouseRulesCreateInput
-  update: HouseRulesUpdateDataInput
-  upsert: HouseRulesUpsertNestedInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: HouseRulesWhereUniqueInput
-}
-
-input HouseRulesUpsertNestedInput {
-  update: HouseRulesUpdateDataInput!
-  create: HouseRulesCreateInput!
-}
-
-input HouseRulesWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  createdAt: DateTime
-  createdAt_not: DateTime
-  createdAt_in: [DateTime!]
-  createdAt_not_in: [DateTime!]
-  createdAt_lt: DateTime
-  createdAt_lte: DateTime
-  createdAt_gt: DateTime
-  createdAt_gte: DateTime
-  updatedAt: DateTime
-  updatedAt_not: DateTime
-  updatedAt_in: [DateTime!]
-  updatedAt_not_in: [DateTime!]
-  updatedAt_lt: DateTime
-  updatedAt_lte: DateTime
-  updatedAt_gt: DateTime
-  updatedAt_gte: DateTime
-  suitableForChildren: Boolean
-  suitableForChildren_not: Boolean
-  suitableForInfants: Boolean
-  suitableForInfants_not: Boolean
-  petsAllowed: Boolean
-  petsAllowed_not: Boolean
-  smokingAllowed: Boolean
-  smokingAllowed_not: Boolean
-  partiesAndEventsAllowed: Boolean
-  partiesAndEventsAllowed_not: Boolean
-  additionalRules: String
-  additionalRules_not: String
-  additionalRules_in: [String!]
-  additionalRules_not_in: [String!]
-  additionalRules_lt: String
-  additionalRules_lte: String
-  additionalRules_gt: String
-  additionalRules_gte: String
-  additionalRules_contains: String
-  additionalRules_not_contains: String
-  additionalRules_starts_with: String
-  additionalRules_not_starts_with: String
-  additionalRules_ends_with: String
-  additionalRules_not_ends_with: String
-  AND: [HouseRulesWhereInput!]
-  OR: [HouseRulesWhereInput!]
-  NOT: [HouseRulesWhereInput!]
-}
-
-input HouseRulesWhereUniqueInput {
-  id: ID
-}
-
 type Location {
+  title: String
   id: ID!
   lat: Float!
   lng: Float!
   neighbourHood: Neighbourhood
-  user: User
-  place: Place
   address: String!
   directions: String!
   experience: Experience
-  restaurant: Restaurant
 }
 
 type LocationConnection {
@@ -2213,16 +1348,19 @@ type LocationConnection {
 }
 
 input LocationCreateInput {
+  title: String
   id: ID
   lat: Float!
   lng: Float!
   neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  user: UserCreateOneWithoutLocationInput
-  place: PlaceCreateOneWithoutLocationInput
   address: String!
   directions: String!
   experience: ExperienceCreateOneWithoutLocationInput
-  restaurant: RestaurantCreateOneWithoutLocationInput
+}
+
+input LocationCreateManyInput {
+  create: [LocationCreateInput!]
+  connect: [LocationWhereUniqueInput!]
 }
 
 input LocationCreateManyWithoutNeighbourHoodInput {
@@ -2230,84 +1368,34 @@ input LocationCreateManyWithoutNeighbourHoodInput {
   connect: [LocationWhereUniqueInput!]
 }
 
+input LocationCreateOneInput {
+  create: LocationCreateInput
+  connect: LocationWhereUniqueInput
+}
+
 input LocationCreateOneWithoutExperienceInput {
   create: LocationCreateWithoutExperienceInput
   connect: LocationWhereUniqueInput
 }
 
-input LocationCreateOneWithoutPlaceInput {
-  create: LocationCreateWithoutPlaceInput
-  connect: LocationWhereUniqueInput
-}
-
-input LocationCreateOneWithoutRestaurantInput {
-  create: LocationCreateWithoutRestaurantInput
-  connect: LocationWhereUniqueInput
-}
-
-input LocationCreateOneWithoutUserInput {
-  create: LocationCreateWithoutUserInput
-  connect: LocationWhereUniqueInput
-}
-
 input LocationCreateWithoutExperienceInput {
+  title: String
   id: ID
   lat: Float!
   lng: Float!
   neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  user: UserCreateOneWithoutLocationInput
-  place: PlaceCreateOneWithoutLocationInput
   address: String!
   directions: String!
-  restaurant: RestaurantCreateOneWithoutLocationInput
 }
 
 input LocationCreateWithoutNeighbourHoodInput {
+  title: String
   id: ID
   lat: Float!
   lng: Float!
-  user: UserCreateOneWithoutLocationInput
-  place: PlaceCreateOneWithoutLocationInput
   address: String!
   directions: String!
   experience: ExperienceCreateOneWithoutLocationInput
-  restaurant: RestaurantCreateOneWithoutLocationInput
-}
-
-input LocationCreateWithoutPlaceInput {
-  id: ID
-  lat: Float!
-  lng: Float!
-  neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  user: UserCreateOneWithoutLocationInput
-  address: String!
-  directions: String!
-  experience: ExperienceCreateOneWithoutLocationInput
-  restaurant: RestaurantCreateOneWithoutLocationInput
-}
-
-input LocationCreateWithoutRestaurantInput {
-  id: ID
-  lat: Float!
-  lng: Float!
-  neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  user: UserCreateOneWithoutLocationInput
-  place: PlaceCreateOneWithoutLocationInput
-  address: String!
-  directions: String!
-  experience: ExperienceCreateOneWithoutLocationInput
-}
-
-input LocationCreateWithoutUserInput {
-  id: ID
-  lat: Float!
-  lng: Float!
-  neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  place: PlaceCreateOneWithoutLocationInput
-  address: String!
-  directions: String!
-  experience: ExperienceCreateOneWithoutLocationInput
-  restaurant: RestaurantCreateOneWithoutLocationInput
 }
 
 type LocationEdge {
@@ -2316,6 +1404,8 @@ type LocationEdge {
 }
 
 enum LocationOrderByInput {
+  title_ASC
+  title_DESC
   id_ASC
   id_DESC
   lat_ASC
@@ -2329,6 +1419,7 @@ enum LocationOrderByInput {
 }
 
 type LocationPreviousValues {
+  title: String
   id: ID!
   lat: Float!
   lng: Float!
@@ -2337,6 +1428,20 @@ type LocationPreviousValues {
 }
 
 input LocationScalarWhereInput {
+  title: String
+  title_not: String
+  title_in: [String!]
+  title_not_in: [String!]
+  title_lt: String
+  title_lte: String
+  title_gt: String
+  title_gte: String
+  title_contains: String
+  title_not_contains: String
+  title_starts_with: String
+  title_not_starts_with: String
+  title_ends_with: String
+  title_not_ends_with: String
   id: ID
   id_not: ID
   id_in: [ID!]
@@ -2418,26 +1523,48 @@ input LocationSubscriptionWhereInput {
   NOT: [LocationSubscriptionWhereInput!]
 }
 
-input LocationUpdateInput {
+input LocationUpdateDataInput {
+  title: String
   lat: Float
   lng: Float
   neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  user: UserUpdateOneWithoutLocationInput
-  place: PlaceUpdateOneWithoutLocationInput
   address: String
   directions: String
   experience: ExperienceUpdateOneWithoutLocationInput
-  restaurant: RestaurantUpdateOneWithoutLocationInput
+}
+
+input LocationUpdateInput {
+  title: String
+  lat: Float
+  lng: Float
+  neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
+  address: String
+  directions: String
+  experience: ExperienceUpdateOneWithoutLocationInput
 }
 
 input LocationUpdateManyDataInput {
+  title: String
   lat: Float
   lng: Float
   address: String
   directions: String
 }
 
+input LocationUpdateManyInput {
+  create: [LocationCreateInput!]
+  update: [LocationUpdateWithWhereUniqueNestedInput!]
+  upsert: [LocationUpsertWithWhereUniqueNestedInput!]
+  delete: [LocationWhereUniqueInput!]
+  connect: [LocationWhereUniqueInput!]
+  set: [LocationWhereUniqueInput!]
+  disconnect: [LocationWhereUniqueInput!]
+  deleteMany: [LocationScalarWhereInput!]
+  updateMany: [LocationUpdateManyWithWhereNestedInput!]
+}
+
 input LocationUpdateManyMutationInput {
+  title: String
   lat: Float
   lng: Float
   address: String
@@ -2461,6 +1588,15 @@ input LocationUpdateManyWithWhereNestedInput {
   data: LocationUpdateManyDataInput!
 }
 
+input LocationUpdateOneInput {
+  create: LocationCreateInput
+  update: LocationUpdateDataInput
+  upsert: LocationUpsertNestedInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: LocationWhereUniqueInput
+}
+
 input LocationUpdateOneRequiredWithoutExperienceInput {
   create: LocationCreateWithoutExperienceInput
   update: LocationUpdateWithoutExperienceDataInput
@@ -2468,82 +1604,27 @@ input LocationUpdateOneRequiredWithoutExperienceInput {
   connect: LocationWhereUniqueInput
 }
 
-input LocationUpdateOneRequiredWithoutPlaceInput {
-  create: LocationCreateWithoutPlaceInput
-  update: LocationUpdateWithoutPlaceDataInput
-  upsert: LocationUpsertWithoutPlaceInput
-  connect: LocationWhereUniqueInput
-}
-
-input LocationUpdateOneRequiredWithoutRestaurantInput {
-  create: LocationCreateWithoutRestaurantInput
-  update: LocationUpdateWithoutRestaurantDataInput
-  upsert: LocationUpsertWithoutRestaurantInput
-  connect: LocationWhereUniqueInput
-}
-
-input LocationUpdateOneWithoutUserInput {
-  create: LocationCreateWithoutUserInput
-  update: LocationUpdateWithoutUserDataInput
-  upsert: LocationUpsertWithoutUserInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: LocationWhereUniqueInput
-}
-
 input LocationUpdateWithoutExperienceDataInput {
+  title: String
   lat: Float
   lng: Float
   neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  user: UserUpdateOneWithoutLocationInput
-  place: PlaceUpdateOneWithoutLocationInput
   address: String
   directions: String
-  restaurant: RestaurantUpdateOneWithoutLocationInput
 }
 
 input LocationUpdateWithoutNeighbourHoodDataInput {
+  title: String
   lat: Float
   lng: Float
-  user: UserUpdateOneWithoutLocationInput
-  place: PlaceUpdateOneWithoutLocationInput
-  address: String
-  directions: String
-  experience: ExperienceUpdateOneWithoutLocationInput
-  restaurant: RestaurantUpdateOneWithoutLocationInput
-}
-
-input LocationUpdateWithoutPlaceDataInput {
-  lat: Float
-  lng: Float
-  neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  user: UserUpdateOneWithoutLocationInput
-  address: String
-  directions: String
-  experience: ExperienceUpdateOneWithoutLocationInput
-  restaurant: RestaurantUpdateOneWithoutLocationInput
-}
-
-input LocationUpdateWithoutRestaurantDataInput {
-  lat: Float
-  lng: Float
-  neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  user: UserUpdateOneWithoutLocationInput
-  place: PlaceUpdateOneWithoutLocationInput
   address: String
   directions: String
   experience: ExperienceUpdateOneWithoutLocationInput
 }
 
-input LocationUpdateWithoutUserDataInput {
-  lat: Float
-  lng: Float
-  neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  place: PlaceUpdateOneWithoutLocationInput
-  address: String
-  directions: String
-  experience: ExperienceUpdateOneWithoutLocationInput
-  restaurant: RestaurantUpdateOneWithoutLocationInput
+input LocationUpdateWithWhereUniqueNestedInput {
+  where: LocationWhereUniqueInput!
+  data: LocationUpdateDataInput!
 }
 
 input LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput {
@@ -2551,24 +1632,20 @@ input LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput {
   data: LocationUpdateWithoutNeighbourHoodDataInput!
 }
 
+input LocationUpsertNestedInput {
+  update: LocationUpdateDataInput!
+  create: LocationCreateInput!
+}
+
 input LocationUpsertWithoutExperienceInput {
   update: LocationUpdateWithoutExperienceDataInput!
   create: LocationCreateWithoutExperienceInput!
 }
 
-input LocationUpsertWithoutPlaceInput {
-  update: LocationUpdateWithoutPlaceDataInput!
-  create: LocationCreateWithoutPlaceInput!
-}
-
-input LocationUpsertWithoutRestaurantInput {
-  update: LocationUpdateWithoutRestaurantDataInput!
-  create: LocationCreateWithoutRestaurantInput!
-}
-
-input LocationUpsertWithoutUserInput {
-  update: LocationUpdateWithoutUserDataInput!
-  create: LocationCreateWithoutUserInput!
+input LocationUpsertWithWhereUniqueNestedInput {
+  where: LocationWhereUniqueInput!
+  update: LocationUpdateDataInput!
+  create: LocationCreateInput!
 }
 
 input LocationUpsertWithWhereUniqueWithoutNeighbourHoodInput {
@@ -2578,6 +1655,20 @@ input LocationUpsertWithWhereUniqueWithoutNeighbourHoodInput {
 }
 
 input LocationWhereInput {
+  title: String
+  title_not: String
+  title_in: [String!]
+  title_not_in: [String!]
+  title_lt: String
+  title_lte: String
+  title_gt: String
+  title_gte: String
+  title_contains: String
+  title_not_contains: String
+  title_starts_with: String
+  title_not_starts_with: String
+  title_ends_with: String
+  title_not_ends_with: String
   id: ID
   id_not: ID
   id_in: [ID!]
@@ -2609,8 +1700,6 @@ input LocationWhereInput {
   lng_gt: Float
   lng_gte: Float
   neighbourHood: NeighbourhoodWhereInput
-  user: UserWhereInput
-  place: PlaceWhereInput
   address: String
   address_not: String
   address_in: [String!]
@@ -2640,7 +1729,6 @@ input LocationWhereInput {
   directions_ends_with: String
   directions_not_ends_with: String
   experience: ExperienceWhereInput
-  restaurant: RestaurantWhereInput
   AND: [LocationWhereInput!]
   OR: [LocationWhereInput!]
   NOT: [LocationWhereInput!]
@@ -2651,6 +1739,311 @@ input LocationWhereUniqueInput {
 }
 
 scalar Long
+
+type MenuItem {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  shortDescription: String!
+  title: String!
+  description: String!
+  pricing: Pricing!
+  pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture!]
+  reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review!]
+}
+
+type MenuItemConnection {
+  pageInfo: PageInfo!
+  edges: [MenuItemEdge]!
+  aggregate: AggregateMenuItem!
+}
+
+input MenuItemCreateInput {
+  id: ID
+  shortDescription: String!
+  title: String!
+  description: String!
+  pricing: PricingCreateOneInput!
+  pictures: PictureCreateManyInput
+  reviews: ReviewCreateManyInput
+}
+
+input MenuItemCreateManyInput {
+  create: [MenuItemCreateInput!]
+  connect: [MenuItemWhereUniqueInput!]
+}
+
+type MenuItemEdge {
+  node: MenuItem!
+  cursor: String!
+}
+
+enum MenuItemOrderByInput {
+  id_ASC
+  id_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
+  shortDescription_ASC
+  shortDescription_DESC
+  title_ASC
+  title_DESC
+  description_ASC
+  description_DESC
+}
+
+type MenuItemPreviousValues {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  shortDescription: String!
+  title: String!
+  description: String!
+}
+
+input MenuItemScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  shortDescription: String
+  shortDescription_not: String
+  shortDescription_in: [String!]
+  shortDescription_not_in: [String!]
+  shortDescription_lt: String
+  shortDescription_lte: String
+  shortDescription_gt: String
+  shortDescription_gte: String
+  shortDescription_contains: String
+  shortDescription_not_contains: String
+  shortDescription_starts_with: String
+  shortDescription_not_starts_with: String
+  shortDescription_ends_with: String
+  shortDescription_not_ends_with: String
+  title: String
+  title_not: String
+  title_in: [String!]
+  title_not_in: [String!]
+  title_lt: String
+  title_lte: String
+  title_gt: String
+  title_gte: String
+  title_contains: String
+  title_not_contains: String
+  title_starts_with: String
+  title_not_starts_with: String
+  title_ends_with: String
+  title_not_ends_with: String
+  description: String
+  description_not: String
+  description_in: [String!]
+  description_not_in: [String!]
+  description_lt: String
+  description_lte: String
+  description_gt: String
+  description_gte: String
+  description_contains: String
+  description_not_contains: String
+  description_starts_with: String
+  description_not_starts_with: String
+  description_ends_with: String
+  description_not_ends_with: String
+  AND: [MenuItemScalarWhereInput!]
+  OR: [MenuItemScalarWhereInput!]
+  NOT: [MenuItemScalarWhereInput!]
+}
+
+type MenuItemSubscriptionPayload {
+  mutation: MutationType!
+  node: MenuItem
+  updatedFields: [String!]
+  previousValues: MenuItemPreviousValues
+}
+
+input MenuItemSubscriptionWhereInput {
+  mutation_in: [MutationType!]
+  updatedFields_contains: String
+  updatedFields_contains_every: [String!]
+  updatedFields_contains_some: [String!]
+  node: MenuItemWhereInput
+  AND: [MenuItemSubscriptionWhereInput!]
+  OR: [MenuItemSubscriptionWhereInput!]
+  NOT: [MenuItemSubscriptionWhereInput!]
+}
+
+input MenuItemUpdateDataInput {
+  shortDescription: String
+  title: String
+  description: String
+  pricing: PricingUpdateOneRequiredInput
+  pictures: PictureUpdateManyInput
+  reviews: ReviewUpdateManyInput
+}
+
+input MenuItemUpdateInput {
+  shortDescription: String
+  title: String
+  description: String
+  pricing: PricingUpdateOneRequiredInput
+  pictures: PictureUpdateManyInput
+  reviews: ReviewUpdateManyInput
+}
+
+input MenuItemUpdateManyDataInput {
+  shortDescription: String
+  title: String
+  description: String
+}
+
+input MenuItemUpdateManyInput {
+  create: [MenuItemCreateInput!]
+  update: [MenuItemUpdateWithWhereUniqueNestedInput!]
+  upsert: [MenuItemUpsertWithWhereUniqueNestedInput!]
+  delete: [MenuItemWhereUniqueInput!]
+  connect: [MenuItemWhereUniqueInput!]
+  set: [MenuItemWhereUniqueInput!]
+  disconnect: [MenuItemWhereUniqueInput!]
+  deleteMany: [MenuItemScalarWhereInput!]
+  updateMany: [MenuItemUpdateManyWithWhereNestedInput!]
+}
+
+input MenuItemUpdateManyMutationInput {
+  shortDescription: String
+  title: String
+  description: String
+}
+
+input MenuItemUpdateManyWithWhereNestedInput {
+  where: MenuItemScalarWhereInput!
+  data: MenuItemUpdateManyDataInput!
+}
+
+input MenuItemUpdateWithWhereUniqueNestedInput {
+  where: MenuItemWhereUniqueInput!
+  data: MenuItemUpdateDataInput!
+}
+
+input MenuItemUpsertWithWhereUniqueNestedInput {
+  where: MenuItemWhereUniqueInput!
+  update: MenuItemUpdateDataInput!
+  create: MenuItemCreateInput!
+}
+
+input MenuItemWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  createdAt: DateTime
+  createdAt_not: DateTime
+  createdAt_in: [DateTime!]
+  createdAt_not_in: [DateTime!]
+  createdAt_lt: DateTime
+  createdAt_lte: DateTime
+  createdAt_gt: DateTime
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+  updatedAt_not: DateTime
+  updatedAt_in: [DateTime!]
+  updatedAt_not_in: [DateTime!]
+  updatedAt_lt: DateTime
+  updatedAt_lte: DateTime
+  updatedAt_gt: DateTime
+  updatedAt_gte: DateTime
+  shortDescription: String
+  shortDescription_not: String
+  shortDescription_in: [String!]
+  shortDescription_not_in: [String!]
+  shortDescription_lt: String
+  shortDescription_lte: String
+  shortDescription_gt: String
+  shortDescription_gte: String
+  shortDescription_contains: String
+  shortDescription_not_contains: String
+  shortDescription_starts_with: String
+  shortDescription_not_starts_with: String
+  shortDescription_ends_with: String
+  shortDescription_not_ends_with: String
+  title: String
+  title_not: String
+  title_in: [String!]
+  title_not_in: [String!]
+  title_lt: String
+  title_lte: String
+  title_gt: String
+  title_gte: String
+  title_contains: String
+  title_not_contains: String
+  title_starts_with: String
+  title_not_starts_with: String
+  title_ends_with: String
+  title_not_ends_with: String
+  description: String
+  description_not: String
+  description_in: [String!]
+  description_not_in: [String!]
+  description_lt: String
+  description_lte: String
+  description_gt: String
+  description_gte: String
+  description_contains: String
+  description_not_contains: String
+  description_starts_with: String
+  description_not_starts_with: String
+  description_ends_with: String
+  description_not_ends_with: String
+  pricing: PricingWhereInput
+  pictures_every: PictureWhereInput
+  pictures_some: PictureWhereInput
+  pictures_none: PictureWhereInput
+  reviews_every: ReviewWhereInput
+  reviews_some: ReviewWhereInput
+  reviews_none: ReviewWhereInput
+  AND: [MenuItemWhereInput!]
+  OR: [MenuItemWhereInput!]
+  NOT: [MenuItemWhereInput!]
+}
+
+input MenuItemWhereUniqueInput {
+  id: ID
+}
 
 type Message {
   id: ID!
@@ -2915,12 +2308,6 @@ input MessageWhereUniqueInput {
 }
 
 type Mutation {
-  createAmenities(data: AmenitiesCreateInput!): Amenities!
-  updateAmenities(data: AmenitiesUpdateInput!, where: AmenitiesWhereUniqueInput!): Amenities
-  updateManyAmenitieses(data: AmenitiesUpdateManyMutationInput!, where: AmenitiesWhereInput): BatchPayload!
-  upsertAmenities(where: AmenitiesWhereUniqueInput!, create: AmenitiesCreateInput!, update: AmenitiesUpdateInput!): Amenities!
-  deleteAmenities(where: AmenitiesWhereUniqueInput!): Amenities
-  deleteManyAmenitieses(where: AmenitiesWhereInput): BatchPayload!
   createCity(data: CityCreateInput!): City!
   updateCity(data: CityUpdateInput!, where: CityWhereUniqueInput!): City
   updateManyCities(data: CityUpdateManyMutationInput!, where: CityWhereInput): BatchPayload!
@@ -2951,24 +2338,18 @@ type Mutation {
   upsertExperienceCategory(where: ExperienceCategoryWhereUniqueInput!, create: ExperienceCategoryCreateInput!, update: ExperienceCategoryUpdateInput!): ExperienceCategory!
   deleteExperienceCategory(where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
   deleteManyExperienceCategories(where: ExperienceCategoryWhereInput): BatchPayload!
-  createGuestRequirements(data: GuestRequirementsCreateInput!): GuestRequirements!
-  updateGuestRequirements(data: GuestRequirementsUpdateInput!, where: GuestRequirementsWhereUniqueInput!): GuestRequirements
-  updateManyGuestRequirementses(data: GuestRequirementsUpdateManyMutationInput!, where: GuestRequirementsWhereInput): BatchPayload!
-  upsertGuestRequirements(where: GuestRequirementsWhereUniqueInput!, create: GuestRequirementsCreateInput!, update: GuestRequirementsUpdateInput!): GuestRequirements!
-  deleteGuestRequirements(where: GuestRequirementsWhereUniqueInput!): GuestRequirements
-  deleteManyGuestRequirementses(where: GuestRequirementsWhereInput): BatchPayload!
-  createHouseRules(data: HouseRulesCreateInput!): HouseRules!
-  updateHouseRules(data: HouseRulesUpdateInput!, where: HouseRulesWhereUniqueInput!): HouseRules
-  updateManyHouseRuleses(data: HouseRulesUpdateManyMutationInput!, where: HouseRulesWhereInput): BatchPayload!
-  upsertHouseRules(where: HouseRulesWhereUniqueInput!, create: HouseRulesCreateInput!, update: HouseRulesUpdateInput!): HouseRules!
-  deleteHouseRules(where: HouseRulesWhereUniqueInput!): HouseRules
-  deleteManyHouseRuleses(where: HouseRulesWhereInput): BatchPayload!
   createLocation(data: LocationCreateInput!): Location!
   updateLocation(data: LocationUpdateInput!, where: LocationWhereUniqueInput!): Location
   updateManyLocations(data: LocationUpdateManyMutationInput!, where: LocationWhereInput): BatchPayload!
   upsertLocation(where: LocationWhereUniqueInput!, create: LocationCreateInput!, update: LocationUpdateInput!): Location!
   deleteLocation(where: LocationWhereUniqueInput!): Location
   deleteManyLocations(where: LocationWhereInput): BatchPayload!
+  createMenuItem(data: MenuItemCreateInput!): MenuItem!
+  updateMenuItem(data: MenuItemUpdateInput!, where: MenuItemWhereUniqueInput!): MenuItem
+  updateManyMenuItems(data: MenuItemUpdateManyMutationInput!, where: MenuItemWhereInput): BatchPayload!
+  upsertMenuItem(where: MenuItemWhereUniqueInput!, create: MenuItemCreateInput!, update: MenuItemUpdateInput!): MenuItem!
+  deleteMenuItem(where: MenuItemWhereUniqueInput!): MenuItem
+  deleteManyMenuItems(where: MenuItemWhereInput): BatchPayload!
   createMessage(data: MessageCreateInput!): Message!
   updateMessage(data: MessageUpdateInput!, where: MessageWhereUniqueInput!): Message
   updateManyMessages(data: MessageUpdateManyMutationInput!, where: MessageWhereInput): BatchPayload!
@@ -3023,12 +2404,6 @@ type Mutation {
   upsertPicture(where: PictureWhereUniqueInput!, create: PictureCreateInput!, update: PictureUpdateInput!): Picture!
   deletePicture(where: PictureWhereUniqueInput!): Picture
   deleteManyPictures(where: PictureWhereInput): BatchPayload!
-  createPlace(data: PlaceCreateInput!): Place!
-  updatePlace(data: PlaceUpdateInput!, where: PlaceWhereUniqueInput!): Place
-  updateManyPlaces(data: PlaceUpdateManyMutationInput!, where: PlaceWhereInput): BatchPayload!
-  upsertPlace(where: PlaceWhereUniqueInput!, create: PlaceCreateInput!, update: PlaceUpdateInput!): Place!
-  deletePlace(where: PlaceWhereUniqueInput!): Place
-  deleteManyPlaces(where: PlaceWhereInput): BatchPayload!
   createPolicies(data: PoliciesCreateInput!): Policies!
   updatePolicies(data: PoliciesUpdateInput!, where: PoliciesWhereUniqueInput!): Policies
   updateManyPolicieses(data: PoliciesUpdateManyMutationInput!, where: PoliciesWhereInput): BatchPayload!
@@ -3059,12 +2434,6 @@ type Mutation {
   upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
   deleteUser(where: UserWhereUniqueInput!): User
   deleteManyUsers(where: UserWhereInput): BatchPayload!
-  createViews(data: ViewsCreateInput!): Views!
-  updateViews(data: ViewsUpdateInput!, where: ViewsWhereUniqueInput!): Views
-  updateManyViewses(data: ViewsUpdateManyMutationInput!, where: ViewsWhereInput): BatchPayload!
-  upsertViews(where: ViewsWhereUniqueInput!, create: ViewsCreateInput!, update: ViewsUpdateInput!): Views!
-  deleteViews(where: ViewsWhereUniqueInput!): Views
-  deleteManyViewses(where: ViewsWhereInput): BatchPayload!
 }
 
 enum MutationType {
@@ -3645,7 +3014,7 @@ type Order {
   id: ID!
   createdAt: DateTime!
   bookee: User!
-  place: Place!
+  restaurant: Restaurant!
   startDate: DateTime!
   endDate: DateTime!
   payment: Payment
@@ -3660,7 +3029,7 @@ type OrderConnection {
 input OrderCreateInput {
   id: ID
   bookee: UserCreateOneWithoutOrdersInput!
-  place: PlaceCreateOneWithoutOrdersInput!
+  restaurant: RestaurantCreateOneWithoutOrdersInput!
   startDate: DateTime!
   endDate: DateTime!
   payment: PaymentCreateOneWithoutOrderInput
@@ -3671,9 +3040,14 @@ input OrderCreateManyWithoutBookeeInput {
   connect: [OrderWhereUniqueInput!]
 }
 
-input OrderCreateManyWithoutPlaceInput {
-  create: [OrderCreateWithoutPlaceInput!]
+input OrderCreateManyWithoutRestaurantInput {
+  create: [OrderCreateWithoutRestaurantInput!]
   connect: [OrderWhereUniqueInput!]
+}
+
+input OrderCreateOneInput {
+  create: OrderCreateInput
+  connect: OrderWhereUniqueInput
 }
 
 input OrderCreateOneWithoutPaymentInput {
@@ -3683,7 +3057,7 @@ input OrderCreateOneWithoutPaymentInput {
 
 input OrderCreateWithoutBookeeInput {
   id: ID
-  place: PlaceCreateOneWithoutOrdersInput!
+  restaurant: RestaurantCreateOneWithoutOrdersInput!
   startDate: DateTime!
   endDate: DateTime!
   payment: PaymentCreateOneWithoutOrderInput
@@ -3692,12 +3066,12 @@ input OrderCreateWithoutBookeeInput {
 input OrderCreateWithoutPaymentInput {
   id: ID
   bookee: UserCreateOneWithoutOrdersInput!
-  place: PlaceCreateOneWithoutOrdersInput!
+  restaurant: RestaurantCreateOneWithoutOrdersInput!
   startDate: DateTime!
   endDate: DateTime!
 }
 
-input OrderCreateWithoutPlaceInput {
+input OrderCreateWithoutRestaurantInput {
   id: ID
   bookee: UserCreateOneWithoutOrdersInput!
   startDate: DateTime!
@@ -3790,9 +3164,17 @@ input OrderSubscriptionWhereInput {
   NOT: [OrderSubscriptionWhereInput!]
 }
 
+input OrderUpdateDataInput {
+  bookee: UserUpdateOneRequiredWithoutOrdersInput
+  restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
+  startDate: DateTime
+  endDate: DateTime
+  payment: PaymentUpdateOneWithoutOrderInput
+}
+
 input OrderUpdateInput {
   bookee: UserUpdateOneRequiredWithoutOrdersInput
-  place: PlaceUpdateOneRequiredWithoutOrdersInput
+  restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
   startDate: DateTime
   endDate: DateTime
   payment: PaymentUpdateOneWithoutOrderInput
@@ -3820,14 +3202,14 @@ input OrderUpdateManyWithoutBookeeInput {
   updateMany: [OrderUpdateManyWithWhereNestedInput!]
 }
 
-input OrderUpdateManyWithoutPlaceInput {
-  create: [OrderCreateWithoutPlaceInput!]
+input OrderUpdateManyWithoutRestaurantInput {
+  create: [OrderCreateWithoutRestaurantInput!]
   delete: [OrderWhereUniqueInput!]
   connect: [OrderWhereUniqueInput!]
   set: [OrderWhereUniqueInput!]
   disconnect: [OrderWhereUniqueInput!]
-  update: [OrderUpdateWithWhereUniqueWithoutPlaceInput!]
-  upsert: [OrderUpsertWithWhereUniqueWithoutPlaceInput!]
+  update: [OrderUpdateWithWhereUniqueWithoutRestaurantInput!]
+  upsert: [OrderUpsertWithWhereUniqueWithoutRestaurantInput!]
   deleteMany: [OrderScalarWhereInput!]
   updateMany: [OrderUpdateManyWithWhereNestedInput!]
 }
@@ -3835,6 +3217,13 @@ input OrderUpdateManyWithoutPlaceInput {
 input OrderUpdateManyWithWhereNestedInput {
   where: OrderScalarWhereInput!
   data: OrderUpdateManyDataInput!
+}
+
+input OrderUpdateOneRequiredInput {
+  create: OrderCreateInput
+  update: OrderUpdateDataInput
+  upsert: OrderUpsertNestedInput
+  connect: OrderWhereUniqueInput
 }
 
 input OrderUpdateOneRequiredWithoutPaymentInput {
@@ -3845,7 +3234,7 @@ input OrderUpdateOneRequiredWithoutPaymentInput {
 }
 
 input OrderUpdateWithoutBookeeDataInput {
-  place: PlaceUpdateOneRequiredWithoutOrdersInput
+  restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
   startDate: DateTime
   endDate: DateTime
   payment: PaymentUpdateOneWithoutOrderInput
@@ -3853,12 +3242,12 @@ input OrderUpdateWithoutBookeeDataInput {
 
 input OrderUpdateWithoutPaymentDataInput {
   bookee: UserUpdateOneRequiredWithoutOrdersInput
-  place: PlaceUpdateOneRequiredWithoutOrdersInput
+  restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
   startDate: DateTime
   endDate: DateTime
 }
 
-input OrderUpdateWithoutPlaceDataInput {
+input OrderUpdateWithoutRestaurantDataInput {
   bookee: UserUpdateOneRequiredWithoutOrdersInput
   startDate: DateTime
   endDate: DateTime
@@ -3870,9 +3259,14 @@ input OrderUpdateWithWhereUniqueWithoutBookeeInput {
   data: OrderUpdateWithoutBookeeDataInput!
 }
 
-input OrderUpdateWithWhereUniqueWithoutPlaceInput {
+input OrderUpdateWithWhereUniqueWithoutRestaurantInput {
   where: OrderWhereUniqueInput!
-  data: OrderUpdateWithoutPlaceDataInput!
+  data: OrderUpdateWithoutRestaurantDataInput!
+}
+
+input OrderUpsertNestedInput {
+  update: OrderUpdateDataInput!
+  create: OrderCreateInput!
 }
 
 input OrderUpsertWithoutPaymentInput {
@@ -3886,10 +3280,10 @@ input OrderUpsertWithWhereUniqueWithoutBookeeInput {
   create: OrderCreateWithoutBookeeInput!
 }
 
-input OrderUpsertWithWhereUniqueWithoutPlaceInput {
+input OrderUpsertWithWhereUniqueWithoutRestaurantInput {
   where: OrderWhereUniqueInput!
-  update: OrderUpdateWithoutPlaceDataInput!
-  create: OrderCreateWithoutPlaceInput!
+  update: OrderUpdateWithoutRestaurantDataInput!
+  create: OrderCreateWithoutRestaurantInput!
 }
 
 input OrderWhereInput {
@@ -3916,7 +3310,7 @@ input OrderWhereInput {
   createdAt_gt: DateTime
   createdAt_gte: DateTime
   bookee: UserWhereInput
-  place: PlaceWhereInput
+  restaurant: RestaurantWhereInput
   startDate: DateTime
   startDate_not: DateTime
   startDate_in: [DateTime!]
@@ -3954,7 +3348,7 @@ type Payment {
   id: ID!
   createdAt: DateTime!
   serviceFee: Float!
-  placePrice: Float!
+  restaurantPrice: Float!
   totalPrice: Float!
   order: Order!
   paymentMethod: PaymentAccount!
@@ -3974,7 +3368,9 @@ type PaymentAccount {
   user: User!
   payments(where: PaymentWhereInput, orderBy: PaymentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Payment!]
   paypal: PaypalInformation
+  paytm: PaytmInformation
   creditcard: CreditCardInformation
+  debitcard: DebitCardInformation
 }
 
 type PaymentAccountConnection {
@@ -3989,7 +3385,9 @@ input PaymentAccountCreateInput {
   user: UserCreateOneWithoutPaymentAccountInput!
   payments: PaymentCreateManyWithoutPaymentMethodInput
   paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountCreateManyWithoutUserInput {
@@ -3997,13 +3395,13 @@ input PaymentAccountCreateManyWithoutUserInput {
   connect: [PaymentAccountWhereUniqueInput!]
 }
 
-input PaymentAccountCreateOneInput {
-  create: PaymentAccountCreateInput
+input PaymentAccountCreateOneWithoutCreditcardInput {
+  create: PaymentAccountCreateWithoutCreditcardInput
   connect: PaymentAccountWhereUniqueInput
 }
 
-input PaymentAccountCreateOneWithoutCreditcardInput {
-  create: PaymentAccountCreateWithoutCreditcardInput
+input PaymentAccountCreateOneWithoutDebitcardInput {
+  create: PaymentAccountCreateWithoutDebitcardInput
   connect: PaymentAccountWhereUniqueInput
 }
 
@@ -4017,12 +3415,29 @@ input PaymentAccountCreateOneWithoutPaypalInput {
   connect: PaymentAccountWhereUniqueInput
 }
 
+input PaymentAccountCreateOneWithoutPaytmInput {
+  create: PaymentAccountCreateWithoutPaytmInput
+  connect: PaymentAccountWhereUniqueInput
+}
+
 input PaymentAccountCreateWithoutCreditcardInput {
   id: ID
   type: PAYMENT_PROVIDER
   user: UserCreateOneWithoutPaymentAccountInput!
   payments: PaymentCreateManyWithoutPaymentMethodInput
   paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
+}
+
+input PaymentAccountCreateWithoutDebitcardInput {
+  id: ID
+  type: PAYMENT_PROVIDER
+  user: UserCreateOneWithoutPaymentAccountInput!
+  payments: PaymentCreateManyWithoutPaymentMethodInput
+  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
+  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountCreateWithoutPaymentsInput {
@@ -4030,7 +3445,9 @@ input PaymentAccountCreateWithoutPaymentsInput {
   type: PAYMENT_PROVIDER
   user: UserCreateOneWithoutPaymentAccountInput!
   paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountCreateWithoutPaypalInput {
@@ -4038,7 +3455,19 @@ input PaymentAccountCreateWithoutPaypalInput {
   type: PAYMENT_PROVIDER
   user: UserCreateOneWithoutPaymentAccountInput!
   payments: PaymentCreateManyWithoutPaymentMethodInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
+}
+
+input PaymentAccountCreateWithoutPaytmInput {
+  id: ID
+  type: PAYMENT_PROVIDER
+  user: UserCreateOneWithoutPaymentAccountInput!
+  payments: PaymentCreateManyWithoutPaymentMethodInput
+  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountCreateWithoutUserInput {
@@ -4046,7 +3475,9 @@ input PaymentAccountCreateWithoutUserInput {
   type: PAYMENT_PROVIDER
   payments: PaymentCreateManyWithoutPaymentMethodInput
   paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 type PaymentAccountEdge {
@@ -4119,20 +3550,14 @@ input PaymentAccountSubscriptionWhereInput {
   NOT: [PaymentAccountSubscriptionWhereInput!]
 }
 
-input PaymentAccountUpdateDataInput {
-  type: PAYMENT_PROVIDER
-  user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-}
-
 input PaymentAccountUpdateInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
   payments: PaymentUpdateManyWithoutPaymentMethodInput
   paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountUpdateManyDataInput {
@@ -4160,22 +3585,6 @@ input PaymentAccountUpdateManyWithWhereNestedInput {
   data: PaymentAccountUpdateManyDataInput!
 }
 
-input PaymentAccountUpdateOneInput {
-  create: PaymentAccountCreateInput
-  update: PaymentAccountUpdateDataInput
-  upsert: PaymentAccountUpsertNestedInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountUpdateOneRequiredInput {
-  create: PaymentAccountCreateInput
-  update: PaymentAccountUpdateDataInput
-  upsert: PaymentAccountUpsertNestedInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
 input PaymentAccountUpdateOneRequiredWithoutPaymentsInput {
   create: PaymentAccountCreateWithoutPaymentsInput
   update: PaymentAccountUpdateWithoutPaymentsDataInput
@@ -4190,10 +3599,26 @@ input PaymentAccountUpdateOneRequiredWithoutPaypalInput {
   connect: PaymentAccountWhereUniqueInput
 }
 
+input PaymentAccountUpdateOneRequiredWithoutPaytmInput {
+  create: PaymentAccountCreateWithoutPaytmInput
+  update: PaymentAccountUpdateWithoutPaytmDataInput
+  upsert: PaymentAccountUpsertWithoutPaytmInput
+  connect: PaymentAccountWhereUniqueInput
+}
+
 input PaymentAccountUpdateOneWithoutCreditcardInput {
   create: PaymentAccountCreateWithoutCreditcardInput
   update: PaymentAccountUpdateWithoutCreditcardDataInput
   upsert: PaymentAccountUpsertWithoutCreditcardInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: PaymentAccountWhereUniqueInput
+}
+
+input PaymentAccountUpdateOneWithoutDebitcardInput {
+  create: PaymentAccountCreateWithoutDebitcardInput
+  update: PaymentAccountUpdateWithoutDebitcardDataInput
+  upsert: PaymentAccountUpsertWithoutDebitcardInput
   delete: Boolean
   disconnect: Boolean
   connect: PaymentAccountWhereUniqueInput
@@ -4204,27 +3629,53 @@ input PaymentAccountUpdateWithoutCreditcardDataInput {
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
   payments: PaymentUpdateManyWithoutPaymentMethodInput
   paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
+}
+
+input PaymentAccountUpdateWithoutDebitcardDataInput {
+  type: PAYMENT_PROVIDER
+  user: UserUpdateOneRequiredWithoutPaymentAccountInput
+  payments: PaymentUpdateManyWithoutPaymentMethodInput
+  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
+  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountUpdateWithoutPaymentsDataInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
   paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountUpdateWithoutPaypalDataInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
   payments: PaymentUpdateManyWithoutPaymentMethodInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
+}
+
+input PaymentAccountUpdateWithoutPaytmDataInput {
+  type: PAYMENT_PROVIDER
+  user: UserUpdateOneRequiredWithoutPaymentAccountInput
+  payments: PaymentUpdateManyWithoutPaymentMethodInput
+  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountUpdateWithoutUserDataInput {
   type: PAYMENT_PROVIDER
   payments: PaymentUpdateManyWithoutPaymentMethodInput
   paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
@@ -4232,14 +3683,14 @@ input PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
   data: PaymentAccountUpdateWithoutUserDataInput!
 }
 
-input PaymentAccountUpsertNestedInput {
-  update: PaymentAccountUpdateDataInput!
-  create: PaymentAccountCreateInput!
-}
-
 input PaymentAccountUpsertWithoutCreditcardInput {
   update: PaymentAccountUpdateWithoutCreditcardDataInput!
   create: PaymentAccountCreateWithoutCreditcardInput!
+}
+
+input PaymentAccountUpsertWithoutDebitcardInput {
+  update: PaymentAccountUpdateWithoutDebitcardDataInput!
+  create: PaymentAccountCreateWithoutDebitcardInput!
 }
 
 input PaymentAccountUpsertWithoutPaymentsInput {
@@ -4250,6 +3701,11 @@ input PaymentAccountUpsertWithoutPaymentsInput {
 input PaymentAccountUpsertWithoutPaypalInput {
   update: PaymentAccountUpdateWithoutPaypalDataInput!
   create: PaymentAccountCreateWithoutPaypalInput!
+}
+
+input PaymentAccountUpsertWithoutPaytmInput {
+  update: PaymentAccountUpdateWithoutPaytmDataInput!
+  create: PaymentAccountCreateWithoutPaytmInput!
 }
 
 input PaymentAccountUpsertWithWhereUniqueWithoutUserInput {
@@ -4290,7 +3746,9 @@ input PaymentAccountWhereInput {
   payments_some: PaymentWhereInput
   payments_none: PaymentWhereInput
   paypal: PaypalInformationWhereInput
+  paytm: PaytmInformationWhereInput
   creditcard: CreditCardInformationWhereInput
+  debitcard: DebitCardInformationWhereInput
   AND: [PaymentAccountWhereInput!]
   OR: [PaymentAccountWhereInput!]
   NOT: [PaymentAccountWhereInput!]
@@ -4309,7 +3767,7 @@ type PaymentConnection {
 input PaymentCreateInput {
   id: ID
   serviceFee: Float!
-  placePrice: Float!
+  restaurantPrice: Float!
   totalPrice: Float!
   order: OrderCreateOneWithoutPaymentInput!
   paymentMethod: PaymentAccountCreateOneWithoutPaymentsInput!
@@ -4328,7 +3786,7 @@ input PaymentCreateOneWithoutOrderInput {
 input PaymentCreateWithoutOrderInput {
   id: ID
   serviceFee: Float!
-  placePrice: Float!
+  restaurantPrice: Float!
   totalPrice: Float!
   paymentMethod: PaymentAccountCreateOneWithoutPaymentsInput!
 }
@@ -4336,7 +3794,7 @@ input PaymentCreateWithoutOrderInput {
 input PaymentCreateWithoutPaymentMethodInput {
   id: ID
   serviceFee: Float!
-  placePrice: Float!
+  restaurantPrice: Float!
   totalPrice: Float!
   order: OrderCreateOneWithoutPaymentInput!
 }
@@ -4353,8 +3811,8 @@ enum PaymentOrderByInput {
   createdAt_DESC
   serviceFee_ASC
   serviceFee_DESC
-  placePrice_ASC
-  placePrice_DESC
+  restaurantPrice_ASC
+  restaurantPrice_DESC
   totalPrice_ASC
   totalPrice_DESC
 }
@@ -4363,7 +3821,7 @@ type PaymentPreviousValues {
   id: ID!
   createdAt: DateTime!
   serviceFee: Float!
-  placePrice: Float!
+  restaurantPrice: Float!
   totalPrice: Float!
 }
 
@@ -4398,14 +3856,14 @@ input PaymentScalarWhereInput {
   serviceFee_lte: Float
   serviceFee_gt: Float
   serviceFee_gte: Float
-  placePrice: Float
-  placePrice_not: Float
-  placePrice_in: [Float!]
-  placePrice_not_in: [Float!]
-  placePrice_lt: Float
-  placePrice_lte: Float
-  placePrice_gt: Float
-  placePrice_gte: Float
+  restaurantPrice: Float
+  restaurantPrice_not: Float
+  restaurantPrice_in: [Float!]
+  restaurantPrice_not_in: [Float!]
+  restaurantPrice_lt: Float
+  restaurantPrice_lte: Float
+  restaurantPrice_gt: Float
+  restaurantPrice_gte: Float
   totalPrice: Float
   totalPrice_not: Float
   totalPrice_in: [Float!]
@@ -4439,7 +3897,7 @@ input PaymentSubscriptionWhereInput {
 
 input PaymentUpdateInput {
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
   order: OrderUpdateOneRequiredWithoutPaymentInput
   paymentMethod: PaymentAccountUpdateOneRequiredWithoutPaymentsInput
@@ -4447,13 +3905,13 @@ input PaymentUpdateInput {
 
 input PaymentUpdateManyDataInput {
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
 }
 
 input PaymentUpdateManyMutationInput {
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
 }
 
@@ -4485,14 +3943,14 @@ input PaymentUpdateOneWithoutOrderInput {
 
 input PaymentUpdateWithoutOrderDataInput {
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
   paymentMethod: PaymentAccountUpdateOneRequiredWithoutPaymentsInput
 }
 
 input PaymentUpdateWithoutPaymentMethodDataInput {
   serviceFee: Float
-  placePrice: Float
+  restaurantPrice: Float
   totalPrice: Float
   order: OrderUpdateOneRequiredWithoutPaymentInput
 }
@@ -4544,14 +4002,14 @@ input PaymentWhereInput {
   serviceFee_lte: Float
   serviceFee_gt: Float
   serviceFee_gte: Float
-  placePrice: Float
-  placePrice_not: Float
-  placePrice_in: [Float!]
-  placePrice_not_in: [Float!]
-  placePrice_lt: Float
-  placePrice_lte: Float
-  placePrice_gt: Float
-  placePrice_gte: Float
+  restaurantPrice: Float
+  restaurantPrice_not: Float
+  restaurantPrice_in: [Float!]
+  restaurantPrice_not_in: [Float!]
+  restaurantPrice_lt: Float
+  restaurantPrice_lte: Float
+  restaurantPrice_gt: Float
+  restaurantPrice_gte: Float
   totalPrice: Float
   totalPrice_not: Float
   totalPrice_in: [Float!]
@@ -4728,7 +4186,17 @@ type PaytmInformationConnection {
 input PaytmInformationCreateInput {
   id: ID
   phone: String!
-  paymentAccount: PaymentAccountCreateOneInput!
+  paymentAccount: PaymentAccountCreateOneWithoutPaytmInput!
+}
+
+input PaytmInformationCreateOneWithoutPaymentAccountInput {
+  create: PaytmInformationCreateWithoutPaymentAccountInput
+  connect: PaytmInformationWhereUniqueInput
+}
+
+input PaytmInformationCreateWithoutPaymentAccountInput {
+  id: ID
+  phone: String!
 }
 
 type PaytmInformationEdge {
@@ -4771,11 +4239,29 @@ input PaytmInformationSubscriptionWhereInput {
 
 input PaytmInformationUpdateInput {
   phone: String
-  paymentAccount: PaymentAccountUpdateOneRequiredInput
+  paymentAccount: PaymentAccountUpdateOneRequiredWithoutPaytmInput
 }
 
 input PaytmInformationUpdateManyMutationInput {
   phone: String
+}
+
+input PaytmInformationUpdateOneWithoutPaymentAccountInput {
+  create: PaytmInformationCreateWithoutPaymentAccountInput
+  update: PaytmInformationUpdateWithoutPaymentAccountDataInput
+  upsert: PaytmInformationUpsertWithoutPaymentAccountInput
+  delete: Boolean
+  disconnect: Boolean
+  connect: PaytmInformationWhereUniqueInput
+}
+
+input PaytmInformationUpdateWithoutPaymentAccountDataInput {
+  phone: String
+}
+
+input PaytmInformationUpsertWithoutPaymentAccountInput {
+  update: PaytmInformationUpdateWithoutPaymentAccountDataInput!
+  create: PaytmInformationCreateWithoutPaymentAccountInput!
 }
 
 input PaytmInformationWhereInput {
@@ -5023,1048 +4509,12 @@ input PictureWhereUniqueInput {
   id: ID
 }
 
-type Place {
-  id: ID!
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review!]
-  amenities: Amenities!
-  host: User!
-  pricing: Pricing!
-  location: Location!
-  views: Views!
-  guestRequirements: GuestRequirements
-  policies: Policies
-  houseRules: HouseRules
-  orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order!]
-  pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture!]
-  popularity: Int!
-}
-
-enum PLACE_SIZES {
-  ENTIRE_HOUSE
-  ENTIRE_APARTMENT
-  ENTIRE_EARTH_HOUSE
-  ENTIRE_CABIN
-  ENTIRE_VILLA
-  ENTIRE_PLACE
-  ENTIRE_BOAT
-  PRIVATE_ROOM
-}
-
-type PlaceConnection {
-  pageInfo: PageInfo!
-  edges: [PlaceEdge]!
-  aggregate: AggregatePlace!
-}
-
-input PlaceCreateInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-  popularity: Int!
-}
-
-input PlaceCreateManyWithoutHostInput {
-  create: [PlaceCreateWithoutHostInput!]
-  connect: [PlaceWhereUniqueInput!]
-}
-
-input PlaceCreateOneWithoutAmenitiesInput {
-  create: PlaceCreateWithoutAmenitiesInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutGuestRequirementsInput {
-  create: PlaceCreateWithoutGuestRequirementsInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutLocationInput {
-  create: PlaceCreateWithoutLocationInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutOrdersInput {
-  create: PlaceCreateWithoutOrdersInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutPoliciesInput {
-  create: PlaceCreateWithoutPoliciesInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutPricingInput {
-  create: PlaceCreateWithoutPricingInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutReviewsInput {
-  create: PlaceCreateWithoutReviewsInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateOneWithoutViewsInput {
-  create: PlaceCreateWithoutViewsInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceCreateWithoutAmenitiesInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-  popularity: Int!
-}
-
-input PlaceCreateWithoutGuestRequirementsInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-  popularity: Int!
-}
-
-input PlaceCreateWithoutHostInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-  popularity: Int!
-}
-
-input PlaceCreateWithoutLocationInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-  popularity: Int!
-}
-
-input PlaceCreateWithoutOrdersInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  pictures: PictureCreateManyInput
-  popularity: Int!
-}
-
-input PlaceCreateWithoutPoliciesInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-  popularity: Int!
-}
-
-input PlaceCreateWithoutPricingInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-  popularity: Int!
-}
-
-input PlaceCreateWithoutReviewsInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  views: ViewsCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-  popularity: Int!
-}
-
-input PlaceCreateWithoutViewsInput {
-  id: ID
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  reviews: ReviewCreateManyWithoutPlaceInput
-  amenities: AmenitiesCreateOneWithoutPlaceInput!
-  host: UserCreateOneWithoutOwnedPlacesInput!
-  pricing: PricingCreateOneWithoutPlaceInput!
-  location: LocationCreateOneWithoutPlaceInput!
-  guestRequirements: GuestRequirementsCreateOneWithoutPlaceInput
-  policies: PoliciesCreateOneWithoutPlaceInput
-  houseRules: HouseRulesCreateOneInput
-  orders: OrderCreateManyWithoutPlaceInput
-  pictures: PictureCreateManyInput
-  popularity: Int!
-}
-
-type PlaceEdge {
-  node: Place!
-  cursor: String!
-}
-
-enum PlaceOrderByInput {
-  id_ASC
-  id_DESC
-  name_ASC
-  name_DESC
-  size_ASC
-  size_DESC
-  shortDescription_ASC
-  shortDescription_DESC
-  description_ASC
-  description_DESC
-  slug_ASC
-  slug_DESC
-  maxGuests_ASC
-  maxGuests_DESC
-  numBedrooms_ASC
-  numBedrooms_DESC
-  numBeds_ASC
-  numBeds_DESC
-  numBaths_ASC
-  numBaths_DESC
-  popularity_ASC
-  popularity_DESC
-}
-
-type PlacePreviousValues {
-  id: ID!
-  name: String!
-  size: PLACE_SIZES
-  shortDescription: String!
-  description: String!
-  slug: String!
-  maxGuests: Int!
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
-  popularity: Int!
-}
-
-input PlaceScalarWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
-  size: PLACE_SIZES
-  size_not: PLACE_SIZES
-  size_in: [PLACE_SIZES!]
-  size_not_in: [PLACE_SIZES!]
-  shortDescription: String
-  shortDescription_not: String
-  shortDescription_in: [String!]
-  shortDescription_not_in: [String!]
-  shortDescription_lt: String
-  shortDescription_lte: String
-  shortDescription_gt: String
-  shortDescription_gte: String
-  shortDescription_contains: String
-  shortDescription_not_contains: String
-  shortDescription_starts_with: String
-  shortDescription_not_starts_with: String
-  shortDescription_ends_with: String
-  shortDescription_not_ends_with: String
-  description: String
-  description_not: String
-  description_in: [String!]
-  description_not_in: [String!]
-  description_lt: String
-  description_lte: String
-  description_gt: String
-  description_gte: String
-  description_contains: String
-  description_not_contains: String
-  description_starts_with: String
-  description_not_starts_with: String
-  description_ends_with: String
-  description_not_ends_with: String
-  slug: String
-  slug_not: String
-  slug_in: [String!]
-  slug_not_in: [String!]
-  slug_lt: String
-  slug_lte: String
-  slug_gt: String
-  slug_gte: String
-  slug_contains: String
-  slug_not_contains: String
-  slug_starts_with: String
-  slug_not_starts_with: String
-  slug_ends_with: String
-  slug_not_ends_with: String
-  maxGuests: Int
-  maxGuests_not: Int
-  maxGuests_in: [Int!]
-  maxGuests_not_in: [Int!]
-  maxGuests_lt: Int
-  maxGuests_lte: Int
-  maxGuests_gt: Int
-  maxGuests_gte: Int
-  numBedrooms: Int
-  numBedrooms_not: Int
-  numBedrooms_in: [Int!]
-  numBedrooms_not_in: [Int!]
-  numBedrooms_lt: Int
-  numBedrooms_lte: Int
-  numBedrooms_gt: Int
-  numBedrooms_gte: Int
-  numBeds: Int
-  numBeds_not: Int
-  numBeds_in: [Int!]
-  numBeds_not_in: [Int!]
-  numBeds_lt: Int
-  numBeds_lte: Int
-  numBeds_gt: Int
-  numBeds_gte: Int
-  numBaths: Int
-  numBaths_not: Int
-  numBaths_in: [Int!]
-  numBaths_not_in: [Int!]
-  numBaths_lt: Int
-  numBaths_lte: Int
-  numBaths_gt: Int
-  numBaths_gte: Int
-  popularity: Int
-  popularity_not: Int
-  popularity_in: [Int!]
-  popularity_not_in: [Int!]
-  popularity_lt: Int
-  popularity_lte: Int
-  popularity_gt: Int
-  popularity_gte: Int
-  AND: [PlaceScalarWhereInput!]
-  OR: [PlaceScalarWhereInput!]
-  NOT: [PlaceScalarWhereInput!]
-}
-
-type PlaceSubscriptionPayload {
-  mutation: MutationType!
-  node: Place
-  updatedFields: [String!]
-  previousValues: PlacePreviousValues
-}
-
-input PlaceSubscriptionWhereInput {
-  mutation_in: [MutationType!]
-  updatedFields_contains: String
-  updatedFields_contains_every: [String!]
-  updatedFields_contains_some: [String!]
-  node: PlaceWhereInput
-  AND: [PlaceSubscriptionWhereInput!]
-  OR: [PlaceSubscriptionWhereInput!]
-  NOT: [PlaceSubscriptionWhereInput!]
-}
-
-input PlaceUpdateInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-  popularity: Int
-}
-
-input PlaceUpdateManyDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-}
-
-input PlaceUpdateManyMutationInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  popularity: Int
-}
-
-input PlaceUpdateManyWithoutHostInput {
-  create: [PlaceCreateWithoutHostInput!]
-  delete: [PlaceWhereUniqueInput!]
-  connect: [PlaceWhereUniqueInput!]
-  set: [PlaceWhereUniqueInput!]
-  disconnect: [PlaceWhereUniqueInput!]
-  update: [PlaceUpdateWithWhereUniqueWithoutHostInput!]
-  upsert: [PlaceUpsertWithWhereUniqueWithoutHostInput!]
-  deleteMany: [PlaceScalarWhereInput!]
-  updateMany: [PlaceUpdateManyWithWhereNestedInput!]
-}
-
-input PlaceUpdateManyWithWhereNestedInput {
-  where: PlaceScalarWhereInput!
-  data: PlaceUpdateManyDataInput!
-}
-
-input PlaceUpdateOneRequiredWithoutAmenitiesInput {
-  create: PlaceCreateWithoutAmenitiesInput
-  update: PlaceUpdateWithoutAmenitiesDataInput
-  upsert: PlaceUpsertWithoutAmenitiesInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceUpdateOneRequiredWithoutGuestRequirementsInput {
-  create: PlaceCreateWithoutGuestRequirementsInput
-  update: PlaceUpdateWithoutGuestRequirementsDataInput
-  upsert: PlaceUpsertWithoutGuestRequirementsInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceUpdateOneRequiredWithoutOrdersInput {
-  create: PlaceCreateWithoutOrdersInput
-  update: PlaceUpdateWithoutOrdersDataInput
-  upsert: PlaceUpsertWithoutOrdersInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceUpdateOneRequiredWithoutPoliciesInput {
-  create: PlaceCreateWithoutPoliciesInput
-  update: PlaceUpdateWithoutPoliciesDataInput
-  upsert: PlaceUpsertWithoutPoliciesInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceUpdateOneRequiredWithoutPricingInput {
-  create: PlaceCreateWithoutPricingInput
-  update: PlaceUpdateWithoutPricingDataInput
-  upsert: PlaceUpsertWithoutPricingInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceUpdateOneRequiredWithoutReviewsInput {
-  create: PlaceCreateWithoutReviewsInput
-  update: PlaceUpdateWithoutReviewsDataInput
-  upsert: PlaceUpsertWithoutReviewsInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceUpdateOneRequiredWithoutViewsInput {
-  create: PlaceCreateWithoutViewsInput
-  update: PlaceUpdateWithoutViewsDataInput
-  upsert: PlaceUpsertWithoutViewsInput
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceUpdateOneWithoutLocationInput {
-  create: PlaceCreateWithoutLocationInput
-  update: PlaceUpdateWithoutLocationDataInput
-  upsert: PlaceUpsertWithoutLocationInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: PlaceWhereUniqueInput
-}
-
-input PlaceUpdateWithoutAmenitiesDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-  popularity: Int
-}
-
-input PlaceUpdateWithoutGuestRequirementsDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-  popularity: Int
-}
-
-input PlaceUpdateWithoutHostDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-  popularity: Int
-}
-
-input PlaceUpdateWithoutLocationDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-  popularity: Int
-}
-
-input PlaceUpdateWithoutOrdersDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  pictures: PictureUpdateManyInput
-  popularity: Int
-}
-
-input PlaceUpdateWithoutPoliciesDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-  popularity: Int
-}
-
-input PlaceUpdateWithoutPricingDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-  popularity: Int
-}
-
-input PlaceUpdateWithoutReviewsDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  views: ViewsUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-  popularity: Int
-}
-
-input PlaceUpdateWithoutViewsDataInput {
-  name: String
-  size: PLACE_SIZES
-  shortDescription: String
-  description: String
-  slug: String
-  maxGuests: Int
-  numBedrooms: Int
-  numBeds: Int
-  numBaths: Int
-  reviews: ReviewUpdateManyWithoutPlaceInput
-  amenities: AmenitiesUpdateOneRequiredWithoutPlaceInput
-  host: UserUpdateOneRequiredWithoutOwnedPlacesInput
-  pricing: PricingUpdateOneRequiredWithoutPlaceInput
-  location: LocationUpdateOneRequiredWithoutPlaceInput
-  guestRequirements: GuestRequirementsUpdateOneWithoutPlaceInput
-  policies: PoliciesUpdateOneWithoutPlaceInput
-  houseRules: HouseRulesUpdateOneInput
-  orders: OrderUpdateManyWithoutPlaceInput
-  pictures: PictureUpdateManyInput
-  popularity: Int
-}
-
-input PlaceUpdateWithWhereUniqueWithoutHostInput {
-  where: PlaceWhereUniqueInput!
-  data: PlaceUpdateWithoutHostDataInput!
-}
-
-input PlaceUpsertWithoutAmenitiesInput {
-  update: PlaceUpdateWithoutAmenitiesDataInput!
-  create: PlaceCreateWithoutAmenitiesInput!
-}
-
-input PlaceUpsertWithoutGuestRequirementsInput {
-  update: PlaceUpdateWithoutGuestRequirementsDataInput!
-  create: PlaceCreateWithoutGuestRequirementsInput!
-}
-
-input PlaceUpsertWithoutLocationInput {
-  update: PlaceUpdateWithoutLocationDataInput!
-  create: PlaceCreateWithoutLocationInput!
-}
-
-input PlaceUpsertWithoutOrdersInput {
-  update: PlaceUpdateWithoutOrdersDataInput!
-  create: PlaceCreateWithoutOrdersInput!
-}
-
-input PlaceUpsertWithoutPoliciesInput {
-  update: PlaceUpdateWithoutPoliciesDataInput!
-  create: PlaceCreateWithoutPoliciesInput!
-}
-
-input PlaceUpsertWithoutPricingInput {
-  update: PlaceUpdateWithoutPricingDataInput!
-  create: PlaceCreateWithoutPricingInput!
-}
-
-input PlaceUpsertWithoutReviewsInput {
-  update: PlaceUpdateWithoutReviewsDataInput!
-  create: PlaceCreateWithoutReviewsInput!
-}
-
-input PlaceUpsertWithoutViewsInput {
-  update: PlaceUpdateWithoutViewsDataInput!
-  create: PlaceCreateWithoutViewsInput!
-}
-
-input PlaceUpsertWithWhereUniqueWithoutHostInput {
-  where: PlaceWhereUniqueInput!
-  update: PlaceUpdateWithoutHostDataInput!
-  create: PlaceCreateWithoutHostInput!
-}
-
-input PlaceWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
-  size: PLACE_SIZES
-  size_not: PLACE_SIZES
-  size_in: [PLACE_SIZES!]
-  size_not_in: [PLACE_SIZES!]
-  shortDescription: String
-  shortDescription_not: String
-  shortDescription_in: [String!]
-  shortDescription_not_in: [String!]
-  shortDescription_lt: String
-  shortDescription_lte: String
-  shortDescription_gt: String
-  shortDescription_gte: String
-  shortDescription_contains: String
-  shortDescription_not_contains: String
-  shortDescription_starts_with: String
-  shortDescription_not_starts_with: String
-  shortDescription_ends_with: String
-  shortDescription_not_ends_with: String
-  description: String
-  description_not: String
-  description_in: [String!]
-  description_not_in: [String!]
-  description_lt: String
-  description_lte: String
-  description_gt: String
-  description_gte: String
-  description_contains: String
-  description_not_contains: String
-  description_starts_with: String
-  description_not_starts_with: String
-  description_ends_with: String
-  description_not_ends_with: String
-  slug: String
-  slug_not: String
-  slug_in: [String!]
-  slug_not_in: [String!]
-  slug_lt: String
-  slug_lte: String
-  slug_gt: String
-  slug_gte: String
-  slug_contains: String
-  slug_not_contains: String
-  slug_starts_with: String
-  slug_not_starts_with: String
-  slug_ends_with: String
-  slug_not_ends_with: String
-  maxGuests: Int
-  maxGuests_not: Int
-  maxGuests_in: [Int!]
-  maxGuests_not_in: [Int!]
-  maxGuests_lt: Int
-  maxGuests_lte: Int
-  maxGuests_gt: Int
-  maxGuests_gte: Int
-  numBedrooms: Int
-  numBedrooms_not: Int
-  numBedrooms_in: [Int!]
-  numBedrooms_not_in: [Int!]
-  numBedrooms_lt: Int
-  numBedrooms_lte: Int
-  numBedrooms_gt: Int
-  numBedrooms_gte: Int
-  numBeds: Int
-  numBeds_not: Int
-  numBeds_in: [Int!]
-  numBeds_not_in: [Int!]
-  numBeds_lt: Int
-  numBeds_lte: Int
-  numBeds_gt: Int
-  numBeds_gte: Int
-  numBaths: Int
-  numBaths_not: Int
-  numBaths_in: [Int!]
-  numBaths_not_in: [Int!]
-  numBaths_lt: Int
-  numBaths_lte: Int
-  numBaths_gt: Int
-  numBaths_gte: Int
-  reviews_every: ReviewWhereInput
-  reviews_some: ReviewWhereInput
-  reviews_none: ReviewWhereInput
-  amenities: AmenitiesWhereInput
-  host: UserWhereInput
-  pricing: PricingWhereInput
-  location: LocationWhereInput
-  views: ViewsWhereInput
-  guestRequirements: GuestRequirementsWhereInput
-  policies: PoliciesWhereInput
-  houseRules: HouseRulesWhereInput
-  orders_every: OrderWhereInput
-  orders_some: OrderWhereInput
-  orders_none: OrderWhereInput
-  pictures_every: PictureWhereInput
-  pictures_some: PictureWhereInput
-  pictures_none: PictureWhereInput
-  popularity: Int
-  popularity_not: Int
-  popularity_in: [Int!]
-  popularity_not_in: [Int!]
-  popularity_lt: Int
-  popularity_lte: Int
-  popularity_gt: Int
-  popularity_gte: Int
-  AND: [PlaceWhereInput!]
-  OR: [PlaceWhereInput!]
-  NOT: [PlaceWhereInput!]
-}
-
-input PlaceWhereUniqueInput {
-  id: ID
-}
-
 type Policies {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  checkInStartTime: Float!
-  checkInEndTime: Float!
-  checkoutTime: Float!
-  place: Place!
+  openingTime: Float!
+  closingTime: Float!
 }
 
 type PoliciesConnection {
@@ -6075,22 +4525,13 @@ type PoliciesConnection {
 
 input PoliciesCreateInput {
   id: ID
-  checkInStartTime: Float!
-  checkInEndTime: Float!
-  checkoutTime: Float!
-  place: PlaceCreateOneWithoutPoliciesInput!
+  openingTime: Float!
+  closingTime: Float!
 }
 
-input PoliciesCreateOneWithoutPlaceInput {
-  create: PoliciesCreateWithoutPlaceInput
+input PoliciesCreateOneInput {
+  create: PoliciesCreateInput
   connect: PoliciesWhereUniqueInput
-}
-
-input PoliciesCreateWithoutPlaceInput {
-  id: ID
-  checkInStartTime: Float!
-  checkInEndTime: Float!
-  checkoutTime: Float!
 }
 
 type PoliciesEdge {
@@ -6105,21 +4546,18 @@ enum PoliciesOrderByInput {
   createdAt_DESC
   updatedAt_ASC
   updatedAt_DESC
-  checkInStartTime_ASC
-  checkInStartTime_DESC
-  checkInEndTime_ASC
-  checkInEndTime_DESC
-  checkoutTime_ASC
-  checkoutTime_DESC
+  openingTime_ASC
+  openingTime_DESC
+  closingTime_ASC
+  closingTime_DESC
 }
 
 type PoliciesPreviousValues {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  checkInStartTime: Float!
-  checkInEndTime: Float!
-  checkoutTime: Float!
+  openingTime: Float!
+  closingTime: Float!
 }
 
 type PoliciesSubscriptionPayload {
@@ -6140,37 +4578,33 @@ input PoliciesSubscriptionWhereInput {
   NOT: [PoliciesSubscriptionWhereInput!]
 }
 
+input PoliciesUpdateDataInput {
+  openingTime: Float
+  closingTime: Float
+}
+
 input PoliciesUpdateInput {
-  checkInStartTime: Float
-  checkInEndTime: Float
-  checkoutTime: Float
-  place: PlaceUpdateOneRequiredWithoutPoliciesInput
+  openingTime: Float
+  closingTime: Float
 }
 
 input PoliciesUpdateManyMutationInput {
-  checkInStartTime: Float
-  checkInEndTime: Float
-  checkoutTime: Float
+  openingTime: Float
+  closingTime: Float
 }
 
-input PoliciesUpdateOneWithoutPlaceInput {
-  create: PoliciesCreateWithoutPlaceInput
-  update: PoliciesUpdateWithoutPlaceDataInput
-  upsert: PoliciesUpsertWithoutPlaceInput
+input PoliciesUpdateOneInput {
+  create: PoliciesCreateInput
+  update: PoliciesUpdateDataInput
+  upsert: PoliciesUpsertNestedInput
   delete: Boolean
   disconnect: Boolean
   connect: PoliciesWhereUniqueInput
 }
 
-input PoliciesUpdateWithoutPlaceDataInput {
-  checkInStartTime: Float
-  checkInEndTime: Float
-  checkoutTime: Float
-}
-
-input PoliciesUpsertWithoutPlaceInput {
-  update: PoliciesUpdateWithoutPlaceDataInput!
-  create: PoliciesCreateWithoutPlaceInput!
+input PoliciesUpsertNestedInput {
+  update: PoliciesUpdateDataInput!
+  create: PoliciesCreateInput!
 }
 
 input PoliciesWhereInput {
@@ -6204,31 +4638,22 @@ input PoliciesWhereInput {
   updatedAt_lte: DateTime
   updatedAt_gt: DateTime
   updatedAt_gte: DateTime
-  checkInStartTime: Float
-  checkInStartTime_not: Float
-  checkInStartTime_in: [Float!]
-  checkInStartTime_not_in: [Float!]
-  checkInStartTime_lt: Float
-  checkInStartTime_lte: Float
-  checkInStartTime_gt: Float
-  checkInStartTime_gte: Float
-  checkInEndTime: Float
-  checkInEndTime_not: Float
-  checkInEndTime_in: [Float!]
-  checkInEndTime_not_in: [Float!]
-  checkInEndTime_lt: Float
-  checkInEndTime_lte: Float
-  checkInEndTime_gt: Float
-  checkInEndTime_gte: Float
-  checkoutTime: Float
-  checkoutTime_not: Float
-  checkoutTime_in: [Float!]
-  checkoutTime_not_in: [Float!]
-  checkoutTime_lt: Float
-  checkoutTime_lte: Float
-  checkoutTime_gt: Float
-  checkoutTime_gte: Float
-  place: PlaceWhereInput
+  openingTime: Float
+  openingTime_not: Float
+  openingTime_in: [Float!]
+  openingTime_not_in: [Float!]
+  openingTime_lt: Float
+  openingTime_lte: Float
+  openingTime_gt: Float
+  openingTime_gte: Float
+  closingTime: Float
+  closingTime_not: Float
+  closingTime_in: [Float!]
+  closingTime_not_in: [Float!]
+  closingTime_lt: Float
+  closingTime_lte: Float
+  closingTime_gt: Float
+  closingTime_gte: Float
   AND: [PoliciesWhereInput!]
   OR: [PoliciesWhereInput!]
   NOT: [PoliciesWhereInput!]
@@ -6240,19 +4665,14 @@ input PoliciesWhereUniqueInput {
 
 type Pricing {
   id: ID!
-  place: Place!
   monthlyDiscount: Int
   weeklyDiscount: Int
-  perNight: Int!
+  price: Int!
   smartPricing: Boolean!
   basePrice: Int!
   averageWeekly: Int!
   averageMonthly: Int!
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
   weekendPricing: Int
-  currency: CURRENCY
 }
 
 type PricingConnection {
@@ -6263,40 +4683,19 @@ type PricingConnection {
 
 input PricingCreateInput {
   id: ID
-  place: PlaceCreateOneWithoutPricingInput!
   monthlyDiscount: Int
   weeklyDiscount: Int
-  perNight: Int!
+  price: Int!
   smartPricing: Boolean
   basePrice: Int!
   averageWeekly: Int!
   averageMonthly: Int!
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
   weekendPricing: Int
-  currency: CURRENCY
 }
 
-input PricingCreateOneWithoutPlaceInput {
-  create: PricingCreateWithoutPlaceInput
+input PricingCreateOneInput {
+  create: PricingCreateInput
   connect: PricingWhereUniqueInput
-}
-
-input PricingCreateWithoutPlaceInput {
-  id: ID
-  monthlyDiscount: Int
-  weeklyDiscount: Int
-  perNight: Int!
-  smartPricing: Boolean
-  basePrice: Int!
-  averageWeekly: Int!
-  averageMonthly: Int!
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
-  weekendPricing: Int
-  currency: CURRENCY
 }
 
 type PricingEdge {
@@ -6311,8 +4710,8 @@ enum PricingOrderByInput {
   monthlyDiscount_DESC
   weeklyDiscount_ASC
   weeklyDiscount_DESC
-  perNight_ASC
-  perNight_DESC
+  price_ASC
+  price_DESC
   smartPricing_ASC
   smartPricing_DESC
   basePrice_ASC
@@ -6321,32 +4720,20 @@ enum PricingOrderByInput {
   averageWeekly_DESC
   averageMonthly_ASC
   averageMonthly_DESC
-  cleaningFee_ASC
-  cleaningFee_DESC
-  securityDeposit_ASC
-  securityDeposit_DESC
-  extraGuests_ASC
-  extraGuests_DESC
   weekendPricing_ASC
   weekendPricing_DESC
-  currency_ASC
-  currency_DESC
 }
 
 type PricingPreviousValues {
   id: ID!
   monthlyDiscount: Int
   weeklyDiscount: Int
-  perNight: Int!
+  price: Int!
   smartPricing: Boolean!
   basePrice: Int!
   averageWeekly: Int!
   averageMonthly: Int!
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
   weekendPricing: Int
-  currency: CURRENCY
 }
 
 type PricingSubscriptionPayload {
@@ -6367,62 +4754,49 @@ input PricingSubscriptionWhereInput {
   NOT: [PricingSubscriptionWhereInput!]
 }
 
-input PricingUpdateInput {
-  place: PlaceUpdateOneRequiredWithoutPricingInput
+input PricingUpdateDataInput {
   monthlyDiscount: Int
   weeklyDiscount: Int
-  perNight: Int
+  price: Int
   smartPricing: Boolean
   basePrice: Int
   averageWeekly: Int
   averageMonthly: Int
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
   weekendPricing: Int
-  currency: CURRENCY
+}
+
+input PricingUpdateInput {
+  monthlyDiscount: Int
+  weeklyDiscount: Int
+  price: Int
+  smartPricing: Boolean
+  basePrice: Int
+  averageWeekly: Int
+  averageMonthly: Int
+  weekendPricing: Int
 }
 
 input PricingUpdateManyMutationInput {
   monthlyDiscount: Int
   weeklyDiscount: Int
-  perNight: Int
+  price: Int
   smartPricing: Boolean
   basePrice: Int
   averageWeekly: Int
   averageMonthly: Int
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
   weekendPricing: Int
-  currency: CURRENCY
 }
 
-input PricingUpdateOneRequiredWithoutPlaceInput {
-  create: PricingCreateWithoutPlaceInput
-  update: PricingUpdateWithoutPlaceDataInput
-  upsert: PricingUpsertWithoutPlaceInput
+input PricingUpdateOneRequiredInput {
+  create: PricingCreateInput
+  update: PricingUpdateDataInput
+  upsert: PricingUpsertNestedInput
   connect: PricingWhereUniqueInput
 }
 
-input PricingUpdateWithoutPlaceDataInput {
-  monthlyDiscount: Int
-  weeklyDiscount: Int
-  perNight: Int
-  smartPricing: Boolean
-  basePrice: Int
-  averageWeekly: Int
-  averageMonthly: Int
-  cleaningFee: Int
-  securityDeposit: Int
-  extraGuests: Int
-  weekendPricing: Int
-  currency: CURRENCY
-}
-
-input PricingUpsertWithoutPlaceInput {
-  update: PricingUpdateWithoutPlaceDataInput!
-  create: PricingCreateWithoutPlaceInput!
+input PricingUpsertNestedInput {
+  update: PricingUpdateDataInput!
+  create: PricingCreateInput!
 }
 
 input PricingWhereInput {
@@ -6440,7 +4814,6 @@ input PricingWhereInput {
   id_not_starts_with: ID
   id_ends_with: ID
   id_not_ends_with: ID
-  place: PlaceWhereInput
   monthlyDiscount: Int
   monthlyDiscount_not: Int
   monthlyDiscount_in: [Int!]
@@ -6457,14 +4830,14 @@ input PricingWhereInput {
   weeklyDiscount_lte: Int
   weeklyDiscount_gt: Int
   weeklyDiscount_gte: Int
-  perNight: Int
-  perNight_not: Int
-  perNight_in: [Int!]
-  perNight_not_in: [Int!]
-  perNight_lt: Int
-  perNight_lte: Int
-  perNight_gt: Int
-  perNight_gte: Int
+  price: Int
+  price_not: Int
+  price_in: [Int!]
+  price_not_in: [Int!]
+  price_lt: Int
+  price_lte: Int
+  price_gt: Int
+  price_gte: Int
   smartPricing: Boolean
   smartPricing_not: Boolean
   basePrice: Int
@@ -6491,30 +4864,6 @@ input PricingWhereInput {
   averageMonthly_lte: Int
   averageMonthly_gt: Int
   averageMonthly_gte: Int
-  cleaningFee: Int
-  cleaningFee_not: Int
-  cleaningFee_in: [Int!]
-  cleaningFee_not_in: [Int!]
-  cleaningFee_lt: Int
-  cleaningFee_lte: Int
-  cleaningFee_gt: Int
-  cleaningFee_gte: Int
-  securityDeposit: Int
-  securityDeposit_not: Int
-  securityDeposit_in: [Int!]
-  securityDeposit_not_in: [Int!]
-  securityDeposit_lt: Int
-  securityDeposit_lte: Int
-  securityDeposit_gt: Int
-  securityDeposit_gte: Int
-  extraGuests: Int
-  extraGuests_not: Int
-  extraGuests_in: [Int!]
-  extraGuests_not_in: [Int!]
-  extraGuests_lt: Int
-  extraGuests_lte: Int
-  extraGuests_gt: Int
-  extraGuests_gte: Int
   weekendPricing: Int
   weekendPricing_not: Int
   weekendPricing_in: [Int!]
@@ -6523,10 +4872,6 @@ input PricingWhereInput {
   weekendPricing_lte: Int
   weekendPricing_gt: Int
   weekendPricing_gte: Int
-  currency: CURRENCY
-  currency_not: CURRENCY
-  currency_in: [CURRENCY!]
-  currency_not_in: [CURRENCY!]
   AND: [PricingWhereInput!]
   OR: [PricingWhereInput!]
   NOT: [PricingWhereInput!]
@@ -6537,9 +4882,6 @@ input PricingWhereUniqueInput {
 }
 
 type Query {
-  amenities(where: AmenitiesWhereUniqueInput!): Amenities
-  amenitieses(where: AmenitiesWhereInput, orderBy: AmenitiesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Amenities]!
-  amenitiesesConnection(where: AmenitiesWhereInput, orderBy: AmenitiesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): AmenitiesConnection!
   city(where: CityWhereUniqueInput!): City
   cities(where: CityWhereInput, orderBy: CityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [City]!
   citiesConnection(where: CityWhereInput, orderBy: CityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CityConnection!
@@ -6555,15 +4897,12 @@ type Query {
   experienceCategory(where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
   experienceCategories(where: ExperienceCategoryWhereInput, orderBy: ExperienceCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ExperienceCategory]!
   experienceCategoriesConnection(where: ExperienceCategoryWhereInput, orderBy: ExperienceCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ExperienceCategoryConnection!
-  guestRequirements(where: GuestRequirementsWhereUniqueInput!): GuestRequirements
-  guestRequirementses(where: GuestRequirementsWhereInput, orderBy: GuestRequirementsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [GuestRequirements]!
-  guestRequirementsesConnection(where: GuestRequirementsWhereInput, orderBy: GuestRequirementsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): GuestRequirementsConnection!
-  houseRules(where: HouseRulesWhereUniqueInput!): HouseRules
-  houseRuleses(where: HouseRulesWhereInput, orderBy: HouseRulesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [HouseRules]!
-  houseRulesesConnection(where: HouseRulesWhereInput, orderBy: HouseRulesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): HouseRulesConnection!
   location(where: LocationWhereUniqueInput!): Location
   locations(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Location]!
   locationsConnection(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LocationConnection!
+  menuItem(where: MenuItemWhereUniqueInput!): MenuItem
+  menuItems(where: MenuItemWhereInput, orderBy: MenuItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [MenuItem]!
+  menuItemsConnection(where: MenuItemWhereInput, orderBy: MenuItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MenuItemConnection!
   message(where: MessageWhereUniqueInput!): Message
   messages(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Message]!
   messagesConnection(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MessageConnection!
@@ -6591,9 +4930,6 @@ type Query {
   picture(where: PictureWhereUniqueInput!): Picture
   pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture]!
   picturesConnection(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PictureConnection!
-  place(where: PlaceWhereUniqueInput!): Place
-  places(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Place]!
-  placesConnection(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PlaceConnection!
   policies(where: PoliciesWhereUniqueInput!): Policies
   policieses(where: PoliciesWhereInput, orderBy: PoliciesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Policies]!
   policiesesConnection(where: PoliciesWhereInput, orderBy: PoliciesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PoliciesConnection!
@@ -6609,22 +4945,27 @@ type Query {
   user(where: UserWhereUniqueInput!): User
   users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
-  views(where: ViewsWhereUniqueInput!): Views
-  viewses(where: ViewsWhereInput, orderBy: ViewsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Views]!
-  viewsesConnection(where: ViewsWhereInput, orderBy: ViewsOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ViewsConnection!
   node(id: ID!): Node
 }
 
 type Restaurant {
   id: ID!
-  createdAt: DateTime!
-  title: String!
-  avgPricePerPerson: Int!
-  pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture!]
-  location: Location!
-  isCurated: Boolean!
+  name: String!
+  shortDescription: String!
+  description: String!
   slug: String!
+  maxGuests: Int!
+  numRatings: Int!
+  avgRating: Float
+  reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review!]
+  location: Location
+  policies: Policies
+  menu(where: MenuItemWhereInput, orderBy: MenuItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [MenuItem!]
+  orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order!]
+  pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture!]
   popularity: Int!
+  avgPricePerPerson: Int!
+  isCurated: Boolean!
 }
 
 type RestaurantConnection {
@@ -6635,28 +4976,51 @@ type RestaurantConnection {
 
 input RestaurantCreateInput {
   id: ID
-  title: String!
-  avgPricePerPerson: Int!
-  pictures: PictureCreateManyInput
-  location: LocationCreateOneWithoutRestaurantInput!
-  isCurated: Boolean
+  name: String!
+  shortDescription: String!
+  description: String!
   slug: String!
+  maxGuests: Int!
+  numRatings: Int!
+  avgRating: Float
+  reviews: ReviewCreateManyInput
+  location: LocationCreateOneInput
+  policies: PoliciesCreateOneInput
+  menu: MenuItemCreateManyInput
+  orders: OrderCreateManyWithoutRestaurantInput
+  pictures: PictureCreateManyInput
   popularity: Int!
+  avgPricePerPerson: Int!
+  isCurated: Boolean
 }
 
-input RestaurantCreateOneWithoutLocationInput {
-  create: RestaurantCreateWithoutLocationInput
+input RestaurantCreateManyInput {
+  create: [RestaurantCreateInput!]
+  connect: [RestaurantWhereUniqueInput!]
+}
+
+input RestaurantCreateOneWithoutOrdersInput {
+  create: RestaurantCreateWithoutOrdersInput
   connect: RestaurantWhereUniqueInput
 }
 
-input RestaurantCreateWithoutLocationInput {
+input RestaurantCreateWithoutOrdersInput {
   id: ID
-  title: String!
-  avgPricePerPerson: Int!
-  pictures: PictureCreateManyInput
-  isCurated: Boolean
+  name: String!
+  shortDescription: String!
+  description: String!
   slug: String!
+  maxGuests: Int!
+  numRatings: Int!
+  avgRating: Float
+  reviews: ReviewCreateManyInput
+  location: LocationCreateOneInput
+  policies: PoliciesCreateOneInput
+  menu: MenuItemCreateManyInput
+  pictures: PictureCreateManyInput
   popularity: Int!
+  avgPricePerPerson: Int!
+  isCurated: Boolean
 }
 
 type RestaurantEdge {
@@ -6667,28 +5031,158 @@ type RestaurantEdge {
 enum RestaurantOrderByInput {
   id_ASC
   id_DESC
-  createdAt_ASC
-  createdAt_DESC
-  title_ASC
-  title_DESC
+  name_ASC
+  name_DESC
+  shortDescription_ASC
+  shortDescription_DESC
+  description_ASC
+  description_DESC
+  slug_ASC
+  slug_DESC
+  maxGuests_ASC
+  maxGuests_DESC
+  numRatings_ASC
+  numRatings_DESC
+  avgRating_ASC
+  avgRating_DESC
+  popularity_ASC
+  popularity_DESC
   avgPricePerPerson_ASC
   avgPricePerPerson_DESC
   isCurated_ASC
   isCurated_DESC
-  slug_ASC
-  slug_DESC
-  popularity_ASC
-  popularity_DESC
 }
 
 type RestaurantPreviousValues {
   id: ID!
-  createdAt: DateTime!
-  title: String!
+  name: String!
+  shortDescription: String!
+  description: String!
+  slug: String!
+  maxGuests: Int!
+  numRatings: Int!
+  avgRating: Float
+  popularity: Int!
   avgPricePerPerson: Int!
   isCurated: Boolean!
-  slug: String!
-  popularity: Int!
+}
+
+input RestaurantScalarWhereInput {
+  id: ID
+  id_not: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_contains: ID
+  id_not_contains: ID
+  id_starts_with: ID
+  id_not_starts_with: ID
+  id_ends_with: ID
+  id_not_ends_with: ID
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  shortDescription: String
+  shortDescription_not: String
+  shortDescription_in: [String!]
+  shortDescription_not_in: [String!]
+  shortDescription_lt: String
+  shortDescription_lte: String
+  shortDescription_gt: String
+  shortDescription_gte: String
+  shortDescription_contains: String
+  shortDescription_not_contains: String
+  shortDescription_starts_with: String
+  shortDescription_not_starts_with: String
+  shortDescription_ends_with: String
+  shortDescription_not_ends_with: String
+  description: String
+  description_not: String
+  description_in: [String!]
+  description_not_in: [String!]
+  description_lt: String
+  description_lte: String
+  description_gt: String
+  description_gte: String
+  description_contains: String
+  description_not_contains: String
+  description_starts_with: String
+  description_not_starts_with: String
+  description_ends_with: String
+  description_not_ends_with: String
+  slug: String
+  slug_not: String
+  slug_in: [String!]
+  slug_not_in: [String!]
+  slug_lt: String
+  slug_lte: String
+  slug_gt: String
+  slug_gte: String
+  slug_contains: String
+  slug_not_contains: String
+  slug_starts_with: String
+  slug_not_starts_with: String
+  slug_ends_with: String
+  slug_not_ends_with: String
+  maxGuests: Int
+  maxGuests_not: Int
+  maxGuests_in: [Int!]
+  maxGuests_not_in: [Int!]
+  maxGuests_lt: Int
+  maxGuests_lte: Int
+  maxGuests_gt: Int
+  maxGuests_gte: Int
+  numRatings: Int
+  numRatings_not: Int
+  numRatings_in: [Int!]
+  numRatings_not_in: [Int!]
+  numRatings_lt: Int
+  numRatings_lte: Int
+  numRatings_gt: Int
+  numRatings_gte: Int
+  avgRating: Float
+  avgRating_not: Float
+  avgRating_in: [Float!]
+  avgRating_not_in: [Float!]
+  avgRating_lt: Float
+  avgRating_lte: Float
+  avgRating_gt: Float
+  avgRating_gte: Float
+  popularity: Int
+  popularity_not: Int
+  popularity_in: [Int!]
+  popularity_not_in: [Int!]
+  popularity_lt: Int
+  popularity_lte: Int
+  popularity_gt: Int
+  popularity_gte: Int
+  avgPricePerPerson: Int
+  avgPricePerPerson_not: Int
+  avgPricePerPerson_in: [Int!]
+  avgPricePerPerson_not_in: [Int!]
+  avgPricePerPerson_lt: Int
+  avgPricePerPerson_lte: Int
+  avgPricePerPerson_gt: Int
+  avgPricePerPerson_gte: Int
+  isCurated: Boolean
+  isCurated_not: Boolean
+  AND: [RestaurantScalarWhereInput!]
+  OR: [RestaurantScalarWhereInput!]
+  NOT: [RestaurantScalarWhereInput!]
 }
 
 type RestaurantSubscriptionPayload {
@@ -6709,45 +5203,126 @@ input RestaurantSubscriptionWhereInput {
   NOT: [RestaurantSubscriptionWhereInput!]
 }
 
-input RestaurantUpdateInput {
-  title: String
-  avgPricePerPerson: Int
-  pictures: PictureUpdateManyInput
-  location: LocationUpdateOneRequiredWithoutRestaurantInput
-  isCurated: Boolean
+input RestaurantUpdateDataInput {
+  name: String
+  shortDescription: String
+  description: String
   slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating: Float
+  reviews: ReviewUpdateManyInput
+  location: LocationUpdateOneInput
+  policies: PoliciesUpdateOneInput
+  menu: MenuItemUpdateManyInput
+  orders: OrderUpdateManyWithoutRestaurantInput
+  pictures: PictureUpdateManyInput
   popularity: Int
+  avgPricePerPerson: Int
+  isCurated: Boolean
+}
+
+input RestaurantUpdateInput {
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating: Float
+  reviews: ReviewUpdateManyInput
+  location: LocationUpdateOneInput
+  policies: PoliciesUpdateOneInput
+  menu: MenuItemUpdateManyInput
+  orders: OrderUpdateManyWithoutRestaurantInput
+  pictures: PictureUpdateManyInput
+  popularity: Int
+  avgPricePerPerson: Int
+  isCurated: Boolean
+}
+
+input RestaurantUpdateManyDataInput {
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating: Float
+  popularity: Int
+  avgPricePerPerson: Int
+  isCurated: Boolean
+}
+
+input RestaurantUpdateManyInput {
+  create: [RestaurantCreateInput!]
+  update: [RestaurantUpdateWithWhereUniqueNestedInput!]
+  upsert: [RestaurantUpsertWithWhereUniqueNestedInput!]
+  delete: [RestaurantWhereUniqueInput!]
+  connect: [RestaurantWhereUniqueInput!]
+  set: [RestaurantWhereUniqueInput!]
+  disconnect: [RestaurantWhereUniqueInput!]
+  deleteMany: [RestaurantScalarWhereInput!]
+  updateMany: [RestaurantUpdateManyWithWhereNestedInput!]
 }
 
 input RestaurantUpdateManyMutationInput {
-  title: String
+  name: String
+  shortDescription: String
+  description: String
+  slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating: Float
+  popularity: Int
   avgPricePerPerson: Int
   isCurated: Boolean
-  slug: String
-  popularity: Int
 }
 
-input RestaurantUpdateOneWithoutLocationInput {
-  create: RestaurantCreateWithoutLocationInput
-  update: RestaurantUpdateWithoutLocationDataInput
-  upsert: RestaurantUpsertWithoutLocationInput
-  delete: Boolean
-  disconnect: Boolean
+input RestaurantUpdateManyWithWhereNestedInput {
+  where: RestaurantScalarWhereInput!
+  data: RestaurantUpdateManyDataInput!
+}
+
+input RestaurantUpdateOneRequiredWithoutOrdersInput {
+  create: RestaurantCreateWithoutOrdersInput
+  update: RestaurantUpdateWithoutOrdersDataInput
+  upsert: RestaurantUpsertWithoutOrdersInput
   connect: RestaurantWhereUniqueInput
 }
 
-input RestaurantUpdateWithoutLocationDataInput {
-  title: String
-  avgPricePerPerson: Int
-  pictures: PictureUpdateManyInput
-  isCurated: Boolean
+input RestaurantUpdateWithoutOrdersDataInput {
+  name: String
+  shortDescription: String
+  description: String
   slug: String
+  maxGuests: Int
+  numRatings: Int
+  avgRating: Float
+  reviews: ReviewUpdateManyInput
+  location: LocationUpdateOneInput
+  policies: PoliciesUpdateOneInput
+  menu: MenuItemUpdateManyInput
+  pictures: PictureUpdateManyInput
   popularity: Int
+  avgPricePerPerson: Int
+  isCurated: Boolean
 }
 
-input RestaurantUpsertWithoutLocationInput {
-  update: RestaurantUpdateWithoutLocationDataInput!
-  create: RestaurantCreateWithoutLocationInput!
+input RestaurantUpdateWithWhereUniqueNestedInput {
+  where: RestaurantWhereUniqueInput!
+  data: RestaurantUpdateDataInput!
+}
+
+input RestaurantUpsertWithoutOrdersInput {
+  update: RestaurantUpdateWithoutOrdersDataInput!
+  create: RestaurantCreateWithoutOrdersInput!
+}
+
+input RestaurantUpsertWithWhereUniqueNestedInput {
+  where: RestaurantWhereUniqueInput!
+  update: RestaurantUpdateDataInput!
+  create: RestaurantCreateInput!
 }
 
 input RestaurantWhereInput {
@@ -6765,42 +5340,48 @@ input RestaurantWhereInput {
   id_not_starts_with: ID
   id_ends_with: ID
   id_not_ends_with: ID
-  createdAt: DateTime
-  createdAt_not: DateTime
-  createdAt_in: [DateTime!]
-  createdAt_not_in: [DateTime!]
-  createdAt_lt: DateTime
-  createdAt_lte: DateTime
-  createdAt_gt: DateTime
-  createdAt_gte: DateTime
-  title: String
-  title_not: String
-  title_in: [String!]
-  title_not_in: [String!]
-  title_lt: String
-  title_lte: String
-  title_gt: String
-  title_gte: String
-  title_contains: String
-  title_not_contains: String
-  title_starts_with: String
-  title_not_starts_with: String
-  title_ends_with: String
-  title_not_ends_with: String
-  avgPricePerPerson: Int
-  avgPricePerPerson_not: Int
-  avgPricePerPerson_in: [Int!]
-  avgPricePerPerson_not_in: [Int!]
-  avgPricePerPerson_lt: Int
-  avgPricePerPerson_lte: Int
-  avgPricePerPerson_gt: Int
-  avgPricePerPerson_gte: Int
-  pictures_every: PictureWhereInput
-  pictures_some: PictureWhereInput
-  pictures_none: PictureWhereInput
-  location: LocationWhereInput
-  isCurated: Boolean
-  isCurated_not: Boolean
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  shortDescription: String
+  shortDescription_not: String
+  shortDescription_in: [String!]
+  shortDescription_not_in: [String!]
+  shortDescription_lt: String
+  shortDescription_lte: String
+  shortDescription_gt: String
+  shortDescription_gte: String
+  shortDescription_contains: String
+  shortDescription_not_contains: String
+  shortDescription_starts_with: String
+  shortDescription_not_starts_with: String
+  shortDescription_ends_with: String
+  shortDescription_not_ends_with: String
+  description: String
+  description_not: String
+  description_in: [String!]
+  description_not_in: [String!]
+  description_lt: String
+  description_lte: String
+  description_gt: String
+  description_gte: String
+  description_contains: String
+  description_not_contains: String
+  description_starts_with: String
+  description_not_starts_with: String
+  description_ends_with: String
+  description_not_ends_with: String
   slug: String
   slug_not: String
   slug_in: [String!]
@@ -6815,6 +5396,44 @@ input RestaurantWhereInput {
   slug_not_starts_with: String
   slug_ends_with: String
   slug_not_ends_with: String
+  maxGuests: Int
+  maxGuests_not: Int
+  maxGuests_in: [Int!]
+  maxGuests_not_in: [Int!]
+  maxGuests_lt: Int
+  maxGuests_lte: Int
+  maxGuests_gt: Int
+  maxGuests_gte: Int
+  numRatings: Int
+  numRatings_not: Int
+  numRatings_in: [Int!]
+  numRatings_not_in: [Int!]
+  numRatings_lt: Int
+  numRatings_lte: Int
+  numRatings_gt: Int
+  numRatings_gte: Int
+  avgRating: Float
+  avgRating_not: Float
+  avgRating_in: [Float!]
+  avgRating_not_in: [Float!]
+  avgRating_lt: Float
+  avgRating_lte: Float
+  avgRating_gt: Float
+  avgRating_gte: Float
+  reviews_every: ReviewWhereInput
+  reviews_some: ReviewWhereInput
+  reviews_none: ReviewWhereInput
+  location: LocationWhereInput
+  policies: PoliciesWhereInput
+  menu_every: MenuItemWhereInput
+  menu_some: MenuItemWhereInput
+  menu_none: MenuItemWhereInput
+  orders_every: OrderWhereInput
+  orders_some: OrderWhereInput
+  orders_none: OrderWhereInput
+  pictures_every: PictureWhereInput
+  pictures_some: PictureWhereInput
+  pictures_none: PictureWhereInput
   popularity: Int
   popularity_not: Int
   popularity_in: [Int!]
@@ -6823,6 +5442,16 @@ input RestaurantWhereInput {
   popularity_lte: Int
   popularity_gt: Int
   popularity_gte: Int
+  avgPricePerPerson: Int
+  avgPricePerPerson_not: Int
+  avgPricePerPerson_in: [Int!]
+  avgPricePerPerson_not_in: [Int!]
+  avgPricePerPerson_lt: Int
+  avgPricePerPerson_lte: Int
+  avgPricePerPerson_gt: Int
+  avgPricePerPerson_gte: Int
+  isCurated: Boolean
+  isCurated_not: Boolean
   AND: [RestaurantWhereInput!]
   OR: [RestaurantWhereInput!]
   NOT: [RestaurantWhereInput!]
@@ -6843,7 +5472,7 @@ type Review {
   value: Int!
   cleanliness: Int!
   communication: Int!
-  place: Place!
+  order: Order!
   experience: Experience
 }
 
@@ -6863,17 +5492,17 @@ input ReviewCreateInput {
   value: Int!
   cleanliness: Int!
   communication: Int!
-  place: PlaceCreateOneWithoutReviewsInput!
+  order: OrderCreateOneInput!
   experience: ExperienceCreateOneWithoutReviewsInput
+}
+
+input ReviewCreateManyInput {
+  create: [ReviewCreateInput!]
+  connect: [ReviewWhereUniqueInput!]
 }
 
 input ReviewCreateManyWithoutExperienceInput {
   create: [ReviewCreateWithoutExperienceInput!]
-  connect: [ReviewWhereUniqueInput!]
-}
-
-input ReviewCreateManyWithoutPlaceInput {
-  create: [ReviewCreateWithoutPlaceInput!]
   connect: [ReviewWhereUniqueInput!]
 }
 
@@ -6887,20 +5516,7 @@ input ReviewCreateWithoutExperienceInput {
   value: Int!
   cleanliness: Int!
   communication: Int!
-  place: PlaceCreateOneWithoutReviewsInput!
-}
-
-input ReviewCreateWithoutPlaceInput {
-  id: ID
-  text: String!
-  stars: Int!
-  accuracy: Int!
-  location: Int!
-  checkIn: Int!
-  value: Int!
-  cleanliness: Int!
-  communication: Int!
-  experience: ExperienceCreateOneWithoutReviewsInput
+  order: OrderCreateOneInput!
 }
 
 type ReviewEdge {
@@ -7060,6 +5676,19 @@ input ReviewSubscriptionWhereInput {
   NOT: [ReviewSubscriptionWhereInput!]
 }
 
+input ReviewUpdateDataInput {
+  text: String
+  stars: Int
+  accuracy: Int
+  location: Int
+  checkIn: Int
+  value: Int
+  cleanliness: Int
+  communication: Int
+  order: OrderUpdateOneRequiredInput
+  experience: ExperienceUpdateOneWithoutReviewsInput
+}
+
 input ReviewUpdateInput {
   text: String
   stars: Int
@@ -7069,7 +5698,7 @@ input ReviewUpdateInput {
   value: Int
   cleanliness: Int
   communication: Int
-  place: PlaceUpdateOneRequiredWithoutReviewsInput
+  order: OrderUpdateOneRequiredInput
   experience: ExperienceUpdateOneWithoutReviewsInput
 }
 
@@ -7082,6 +5711,18 @@ input ReviewUpdateManyDataInput {
   value: Int
   cleanliness: Int
   communication: Int
+}
+
+input ReviewUpdateManyInput {
+  create: [ReviewCreateInput!]
+  update: [ReviewUpdateWithWhereUniqueNestedInput!]
+  upsert: [ReviewUpsertWithWhereUniqueNestedInput!]
+  delete: [ReviewWhereUniqueInput!]
+  connect: [ReviewWhereUniqueInput!]
+  set: [ReviewWhereUniqueInput!]
+  disconnect: [ReviewWhereUniqueInput!]
+  deleteMany: [ReviewScalarWhereInput!]
+  updateMany: [ReviewUpdateManyWithWhereNestedInput!]
 }
 
 input ReviewUpdateManyMutationInput {
@@ -7107,18 +5748,6 @@ input ReviewUpdateManyWithoutExperienceInput {
   updateMany: [ReviewUpdateManyWithWhereNestedInput!]
 }
 
-input ReviewUpdateManyWithoutPlaceInput {
-  create: [ReviewCreateWithoutPlaceInput!]
-  delete: [ReviewWhereUniqueInput!]
-  connect: [ReviewWhereUniqueInput!]
-  set: [ReviewWhereUniqueInput!]
-  disconnect: [ReviewWhereUniqueInput!]
-  update: [ReviewUpdateWithWhereUniqueWithoutPlaceInput!]
-  upsert: [ReviewUpsertWithWhereUniqueWithoutPlaceInput!]
-  deleteMany: [ReviewScalarWhereInput!]
-  updateMany: [ReviewUpdateManyWithWhereNestedInput!]
-}
-
 input ReviewUpdateManyWithWhereNestedInput {
   where: ReviewScalarWhereInput!
   data: ReviewUpdateManyDataInput!
@@ -7133,19 +5762,12 @@ input ReviewUpdateWithoutExperienceDataInput {
   value: Int
   cleanliness: Int
   communication: Int
-  place: PlaceUpdateOneRequiredWithoutReviewsInput
+  order: OrderUpdateOneRequiredInput
 }
 
-input ReviewUpdateWithoutPlaceDataInput {
-  text: String
-  stars: Int
-  accuracy: Int
-  location: Int
-  checkIn: Int
-  value: Int
-  cleanliness: Int
-  communication: Int
-  experience: ExperienceUpdateOneWithoutReviewsInput
+input ReviewUpdateWithWhereUniqueNestedInput {
+  where: ReviewWhereUniqueInput!
+  data: ReviewUpdateDataInput!
 }
 
 input ReviewUpdateWithWhereUniqueWithoutExperienceInput {
@@ -7153,21 +5775,16 @@ input ReviewUpdateWithWhereUniqueWithoutExperienceInput {
   data: ReviewUpdateWithoutExperienceDataInput!
 }
 
-input ReviewUpdateWithWhereUniqueWithoutPlaceInput {
+input ReviewUpsertWithWhereUniqueNestedInput {
   where: ReviewWhereUniqueInput!
-  data: ReviewUpdateWithoutPlaceDataInput!
+  update: ReviewUpdateDataInput!
+  create: ReviewCreateInput!
 }
 
 input ReviewUpsertWithWhereUniqueWithoutExperienceInput {
   where: ReviewWhereUniqueInput!
   update: ReviewUpdateWithoutExperienceDataInput!
   create: ReviewCreateWithoutExperienceInput!
-}
-
-input ReviewUpsertWithWhereUniqueWithoutPlaceInput {
-  where: ReviewWhereUniqueInput!
-  update: ReviewUpdateWithoutPlaceDataInput!
-  create: ReviewCreateWithoutPlaceInput!
 }
 
 input ReviewWhereInput {
@@ -7263,7 +5880,7 @@ input ReviewWhereInput {
   communication_lte: Int
   communication_gt: Int
   communication_gte: Int
-  place: PlaceWhereInput
+  order: OrderWhereInput
   experience: ExperienceWhereInput
   AND: [ReviewWhereInput!]
   OR: [ReviewWhereInput!]
@@ -7275,15 +5892,13 @@ input ReviewWhereUniqueInput {
 }
 
 type Subscription {
-  amenities(where: AmenitiesSubscriptionWhereInput): AmenitiesSubscriptionPayload
   city(where: CitySubscriptionWhereInput): CitySubscriptionPayload
   creditCardInformation(where: CreditCardInformationSubscriptionWhereInput): CreditCardInformationSubscriptionPayload
   debitCardInformation(where: DebitCardInformationSubscriptionWhereInput): DebitCardInformationSubscriptionPayload
   experience(where: ExperienceSubscriptionWhereInput): ExperienceSubscriptionPayload
   experienceCategory(where: ExperienceCategorySubscriptionWhereInput): ExperienceCategorySubscriptionPayload
-  guestRequirements(where: GuestRequirementsSubscriptionWhereInput): GuestRequirementsSubscriptionPayload
-  houseRules(where: HouseRulesSubscriptionWhereInput): HouseRulesSubscriptionPayload
   location(where: LocationSubscriptionWhereInput): LocationSubscriptionPayload
+  menuItem(where: MenuItemSubscriptionWhereInput): MenuItemSubscriptionPayload
   message(where: MessageSubscriptionWhereInput): MessageSubscriptionPayload
   neighbourhood(where: NeighbourhoodSubscriptionWhereInput): NeighbourhoodSubscriptionPayload
   notification(where: NotificationSubscriptionWhereInput): NotificationSubscriptionPayload
@@ -7293,13 +5908,11 @@ type Subscription {
   paypalInformation(where: PaypalInformationSubscriptionWhereInput): PaypalInformationSubscriptionPayload
   paytmInformation(where: PaytmInformationSubscriptionWhereInput): PaytmInformationSubscriptionPayload
   picture(where: PictureSubscriptionWhereInput): PictureSubscriptionPayload
-  place(where: PlaceSubscriptionWhereInput): PlaceSubscriptionPayload
   policies(where: PoliciesSubscriptionWhereInput): PoliciesSubscriptionPayload
   pricing(where: PricingSubscriptionWhereInput): PricingSubscriptionPayload
   restaurant(where: RestaurantSubscriptionWhereInput): RestaurantSubscriptionPayload
   review(where: ReviewSubscriptionWhereInput): ReviewSubscriptionPayload
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
-  views(where: ViewsSubscriptionWhereInput): ViewsSubscriptionPayload
 }
 
 type User {
@@ -7311,8 +5924,8 @@ type User {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean!
-  ownedPlaces(where: PlaceWhereInput, orderBy: PlaceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Place!]
-  location: Location
+  ownedRestaurant(where: RestaurantWhereInput, orderBy: RestaurantOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Restaurant!]
+  location(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Location!]
   orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order!]
   paymentAccount(where: PaymentAccountWhereInput, orderBy: PaymentAccountOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaymentAccount!]
   sentMessages(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Message!]
@@ -7337,8 +5950,8 @@ input UserCreateInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   sentMessages: MessageCreateManyWithoutFromInput
@@ -7355,11 +5968,6 @@ input UserCreateOneWithoutHostingExperiencesInput {
   connect: UserWhereUniqueInput
 }
 
-input UserCreateOneWithoutLocationInput {
-  create: UserCreateWithoutLocationInput
-  connect: UserWhereUniqueInput
-}
-
 input UserCreateOneWithoutNotificationsInput {
   create: UserCreateWithoutNotificationsInput
   connect: UserWhereUniqueInput
@@ -7367,11 +5975,6 @@ input UserCreateOneWithoutNotificationsInput {
 
 input UserCreateOneWithoutOrdersInput {
   create: UserCreateWithoutOrdersInput
-  connect: UserWhereUniqueInput
-}
-
-input UserCreateOneWithoutOwnedPlacesInput {
-  create: UserCreateWithoutOwnedPlacesInput
   connect: UserWhereUniqueInput
 }
 
@@ -7397,33 +6000,14 @@ input UserCreateWithoutHostingExperiencesInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   sentMessages: MessageCreateManyWithoutFromInput
   receivedMessages: MessageCreateManyWithoutToInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  accountType: UserType
-  uid: String!
-}
-
-input UserCreateWithoutLocationInput {
-  id: ID
-  displayName: String!
-  phoneNumber: String!
-  responseRate: Float
-  responseTime: Int
-  isSuperHost: Boolean
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  orders: OrderCreateManyWithoutBookeeInput
-  paymentAccount: PaymentAccountCreateManyWithoutUserInput
-  sentMessages: MessageCreateManyWithoutFromInput
-  receivedMessages: MessageCreateManyWithoutToInput
-  notifications: NotificationCreateManyWithoutUserInput
-  profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
   accountType: UserType
   uid: String!
 }
@@ -7435,8 +6019,8 @@ input UserCreateWithoutNotificationsInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   sentMessages: MessageCreateManyWithoutFromInput
@@ -7454,27 +6038,8 @@ input UserCreateWithoutOrdersInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
-  paymentAccount: PaymentAccountCreateManyWithoutUserInput
-  sentMessages: MessageCreateManyWithoutFromInput
-  receivedMessages: MessageCreateManyWithoutToInput
-  notifications: NotificationCreateManyWithoutUserInput
-  profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
-  accountType: UserType
-  uid: String!
-}
-
-input UserCreateWithoutOwnedPlacesInput {
-  id: ID
-  displayName: String!
-  phoneNumber: String!
-  responseRate: Float
-  responseTime: Int
-  isSuperHost: Boolean
-  location: LocationCreateOneWithoutUserInput
-  orders: OrderCreateManyWithoutBookeeInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   sentMessages: MessageCreateManyWithoutFromInput
   receivedMessages: MessageCreateManyWithoutToInput
@@ -7492,8 +6057,8 @@ input UserCreateWithoutPaymentAccountInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   sentMessages: MessageCreateManyWithoutFromInput
   receivedMessages: MessageCreateManyWithoutToInput
@@ -7511,8 +6076,8 @@ input UserCreateWithoutReceivedMessagesInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   sentMessages: MessageCreateManyWithoutFromInput
@@ -7530,8 +6095,8 @@ input UserCreateWithoutSentMessagesInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceCreateManyWithoutHostInput
-  location: LocationCreateOneWithoutUserInput
+  ownedRestaurant: RestaurantCreateManyInput
+  location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
   receivedMessages: MessageCreateManyWithoutToInput
@@ -7613,8 +6178,8 @@ input UserUpdateInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   sentMessages: MessageUpdateManyWithoutFromInput
@@ -7657,13 +6222,6 @@ input UserUpdateOneRequiredWithoutOrdersInput {
   connect: UserWhereUniqueInput
 }
 
-input UserUpdateOneRequiredWithoutOwnedPlacesInput {
-  create: UserCreateWithoutOwnedPlacesInput
-  update: UserUpdateWithoutOwnedPlacesDataInput
-  upsert: UserUpsertWithoutOwnedPlacesInput
-  connect: UserWhereUniqueInput
-}
-
 input UserUpdateOneRequiredWithoutPaymentAccountInput {
   create: UserCreateWithoutPaymentAccountInput
   update: UserUpdateWithoutPaymentAccountDataInput
@@ -7685,47 +6243,20 @@ input UserUpdateOneRequiredWithoutSentMessagesInput {
   connect: UserWhereUniqueInput
 }
 
-input UserUpdateOneWithoutLocationInput {
-  create: UserCreateWithoutLocationInput
-  update: UserUpdateWithoutLocationDataInput
-  upsert: UserUpsertWithoutLocationInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: UserWhereUniqueInput
-}
-
 input UserUpdateWithoutHostingExperiencesDataInput {
   displayName: String
   phoneNumber: String
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   sentMessages: MessageUpdateManyWithoutFromInput
   receivedMessages: MessageUpdateManyWithoutToInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  accountType: UserType
-  uid: String
-}
-
-input UserUpdateWithoutLocationDataInput {
-  displayName: String
-  phoneNumber: String
-  responseRate: Float
-  responseTime: Int
-  isSuperHost: Boolean
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  orders: OrderUpdateManyWithoutBookeeInput
-  paymentAccount: PaymentAccountUpdateManyWithoutUserInput
-  sentMessages: MessageUpdateManyWithoutFromInput
-  receivedMessages: MessageUpdateManyWithoutToInput
-  notifications: NotificationUpdateManyWithoutUserInput
-  profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
   accountType: UserType
   uid: String
 }
@@ -7736,8 +6267,8 @@ input UserUpdateWithoutNotificationsDataInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   sentMessages: MessageUpdateManyWithoutFromInput
@@ -7754,26 +6285,8 @@ input UserUpdateWithoutOrdersDataInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
-  paymentAccount: PaymentAccountUpdateManyWithoutUserInput
-  sentMessages: MessageUpdateManyWithoutFromInput
-  receivedMessages: MessageUpdateManyWithoutToInput
-  notifications: NotificationUpdateManyWithoutUserInput
-  profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
-  accountType: UserType
-  uid: String
-}
-
-input UserUpdateWithoutOwnedPlacesDataInput {
-  displayName: String
-  phoneNumber: String
-  responseRate: Float
-  responseTime: Int
-  isSuperHost: Boolean
-  location: LocationUpdateOneWithoutUserInput
-  orders: OrderUpdateManyWithoutBookeeInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   sentMessages: MessageUpdateManyWithoutFromInput
   receivedMessages: MessageUpdateManyWithoutToInput
@@ -7790,8 +6303,8 @@ input UserUpdateWithoutPaymentAccountDataInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   sentMessages: MessageUpdateManyWithoutFromInput
   receivedMessages: MessageUpdateManyWithoutToInput
@@ -7808,8 +6321,8 @@ input UserUpdateWithoutReceivedMessagesDataInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   sentMessages: MessageUpdateManyWithoutFromInput
@@ -7826,8 +6339,8 @@ input UserUpdateWithoutSentMessagesDataInput {
   responseRate: Float
   responseTime: Int
   isSuperHost: Boolean
-  ownedPlaces: PlaceUpdateManyWithoutHostInput
-  location: LocationUpdateOneWithoutUserInput
+  ownedRestaurant: RestaurantUpdateManyInput
+  location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
   receivedMessages: MessageUpdateManyWithoutToInput
@@ -7843,11 +6356,6 @@ input UserUpsertWithoutHostingExperiencesInput {
   create: UserCreateWithoutHostingExperiencesInput!
 }
 
-input UserUpsertWithoutLocationInput {
-  update: UserUpdateWithoutLocationDataInput!
-  create: UserCreateWithoutLocationInput!
-}
-
 input UserUpsertWithoutNotificationsInput {
   update: UserUpdateWithoutNotificationsDataInput!
   create: UserCreateWithoutNotificationsInput!
@@ -7856,11 +6364,6 @@ input UserUpsertWithoutNotificationsInput {
 input UserUpsertWithoutOrdersInput {
   update: UserUpdateWithoutOrdersDataInput!
   create: UserCreateWithoutOrdersInput!
-}
-
-input UserUpsertWithoutOwnedPlacesInput {
-  update: UserUpdateWithoutOwnedPlacesDataInput!
-  create: UserCreateWithoutOwnedPlacesInput!
 }
 
 input UserUpsertWithoutPaymentAccountInput {
@@ -7955,10 +6458,12 @@ input UserWhereInput {
   responseTime_gte: Int
   isSuperHost: Boolean
   isSuperHost_not: Boolean
-  ownedPlaces_every: PlaceWhereInput
-  ownedPlaces_some: PlaceWhereInput
-  ownedPlaces_none: PlaceWhereInput
-  location: LocationWhereInput
+  ownedRestaurant_every: RestaurantWhereInput
+  ownedRestaurant_some: RestaurantWhereInput
+  ownedRestaurant_none: RestaurantWhereInput
+  location_every: LocationWhereInput
+  location_some: LocationWhereInput
+  location_none: LocationWhereInput
   orders_every: OrderWhereInput
   orders_some: OrderWhereInput
   orders_none: OrderWhereInput
@@ -8004,126 +6509,5 @@ input UserWhereInput {
 input UserWhereUniqueInput {
   id: ID
   uid: String
-}
-
-type Views {
-  id: ID!
-  lastWeek: Int!
-  place: Place!
-}
-
-type ViewsConnection {
-  pageInfo: PageInfo!
-  edges: [ViewsEdge]!
-  aggregate: AggregateViews!
-}
-
-input ViewsCreateInput {
-  id: ID
-  lastWeek: Int!
-  place: PlaceCreateOneWithoutViewsInput!
-}
-
-input ViewsCreateOneWithoutPlaceInput {
-  create: ViewsCreateWithoutPlaceInput
-  connect: ViewsWhereUniqueInput
-}
-
-input ViewsCreateWithoutPlaceInput {
-  id: ID
-  lastWeek: Int!
-}
-
-type ViewsEdge {
-  node: Views!
-  cursor: String!
-}
-
-enum ViewsOrderByInput {
-  id_ASC
-  id_DESC
-  lastWeek_ASC
-  lastWeek_DESC
-}
-
-type ViewsPreviousValues {
-  id: ID!
-  lastWeek: Int!
-}
-
-type ViewsSubscriptionPayload {
-  mutation: MutationType!
-  node: Views
-  updatedFields: [String!]
-  previousValues: ViewsPreviousValues
-}
-
-input ViewsSubscriptionWhereInput {
-  mutation_in: [MutationType!]
-  updatedFields_contains: String
-  updatedFields_contains_every: [String!]
-  updatedFields_contains_some: [String!]
-  node: ViewsWhereInput
-  AND: [ViewsSubscriptionWhereInput!]
-  OR: [ViewsSubscriptionWhereInput!]
-  NOT: [ViewsSubscriptionWhereInput!]
-}
-
-input ViewsUpdateInput {
-  lastWeek: Int
-  place: PlaceUpdateOneRequiredWithoutViewsInput
-}
-
-input ViewsUpdateManyMutationInput {
-  lastWeek: Int
-}
-
-input ViewsUpdateOneRequiredWithoutPlaceInput {
-  create: ViewsCreateWithoutPlaceInput
-  update: ViewsUpdateWithoutPlaceDataInput
-  upsert: ViewsUpsertWithoutPlaceInput
-  connect: ViewsWhereUniqueInput
-}
-
-input ViewsUpdateWithoutPlaceDataInput {
-  lastWeek: Int
-}
-
-input ViewsUpsertWithoutPlaceInput {
-  update: ViewsUpdateWithoutPlaceDataInput!
-  create: ViewsCreateWithoutPlaceInput!
-}
-
-input ViewsWhereInput {
-  id: ID
-  id_not: ID
-  id_in: [ID!]
-  id_not_in: [ID!]
-  id_lt: ID
-  id_lte: ID
-  id_gt: ID
-  id_gte: ID
-  id_contains: ID
-  id_not_contains: ID
-  id_starts_with: ID
-  id_not_starts_with: ID
-  id_ends_with: ID
-  id_not_ends_with: ID
-  lastWeek: Int
-  lastWeek_not: Int
-  lastWeek_in: [Int!]
-  lastWeek_not_in: [Int!]
-  lastWeek_lt: Int
-  lastWeek_lte: Int
-  lastWeek_gt: Int
-  lastWeek_gte: Int
-  place: PlaceWhereInput
-  AND: [ViewsWhereInput!]
-  OR: [ViewsWhereInput!]
-  NOT: [ViewsWhereInput!]
-}
-
-input ViewsWhereUniqueInput {
-  id: ID
 }
 `

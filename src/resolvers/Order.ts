@@ -13,8 +13,8 @@ export const Order: OrderResolvers.Type<TypeMap> = {
   createdAt: parent => parent.createdAt,
   bookee: (parent, _args, ctx) =>
   ctx.db.order({ id: parent.id }).bookee(),
-  place: (parent, _args, ctx) =>
-  ctx.db.order({ id: parent.id }).place(),
+  restaurant: (parent, _args, ctx) =>
+  ctx.db.order({ id: parent.id }).restaurant(),
   startDate: parent => parent.startDate,
   endDate: parent => parent.endDate,
   payment: (parent, _args, ctx) =>

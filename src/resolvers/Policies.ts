@@ -1,20 +1,18 @@
-import { PoliciesResolvers } from '../generated/resolvers'
-import { TypeMap } from './types/TypeMap'
+import { PoliciesResolvers } from '../generated/resolvers';
+import { TypeMap } from './types/TypeMap';
 
 export interface PoliciesParent {
-  checkInEndTime: number
-  checkInStartTime: number
-  checkoutTime: number
-  createdAt: string
-  id: string
-  updatedAt: string
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  openingTime: number;
+  closingTime: number;
 }
 
 export const Policies: PoliciesResolvers.Type<TypeMap> = {
-  checkInEndTime: parent => parent.checkInEndTime,
-  checkInStartTime: parent => parent.checkInStartTime,
-  checkoutTime: parent => parent.checkoutTime,
-  createdAt: parent => parent.createdAt,
   id: parent => parent.id,
+  createdAt: parent => parent.createdAt,
   updatedAt: parent => parent.updatedAt,
-}
+  openingTime: parent => parent.openingTime,
+  closingTime: parent => parent.closingTime
+};

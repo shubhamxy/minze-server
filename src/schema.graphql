@@ -2,8 +2,8 @@
 
 type Query {
   topExperiences: [Experience!]!
-  topHomes: [Place!]!
-  homesInPriceRange(min: Int!, max: Int!): [Place!]!
+  topRestaurants: [Restaurant!]!
+  restaurantsInPriceRange(min: Int!, max: Int!): [Restaurant!]!
   topReservations: [Reservation!]!
   featuredDestinations: [Neighbourhood!]!
   experiencesByCity(cities: [String!]!): [ExperiencesByCity!]!
@@ -27,7 +27,7 @@ type Mutation {
     country: String!
   ): MutationResult!
   # Order
-  book(placeId: ID!, checkIn: String!, checkOut: String!, numGuests: Int!): MutationResult!
+  book(restaurantId: ID!, checkIn: String!, checkOut: String!, numGuests: Int!): MutationResult!
 }
 
 type Subscription {
@@ -76,12 +76,12 @@ type Experience {
 }
 
 type Review {
+  id: ID!
   accuracy: Int!
   checkIn: Int!
   cleanliness: Int!
   communication: Int!
   createdAt: DateTime!
-  id: ID!
   location: Int!
   stars: Int!
   text: String!
@@ -132,7 +132,7 @@ type User {
   isSuperHost: Boolean!
   location: Location
   notifications: [Notification!]
-  ownedPlaces: [Place!]
+  ownedRestaurants: [Restaurant!]
   paymentAccount: [PaymentAccount]
   phoneNumber: String!
   profilePicture: Picture
@@ -151,31 +151,25 @@ type PaymentAccount {
   user: User!
   payments: [Payment!]!
   paypal: PaypalInformation
+  paytm: PaytmInformation
+  debitcard: DebitCardInformation
   creditcard: CreditCardInformation
 }
 
-type Place {
+type Restaurant {
   id: ID!
   name: String
-  size: PLACE_SIZES
   shortDescription: String!
   description: String!
   slug: String!
   maxGuests: Int!
   numRatings: Int!
+  avgPricePerPerson: Int!
   avgRating: Float
-  numBedrooms: Int!
-  numBeds: Int!
-  numBaths: Int!
   reviews: [Review!]!
-  amenities: Amenities!
-  host: User!
-  pricing: Pricing!
-  location: Location!
-  views: PlaceViews!
-  guestRequirements: GuestRequirements
+  location: Location
   policies: Policies
-  houseRules: HouseRules
+  menu: [MenuItem!]!
   orders: [Order!]!
   pictures: [Picture!]
   popularity: Int!
@@ -185,7 +179,7 @@ type Order {
   id: ID!
   createdAt: DateTime!
   bookee: User!
-  place: Place!
+  restaurant: Restaurant!
   startDate: DateTime!
   endDate: DateTime!
   payment: Payment!
@@ -215,7 +209,27 @@ type PaypalInformation {
   paymentAccount: PaymentAccount!
 }
 
+type PaytmInformation {
+  createdAt: DateTime!
+  mobile: String!
+  id: ID!
+  paymentAccount: PaymentAccount!
+}
+
 type CreditCardInformation {
+  cardNumber: String!
+  country: String!
+  createdAt: DateTime!
+  expiresOnMonth: Int!
+  expiresOnYear: Int!
+  firstName: String!
+  id: ID!
+  lastName: String!
+  paymentAccount: PaymentAccount
+  postalCode: String!
+  securityCode: String!
+}
+type DebitCardInformation {
   cardNumber: String!
   country: String!
   createdAt: DateTime!
@@ -237,94 +251,33 @@ type Message {
 }
 
 type Pricing {
-  averageMonthly: Int!
-  averageWeekly: Int!
-  basePrice: Int!
-  cleaningFee: Int
-  currency: CURRENCY
-  extraGuests: Int
   id: ID!
   monthlyDiscount: Int
-  perNight: Int!
-  securityDeposit: Int
-  smartPricing: Boolean!
-  weekendPricing: Int
   weeklyDiscount: Int
-}
-
-type PlaceViews {
-  id: ID!
-  lastWeek: Int!
-}
-
-type GuestRequirements {
-  govIssuedId: Boolean!
-  guestTripInformation: Boolean!
-  id: ID!
-  recommendationsFromOtherHosts: Boolean!
+  price: Int!
+  smartPricing: Boolean!
+  basePrice: Int!
+  averageWeekly: Int!
+  averageMonthly: Int!
+  weekendPricing: Int
 }
 
 type Policies {
-  checkInEndTime: Float!
-  checkInStartTime: Float!
-  checkoutTime: Float!
-  createdAt: DateTime!
   id: ID!
-  updatedAt: DateTime!
+  createdAt: DateTime! 
+  updatedAt: DateTime! 
+  openingTime: Float!
+  closingTime: Float!
 }
 
-type HouseRules {
-  additionalRules: String
+type MenuItem {
+  id: ID!
+  shortDescription: String!
+  title: String!
+  description: String!
+  pricing: Pricing!
+  pictures: [Picture!]!
+  reviews: [Review!]!
   createdAt: DateTime!
-  id: ID!
-  partiesAndEventsAllowed: Boolean
-  petsAllowed: Boolean
-  smokingAllowed: Boolean
-  suitableForChildren: Boolean
-  suitableForInfants: Boolean
   updatedAt: DateTime!
-}
-
-type Amenities {
-  airConditioning: Boolean!
-  babyBath: Boolean!
-  babyMonitor: Boolean!
-  babysitterRecommendations: Boolean!
-  bathtub: Boolean!
-  breakfast: Boolean!
-  buzzerWirelessIntercom: Boolean!
-  cableTv: Boolean!
-  changingTable: Boolean!
-  childrensBooksAndToys: Boolean!
-  childrensDinnerware: Boolean!
-  crib: Boolean!
-  doorman: Boolean!
-  dryer: Boolean!
-  elevator: Boolean!
-  essentials: Boolean!
-  familyKidFriendly: Boolean!
-  freeParkingOnPremises: Boolean!
-  freeParkingOnStreet: Boolean!
-  gym: Boolean!
-  hairDryer: Boolean!
-  hangers: Boolean!
-  heating: Boolean!
-  hotTub: Boolean!
-  id: ID!
-  indoorFireplace: Boolean!
-  internet: Boolean!
-  iron: Boolean!
-  kitchen: Boolean!
-  laptopFriendlyWorkspace: Boolean!
-  paidParkingOffPremises: Boolean!
-  petsAllowed: Boolean!
-  pool: Boolean!
-  privateEntrance: Boolean!
-  shampoo: Boolean!
-  smokingAllowed: Boolean!
-  suitableForEvents: Boolean!
-  tv: Boolean!
-  washer: Boolean!
-  wheelchairAccessible: Boolean!
-  wirelessInternet: Boolean!
 }

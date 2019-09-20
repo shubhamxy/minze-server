@@ -1,17 +1,33 @@
-import { UserResolvers } from '../generated/resolvers'
-import { TypeMap } from './types/TypeMap'
+import { UserResolvers } from '../generated/resolvers';
+import { TypeMap } from './types/TypeMap';
+import { OrderParent } from './Order';
+import { ExperienceParent } from './Experience';
+import { LocationParent } from './Location';
+import { NotificationParent } from './Notification';
+import { RestaurantParent } from './Restaurant';
+import { PaymentAccountParent } from './PaymentAccount';
+import { PictureParent } from './Picture';
+import { MessageParent } from './Message';
 
 export interface UserParent {
-  createdAt: string
-  displayName: string
-  id: string
-  uid: string
-  isSuperHost: boolean
-  lastName: string
-  phoneNumber: string
-  responseRate?: number
-  responseTime?: number
-  updatedAt: string
+  orders: OrderParent[];
+  createdAt: string;
+  displayName: string;
+  hostingExperiences: ExperienceParent[];
+  id: string;
+  isSuperHost: boolean;
+  location?: LocationParent;
+  notifications: NotificationParent[];
+  ownedRestaurants: RestaurantParent[];
+  paymentAccount?: PaymentAccountParent[];
+  phoneNumber: string;
+  profilePicture?: PictureParent;
+  receivedMessages: MessageParent[];
+  responseRate?: number;
+  responseTime?: number;
+  sentMessages: MessageParent[];
+  updatedAt: string;
+  uid: string;
 }
 
 export const User: UserResolvers.Type<TypeMap> = {
@@ -26,8 +42,8 @@ export const User: UserResolvers.Type<TypeMap> = {
   location: (parent, _args, ctx) => ctx.db.user({ id: parent.id }).location(),
   notifications: (root, _args, ctx) =>
     ctx.db.user({ id: root.id }).notifications(),
-  ownedPlaces: (parent, _args, ctx) =>
-    ctx.db.user({ id: parent.id }).ownedPlaces(),
+    ownedRestaurants: (parent, _args, ctx) =>
+    ctx.db.user({ id: parent.id }).ownedRestaurant(),
   paymentAccount: (root, _args, ctx) =>
   ctx.db.user({ id: root.id }).paymentAccount(),
   phoneNumber: parent => parent.phoneNumber,
