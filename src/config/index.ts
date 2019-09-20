@@ -1,80 +1,43 @@
 import dotenv from 'dotenv';
-
 import { resolve } from 'path';
-import { runtimeEnvTest } from "../utils/runtimetests";
+import { runtimeEnvTest } from '../utils/runtimetests';
 
-// Application is build in 3 stages
-// 1. local -> local + localdb
-// 2. dev -> dev + dev-db =>
-// 3. production -> prod
+type APP_STAGE = 'development' | 'production';
+type LOGGER = 'File' | 'Console';
 
-enum APP_STAGE {
-  local = 'local',
-  development = 'development',
-  production = 'production',
-  test = 'test'
-}
-enum LOGGER {
-  FILE = 'File',
-  CONSOLE = 'Console'
-}
-interface IConfig {
-  DEBUG: boolean;
-  LOGGING: string[];
-  APP_ENV: APP_STAGE;
-}
-
-const getConfig = (env: string | undefined): IConfig => {
-  // common config
-  let CONFIG = {
+const getConfig = (env: string | undefined) => {
+  const CONFIG = {
     DEBUG: false,
-    LOGGING: [LOGGER.FILE, LOGGER.CONSOLE]
+    LOGGING: 'Console'
   };
-
-  switch (env) {
-    case APP_STAGE.production:
-      // prod CONFIG
-      const prodConfig = {
-        ...CONFIG,
-        APP_ENV: APP_STAGE.production
-      };
-      return prodConfig;
-    case APP_STAGE.development:
-      // dev CONFIG
-      const devConfig = {
-        ...CONFIG,
-        DEBUG: true,
-        LOGGING: [LOGGER.CONSOLE],
-        APP_ENV: APP_STAGE.development
-      };
-      return devConfig;
-    case APP_STAGE.local:
-      // local CONFIG
-      const localConfig = {
-        ...CONFIG,
-        LOGGING: [LOGGER.CONSOLE],
-        APP_ENV: APP_STAGE.local
-      };
-      return localConfig;
-    case APP_STAGE.test:
-      // test CONFIG
-      const testConfig = {
-        ...CONFIG,
-        LOGGING: [LOGGER.CONSOLE],
-        APP_ENV: APP_STAGE.test
-      };
-      return testConfig;
-    default:
-      throw Error('INVALID ENV VARIABLES, CHECK THE CONFIG; ENV=' + env);
+  if (env == 'production') {
+    // prod CONFIG
+    return {
+      ...CONFIG,
+      APP_ENV: 'production'
+    };
+  } else {
+    return {
+      ...CONFIG,
+      DEBUG: true,
+      APP_ENV: 'development'
+    };
   }
 };
 
 const CONFIG = getConfig(process.env.NODE_ENV);
-// loads environment variables from a .env file into process.env
-dotenv.config({ path: resolve(__dirname, `../../.env.${CONFIG.APP_ENV}`) });
+dotenv.config({
+  path: resolve(__dirname, process.env.NODE_ENV === 'production' ? '../../.env.production' : '../../.env')
+});
 
-// these env vars will be exported to be used in the app directly
-const requiredEnvVars = ['NODE_ENV', 'APP_SECRET', 'PORT'];
+const requiredEnvVars = [
+  'NODE_ENV',
+  'APP_SECRET',
+  'PORT',
+  'PRISMA_ENDPOINT',
+  'PRISMA_SECRET',
+  'PRISMA_MANAGEMENT_API_SECRET'
+];
 // ENV_VARS contains all the vars needed in the app
 const ENV_VARS: { [key: string]: string } = {};
 requiredEnvVars.forEach((item: string) => (ENV_VARS[item] = process.env[item] || ''));
