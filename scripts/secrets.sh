@@ -30,7 +30,7 @@ FILE_ROOT="${APP_ENV}_app_secrets_with_paths"
 
 if [ -z $APP_SECRET_PASSPHRASE ]; then
   echo -e "↪ Checking for secrets/secrets File"
-  FILE=secrets/secrets && test -f $FILE && source $FILE
+  FILE=secrets/secret && test -f $FILE && source $FILE
   if [ $APP_ENV == "production" ]; then
     APP_SECRET_PASSPHRASE=$PROD_SECRET
   else

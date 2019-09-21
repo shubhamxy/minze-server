@@ -15,9 +15,9 @@ datamodel:
 # Meaning http://myserver.com/default/default can be written
 # as http://myserver.com.
 
-# endpoint: https://minze-database.herokuapp.com/
+endpoint: https://minze-database.herokuapp.com/
 # endpoint: ${env:PRISMA_ENDPOINT}
-endpoint: http://localhost:4466
+# endpoint: http://localhost:4466
 
 # The secret is used to create JSON web tokens (JWTs). These
 # tokens need to be attached in the `Authorization` header

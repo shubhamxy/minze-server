@@ -15,7 +15,8 @@ projects:
     includes: [
       "prisma.graphql", 
       "seed.graphql", 
-      "datamodel.graphql",
+      "datamodel/types.prisma",
+      "datamodel/enums.prisma",
     ]
     extensions:
       prisma: prisma/prisma.yml

@@ -21,7 +21,7 @@
     "pm2log": "npx pm2 logs --raw",
     "deploy": "./scripts/deploy.sh",
     "clean": "rm -rf ./dist; rm -rf src/graphql/generated",
-    "postinstall": "npx tsc",
+    "postinstall": "./scripts/post-install.sh; npx tsc",
     "resolver-interfaces": "graphql-resolver-codegen interfaces -s src/schema.graphql -o ./src/generated/resolvers.ts",
     "resolver-scaffold": "graphql-resolver-codegen scaffold -s src/schema.graphql -o ./src/resolvers/ -i ../generated/resolvers",
     "resolver-codegen": "npm-run-all resolver-interfaces resolver-scaffold",
