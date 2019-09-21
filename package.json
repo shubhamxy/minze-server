@@ -4,7 +4,7 @@
   "description": "Minze api server",
   "main": "./dist/index.js",
   "engines": {
-    "node": "10.16.0"
+    "node": "10.16"
   },
   "keywords": [
     "nodejs",
