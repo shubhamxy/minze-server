@@ -1,5 +1,5 @@
-# source: http://localhost:4466
-# timestamp: Sat Sep 21 2019 00:08:13 GMT+0530 (India Standard Time)
+# source: https://minze-database.herokuapp.com
+# timestamp: Sat Sep 21 2019 11:31:50 GMT+0530 (India Standard Time)
 
 type AggregateCity {
   count: Int!
@@ -889,7 +889,24 @@ input DebitCardInformationCreateInput {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccountCreateOneInput
+  paymentAccount: PaymentAccountCreateOneWithoutDebitcardInput
+}
+
+input DebitCardInformationCreateOneWithoutPaymentAccountInput {
+  create: DebitCardInformationCreateWithoutPaymentAccountInput
+  connect: DebitCardInformationWhereUniqueInput
+}
+
+input DebitCardInformationCreateWithoutPaymentAccountInput {
+  id: ID
+  cardNumber: String!
+  expiresOnMonth: Int!
+  expiresOnYear: Int!
+  securityCode: String!
+  firstName: String!
+  lastName: String!
+  postalCode: String!
+  country: String!
 }
 
 """An edge in a connection."""
@@ -985,7 +1002,7 @@ input DebitCardInformationUpdateInput {
   lastName: String
   postalCode: String
   country: String
-  paymentAccount: PaymentAccountUpdateOneInput
+  paymentAccount: PaymentAccountUpdateOneWithoutDebitcardInput
 }
 
 input DebitCardInformationUpdateManyMutationInput {
@@ -997,6 +1014,31 @@ input DebitCardInformationUpdateManyMutationInput {
   lastName: String
   postalCode: String
   country: String
+}
+
+input DebitCardInformationUpdateOneWithoutPaymentAccountInput {
+  create: DebitCardInformationCreateWithoutPaymentAccountInput
+  connect: DebitCardInformationWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: DebitCardInformationUpdateWithoutPaymentAccountDataInput
+  upsert: DebitCardInformationUpsertWithoutPaymentAccountInput
+}
+
+input DebitCardInformationUpdateWithoutPaymentAccountDataInput {
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
+}
+
+input DebitCardInformationUpsertWithoutPaymentAccountInput {
+  update: DebitCardInformationUpdateWithoutPaymentAccountDataInput!
+  create: DebitCardInformationCreateWithoutPaymentAccountInput!
 }
 
 input DebitCardInformationWhereInput {
@@ -3970,6 +4012,7 @@ type Mutation {
   createExperience(data: ExperienceCreateInput!): Experience!
   createExperienceCategory(data: ExperienceCategoryCreateInput!): ExperienceCategory!
   createPayment(data: PaymentCreateInput!): Payment!
+  createPaymentAccount(data: PaymentAccountCreateInput!): PaymentAccount!
   createPaypalInformation(data: PaypalInformationCreateInput!): PaypalInformation!
   createPaytmInformation(data: PaytmInformationCreateInput!): PaytmInformation!
   createCreditCardInformation(data: CreditCardInformationCreateInput!): CreditCardInformation!
@@ -3978,7 +4021,6 @@ type Mutation {
   createNotification(data: NotificationCreateInput!): Notification!
   createRestaurant(data: RestaurantCreateInput!): Restaurant!
   createMenuItem(data: MenuItemCreateInput!): MenuItem!
-  createPaymentAccount(data: PaymentAccountCreateInput!): PaymentAccount!
   createPolicies(data: PoliciesCreateInput!): Policies!
   createLocation(data: LocationCreateInput!): Location!
   createReview(data: ReviewCreateInput!): Review!
@@ -3991,6 +4033,7 @@ type Mutation {
   updateExperience(data: ExperienceUpdateInput!, where: ExperienceWhereUniqueInput!): Experience
   updateExperienceCategory(data: ExperienceCategoryUpdateInput!, where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
   updatePayment(data: PaymentUpdateInput!, where: PaymentWhereUniqueInput!): Payment
+  updatePaymentAccount(data: PaymentAccountUpdateInput!, where: PaymentAccountWhereUniqueInput!): PaymentAccount
   updatePaypalInformation(data: PaypalInformationUpdateInput!, where: PaypalInformationWhereUniqueInput!): PaypalInformation
   updatePaytmInformation(data: PaytmInformationUpdateInput!, where: PaytmInformationWhereUniqueInput!): PaytmInformation
   updateCreditCardInformation(data: CreditCardInformationUpdateInput!, where: CreditCardInformationWhereUniqueInput!): CreditCardInformation
@@ -3999,7 +4042,6 @@ type Mutation {
   updateNotification(data: NotificationUpdateInput!, where: NotificationWhereUniqueInput!): Notification
   updateRestaurant(data: RestaurantUpdateInput!, where: RestaurantWhereUniqueInput!): Restaurant
   updateMenuItem(data: MenuItemUpdateInput!, where: MenuItemWhereUniqueInput!): MenuItem
-  updatePaymentAccount(data: PaymentAccountUpdateInput!, where: PaymentAccountWhereUniqueInput!): PaymentAccount
   updatePolicies(data: PoliciesUpdateInput!, where: PoliciesWhereUniqueInput!): Policies
   updateLocation(data: LocationUpdateInput!, where: LocationWhereUniqueInput!): Location
   updateReview(data: ReviewUpdateInput!, where: ReviewWhereUniqueInput!): Review
@@ -4012,6 +4054,7 @@ type Mutation {
   deleteExperience(where: ExperienceWhereUniqueInput!): Experience
   deleteExperienceCategory(where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
   deletePayment(where: PaymentWhereUniqueInput!): Payment
+  deletePaymentAccount(where: PaymentAccountWhereUniqueInput!): PaymentAccount
   deletePaypalInformation(where: PaypalInformationWhereUniqueInput!): PaypalInformation
   deletePaytmInformation(where: PaytmInformationWhereUniqueInput!): PaytmInformation
   deleteCreditCardInformation(where: CreditCardInformationWhereUniqueInput!): CreditCardInformation
@@ -4020,7 +4063,6 @@ type Mutation {
   deleteNotification(where: NotificationWhereUniqueInput!): Notification
   deleteRestaurant(where: RestaurantWhereUniqueInput!): Restaurant
   deleteMenuItem(where: MenuItemWhereUniqueInput!): MenuItem
-  deletePaymentAccount(where: PaymentAccountWhereUniqueInput!): PaymentAccount
   deletePolicies(where: PoliciesWhereUniqueInput!): Policies
   deleteLocation(where: LocationWhereUniqueInput!): Location
   deleteReview(where: ReviewWhereUniqueInput!): Review
@@ -4033,6 +4075,7 @@ type Mutation {
   upsertExperience(where: ExperienceWhereUniqueInput!, create: ExperienceCreateInput!, update: ExperienceUpdateInput!): Experience!
   upsertExperienceCategory(where: ExperienceCategoryWhereUniqueInput!, create: ExperienceCategoryCreateInput!, update: ExperienceCategoryUpdateInput!): ExperienceCategory!
   upsertPayment(where: PaymentWhereUniqueInput!, create: PaymentCreateInput!, update: PaymentUpdateInput!): Payment!
+  upsertPaymentAccount(where: PaymentAccountWhereUniqueInput!, create: PaymentAccountCreateInput!, update: PaymentAccountUpdateInput!): PaymentAccount!
   upsertPaypalInformation(where: PaypalInformationWhereUniqueInput!, create: PaypalInformationCreateInput!, update: PaypalInformationUpdateInput!): PaypalInformation!
   upsertPaytmInformation(where: PaytmInformationWhereUniqueInput!, create: PaytmInformationCreateInput!, update: PaytmInformationUpdateInput!): PaytmInformation!
   upsertCreditCardInformation(where: CreditCardInformationWhereUniqueInput!, create: CreditCardInformationCreateInput!, update: CreditCardInformationUpdateInput!): CreditCardInformation!
@@ -4041,7 +4084,6 @@ type Mutation {
   upsertNotification(where: NotificationWhereUniqueInput!, create: NotificationCreateInput!, update: NotificationUpdateInput!): Notification!
   upsertRestaurant(where: RestaurantWhereUniqueInput!, create: RestaurantCreateInput!, update: RestaurantUpdateInput!): Restaurant!
   upsertMenuItem(where: MenuItemWhereUniqueInput!, create: MenuItemCreateInput!, update: MenuItemUpdateInput!): MenuItem!
-  upsertPaymentAccount(where: PaymentAccountWhereUniqueInput!, create: PaymentAccountCreateInput!, update: PaymentAccountUpdateInput!): PaymentAccount!
   upsertPolicies(where: PoliciesWhereUniqueInput!, create: PoliciesCreateInput!, update: PoliciesUpdateInput!): Policies!
   upsertLocation(where: LocationWhereUniqueInput!, create: LocationCreateInput!, update: LocationUpdateInput!): Location!
   upsertReview(where: ReviewWhereUniqueInput!, create: ReviewCreateInput!, update: ReviewUpdateInput!): Review!
@@ -4054,6 +4096,7 @@ type Mutation {
   updateManyExperiences(data: ExperienceUpdateManyMutationInput!, where: ExperienceWhereInput): BatchPayload!
   updateManyExperienceCategories(data: ExperienceCategoryUpdateManyMutationInput!, where: ExperienceCategoryWhereInput): BatchPayload!
   updateManyPayments(data: PaymentUpdateManyMutationInput!, where: PaymentWhereInput): BatchPayload!
+  updateManyPaymentAccounts(data: PaymentAccountUpdateManyMutationInput!, where: PaymentAccountWhereInput): BatchPayload!
   updateManyPaypalInformations(data: PaypalInformationUpdateManyMutationInput!, where: PaypalInformationWhereInput): BatchPayload!
   updateManyPaytmInformations(data: PaytmInformationUpdateManyMutationInput!, where: PaytmInformationWhereInput): BatchPayload!
   updateManyCreditCardInformations(data: CreditCardInformationUpdateManyMutationInput!, where: CreditCardInformationWhereInput): BatchPayload!
@@ -4062,7 +4105,6 @@ type Mutation {
   updateManyNotifications(data: NotificationUpdateManyMutationInput!, where: NotificationWhereInput): BatchPayload!
   updateManyRestaurants(data: RestaurantUpdateManyMutationInput!, where: RestaurantWhereInput): BatchPayload!
   updateManyMenuItems(data: MenuItemUpdateManyMutationInput!, where: MenuItemWhereInput): BatchPayload!
-  updateManyPaymentAccounts(data: PaymentAccountUpdateManyMutationInput!, where: PaymentAccountWhereInput): BatchPayload!
   updateManyPolicieses(data: PoliciesUpdateManyMutationInput!, where: PoliciesWhereInput): BatchPayload!
   updateManyLocations(data: LocationUpdateManyMutationInput!, where: LocationWhereInput): BatchPayload!
   updateManyReviews(data: ReviewUpdateManyMutationInput!, where: ReviewWhereInput): BatchPayload!
@@ -4075,6 +4117,7 @@ type Mutation {
   deleteManyExperiences(where: ExperienceWhereInput): BatchPayload!
   deleteManyExperienceCategories(where: ExperienceCategoryWhereInput): BatchPayload!
   deleteManyPayments(where: PaymentWhereInput): BatchPayload!
+  deleteManyPaymentAccounts(where: PaymentAccountWhereInput): BatchPayload!
   deleteManyPaypalInformations(where: PaypalInformationWhereInput): BatchPayload!
   deleteManyPaytmInformations(where: PaytmInformationWhereInput): BatchPayload!
   deleteManyCreditCardInformations(where: CreditCardInformationWhereInput): BatchPayload!
@@ -4083,7 +4126,6 @@ type Mutation {
   deleteManyNotifications(where: NotificationWhereInput): BatchPayload!
   deleteManyRestaurants(where: RestaurantWhereInput): BatchPayload!
   deleteManyMenuItems(where: MenuItemWhereInput): BatchPayload!
-  deleteManyPaymentAccounts(where: PaymentAccountWhereInput): BatchPayload!
   deleteManyPolicieses(where: PoliciesWhereInput): BatchPayload!
   deleteManyLocations(where: LocationWhereInput): BatchPayload!
   deleteManyReviews(where: ReviewWhereInput): BatchPayload!
@@ -5647,7 +5689,9 @@ type PaymentAccount implements Node {
   user: User!
   payments(where: PaymentWhereInput, orderBy: PaymentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Payment!]
   paypal: PaypalInformation
+  paytm: PaytmInformation
   creditcard: CreditCardInformation
+  debitcard: DebitCardInformation
 }
 
 """A connection to a list of items."""
@@ -5666,7 +5710,9 @@ input PaymentAccountCreateInput {
   user: UserCreateOneWithoutPaymentAccountInput!
   payments: PaymentCreateManyWithoutPaymentMethodInput
   paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountCreateManyWithoutUserInput {
@@ -5674,13 +5720,13 @@ input PaymentAccountCreateManyWithoutUserInput {
   connect: [PaymentAccountWhereUniqueInput!]
 }
 
-input PaymentAccountCreateOneInput {
-  create: PaymentAccountCreateInput
+input PaymentAccountCreateOneWithoutCreditcardInput {
+  create: PaymentAccountCreateWithoutCreditcardInput
   connect: PaymentAccountWhereUniqueInput
 }
 
-input PaymentAccountCreateOneWithoutCreditcardInput {
-  create: PaymentAccountCreateWithoutCreditcardInput
+input PaymentAccountCreateOneWithoutDebitcardInput {
+  create: PaymentAccountCreateWithoutDebitcardInput
   connect: PaymentAccountWhereUniqueInput
 }
 
@@ -5694,12 +5740,29 @@ input PaymentAccountCreateOneWithoutPaypalInput {
   connect: PaymentAccountWhereUniqueInput
 }
 
+input PaymentAccountCreateOneWithoutPaytmInput {
+  create: PaymentAccountCreateWithoutPaytmInput
+  connect: PaymentAccountWhereUniqueInput
+}
+
 input PaymentAccountCreateWithoutCreditcardInput {
   id: ID
   type: PAYMENT_PROVIDER
   user: UserCreateOneWithoutPaymentAccountInput!
   payments: PaymentCreateManyWithoutPaymentMethodInput
   paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
+}
+
+input PaymentAccountCreateWithoutDebitcardInput {
+  id: ID
+  type: PAYMENT_PROVIDER
+  user: UserCreateOneWithoutPaymentAccountInput!
+  payments: PaymentCreateManyWithoutPaymentMethodInput
+  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
+  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountCreateWithoutPaymentsInput {
@@ -5707,7 +5770,9 @@ input PaymentAccountCreateWithoutPaymentsInput {
   type: PAYMENT_PROVIDER
   user: UserCreateOneWithoutPaymentAccountInput!
   paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountCreateWithoutPaypalInput {
@@ -5715,7 +5780,19 @@ input PaymentAccountCreateWithoutPaypalInput {
   type: PAYMENT_PROVIDER
   user: UserCreateOneWithoutPaymentAccountInput!
   payments: PaymentCreateManyWithoutPaymentMethodInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
+}
+
+input PaymentAccountCreateWithoutPaytmInput {
+  id: ID
+  type: PAYMENT_PROVIDER
+  user: UserCreateOneWithoutPaymentAccountInput!
+  payments: PaymentCreateManyWithoutPaymentMethodInput
+  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountCreateWithoutUserInput {
@@ -5723,7 +5800,9 @@ input PaymentAccountCreateWithoutUserInput {
   type: PAYMENT_PROVIDER
   payments: PaymentCreateManyWithoutPaymentMethodInput
   paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 """An edge in a connection."""
@@ -5872,20 +5951,14 @@ input PaymentAccountSubscriptionWhereInput {
   node: PaymentAccountWhereInput
 }
 
-input PaymentAccountUpdateDataInput {
-  type: PAYMENT_PROVIDER
-  user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-}
-
 input PaymentAccountUpdateInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
   payments: PaymentUpdateManyWithoutPaymentMethodInput
   paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountUpdateManyDataInput {
@@ -5913,22 +5986,6 @@ input PaymentAccountUpdateManyWithWhereNestedInput {
   data: PaymentAccountUpdateManyDataInput!
 }
 
-input PaymentAccountUpdateOneInput {
-  create: PaymentAccountCreateInput
-  connect: PaymentAccountWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
-  update: PaymentAccountUpdateDataInput
-  upsert: PaymentAccountUpsertNestedInput
-}
-
-input PaymentAccountUpdateOneRequiredInput {
-  create: PaymentAccountCreateInput
-  connect: PaymentAccountWhereUniqueInput
-  update: PaymentAccountUpdateDataInput
-  upsert: PaymentAccountUpsertNestedInput
-}
-
 input PaymentAccountUpdateOneRequiredWithoutPaymentsInput {
   create: PaymentAccountCreateWithoutPaymentsInput
   connect: PaymentAccountWhereUniqueInput
@@ -5943,6 +6000,13 @@ input PaymentAccountUpdateOneRequiredWithoutPaypalInput {
   upsert: PaymentAccountUpsertWithoutPaypalInput
 }
 
+input PaymentAccountUpdateOneRequiredWithoutPaytmInput {
+  create: PaymentAccountCreateWithoutPaytmInput
+  connect: PaymentAccountWhereUniqueInput
+  update: PaymentAccountUpdateWithoutPaytmDataInput
+  upsert: PaymentAccountUpsertWithoutPaytmInput
+}
+
 input PaymentAccountUpdateOneWithoutCreditcardInput {
   create: PaymentAccountCreateWithoutCreditcardInput
   connect: PaymentAccountWhereUniqueInput
@@ -5952,32 +6016,67 @@ input PaymentAccountUpdateOneWithoutCreditcardInput {
   upsert: PaymentAccountUpsertWithoutCreditcardInput
 }
 
+input PaymentAccountUpdateOneWithoutDebitcardInput {
+  create: PaymentAccountCreateWithoutDebitcardInput
+  connect: PaymentAccountWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: PaymentAccountUpdateWithoutDebitcardDataInput
+  upsert: PaymentAccountUpsertWithoutDebitcardInput
+}
+
 input PaymentAccountUpdateWithoutCreditcardDataInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
   payments: PaymentUpdateManyWithoutPaymentMethodInput
   paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
+}
+
+input PaymentAccountUpdateWithoutDebitcardDataInput {
+  type: PAYMENT_PROVIDER
+  user: UserUpdateOneRequiredWithoutPaymentAccountInput
+  payments: PaymentUpdateManyWithoutPaymentMethodInput
+  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
+  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountUpdateWithoutPaymentsDataInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
   paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountUpdateWithoutPaypalDataInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
   payments: PaymentUpdateManyWithoutPaymentMethodInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
+}
+
+input PaymentAccountUpdateWithoutPaytmDataInput {
+  type: PAYMENT_PROVIDER
+  user: UserUpdateOneRequiredWithoutPaymentAccountInput
+  payments: PaymentUpdateManyWithoutPaymentMethodInput
+  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountUpdateWithoutUserDataInput {
   type: PAYMENT_PROVIDER
   payments: PaymentUpdateManyWithoutPaymentMethodInput
   paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
+  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
   creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
+  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
@@ -5985,14 +6084,14 @@ input PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
   data: PaymentAccountUpdateWithoutUserDataInput!
 }
 
-input PaymentAccountUpsertNestedInput {
-  update: PaymentAccountUpdateDataInput!
-  create: PaymentAccountCreateInput!
-}
-
 input PaymentAccountUpsertWithoutCreditcardInput {
   update: PaymentAccountUpdateWithoutCreditcardDataInput!
   create: PaymentAccountCreateWithoutCreditcardInput!
+}
+
+input PaymentAccountUpsertWithoutDebitcardInput {
+  update: PaymentAccountUpdateWithoutDebitcardDataInput!
+  create: PaymentAccountCreateWithoutDebitcardInput!
 }
 
 input PaymentAccountUpsertWithoutPaymentsInput {
@@ -6003,6 +6102,11 @@ input PaymentAccountUpsertWithoutPaymentsInput {
 input PaymentAccountUpsertWithoutPaypalInput {
   update: PaymentAccountUpdateWithoutPaypalDataInput!
   create: PaymentAccountCreateWithoutPaypalInput!
+}
+
+input PaymentAccountUpsertWithoutPaytmInput {
+  update: PaymentAccountUpdateWithoutPaytmDataInput!
+  create: PaymentAccountCreateWithoutPaytmInput!
 }
 
 input PaymentAccountUpsertWithWhereUniqueWithoutUserInput {
@@ -6097,7 +6201,9 @@ input PaymentAccountWhereInput {
   payments_some: PaymentWhereInput
   payments_none: PaymentWhereInput
   paypal: PaypalInformationWhereInput
+  paytm: PaytmInformationWhereInput
   creditcard: CreditCardInformationWhereInput
+  debitcard: DebitCardInformationWhereInput
 }
 
 input PaymentAccountWhereUniqueInput {
@@ -6839,7 +6945,17 @@ type PaytmInformationConnection {
 input PaytmInformationCreateInput {
   id: ID
   phone: String!
-  paymentAccount: PaymentAccountCreateOneInput!
+  paymentAccount: PaymentAccountCreateOneWithoutPaytmInput!
+}
+
+input PaytmInformationCreateOneWithoutPaymentAccountInput {
+  create: PaytmInformationCreateWithoutPaymentAccountInput
+  connect: PaytmInformationWhereUniqueInput
+}
+
+input PaytmInformationCreateWithoutPaymentAccountInput {
+  id: ID
+  phone: String!
 }
 
 """An edge in a connection."""
@@ -6907,11 +7023,29 @@ input PaytmInformationSubscriptionWhereInput {
 
 input PaytmInformationUpdateInput {
   phone: String
-  paymentAccount: PaymentAccountUpdateOneRequiredInput
+  paymentAccount: PaymentAccountUpdateOneRequiredWithoutPaytmInput
 }
 
 input PaytmInformationUpdateManyMutationInput {
   phone: String
+}
+
+input PaytmInformationUpdateOneWithoutPaymentAccountInput {
+  create: PaytmInformationCreateWithoutPaymentAccountInput
+  connect: PaytmInformationWhereUniqueInput
+  disconnect: Boolean
+  delete: Boolean
+  update: PaytmInformationUpdateWithoutPaymentAccountDataInput
+  upsert: PaytmInformationUpsertWithoutPaymentAccountInput
+}
+
+input PaytmInformationUpdateWithoutPaymentAccountDataInput {
+  phone: String
+}
+
+input PaytmInformationUpsertWithoutPaymentAccountInput {
+  update: PaytmInformationUpdateWithoutPaymentAccountDataInput!
+  create: PaytmInformationCreateWithoutPaymentAccountInput!
 }
 
 input PaytmInformationWhereInput {
@@ -8028,6 +8162,7 @@ type Query {
   experiences(where: ExperienceWhereInput, orderBy: ExperienceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Experience]!
   experienceCategories(where: ExperienceCategoryWhereInput, orderBy: ExperienceCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ExperienceCategory]!
   payments(where: PaymentWhereInput, orderBy: PaymentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Payment]!
+  paymentAccounts(where: PaymentAccountWhereInput, orderBy: PaymentAccountOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaymentAccount]!
   paypalInformations(where: PaypalInformationWhereInput, orderBy: PaypalInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaypalInformation]!
   paytmInformations(where: PaytmInformationWhereInput, orderBy: PaytmInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaytmInformation]!
   creditCardInformations(where: CreditCardInformationWhereInput, orderBy: CreditCardInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CreditCardInformation]!
@@ -8036,7 +8171,6 @@ type Query {
   notifications(where: NotificationWhereInput, orderBy: NotificationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Notification]!
   restaurants(where: RestaurantWhereInput, orderBy: RestaurantOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Restaurant]!
   menuItems(where: MenuItemWhereInput, orderBy: MenuItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [MenuItem]!
-  paymentAccounts(where: PaymentAccountWhereInput, orderBy: PaymentAccountOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaymentAccount]!
   policieses(where: PoliciesWhereInput, orderBy: PoliciesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Policies]!
   locations(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Location]!
   reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review]!
@@ -8049,6 +8183,7 @@ type Query {
   experience(where: ExperienceWhereUniqueInput!): Experience
   experienceCategory(where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
   payment(where: PaymentWhereUniqueInput!): Payment
+  paymentAccount(where: PaymentAccountWhereUniqueInput!): PaymentAccount
   paypalInformation(where: PaypalInformationWhereUniqueInput!): PaypalInformation
   paytmInformation(where: PaytmInformationWhereUniqueInput!): PaytmInformation
   creditCardInformation(where: CreditCardInformationWhereUniqueInput!): CreditCardInformation
@@ -8057,7 +8192,6 @@ type Query {
   notification(where: NotificationWhereUniqueInput!): Notification
   restaurant(where: RestaurantWhereUniqueInput!): Restaurant
   menuItem(where: MenuItemWhereUniqueInput!): MenuItem
-  paymentAccount(where: PaymentAccountWhereUniqueInput!): PaymentAccount
   policies(where: PoliciesWhereUniqueInput!): Policies
   location(where: LocationWhereUniqueInput!): Location
   review(where: ReviewWhereUniqueInput!): Review
@@ -8070,6 +8204,7 @@ type Query {
   experiencesConnection(where: ExperienceWhereInput, orderBy: ExperienceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ExperienceConnection!
   experienceCategoriesConnection(where: ExperienceCategoryWhereInput, orderBy: ExperienceCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ExperienceCategoryConnection!
   paymentsConnection(where: PaymentWhereInput, orderBy: PaymentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaymentConnection!
+  paymentAccountsConnection(where: PaymentAccountWhereInput, orderBy: PaymentAccountOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaymentAccountConnection!
   paypalInformationsConnection(where: PaypalInformationWhereInput, orderBy: PaypalInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaypalInformationConnection!
   paytmInformationsConnection(where: PaytmInformationWhereInput, orderBy: PaytmInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaytmInformationConnection!
   creditCardInformationsConnection(where: CreditCardInformationWhereInput, orderBy: CreditCardInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CreditCardInformationConnection!
@@ -8078,7 +8213,6 @@ type Query {
   notificationsConnection(where: NotificationWhereInput, orderBy: NotificationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NotificationConnection!
   restaurantsConnection(where: RestaurantWhereInput, orderBy: RestaurantOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RestaurantConnection!
   menuItemsConnection(where: MenuItemWhereInput, orderBy: MenuItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MenuItemConnection!
-  paymentAccountsConnection(where: PaymentAccountWhereInput, orderBy: PaymentAccountOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaymentAccountConnection!
   policiesesConnection(where: PoliciesWhereInput, orderBy: PoliciesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PoliciesConnection!
   locationsConnection(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LocationConnection!
   reviewsConnection(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ReviewConnection!
@@ -9853,6 +9987,7 @@ type Subscription {
   experience(where: ExperienceSubscriptionWhereInput): ExperienceSubscriptionPayload
   experienceCategory(where: ExperienceCategorySubscriptionWhereInput): ExperienceCategorySubscriptionPayload
   payment(where: PaymentSubscriptionWhereInput): PaymentSubscriptionPayload
+  paymentAccount(where: PaymentAccountSubscriptionWhereInput): PaymentAccountSubscriptionPayload
   paypalInformation(where: PaypalInformationSubscriptionWhereInput): PaypalInformationSubscriptionPayload
   paytmInformation(where: PaytmInformationSubscriptionWhereInput): PaytmInformationSubscriptionPayload
   creditCardInformation(where: CreditCardInformationSubscriptionWhereInput): CreditCardInformationSubscriptionPayload
@@ -9861,7 +9996,6 @@ type Subscription {
   notification(where: NotificationSubscriptionWhereInput): NotificationSubscriptionPayload
   restaurant(where: RestaurantSubscriptionWhereInput): RestaurantSubscriptionPayload
   menuItem(where: MenuItemSubscriptionWhereInput): MenuItemSubscriptionPayload
-  paymentAccount(where: PaymentAccountSubscriptionWhereInput): PaymentAccountSubscriptionPayload
   policies(where: PoliciesSubscriptionWhereInput): PoliciesSubscriptionPayload
   location(where: LocationSubscriptionWhereInput): LocationSubscriptionPayload
   review(where: ReviewSubscriptionWhereInput): ReviewSubscriptionPayload
