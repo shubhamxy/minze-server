@@ -1,13 +1,14 @@
-# Minze Server [![Build Status](https://dev.azure.com/shubhamxy/minze-server/_apis/build/status/shubhamxy.minze-server?branchName=master)](https://dev.azure.com/shubhamxy/minze-server/_build/latest?definitionId=3&branchName=master)
-  
-*Server code for minze application*
+# Minze Server
+ <a href="https://github.com/shubhamxy/minze-server/actions">
+  <img
+      src="https://github.com/shubhamxy/minze-server/workflows/CI/badge.svg" />
+  </a>
 
-## Microservices
+Server code for minze application.
 
+> API Playground : https://minze-server.herokuapp.com/playground 
+## descriptions
 - TODO 
-
-A food & entertainment discovery app for Android/IOS in React-Native, consuming the
-API build with Node, Express, TypeScript, and Prisma to provide data to the app.
 
 ## **Technology Used**
 - Typescript
