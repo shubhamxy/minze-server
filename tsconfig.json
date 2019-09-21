@@ -71,8 +71,8 @@
   "exclude": [
         "node_modules",
         "dist",
-        "database",
-        "src/tests",
+        "prisma",
+        "src/__tests__",
         "src/__mocks__",
         "bin",
         "coverage"

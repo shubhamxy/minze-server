@@ -1,5 +1,5 @@
 import * as admin from 'firebase-admin';
-import { serviceAccount } from '../../keys';
+import serviceAccount from '../../keys/service-account.json';
 admin.initializeApp({
   credential: admin.credential.cert({
     projectId: serviceAccount.project_id,
