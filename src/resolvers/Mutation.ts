@@ -3,6 +3,7 @@ import { MutationResolvers } from '../generated/resolvers';
 import { getUserId } from '../utils';
 import { TypeMap } from './types/TypeMap';
 import { admin } from '../services/firebase';
+import config from '../config';
 
 export interface MutationParent {}
 
@@ -19,7 +20,7 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
     if (!user) {
       throw new Error('Invalid Credentials');
     }
-    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET as jwt.Secret);
+    const token = jwt.sign({ userId: user.id }, config.ENV_VARS.APP_SECRET as jwt.Secret);
     return {
       id: user.id,
       token
@@ -33,7 +34,7 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
       throw new Error('Invalid Credentials');
     }
 
-    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET as jwt.Secret);
+    const token = jwt.sign({ userId: user.id }, config.ENV_VARS.APP_SECRET as jwt.Secret);
 
     return {
       id: user.id,
