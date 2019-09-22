@@ -25,7 +25,7 @@ const logger = createLogger({
   )
 });
 
-if(config.LOGGING.includes("File")){
+if (config.LOGGING.includes('File')) {
   logger.add(
     new winstonDailyRotateFile({
       level: 'info',
@@ -38,13 +38,12 @@ if(config.LOGGING.includes("File")){
   );
 }
 
-
-if (config.LOGGING.includes("Console")) {
+if (config.LOGGING.includes('Console')) {
   logger.add(
     new transports.Console({
-      level: config.DEBUG ? 'debug' : 'info',
+      level: config.DEBUG ? 'debug' : 'info'
     })
-  )
+  );
 }
 
 export { logger };

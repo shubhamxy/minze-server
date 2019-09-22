@@ -25,4 +25,3 @@ export const applyRoutes = (routes: Route[], router: Router) => {
 
 export * from './logging';
 export * from './context';
-

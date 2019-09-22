@@ -26,7 +26,7 @@ module.exports = {
     //     "ImportDeclaration": "never",
     //     "ExportDeclaration": { "multiline": true, "minProperties": 3 }
     // }],
-    "array-element-newline": "on",
+    "array-element-newline": "off",
     "object-curly-newline": "off",
     "global-require": "off",
     'no-unused-vars': 'off',

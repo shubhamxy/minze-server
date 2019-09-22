@@ -1,12 +1,12 @@
-import { PaymentAccountResolvers } from '../generated/resolvers'
-import { TypeMap } from './types/TypeMap'
+import { PaymentAccountResolvers } from '../generated/resolvers';
+import { TypeMap } from './types/TypeMap';
 
 export type PAYMENT_PROVIDER = 'PAYPAL' | 'PAYTM' | 'CREDIT_CARD' | 'DEBIT_CARD';
 
 export interface PaymentAccountParent {
-  id: string
-  createdAt: string
-  type?: PAYMENT_PROVIDER
+  id: string;
+  createdAt: string;
+  type?: PAYMENT_PROVIDER;
 }
 
 export const PaymentAccount: PaymentAccountResolvers.Type<TypeMap> = {
@@ -18,5 +18,5 @@ export const PaymentAccount: PaymentAccountResolvers.Type<TypeMap> = {
   paypal: (parent, args, ctx) => ctx.db.paymentAccount({ id: parent.id }).paypal(),
   paytm: (parent, args, ctx) => ctx.db.paymentAccount({ id: parent.id }).paypal(),
   debitcard: (parent, args, ctx) => ctx.db.paymentAccount({ id: parent.id }).creditcard(),
-  creditcard: (parent, args, ctx) => ctx.db.paymentAccount({ id: parent.id }).creditcard(),
-}
+  creditcard: (parent, args, ctx) => ctx.db.paymentAccount({ id: parent.id }).creditcard()
+};

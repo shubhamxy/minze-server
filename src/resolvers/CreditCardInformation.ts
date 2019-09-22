@@ -1,24 +1,22 @@
-import { CreditCardInformationResolvers } from '../generated/resolvers'
-import { TypeMap } from './types/TypeMap'
-import { PaymentAccountParent } from './PaymentAccount'
+import { CreditCardInformationResolvers } from '../generated/resolvers';
+import { TypeMap } from './types/TypeMap';
+import { PaymentAccountParent } from './PaymentAccount';
 
 export interface CreditCardInformationParent {
-  cardNumber: string
-  country: string
-  createdAt: string
-  expiresOnMonth: number
-  expiresOnYear: number
-  firstName: string
-  id: string
-  lastName: string
-  paymentAccount?: PaymentAccountParent
-  postalCode: string
-  securityCode: string
+  cardNumber: string;
+  country: string;
+  createdAt: string;
+  expiresOnMonth: number;
+  expiresOnYear: number;
+  firstName: string;
+  id: string;
+  lastName: string;
+  paymentAccount?: PaymentAccountParent;
+  postalCode: string;
+  securityCode: string;
 }
 
-export const CreditCardInformation: CreditCardInformationResolvers.Type<
-  TypeMap
-> = {
+export const CreditCardInformation: CreditCardInformationResolvers.Type<TypeMap> = {
   cardNumber: parent => parent.cardNumber,
   country: parent => parent.country,
   createdAt: parent => parent.createdAt,
@@ -27,8 +25,7 @@ export const CreditCardInformation: CreditCardInformationResolvers.Type<
   firstName: parent => parent.firstName,
   id: parent => parent.id,
   lastName: parent => parent.lastName,
-  paymentAccount: (parent, _args, ctx) =>
-    ctx.db.creditCardInformation({ id: parent.id }).paymentAccount(),
+  paymentAccount: (parent, _args, ctx) => ctx.db.creditCardInformation({ id: parent.id }).paymentAccount(),
   postalCode: parent => parent.postalCode,
-  securityCode: parent => parent.securityCode,
-}
+  securityCode: parent => parent.securityCode
+};

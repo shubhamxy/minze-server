@@ -1,8 +1,8 @@
-import { ExperiencesByCityResolvers } from '../generated/resolvers'
-import { TypeMap } from './types/TypeMap'
+import { ExperiencesByCityResolvers } from '../generated/resolvers';
+import { TypeMap } from './types/TypeMap';
 
 export interface ExperiencesByCityParent {
-  id: string,
+  id: string;
 }
 
 export const ExperiencesByCity: ExperiencesByCityResolvers.Type<any> = {
@@ -13,12 +13,12 @@ export const ExperiencesByCity: ExperiencesByCityResolvers.Type<any> = {
           id_gt: '0',
           neighbourHood: {
             city: {
-              id: parent.id,
-            },
-          },
-        },
-      },
-    })
+              id: parent.id
+            }
+          }
+        }
+      }
+    });
   },
-  city: (parent, _args, ctx) => ctx.db.city({ id: parent.id }),
-}
+  city: (parent, _args, ctx) => ctx.db.city({ id: parent.id })
+};

@@ -22,13 +22,12 @@ warn(){
 }
 
 ################################################################################
-# App development has 4 phases
+# App development has 3 phases
 # for local-branches: checkout from development branch
 ################################################################################
 PRODUCTION="master"       # Resticted access; main release; auto deploy
-STAGING="staging"         # Resticted access; beta release; auto deploy
-DEVELOPMENT="development" # alpha release; all merge takes place here
-TESTING="testing"         # branch for testing out stuffs. full access
+STAGING="staging"         # alpha release; all merge takes place here
+# DEVELOPMENT="development"
 ################################################################################
 
 GIT_BRANCH=$APPCENTER_BRANCH
@@ -36,7 +35,7 @@ if [ -z $GIT_BRANCH ]; then
   GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 fi
 
-# there are two secrets
+# There are two secrets
 # production and development
 
 if [ ${GIT_BRANCH} == $PRODUCTION ] || [ $GIT_BRANCH == $STAGING ]; then
@@ -44,7 +43,4 @@ if [ ${GIT_BRANCH} == $PRODUCTION ] || [ $GIT_BRANCH == $STAGING ]; then
 else
   APP_ENV='development'
 fi
-
-
-APP_OS="android"
 echo -e "${GREEN}APP_ENV: $APP_ENV${NO_COLOR}"

@@ -1,49 +1,47 @@
-import * as jwt from 'jsonwebtoken'
-import { MutationResolvers } from '../generated/resolvers'
-import { getUserId } from '../utils'
-import { TypeMap } from './types/TypeMap'
+import * as jwt from 'jsonwebtoken';
+import { MutationResolvers } from '../generated/resolvers';
+import { getUserId } from '../utils';
+import { TypeMap } from './types/TypeMap';
 import { admin } from '../services/firebase';
 
 export interface MutationParent {}
 
 export const Mutation: MutationResolvers.Type<TypeMap> = {
   signup: async (_parent, { idToken }, ctx) => {
-    const {uid} = await admin.auth().verifyIdToken(idToken);
+    const { uid } = await admin.auth().verifyIdToken(idToken);
     const { displayName, phoneNumber } = await admin.auth().getUser(uid);
-    if ( !phoneNumber || uid ) throw Error("Err")
-    const user = await ctx.db.createUser(
-      {
-        uid,
-        displayName: displayName || uid,
-        phoneNumber
-      }     
-    );
+    if (!phoneNumber || uid) throw Error('Err');
+    const user = await ctx.db.createUser({
+      uid,
+      displayName: displayName || uid,
+      phoneNumber
+    });
     if (!user) {
-      throw new Error('Invalid Credentials')
+      throw new Error('Invalid Credentials');
     }
-    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET as jwt.Secret)
+    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET as jwt.Secret);
     return {
       id: user.id,
-      token,
-    }
+      token
+    };
   },
   login: async (_parent, { idToken }, ctx) => {
-    const {uid} = await admin.auth().verifyIdToken(idToken);
-    const user = await ctx.db.user({ uid })
+    const { uid } = await admin.auth().verifyIdToken(idToken);
+    const user = await ctx.db.user({ uid });
 
     if (!user) {
-      throw new Error('Invalid Credentials')
+      throw new Error('Invalid Credentials');
     }
 
-    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET as jwt.Secret)
+    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET as jwt.Secret);
 
     return {
       id: user.id,
-      token,
-    }
+      token
+    };
   },
   addPaymentMethod: () => {
-    throw new Error('Resolver not implemented')
+    throw new Error('Resolver not implemented');
   },
   book: async (_parent, args, ctx) => {
     // function daysBetween(date1: Date, date2: Date): number {
@@ -60,7 +58,7 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
     //   return Math.round(difference_ms / ONE_DAY)
     // }
 
-    const userId = getUserId(ctx)
+    const userId = getUserId(ctx);
 
     // TODO: IMPLEMENT
     // const paymentAccount = await getPaymentAccount(userId, ctx)
@@ -72,14 +70,13 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
       where: {
         startDate_gte: args.checkIn,
         startDate_lte: args.checkOut,
-        restaurant: { id: args.restaurantId },
-      },
-    })
+        restaurant: { id: args.restaurantId }
+      }
+    });
 
     if (alreadyOrdered && alreadyOrdered.length > 0) {
-      throw new Error(`The requested time is not free.`)
+      throw new Error(`The requested time is not free.`);
     }
-
 
     // const restaurantPrice = days * pricing.perNight
     // const totalPrice = restaurantPrice * 1.2
@@ -92,9 +89,9 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
       startDate: args.checkIn,
       endDate: args.checkOut,
       bookee: { connect: { id: userId } },
-      restaurant: { connect: { id: args.restaurantId } },
-    })
+      restaurant: { connect: { id: args.restaurantId } }
+    });
 
-    return { success: true }
-  },
-}
+    return { success: true };
+  }
+};

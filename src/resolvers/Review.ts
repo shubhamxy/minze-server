@@ -1,17 +1,17 @@
-import { ReviewResolvers } from '../generated/resolvers'
-import { TypeMap } from './types/TypeMap'
+import { ReviewResolvers } from '../generated/resolvers';
+import { TypeMap } from './types/TypeMap';
 
 export interface ReviewParent {
-  accuracy: number
-  checkIn: number
-  cleanliness: number
-  communication: number
-  createdAt: string
-  id: string
-  location: number
-  stars: number
-  text: string
-  value: number
+  accuracy: number;
+  checkIn: number;
+  cleanliness: number;
+  communication: number;
+  createdAt: string;
+  id: string;
+  location: number;
+  stars: number;
+  text: string;
+  value: number;
 }
 
 export const Review: ReviewResolvers.Type<TypeMap> = {
@@ -24,5 +24,5 @@ export const Review: ReviewResolvers.Type<TypeMap> = {
   location: parent => parent.location,
   stars: parent => parent.stars,
   text: parent => parent.text,
-  value: parent => parent.value,
-}
+  value: parent => parent.value
+};
