@@ -13,5 +13,4 @@ export const PaypalInformation: PaypalInformationResolvers.Type<TypeMap> = {
   createdAt: parent => parent.createdAt,
   email: parent => parent.email,
   id: parent => parent.id,
-  paymentAccount: parent => parent.paymentAccount
 };

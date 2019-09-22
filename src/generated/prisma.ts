@@ -8,63 +8,63 @@ export interface Query {
     neighbourhoods: <T = Array<Neighbourhood | null>>(args: { where?: NeighbourhoodWhereInput | null, orderBy?: NeighbourhoodOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     cities: <T = Array<City | null>>(args: { where?: CityWhereInput | null, orderBy?: CityOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     experiences: <T = Array<Experience | null>>(args: { where?: ExperienceWhereInput | null, orderBy?: ExperienceOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    experienceCategories: <T = Array<ExperienceCategory | null>>(args: { where?: ExperienceCategoryWhereInput | null, orderBy?: ExperienceCategoryOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     payments: <T = Array<Payment | null>>(args: { where?: PaymentWhereInput | null, orderBy?: PaymentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     paymentAccounts: <T = Array<PaymentAccount | null>>(args: { where?: PaymentAccountWhereInput | null, orderBy?: PaymentAccountOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    paypalInformations: <T = Array<PaypalInformation | null>>(args: { where?: PaypalInformationWhereInput | null, orderBy?: PaypalInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    paytmInformations: <T = Array<PaytmInformation | null>>(args: { where?: PaytmInformationWhereInput | null, orderBy?: PaytmInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    creditCardInformations: <T = Array<CreditCardInformation | null>>(args: { where?: CreditCardInformationWhereInput | null, orderBy?: CreditCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    debitCardInformations: <T = Array<DebitCardInformation | null>>(args: { where?: DebitCardInformationWhereInput | null, orderBy?: DebitCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     messages: <T = Array<Message | null>>(args: { where?: MessageWhereInput | null, orderBy?: MessageOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     notifications: <T = Array<Notification | null>>(args: { where?: NotificationWhereInput | null, orderBy?: NotificationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     restaurants: <T = Array<Restaurant | null>>(args: { where?: RestaurantWhereInput | null, orderBy?: RestaurantOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     menuItems: <T = Array<MenuItem | null>>(args: { where?: MenuItemWhereInput | null, orderBy?: MenuItemOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paypalInformations: <T = Array<PaypalInformation | null>>(args: { where?: PaypalInformationWhereInput | null, orderBy?: PaypalInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     policieses: <T = Array<Policies | null>>(args: { where?: PoliciesWhereInput | null, orderBy?: PoliciesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    creditCardInformations: <T = Array<CreditCardInformation | null>>(args: { where?: CreditCardInformationWhereInput | null, orderBy?: CreditCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     locations: <T = Array<Location | null>>(args: { where?: LocationWhereInput | null, orderBy?: LocationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     reviews: <T = Array<Review | null>>(args: { where?: ReviewWhereInput | null, orderBy?: ReviewOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     orders: <T = Array<Order | null>>(args: { where?: OrderWhereInput | null, orderBy?: OrderOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    experienceCategories: <T = Array<ExperienceCategory | null>>(args: { where?: ExperienceCategoryWhereInput | null, orderBy?: ExperienceCategoryOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paytmInformations: <T = Array<PaytmInformation | null>>(args: { where?: PaytmInformationWhereInput | null, orderBy?: PaytmInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    debitCardInformations: <T = Array<DebitCardInformation | null>>(args: { where?: DebitCardInformationWhereInput | null, orderBy?: DebitCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     pricings: <T = Array<Pricing | null>>(args: { where?: PricingWhereInput | null, orderBy?: PricingOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     pictures: <T = Array<Picture | null>>(args: { where?: PictureWhereInput | null, orderBy?: PictureOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     user: <T = User | null>(args: { where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     neighbourhood: <T = Neighbourhood | null>(args: { where: NeighbourhoodWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     city: <T = City | null>(args: { where: CityWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     experience: <T = Experience | null>(args: { where: ExperienceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    experienceCategory: <T = ExperienceCategory | null>(args: { where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     payment: <T = Payment | null>(args: { where: PaymentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     paymentAccount: <T = PaymentAccount | null>(args: { where: PaymentAccountWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paypalInformation: <T = PaypalInformation | null>(args: { where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    paytmInformation: <T = PaytmInformation | null>(args: { where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    creditCardInformation: <T = CreditCardInformation | null>(args: { where: CreditCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    debitCardInformation: <T = DebitCardInformation | null>(args: { where: DebitCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     message: <T = Message | null>(args: { where: MessageWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     notification: <T = Notification | null>(args: { where: NotificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     restaurant: <T = Restaurant | null>(args: { where: RestaurantWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     menuItem: <T = MenuItem | null>(args: { where: MenuItemWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    paypalInformation: <T = PaypalInformation | null>(args: { where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     policies: <T = Policies | null>(args: { where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    creditCardInformation: <T = CreditCardInformation | null>(args: { where: CreditCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     location: <T = Location | null>(args: { where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     review: <T = Review | null>(args: { where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     order: <T = Order | null>(args: { where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    experienceCategory: <T = ExperienceCategory | null>(args: { where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    paytmInformation: <T = PaytmInformation | null>(args: { where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    debitCardInformation: <T = DebitCardInformation | null>(args: { where: DebitCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     pricing: <T = Pricing | null>(args: { where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     picture: <T = Picture | null>(args: { where: PictureWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     usersConnection: <T = UserConnection>(args: { where?: UserWhereInput | null, orderBy?: UserOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     neighbourhoodsConnection: <T = NeighbourhoodConnection>(args: { where?: NeighbourhoodWhereInput | null, orderBy?: NeighbourhoodOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     citiesConnection: <T = CityConnection>(args: { where?: CityWhereInput | null, orderBy?: CityOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     experiencesConnection: <T = ExperienceConnection>(args: { where?: ExperienceWhereInput | null, orderBy?: ExperienceOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    experienceCategoriesConnection: <T = ExperienceCategoryConnection>(args: { where?: ExperienceCategoryWhereInput | null, orderBy?: ExperienceCategoryOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     paymentsConnection: <T = PaymentConnection>(args: { where?: PaymentWhereInput | null, orderBy?: PaymentOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     paymentAccountsConnection: <T = PaymentAccountConnection>(args: { where?: PaymentAccountWhereInput | null, orderBy?: PaymentAccountOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    paypalInformationsConnection: <T = PaypalInformationConnection>(args: { where?: PaypalInformationWhereInput | null, orderBy?: PaypalInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    paytmInformationsConnection: <T = PaytmInformationConnection>(args: { where?: PaytmInformationWhereInput | null, orderBy?: PaytmInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    creditCardInformationsConnection: <T = CreditCardInformationConnection>(args: { where?: CreditCardInformationWhereInput | null, orderBy?: CreditCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    debitCardInformationsConnection: <T = DebitCardInformationConnection>(args: { where?: DebitCardInformationWhereInput | null, orderBy?: DebitCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     messagesConnection: <T = MessageConnection>(args: { where?: MessageWhereInput | null, orderBy?: MessageOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     notificationsConnection: <T = NotificationConnection>(args: { where?: NotificationWhereInput | null, orderBy?: NotificationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     restaurantsConnection: <T = RestaurantConnection>(args: { where?: RestaurantWhereInput | null, orderBy?: RestaurantOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     menuItemsConnection: <T = MenuItemConnection>(args: { where?: MenuItemWhereInput | null, orderBy?: MenuItemOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paypalInformationsConnection: <T = PaypalInformationConnection>(args: { where?: PaypalInformationWhereInput | null, orderBy?: PaypalInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     policiesesConnection: <T = PoliciesConnection>(args: { where?: PoliciesWhereInput | null, orderBy?: PoliciesOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    creditCardInformationsConnection: <T = CreditCardInformationConnection>(args: { where?: CreditCardInformationWhereInput | null, orderBy?: CreditCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     locationsConnection: <T = LocationConnection>(args: { where?: LocationWhereInput | null, orderBy?: LocationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     reviewsConnection: <T = ReviewConnection>(args: { where?: ReviewWhereInput | null, orderBy?: ReviewOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     ordersConnection: <T = OrderConnection>(args: { where?: OrderWhereInput | null, orderBy?: OrderOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    experienceCategoriesConnection: <T = ExperienceCategoryConnection>(args: { where?: ExperienceCategoryWhereInput | null, orderBy?: ExperienceCategoryOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    paytmInformationsConnection: <T = PaytmInformationConnection>(args: { where?: PaytmInformationWhereInput | null, orderBy?: PaytmInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    debitCardInformationsConnection: <T = DebitCardInformationConnection>(args: { where?: DebitCardInformationWhereInput | null, orderBy?: DebitCardInformationOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     pricingsConnection: <T = PricingConnection>(args: { where?: PricingWhereInput | null, orderBy?: PricingOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     picturesConnection: <T = PictureConnection>(args: { where?: PictureWhereInput | null, orderBy?: PictureOrderByInput | null, skip?: Int | null, after?: String | null, before?: String | null, first?: Int | null, last?: Int | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     node: <T = Node | null>(args: { id: ID_Output }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> 
@@ -75,126 +75,126 @@ export interface Mutation {
     createNeighbourhood: <T = Neighbourhood>(args: { data: NeighbourhoodCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createCity: <T = City>(args: { data: CityCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createExperience: <T = Experience>(args: { data: ExperienceCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createExperienceCategory: <T = ExperienceCategory>(args: { data: ExperienceCategoryCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPayment: <T = Payment>(args: { data: PaymentCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPaymentAccount: <T = PaymentAccount>(args: { data: PaymentAccountCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createPaypalInformation: <T = PaypalInformation>(args: { data: PaypalInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createPaytmInformation: <T = PaytmInformation>(args: { data: PaytmInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createCreditCardInformation: <T = CreditCardInformation>(args: { data: CreditCardInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createDebitCardInformation: <T = DebitCardInformation>(args: { data: DebitCardInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createMessage: <T = Message>(args: { data: MessageCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createNotification: <T = Notification>(args: { data: NotificationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createRestaurant: <T = Restaurant>(args: { data: RestaurantCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createMenuItem: <T = MenuItem>(args: { data: MenuItemCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPaypalInformation: <T = PaypalInformation>(args: { data: PaypalInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPolicies: <T = Policies>(args: { data: PoliciesCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createCreditCardInformation: <T = CreditCardInformation>(args: { data: CreditCardInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createLocation: <T = Location>(args: { data: LocationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createReview: <T = Review>(args: { data: ReviewCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createOrder: <T = Order>(args: { data: OrderCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createExperienceCategory: <T = ExperienceCategory>(args: { data: ExperienceCategoryCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createPaytmInformation: <T = PaytmInformation>(args: { data: PaytmInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    createDebitCardInformation: <T = DebitCardInformation>(args: { data: DebitCardInformationCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPricing: <T = Pricing>(args: { data: PricingCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     createPicture: <T = Picture>(args: { data: PictureCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateUser: <T = User | null>(args: { data: UserUpdateInput, where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateNeighbourhood: <T = Neighbourhood | null>(args: { data: NeighbourhoodUpdateInput, where: NeighbourhoodWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateCity: <T = City | null>(args: { data: CityUpdateInput, where: CityWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateExperience: <T = Experience | null>(args: { data: ExperienceUpdateInput, where: ExperienceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateExperienceCategory: <T = ExperienceCategory | null>(args: { data: ExperienceCategoryUpdateInput, where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePayment: <T = Payment | null>(args: { data: PaymentUpdateInput, where: PaymentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePaymentAccount: <T = PaymentAccount | null>(args: { data: PaymentAccountUpdateInput, where: PaymentAccountWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePaypalInformation: <T = PaypalInformation | null>(args: { data: PaypalInformationUpdateInput, where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updatePaytmInformation: <T = PaytmInformation | null>(args: { data: PaytmInformationUpdateInput, where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateCreditCardInformation: <T = CreditCardInformation | null>(args: { data: CreditCardInformationUpdateInput, where: CreditCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    updateDebitCardInformation: <T = DebitCardInformation | null>(args: { data: DebitCardInformationUpdateInput, where: DebitCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateMessage: <T = Message | null>(args: { data: MessageUpdateInput, where: MessageWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateNotification: <T = Notification | null>(args: { data: NotificationUpdateInput, where: NotificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateRestaurant: <T = Restaurant | null>(args: { data: RestaurantUpdateInput, where: RestaurantWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateMenuItem: <T = MenuItem | null>(args: { data: MenuItemUpdateInput, where: MenuItemWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePaypalInformation: <T = PaypalInformation | null>(args: { data: PaypalInformationUpdateInput, where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePolicies: <T = Policies | null>(args: { data: PoliciesUpdateInput, where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateCreditCardInformation: <T = CreditCardInformation | null>(args: { data: CreditCardInformationUpdateInput, where: CreditCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateLocation: <T = Location | null>(args: { data: LocationUpdateInput, where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateReview: <T = Review | null>(args: { data: ReviewUpdateInput, where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updateOrder: <T = Order | null>(args: { data: OrderUpdateInput, where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateExperienceCategory: <T = ExperienceCategory | null>(args: { data: ExperienceCategoryUpdateInput, where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updatePaytmInformation: <T = PaytmInformation | null>(args: { data: PaytmInformationUpdateInput, where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    updateDebitCardInformation: <T = DebitCardInformation | null>(args: { data: DebitCardInformationUpdateInput, where: DebitCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePricing: <T = Pricing | null>(args: { data: PricingUpdateInput, where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     updatePicture: <T = Picture | null>(args: { data: PictureUpdateInput, where: PictureWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteUser: <T = User | null>(args: { where: UserWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteNeighbourhood: <T = Neighbourhood | null>(args: { where: NeighbourhoodWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteCity: <T = City | null>(args: { where: CityWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteExperience: <T = Experience | null>(args: { where: ExperienceWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteExperienceCategory: <T = ExperienceCategory | null>(args: { where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePayment: <T = Payment | null>(args: { where: PaymentWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePaymentAccount: <T = PaymentAccount | null>(args: { where: PaymentAccountWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePaypalInformation: <T = PaypalInformation | null>(args: { where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deletePaytmInformation: <T = PaytmInformation | null>(args: { where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteCreditCardInformation: <T = CreditCardInformation | null>(args: { where: CreditCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
-    deleteDebitCardInformation: <T = DebitCardInformation | null>(args: { where: DebitCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteMessage: <T = Message | null>(args: { where: MessageWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteNotification: <T = Notification | null>(args: { where: NotificationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteRestaurant: <T = Restaurant | null>(args: { where: RestaurantWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteMenuItem: <T = MenuItem | null>(args: { where: MenuItemWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePaypalInformation: <T = PaypalInformation | null>(args: { where: PaypalInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePolicies: <T = Policies | null>(args: { where: PoliciesWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteCreditCardInformation: <T = CreditCardInformation | null>(args: { where: CreditCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteLocation: <T = Location | null>(args: { where: LocationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteReview: <T = Review | null>(args: { where: ReviewWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deleteOrder: <T = Order | null>(args: { where: OrderWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteExperienceCategory: <T = ExperienceCategory | null>(args: { where: ExperienceCategoryWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deletePaytmInformation: <T = PaytmInformation | null>(args: { where: PaytmInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
+    deleteDebitCardInformation: <T = DebitCardInformation | null>(args: { where: DebitCardInformationWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePricing: <T = Pricing | null>(args: { where: PricingWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     deletePicture: <T = Picture | null>(args: { where: PictureWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T | null> ,
     upsertUser: <T = User>(args: { where: UserWhereUniqueInput, create: UserCreateInput, update: UserUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertNeighbourhood: <T = Neighbourhood>(args: { where: NeighbourhoodWhereUniqueInput, create: NeighbourhoodCreateInput, update: NeighbourhoodUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertCity: <T = City>(args: { where: CityWhereUniqueInput, create: CityCreateInput, update: CityUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertExperience: <T = Experience>(args: { where: ExperienceWhereUniqueInput, create: ExperienceCreateInput, update: ExperienceUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertExperienceCategory: <T = ExperienceCategory>(args: { where: ExperienceCategoryWhereUniqueInput, create: ExperienceCategoryCreateInput, update: ExperienceCategoryUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPayment: <T = Payment>(args: { where: PaymentWhereUniqueInput, create: PaymentCreateInput, update: PaymentUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPaymentAccount: <T = PaymentAccount>(args: { where: PaymentAccountWhereUniqueInput, create: PaymentAccountCreateInput, update: PaymentAccountUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertPaypalInformation: <T = PaypalInformation>(args: { where: PaypalInformationWhereUniqueInput, create: PaypalInformationCreateInput, update: PaypalInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertPaytmInformation: <T = PaytmInformation>(args: { where: PaytmInformationWhereUniqueInput, create: PaytmInformationCreateInput, update: PaytmInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertCreditCardInformation: <T = CreditCardInformation>(args: { where: CreditCardInformationWhereUniqueInput, create: CreditCardInformationCreateInput, update: CreditCardInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertDebitCardInformation: <T = DebitCardInformation>(args: { where: DebitCardInformationWhereUniqueInput, create: DebitCardInformationCreateInput, update: DebitCardInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertMessage: <T = Message>(args: { where: MessageWhereUniqueInput, create: MessageCreateInput, update: MessageUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertNotification: <T = Notification>(args: { where: NotificationWhereUniqueInput, create: NotificationCreateInput, update: NotificationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertRestaurant: <T = Restaurant>(args: { where: RestaurantWhereUniqueInput, create: RestaurantCreateInput, update: RestaurantUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertMenuItem: <T = MenuItem>(args: { where: MenuItemWhereUniqueInput, create: MenuItemCreateInput, update: MenuItemUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPaypalInformation: <T = PaypalInformation>(args: { where: PaypalInformationWhereUniqueInput, create: PaypalInformationCreateInput, update: PaypalInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPolicies: <T = Policies>(args: { where: PoliciesWhereUniqueInput, create: PoliciesCreateInput, update: PoliciesUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertCreditCardInformation: <T = CreditCardInformation>(args: { where: CreditCardInformationWhereUniqueInput, create: CreditCardInformationCreateInput, update: CreditCardInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertLocation: <T = Location>(args: { where: LocationWhereUniqueInput, create: LocationCreateInput, update: LocationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertReview: <T = Review>(args: { where: ReviewWhereUniqueInput, create: ReviewCreateInput, update: ReviewUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertOrder: <T = Order>(args: { where: OrderWhereUniqueInput, create: OrderCreateInput, update: OrderUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertExperienceCategory: <T = ExperienceCategory>(args: { where: ExperienceCategoryWhereUniqueInput, create: ExperienceCategoryCreateInput, update: ExperienceCategoryUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertPaytmInformation: <T = PaytmInformation>(args: { where: PaytmInformationWhereUniqueInput, create: PaytmInformationCreateInput, update: PaytmInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    upsertDebitCardInformation: <T = DebitCardInformation>(args: { where: DebitCardInformationWhereUniqueInput, create: DebitCardInformationCreateInput, update: DebitCardInformationUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPricing: <T = Pricing>(args: { where: PricingWhereUniqueInput, create: PricingCreateInput, update: PricingUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     upsertPicture: <T = Picture>(args: { where: PictureWhereUniqueInput, create: PictureCreateInput, update: PictureUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyUsers: <T = BatchPayload>(args: { data: UserUpdateManyMutationInput, where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyNeighbourhoods: <T = BatchPayload>(args: { data: NeighbourhoodUpdateManyMutationInput, where?: NeighbourhoodWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyCities: <T = BatchPayload>(args: { data: CityUpdateManyMutationInput, where?: CityWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyExperiences: <T = BatchPayload>(args: { data: ExperienceUpdateManyMutationInput, where?: ExperienceWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyExperienceCategories: <T = BatchPayload>(args: { data: ExperienceCategoryUpdateManyMutationInput, where?: ExperienceCategoryWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPayments: <T = BatchPayload>(args: { data: PaymentUpdateManyMutationInput, where?: PaymentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPaymentAccounts: <T = BatchPayload>(args: { data: PaymentAccountUpdateManyMutationInput, where?: PaymentAccountWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyPaypalInformations: <T = BatchPayload>(args: { data: PaypalInformationUpdateManyMutationInput, where?: PaypalInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyPaytmInformations: <T = BatchPayload>(args: { data: PaytmInformationUpdateManyMutationInput, where?: PaytmInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyCreditCardInformations: <T = BatchPayload>(args: { data: CreditCardInformationUpdateManyMutationInput, where?: CreditCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyDebitCardInformations: <T = BatchPayload>(args: { data: DebitCardInformationUpdateManyMutationInput, where?: DebitCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyMessages: <T = BatchPayload>(args: { data: MessageUpdateManyMutationInput, where?: MessageWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyNotifications: <T = BatchPayload>(args: { data: NotificationUpdateManyMutationInput, where?: NotificationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyRestaurants: <T = BatchPayload>(args: { data: RestaurantUpdateManyMutationInput, where?: RestaurantWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyMenuItems: <T = BatchPayload>(args: { data: MenuItemUpdateManyMutationInput, where?: MenuItemWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPaypalInformations: <T = BatchPayload>(args: { data: PaypalInformationUpdateManyMutationInput, where?: PaypalInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPolicieses: <T = BatchPayload>(args: { data: PoliciesUpdateManyMutationInput, where?: PoliciesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyCreditCardInformations: <T = BatchPayload>(args: { data: CreditCardInformationUpdateManyMutationInput, where?: CreditCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyLocations: <T = BatchPayload>(args: { data: LocationUpdateManyMutationInput, where?: LocationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyReviews: <T = BatchPayload>(args: { data: ReviewUpdateManyMutationInput, where?: ReviewWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyOrders: <T = BatchPayload>(args: { data: OrderUpdateManyMutationInput, where?: OrderWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyExperienceCategories: <T = BatchPayload>(args: { data: ExperienceCategoryUpdateManyMutationInput, where?: ExperienceCategoryWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyPaytmInformations: <T = BatchPayload>(args: { data: PaytmInformationUpdateManyMutationInput, where?: PaytmInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    updateManyDebitCardInformations: <T = BatchPayload>(args: { data: DebitCardInformationUpdateManyMutationInput, where?: DebitCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPricings: <T = BatchPayload>(args: { data: PricingUpdateManyMutationInput, where?: PricingWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     updateManyPictures: <T = BatchPayload>(args: { data: PictureUpdateManyMutationInput, where?: PictureWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyUsers: <T = BatchPayload>(args: { where?: UserWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyNeighbourhoods: <T = BatchPayload>(args: { where?: NeighbourhoodWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyCities: <T = BatchPayload>(args: { where?: CityWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyExperiences: <T = BatchPayload>(args: { where?: ExperienceWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyExperienceCategories: <T = BatchPayload>(args: { where?: ExperienceCategoryWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPayments: <T = BatchPayload>(args: { where?: PaymentWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPaymentAccounts: <T = BatchPayload>(args: { where?: PaymentAccountWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyPaypalInformations: <T = BatchPayload>(args: { where?: PaypalInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyPaytmInformations: <T = BatchPayload>(args: { where?: PaytmInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyCreditCardInformations: <T = BatchPayload>(args: { where?: CreditCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyDebitCardInformations: <T = BatchPayload>(args: { where?: DebitCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyMessages: <T = BatchPayload>(args: { where?: MessageWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyNotifications: <T = BatchPayload>(args: { where?: NotificationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyRestaurants: <T = BatchPayload>(args: { where?: RestaurantWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyMenuItems: <T = BatchPayload>(args: { where?: MenuItemWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPaypalInformations: <T = BatchPayload>(args: { where?: PaypalInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPolicieses: <T = BatchPayload>(args: { where?: PoliciesWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyCreditCardInformations: <T = BatchPayload>(args: { where?: CreditCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyLocations: <T = BatchPayload>(args: { where?: LocationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyReviews: <T = BatchPayload>(args: { where?: ReviewWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyOrders: <T = BatchPayload>(args: { where?: OrderWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyExperienceCategories: <T = BatchPayload>(args: { where?: ExperienceCategoryWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyPaytmInformations: <T = BatchPayload>(args: { where?: PaytmInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
+    deleteManyDebitCardInformations: <T = BatchPayload>(args: { where?: DebitCardInformationWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPricings: <T = BatchPayload>(args: { where?: PricingWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
     deleteManyPictures: <T = BatchPayload>(args: { where?: PictureWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> 
   }
@@ -204,21 +204,21 @@ export interface Subscription {
     neighbourhood: <T = NeighbourhoodSubscriptionPayload | null>(args: { where?: NeighbourhoodSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     city: <T = CitySubscriptionPayload | null>(args: { where?: CitySubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     experience: <T = ExperienceSubscriptionPayload | null>(args: { where?: ExperienceSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    experienceCategory: <T = ExperienceCategorySubscriptionPayload | null>(args: { where?: ExperienceCategorySubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     payment: <T = PaymentSubscriptionPayload | null>(args: { where?: PaymentSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     paymentAccount: <T = PaymentAccountSubscriptionPayload | null>(args: { where?: PaymentAccountSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    paypalInformation: <T = PaypalInformationSubscriptionPayload | null>(args: { where?: PaypalInformationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    paytmInformation: <T = PaytmInformationSubscriptionPayload | null>(args: { where?: PaytmInformationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    creditCardInformation: <T = CreditCardInformationSubscriptionPayload | null>(args: { where?: CreditCardInformationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
-    debitCardInformation: <T = DebitCardInformationSubscriptionPayload | null>(args: { where?: DebitCardInformationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     message: <T = MessageSubscriptionPayload | null>(args: { where?: MessageSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     notification: <T = NotificationSubscriptionPayload | null>(args: { where?: NotificationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     restaurant: <T = RestaurantSubscriptionPayload | null>(args: { where?: RestaurantSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     menuItem: <T = MenuItemSubscriptionPayload | null>(args: { where?: MenuItemSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    paypalInformation: <T = PaypalInformationSubscriptionPayload | null>(args: { where?: PaypalInformationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     policies: <T = PoliciesSubscriptionPayload | null>(args: { where?: PoliciesSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    creditCardInformation: <T = CreditCardInformationSubscriptionPayload | null>(args: { where?: CreditCardInformationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     location: <T = LocationSubscriptionPayload | null>(args: { where?: LocationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     review: <T = ReviewSubscriptionPayload | null>(args: { where?: ReviewSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     order: <T = OrderSubscriptionPayload | null>(args: { where?: OrderSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    experienceCategory: <T = ExperienceCategorySubscriptionPayload | null>(args: { where?: ExperienceCategorySubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    paytmInformation: <T = PaytmInformationSubscriptionPayload | null>(args: { where?: PaytmInformationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
+    debitCardInformation: <T = DebitCardInformationSubscriptionPayload | null>(args: { where?: DebitCardInformationSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     pricing: <T = PricingSubscriptionPayload | null>(args: { where?: PricingSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> ,
     picture: <T = PictureSubscriptionPayload | null>(args: { where?: PictureSubscriptionWhereInput | null }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T | null>> 
   }
@@ -228,21 +228,21 @@ export interface Exists {
   Neighbourhood: (where?: NeighbourhoodWhereInput) => Promise<boolean>
   City: (where?: CityWhereInput) => Promise<boolean>
   Experience: (where?: ExperienceWhereInput) => Promise<boolean>
-  ExperienceCategory: (where?: ExperienceCategoryWhereInput) => Promise<boolean>
   Payment: (where?: PaymentWhereInput) => Promise<boolean>
   PaymentAccount: (where?: PaymentAccountWhereInput) => Promise<boolean>
-  PaypalInformation: (where?: PaypalInformationWhereInput) => Promise<boolean>
-  PaytmInformation: (where?: PaytmInformationWhereInput) => Promise<boolean>
-  CreditCardInformation: (where?: CreditCardInformationWhereInput) => Promise<boolean>
-  DebitCardInformation: (where?: DebitCardInformationWhereInput) => Promise<boolean>
   Message: (where?: MessageWhereInput) => Promise<boolean>
   Notification: (where?: NotificationWhereInput) => Promise<boolean>
   Restaurant: (where?: RestaurantWhereInput) => Promise<boolean>
   MenuItem: (where?: MenuItemWhereInput) => Promise<boolean>
+  PaypalInformation: (where?: PaypalInformationWhereInput) => Promise<boolean>
   Policies: (where?: PoliciesWhereInput) => Promise<boolean>
+  CreditCardInformation: (where?: CreditCardInformationWhereInput) => Promise<boolean>
   Location: (where?: LocationWhereInput) => Promise<boolean>
   Review: (where?: ReviewWhereInput) => Promise<boolean>
   Order: (where?: OrderWhereInput) => Promise<boolean>
+  ExperienceCategory: (where?: ExperienceCategoryWhereInput) => Promise<boolean>
+  PaytmInformation: (where?: PaytmInformationWhereInput) => Promise<boolean>
+  DebitCardInformation: (where?: DebitCardInformationWhereInput) => Promise<boolean>
   Pricing: (where?: PricingWhereInput) => Promise<boolean>
   Picture: (where?: PictureWhereInput) => Promise<boolean>
 }
@@ -584,7 +584,6 @@ type CreditCardInformation implements Node {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccount
 }
 
 """A connection to a list of items."""
@@ -607,24 +606,11 @@ input CreditCardInformationCreateInput {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccountCreateOneWithoutCreditcardInput
 }
 
-input CreditCardInformationCreateOneWithoutPaymentAccountInput {
-  create: CreditCardInformationCreateWithoutPaymentAccountInput
+input CreditCardInformationCreateOneInput {
+  create: CreditCardInformationCreateInput
   connect: CreditCardInformationWhereUniqueInput
-}
-
-input CreditCardInformationCreateWithoutPaymentAccountInput {
-  id: ID
-  cardNumber: String!
-  expiresOnMonth: Int!
-  expiresOnYear: Int!
-  securityCode: String!
-  firstName: String!
-  lastName: String!
-  postalCode: String!
-  country: String!
 }
 
 """An edge in a connection."""
@@ -711,6 +697,17 @@ input CreditCardInformationSubscriptionWhereInput {
   node: CreditCardInformationWhereInput
 }
 
+input CreditCardInformationUpdateDataInput {
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
+}
+
 input CreditCardInformationUpdateInput {
   cardNumber: String
   expiresOnMonth: Int
@@ -720,7 +717,6 @@ input CreditCardInformationUpdateInput {
   lastName: String
   postalCode: String
   country: String
-  paymentAccount: PaymentAccountUpdateOneWithoutCreditcardInput
 }
 
 input CreditCardInformationUpdateManyMutationInput {
@@ -734,29 +730,18 @@ input CreditCardInformationUpdateManyMutationInput {
   country: String
 }
 
-input CreditCardInformationUpdateOneWithoutPaymentAccountInput {
-  create: CreditCardInformationCreateWithoutPaymentAccountInput
+input CreditCardInformationUpdateOneInput {
+  create: CreditCardInformationCreateInput
   connect: CreditCardInformationWhereUniqueInput
   disconnect: Boolean
   delete: Boolean
-  update: CreditCardInformationUpdateWithoutPaymentAccountDataInput
-  upsert: CreditCardInformationUpsertWithoutPaymentAccountInput
+  update: CreditCardInformationUpdateDataInput
+  upsert: CreditCardInformationUpsertNestedInput
 }
 
-input CreditCardInformationUpdateWithoutPaymentAccountDataInput {
-  cardNumber: String
-  expiresOnMonth: Int
-  expiresOnYear: Int
-  securityCode: String
-  firstName: String
-  lastName: String
-  postalCode: String
-  country: String
-}
-
-input CreditCardInformationUpsertWithoutPaymentAccountInput {
-  update: CreditCardInformationUpdateWithoutPaymentAccountDataInput!
-  create: CreditCardInformationCreateWithoutPaymentAccountInput!
+input CreditCardInformationUpsertNestedInput {
+  update: CreditCardInformationUpdateDataInput!
+  create: CreditCardInformationCreateInput!
 }
 
 input CreditCardInformationWhereInput {
@@ -1114,7 +1099,6 @@ input CreditCardInformationWhereInput {
 
   """All values not ending with the given string."""
   country_not_ends_with: String
-  paymentAccount: PaymentAccountWhereInput
 }
 
 input CreditCardInformationWhereUniqueInput {
@@ -1134,7 +1118,6 @@ type DebitCardInformation implements Node {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccount
 }
 
 """A connection to a list of items."""
@@ -1157,24 +1140,11 @@ input DebitCardInformationCreateInput {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccountCreateOneWithoutDebitcardInput
 }
 
-input DebitCardInformationCreateOneWithoutPaymentAccountInput {
-  create: DebitCardInformationCreateWithoutPaymentAccountInput
+input DebitCardInformationCreateOneInput {
+  create: DebitCardInformationCreateInput
   connect: DebitCardInformationWhereUniqueInput
-}
-
-input DebitCardInformationCreateWithoutPaymentAccountInput {
-  id: ID
-  cardNumber: String!
-  expiresOnMonth: Int!
-  expiresOnYear: Int!
-  securityCode: String!
-  firstName: String!
-  lastName: String!
-  postalCode: String!
-  country: String!
 }
 
 """An edge in a connection."""
@@ -1261,6 +1231,17 @@ input DebitCardInformationSubscriptionWhereInput {
   node: DebitCardInformationWhereInput
 }
 
+input DebitCardInformationUpdateDataInput {
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
+}
+
 input DebitCardInformationUpdateInput {
   cardNumber: String
   expiresOnMonth: Int
@@ -1270,7 +1251,6 @@ input DebitCardInformationUpdateInput {
   lastName: String
   postalCode: String
   country: String
-  paymentAccount: PaymentAccountUpdateOneWithoutDebitcardInput
 }
 
 input DebitCardInformationUpdateManyMutationInput {
@@ -1284,29 +1264,18 @@ input DebitCardInformationUpdateManyMutationInput {
   country: String
 }
 
-input DebitCardInformationUpdateOneWithoutPaymentAccountInput {
-  create: DebitCardInformationCreateWithoutPaymentAccountInput
+input DebitCardInformationUpdateOneInput {
+  create: DebitCardInformationCreateInput
   connect: DebitCardInformationWhereUniqueInput
   disconnect: Boolean
   delete: Boolean
-  update: DebitCardInformationUpdateWithoutPaymentAccountDataInput
-  upsert: DebitCardInformationUpsertWithoutPaymentAccountInput
+  update: DebitCardInformationUpdateDataInput
+  upsert: DebitCardInformationUpsertNestedInput
 }
 
-input DebitCardInformationUpdateWithoutPaymentAccountDataInput {
-  cardNumber: String
-  expiresOnMonth: Int
-  expiresOnYear: Int
-  securityCode: String
-  firstName: String
-  lastName: String
-  postalCode: String
-  country: String
-}
-
-input DebitCardInformationUpsertWithoutPaymentAccountInput {
-  update: DebitCardInformationUpdateWithoutPaymentAccountDataInput!
-  create: DebitCardInformationCreateWithoutPaymentAccountInput!
+input DebitCardInformationUpsertNestedInput {
+  update: DebitCardInformationUpdateDataInput!
+  create: DebitCardInformationCreateInput!
 }
 
 input DebitCardInformationWhereInput {
@@ -1664,7 +1633,6 @@ input DebitCardInformationWhereInput {
 
   """All values not ending with the given string."""
   country_not_ends_with: String
-  paymentAccount: PaymentAccountWhereInput
 }
 
 input DebitCardInformationWhereUniqueInput {
@@ -1687,7 +1655,6 @@ type ExperienceCategory implements Node {
   id: ID!
   mainColor: String!
   name: String!
-  experience: Experience!
 }
 
 """A connection to a list of items."""
@@ -1704,18 +1671,11 @@ input ExperienceCategoryCreateInput {
   id: ID
   mainColor: String
   name: String!
-  experience: ExperienceCreateOneWithoutCategoryInput!
 }
 
-input ExperienceCategoryCreateOneWithoutExperienceInput {
-  create: ExperienceCategoryCreateWithoutExperienceInput
+input ExperienceCategoryCreateOneInput {
+  create: ExperienceCategoryCreateInput
   connect: ExperienceCategoryWhereUniqueInput
-}
-
-input ExperienceCategoryCreateWithoutExperienceInput {
-  id: ID
-  mainColor: String
-  name: String!
 }
 
 """An edge in a connection."""
@@ -1781,10 +1741,14 @@ input ExperienceCategorySubscriptionWhereInput {
   node: ExperienceCategoryWhereInput
 }
 
+input ExperienceCategoryUpdateDataInput {
+  mainColor: String
+  name: String
+}
+
 input ExperienceCategoryUpdateInput {
   mainColor: String
   name: String
-  experience: ExperienceUpdateOneRequiredWithoutCategoryInput
 }
 
 input ExperienceCategoryUpdateManyMutationInput {
@@ -1792,23 +1756,18 @@ input ExperienceCategoryUpdateManyMutationInput {
   name: String
 }
 
-input ExperienceCategoryUpdateOneWithoutExperienceInput {
-  create: ExperienceCategoryCreateWithoutExperienceInput
+input ExperienceCategoryUpdateOneInput {
+  create: ExperienceCategoryCreateInput
   connect: ExperienceCategoryWhereUniqueInput
   disconnect: Boolean
   delete: Boolean
-  update: ExperienceCategoryUpdateWithoutExperienceDataInput
-  upsert: ExperienceCategoryUpsertWithoutExperienceInput
+  update: ExperienceCategoryUpdateDataInput
+  upsert: ExperienceCategoryUpsertNestedInput
 }
 
-input ExperienceCategoryUpdateWithoutExperienceDataInput {
-  mainColor: String
-  name: String
-}
-
-input ExperienceCategoryUpsertWithoutExperienceInput {
-  update: ExperienceCategoryUpdateWithoutExperienceDataInput!
-  create: ExperienceCategoryCreateWithoutExperienceInput!
+input ExperienceCategoryUpsertNestedInput {
+  update: ExperienceCategoryUpdateDataInput!
+  create: ExperienceCategoryCreateInput!
 }
 
 input ExperienceCategoryWhereInput {
@@ -1940,7 +1899,6 @@ input ExperienceCategoryWhereInput {
 
   """All values not ending with the given string."""
   name_not_ends_with: String
-  experience: ExperienceWhereInput
 }
 
 input ExperienceCategoryWhereUniqueInput {
@@ -1962,9 +1920,9 @@ input ExperienceCreateInput {
   title: String!
   pricePerPerson: Int!
   popularity: Int!
-  category: ExperienceCategoryCreateOneWithoutExperienceInput
-  host: UserCreateOneWithoutHostingExperiencesInput!
-  location: LocationCreateOneWithoutExperienceInput!
+  category: ExperienceCategoryCreateOneInput
+  host: UserCreateOneWithoutExperiencesInput!
+  location: LocationCreateOneInput!
   reviews: ReviewCreateManyWithoutExperienceInput
   preview: PictureCreateOneInput!
 }
@@ -1974,30 +1932,9 @@ input ExperienceCreateManyWithoutHostInput {
   connect: [ExperienceWhereUniqueInput!]
 }
 
-input ExperienceCreateOneWithoutCategoryInput {
-  create: ExperienceCreateWithoutCategoryInput
-  connect: ExperienceWhereUniqueInput
-}
-
-input ExperienceCreateOneWithoutLocationInput {
-  create: ExperienceCreateWithoutLocationInput
-  connect: ExperienceWhereUniqueInput
-}
-
 input ExperienceCreateOneWithoutReviewsInput {
   create: ExperienceCreateWithoutReviewsInput
   connect: ExperienceWhereUniqueInput
-}
-
-input ExperienceCreateWithoutCategoryInput {
-  id: ID
-  title: String!
-  pricePerPerson: Int!
-  popularity: Int!
-  host: UserCreateOneWithoutHostingExperiencesInput!
-  location: LocationCreateOneWithoutExperienceInput!
-  reviews: ReviewCreateManyWithoutExperienceInput
-  preview: PictureCreateOneInput!
 }
 
 input ExperienceCreateWithoutHostInput {
@@ -2005,19 +1942,8 @@ input ExperienceCreateWithoutHostInput {
   title: String!
   pricePerPerson: Int!
   popularity: Int!
-  category: ExperienceCategoryCreateOneWithoutExperienceInput
-  location: LocationCreateOneWithoutExperienceInput!
-  reviews: ReviewCreateManyWithoutExperienceInput
-  preview: PictureCreateOneInput!
-}
-
-input ExperienceCreateWithoutLocationInput {
-  id: ID
-  title: String!
-  pricePerPerson: Int!
-  popularity: Int!
-  category: ExperienceCategoryCreateOneWithoutExperienceInput
-  host: UserCreateOneWithoutHostingExperiencesInput!
+  category: ExperienceCategoryCreateOneInput
+  location: LocationCreateOneInput!
   reviews: ReviewCreateManyWithoutExperienceInput
   preview: PictureCreateOneInput!
 }
@@ -2027,9 +1953,9 @@ input ExperienceCreateWithoutReviewsInput {
   title: String!
   pricePerPerson: Int!
   popularity: Int!
-  category: ExperienceCategoryCreateOneWithoutExperienceInput
-  host: UserCreateOneWithoutHostingExperiencesInput!
-  location: LocationCreateOneWithoutExperienceInput!
+  category: ExperienceCategoryCreateOneInput
+  host: UserCreateOneWithoutExperiencesInput!
+  location: LocationCreateOneInput!
   preview: PictureCreateOneInput!
 }
 
@@ -2238,9 +2164,9 @@ input ExperienceUpdateInput {
   title: String
   pricePerPerson: Int
   popularity: Int
-  category: ExperienceCategoryUpdateOneWithoutExperienceInput
-  host: UserUpdateOneRequiredWithoutHostingExperiencesInput
-  location: LocationUpdateOneRequiredWithoutExperienceInput
+  category: ExperienceCategoryUpdateOneInput
+  host: UserUpdateOneRequiredWithoutExperiencesInput
+  location: LocationUpdateOneRequiredInput
   reviews: ReviewUpdateManyWithoutExperienceInput
   preview: PictureUpdateOneRequiredInput
 }
@@ -2274,22 +2200,6 @@ input ExperienceUpdateManyWithWhereNestedInput {
   data: ExperienceUpdateManyDataInput!
 }
 
-input ExperienceUpdateOneRequiredWithoutCategoryInput {
-  create: ExperienceCreateWithoutCategoryInput
-  connect: ExperienceWhereUniqueInput
-  update: ExperienceUpdateWithoutCategoryDataInput
-  upsert: ExperienceUpsertWithoutCategoryInput
-}
-
-input ExperienceUpdateOneWithoutLocationInput {
-  create: ExperienceCreateWithoutLocationInput
-  connect: ExperienceWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
-  update: ExperienceUpdateWithoutLocationDataInput
-  upsert: ExperienceUpsertWithoutLocationInput
-}
-
 input ExperienceUpdateOneWithoutReviewsInput {
   create: ExperienceCreateWithoutReviewsInput
   connect: ExperienceWhereUniqueInput
@@ -2299,32 +2209,12 @@ input ExperienceUpdateOneWithoutReviewsInput {
   upsert: ExperienceUpsertWithoutReviewsInput
 }
 
-input ExperienceUpdateWithoutCategoryDataInput {
-  title: String
-  pricePerPerson: Int
-  popularity: Int
-  host: UserUpdateOneRequiredWithoutHostingExperiencesInput
-  location: LocationUpdateOneRequiredWithoutExperienceInput
-  reviews: ReviewUpdateManyWithoutExperienceInput
-  preview: PictureUpdateOneRequiredInput
-}
-
 input ExperienceUpdateWithoutHostDataInput {
   title: String
   pricePerPerson: Int
   popularity: Int
-  category: ExperienceCategoryUpdateOneWithoutExperienceInput
-  location: LocationUpdateOneRequiredWithoutExperienceInput
-  reviews: ReviewUpdateManyWithoutExperienceInput
-  preview: PictureUpdateOneRequiredInput
-}
-
-input ExperienceUpdateWithoutLocationDataInput {
-  title: String
-  pricePerPerson: Int
-  popularity: Int
-  category: ExperienceCategoryUpdateOneWithoutExperienceInput
-  host: UserUpdateOneRequiredWithoutHostingExperiencesInput
+  category: ExperienceCategoryUpdateOneInput
+  location: LocationUpdateOneRequiredInput
   reviews: ReviewUpdateManyWithoutExperienceInput
   preview: PictureUpdateOneRequiredInput
 }
@@ -2333,25 +2223,15 @@ input ExperienceUpdateWithoutReviewsDataInput {
   title: String
   pricePerPerson: Int
   popularity: Int
-  category: ExperienceCategoryUpdateOneWithoutExperienceInput
-  host: UserUpdateOneRequiredWithoutHostingExperiencesInput
-  location: LocationUpdateOneRequiredWithoutExperienceInput
+  category: ExperienceCategoryUpdateOneInput
+  host: UserUpdateOneRequiredWithoutExperiencesInput
+  location: LocationUpdateOneRequiredInput
   preview: PictureUpdateOneRequiredInput
 }
 
 input ExperienceUpdateWithWhereUniqueWithoutHostInput {
   where: ExperienceWhereUniqueInput!
   data: ExperienceUpdateWithoutHostDataInput!
-}
-
-input ExperienceUpsertWithoutCategoryInput {
-  update: ExperienceUpdateWithoutCategoryDataInput!
-  create: ExperienceCreateWithoutCategoryInput!
-}
-
-input ExperienceUpsertWithoutLocationInput {
-  update: ExperienceUpdateWithoutLocationDataInput!
-  create: ExperienceCreateWithoutLocationInput!
 }
 
 input ExperienceUpsertWithoutReviewsInput {
@@ -2519,7 +2399,6 @@ type Location implements Node {
   neighbourHood: Neighbourhood
   address: String!
   directions: String!
-  experience: Experience
 }
 
 """A connection to a list of items."""
@@ -2540,7 +2419,6 @@ input LocationCreateInput {
   address: String!
   directions: String!
   neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  experience: ExperienceCreateOneWithoutLocationInput
 }
 
 input LocationCreateManyInput {
@@ -2558,21 +2436,6 @@ input LocationCreateOneInput {
   connect: LocationWhereUniqueInput
 }
 
-input LocationCreateOneWithoutExperienceInput {
-  create: LocationCreateWithoutExperienceInput
-  connect: LocationWhereUniqueInput
-}
-
-input LocationCreateWithoutExperienceInput {
-  title: String
-  id: ID
-  lat: Float!
-  lng: Float!
-  address: String!
-  directions: String!
-  neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-}
-
 input LocationCreateWithoutNeighbourHoodInput {
   title: String
   id: ID
@@ -2580,7 +2443,6 @@ input LocationCreateWithoutNeighbourHoodInput {
   lng: Float!
   address: String!
   directions: String!
-  experience: ExperienceCreateOneWithoutLocationInput
 }
 
 """An edge in a connection."""
@@ -2877,7 +2739,6 @@ input LocationUpdateDataInput {
   address: String
   directions: String
   neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  experience: ExperienceUpdateOneWithoutLocationInput
 }
 
 input LocationUpdateInput {
@@ -2887,7 +2748,6 @@ input LocationUpdateInput {
   address: String
   directions: String
   neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  experience: ExperienceUpdateOneWithoutLocationInput
 }
 
 input LocationUpdateManyDataInput {
@@ -2944,20 +2804,11 @@ input LocationUpdateOneInput {
   upsert: LocationUpsertNestedInput
 }
 
-input LocationUpdateOneRequiredWithoutExperienceInput {
-  create: LocationCreateWithoutExperienceInput
+input LocationUpdateOneRequiredInput {
+  create: LocationCreateInput
   connect: LocationWhereUniqueInput
-  update: LocationUpdateWithoutExperienceDataInput
-  upsert: LocationUpsertWithoutExperienceInput
-}
-
-input LocationUpdateWithoutExperienceDataInput {
-  title: String
-  lat: Float
-  lng: Float
-  address: String
-  directions: String
-  neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
+  update: LocationUpdateDataInput
+  upsert: LocationUpsertNestedInput
 }
 
 input LocationUpdateWithoutNeighbourHoodDataInput {
@@ -2966,7 +2817,6 @@ input LocationUpdateWithoutNeighbourHoodDataInput {
   lng: Float
   address: String
   directions: String
-  experience: ExperienceUpdateOneWithoutLocationInput
 }
 
 input LocationUpdateWithWhereUniqueNestedInput {
@@ -2982,11 +2832,6 @@ input LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput {
 input LocationUpsertNestedInput {
   update: LocationUpdateDataInput!
   create: LocationCreateInput!
-}
-
-input LocationUpsertWithoutExperienceInput {
-  update: LocationUpdateWithoutExperienceDataInput!
-  create: LocationCreateWithoutExperienceInput!
 }
 
 input LocationUpsertWithWhereUniqueNestedInput {
@@ -3215,7 +3060,6 @@ input LocationWhereInput {
   """All values not ending with the given string."""
   directions_not_ends_with: String
   neighbourHood: NeighbourhoodWhereInput
-  experience: ExperienceWhereInput
 }
 
 input LocationWhereUniqueInput {
@@ -4278,126 +4122,126 @@ type Mutation {
   createNeighbourhood(data: NeighbourhoodCreateInput!): Neighbourhood!
   createCity(data: CityCreateInput!): City!
   createExperience(data: ExperienceCreateInput!): Experience!
-  createExperienceCategory(data: ExperienceCategoryCreateInput!): ExperienceCategory!
   createPayment(data: PaymentCreateInput!): Payment!
   createPaymentAccount(data: PaymentAccountCreateInput!): PaymentAccount!
-  createPaypalInformation(data: PaypalInformationCreateInput!): PaypalInformation!
-  createPaytmInformation(data: PaytmInformationCreateInput!): PaytmInformation!
-  createCreditCardInformation(data: CreditCardInformationCreateInput!): CreditCardInformation!
-  createDebitCardInformation(data: DebitCardInformationCreateInput!): DebitCardInformation!
   createMessage(data: MessageCreateInput!): Message!
   createNotification(data: NotificationCreateInput!): Notification!
   createRestaurant(data: RestaurantCreateInput!): Restaurant!
   createMenuItem(data: MenuItemCreateInput!): MenuItem!
+  createPaypalInformation(data: PaypalInformationCreateInput!): PaypalInformation!
   createPolicies(data: PoliciesCreateInput!): Policies!
+  createCreditCardInformation(data: CreditCardInformationCreateInput!): CreditCardInformation!
   createLocation(data: LocationCreateInput!): Location!
   createReview(data: ReviewCreateInput!): Review!
   createOrder(data: OrderCreateInput!): Order!
+  createExperienceCategory(data: ExperienceCategoryCreateInput!): ExperienceCategory!
+  createPaytmInformation(data: PaytmInformationCreateInput!): PaytmInformation!
+  createDebitCardInformation(data: DebitCardInformationCreateInput!): DebitCardInformation!
   createPricing(data: PricingCreateInput!): Pricing!
   createPicture(data: PictureCreateInput!): Picture!
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   updateNeighbourhood(data: NeighbourhoodUpdateInput!, where: NeighbourhoodWhereUniqueInput!): Neighbourhood
   updateCity(data: CityUpdateInput!, where: CityWhereUniqueInput!): City
   updateExperience(data: ExperienceUpdateInput!, where: ExperienceWhereUniqueInput!): Experience
-  updateExperienceCategory(data: ExperienceCategoryUpdateInput!, where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
   updatePayment(data: PaymentUpdateInput!, where: PaymentWhereUniqueInput!): Payment
   updatePaymentAccount(data: PaymentAccountUpdateInput!, where: PaymentAccountWhereUniqueInput!): PaymentAccount
-  updatePaypalInformation(data: PaypalInformationUpdateInput!, where: PaypalInformationWhereUniqueInput!): PaypalInformation
-  updatePaytmInformation(data: PaytmInformationUpdateInput!, where: PaytmInformationWhereUniqueInput!): PaytmInformation
-  updateCreditCardInformation(data: CreditCardInformationUpdateInput!, where: CreditCardInformationWhereUniqueInput!): CreditCardInformation
-  updateDebitCardInformation(data: DebitCardInformationUpdateInput!, where: DebitCardInformationWhereUniqueInput!): DebitCardInformation
   updateMessage(data: MessageUpdateInput!, where: MessageWhereUniqueInput!): Message
   updateNotification(data: NotificationUpdateInput!, where: NotificationWhereUniqueInput!): Notification
   updateRestaurant(data: RestaurantUpdateInput!, where: RestaurantWhereUniqueInput!): Restaurant
   updateMenuItem(data: MenuItemUpdateInput!, where: MenuItemWhereUniqueInput!): MenuItem
+  updatePaypalInformation(data: PaypalInformationUpdateInput!, where: PaypalInformationWhereUniqueInput!): PaypalInformation
   updatePolicies(data: PoliciesUpdateInput!, where: PoliciesWhereUniqueInput!): Policies
+  updateCreditCardInformation(data: CreditCardInformationUpdateInput!, where: CreditCardInformationWhereUniqueInput!): CreditCardInformation
   updateLocation(data: LocationUpdateInput!, where: LocationWhereUniqueInput!): Location
   updateReview(data: ReviewUpdateInput!, where: ReviewWhereUniqueInput!): Review
   updateOrder(data: OrderUpdateInput!, where: OrderWhereUniqueInput!): Order
+  updateExperienceCategory(data: ExperienceCategoryUpdateInput!, where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
+  updatePaytmInformation(data: PaytmInformationUpdateInput!, where: PaytmInformationWhereUniqueInput!): PaytmInformation
+  updateDebitCardInformation(data: DebitCardInformationUpdateInput!, where: DebitCardInformationWhereUniqueInput!): DebitCardInformation
   updatePricing(data: PricingUpdateInput!, where: PricingWhereUniqueInput!): Pricing
   updatePicture(data: PictureUpdateInput!, where: PictureWhereUniqueInput!): Picture
   deleteUser(where: UserWhereUniqueInput!): User
   deleteNeighbourhood(where: NeighbourhoodWhereUniqueInput!): Neighbourhood
   deleteCity(where: CityWhereUniqueInput!): City
   deleteExperience(where: ExperienceWhereUniqueInput!): Experience
-  deleteExperienceCategory(where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
   deletePayment(where: PaymentWhereUniqueInput!): Payment
   deletePaymentAccount(where: PaymentAccountWhereUniqueInput!): PaymentAccount
-  deletePaypalInformation(where: PaypalInformationWhereUniqueInput!): PaypalInformation
-  deletePaytmInformation(where: PaytmInformationWhereUniqueInput!): PaytmInformation
-  deleteCreditCardInformation(where: CreditCardInformationWhereUniqueInput!): CreditCardInformation
-  deleteDebitCardInformation(where: DebitCardInformationWhereUniqueInput!): DebitCardInformation
   deleteMessage(where: MessageWhereUniqueInput!): Message
   deleteNotification(where: NotificationWhereUniqueInput!): Notification
   deleteRestaurant(where: RestaurantWhereUniqueInput!): Restaurant
   deleteMenuItem(where: MenuItemWhereUniqueInput!): MenuItem
+  deletePaypalInformation(where: PaypalInformationWhereUniqueInput!): PaypalInformation
   deletePolicies(where: PoliciesWhereUniqueInput!): Policies
+  deleteCreditCardInformation(where: CreditCardInformationWhereUniqueInput!): CreditCardInformation
   deleteLocation(where: LocationWhereUniqueInput!): Location
   deleteReview(where: ReviewWhereUniqueInput!): Review
   deleteOrder(where: OrderWhereUniqueInput!): Order
+  deleteExperienceCategory(where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
+  deletePaytmInformation(where: PaytmInformationWhereUniqueInput!): PaytmInformation
+  deleteDebitCardInformation(where: DebitCardInformationWhereUniqueInput!): DebitCardInformation
   deletePricing(where: PricingWhereUniqueInput!): Pricing
   deletePicture(where: PictureWhereUniqueInput!): Picture
   upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
   upsertNeighbourhood(where: NeighbourhoodWhereUniqueInput!, create: NeighbourhoodCreateInput!, update: NeighbourhoodUpdateInput!): Neighbourhood!
   upsertCity(where: CityWhereUniqueInput!, create: CityCreateInput!, update: CityUpdateInput!): City!
   upsertExperience(where: ExperienceWhereUniqueInput!, create: ExperienceCreateInput!, update: ExperienceUpdateInput!): Experience!
-  upsertExperienceCategory(where: ExperienceCategoryWhereUniqueInput!, create: ExperienceCategoryCreateInput!, update: ExperienceCategoryUpdateInput!): ExperienceCategory!
   upsertPayment(where: PaymentWhereUniqueInput!, create: PaymentCreateInput!, update: PaymentUpdateInput!): Payment!
   upsertPaymentAccount(where: PaymentAccountWhereUniqueInput!, create: PaymentAccountCreateInput!, update: PaymentAccountUpdateInput!): PaymentAccount!
-  upsertPaypalInformation(where: PaypalInformationWhereUniqueInput!, create: PaypalInformationCreateInput!, update: PaypalInformationUpdateInput!): PaypalInformation!
-  upsertPaytmInformation(where: PaytmInformationWhereUniqueInput!, create: PaytmInformationCreateInput!, update: PaytmInformationUpdateInput!): PaytmInformation!
-  upsertCreditCardInformation(where: CreditCardInformationWhereUniqueInput!, create: CreditCardInformationCreateInput!, update: CreditCardInformationUpdateInput!): CreditCardInformation!
-  upsertDebitCardInformation(where: DebitCardInformationWhereUniqueInput!, create: DebitCardInformationCreateInput!, update: DebitCardInformationUpdateInput!): DebitCardInformation!
   upsertMessage(where: MessageWhereUniqueInput!, create: MessageCreateInput!, update: MessageUpdateInput!): Message!
   upsertNotification(where: NotificationWhereUniqueInput!, create: NotificationCreateInput!, update: NotificationUpdateInput!): Notification!
   upsertRestaurant(where: RestaurantWhereUniqueInput!, create: RestaurantCreateInput!, update: RestaurantUpdateInput!): Restaurant!
   upsertMenuItem(where: MenuItemWhereUniqueInput!, create: MenuItemCreateInput!, update: MenuItemUpdateInput!): MenuItem!
+  upsertPaypalInformation(where: PaypalInformationWhereUniqueInput!, create: PaypalInformationCreateInput!, update: PaypalInformationUpdateInput!): PaypalInformation!
   upsertPolicies(where: PoliciesWhereUniqueInput!, create: PoliciesCreateInput!, update: PoliciesUpdateInput!): Policies!
+  upsertCreditCardInformation(where: CreditCardInformationWhereUniqueInput!, create: CreditCardInformationCreateInput!, update: CreditCardInformationUpdateInput!): CreditCardInformation!
   upsertLocation(where: LocationWhereUniqueInput!, create: LocationCreateInput!, update: LocationUpdateInput!): Location!
   upsertReview(where: ReviewWhereUniqueInput!, create: ReviewCreateInput!, update: ReviewUpdateInput!): Review!
   upsertOrder(where: OrderWhereUniqueInput!, create: OrderCreateInput!, update: OrderUpdateInput!): Order!
+  upsertExperienceCategory(where: ExperienceCategoryWhereUniqueInput!, create: ExperienceCategoryCreateInput!, update: ExperienceCategoryUpdateInput!): ExperienceCategory!
+  upsertPaytmInformation(where: PaytmInformationWhereUniqueInput!, create: PaytmInformationCreateInput!, update: PaytmInformationUpdateInput!): PaytmInformation!
+  upsertDebitCardInformation(where: DebitCardInformationWhereUniqueInput!, create: DebitCardInformationCreateInput!, update: DebitCardInformationUpdateInput!): DebitCardInformation!
   upsertPricing(where: PricingWhereUniqueInput!, create: PricingCreateInput!, update: PricingUpdateInput!): Pricing!
   upsertPicture(where: PictureWhereUniqueInput!, create: PictureCreateInput!, update: PictureUpdateInput!): Picture!
   updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
   updateManyNeighbourhoods(data: NeighbourhoodUpdateManyMutationInput!, where: NeighbourhoodWhereInput): BatchPayload!
   updateManyCities(data: CityUpdateManyMutationInput!, where: CityWhereInput): BatchPayload!
   updateManyExperiences(data: ExperienceUpdateManyMutationInput!, where: ExperienceWhereInput): BatchPayload!
-  updateManyExperienceCategories(data: ExperienceCategoryUpdateManyMutationInput!, where: ExperienceCategoryWhereInput): BatchPayload!
   updateManyPayments(data: PaymentUpdateManyMutationInput!, where: PaymentWhereInput): BatchPayload!
   updateManyPaymentAccounts(data: PaymentAccountUpdateManyMutationInput!, where: PaymentAccountWhereInput): BatchPayload!
-  updateManyPaypalInformations(data: PaypalInformationUpdateManyMutationInput!, where: PaypalInformationWhereInput): BatchPayload!
-  updateManyPaytmInformations(data: PaytmInformationUpdateManyMutationInput!, where: PaytmInformationWhereInput): BatchPayload!
-  updateManyCreditCardInformations(data: CreditCardInformationUpdateManyMutationInput!, where: CreditCardInformationWhereInput): BatchPayload!
-  updateManyDebitCardInformations(data: DebitCardInformationUpdateManyMutationInput!, where: DebitCardInformationWhereInput): BatchPayload!
   updateManyMessages(data: MessageUpdateManyMutationInput!, where: MessageWhereInput): BatchPayload!
   updateManyNotifications(data: NotificationUpdateManyMutationInput!, where: NotificationWhereInput): BatchPayload!
   updateManyRestaurants(data: RestaurantUpdateManyMutationInput!, where: RestaurantWhereInput): BatchPayload!
   updateManyMenuItems(data: MenuItemUpdateManyMutationInput!, where: MenuItemWhereInput): BatchPayload!
+  updateManyPaypalInformations(data: PaypalInformationUpdateManyMutationInput!, where: PaypalInformationWhereInput): BatchPayload!
   updateManyPolicieses(data: PoliciesUpdateManyMutationInput!, where: PoliciesWhereInput): BatchPayload!
+  updateManyCreditCardInformations(data: CreditCardInformationUpdateManyMutationInput!, where: CreditCardInformationWhereInput): BatchPayload!
   updateManyLocations(data: LocationUpdateManyMutationInput!, where: LocationWhereInput): BatchPayload!
   updateManyReviews(data: ReviewUpdateManyMutationInput!, where: ReviewWhereInput): BatchPayload!
   updateManyOrders(data: OrderUpdateManyMutationInput!, where: OrderWhereInput): BatchPayload!
+  updateManyExperienceCategories(data: ExperienceCategoryUpdateManyMutationInput!, where: ExperienceCategoryWhereInput): BatchPayload!
+  updateManyPaytmInformations(data: PaytmInformationUpdateManyMutationInput!, where: PaytmInformationWhereInput): BatchPayload!
+  updateManyDebitCardInformations(data: DebitCardInformationUpdateManyMutationInput!, where: DebitCardInformationWhereInput): BatchPayload!
   updateManyPricings(data: PricingUpdateManyMutationInput!, where: PricingWhereInput): BatchPayload!
   updateManyPictures(data: PictureUpdateManyMutationInput!, where: PictureWhereInput): BatchPayload!
   deleteManyUsers(where: UserWhereInput): BatchPayload!
   deleteManyNeighbourhoods(where: NeighbourhoodWhereInput): BatchPayload!
   deleteManyCities(where: CityWhereInput): BatchPayload!
   deleteManyExperiences(where: ExperienceWhereInput): BatchPayload!
-  deleteManyExperienceCategories(where: ExperienceCategoryWhereInput): BatchPayload!
   deleteManyPayments(where: PaymentWhereInput): BatchPayload!
   deleteManyPaymentAccounts(where: PaymentAccountWhereInput): BatchPayload!
-  deleteManyPaypalInformations(where: PaypalInformationWhereInput): BatchPayload!
-  deleteManyPaytmInformations(where: PaytmInformationWhereInput): BatchPayload!
-  deleteManyCreditCardInformations(where: CreditCardInformationWhereInput): BatchPayload!
-  deleteManyDebitCardInformations(where: DebitCardInformationWhereInput): BatchPayload!
   deleteManyMessages(where: MessageWhereInput): BatchPayload!
   deleteManyNotifications(where: NotificationWhereInput): BatchPayload!
   deleteManyRestaurants(where: RestaurantWhereInput): BatchPayload!
   deleteManyMenuItems(where: MenuItemWhereInput): BatchPayload!
+  deleteManyPaypalInformations(where: PaypalInformationWhereInput): BatchPayload!
   deleteManyPolicieses(where: PoliciesWhereInput): BatchPayload!
+  deleteManyCreditCardInformations(where: CreditCardInformationWhereInput): BatchPayload!
   deleteManyLocations(where: LocationWhereInput): BatchPayload!
   deleteManyReviews(where: ReviewWhereInput): BatchPayload!
   deleteManyOrders(where: OrderWhereInput): BatchPayload!
+  deleteManyExperienceCategories(where: ExperienceCategoryWhereInput): BatchPayload!
+  deleteManyPaytmInformations(where: PaytmInformationWhereInput): BatchPayload!
+  deleteManyDebitCardInformations(where: DebitCardInformationWhereInput): BatchPayload!
   deleteManyPricings(where: PricingWhereInput): BatchPayload!
   deleteManyPictures(where: PictureWhereInput): BatchPayload!
 }
@@ -5423,7 +5267,7 @@ type Order implements Node {
   restaurant: Restaurant!
   startDate: DateTime!
   endDate: DateTime!
-  payment: Payment
+  payment: Payment!
 }
 
 """A connection to a list of items."""
@@ -5442,7 +5286,7 @@ input OrderCreateInput {
   endDate: DateTime!
   bookee: UserCreateOneWithoutOrdersInput!
   restaurant: RestaurantCreateOneWithoutOrdersInput!
-  payment: PaymentCreateOneWithoutOrderInput
+  payment: PaymentCreateOneWithoutOrderInput!
 }
 
 input OrderCreateManyWithoutBookeeInput {
@@ -5470,7 +5314,7 @@ input OrderCreateWithoutBookeeInput {
   startDate: DateTime!
   endDate: DateTime!
   restaurant: RestaurantCreateOneWithoutOrdersInput!
-  payment: PaymentCreateOneWithoutOrderInput
+  payment: PaymentCreateOneWithoutOrderInput!
 }
 
 input OrderCreateWithoutPaymentInput {
@@ -5486,7 +5330,7 @@ input OrderCreateWithoutRestaurantInput {
   startDate: DateTime!
   endDate: DateTime!
   bookee: UserCreateOneWithoutOrdersInput!
-  payment: PaymentCreateOneWithoutOrderInput
+  payment: PaymentCreateOneWithoutOrderInput!
 }
 
 """An edge in a connection."""
@@ -5677,7 +5521,7 @@ input OrderUpdateDataInput {
   endDate: DateTime
   bookee: UserUpdateOneRequiredWithoutOrdersInput
   restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
-  payment: PaymentUpdateOneWithoutOrderInput
+  payment: PaymentUpdateOneRequiredWithoutOrderInput
 }
 
 input OrderUpdateInput {
@@ -5685,7 +5529,7 @@ input OrderUpdateInput {
   endDate: DateTime
   bookee: UserUpdateOneRequiredWithoutOrdersInput
   restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
-  payment: PaymentUpdateOneWithoutOrderInput
+  payment: PaymentUpdateOneRequiredWithoutOrderInput
 }
 
 input OrderUpdateManyDataInput {
@@ -5745,7 +5589,7 @@ input OrderUpdateWithoutBookeeDataInput {
   startDate: DateTime
   endDate: DateTime
   restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
-  payment: PaymentUpdateOneWithoutOrderInput
+  payment: PaymentUpdateOneRequiredWithoutOrderInput
 }
 
 input OrderUpdateWithoutPaymentDataInput {
@@ -5759,7 +5603,7 @@ input OrderUpdateWithoutRestaurantDataInput {
   startDate: DateTime
   endDate: DateTime
   bookee: UserUpdateOneRequiredWithoutOrdersInput
-  payment: PaymentUpdateOneWithoutOrderInput
+  payment: PaymentUpdateOneRequiredWithoutOrderInput
 }
 
 input OrderUpdateWithWhereUniqueWithoutBookeeInput {
@@ -5977,10 +5821,10 @@ input PaymentAccountCreateInput {
   type: PAYMENT_PROVIDER
   user: UserCreateOneWithoutPaymentAccountInput!
   payments: PaymentCreateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationCreateOneInput
+  paytm: PaytmInformationCreateOneInput
+  creditcard: CreditCardInformationCreateOneInput
+  debitcard: DebitCardInformationCreateOneInput
 }
 
 input PaymentAccountCreateManyWithoutUserInput {
@@ -5988,89 +5832,29 @@ input PaymentAccountCreateManyWithoutUserInput {
   connect: [PaymentAccountWhereUniqueInput!]
 }
 
-input PaymentAccountCreateOneWithoutCreditcardInput {
-  create: PaymentAccountCreateWithoutCreditcardInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountCreateOneWithoutDebitcardInput {
-  create: PaymentAccountCreateWithoutDebitcardInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
 input PaymentAccountCreateOneWithoutPaymentsInput {
   create: PaymentAccountCreateWithoutPaymentsInput
   connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountCreateOneWithoutPaypalInput {
-  create: PaymentAccountCreateWithoutPaypalInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountCreateOneWithoutPaytmInput {
-  create: PaymentAccountCreateWithoutPaytmInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountCreateWithoutCreditcardInput {
-  id: ID
-  type: PAYMENT_PROVIDER
-  user: UserCreateOneWithoutPaymentAccountInput!
-  payments: PaymentCreateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountCreateWithoutDebitcardInput {
-  id: ID
-  type: PAYMENT_PROVIDER
-  user: UserCreateOneWithoutPaymentAccountInput!
-  payments: PaymentCreateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountCreateWithoutPaymentsInput {
   id: ID
   type: PAYMENT_PROVIDER
   user: UserCreateOneWithoutPaymentAccountInput!
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountCreateWithoutPaypalInput {
-  id: ID
-  type: PAYMENT_PROVIDER
-  user: UserCreateOneWithoutPaymentAccountInput!
-  payments: PaymentCreateManyWithoutPaymentMethodInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountCreateWithoutPaytmInput {
-  id: ID
-  type: PAYMENT_PROVIDER
-  user: UserCreateOneWithoutPaymentAccountInput!
-  payments: PaymentCreateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationCreateOneInput
+  paytm: PaytmInformationCreateOneInput
+  creditcard: CreditCardInformationCreateOneInput
+  debitcard: DebitCardInformationCreateOneInput
 }
 
 input PaymentAccountCreateWithoutUserInput {
   id: ID
   type: PAYMENT_PROVIDER
   payments: PaymentCreateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationCreateOneInput
+  paytm: PaytmInformationCreateOneInput
+  creditcard: CreditCardInformationCreateOneInput
+  debitcard: DebitCardInformationCreateOneInput
 }
 
 """An edge in a connection."""
@@ -6223,10 +6007,10 @@ input PaymentAccountUpdateInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
   payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationUpdateOneInput
+  paytm: PaytmInformationUpdateOneInput
+  creditcard: CreditCardInformationUpdateOneInput
+  debitcard: DebitCardInformationUpdateOneInput
 }
 
 input PaymentAccountUpdateManyDataInput {
@@ -6261,90 +6045,22 @@ input PaymentAccountUpdateOneRequiredWithoutPaymentsInput {
   upsert: PaymentAccountUpsertWithoutPaymentsInput
 }
 
-input PaymentAccountUpdateOneRequiredWithoutPaypalInput {
-  create: PaymentAccountCreateWithoutPaypalInput
-  connect: PaymentAccountWhereUniqueInput
-  update: PaymentAccountUpdateWithoutPaypalDataInput
-  upsert: PaymentAccountUpsertWithoutPaypalInput
-}
-
-input PaymentAccountUpdateOneRequiredWithoutPaytmInput {
-  create: PaymentAccountCreateWithoutPaytmInput
-  connect: PaymentAccountWhereUniqueInput
-  update: PaymentAccountUpdateWithoutPaytmDataInput
-  upsert: PaymentAccountUpsertWithoutPaytmInput
-}
-
-input PaymentAccountUpdateOneWithoutCreditcardInput {
-  create: PaymentAccountCreateWithoutCreditcardInput
-  connect: PaymentAccountWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
-  update: PaymentAccountUpdateWithoutCreditcardDataInput
-  upsert: PaymentAccountUpsertWithoutCreditcardInput
-}
-
-input PaymentAccountUpdateOneWithoutDebitcardInput {
-  create: PaymentAccountCreateWithoutDebitcardInput
-  connect: PaymentAccountWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
-  update: PaymentAccountUpdateWithoutDebitcardDataInput
-  upsert: PaymentAccountUpsertWithoutDebitcardInput
-}
-
-input PaymentAccountUpdateWithoutCreditcardDataInput {
-  type: PAYMENT_PROVIDER
-  user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountUpdateWithoutDebitcardDataInput {
-  type: PAYMENT_PROVIDER
-  user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-}
-
 input PaymentAccountUpdateWithoutPaymentsDataInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountUpdateWithoutPaypalDataInput {
-  type: PAYMENT_PROVIDER
-  user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountUpdateWithoutPaytmDataInput {
-  type: PAYMENT_PROVIDER
-  user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationUpdateOneInput
+  paytm: PaytmInformationUpdateOneInput
+  creditcard: CreditCardInformationUpdateOneInput
+  debitcard: DebitCardInformationUpdateOneInput
 }
 
 input PaymentAccountUpdateWithoutUserDataInput {
   type: PAYMENT_PROVIDER
   payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationUpdateOneInput
+  paytm: PaytmInformationUpdateOneInput
+  creditcard: CreditCardInformationUpdateOneInput
+  debitcard: DebitCardInformationUpdateOneInput
 }
 
 input PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
@@ -6352,29 +6068,9 @@ input PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
   data: PaymentAccountUpdateWithoutUserDataInput!
 }
 
-input PaymentAccountUpsertWithoutCreditcardInput {
-  update: PaymentAccountUpdateWithoutCreditcardDataInput!
-  create: PaymentAccountCreateWithoutCreditcardInput!
-}
-
-input PaymentAccountUpsertWithoutDebitcardInput {
-  update: PaymentAccountUpdateWithoutDebitcardDataInput!
-  create: PaymentAccountCreateWithoutDebitcardInput!
-}
-
 input PaymentAccountUpsertWithoutPaymentsInput {
   update: PaymentAccountUpdateWithoutPaymentsDataInput!
   create: PaymentAccountCreateWithoutPaymentsInput!
-}
-
-input PaymentAccountUpsertWithoutPaypalInput {
-  update: PaymentAccountUpdateWithoutPaypalDataInput!
-  create: PaymentAccountCreateWithoutPaypalInput!
-}
-
-input PaymentAccountUpsertWithoutPaytmInput {
-  update: PaymentAccountUpdateWithoutPaytmDataInput!
-  create: PaymentAccountCreateWithoutPaytmInput!
 }
 
 input PaymentAccountUpsertWithWhereUniqueWithoutUserInput {
@@ -6768,11 +6464,9 @@ input PaymentUpdateManyWithWhereNestedInput {
   data: PaymentUpdateManyDataInput!
 }
 
-input PaymentUpdateOneWithoutOrderInput {
+input PaymentUpdateOneRequiredWithoutOrderInput {
   create: PaymentCreateWithoutOrderInput
   connect: PaymentWhereUniqueInput
-  disconnect: Boolean
-  delete: Boolean
   update: PaymentUpdateWithoutOrderDataInput
   upsert: PaymentUpsertWithoutOrderInput
 }
@@ -6956,7 +6650,6 @@ type PaypalInformation implements Node {
   id: ID!
   createdAt: DateTime!
   email: String!
-  paymentAccount: PaymentAccount!
 }
 
 """A connection to a list of items."""
@@ -6972,17 +6665,11 @@ type PaypalInformationConnection {
 input PaypalInformationCreateInput {
   id: ID
   email: String!
-  paymentAccount: PaymentAccountCreateOneWithoutPaypalInput!
 }
 
-input PaypalInformationCreateOneWithoutPaymentAccountInput {
-  create: PaypalInformationCreateWithoutPaymentAccountInput
+input PaypalInformationCreateOneInput {
+  create: PaypalInformationCreateInput
   connect: PaypalInformationWhereUniqueInput
-}
-
-input PaypalInformationCreateWithoutPaymentAccountInput {
-  id: ID
-  email: String!
 }
 
 """An edge in a connection."""
@@ -7048,31 +6735,30 @@ input PaypalInformationSubscriptionWhereInput {
   node: PaypalInformationWhereInput
 }
 
+input PaypalInformationUpdateDataInput {
+  email: String
+}
+
 input PaypalInformationUpdateInput {
   email: String
-  paymentAccount: PaymentAccountUpdateOneRequiredWithoutPaypalInput
 }
 
 input PaypalInformationUpdateManyMutationInput {
   email: String
 }
 
-input PaypalInformationUpdateOneWithoutPaymentAccountInput {
-  create: PaypalInformationCreateWithoutPaymentAccountInput
+input PaypalInformationUpdateOneInput {
+  create: PaypalInformationCreateInput
   connect: PaypalInformationWhereUniqueInput
   disconnect: Boolean
   delete: Boolean
-  update: PaypalInformationUpdateWithoutPaymentAccountDataInput
-  upsert: PaypalInformationUpsertWithoutPaymentAccountInput
+  update: PaypalInformationUpdateDataInput
+  upsert: PaypalInformationUpsertNestedInput
 }
 
-input PaypalInformationUpdateWithoutPaymentAccountDataInput {
-  email: String
-}
-
-input PaypalInformationUpsertWithoutPaymentAccountInput {
-  update: PaypalInformationUpdateWithoutPaymentAccountDataInput!
-  create: PaypalInformationCreateWithoutPaymentAccountInput!
+input PaypalInformationUpsertNestedInput {
+  update: PaypalInformationUpdateDataInput!
+  create: PaypalInformationCreateInput!
 }
 
 input PaypalInformationWhereInput {
@@ -7186,7 +6872,6 @@ input PaypalInformationWhereInput {
 
   """All values not ending with the given string."""
   email_not_ends_with: String
-  paymentAccount: PaymentAccountWhereInput
 }
 
 input PaypalInformationWhereUniqueInput {
@@ -7197,7 +6882,6 @@ type PaytmInformation implements Node {
   id: ID!
   createdAt: DateTime!
   phone: String!
-  paymentAccount: PaymentAccount!
 }
 
 """A connection to a list of items."""
@@ -7213,17 +6897,11 @@ type PaytmInformationConnection {
 input PaytmInformationCreateInput {
   id: ID
   phone: String!
-  paymentAccount: PaymentAccountCreateOneWithoutPaytmInput!
 }
 
-input PaytmInformationCreateOneWithoutPaymentAccountInput {
-  create: PaytmInformationCreateWithoutPaymentAccountInput
+input PaytmInformationCreateOneInput {
+  create: PaytmInformationCreateInput
   connect: PaytmInformationWhereUniqueInput
-}
-
-input PaytmInformationCreateWithoutPaymentAccountInput {
-  id: ID
-  phone: String!
 }
 
 """An edge in a connection."""
@@ -7289,31 +6967,30 @@ input PaytmInformationSubscriptionWhereInput {
   node: PaytmInformationWhereInput
 }
 
+input PaytmInformationUpdateDataInput {
+  phone: String
+}
+
 input PaytmInformationUpdateInput {
   phone: String
-  paymentAccount: PaymentAccountUpdateOneRequiredWithoutPaytmInput
 }
 
 input PaytmInformationUpdateManyMutationInput {
   phone: String
 }
 
-input PaytmInformationUpdateOneWithoutPaymentAccountInput {
-  create: PaytmInformationCreateWithoutPaymentAccountInput
+input PaytmInformationUpdateOneInput {
+  create: PaytmInformationCreateInput
   connect: PaytmInformationWhereUniqueInput
   disconnect: Boolean
   delete: Boolean
-  update: PaytmInformationUpdateWithoutPaymentAccountDataInput
-  upsert: PaytmInformationUpsertWithoutPaymentAccountInput
+  update: PaytmInformationUpdateDataInput
+  upsert: PaytmInformationUpsertNestedInput
 }
 
-input PaytmInformationUpdateWithoutPaymentAccountDataInput {
-  phone: String
-}
-
-input PaytmInformationUpsertWithoutPaymentAccountInput {
-  update: PaytmInformationUpdateWithoutPaymentAccountDataInput!
-  create: PaytmInformationCreateWithoutPaymentAccountInput!
+input PaytmInformationUpsertNestedInput {
+  update: PaytmInformationUpdateDataInput!
+  create: PaytmInformationCreateInput!
 }
 
 input PaytmInformationWhereInput {
@@ -7427,7 +7104,6 @@ input PaytmInformationWhereInput {
 
   """All values not ending with the given string."""
   phone_not_ends_with: String
-  paymentAccount: PaymentAccountWhereInput
 }
 
 input PaytmInformationWhereUniqueInput {
@@ -8428,63 +8104,63 @@ type Query {
   neighbourhoods(where: NeighbourhoodWhereInput, orderBy: NeighbourhoodOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Neighbourhood]!
   cities(where: CityWhereInput, orderBy: CityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [City]!
   experiences(where: ExperienceWhereInput, orderBy: ExperienceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Experience]!
-  experienceCategories(where: ExperienceCategoryWhereInput, orderBy: ExperienceCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ExperienceCategory]!
   payments(where: PaymentWhereInput, orderBy: PaymentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Payment]!
   paymentAccounts(where: PaymentAccountWhereInput, orderBy: PaymentAccountOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaymentAccount]!
-  paypalInformations(where: PaypalInformationWhereInput, orderBy: PaypalInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaypalInformation]!
-  paytmInformations(where: PaytmInformationWhereInput, orderBy: PaytmInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaytmInformation]!
-  creditCardInformations(where: CreditCardInformationWhereInput, orderBy: CreditCardInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CreditCardInformation]!
-  debitCardInformations(where: DebitCardInformationWhereInput, orderBy: DebitCardInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [DebitCardInformation]!
   messages(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Message]!
   notifications(where: NotificationWhereInput, orderBy: NotificationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Notification]!
   restaurants(where: RestaurantWhereInput, orderBy: RestaurantOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Restaurant]!
   menuItems(where: MenuItemWhereInput, orderBy: MenuItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [MenuItem]!
+  paypalInformations(where: PaypalInformationWhereInput, orderBy: PaypalInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaypalInformation]!
   policieses(where: PoliciesWhereInput, orderBy: PoliciesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Policies]!
+  creditCardInformations(where: CreditCardInformationWhereInput, orderBy: CreditCardInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [CreditCardInformation]!
   locations(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Location]!
   reviews(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Review]!
   orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order]!
+  experienceCategories(where: ExperienceCategoryWhereInput, orderBy: ExperienceCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [ExperienceCategory]!
+  paytmInformations(where: PaytmInformationWhereInput, orderBy: PaytmInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [PaytmInformation]!
+  debitCardInformations(where: DebitCardInformationWhereInput, orderBy: DebitCardInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [DebitCardInformation]!
   pricings(where: PricingWhereInput, orderBy: PricingOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Pricing]!
   pictures(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Picture]!
   user(where: UserWhereUniqueInput!): User
   neighbourhood(where: NeighbourhoodWhereUniqueInput!): Neighbourhood
   city(where: CityWhereUniqueInput!): City
   experience(where: ExperienceWhereUniqueInput!): Experience
-  experienceCategory(where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
   payment(where: PaymentWhereUniqueInput!): Payment
   paymentAccount(where: PaymentAccountWhereUniqueInput!): PaymentAccount
-  paypalInformation(where: PaypalInformationWhereUniqueInput!): PaypalInformation
-  paytmInformation(where: PaytmInformationWhereUniqueInput!): PaytmInformation
-  creditCardInformation(where: CreditCardInformationWhereUniqueInput!): CreditCardInformation
-  debitCardInformation(where: DebitCardInformationWhereUniqueInput!): DebitCardInformation
   message(where: MessageWhereUniqueInput!): Message
   notification(where: NotificationWhereUniqueInput!): Notification
   restaurant(where: RestaurantWhereUniqueInput!): Restaurant
   menuItem(where: MenuItemWhereUniqueInput!): MenuItem
+  paypalInformation(where: PaypalInformationWhereUniqueInput!): PaypalInformation
   policies(where: PoliciesWhereUniqueInput!): Policies
+  creditCardInformation(where: CreditCardInformationWhereUniqueInput!): CreditCardInformation
   location(where: LocationWhereUniqueInput!): Location
   review(where: ReviewWhereUniqueInput!): Review
   order(where: OrderWhereUniqueInput!): Order
+  experienceCategory(where: ExperienceCategoryWhereUniqueInput!): ExperienceCategory
+  paytmInformation(where: PaytmInformationWhereUniqueInput!): PaytmInformation
+  debitCardInformation(where: DebitCardInformationWhereUniqueInput!): DebitCardInformation
   pricing(where: PricingWhereUniqueInput!): Pricing
   picture(where: PictureWhereUniqueInput!): Picture
   usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
   neighbourhoodsConnection(where: NeighbourhoodWhereInput, orderBy: NeighbourhoodOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NeighbourhoodConnection!
   citiesConnection(where: CityWhereInput, orderBy: CityOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CityConnection!
   experiencesConnection(where: ExperienceWhereInput, orderBy: ExperienceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ExperienceConnection!
-  experienceCategoriesConnection(where: ExperienceCategoryWhereInput, orderBy: ExperienceCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ExperienceCategoryConnection!
   paymentsConnection(where: PaymentWhereInput, orderBy: PaymentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaymentConnection!
   paymentAccountsConnection(where: PaymentAccountWhereInput, orderBy: PaymentAccountOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaymentAccountConnection!
-  paypalInformationsConnection(where: PaypalInformationWhereInput, orderBy: PaypalInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaypalInformationConnection!
-  paytmInformationsConnection(where: PaytmInformationWhereInput, orderBy: PaytmInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaytmInformationConnection!
-  creditCardInformationsConnection(where: CreditCardInformationWhereInput, orderBy: CreditCardInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CreditCardInformationConnection!
-  debitCardInformationsConnection(where: DebitCardInformationWhereInput, orderBy: DebitCardInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): DebitCardInformationConnection!
   messagesConnection(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MessageConnection!
   notificationsConnection(where: NotificationWhereInput, orderBy: NotificationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): NotificationConnection!
   restaurantsConnection(where: RestaurantWhereInput, orderBy: RestaurantOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RestaurantConnection!
   menuItemsConnection(where: MenuItemWhereInput, orderBy: MenuItemOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): MenuItemConnection!
+  paypalInformationsConnection(where: PaypalInformationWhereInput, orderBy: PaypalInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaypalInformationConnection!
   policiesesConnection(where: PoliciesWhereInput, orderBy: PoliciesOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PoliciesConnection!
+  creditCardInformationsConnection(where: CreditCardInformationWhereInput, orderBy: CreditCardInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CreditCardInformationConnection!
   locationsConnection(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): LocationConnection!
   reviewsConnection(where: ReviewWhereInput, orderBy: ReviewOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ReviewConnection!
   ordersConnection(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): OrderConnection!
+  experienceCategoriesConnection(where: ExperienceCategoryWhereInput, orderBy: ExperienceCategoryOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): ExperienceCategoryConnection!
+  paytmInformationsConnection(where: PaytmInformationWhereInput, orderBy: PaytmInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PaytmInformationConnection!
+  debitCardInformationsConnection(where: DebitCardInformationWhereInput, orderBy: DebitCardInformationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): DebitCardInformationConnection!
   pricingsConnection(where: PricingWhereInput, orderBy: PricingOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PricingConnection!
   picturesConnection(where: PictureWhereInput, orderBy: PictureOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PictureConnection!
 
@@ -10253,21 +9929,21 @@ type Subscription {
   neighbourhood(where: NeighbourhoodSubscriptionWhereInput): NeighbourhoodSubscriptionPayload
   city(where: CitySubscriptionWhereInput): CitySubscriptionPayload
   experience(where: ExperienceSubscriptionWhereInput): ExperienceSubscriptionPayload
-  experienceCategory(where: ExperienceCategorySubscriptionWhereInput): ExperienceCategorySubscriptionPayload
   payment(where: PaymentSubscriptionWhereInput): PaymentSubscriptionPayload
   paymentAccount(where: PaymentAccountSubscriptionWhereInput): PaymentAccountSubscriptionPayload
-  paypalInformation(where: PaypalInformationSubscriptionWhereInput): PaypalInformationSubscriptionPayload
-  paytmInformation(where: PaytmInformationSubscriptionWhereInput): PaytmInformationSubscriptionPayload
-  creditCardInformation(where: CreditCardInformationSubscriptionWhereInput): CreditCardInformationSubscriptionPayload
-  debitCardInformation(where: DebitCardInformationSubscriptionWhereInput): DebitCardInformationSubscriptionPayload
   message(where: MessageSubscriptionWhereInput): MessageSubscriptionPayload
   notification(where: NotificationSubscriptionWhereInput): NotificationSubscriptionPayload
   restaurant(where: RestaurantSubscriptionWhereInput): RestaurantSubscriptionPayload
   menuItem(where: MenuItemSubscriptionWhereInput): MenuItemSubscriptionPayload
+  paypalInformation(where: PaypalInformationSubscriptionWhereInput): PaypalInformationSubscriptionPayload
   policies(where: PoliciesSubscriptionWhereInput): PoliciesSubscriptionPayload
+  creditCardInformation(where: CreditCardInformationSubscriptionWhereInput): CreditCardInformationSubscriptionPayload
   location(where: LocationSubscriptionWhereInput): LocationSubscriptionPayload
   review(where: ReviewSubscriptionWhereInput): ReviewSubscriptionPayload
   order(where: OrderSubscriptionWhereInput): OrderSubscriptionPayload
+  experienceCategory(where: ExperienceCategorySubscriptionWhereInput): ExperienceCategorySubscriptionPayload
+  paytmInformation(where: PaytmInformationSubscriptionWhereInput): PaytmInformationSubscriptionPayload
+  debitCardInformation(where: DebitCardInformationSubscriptionWhereInput): DebitCardInformationSubscriptionPayload
   pricing(where: PricingSubscriptionWhereInput): PricingSubscriptionPayload
   picture(where: PictureSubscriptionWhereInput): PictureSubscriptionPayload
 }
@@ -10280,7 +9956,6 @@ type User implements Node {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean!
   ownedRestaurant(where: RestaurantWhereInput, orderBy: RestaurantOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Restaurant!]
   location(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Location!]
   orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order!]
@@ -10289,7 +9964,7 @@ type User implements Node {
   receivedMessages(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Message!]
   notifications(where: NotificationWhereInput, orderBy: NotificationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Notification!]
   profilePicture: Picture
-  hostingExperiences(where: ExperienceWhereInput, orderBy: ExperienceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Experience!]
+  experiences(where: ExperienceWhereInput, orderBy: ExperienceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Experience!]
   accountType: UserType
   uid: String!
 }
@@ -10310,7 +9985,6 @@ input UserCreateInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String!
   ownedRestaurant: RestaurantCreateManyInput
@@ -10321,11 +9995,11 @@ input UserCreateInput {
   receivedMessages: MessageCreateManyWithoutToInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
 }
 
-input UserCreateOneWithoutHostingExperiencesInput {
-  create: UserCreateWithoutHostingExperiencesInput
+input UserCreateOneWithoutExperiencesInput {
+  create: UserCreateWithoutExperiencesInput
   connect: UserWhereUniqueInput
 }
 
@@ -10354,13 +10028,12 @@ input UserCreateOneWithoutSentMessagesInput {
   connect: UserWhereUniqueInput
 }
 
-input UserCreateWithoutHostingExperiencesInput {
+input UserCreateWithoutExperiencesInput {
   id: ID
   displayName: String!
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String!
   ownedRestaurant: RestaurantCreateManyInput
@@ -10379,7 +10052,6 @@ input UserCreateWithoutNotificationsInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String!
   ownedRestaurant: RestaurantCreateManyInput
@@ -10389,7 +10061,7 @@ input UserCreateWithoutNotificationsInput {
   sentMessages: MessageCreateManyWithoutFromInput
   receivedMessages: MessageCreateManyWithoutToInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
 }
 
 input UserCreateWithoutOrdersInput {
@@ -10398,7 +10070,6 @@ input UserCreateWithoutOrdersInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String!
   ownedRestaurant: RestaurantCreateManyInput
@@ -10408,7 +10079,7 @@ input UserCreateWithoutOrdersInput {
   receivedMessages: MessageCreateManyWithoutToInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
 }
 
 input UserCreateWithoutPaymentAccountInput {
@@ -10417,7 +10088,6 @@ input UserCreateWithoutPaymentAccountInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String!
   ownedRestaurant: RestaurantCreateManyInput
@@ -10427,7 +10097,7 @@ input UserCreateWithoutPaymentAccountInput {
   receivedMessages: MessageCreateManyWithoutToInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
 }
 
 input UserCreateWithoutReceivedMessagesInput {
@@ -10436,7 +10106,6 @@ input UserCreateWithoutReceivedMessagesInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String!
   ownedRestaurant: RestaurantCreateManyInput
@@ -10446,7 +10115,7 @@ input UserCreateWithoutReceivedMessagesInput {
   sentMessages: MessageCreateManyWithoutFromInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
 }
 
 input UserCreateWithoutSentMessagesInput {
@@ -10455,7 +10124,6 @@ input UserCreateWithoutSentMessagesInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String!
   ownedRestaurant: RestaurantCreateManyInput
@@ -10465,7 +10133,7 @@ input UserCreateWithoutSentMessagesInput {
   receivedMessages: MessageCreateManyWithoutToInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
 }
 
 """An edge in a connection."""
@@ -10492,8 +10160,6 @@ enum UserOrderByInput {
   responseRate_DESC
   responseTime_ASC
   responseTime_DESC
-  isSuperHost_ASC
-  isSuperHost_DESC
   accountType_ASC
   accountType_DESC
   uid_ASC
@@ -10508,7 +10174,6 @@ type UserPreviousValues {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean!
   accountType: UserType
   uid: String!
 }
@@ -10563,7 +10228,6 @@ input UserUpdateInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String
   ownedRestaurant: RestaurantUpdateManyInput
@@ -10574,7 +10238,7 @@ input UserUpdateInput {
   receivedMessages: MessageUpdateManyWithoutToInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
 }
 
 input UserUpdateManyMutationInput {
@@ -10582,16 +10246,15 @@ input UserUpdateManyMutationInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String
 }
 
-input UserUpdateOneRequiredWithoutHostingExperiencesInput {
-  create: UserCreateWithoutHostingExperiencesInput
+input UserUpdateOneRequiredWithoutExperiencesInput {
+  create: UserCreateWithoutExperiencesInput
   connect: UserWhereUniqueInput
-  update: UserUpdateWithoutHostingExperiencesDataInput
-  upsert: UserUpsertWithoutHostingExperiencesInput
+  update: UserUpdateWithoutExperiencesDataInput
+  upsert: UserUpsertWithoutExperiencesInput
 }
 
 input UserUpdateOneRequiredWithoutNotificationsInput {
@@ -10629,12 +10292,11 @@ input UserUpdateOneRequiredWithoutSentMessagesInput {
   upsert: UserUpsertWithoutSentMessagesInput
 }
 
-input UserUpdateWithoutHostingExperiencesDataInput {
+input UserUpdateWithoutExperiencesDataInput {
   displayName: String
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String
   ownedRestaurant: RestaurantUpdateManyInput
@@ -10652,7 +10314,6 @@ input UserUpdateWithoutNotificationsDataInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String
   ownedRestaurant: RestaurantUpdateManyInput
@@ -10662,7 +10323,7 @@ input UserUpdateWithoutNotificationsDataInput {
   sentMessages: MessageUpdateManyWithoutFromInput
   receivedMessages: MessageUpdateManyWithoutToInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
 }
 
 input UserUpdateWithoutOrdersDataInput {
@@ -10670,7 +10331,6 @@ input UserUpdateWithoutOrdersDataInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String
   ownedRestaurant: RestaurantUpdateManyInput
@@ -10680,7 +10340,7 @@ input UserUpdateWithoutOrdersDataInput {
   receivedMessages: MessageUpdateManyWithoutToInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
 }
 
 input UserUpdateWithoutPaymentAccountDataInput {
@@ -10688,7 +10348,6 @@ input UserUpdateWithoutPaymentAccountDataInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String
   ownedRestaurant: RestaurantUpdateManyInput
@@ -10698,7 +10357,7 @@ input UserUpdateWithoutPaymentAccountDataInput {
   receivedMessages: MessageUpdateManyWithoutToInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
 }
 
 input UserUpdateWithoutReceivedMessagesDataInput {
@@ -10706,7 +10365,6 @@ input UserUpdateWithoutReceivedMessagesDataInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String
   ownedRestaurant: RestaurantUpdateManyInput
@@ -10716,7 +10374,7 @@ input UserUpdateWithoutReceivedMessagesDataInput {
   sentMessages: MessageUpdateManyWithoutFromInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
 }
 
 input UserUpdateWithoutSentMessagesDataInput {
@@ -10724,7 +10382,6 @@ input UserUpdateWithoutSentMessagesDataInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String
   ownedRestaurant: RestaurantUpdateManyInput
@@ -10734,12 +10391,12 @@ input UserUpdateWithoutSentMessagesDataInput {
   receivedMessages: MessageUpdateManyWithoutToInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
 }
 
-input UserUpsertWithoutHostingExperiencesInput {
-  update: UserUpdateWithoutHostingExperiencesDataInput!
-  create: UserCreateWithoutHostingExperiencesInput!
+input UserUpsertWithoutExperiencesInput {
+  update: UserUpdateWithoutExperiencesDataInput!
+  create: UserCreateWithoutExperiencesInput!
 }
 
 input UserUpsertWithoutNotificationsInput {
@@ -10984,10 +10641,6 @@ input UserWhereInput {
 
   """All values greater than or equal the given value."""
   responseTime_gte: Int
-  isSuperHost: Boolean
-
-  """All values that are not equal to given value."""
-  isSuperHost_not: Boolean
   accountType: UserType
 
   """All values that are not equal to given value."""
@@ -11060,9 +10713,9 @@ input UserWhereInput {
   notifications_some: NotificationWhereInput
   notifications_none: NotificationWhereInput
   profilePicture: PictureWhereInput
-  hostingExperiences_every: ExperienceWhereInput
-  hostingExperiences_some: ExperienceWhereInput
-  hostingExperiences_none: ExperienceWhereInput
+  experiences_every: ExperienceWhereInput
+  experiences_some: ExperienceWhereInput
+  experiences_none: ExperienceWhereInput
 }
 
 input UserWhereUniqueInput {
@@ -11346,8 +10999,6 @@ export type UserOrderByInput =   'id_ASC' |
   'responseRate_DESC' |
   'responseTime_ASC' |
   'responseTime_DESC' |
-  'isSuperHost_ASC' |
-  'isSuperHost_DESC' |
   'accountType_ASC' |
   'accountType_DESC' |
   'uid_ASC' |
@@ -11460,24 +11111,11 @@ export interface CreditCardInformationCreateInput {
   lastName: String
   postalCode: String
   country: String
-  paymentAccount?: PaymentAccountCreateOneWithoutCreditcardInput | null
 }
 
-export interface CreditCardInformationCreateOneWithoutPaymentAccountInput {
-  create?: CreditCardInformationCreateWithoutPaymentAccountInput | null
+export interface CreditCardInformationCreateOneInput {
+  create?: CreditCardInformationCreateInput | null
   connect?: CreditCardInformationWhereUniqueInput | null
-}
-
-export interface CreditCardInformationCreateWithoutPaymentAccountInput {
-  id?: ID_Input | null
-  cardNumber: String
-  expiresOnMonth: Int
-  expiresOnYear: Int
-  securityCode: String
-  firstName: String
-  lastName: String
-  postalCode: String
-  country: String
 }
 
 export interface CreditCardInformationSubscriptionWhereInput {
@@ -11491,6 +11129,17 @@ export interface CreditCardInformationSubscriptionWhereInput {
   node?: CreditCardInformationWhereInput | null
 }
 
+export interface CreditCardInformationUpdateDataInput {
+  cardNumber?: String | null
+  expiresOnMonth?: Int | null
+  expiresOnYear?: Int | null
+  securityCode?: String | null
+  firstName?: String | null
+  lastName?: String | null
+  postalCode?: String | null
+  country?: String | null
+}
+
 export interface CreditCardInformationUpdateInput {
   cardNumber?: String | null
   expiresOnMonth?: Int | null
@@ -11500,7 +11149,6 @@ export interface CreditCardInformationUpdateInput {
   lastName?: String | null
   postalCode?: String | null
   country?: String | null
-  paymentAccount?: PaymentAccountUpdateOneWithoutCreditcardInput | null
 }
 
 export interface CreditCardInformationUpdateManyMutationInput {
@@ -11514,29 +11162,18 @@ export interface CreditCardInformationUpdateManyMutationInput {
   country?: String | null
 }
 
-export interface CreditCardInformationUpdateOneWithoutPaymentAccountInput {
-  create?: CreditCardInformationCreateWithoutPaymentAccountInput | null
+export interface CreditCardInformationUpdateOneInput {
+  create?: CreditCardInformationCreateInput | null
   connect?: CreditCardInformationWhereUniqueInput | null
   disconnect?: Boolean | null
   delete?: Boolean | null
-  update?: CreditCardInformationUpdateWithoutPaymentAccountDataInput | null
-  upsert?: CreditCardInformationUpsertWithoutPaymentAccountInput | null
+  update?: CreditCardInformationUpdateDataInput | null
+  upsert?: CreditCardInformationUpsertNestedInput | null
 }
 
-export interface CreditCardInformationUpdateWithoutPaymentAccountDataInput {
-  cardNumber?: String | null
-  expiresOnMonth?: Int | null
-  expiresOnYear?: Int | null
-  securityCode?: String | null
-  firstName?: String | null
-  lastName?: String | null
-  postalCode?: String | null
-  country?: String | null
-}
-
-export interface CreditCardInformationUpsertWithoutPaymentAccountInput {
-  update: CreditCardInformationUpdateWithoutPaymentAccountDataInput
-  create: CreditCardInformationCreateWithoutPaymentAccountInput
+export interface CreditCardInformationUpsertNestedInput {
+  update: CreditCardInformationUpdateDataInput
+  create: CreditCardInformationCreateInput
 }
 
 export interface CreditCardInformationWhereInput {
@@ -11665,7 +11302,6 @@ export interface CreditCardInformationWhereInput {
   country_not_starts_with?: String | null
   country_ends_with?: String | null
   country_not_ends_with?: String | null
-  paymentAccount?: PaymentAccountWhereInput | null
 }
 
 export interface CreditCardInformationWhereUniqueInput {
@@ -11682,24 +11318,11 @@ export interface DebitCardInformationCreateInput {
   lastName: String
   postalCode: String
   country: String
-  paymentAccount?: PaymentAccountCreateOneWithoutDebitcardInput | null
 }
 
-export interface DebitCardInformationCreateOneWithoutPaymentAccountInput {
-  create?: DebitCardInformationCreateWithoutPaymentAccountInput | null
+export interface DebitCardInformationCreateOneInput {
+  create?: DebitCardInformationCreateInput | null
   connect?: DebitCardInformationWhereUniqueInput | null
-}
-
-export interface DebitCardInformationCreateWithoutPaymentAccountInput {
-  id?: ID_Input | null
-  cardNumber: String
-  expiresOnMonth: Int
-  expiresOnYear: Int
-  securityCode: String
-  firstName: String
-  lastName: String
-  postalCode: String
-  country: String
 }
 
 export interface DebitCardInformationSubscriptionWhereInput {
@@ -11713,6 +11336,17 @@ export interface DebitCardInformationSubscriptionWhereInput {
   node?: DebitCardInformationWhereInput | null
 }
 
+export interface DebitCardInformationUpdateDataInput {
+  cardNumber?: String | null
+  expiresOnMonth?: Int | null
+  expiresOnYear?: Int | null
+  securityCode?: String | null
+  firstName?: String | null
+  lastName?: String | null
+  postalCode?: String | null
+  country?: String | null
+}
+
 export interface DebitCardInformationUpdateInput {
   cardNumber?: String | null
   expiresOnMonth?: Int | null
@@ -11722,7 +11356,6 @@ export interface DebitCardInformationUpdateInput {
   lastName?: String | null
   postalCode?: String | null
   country?: String | null
-  paymentAccount?: PaymentAccountUpdateOneWithoutDebitcardInput | null
 }
 
 export interface DebitCardInformationUpdateManyMutationInput {
@@ -11736,29 +11369,18 @@ export interface DebitCardInformationUpdateManyMutationInput {
   country?: String | null
 }
 
-export interface DebitCardInformationUpdateOneWithoutPaymentAccountInput {
-  create?: DebitCardInformationCreateWithoutPaymentAccountInput | null
+export interface DebitCardInformationUpdateOneInput {
+  create?: DebitCardInformationCreateInput | null
   connect?: DebitCardInformationWhereUniqueInput | null
   disconnect?: Boolean | null
   delete?: Boolean | null
-  update?: DebitCardInformationUpdateWithoutPaymentAccountDataInput | null
-  upsert?: DebitCardInformationUpsertWithoutPaymentAccountInput | null
+  update?: DebitCardInformationUpdateDataInput | null
+  upsert?: DebitCardInformationUpsertNestedInput | null
 }
 
-export interface DebitCardInformationUpdateWithoutPaymentAccountDataInput {
-  cardNumber?: String | null
-  expiresOnMonth?: Int | null
-  expiresOnYear?: Int | null
-  securityCode?: String | null
-  firstName?: String | null
-  lastName?: String | null
-  postalCode?: String | null
-  country?: String | null
-}
-
-export interface DebitCardInformationUpsertWithoutPaymentAccountInput {
-  update: DebitCardInformationUpdateWithoutPaymentAccountDataInput
-  create: DebitCardInformationCreateWithoutPaymentAccountInput
+export interface DebitCardInformationUpsertNestedInput {
+  update: DebitCardInformationUpdateDataInput
+  create: DebitCardInformationCreateInput
 }
 
 export interface DebitCardInformationWhereInput {
@@ -11887,7 +11509,6 @@ export interface DebitCardInformationWhereInput {
   country_not_starts_with?: String | null
   country_ends_with?: String | null
   country_not_ends_with?: String | null
-  paymentAccount?: PaymentAccountWhereInput | null
 }
 
 export interface DebitCardInformationWhereUniqueInput {
@@ -11898,18 +11519,11 @@ export interface ExperienceCategoryCreateInput {
   id?: ID_Input | null
   mainColor?: String | null
   name: String
-  experience: ExperienceCreateOneWithoutCategoryInput
 }
 
-export interface ExperienceCategoryCreateOneWithoutExperienceInput {
-  create?: ExperienceCategoryCreateWithoutExperienceInput | null
+export interface ExperienceCategoryCreateOneInput {
+  create?: ExperienceCategoryCreateInput | null
   connect?: ExperienceCategoryWhereUniqueInput | null
-}
-
-export interface ExperienceCategoryCreateWithoutExperienceInput {
-  id?: ID_Input | null
-  mainColor?: String | null
-  name: String
 }
 
 export interface ExperienceCategorySubscriptionWhereInput {
@@ -11923,10 +11537,14 @@ export interface ExperienceCategorySubscriptionWhereInput {
   node?: ExperienceCategoryWhereInput | null
 }
 
+export interface ExperienceCategoryUpdateDataInput {
+  mainColor?: String | null
+  name?: String | null
+}
+
 export interface ExperienceCategoryUpdateInput {
   mainColor?: String | null
   name?: String | null
-  experience?: ExperienceUpdateOneRequiredWithoutCategoryInput | null
 }
 
 export interface ExperienceCategoryUpdateManyMutationInput {
@@ -11934,23 +11552,18 @@ export interface ExperienceCategoryUpdateManyMutationInput {
   name?: String | null
 }
 
-export interface ExperienceCategoryUpdateOneWithoutExperienceInput {
-  create?: ExperienceCategoryCreateWithoutExperienceInput | null
+export interface ExperienceCategoryUpdateOneInput {
+  create?: ExperienceCategoryCreateInput | null
   connect?: ExperienceCategoryWhereUniqueInput | null
   disconnect?: Boolean | null
   delete?: Boolean | null
-  update?: ExperienceCategoryUpdateWithoutExperienceDataInput | null
-  upsert?: ExperienceCategoryUpsertWithoutExperienceInput | null
+  update?: ExperienceCategoryUpdateDataInput | null
+  upsert?: ExperienceCategoryUpsertNestedInput | null
 }
 
-export interface ExperienceCategoryUpdateWithoutExperienceDataInput {
-  mainColor?: String | null
-  name?: String | null
-}
-
-export interface ExperienceCategoryUpsertWithoutExperienceInput {
-  update: ExperienceCategoryUpdateWithoutExperienceDataInput
-  create: ExperienceCategoryCreateWithoutExperienceInput
+export interface ExperienceCategoryUpsertNestedInput {
+  update: ExperienceCategoryUpdateDataInput
+  create: ExperienceCategoryCreateInput
 }
 
 export interface ExperienceCategoryWhereInput {
@@ -11999,7 +11612,6 @@ export interface ExperienceCategoryWhereInput {
   name_not_starts_with?: String | null
   name_ends_with?: String | null
   name_not_ends_with?: String | null
-  experience?: ExperienceWhereInput | null
 }
 
 export interface ExperienceCategoryWhereUniqueInput {
@@ -12011,9 +11623,9 @@ export interface ExperienceCreateInput {
   title: String
   pricePerPerson: Int
   popularity: Int
-  category?: ExperienceCategoryCreateOneWithoutExperienceInput | null
-  host: UserCreateOneWithoutHostingExperiencesInput
-  location: LocationCreateOneWithoutExperienceInput
+  category?: ExperienceCategoryCreateOneInput | null
+  host: UserCreateOneWithoutExperiencesInput
+  location: LocationCreateOneInput
   reviews?: ReviewCreateManyWithoutExperienceInput | null
   preview: PictureCreateOneInput
 }
@@ -12023,30 +11635,9 @@ export interface ExperienceCreateManyWithoutHostInput {
   connect?: ExperienceWhereUniqueInput[] | ExperienceWhereUniqueInput | null
 }
 
-export interface ExperienceCreateOneWithoutCategoryInput {
-  create?: ExperienceCreateWithoutCategoryInput | null
-  connect?: ExperienceWhereUniqueInput | null
-}
-
-export interface ExperienceCreateOneWithoutLocationInput {
-  create?: ExperienceCreateWithoutLocationInput | null
-  connect?: ExperienceWhereUniqueInput | null
-}
-
 export interface ExperienceCreateOneWithoutReviewsInput {
   create?: ExperienceCreateWithoutReviewsInput | null
   connect?: ExperienceWhereUniqueInput | null
-}
-
-export interface ExperienceCreateWithoutCategoryInput {
-  id?: ID_Input | null
-  title: String
-  pricePerPerson: Int
-  popularity: Int
-  host: UserCreateOneWithoutHostingExperiencesInput
-  location: LocationCreateOneWithoutExperienceInput
-  reviews?: ReviewCreateManyWithoutExperienceInput | null
-  preview: PictureCreateOneInput
 }
 
 export interface ExperienceCreateWithoutHostInput {
@@ -12054,19 +11645,8 @@ export interface ExperienceCreateWithoutHostInput {
   title: String
   pricePerPerson: Int
   popularity: Int
-  category?: ExperienceCategoryCreateOneWithoutExperienceInput | null
-  location: LocationCreateOneWithoutExperienceInput
-  reviews?: ReviewCreateManyWithoutExperienceInput | null
-  preview: PictureCreateOneInput
-}
-
-export interface ExperienceCreateWithoutLocationInput {
-  id?: ID_Input | null
-  title: String
-  pricePerPerson: Int
-  popularity: Int
-  category?: ExperienceCategoryCreateOneWithoutExperienceInput | null
-  host: UserCreateOneWithoutHostingExperiencesInput
+  category?: ExperienceCategoryCreateOneInput | null
+  location: LocationCreateOneInput
   reviews?: ReviewCreateManyWithoutExperienceInput | null
   preview: PictureCreateOneInput
 }
@@ -12076,9 +11656,9 @@ export interface ExperienceCreateWithoutReviewsInput {
   title: String
   pricePerPerson: Int
   popularity: Int
-  category?: ExperienceCategoryCreateOneWithoutExperienceInput | null
-  host: UserCreateOneWithoutHostingExperiencesInput
-  location: LocationCreateOneWithoutExperienceInput
+  category?: ExperienceCategoryCreateOneInput | null
+  host: UserCreateOneWithoutExperiencesInput
+  location: LocationCreateOneInput
   preview: PictureCreateOneInput
 }
 
@@ -12147,9 +11727,9 @@ export interface ExperienceUpdateInput {
   title?: String | null
   pricePerPerson?: Int | null
   popularity?: Int | null
-  category?: ExperienceCategoryUpdateOneWithoutExperienceInput | null
-  host?: UserUpdateOneRequiredWithoutHostingExperiencesInput | null
-  location?: LocationUpdateOneRequiredWithoutExperienceInput | null
+  category?: ExperienceCategoryUpdateOneInput | null
+  host?: UserUpdateOneRequiredWithoutExperiencesInput | null
+  location?: LocationUpdateOneRequiredInput | null
   reviews?: ReviewUpdateManyWithoutExperienceInput | null
   preview?: PictureUpdateOneRequiredInput | null
 }
@@ -12183,22 +11763,6 @@ export interface ExperienceUpdateManyWithWhereNestedInput {
   data: ExperienceUpdateManyDataInput
 }
 
-export interface ExperienceUpdateOneRequiredWithoutCategoryInput {
-  create?: ExperienceCreateWithoutCategoryInput | null
-  connect?: ExperienceWhereUniqueInput | null
-  update?: ExperienceUpdateWithoutCategoryDataInput | null
-  upsert?: ExperienceUpsertWithoutCategoryInput | null
-}
-
-export interface ExperienceUpdateOneWithoutLocationInput {
-  create?: ExperienceCreateWithoutLocationInput | null
-  connect?: ExperienceWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
-  update?: ExperienceUpdateWithoutLocationDataInput | null
-  upsert?: ExperienceUpsertWithoutLocationInput | null
-}
-
 export interface ExperienceUpdateOneWithoutReviewsInput {
   create?: ExperienceCreateWithoutReviewsInput | null
   connect?: ExperienceWhereUniqueInput | null
@@ -12208,32 +11772,12 @@ export interface ExperienceUpdateOneWithoutReviewsInput {
   upsert?: ExperienceUpsertWithoutReviewsInput | null
 }
 
-export interface ExperienceUpdateWithoutCategoryDataInput {
-  title?: String | null
-  pricePerPerson?: Int | null
-  popularity?: Int | null
-  host?: UserUpdateOneRequiredWithoutHostingExperiencesInput | null
-  location?: LocationUpdateOneRequiredWithoutExperienceInput | null
-  reviews?: ReviewUpdateManyWithoutExperienceInput | null
-  preview?: PictureUpdateOneRequiredInput | null
-}
-
 export interface ExperienceUpdateWithoutHostDataInput {
   title?: String | null
   pricePerPerson?: Int | null
   popularity?: Int | null
-  category?: ExperienceCategoryUpdateOneWithoutExperienceInput | null
-  location?: LocationUpdateOneRequiredWithoutExperienceInput | null
-  reviews?: ReviewUpdateManyWithoutExperienceInput | null
-  preview?: PictureUpdateOneRequiredInput | null
-}
-
-export interface ExperienceUpdateWithoutLocationDataInput {
-  title?: String | null
-  pricePerPerson?: Int | null
-  popularity?: Int | null
-  category?: ExperienceCategoryUpdateOneWithoutExperienceInput | null
-  host?: UserUpdateOneRequiredWithoutHostingExperiencesInput | null
+  category?: ExperienceCategoryUpdateOneInput | null
+  location?: LocationUpdateOneRequiredInput | null
   reviews?: ReviewUpdateManyWithoutExperienceInput | null
   preview?: PictureUpdateOneRequiredInput | null
 }
@@ -12242,25 +11786,15 @@ export interface ExperienceUpdateWithoutReviewsDataInput {
   title?: String | null
   pricePerPerson?: Int | null
   popularity?: Int | null
-  category?: ExperienceCategoryUpdateOneWithoutExperienceInput | null
-  host?: UserUpdateOneRequiredWithoutHostingExperiencesInput | null
-  location?: LocationUpdateOneRequiredWithoutExperienceInput | null
+  category?: ExperienceCategoryUpdateOneInput | null
+  host?: UserUpdateOneRequiredWithoutExperiencesInput | null
+  location?: LocationUpdateOneRequiredInput | null
   preview?: PictureUpdateOneRequiredInput | null
 }
 
 export interface ExperienceUpdateWithWhereUniqueWithoutHostInput {
   where: ExperienceWhereUniqueInput
   data: ExperienceUpdateWithoutHostDataInput
-}
-
-export interface ExperienceUpsertWithoutCategoryInput {
-  update: ExperienceUpdateWithoutCategoryDataInput
-  create: ExperienceCreateWithoutCategoryInput
-}
-
-export interface ExperienceUpsertWithoutLocationInput {
-  update: ExperienceUpdateWithoutLocationDataInput
-  create: ExperienceCreateWithoutLocationInput
 }
 
 export interface ExperienceUpsertWithoutReviewsInput {
@@ -12343,7 +11877,6 @@ export interface LocationCreateInput {
   address: String
   directions: String
   neighbourHood?: NeighbourhoodCreateOneWithoutLocationsInput | null
-  experience?: ExperienceCreateOneWithoutLocationInput | null
 }
 
 export interface LocationCreateManyInput {
@@ -12361,21 +11894,6 @@ export interface LocationCreateOneInput {
   connect?: LocationWhereUniqueInput | null
 }
 
-export interface LocationCreateOneWithoutExperienceInput {
-  create?: LocationCreateWithoutExperienceInput | null
-  connect?: LocationWhereUniqueInput | null
-}
-
-export interface LocationCreateWithoutExperienceInput {
-  title?: String | null
-  id?: ID_Input | null
-  lat: Float
-  lng: Float
-  address: String
-  directions: String
-  neighbourHood?: NeighbourhoodCreateOneWithoutLocationsInput | null
-}
-
 export interface LocationCreateWithoutNeighbourHoodInput {
   title?: String | null
   id?: ID_Input | null
@@ -12383,7 +11901,6 @@ export interface LocationCreateWithoutNeighbourHoodInput {
   lng: Float
   address: String
   directions: String
-  experience?: ExperienceCreateOneWithoutLocationInput | null
 }
 
 export interface LocationScalarWhereInput {
@@ -12482,7 +11999,6 @@ export interface LocationUpdateDataInput {
   address?: String | null
   directions?: String | null
   neighbourHood?: NeighbourhoodUpdateOneWithoutLocationsInput | null
-  experience?: ExperienceUpdateOneWithoutLocationInput | null
 }
 
 export interface LocationUpdateInput {
@@ -12492,7 +12008,6 @@ export interface LocationUpdateInput {
   address?: String | null
   directions?: String | null
   neighbourHood?: NeighbourhoodUpdateOneWithoutLocationsInput | null
-  experience?: ExperienceUpdateOneWithoutLocationInput | null
 }
 
 export interface LocationUpdateManyDataInput {
@@ -12549,20 +12064,11 @@ export interface LocationUpdateOneInput {
   upsert?: LocationUpsertNestedInput | null
 }
 
-export interface LocationUpdateOneRequiredWithoutExperienceInput {
-  create?: LocationCreateWithoutExperienceInput | null
+export interface LocationUpdateOneRequiredInput {
+  create?: LocationCreateInput | null
   connect?: LocationWhereUniqueInput | null
-  update?: LocationUpdateWithoutExperienceDataInput | null
-  upsert?: LocationUpsertWithoutExperienceInput | null
-}
-
-export interface LocationUpdateWithoutExperienceDataInput {
-  title?: String | null
-  lat?: Float | null
-  lng?: Float | null
-  address?: String | null
-  directions?: String | null
-  neighbourHood?: NeighbourhoodUpdateOneWithoutLocationsInput | null
+  update?: LocationUpdateDataInput | null
+  upsert?: LocationUpsertNestedInput | null
 }
 
 export interface LocationUpdateWithoutNeighbourHoodDataInput {
@@ -12571,7 +12077,6 @@ export interface LocationUpdateWithoutNeighbourHoodDataInput {
   lng?: Float | null
   address?: String | null
   directions?: String | null
-  experience?: ExperienceUpdateOneWithoutLocationInput | null
 }
 
 export interface LocationUpdateWithWhereUniqueNestedInput {
@@ -12587,11 +12092,6 @@ export interface LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput {
 export interface LocationUpsertNestedInput {
   update: LocationUpdateDataInput
   create: LocationCreateInput
-}
-
-export interface LocationUpsertWithoutExperienceInput {
-  update: LocationUpdateWithoutExperienceDataInput
-  create: LocationCreateWithoutExperienceInput
 }
 
 export interface LocationUpsertWithWhereUniqueNestedInput {
@@ -12683,7 +12183,6 @@ export interface LocationWhereInput {
   directions_ends_with?: String | null
   directions_not_ends_with?: String | null
   neighbourHood?: NeighbourhoodWhereInput | null
-  experience?: ExperienceWhereInput | null
 }
 
 export interface LocationWhereUniqueInput {
@@ -13622,7 +13121,7 @@ export interface OrderCreateInput {
   endDate: DateTime
   bookee: UserCreateOneWithoutOrdersInput
   restaurant: RestaurantCreateOneWithoutOrdersInput
-  payment?: PaymentCreateOneWithoutOrderInput | null
+  payment: PaymentCreateOneWithoutOrderInput
 }
 
 export interface OrderCreateManyWithoutBookeeInput {
@@ -13650,7 +13149,7 @@ export interface OrderCreateWithoutBookeeInput {
   startDate: DateTime
   endDate: DateTime
   restaurant: RestaurantCreateOneWithoutOrdersInput
-  payment?: PaymentCreateOneWithoutOrderInput | null
+  payment: PaymentCreateOneWithoutOrderInput
 }
 
 export interface OrderCreateWithoutPaymentInput {
@@ -13666,7 +13165,7 @@ export interface OrderCreateWithoutRestaurantInput {
   startDate: DateTime
   endDate: DateTime
   bookee: UserCreateOneWithoutOrdersInput
-  payment?: PaymentCreateOneWithoutOrderInput | null
+  payment: PaymentCreateOneWithoutOrderInput
 }
 
 export interface OrderScalarWhereInput {
@@ -13729,7 +13228,7 @@ export interface OrderUpdateDataInput {
   endDate?: DateTime | null
   bookee?: UserUpdateOneRequiredWithoutOrdersInput | null
   restaurant?: RestaurantUpdateOneRequiredWithoutOrdersInput | null
-  payment?: PaymentUpdateOneWithoutOrderInput | null
+  payment?: PaymentUpdateOneRequiredWithoutOrderInput | null
 }
 
 export interface OrderUpdateInput {
@@ -13737,7 +13236,7 @@ export interface OrderUpdateInput {
   endDate?: DateTime | null
   bookee?: UserUpdateOneRequiredWithoutOrdersInput | null
   restaurant?: RestaurantUpdateOneRequiredWithoutOrdersInput | null
-  payment?: PaymentUpdateOneWithoutOrderInput | null
+  payment?: PaymentUpdateOneRequiredWithoutOrderInput | null
 }
 
 export interface OrderUpdateManyDataInput {
@@ -13797,7 +13296,7 @@ export interface OrderUpdateWithoutBookeeDataInput {
   startDate?: DateTime | null
   endDate?: DateTime | null
   restaurant?: RestaurantUpdateOneRequiredWithoutOrdersInput | null
-  payment?: PaymentUpdateOneWithoutOrderInput | null
+  payment?: PaymentUpdateOneRequiredWithoutOrderInput | null
 }
 
 export interface OrderUpdateWithoutPaymentDataInput {
@@ -13811,7 +13310,7 @@ export interface OrderUpdateWithoutRestaurantDataInput {
   startDate?: DateTime | null
   endDate?: DateTime | null
   bookee?: UserUpdateOneRequiredWithoutOrdersInput | null
-  payment?: PaymentUpdateOneWithoutOrderInput | null
+  payment?: PaymentUpdateOneRequiredWithoutOrderInput | null
 }
 
 export interface OrderUpdateWithWhereUniqueWithoutBookeeInput {
@@ -13902,10 +13401,10 @@ export interface PaymentAccountCreateInput {
   type?: PAYMENT_PROVIDER | null
   user: UserCreateOneWithoutPaymentAccountInput
   payments?: PaymentCreateManyWithoutPaymentMethodInput | null
-  paypal?: PaypalInformationCreateOneWithoutPaymentAccountInput | null
-  paytm?: PaytmInformationCreateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationCreateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationCreateOneWithoutPaymentAccountInput | null
+  paypal?: PaypalInformationCreateOneInput | null
+  paytm?: PaytmInformationCreateOneInput | null
+  creditcard?: CreditCardInformationCreateOneInput | null
+  debitcard?: DebitCardInformationCreateOneInput | null
 }
 
 export interface PaymentAccountCreateManyWithoutUserInput {
@@ -13913,89 +13412,29 @@ export interface PaymentAccountCreateManyWithoutUserInput {
   connect?: PaymentAccountWhereUniqueInput[] | PaymentAccountWhereUniqueInput | null
 }
 
-export interface PaymentAccountCreateOneWithoutCreditcardInput {
-  create?: PaymentAccountCreateWithoutCreditcardInput | null
-  connect?: PaymentAccountWhereUniqueInput | null
-}
-
-export interface PaymentAccountCreateOneWithoutDebitcardInput {
-  create?: PaymentAccountCreateWithoutDebitcardInput | null
-  connect?: PaymentAccountWhereUniqueInput | null
-}
-
 export interface PaymentAccountCreateOneWithoutPaymentsInput {
   create?: PaymentAccountCreateWithoutPaymentsInput | null
   connect?: PaymentAccountWhereUniqueInput | null
-}
-
-export interface PaymentAccountCreateOneWithoutPaypalInput {
-  create?: PaymentAccountCreateWithoutPaypalInput | null
-  connect?: PaymentAccountWhereUniqueInput | null
-}
-
-export interface PaymentAccountCreateOneWithoutPaytmInput {
-  create?: PaymentAccountCreateWithoutPaytmInput | null
-  connect?: PaymentAccountWhereUniqueInput | null
-}
-
-export interface PaymentAccountCreateWithoutCreditcardInput {
-  id?: ID_Input | null
-  type?: PAYMENT_PROVIDER | null
-  user: UserCreateOneWithoutPaymentAccountInput
-  payments?: PaymentCreateManyWithoutPaymentMethodInput | null
-  paypal?: PaypalInformationCreateOneWithoutPaymentAccountInput | null
-  paytm?: PaytmInformationCreateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationCreateOneWithoutPaymentAccountInput | null
-}
-
-export interface PaymentAccountCreateWithoutDebitcardInput {
-  id?: ID_Input | null
-  type?: PAYMENT_PROVIDER | null
-  user: UserCreateOneWithoutPaymentAccountInput
-  payments?: PaymentCreateManyWithoutPaymentMethodInput | null
-  paypal?: PaypalInformationCreateOneWithoutPaymentAccountInput | null
-  paytm?: PaytmInformationCreateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationCreateOneWithoutPaymentAccountInput | null
 }
 
 export interface PaymentAccountCreateWithoutPaymentsInput {
   id?: ID_Input | null
   type?: PAYMENT_PROVIDER | null
   user: UserCreateOneWithoutPaymentAccountInput
-  paypal?: PaypalInformationCreateOneWithoutPaymentAccountInput | null
-  paytm?: PaytmInformationCreateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationCreateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationCreateOneWithoutPaymentAccountInput | null
-}
-
-export interface PaymentAccountCreateWithoutPaypalInput {
-  id?: ID_Input | null
-  type?: PAYMENT_PROVIDER | null
-  user: UserCreateOneWithoutPaymentAccountInput
-  payments?: PaymentCreateManyWithoutPaymentMethodInput | null
-  paytm?: PaytmInformationCreateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationCreateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationCreateOneWithoutPaymentAccountInput | null
-}
-
-export interface PaymentAccountCreateWithoutPaytmInput {
-  id?: ID_Input | null
-  type?: PAYMENT_PROVIDER | null
-  user: UserCreateOneWithoutPaymentAccountInput
-  payments?: PaymentCreateManyWithoutPaymentMethodInput | null
-  paypal?: PaypalInformationCreateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationCreateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationCreateOneWithoutPaymentAccountInput | null
+  paypal?: PaypalInformationCreateOneInput | null
+  paytm?: PaytmInformationCreateOneInput | null
+  creditcard?: CreditCardInformationCreateOneInput | null
+  debitcard?: DebitCardInformationCreateOneInput | null
 }
 
 export interface PaymentAccountCreateWithoutUserInput {
   id?: ID_Input | null
   type?: PAYMENT_PROVIDER | null
   payments?: PaymentCreateManyWithoutPaymentMethodInput | null
-  paypal?: PaypalInformationCreateOneWithoutPaymentAccountInput | null
-  paytm?: PaytmInformationCreateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationCreateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationCreateOneWithoutPaymentAccountInput | null
+  paypal?: PaypalInformationCreateOneInput | null
+  paytm?: PaytmInformationCreateOneInput | null
+  creditcard?: CreditCardInformationCreateOneInput | null
+  debitcard?: DebitCardInformationCreateOneInput | null
 }
 
 export interface PaymentAccountScalarWhereInput {
@@ -14045,10 +13484,10 @@ export interface PaymentAccountUpdateInput {
   type?: PAYMENT_PROVIDER | null
   user?: UserUpdateOneRequiredWithoutPaymentAccountInput | null
   payments?: PaymentUpdateManyWithoutPaymentMethodInput | null
-  paypal?: PaypalInformationUpdateOneWithoutPaymentAccountInput | null
-  paytm?: PaytmInformationUpdateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationUpdateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationUpdateOneWithoutPaymentAccountInput | null
+  paypal?: PaypalInformationUpdateOneInput | null
+  paytm?: PaytmInformationUpdateOneInput | null
+  creditcard?: CreditCardInformationUpdateOneInput | null
+  debitcard?: DebitCardInformationUpdateOneInput | null
 }
 
 export interface PaymentAccountUpdateManyDataInput {
@@ -14083,90 +13522,22 @@ export interface PaymentAccountUpdateOneRequiredWithoutPaymentsInput {
   upsert?: PaymentAccountUpsertWithoutPaymentsInput | null
 }
 
-export interface PaymentAccountUpdateOneRequiredWithoutPaypalInput {
-  create?: PaymentAccountCreateWithoutPaypalInput | null
-  connect?: PaymentAccountWhereUniqueInput | null
-  update?: PaymentAccountUpdateWithoutPaypalDataInput | null
-  upsert?: PaymentAccountUpsertWithoutPaypalInput | null
-}
-
-export interface PaymentAccountUpdateOneRequiredWithoutPaytmInput {
-  create?: PaymentAccountCreateWithoutPaytmInput | null
-  connect?: PaymentAccountWhereUniqueInput | null
-  update?: PaymentAccountUpdateWithoutPaytmDataInput | null
-  upsert?: PaymentAccountUpsertWithoutPaytmInput | null
-}
-
-export interface PaymentAccountUpdateOneWithoutCreditcardInput {
-  create?: PaymentAccountCreateWithoutCreditcardInput | null
-  connect?: PaymentAccountWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
-  update?: PaymentAccountUpdateWithoutCreditcardDataInput | null
-  upsert?: PaymentAccountUpsertWithoutCreditcardInput | null
-}
-
-export interface PaymentAccountUpdateOneWithoutDebitcardInput {
-  create?: PaymentAccountCreateWithoutDebitcardInput | null
-  connect?: PaymentAccountWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
-  update?: PaymentAccountUpdateWithoutDebitcardDataInput | null
-  upsert?: PaymentAccountUpsertWithoutDebitcardInput | null
-}
-
-export interface PaymentAccountUpdateWithoutCreditcardDataInput {
-  type?: PAYMENT_PROVIDER | null
-  user?: UserUpdateOneRequiredWithoutPaymentAccountInput | null
-  payments?: PaymentUpdateManyWithoutPaymentMethodInput | null
-  paypal?: PaypalInformationUpdateOneWithoutPaymentAccountInput | null
-  paytm?: PaytmInformationUpdateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationUpdateOneWithoutPaymentAccountInput | null
-}
-
-export interface PaymentAccountUpdateWithoutDebitcardDataInput {
-  type?: PAYMENT_PROVIDER | null
-  user?: UserUpdateOneRequiredWithoutPaymentAccountInput | null
-  payments?: PaymentUpdateManyWithoutPaymentMethodInput | null
-  paypal?: PaypalInformationUpdateOneWithoutPaymentAccountInput | null
-  paytm?: PaytmInformationUpdateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationUpdateOneWithoutPaymentAccountInput | null
-}
-
 export interface PaymentAccountUpdateWithoutPaymentsDataInput {
   type?: PAYMENT_PROVIDER | null
   user?: UserUpdateOneRequiredWithoutPaymentAccountInput | null
-  paypal?: PaypalInformationUpdateOneWithoutPaymentAccountInput | null
-  paytm?: PaytmInformationUpdateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationUpdateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationUpdateOneWithoutPaymentAccountInput | null
-}
-
-export interface PaymentAccountUpdateWithoutPaypalDataInput {
-  type?: PAYMENT_PROVIDER | null
-  user?: UserUpdateOneRequiredWithoutPaymentAccountInput | null
-  payments?: PaymentUpdateManyWithoutPaymentMethodInput | null
-  paytm?: PaytmInformationUpdateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationUpdateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationUpdateOneWithoutPaymentAccountInput | null
-}
-
-export interface PaymentAccountUpdateWithoutPaytmDataInput {
-  type?: PAYMENT_PROVIDER | null
-  user?: UserUpdateOneRequiredWithoutPaymentAccountInput | null
-  payments?: PaymentUpdateManyWithoutPaymentMethodInput | null
-  paypal?: PaypalInformationUpdateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationUpdateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationUpdateOneWithoutPaymentAccountInput | null
+  paypal?: PaypalInformationUpdateOneInput | null
+  paytm?: PaytmInformationUpdateOneInput | null
+  creditcard?: CreditCardInformationUpdateOneInput | null
+  debitcard?: DebitCardInformationUpdateOneInput | null
 }
 
 export interface PaymentAccountUpdateWithoutUserDataInput {
   type?: PAYMENT_PROVIDER | null
   payments?: PaymentUpdateManyWithoutPaymentMethodInput | null
-  paypal?: PaypalInformationUpdateOneWithoutPaymentAccountInput | null
-  paytm?: PaytmInformationUpdateOneWithoutPaymentAccountInput | null
-  creditcard?: CreditCardInformationUpdateOneWithoutPaymentAccountInput | null
-  debitcard?: DebitCardInformationUpdateOneWithoutPaymentAccountInput | null
+  paypal?: PaypalInformationUpdateOneInput | null
+  paytm?: PaytmInformationUpdateOneInput | null
+  creditcard?: CreditCardInformationUpdateOneInput | null
+  debitcard?: DebitCardInformationUpdateOneInput | null
 }
 
 export interface PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
@@ -14174,29 +13545,9 @@ export interface PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
   data: PaymentAccountUpdateWithoutUserDataInput
 }
 
-export interface PaymentAccountUpsertWithoutCreditcardInput {
-  update: PaymentAccountUpdateWithoutCreditcardDataInput
-  create: PaymentAccountCreateWithoutCreditcardInput
-}
-
-export interface PaymentAccountUpsertWithoutDebitcardInput {
-  update: PaymentAccountUpdateWithoutDebitcardDataInput
-  create: PaymentAccountCreateWithoutDebitcardInput
-}
-
 export interface PaymentAccountUpsertWithoutPaymentsInput {
   update: PaymentAccountUpdateWithoutPaymentsDataInput
   create: PaymentAccountCreateWithoutPaymentsInput
-}
-
-export interface PaymentAccountUpsertWithoutPaypalInput {
-  update: PaymentAccountUpdateWithoutPaypalDataInput
-  create: PaymentAccountCreateWithoutPaypalInput
-}
-
-export interface PaymentAccountUpsertWithoutPaytmInput {
-  update: PaymentAccountUpdateWithoutPaytmDataInput
-  create: PaymentAccountCreateWithoutPaytmInput
 }
 
 export interface PaymentAccountUpsertWithWhereUniqueWithoutUserInput {
@@ -14384,11 +13735,9 @@ export interface PaymentUpdateManyWithWhereNestedInput {
   data: PaymentUpdateManyDataInput
 }
 
-export interface PaymentUpdateOneWithoutOrderInput {
+export interface PaymentUpdateOneRequiredWithoutOrderInput {
   create?: PaymentCreateWithoutOrderInput | null
   connect?: PaymentWhereUniqueInput | null
-  disconnect?: Boolean | null
-  delete?: Boolean | null
   update?: PaymentUpdateWithoutOrderDataInput | null
   upsert?: PaymentUpsertWithoutOrderInput | null
 }
@@ -14484,17 +13833,11 @@ export interface PaymentWhereUniqueInput {
 export interface PaypalInformationCreateInput {
   id?: ID_Input | null
   email: String
-  paymentAccount: PaymentAccountCreateOneWithoutPaypalInput
 }
 
-export interface PaypalInformationCreateOneWithoutPaymentAccountInput {
-  create?: PaypalInformationCreateWithoutPaymentAccountInput | null
+export interface PaypalInformationCreateOneInput {
+  create?: PaypalInformationCreateInput | null
   connect?: PaypalInformationWhereUniqueInput | null
-}
-
-export interface PaypalInformationCreateWithoutPaymentAccountInput {
-  id?: ID_Input | null
-  email: String
 }
 
 export interface PaypalInformationSubscriptionWhereInput {
@@ -14508,31 +13851,30 @@ export interface PaypalInformationSubscriptionWhereInput {
   node?: PaypalInformationWhereInput | null
 }
 
+export interface PaypalInformationUpdateDataInput {
+  email?: String | null
+}
+
 export interface PaypalInformationUpdateInput {
   email?: String | null
-  paymentAccount?: PaymentAccountUpdateOneRequiredWithoutPaypalInput | null
 }
 
 export interface PaypalInformationUpdateManyMutationInput {
   email?: String | null
 }
 
-export interface PaypalInformationUpdateOneWithoutPaymentAccountInput {
-  create?: PaypalInformationCreateWithoutPaymentAccountInput | null
+export interface PaypalInformationUpdateOneInput {
+  create?: PaypalInformationCreateInput | null
   connect?: PaypalInformationWhereUniqueInput | null
   disconnect?: Boolean | null
   delete?: Boolean | null
-  update?: PaypalInformationUpdateWithoutPaymentAccountDataInput | null
-  upsert?: PaypalInformationUpsertWithoutPaymentAccountInput | null
+  update?: PaypalInformationUpdateDataInput | null
+  upsert?: PaypalInformationUpsertNestedInput | null
 }
 
-export interface PaypalInformationUpdateWithoutPaymentAccountDataInput {
-  email?: String | null
-}
-
-export interface PaypalInformationUpsertWithoutPaymentAccountInput {
-  update: PaypalInformationUpdateWithoutPaymentAccountDataInput
-  create: PaypalInformationCreateWithoutPaymentAccountInput
+export interface PaypalInformationUpsertNestedInput {
+  update: PaypalInformationUpdateDataInput
+  create: PaypalInformationCreateInput
 }
 
 export interface PaypalInformationWhereInput {
@@ -14575,7 +13917,6 @@ export interface PaypalInformationWhereInput {
   email_not_starts_with?: String | null
   email_ends_with?: String | null
   email_not_ends_with?: String | null
-  paymentAccount?: PaymentAccountWhereInput | null
 }
 
 export interface PaypalInformationWhereUniqueInput {
@@ -14585,17 +13926,11 @@ export interface PaypalInformationWhereUniqueInput {
 export interface PaytmInformationCreateInput {
   id?: ID_Input | null
   phone: String
-  paymentAccount: PaymentAccountCreateOneWithoutPaytmInput
 }
 
-export interface PaytmInformationCreateOneWithoutPaymentAccountInput {
-  create?: PaytmInformationCreateWithoutPaymentAccountInput | null
+export interface PaytmInformationCreateOneInput {
+  create?: PaytmInformationCreateInput | null
   connect?: PaytmInformationWhereUniqueInput | null
-}
-
-export interface PaytmInformationCreateWithoutPaymentAccountInput {
-  id?: ID_Input | null
-  phone: String
 }
 
 export interface PaytmInformationSubscriptionWhereInput {
@@ -14609,31 +13944,30 @@ export interface PaytmInformationSubscriptionWhereInput {
   node?: PaytmInformationWhereInput | null
 }
 
+export interface PaytmInformationUpdateDataInput {
+  phone?: String | null
+}
+
 export interface PaytmInformationUpdateInput {
   phone?: String | null
-  paymentAccount?: PaymentAccountUpdateOneRequiredWithoutPaytmInput | null
 }
 
 export interface PaytmInformationUpdateManyMutationInput {
   phone?: String | null
 }
 
-export interface PaytmInformationUpdateOneWithoutPaymentAccountInput {
-  create?: PaytmInformationCreateWithoutPaymentAccountInput | null
+export interface PaytmInformationUpdateOneInput {
+  create?: PaytmInformationCreateInput | null
   connect?: PaytmInformationWhereUniqueInput | null
   disconnect?: Boolean | null
   delete?: Boolean | null
-  update?: PaytmInformationUpdateWithoutPaymentAccountDataInput | null
-  upsert?: PaytmInformationUpsertWithoutPaymentAccountInput | null
+  update?: PaytmInformationUpdateDataInput | null
+  upsert?: PaytmInformationUpsertNestedInput | null
 }
 
-export interface PaytmInformationUpdateWithoutPaymentAccountDataInput {
-  phone?: String | null
-}
-
-export interface PaytmInformationUpsertWithoutPaymentAccountInput {
-  update: PaytmInformationUpdateWithoutPaymentAccountDataInput
-  create: PaytmInformationCreateWithoutPaymentAccountInput
+export interface PaytmInformationUpsertNestedInput {
+  update: PaytmInformationUpdateDataInput
+  create: PaytmInformationCreateInput
 }
 
 export interface PaytmInformationWhereInput {
@@ -14676,7 +14010,6 @@ export interface PaytmInformationWhereInput {
   phone_not_starts_with?: String | null
   phone_ends_with?: String | null
   phone_not_ends_with?: String | null
-  paymentAccount?: PaymentAccountWhereInput | null
 }
 
 export interface PaytmInformationWhereUniqueInput {
@@ -15911,7 +15244,6 @@ export interface UserCreateInput {
   phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
@@ -15922,11 +15254,11 @@ export interface UserCreateInput {
   receivedMessages?: MessageCreateManyWithoutToInput | null
   notifications?: NotificationCreateManyWithoutUserInput | null
   profilePicture?: PictureCreateOneInput | null
-  hostingExperiences?: ExperienceCreateManyWithoutHostInput | null
+  experiences?: ExperienceCreateManyWithoutHostInput | null
 }
 
-export interface UserCreateOneWithoutHostingExperiencesInput {
-  create?: UserCreateWithoutHostingExperiencesInput | null
+export interface UserCreateOneWithoutExperiencesInput {
+  create?: UserCreateWithoutExperiencesInput | null
   connect?: UserWhereUniqueInput | null
 }
 
@@ -15955,13 +15287,12 @@ export interface UserCreateOneWithoutSentMessagesInput {
   connect?: UserWhereUniqueInput | null
 }
 
-export interface UserCreateWithoutHostingExperiencesInput {
+export interface UserCreateWithoutExperiencesInput {
   id?: ID_Input | null
   displayName: String
   phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
@@ -15980,7 +15311,6 @@ export interface UserCreateWithoutNotificationsInput {
   phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
@@ -15990,7 +15320,7 @@ export interface UserCreateWithoutNotificationsInput {
   sentMessages?: MessageCreateManyWithoutFromInput | null
   receivedMessages?: MessageCreateManyWithoutToInput | null
   profilePicture?: PictureCreateOneInput | null
-  hostingExperiences?: ExperienceCreateManyWithoutHostInput | null
+  experiences?: ExperienceCreateManyWithoutHostInput | null
 }
 
 export interface UserCreateWithoutOrdersInput {
@@ -15999,7 +15329,6 @@ export interface UserCreateWithoutOrdersInput {
   phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
@@ -16009,7 +15338,7 @@ export interface UserCreateWithoutOrdersInput {
   receivedMessages?: MessageCreateManyWithoutToInput | null
   notifications?: NotificationCreateManyWithoutUserInput | null
   profilePicture?: PictureCreateOneInput | null
-  hostingExperiences?: ExperienceCreateManyWithoutHostInput | null
+  experiences?: ExperienceCreateManyWithoutHostInput | null
 }
 
 export interface UserCreateWithoutPaymentAccountInput {
@@ -16018,7 +15347,6 @@ export interface UserCreateWithoutPaymentAccountInput {
   phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
@@ -16028,7 +15356,7 @@ export interface UserCreateWithoutPaymentAccountInput {
   receivedMessages?: MessageCreateManyWithoutToInput | null
   notifications?: NotificationCreateManyWithoutUserInput | null
   profilePicture?: PictureCreateOneInput | null
-  hostingExperiences?: ExperienceCreateManyWithoutHostInput | null
+  experiences?: ExperienceCreateManyWithoutHostInput | null
 }
 
 export interface UserCreateWithoutReceivedMessagesInput {
@@ -16037,7 +15365,6 @@ export interface UserCreateWithoutReceivedMessagesInput {
   phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
@@ -16047,7 +15374,7 @@ export interface UserCreateWithoutReceivedMessagesInput {
   sentMessages?: MessageCreateManyWithoutFromInput | null
   notifications?: NotificationCreateManyWithoutUserInput | null
   profilePicture?: PictureCreateOneInput | null
-  hostingExperiences?: ExperienceCreateManyWithoutHostInput | null
+  experiences?: ExperienceCreateManyWithoutHostInput | null
 }
 
 export interface UserCreateWithoutSentMessagesInput {
@@ -16056,7 +15383,6 @@ export interface UserCreateWithoutSentMessagesInput {
   phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid: String
   ownedRestaurant?: RestaurantCreateManyInput | null
@@ -16066,7 +15392,7 @@ export interface UserCreateWithoutSentMessagesInput {
   receivedMessages?: MessageCreateManyWithoutToInput | null
   notifications?: NotificationCreateManyWithoutUserInput | null
   profilePicture?: PictureCreateOneInput | null
-  hostingExperiences?: ExperienceCreateManyWithoutHostInput | null
+  experiences?: ExperienceCreateManyWithoutHostInput | null
 }
 
 export interface UserSubscriptionWhereInput {
@@ -16085,7 +15411,6 @@ export interface UserUpdateInput {
   phoneNumber?: String | null
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
   ownedRestaurant?: RestaurantUpdateManyInput | null
@@ -16096,7 +15421,7 @@ export interface UserUpdateInput {
   receivedMessages?: MessageUpdateManyWithoutToInput | null
   notifications?: NotificationUpdateManyWithoutUserInput | null
   profilePicture?: PictureUpdateOneInput | null
-  hostingExperiences?: ExperienceUpdateManyWithoutHostInput | null
+  experiences?: ExperienceUpdateManyWithoutHostInput | null
 }
 
 export interface UserUpdateManyMutationInput {
@@ -16104,16 +15429,15 @@ export interface UserUpdateManyMutationInput {
   phoneNumber?: String | null
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
 }
 
-export interface UserUpdateOneRequiredWithoutHostingExperiencesInput {
-  create?: UserCreateWithoutHostingExperiencesInput | null
+export interface UserUpdateOneRequiredWithoutExperiencesInput {
+  create?: UserCreateWithoutExperiencesInput | null
   connect?: UserWhereUniqueInput | null
-  update?: UserUpdateWithoutHostingExperiencesDataInput | null
-  upsert?: UserUpsertWithoutHostingExperiencesInput | null
+  update?: UserUpdateWithoutExperiencesDataInput | null
+  upsert?: UserUpsertWithoutExperiencesInput | null
 }
 
 export interface UserUpdateOneRequiredWithoutNotificationsInput {
@@ -16151,12 +15475,11 @@ export interface UserUpdateOneRequiredWithoutSentMessagesInput {
   upsert?: UserUpsertWithoutSentMessagesInput | null
 }
 
-export interface UserUpdateWithoutHostingExperiencesDataInput {
+export interface UserUpdateWithoutExperiencesDataInput {
   displayName?: String | null
   phoneNumber?: String | null
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
   ownedRestaurant?: RestaurantUpdateManyInput | null
@@ -16174,7 +15497,6 @@ export interface UserUpdateWithoutNotificationsDataInput {
   phoneNumber?: String | null
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
   ownedRestaurant?: RestaurantUpdateManyInput | null
@@ -16184,7 +15506,7 @@ export interface UserUpdateWithoutNotificationsDataInput {
   sentMessages?: MessageUpdateManyWithoutFromInput | null
   receivedMessages?: MessageUpdateManyWithoutToInput | null
   profilePicture?: PictureUpdateOneInput | null
-  hostingExperiences?: ExperienceUpdateManyWithoutHostInput | null
+  experiences?: ExperienceUpdateManyWithoutHostInput | null
 }
 
 export interface UserUpdateWithoutOrdersDataInput {
@@ -16192,7 +15514,6 @@ export interface UserUpdateWithoutOrdersDataInput {
   phoneNumber?: String | null
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
   ownedRestaurant?: RestaurantUpdateManyInput | null
@@ -16202,7 +15523,7 @@ export interface UserUpdateWithoutOrdersDataInput {
   receivedMessages?: MessageUpdateManyWithoutToInput | null
   notifications?: NotificationUpdateManyWithoutUserInput | null
   profilePicture?: PictureUpdateOneInput | null
-  hostingExperiences?: ExperienceUpdateManyWithoutHostInput | null
+  experiences?: ExperienceUpdateManyWithoutHostInput | null
 }
 
 export interface UserUpdateWithoutPaymentAccountDataInput {
@@ -16210,7 +15531,6 @@ export interface UserUpdateWithoutPaymentAccountDataInput {
   phoneNumber?: String | null
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
   ownedRestaurant?: RestaurantUpdateManyInput | null
@@ -16220,7 +15540,7 @@ export interface UserUpdateWithoutPaymentAccountDataInput {
   receivedMessages?: MessageUpdateManyWithoutToInput | null
   notifications?: NotificationUpdateManyWithoutUserInput | null
   profilePicture?: PictureUpdateOneInput | null
-  hostingExperiences?: ExperienceUpdateManyWithoutHostInput | null
+  experiences?: ExperienceUpdateManyWithoutHostInput | null
 }
 
 export interface UserUpdateWithoutReceivedMessagesDataInput {
@@ -16228,7 +15548,6 @@ export interface UserUpdateWithoutReceivedMessagesDataInput {
   phoneNumber?: String | null
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
   ownedRestaurant?: RestaurantUpdateManyInput | null
@@ -16238,7 +15557,7 @@ export interface UserUpdateWithoutReceivedMessagesDataInput {
   sentMessages?: MessageUpdateManyWithoutFromInput | null
   notifications?: NotificationUpdateManyWithoutUserInput | null
   profilePicture?: PictureUpdateOneInput | null
-  hostingExperiences?: ExperienceUpdateManyWithoutHostInput | null
+  experiences?: ExperienceUpdateManyWithoutHostInput | null
 }
 
 export interface UserUpdateWithoutSentMessagesDataInput {
@@ -16246,7 +15565,6 @@ export interface UserUpdateWithoutSentMessagesDataInput {
   phoneNumber?: String | null
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost?: Boolean | null
   accountType?: UserType | null
   uid?: String | null
   ownedRestaurant?: RestaurantUpdateManyInput | null
@@ -16256,12 +15574,12 @@ export interface UserUpdateWithoutSentMessagesDataInput {
   receivedMessages?: MessageUpdateManyWithoutToInput | null
   notifications?: NotificationUpdateManyWithoutUserInput | null
   profilePicture?: PictureUpdateOneInput | null
-  hostingExperiences?: ExperienceUpdateManyWithoutHostInput | null
+  experiences?: ExperienceUpdateManyWithoutHostInput | null
 }
 
-export interface UserUpsertWithoutHostingExperiencesInput {
-  update: UserUpdateWithoutHostingExperiencesDataInput
-  create: UserCreateWithoutHostingExperiencesInput
+export interface UserUpsertWithoutExperiencesInput {
+  update: UserUpdateWithoutExperiencesDataInput
+  create: UserCreateWithoutExperiencesInput
 }
 
 export interface UserUpsertWithoutNotificationsInput {
@@ -16367,8 +15685,6 @@ export interface UserWhereInput {
   responseTime_lte?: Int | null
   responseTime_gt?: Int | null
   responseTime_gte?: Int | null
-  isSuperHost?: Boolean | null
-  isSuperHost_not?: Boolean | null
   accountType?: UserType | null
   accountType_not?: UserType | null
   accountType_in?: UserType[] | UserType | null
@@ -16409,9 +15725,9 @@ export interface UserWhereInput {
   notifications_some?: NotificationWhereInput | null
   notifications_none?: NotificationWhereInput | null
   profilePicture?: PictureWhereInput | null
-  hostingExperiences_every?: ExperienceWhereInput | null
-  hostingExperiences_some?: ExperienceWhereInput | null
-  hostingExperiences_none?: ExperienceWhereInput | null
+  experiences_every?: ExperienceWhereInput | null
+  experiences_some?: ExperienceWhereInput | null
+  experiences_none?: ExperienceWhereInput | null
 }
 
 export interface UserWhereUniqueInput {
@@ -16563,7 +15879,6 @@ export interface CreditCardInformation extends Node {
   lastName: String
   postalCode: String
   country: String
-  paymentAccount?: PaymentAccount | null
 }
 
 /*
@@ -16616,7 +15931,6 @@ export interface DebitCardInformation extends Node {
   lastName: String
   postalCode: String
   country: String
-  paymentAccount?: PaymentAccount | null
 }
 
 /*
@@ -16674,7 +15988,6 @@ export interface ExperienceCategory extends Node {
   id: ID_Output
   mainColor: String
   name: String
-  experience: Experience
 }
 
 /*
@@ -16750,7 +16063,6 @@ export interface Location extends Node {
   neighbourHood?: Neighbourhood | null
   address: String
   directions: String
-  experience?: Experience | null
 }
 
 /*
@@ -16972,7 +16284,7 @@ export interface Order extends Node {
   restaurant: Restaurant
   startDate: DateTime
   endDate: DateTime
-  payment?: Payment | null
+  payment: Payment
 }
 
 /*
@@ -17111,7 +16423,6 @@ export interface PaypalInformation extends Node {
   id: ID_Output
   createdAt: DateTime
   email: String
-  paymentAccount: PaymentAccount
 }
 
 /*
@@ -17150,7 +16461,6 @@ export interface PaytmInformation extends Node {
   id: ID_Output
   createdAt: DateTime
   phone: String
-  paymentAccount: PaymentAccount
 }
 
 /*
@@ -17435,7 +16745,6 @@ export interface User extends Node {
   phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost: Boolean
   ownedRestaurant?: Array<Restaurant> | null
   location?: Array<Location> | null
   orders?: Array<Order> | null
@@ -17444,7 +16753,7 @@ export interface User extends Node {
   receivedMessages?: Array<Message> | null
   notifications?: Array<Notification> | null
   profilePicture?: Picture | null
-  hostingExperiences?: Array<Experience> | null
+  experiences?: Array<Experience> | null
   accountType?: UserType | null
   uid: String
 }
@@ -17476,7 +16785,6 @@ export interface UserPreviousValues {
   phoneNumber: String
   responseRate?: Float | null
   responseTime?: Int | null
-  isSuperHost: Boolean
   accountType?: UserType | null
   uid: String
 }

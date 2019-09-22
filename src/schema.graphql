@@ -27,7 +27,7 @@ type Mutation {
     country: String!
   ): MutationResult!
   # Order
-  book(restaurantId: ID!, checkIn: String!, checkOut: String!, numGuests: Int!): MutationResult!
+  book(restaurantId: ID!, checkIn: String!, checkOut: String!, paymentId: String!, numGuests: Int!): MutationResult!
 }
 
 type Subscription {
@@ -120,16 +120,14 @@ type ExperienceCategory {
   id: ID!
   mainColor: String!
   name: String!
-  experience: Experience
 }
 
 type User {
   orders: [Order!]
   createdAt: DateTime!
   displayName: String!
-  hostingExperiences: [Experience!]
+  experiences: [Experience!]
   id: ID!
-  isSuperHost: Boolean!
   location: Location
   notifications: [Notification!]
   ownedRestaurants: [Restaurant!]
@@ -206,14 +204,12 @@ type PaypalInformation {
   createdAt: DateTime!
   email: String!
   id: ID!
-  paymentAccount: PaymentAccount!
 }
 
 type PaytmInformation {
   createdAt: DateTime!
   mobile: String!
   id: ID!
-  paymentAccount: PaymentAccount!
 }
 
 type CreditCardInformation {
@@ -225,7 +221,6 @@ type CreditCardInformation {
   firstName: String!
   id: ID!
   lastName: String!
-  paymentAccount: PaymentAccount
   postalCode: String!
   securityCode: String!
 }
@@ -238,7 +233,6 @@ type DebitCardInformation {
   firstName: String!
   id: ID!
   lastName: String!
-  paymentAccount: PaymentAccount
   postalCode: String!
   securityCode: String!
 }

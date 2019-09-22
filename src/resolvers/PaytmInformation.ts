@@ -13,5 +13,4 @@ export const PaytmInformation: PaytmInformationResolvers.Type<TypeMap> = {
   createdAt: parent => parent.createdAt,
   mobile: parent => parent.mobile,
   id: parent => parent.id,
-  paymentAccount: parent => parent.paymentAccount
 };

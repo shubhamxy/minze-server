@@ -90,7 +90,8 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
       startDate: args.checkIn,
       endDate: args.checkOut,
       bookee: { connect: { id: userId } },
-      restaurant: { connect: { id: args.restaurantId } }
+      restaurant: { connect: { id: args.restaurantId } },
+      payment: { connect: { id: args.paymentId } }
     });
 
     return { success: true };

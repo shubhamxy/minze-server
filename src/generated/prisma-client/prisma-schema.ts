@@ -230,7 +230,6 @@ type CreditCardInformation {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccount
 }
 
 type CreditCardInformationConnection {
@@ -249,24 +248,11 @@ input CreditCardInformationCreateInput {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccountCreateOneWithoutCreditcardInput
 }
 
-input CreditCardInformationCreateOneWithoutPaymentAccountInput {
-  create: CreditCardInformationCreateWithoutPaymentAccountInput
+input CreditCardInformationCreateOneInput {
+  create: CreditCardInformationCreateInput
   connect: CreditCardInformationWhereUniqueInput
-}
-
-input CreditCardInformationCreateWithoutPaymentAccountInput {
-  id: ID
-  cardNumber: String!
-  expiresOnMonth: Int!
-  expiresOnYear: Int!
-  securityCode: String!
-  firstName: String!
-  lastName: String!
-  postalCode: String!
-  country: String!
 }
 
 type CreditCardInformationEdge {
@@ -328,6 +314,17 @@ input CreditCardInformationSubscriptionWhereInput {
   NOT: [CreditCardInformationSubscriptionWhereInput!]
 }
 
+input CreditCardInformationUpdateDataInput {
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
+}
+
 input CreditCardInformationUpdateInput {
   cardNumber: String
   expiresOnMonth: Int
@@ -337,7 +334,6 @@ input CreditCardInformationUpdateInput {
   lastName: String
   postalCode: String
   country: String
-  paymentAccount: PaymentAccountUpdateOneWithoutCreditcardInput
 }
 
 input CreditCardInformationUpdateManyMutationInput {
@@ -351,29 +347,18 @@ input CreditCardInformationUpdateManyMutationInput {
   country: String
 }
 
-input CreditCardInformationUpdateOneWithoutPaymentAccountInput {
-  create: CreditCardInformationCreateWithoutPaymentAccountInput
-  update: CreditCardInformationUpdateWithoutPaymentAccountDataInput
-  upsert: CreditCardInformationUpsertWithoutPaymentAccountInput
+input CreditCardInformationUpdateOneInput {
+  create: CreditCardInformationCreateInput
+  update: CreditCardInformationUpdateDataInput
+  upsert: CreditCardInformationUpsertNestedInput
   delete: Boolean
   disconnect: Boolean
   connect: CreditCardInformationWhereUniqueInput
 }
 
-input CreditCardInformationUpdateWithoutPaymentAccountDataInput {
-  cardNumber: String
-  expiresOnMonth: Int
-  expiresOnYear: Int
-  securityCode: String
-  firstName: String
-  lastName: String
-  postalCode: String
-  country: String
-}
-
-input CreditCardInformationUpsertWithoutPaymentAccountInput {
-  update: CreditCardInformationUpdateWithoutPaymentAccountDataInput!
-  create: CreditCardInformationCreateWithoutPaymentAccountInput!
+input CreditCardInformationUpsertNestedInput {
+  update: CreditCardInformationUpdateDataInput!
+  create: CreditCardInformationCreateInput!
 }
 
 input CreditCardInformationWhereInput {
@@ -499,7 +484,6 @@ input CreditCardInformationWhereInput {
   country_not_starts_with: String
   country_ends_with: String
   country_not_ends_with: String
-  paymentAccount: PaymentAccountWhereInput
   AND: [CreditCardInformationWhereInput!]
   OR: [CreditCardInformationWhereInput!]
   NOT: [CreditCardInformationWhereInput!]
@@ -522,7 +506,6 @@ type DebitCardInformation {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccount
 }
 
 type DebitCardInformationConnection {
@@ -541,24 +524,11 @@ input DebitCardInformationCreateInput {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccountCreateOneWithoutDebitcardInput
 }
 
-input DebitCardInformationCreateOneWithoutPaymentAccountInput {
-  create: DebitCardInformationCreateWithoutPaymentAccountInput
+input DebitCardInformationCreateOneInput {
+  create: DebitCardInformationCreateInput
   connect: DebitCardInformationWhereUniqueInput
-}
-
-input DebitCardInformationCreateWithoutPaymentAccountInput {
-  id: ID
-  cardNumber: String!
-  expiresOnMonth: Int!
-  expiresOnYear: Int!
-  securityCode: String!
-  firstName: String!
-  lastName: String!
-  postalCode: String!
-  country: String!
 }
 
 type DebitCardInformationEdge {
@@ -620,6 +590,17 @@ input DebitCardInformationSubscriptionWhereInput {
   NOT: [DebitCardInformationSubscriptionWhereInput!]
 }
 
+input DebitCardInformationUpdateDataInput {
+  cardNumber: String
+  expiresOnMonth: Int
+  expiresOnYear: Int
+  securityCode: String
+  firstName: String
+  lastName: String
+  postalCode: String
+  country: String
+}
+
 input DebitCardInformationUpdateInput {
   cardNumber: String
   expiresOnMonth: Int
@@ -629,7 +610,6 @@ input DebitCardInformationUpdateInput {
   lastName: String
   postalCode: String
   country: String
-  paymentAccount: PaymentAccountUpdateOneWithoutDebitcardInput
 }
 
 input DebitCardInformationUpdateManyMutationInput {
@@ -643,29 +623,18 @@ input DebitCardInformationUpdateManyMutationInput {
   country: String
 }
 
-input DebitCardInformationUpdateOneWithoutPaymentAccountInput {
-  create: DebitCardInformationCreateWithoutPaymentAccountInput
-  update: DebitCardInformationUpdateWithoutPaymentAccountDataInput
-  upsert: DebitCardInformationUpsertWithoutPaymentAccountInput
+input DebitCardInformationUpdateOneInput {
+  create: DebitCardInformationCreateInput
+  update: DebitCardInformationUpdateDataInput
+  upsert: DebitCardInformationUpsertNestedInput
   delete: Boolean
   disconnect: Boolean
   connect: DebitCardInformationWhereUniqueInput
 }
 
-input DebitCardInformationUpdateWithoutPaymentAccountDataInput {
-  cardNumber: String
-  expiresOnMonth: Int
-  expiresOnYear: Int
-  securityCode: String
-  firstName: String
-  lastName: String
-  postalCode: String
-  country: String
-}
-
-input DebitCardInformationUpsertWithoutPaymentAccountInput {
-  update: DebitCardInformationUpdateWithoutPaymentAccountDataInput!
-  create: DebitCardInformationCreateWithoutPaymentAccountInput!
+input DebitCardInformationUpsertNestedInput {
+  update: DebitCardInformationUpdateDataInput!
+  create: DebitCardInformationCreateInput!
 }
 
 input DebitCardInformationWhereInput {
@@ -791,7 +760,6 @@ input DebitCardInformationWhereInput {
   country_not_starts_with: String
   country_ends_with: String
   country_not_ends_with: String
-  paymentAccount: PaymentAccountWhereInput
   AND: [DebitCardInformationWhereInput!]
   OR: [DebitCardInformationWhereInput!]
   NOT: [DebitCardInformationWhereInput!]
@@ -817,7 +785,6 @@ type ExperienceCategory {
   id: ID!
   mainColor: String!
   name: String!
-  experience: Experience!
 }
 
 type ExperienceCategoryConnection {
@@ -830,18 +797,11 @@ input ExperienceCategoryCreateInput {
   id: ID
   mainColor: String
   name: String!
-  experience: ExperienceCreateOneWithoutCategoryInput!
 }
 
-input ExperienceCategoryCreateOneWithoutExperienceInput {
-  create: ExperienceCategoryCreateWithoutExperienceInput
+input ExperienceCategoryCreateOneInput {
+  create: ExperienceCategoryCreateInput
   connect: ExperienceCategoryWhereUniqueInput
-}
-
-input ExperienceCategoryCreateWithoutExperienceInput {
-  id: ID
-  mainColor: String
-  name: String!
 }
 
 type ExperienceCategoryEdge {
@@ -882,10 +842,14 @@ input ExperienceCategorySubscriptionWhereInput {
   NOT: [ExperienceCategorySubscriptionWhereInput!]
 }
 
+input ExperienceCategoryUpdateDataInput {
+  mainColor: String
+  name: String
+}
+
 input ExperienceCategoryUpdateInput {
   mainColor: String
   name: String
-  experience: ExperienceUpdateOneRequiredWithoutCategoryInput
 }
 
 input ExperienceCategoryUpdateManyMutationInput {
@@ -893,23 +857,18 @@ input ExperienceCategoryUpdateManyMutationInput {
   name: String
 }
 
-input ExperienceCategoryUpdateOneWithoutExperienceInput {
-  create: ExperienceCategoryCreateWithoutExperienceInput
-  update: ExperienceCategoryUpdateWithoutExperienceDataInput
-  upsert: ExperienceCategoryUpsertWithoutExperienceInput
+input ExperienceCategoryUpdateOneInput {
+  create: ExperienceCategoryCreateInput
+  update: ExperienceCategoryUpdateDataInput
+  upsert: ExperienceCategoryUpsertNestedInput
   delete: Boolean
   disconnect: Boolean
   connect: ExperienceCategoryWhereUniqueInput
 }
 
-input ExperienceCategoryUpdateWithoutExperienceDataInput {
-  mainColor: String
-  name: String
-}
-
-input ExperienceCategoryUpsertWithoutExperienceInput {
-  update: ExperienceCategoryUpdateWithoutExperienceDataInput!
-  create: ExperienceCategoryCreateWithoutExperienceInput!
+input ExperienceCategoryUpsertNestedInput {
+  update: ExperienceCategoryUpdateDataInput!
+  create: ExperienceCategoryCreateInput!
 }
 
 input ExperienceCategoryWhereInput {
@@ -955,7 +914,6 @@ input ExperienceCategoryWhereInput {
   name_not_starts_with: String
   name_ends_with: String
   name_not_ends_with: String
-  experience: ExperienceWhereInput
   AND: [ExperienceCategoryWhereInput!]
   OR: [ExperienceCategoryWhereInput!]
   NOT: [ExperienceCategoryWhereInput!]
@@ -973,10 +931,10 @@ type ExperienceConnection {
 
 input ExperienceCreateInput {
   id: ID
-  category: ExperienceCategoryCreateOneWithoutExperienceInput
+  category: ExperienceCategoryCreateOneInput
   title: String!
-  host: UserCreateOneWithoutHostingExperiencesInput!
-  location: LocationCreateOneWithoutExperienceInput!
+  host: UserCreateOneWithoutExperiencesInput!
+  location: LocationCreateOneInput!
   pricePerPerson: Int!
   reviews: ReviewCreateManyWithoutExperienceInput
   preview: PictureCreateOneInput!
@@ -988,48 +946,16 @@ input ExperienceCreateManyWithoutHostInput {
   connect: [ExperienceWhereUniqueInput!]
 }
 
-input ExperienceCreateOneWithoutCategoryInput {
-  create: ExperienceCreateWithoutCategoryInput
-  connect: ExperienceWhereUniqueInput
-}
-
-input ExperienceCreateOneWithoutLocationInput {
-  create: ExperienceCreateWithoutLocationInput
-  connect: ExperienceWhereUniqueInput
-}
-
 input ExperienceCreateOneWithoutReviewsInput {
   create: ExperienceCreateWithoutReviewsInput
   connect: ExperienceWhereUniqueInput
 }
 
-input ExperienceCreateWithoutCategoryInput {
-  id: ID
-  title: String!
-  host: UserCreateOneWithoutHostingExperiencesInput!
-  location: LocationCreateOneWithoutExperienceInput!
-  pricePerPerson: Int!
-  reviews: ReviewCreateManyWithoutExperienceInput
-  preview: PictureCreateOneInput!
-  popularity: Int!
-}
-
 input ExperienceCreateWithoutHostInput {
   id: ID
-  category: ExperienceCategoryCreateOneWithoutExperienceInput
+  category: ExperienceCategoryCreateOneInput
   title: String!
-  location: LocationCreateOneWithoutExperienceInput!
-  pricePerPerson: Int!
-  reviews: ReviewCreateManyWithoutExperienceInput
-  preview: PictureCreateOneInput!
-  popularity: Int!
-}
-
-input ExperienceCreateWithoutLocationInput {
-  id: ID
-  category: ExperienceCategoryCreateOneWithoutExperienceInput
-  title: String!
-  host: UserCreateOneWithoutHostingExperiencesInput!
+  location: LocationCreateOneInput!
   pricePerPerson: Int!
   reviews: ReviewCreateManyWithoutExperienceInput
   preview: PictureCreateOneInput!
@@ -1038,10 +964,10 @@ input ExperienceCreateWithoutLocationInput {
 
 input ExperienceCreateWithoutReviewsInput {
   id: ID
-  category: ExperienceCategoryCreateOneWithoutExperienceInput
+  category: ExperienceCategoryCreateOneInput
   title: String!
-  host: UserCreateOneWithoutHostingExperiencesInput!
-  location: LocationCreateOneWithoutExperienceInput!
+  host: UserCreateOneWithoutExperiencesInput!
+  location: LocationCreateOneInput!
   pricePerPerson: Int!
   preview: PictureCreateOneInput!
   popularity: Int!
@@ -1139,10 +1065,10 @@ input ExperienceSubscriptionWhereInput {
 }
 
 input ExperienceUpdateInput {
-  category: ExperienceCategoryUpdateOneWithoutExperienceInput
+  category: ExperienceCategoryUpdateOneInput
   title: String
-  host: UserUpdateOneRequiredWithoutHostingExperiencesInput
-  location: LocationUpdateOneRequiredWithoutExperienceInput
+  host: UserUpdateOneRequiredWithoutExperiencesInput
+  location: LocationUpdateOneRequiredInput
   pricePerPerson: Int
   reviews: ReviewUpdateManyWithoutExperienceInput
   preview: PictureUpdateOneRequiredInput
@@ -1178,22 +1104,6 @@ input ExperienceUpdateManyWithWhereNestedInput {
   data: ExperienceUpdateManyDataInput!
 }
 
-input ExperienceUpdateOneRequiredWithoutCategoryInput {
-  create: ExperienceCreateWithoutCategoryInput
-  update: ExperienceUpdateWithoutCategoryDataInput
-  upsert: ExperienceUpsertWithoutCategoryInput
-  connect: ExperienceWhereUniqueInput
-}
-
-input ExperienceUpdateOneWithoutLocationInput {
-  create: ExperienceCreateWithoutLocationInput
-  update: ExperienceUpdateWithoutLocationDataInput
-  upsert: ExperienceUpsertWithoutLocationInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: ExperienceWhereUniqueInput
-}
-
 input ExperienceUpdateOneWithoutReviewsInput {
   create: ExperienceCreateWithoutReviewsInput
   update: ExperienceUpdateWithoutReviewsDataInput
@@ -1203,30 +1113,10 @@ input ExperienceUpdateOneWithoutReviewsInput {
   connect: ExperienceWhereUniqueInput
 }
 
-input ExperienceUpdateWithoutCategoryDataInput {
-  title: String
-  host: UserUpdateOneRequiredWithoutHostingExperiencesInput
-  location: LocationUpdateOneRequiredWithoutExperienceInput
-  pricePerPerson: Int
-  reviews: ReviewUpdateManyWithoutExperienceInput
-  preview: PictureUpdateOneRequiredInput
-  popularity: Int
-}
-
 input ExperienceUpdateWithoutHostDataInput {
-  category: ExperienceCategoryUpdateOneWithoutExperienceInput
+  category: ExperienceCategoryUpdateOneInput
   title: String
-  location: LocationUpdateOneRequiredWithoutExperienceInput
-  pricePerPerson: Int
-  reviews: ReviewUpdateManyWithoutExperienceInput
-  preview: PictureUpdateOneRequiredInput
-  popularity: Int
-}
-
-input ExperienceUpdateWithoutLocationDataInput {
-  category: ExperienceCategoryUpdateOneWithoutExperienceInput
-  title: String
-  host: UserUpdateOneRequiredWithoutHostingExperiencesInput
+  location: LocationUpdateOneRequiredInput
   pricePerPerson: Int
   reviews: ReviewUpdateManyWithoutExperienceInput
   preview: PictureUpdateOneRequiredInput
@@ -1234,10 +1124,10 @@ input ExperienceUpdateWithoutLocationDataInput {
 }
 
 input ExperienceUpdateWithoutReviewsDataInput {
-  category: ExperienceCategoryUpdateOneWithoutExperienceInput
+  category: ExperienceCategoryUpdateOneInput
   title: String
-  host: UserUpdateOneRequiredWithoutHostingExperiencesInput
-  location: LocationUpdateOneRequiredWithoutExperienceInput
+  host: UserUpdateOneRequiredWithoutExperiencesInput
+  location: LocationUpdateOneRequiredInput
   pricePerPerson: Int
   preview: PictureUpdateOneRequiredInput
   popularity: Int
@@ -1246,16 +1136,6 @@ input ExperienceUpdateWithoutReviewsDataInput {
 input ExperienceUpdateWithWhereUniqueWithoutHostInput {
   where: ExperienceWhereUniqueInput!
   data: ExperienceUpdateWithoutHostDataInput!
-}
-
-input ExperienceUpsertWithoutCategoryInput {
-  update: ExperienceUpdateWithoutCategoryDataInput!
-  create: ExperienceCreateWithoutCategoryInput!
-}
-
-input ExperienceUpsertWithoutLocationInput {
-  update: ExperienceUpdateWithoutLocationDataInput!
-  create: ExperienceCreateWithoutLocationInput!
 }
 
 input ExperienceUpsertWithoutReviewsInput {
@@ -1338,7 +1218,6 @@ type Location {
   neighbourHood: Neighbourhood
   address: String!
   directions: String!
-  experience: Experience
 }
 
 type LocationConnection {
@@ -1355,7 +1234,6 @@ input LocationCreateInput {
   neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
   address: String!
   directions: String!
-  experience: ExperienceCreateOneWithoutLocationInput
 }
 
 input LocationCreateManyInput {
@@ -1373,21 +1251,6 @@ input LocationCreateOneInput {
   connect: LocationWhereUniqueInput
 }
 
-input LocationCreateOneWithoutExperienceInput {
-  create: LocationCreateWithoutExperienceInput
-  connect: LocationWhereUniqueInput
-}
-
-input LocationCreateWithoutExperienceInput {
-  title: String
-  id: ID
-  lat: Float!
-  lng: Float!
-  neighbourHood: NeighbourhoodCreateOneWithoutLocationsInput
-  address: String!
-  directions: String!
-}
-
 input LocationCreateWithoutNeighbourHoodInput {
   title: String
   id: ID
@@ -1395,7 +1258,6 @@ input LocationCreateWithoutNeighbourHoodInput {
   lng: Float!
   address: String!
   directions: String!
-  experience: ExperienceCreateOneWithoutLocationInput
 }
 
 type LocationEdge {
@@ -1530,7 +1392,6 @@ input LocationUpdateDataInput {
   neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
   address: String
   directions: String
-  experience: ExperienceUpdateOneWithoutLocationInput
 }
 
 input LocationUpdateInput {
@@ -1540,7 +1401,6 @@ input LocationUpdateInput {
   neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
   address: String
   directions: String
-  experience: ExperienceUpdateOneWithoutLocationInput
 }
 
 input LocationUpdateManyDataInput {
@@ -1597,20 +1457,11 @@ input LocationUpdateOneInput {
   connect: LocationWhereUniqueInput
 }
 
-input LocationUpdateOneRequiredWithoutExperienceInput {
-  create: LocationCreateWithoutExperienceInput
-  update: LocationUpdateWithoutExperienceDataInput
-  upsert: LocationUpsertWithoutExperienceInput
+input LocationUpdateOneRequiredInput {
+  create: LocationCreateInput
+  update: LocationUpdateDataInput
+  upsert: LocationUpsertNestedInput
   connect: LocationWhereUniqueInput
-}
-
-input LocationUpdateWithoutExperienceDataInput {
-  title: String
-  lat: Float
-  lng: Float
-  neighbourHood: NeighbourhoodUpdateOneWithoutLocationsInput
-  address: String
-  directions: String
 }
 
 input LocationUpdateWithoutNeighbourHoodDataInput {
@@ -1619,7 +1470,6 @@ input LocationUpdateWithoutNeighbourHoodDataInput {
   lng: Float
   address: String
   directions: String
-  experience: ExperienceUpdateOneWithoutLocationInput
 }
 
 input LocationUpdateWithWhereUniqueNestedInput {
@@ -1635,11 +1485,6 @@ input LocationUpdateWithWhereUniqueWithoutNeighbourHoodInput {
 input LocationUpsertNestedInput {
   update: LocationUpdateDataInput!
   create: LocationCreateInput!
-}
-
-input LocationUpsertWithoutExperienceInput {
-  update: LocationUpdateWithoutExperienceDataInput!
-  create: LocationCreateWithoutExperienceInput!
 }
 
 input LocationUpsertWithWhereUniqueNestedInput {
@@ -1728,7 +1573,6 @@ input LocationWhereInput {
   directions_not_starts_with: String
   directions_ends_with: String
   directions_not_ends_with: String
-  experience: ExperienceWhereInput
   AND: [LocationWhereInput!]
   OR: [LocationWhereInput!]
   NOT: [LocationWhereInput!]
@@ -3017,7 +2861,7 @@ type Order {
   restaurant: Restaurant!
   startDate: DateTime!
   endDate: DateTime!
-  payment: Payment
+  payment: Payment!
 }
 
 type OrderConnection {
@@ -3032,7 +2876,7 @@ input OrderCreateInput {
   restaurant: RestaurantCreateOneWithoutOrdersInput!
   startDate: DateTime!
   endDate: DateTime!
-  payment: PaymentCreateOneWithoutOrderInput
+  payment: PaymentCreateOneWithoutOrderInput!
 }
 
 input OrderCreateManyWithoutBookeeInput {
@@ -3060,7 +2904,7 @@ input OrderCreateWithoutBookeeInput {
   restaurant: RestaurantCreateOneWithoutOrdersInput!
   startDate: DateTime!
   endDate: DateTime!
-  payment: PaymentCreateOneWithoutOrderInput
+  payment: PaymentCreateOneWithoutOrderInput!
 }
 
 input OrderCreateWithoutPaymentInput {
@@ -3076,7 +2920,7 @@ input OrderCreateWithoutRestaurantInput {
   bookee: UserCreateOneWithoutOrdersInput!
   startDate: DateTime!
   endDate: DateTime!
-  payment: PaymentCreateOneWithoutOrderInput
+  payment: PaymentCreateOneWithoutOrderInput!
 }
 
 type OrderEdge {
@@ -3169,7 +3013,7 @@ input OrderUpdateDataInput {
   restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
   startDate: DateTime
   endDate: DateTime
-  payment: PaymentUpdateOneWithoutOrderInput
+  payment: PaymentUpdateOneRequiredWithoutOrderInput
 }
 
 input OrderUpdateInput {
@@ -3177,7 +3021,7 @@ input OrderUpdateInput {
   restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
   startDate: DateTime
   endDate: DateTime
-  payment: PaymentUpdateOneWithoutOrderInput
+  payment: PaymentUpdateOneRequiredWithoutOrderInput
 }
 
 input OrderUpdateManyDataInput {
@@ -3237,7 +3081,7 @@ input OrderUpdateWithoutBookeeDataInput {
   restaurant: RestaurantUpdateOneRequiredWithoutOrdersInput
   startDate: DateTime
   endDate: DateTime
-  payment: PaymentUpdateOneWithoutOrderInput
+  payment: PaymentUpdateOneRequiredWithoutOrderInput
 }
 
 input OrderUpdateWithoutPaymentDataInput {
@@ -3251,7 +3095,7 @@ input OrderUpdateWithoutRestaurantDataInput {
   bookee: UserUpdateOneRequiredWithoutOrdersInput
   startDate: DateTime
   endDate: DateTime
-  payment: PaymentUpdateOneWithoutOrderInput
+  payment: PaymentUpdateOneRequiredWithoutOrderInput
 }
 
 input OrderUpdateWithWhereUniqueWithoutBookeeInput {
@@ -3384,10 +3228,10 @@ input PaymentAccountCreateInput {
   type: PAYMENT_PROVIDER
   user: UserCreateOneWithoutPaymentAccountInput!
   payments: PaymentCreateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationCreateOneInput
+  paytm: PaytmInformationCreateOneInput
+  creditcard: CreditCardInformationCreateOneInput
+  debitcard: DebitCardInformationCreateOneInput
 }
 
 input PaymentAccountCreateManyWithoutUserInput {
@@ -3395,89 +3239,29 @@ input PaymentAccountCreateManyWithoutUserInput {
   connect: [PaymentAccountWhereUniqueInput!]
 }
 
-input PaymentAccountCreateOneWithoutCreditcardInput {
-  create: PaymentAccountCreateWithoutCreditcardInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountCreateOneWithoutDebitcardInput {
-  create: PaymentAccountCreateWithoutDebitcardInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
 input PaymentAccountCreateOneWithoutPaymentsInput {
   create: PaymentAccountCreateWithoutPaymentsInput
   connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountCreateOneWithoutPaypalInput {
-  create: PaymentAccountCreateWithoutPaypalInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountCreateOneWithoutPaytmInput {
-  create: PaymentAccountCreateWithoutPaytmInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountCreateWithoutCreditcardInput {
-  id: ID
-  type: PAYMENT_PROVIDER
-  user: UserCreateOneWithoutPaymentAccountInput!
-  payments: PaymentCreateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountCreateWithoutDebitcardInput {
-  id: ID
-  type: PAYMENT_PROVIDER
-  user: UserCreateOneWithoutPaymentAccountInput!
-  payments: PaymentCreateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
 }
 
 input PaymentAccountCreateWithoutPaymentsInput {
   id: ID
   type: PAYMENT_PROVIDER
   user: UserCreateOneWithoutPaymentAccountInput!
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountCreateWithoutPaypalInput {
-  id: ID
-  type: PAYMENT_PROVIDER
-  user: UserCreateOneWithoutPaymentAccountInput!
-  payments: PaymentCreateManyWithoutPaymentMethodInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountCreateWithoutPaytmInput {
-  id: ID
-  type: PAYMENT_PROVIDER
-  user: UserCreateOneWithoutPaymentAccountInput!
-  payments: PaymentCreateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationCreateOneInput
+  paytm: PaytmInformationCreateOneInput
+  creditcard: CreditCardInformationCreateOneInput
+  debitcard: DebitCardInformationCreateOneInput
 }
 
 input PaymentAccountCreateWithoutUserInput {
   id: ID
   type: PAYMENT_PROVIDER
   payments: PaymentCreateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationCreateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationCreateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationCreateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationCreateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationCreateOneInput
+  paytm: PaytmInformationCreateOneInput
+  creditcard: CreditCardInformationCreateOneInput
+  debitcard: DebitCardInformationCreateOneInput
 }
 
 type PaymentAccountEdge {
@@ -3554,10 +3338,10 @@ input PaymentAccountUpdateInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
   payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationUpdateOneInput
+  paytm: PaytmInformationUpdateOneInput
+  creditcard: CreditCardInformationUpdateOneInput
+  debitcard: DebitCardInformationUpdateOneInput
 }
 
 input PaymentAccountUpdateManyDataInput {
@@ -3592,90 +3376,22 @@ input PaymentAccountUpdateOneRequiredWithoutPaymentsInput {
   connect: PaymentAccountWhereUniqueInput
 }
 
-input PaymentAccountUpdateOneRequiredWithoutPaypalInput {
-  create: PaymentAccountCreateWithoutPaypalInput
-  update: PaymentAccountUpdateWithoutPaypalDataInput
-  upsert: PaymentAccountUpsertWithoutPaypalInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountUpdateOneRequiredWithoutPaytmInput {
-  create: PaymentAccountCreateWithoutPaytmInput
-  update: PaymentAccountUpdateWithoutPaytmDataInput
-  upsert: PaymentAccountUpsertWithoutPaytmInput
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountUpdateOneWithoutCreditcardInput {
-  create: PaymentAccountCreateWithoutCreditcardInput
-  update: PaymentAccountUpdateWithoutCreditcardDataInput
-  upsert: PaymentAccountUpsertWithoutCreditcardInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountUpdateOneWithoutDebitcardInput {
-  create: PaymentAccountCreateWithoutDebitcardInput
-  update: PaymentAccountUpdateWithoutDebitcardDataInput
-  upsert: PaymentAccountUpsertWithoutDebitcardInput
-  delete: Boolean
-  disconnect: Boolean
-  connect: PaymentAccountWhereUniqueInput
-}
-
-input PaymentAccountUpdateWithoutCreditcardDataInput {
-  type: PAYMENT_PROVIDER
-  user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountUpdateWithoutDebitcardDataInput {
-  type: PAYMENT_PROVIDER
-  user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-}
-
 input PaymentAccountUpdateWithoutPaymentsDataInput {
   type: PAYMENT_PROVIDER
   user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountUpdateWithoutPaypalDataInput {
-  type: PAYMENT_PROVIDER
-  user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
-}
-
-input PaymentAccountUpdateWithoutPaytmDataInput {
-  type: PAYMENT_PROVIDER
-  user: UserUpdateOneRequiredWithoutPaymentAccountInput
-  payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationUpdateOneInput
+  paytm: PaytmInformationUpdateOneInput
+  creditcard: CreditCardInformationUpdateOneInput
+  debitcard: DebitCardInformationUpdateOneInput
 }
 
 input PaymentAccountUpdateWithoutUserDataInput {
   type: PAYMENT_PROVIDER
   payments: PaymentUpdateManyWithoutPaymentMethodInput
-  paypal: PaypalInformationUpdateOneWithoutPaymentAccountInput
-  paytm: PaytmInformationUpdateOneWithoutPaymentAccountInput
-  creditcard: CreditCardInformationUpdateOneWithoutPaymentAccountInput
-  debitcard: DebitCardInformationUpdateOneWithoutPaymentAccountInput
+  paypal: PaypalInformationUpdateOneInput
+  paytm: PaytmInformationUpdateOneInput
+  creditcard: CreditCardInformationUpdateOneInput
+  debitcard: DebitCardInformationUpdateOneInput
 }
 
 input PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
@@ -3683,29 +3399,9 @@ input PaymentAccountUpdateWithWhereUniqueWithoutUserInput {
   data: PaymentAccountUpdateWithoutUserDataInput!
 }
 
-input PaymentAccountUpsertWithoutCreditcardInput {
-  update: PaymentAccountUpdateWithoutCreditcardDataInput!
-  create: PaymentAccountCreateWithoutCreditcardInput!
-}
-
-input PaymentAccountUpsertWithoutDebitcardInput {
-  update: PaymentAccountUpdateWithoutDebitcardDataInput!
-  create: PaymentAccountCreateWithoutDebitcardInput!
-}
-
 input PaymentAccountUpsertWithoutPaymentsInput {
   update: PaymentAccountUpdateWithoutPaymentsDataInput!
   create: PaymentAccountCreateWithoutPaymentsInput!
-}
-
-input PaymentAccountUpsertWithoutPaypalInput {
-  update: PaymentAccountUpdateWithoutPaypalDataInput!
-  create: PaymentAccountCreateWithoutPaypalInput!
-}
-
-input PaymentAccountUpsertWithoutPaytmInput {
-  update: PaymentAccountUpdateWithoutPaytmDataInput!
-  create: PaymentAccountCreateWithoutPaytmInput!
 }
 
 input PaymentAccountUpsertWithWhereUniqueWithoutUserInput {
@@ -3932,12 +3628,10 @@ input PaymentUpdateManyWithWhereNestedInput {
   data: PaymentUpdateManyDataInput!
 }
 
-input PaymentUpdateOneWithoutOrderInput {
+input PaymentUpdateOneRequiredWithoutOrderInput {
   create: PaymentCreateWithoutOrderInput
   update: PaymentUpdateWithoutOrderDataInput
   upsert: PaymentUpsertWithoutOrderInput
-  delete: Boolean
-  disconnect: Boolean
   connect: PaymentWhereUniqueInput
 }
 
@@ -4033,7 +3727,6 @@ type PaypalInformation {
   id: ID!
   createdAt: DateTime!
   email: String!
-  paymentAccount: PaymentAccount!
 }
 
 type PaypalInformationConnection {
@@ -4045,17 +3738,11 @@ type PaypalInformationConnection {
 input PaypalInformationCreateInput {
   id: ID
   email: String!
-  paymentAccount: PaymentAccountCreateOneWithoutPaypalInput!
 }
 
-input PaypalInformationCreateOneWithoutPaymentAccountInput {
-  create: PaypalInformationCreateWithoutPaymentAccountInput
+input PaypalInformationCreateOneInput {
+  create: PaypalInformationCreateInput
   connect: PaypalInformationWhereUniqueInput
-}
-
-input PaypalInformationCreateWithoutPaymentAccountInput {
-  id: ID
-  email: String!
 }
 
 type PaypalInformationEdge {
@@ -4096,31 +3783,30 @@ input PaypalInformationSubscriptionWhereInput {
   NOT: [PaypalInformationSubscriptionWhereInput!]
 }
 
+input PaypalInformationUpdateDataInput {
+  email: String
+}
+
 input PaypalInformationUpdateInput {
   email: String
-  paymentAccount: PaymentAccountUpdateOneRequiredWithoutPaypalInput
 }
 
 input PaypalInformationUpdateManyMutationInput {
   email: String
 }
 
-input PaypalInformationUpdateOneWithoutPaymentAccountInput {
-  create: PaypalInformationCreateWithoutPaymentAccountInput
-  update: PaypalInformationUpdateWithoutPaymentAccountDataInput
-  upsert: PaypalInformationUpsertWithoutPaymentAccountInput
+input PaypalInformationUpdateOneInput {
+  create: PaypalInformationCreateInput
+  update: PaypalInformationUpdateDataInput
+  upsert: PaypalInformationUpsertNestedInput
   delete: Boolean
   disconnect: Boolean
   connect: PaypalInformationWhereUniqueInput
 }
 
-input PaypalInformationUpdateWithoutPaymentAccountDataInput {
-  email: String
-}
-
-input PaypalInformationUpsertWithoutPaymentAccountInput {
-  update: PaypalInformationUpdateWithoutPaymentAccountDataInput!
-  create: PaypalInformationCreateWithoutPaymentAccountInput!
+input PaypalInformationUpsertNestedInput {
+  update: PaypalInformationUpdateDataInput!
+  create: PaypalInformationCreateInput!
 }
 
 input PaypalInformationWhereInput {
@@ -4160,7 +3846,6 @@ input PaypalInformationWhereInput {
   email_not_starts_with: String
   email_ends_with: String
   email_not_ends_with: String
-  paymentAccount: PaymentAccountWhereInput
   AND: [PaypalInformationWhereInput!]
   OR: [PaypalInformationWhereInput!]
   NOT: [PaypalInformationWhereInput!]
@@ -4174,7 +3859,6 @@ type PaytmInformation {
   id: ID!
   createdAt: DateTime!
   phone: String!
-  paymentAccount: PaymentAccount!
 }
 
 type PaytmInformationConnection {
@@ -4186,17 +3870,11 @@ type PaytmInformationConnection {
 input PaytmInformationCreateInput {
   id: ID
   phone: String!
-  paymentAccount: PaymentAccountCreateOneWithoutPaytmInput!
 }
 
-input PaytmInformationCreateOneWithoutPaymentAccountInput {
-  create: PaytmInformationCreateWithoutPaymentAccountInput
+input PaytmInformationCreateOneInput {
+  create: PaytmInformationCreateInput
   connect: PaytmInformationWhereUniqueInput
-}
-
-input PaytmInformationCreateWithoutPaymentAccountInput {
-  id: ID
-  phone: String!
 }
 
 type PaytmInformationEdge {
@@ -4237,31 +3915,30 @@ input PaytmInformationSubscriptionWhereInput {
   NOT: [PaytmInformationSubscriptionWhereInput!]
 }
 
+input PaytmInformationUpdateDataInput {
+  phone: String
+}
+
 input PaytmInformationUpdateInput {
   phone: String
-  paymentAccount: PaymentAccountUpdateOneRequiredWithoutPaytmInput
 }
 
 input PaytmInformationUpdateManyMutationInput {
   phone: String
 }
 
-input PaytmInformationUpdateOneWithoutPaymentAccountInput {
-  create: PaytmInformationCreateWithoutPaymentAccountInput
-  update: PaytmInformationUpdateWithoutPaymentAccountDataInput
-  upsert: PaytmInformationUpsertWithoutPaymentAccountInput
+input PaytmInformationUpdateOneInput {
+  create: PaytmInformationCreateInput
+  update: PaytmInformationUpdateDataInput
+  upsert: PaytmInformationUpsertNestedInput
   delete: Boolean
   disconnect: Boolean
   connect: PaytmInformationWhereUniqueInput
 }
 
-input PaytmInformationUpdateWithoutPaymentAccountDataInput {
-  phone: String
-}
-
-input PaytmInformationUpsertWithoutPaymentAccountInput {
-  update: PaytmInformationUpdateWithoutPaymentAccountDataInput!
-  create: PaytmInformationCreateWithoutPaymentAccountInput!
+input PaytmInformationUpsertNestedInput {
+  update: PaytmInformationUpdateDataInput!
+  create: PaytmInformationCreateInput!
 }
 
 input PaytmInformationWhereInput {
@@ -4301,7 +3978,6 @@ input PaytmInformationWhereInput {
   phone_not_starts_with: String
   phone_ends_with: String
   phone_not_ends_with: String
-  paymentAccount: PaymentAccountWhereInput
   AND: [PaytmInformationWhereInput!]
   OR: [PaytmInformationWhereInput!]
   NOT: [PaytmInformationWhereInput!]
@@ -5923,7 +5599,6 @@ type User {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean!
   ownedRestaurant(where: RestaurantWhereInput, orderBy: RestaurantOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Restaurant!]
   location(where: LocationWhereInput, orderBy: LocationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Location!]
   orders(where: OrderWhereInput, orderBy: OrderOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Order!]
@@ -5932,7 +5607,7 @@ type User {
   receivedMessages(where: MessageWhereInput, orderBy: MessageOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Message!]
   notifications(where: NotificationWhereInput, orderBy: NotificationOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Notification!]
   profilePicture: Picture
-  hostingExperiences(where: ExperienceWhereInput, orderBy: ExperienceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Experience!]
+  experiences(where: ExperienceWhereInput, orderBy: ExperienceOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Experience!]
   accountType: UserType
   uid: String!
 }
@@ -5949,7 +5624,6 @@ input UserCreateInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantCreateManyInput
   location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
@@ -5958,13 +5632,13 @@ input UserCreateInput {
   receivedMessages: MessageCreateManyWithoutToInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
   accountType: UserType
   uid: String!
 }
 
-input UserCreateOneWithoutHostingExperiencesInput {
-  create: UserCreateWithoutHostingExperiencesInput
+input UserCreateOneWithoutExperiencesInput {
+  create: UserCreateWithoutExperiencesInput
   connect: UserWhereUniqueInput
 }
 
@@ -5993,13 +5667,12 @@ input UserCreateOneWithoutSentMessagesInput {
   connect: UserWhereUniqueInput
 }
 
-input UserCreateWithoutHostingExperiencesInput {
+input UserCreateWithoutExperiencesInput {
   id: ID
   displayName: String!
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantCreateManyInput
   location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
@@ -6018,7 +5691,6 @@ input UserCreateWithoutNotificationsInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantCreateManyInput
   location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
@@ -6026,7 +5698,7 @@ input UserCreateWithoutNotificationsInput {
   sentMessages: MessageCreateManyWithoutFromInput
   receivedMessages: MessageCreateManyWithoutToInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
   accountType: UserType
   uid: String!
 }
@@ -6037,7 +5709,6 @@ input UserCreateWithoutOrdersInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantCreateManyInput
   location: LocationCreateManyInput
   paymentAccount: PaymentAccountCreateManyWithoutUserInput
@@ -6045,7 +5716,7 @@ input UserCreateWithoutOrdersInput {
   receivedMessages: MessageCreateManyWithoutToInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
   accountType: UserType
   uid: String!
 }
@@ -6056,7 +5727,6 @@ input UserCreateWithoutPaymentAccountInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantCreateManyInput
   location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
@@ -6064,7 +5734,7 @@ input UserCreateWithoutPaymentAccountInput {
   receivedMessages: MessageCreateManyWithoutToInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
   accountType: UserType
   uid: String!
 }
@@ -6075,7 +5745,6 @@ input UserCreateWithoutReceivedMessagesInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantCreateManyInput
   location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
@@ -6083,7 +5752,7 @@ input UserCreateWithoutReceivedMessagesInput {
   sentMessages: MessageCreateManyWithoutFromInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
   accountType: UserType
   uid: String!
 }
@@ -6094,7 +5763,6 @@ input UserCreateWithoutSentMessagesInput {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantCreateManyInput
   location: LocationCreateManyInput
   orders: OrderCreateManyWithoutBookeeInput
@@ -6102,7 +5770,7 @@ input UserCreateWithoutSentMessagesInput {
   receivedMessages: MessageCreateManyWithoutToInput
   notifications: NotificationCreateManyWithoutUserInput
   profilePicture: PictureCreateOneInput
-  hostingExperiences: ExperienceCreateManyWithoutHostInput
+  experiences: ExperienceCreateManyWithoutHostInput
   accountType: UserType
   uid: String!
 }
@@ -6127,8 +5795,6 @@ enum UserOrderByInput {
   responseRate_DESC
   responseTime_ASC
   responseTime_DESC
-  isSuperHost_ASC
-  isSuperHost_DESC
   accountType_ASC
   accountType_DESC
   uid_ASC
@@ -6143,7 +5809,6 @@ type UserPreviousValues {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean!
   accountType: UserType
   uid: String!
 }
@@ -6177,7 +5842,6 @@ input UserUpdateInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantUpdateManyInput
   location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
@@ -6186,7 +5850,7 @@ input UserUpdateInput {
   receivedMessages: MessageUpdateManyWithoutToInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
   accountType: UserType
   uid: String
 }
@@ -6196,15 +5860,14 @@ input UserUpdateManyMutationInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   accountType: UserType
   uid: String
 }
 
-input UserUpdateOneRequiredWithoutHostingExperiencesInput {
-  create: UserCreateWithoutHostingExperiencesInput
-  update: UserUpdateWithoutHostingExperiencesDataInput
-  upsert: UserUpsertWithoutHostingExperiencesInput
+input UserUpdateOneRequiredWithoutExperiencesInput {
+  create: UserCreateWithoutExperiencesInput
+  update: UserUpdateWithoutExperiencesDataInput
+  upsert: UserUpsertWithoutExperiencesInput
   connect: UserWhereUniqueInput
 }
 
@@ -6243,12 +5906,11 @@ input UserUpdateOneRequiredWithoutSentMessagesInput {
   connect: UserWhereUniqueInput
 }
 
-input UserUpdateWithoutHostingExperiencesDataInput {
+input UserUpdateWithoutExperiencesDataInput {
   displayName: String
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantUpdateManyInput
   location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
@@ -6266,7 +5928,6 @@ input UserUpdateWithoutNotificationsDataInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantUpdateManyInput
   location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
@@ -6274,7 +5935,7 @@ input UserUpdateWithoutNotificationsDataInput {
   sentMessages: MessageUpdateManyWithoutFromInput
   receivedMessages: MessageUpdateManyWithoutToInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
   accountType: UserType
   uid: String
 }
@@ -6284,7 +5945,6 @@ input UserUpdateWithoutOrdersDataInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantUpdateManyInput
   location: LocationUpdateManyInput
   paymentAccount: PaymentAccountUpdateManyWithoutUserInput
@@ -6292,7 +5952,7 @@ input UserUpdateWithoutOrdersDataInput {
   receivedMessages: MessageUpdateManyWithoutToInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
   accountType: UserType
   uid: String
 }
@@ -6302,7 +5962,6 @@ input UserUpdateWithoutPaymentAccountDataInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantUpdateManyInput
   location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
@@ -6310,7 +5969,7 @@ input UserUpdateWithoutPaymentAccountDataInput {
   receivedMessages: MessageUpdateManyWithoutToInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
   accountType: UserType
   uid: String
 }
@@ -6320,7 +5979,6 @@ input UserUpdateWithoutReceivedMessagesDataInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantUpdateManyInput
   location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
@@ -6328,7 +5986,7 @@ input UserUpdateWithoutReceivedMessagesDataInput {
   sentMessages: MessageUpdateManyWithoutFromInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
   accountType: UserType
   uid: String
 }
@@ -6338,7 +5996,6 @@ input UserUpdateWithoutSentMessagesDataInput {
   phoneNumber: String
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean
   ownedRestaurant: RestaurantUpdateManyInput
   location: LocationUpdateManyInput
   orders: OrderUpdateManyWithoutBookeeInput
@@ -6346,14 +6003,14 @@ input UserUpdateWithoutSentMessagesDataInput {
   receivedMessages: MessageUpdateManyWithoutToInput
   notifications: NotificationUpdateManyWithoutUserInput
   profilePicture: PictureUpdateOneInput
-  hostingExperiences: ExperienceUpdateManyWithoutHostInput
+  experiences: ExperienceUpdateManyWithoutHostInput
   accountType: UserType
   uid: String
 }
 
-input UserUpsertWithoutHostingExperiencesInput {
-  update: UserUpdateWithoutHostingExperiencesDataInput!
-  create: UserCreateWithoutHostingExperiencesInput!
+input UserUpsertWithoutExperiencesInput {
+  update: UserUpdateWithoutExperiencesDataInput!
+  create: UserCreateWithoutExperiencesInput!
 }
 
 input UserUpsertWithoutNotificationsInput {
@@ -6456,8 +6113,6 @@ input UserWhereInput {
   responseTime_lte: Int
   responseTime_gt: Int
   responseTime_gte: Int
-  isSuperHost: Boolean
-  isSuperHost_not: Boolean
   ownedRestaurant_every: RestaurantWhereInput
   ownedRestaurant_some: RestaurantWhereInput
   ownedRestaurant_none: RestaurantWhereInput
@@ -6480,9 +6135,9 @@ input UserWhereInput {
   notifications_some: NotificationWhereInput
   notifications_none: NotificationWhereInput
   profilePicture: PictureWhereInput
-  hostingExperiences_every: ExperienceWhereInput
-  hostingExperiences_some: ExperienceWhereInput
-  hostingExperiences_none: ExperienceWhereInput
+  experiences_every: ExperienceWhereInput
+  experiences_some: ExperienceWhereInput
+  experiences_none: ExperienceWhereInput
   accountType: UserType
   accountType_not: UserType
   accountType_in: [UserType!]

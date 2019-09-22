@@ -25,7 +25,6 @@ export const DebitCardInformation: DebitCardInformationResolvers.Type<TypeMap> =
   firstName: parent => parent.firstName,
   id: parent => parent.id,
   lastName: parent => parent.lastName,
-  paymentAccount: (parent, _args, ctx) => ctx.db.creditCardInformation({ id: parent.id }).paymentAccount(),
   postalCode: parent => parent.postalCode,
   securityCode: parent => parent.securityCode
 };
