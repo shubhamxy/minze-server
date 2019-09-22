@@ -1,4 +1,4 @@
-import { admin } from '../src/services/firebase';
+import { admin } from "../src/services/firebase";
 
 function listAllUsers(nextPageToken?: string) {
   // List batch of users, 1000 at a time.
@@ -7,7 +7,7 @@ function listAllUsers(nextPageToken?: string) {
     .listUsers(1000, nextPageToken)
     .then(function(listUsersResult) {
       listUsersResult.users.forEach(function(userRecord) {
-        console.log('user', userRecord.toJSON());
+        console.log("user", userRecord.toJSON());
       });
       if (listUsersResult.pageToken) {
         // List next batch of users.
@@ -15,7 +15,7 @@ function listAllUsers(nextPageToken?: string) {
       }
     })
     .catch(function(error) {
-      console.log('Error listing users:', error);
+      console.log("Error listing users:", error);
     });
 }
 // Start listing users from the beginning, 1000 at a time.

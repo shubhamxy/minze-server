@@ -1,5 +1,5 @@
-import { NeighbourhoodResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
+import { NeighbourhoodResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
 
 export interface NeighbourhoodParent {
   id: string;

@@ -1,9 +1,9 @@
-import { CitySubscriptionPayloadResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
-import { CityParent } from './City';
-import { CityPreviousValuesParent } from './CityPreviousValues';
+import { CitySubscriptionPayloadResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
+import { CityParent } from "./City";
+import { CityPreviousValuesParent } from "./CityPreviousValues";
 
-export type MutationType = 'CREATED' | 'UPDATED' | 'DELETED';
+export type MutationType = "CREATED" | "UPDATED" | "DELETED";
 
 export interface CitySubscriptionPayloadParent {
   mutation: MutationType;

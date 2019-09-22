@@ -1,13 +1,13 @@
-import { UserResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
-import { OrderParent } from './Order';
-import { ExperienceParent } from './Experience';
-import { LocationParent } from './Location';
-import { NotificationParent } from './Notification';
-import { RestaurantParent } from './Restaurant';
-import { PaymentAccountParent } from './PaymentAccount';
-import { PictureParent } from './Picture';
-import { MessageParent } from './Message';
+import { UserResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
+import { OrderParent } from "./Order";
+import { ExperienceParent } from "./Experience";
+import { LocationParent } from "./Location";
+import { NotificationParent } from "./Notification";
+import { RestaurantParent } from "./Restaurant";
+import { PaymentAccountParent } from "./PaymentAccount";
+import { PictureParent } from "./Picture";
+import { MessageParent } from "./Message";
 
 export interface UserParent {
   orders: OrderParent[];

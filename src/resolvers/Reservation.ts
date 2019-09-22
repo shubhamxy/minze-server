@@ -1,5 +1,5 @@
-import { ReservationResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
+import { ReservationResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
 
 export interface ReservationParent {
   id: string;

@@ -1,7 +1,7 @@
-import { PaymentResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
-import { OrderParent } from './Order';
-import { PaymentAccountParent } from './PaymentAccount';
+import { PaymentResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
+import { OrderParent } from "./Order";
+import { PaymentAccountParent } from "./PaymentAccount";
 
 export interface PaymentParent {
   order: OrderParent;

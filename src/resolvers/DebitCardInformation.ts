@@ -1,6 +1,6 @@
-import { DebitCardInformationResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
-import { PaymentAccountParent } from './PaymentAccount';
+import { DebitCardInformationResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
+import { PaymentAccountParent } from "./PaymentAccount";
 
 export interface DebitCardInformationParent {
   cardNumber: string;

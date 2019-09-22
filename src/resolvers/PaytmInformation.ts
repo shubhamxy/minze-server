@@ -1,6 +1,6 @@
-import { PaytmInformationResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
-import { PaymentAccountParent } from './PaymentAccount';
+import { PaytmInformationResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
+import { PaymentAccountParent } from "./PaymentAccount";
 
 export interface PaytmInformationParent {
   createdAt: string;

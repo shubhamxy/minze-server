@@ -1,14 +1,14 @@
-import * as jwt from 'jsonwebtoken';
-import config from '../config';
+import * as jwt from "jsonwebtoken";
+import config from "../config";
 
 interface Context {
   request: any;
 }
 
 export function getUserId(context: Context) {
-  const Authorization = context.request.get('Authorization');
+  const Authorization = context.request.get("Authorization");
   if (Authorization) {
-    const token = Authorization.replace('Bearer ', '');
+    const token = Authorization.replace("Bearer ", "");
     const { userId } = jwt.verify(token, config.ENV_VARS.APP_SECRET) as {
       userId: string;
     };
@@ -20,6 +20,6 @@ export function getUserId(context: Context) {
 
 export class AuthError extends Error {
   constructor() {
-    super('Not authorized');
+    super("Not authorized");
   }
 }

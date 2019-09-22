@@ -1,37 +1,37 @@
-import dotenv from 'dotenv';
-import { resolve } from 'path';
-import { runtimeEnvTest } from '../utils/runtimetests';
+import dotenv from "dotenv";
+import { resolve } from "path";
+import { runtimeEnvTest } from "../utils/runtimetests";
 
 const CONFIG = ((env = process.env.NODE_ENV) => {
-  if (env == 'production') {
+  if (env == "production") {
     return {
       DEBUG: false,
-      LOGGING: 'File',
-      APP_ENV: 'production'
+      LOGGING: "File",
+      APP_ENV: "production"
     };
   }
   return {
     DEBUG: true,
-    LOGGING: 'Console',
-    APP_ENV: 'development'
+    LOGGING: "Console",
+    APP_ENV: "development"
   };
 })();
 
 dotenv.config({
-  path: resolve(__dirname, '../../.env')
+  path: resolve(__dirname, "../../.env")
 });
 
 const ENV_VARS = {
-  NODE_ENV: '',
-  APP_SECRET: '',
-  PORT: '',
-  PRISMA_ENDPOINT: '',
-  PRISMA_SECRET: '',
-  PRISMA_MANAGEMENT_API_SECRET: ''
+  NODE_ENV: "",
+  APP_SECRET: "",
+  PORT: "",
+  PRISMA_ENDPOINT: "",
+  PRISMA_SECRET: "",
+  PRISMA_MANAGEMENT_API_SECRET: ""
 };
 
 Object.keys(ENV_VARS).forEach((key: string) => {
-  ENV_VARS[key] = process.env[key] || '';
+  ENV_VARS[key] = process.env[key] || "";
 });
 
 runtimeEnvTest(ENV_VARS);
