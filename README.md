@@ -1,14 +1,12 @@
 # Minze Server
- <a href="https://github.com/shubhamxy/minze-server/actions">
-  <img
-      src="https://github.com/shubhamxy/minze-server/workflows/CI/badge.svg" />
-  </a>
+![Heroku](https://heroku-badge.herokuapp.com/?app=minze-server)
 
-Server code for minze application.
+> [Graph API Playground](https://minze-server.herokuapp.com/playground)
 
-> API Playground : https://minze-server.herokuapp.com/playground 
-## descriptions
-- TODO 
+- Server code for minze application.
+
+## **Descriptions**
+- TODO
 
 ## **Technology Used**
 - Typescript
