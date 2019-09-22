@@ -10,10 +10,9 @@ Server code for minze application.
 
 - TODO
 
-
 ```json
 {
-  "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjazBzYWdmd2swMDV6MDc4MTAyMDl2Y2IwIiwiaWF0IjoxNTY4OTkzODk4fQ.YNJEAhWgX-pyjHATVrv6xYMOEDQUK5xK2jYvfIKKSWk"
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjazBzYWdmd2swMDV6MDc4MTAyMDl2Y2IwIiwiaWF0IjoxNTY4OTkzODk4fQ.YNJEAhWgX-pyjHATVrv6xYMOEDQUK5xK2jYvfIKKSWk"
 }
 ```
 

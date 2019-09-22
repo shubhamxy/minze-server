@@ -10,5 +10,5 @@ export interface ExperienceCategoryParent {
 export const ExperienceCategory: ExperienceCategoryResolvers.Type<TypeMap> = {
   id: parent => parent.id,
   mainColor: parent => parent.mainColor,
-  name: parent => parent.name,
+  name: parent => parent.name
 };

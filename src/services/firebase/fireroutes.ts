@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { admin } from '.';
 import * as jwt from 'jsonwebtoken';
-import CONFIG from '../../config'
+import CONFIG from '../../config';
 import { prisma } from '../../generated/prisma-client';
 import config from '../../config';
 export default [
@@ -17,7 +17,7 @@ export default [
             throw new Error('Invalid Credentials');
           }
           const token = jwt.sign({ userId: user.id }, config.ENV_VARS.APP_SECRET as jwt.Secret);
-          
+
           res.send({
             id: user.id,
             token

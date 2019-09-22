@@ -29,7 +29,7 @@ export interface UserParent {
   uid: string;
 }
 
-export const User:  UserResolvers.Type<TypeMap> = {
+export const User: UserResolvers.Type<TypeMap> = {
   orders: (parent, _args, ctx) => ctx.db.user({ id: parent.id }).orders(),
   createdAt: parent => parent.createdAt,
   displayName: parent => parent.displayName,

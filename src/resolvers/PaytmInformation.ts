@@ -12,5 +12,5 @@ export interface PaytmInformationParent {
 export const PaytmInformation: PaytmInformationResolvers.Type<TypeMap> = {
   createdAt: parent => parent.createdAt,
   mobile: parent => parent.mobile,
-  id: parent => parent.id,
+  id: parent => parent.id
 };

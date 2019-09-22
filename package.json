@@ -22,7 +22,7 @@
     "prettier:js": "prettier --write {.,**}/*.js",
     "prettier:json": "prettier --write {.,**}/*.json",
     "prettier:md": "prettier --write {.,**}/*.md",
-    "prettier:ts": "prettier --write .ts",
+    "prettier:ts": "prettier --write {.,**}/*.ts",
     "prettier": "npm-run-all prettier:*",
     "postinstall": "./scripts/post-install.sh; npx tsc",
     "db:deploy": "cd prisma; prisma deploy",
