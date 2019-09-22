@@ -1,8 +1,8 @@
-name: CI
+name: MainCI
 on:
   push:
     branches:
-      # - master       # Push events on master branch --already building on heroku deployment
+      - master         # Push events on master branch --already building on heroku deployment
       - 'releases/*'   # Push events to branches matching refs/heads/releases/*
       - '!refs/pull/*' # Push events on branches that do not match refs/pull/*
   pull_request:
@@ -29,27 +29,3 @@ jobs:
       run: |
         yarn install
         yarn run test
-
-  # macOS:
-  #   name: macOS IOS
-  #   runs-on: macos-latest
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@master
-
-  #     - name: Set Node.js 10.x
-  #       uses: actions/setup-node@master
-  #       with:
-  #         version: 10.x
-
-  #     - name: npm install
-  #       run: npm install
-
-  #     - name: Bootstrap
-  #       run: npm run bootstrap
-
-  #     - name: Compile
-  #       run: npm run build
-
-  #     - name: npm test
-  #       run: npm test
