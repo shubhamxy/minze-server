@@ -54,7 +54,7 @@ echo -e "====================${NO_COLOR}"
 
 if [[ $MODE == "pack" ]]; then
   # Select files to put in the archive
-  SECRETS_TO_PACK=".env .env.production prisma/.env src/keys/service-account.json"
+  SECRETS_TO_PACK=".env prisma/.env src/keys/service-account.json"
   # Create archive
   tar -cvzf $FILE_ROOT.tar.gz $SECRETS_TO_PACK
   # Encrypt archive
