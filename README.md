@@ -4,6 +4,8 @@
 
 ![Heroku](https://heroku-badge.herokuapp.com/?app=minze-server)
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f8d16537be3d419083f4dc388f3f7601)](https://www.codacy.com/manual/shubhamxy/minze-server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=shubhamxy/minze-server&amp;utm_campaign=Badge_Grade)
+
 Server code for minze application.
 
 ## **Descriptions**

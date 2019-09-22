@@ -16,10 +16,6 @@ engines:
    enabled: true
    exclude_paths:
      - config/engines.yml
-languages:
-  css:
-    extensions:
-      - '-css.resource'
 exclude_paths:
   - 'logs/**'
   - 'benchmarks/**/*'
