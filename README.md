@@ -4,21 +4,22 @@
 
 ![Heroku](https://heroku-badge.herokuapp.com/?app=minze-server)
 
-[Use this token for testing](https://minze-server.herokuapp.com/testing)
-
-[Playground](https://minze-server.herokuapp.com/playground)
-
-```
-{
-  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjanZsZGNrNncwMGNlMDc3N28xY2ZhY3JsIiwiaWF0IjoxNTY5MTM5NjYxfQ._QRBHmelIIJn1wn6GJO3bkBCAO0aPnVsNrXZHmi9e6U"
-}
-```
-
-- Server code for minze application.
+Server code for minze application.
 
 ## **Descriptions**
 
 - TODO
+
+
+```json
+{
+  "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjazBzYWdmd2swMDV6MDc4MTAyMDl2Y2IwIiwiaWF0IjoxNTY4OTkzODk4fQ.YNJEAhWgX-pyjHATVrv6xYMOEDQUK5xK2jYvfIKKSWk"
+}
+```
+
+[Use this token for testing](https://minze-server.herokuapp.com/testing)
+
+[Playground](https://minze-server.herokuapp.com/playground)
 
 ## **Technology Used**
 
