@@ -1,12 +1,12 @@
-import { LocationResolvers } from '../generated/resolvers'
-import { TypeMap } from './types/TypeMap'
+import { LocationResolvers } from '../generated/resolvers';
+import { TypeMap } from './types/TypeMap';
 
 export interface LocationParent {
-  id: string
-  lat: number
-  lng: number
-  address: string
-  directions: string
+  id: string;
+  lat: number;
+  lng: number;
+  address: string;
+  directions: string;
 }
 
 export const Location: LocationResolvers.Type<TypeMap> = {
@@ -14,5 +14,5 @@ export const Location: LocationResolvers.Type<TypeMap> = {
   lat: parent => parent.lat,
   lng: parent => parent.lng,
   address: parent => parent.address,
-  directions: parent => parent.directions,
-}
+  directions: parent => parent.directions
+};

@@ -4,7 +4,7 @@
 # Ignore built files except build/index.js
 build/*
 !build/index.js
-src/graphql/generated/*
+src/generated/*
 dist
 coverage
 node_modules

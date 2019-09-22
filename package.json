@@ -25,6 +25,8 @@
     "resolvers": "npm-run-all res:interfaces res:scaffold",
     "res:interfaces": "graphql-resolver-codegen interfaces -s src/schema.graphql -o ./src/generated/resolvers.ts",
     "res:scaffold": "graphql-resolver-codegen scaffold -s src/schema.graphql -o ./src/resolvers/ -i ../generated/resolvers",
+    "secrets:pack": "./scripts/secrets.sh -m pack",
+    "secrets:unpack": "./scripts/secrets.sh",
     "start:dev": "NODE_ENV=development tsc-watch --onSuccess \"node ./dist/index.js\"",
     "start:local": "NODE_ENV=local tsc-watch --onSuccess \"node ./dist/index.js\"",
     "start:prod": "NODE_ENV=production tsc-watch --onSuccess \"node ./dist/index.js\"",

@@ -7,12 +7,12 @@ import { RestaurantParent } from './Restaurant';
 import { NeighbourhoodParent } from './Neighbourhood';
 
 export interface QueryParent {
-  topExperiences: Promise<RestaurantParent[]>
-  topRestaurants: Promise<RestaurantParent[]>
-  topReservations: Promise<RestaurantParent[]>
-  featuredDestinations: [NeighbourhoodParent]
-  viewer: ViewerParent
-  myLocation: LocationParent
+  topExperiences: Promise<RestaurantParent[]>;
+  topRestaurants: Promise<RestaurantParent[]>;
+  topReservations: Promise<RestaurantParent[]>;
+  featuredDestinations: [NeighbourhoodParent];
+  viewer: ViewerParent;
+  myLocation: LocationParent;
 }
 
 export const Query: QueryResolvers.Type<TypeMap | any> = {
@@ -26,7 +26,7 @@ export const Query: QueryResolvers.Type<TypeMap | any> = {
         AND: [{ pricing: { perNight_gte: min } }, { pricing: { perNight_lte: max } }]
       }
     }),
-  topReservations: (_parent, _args, ctx) => ctx.db.restaurants({ orderBy: "avgRating_DESC" }),
+  topReservations: (_parent, _args, ctx) => ctx.db.restaurants({ orderBy: 'avgRating_DESC' }),
   featuredDestinations: (_parent, _args, ctx) =>
     ctx.db.neighbourhoods({
       orderBy: 'popularity_DESC',

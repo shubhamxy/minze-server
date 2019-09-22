@@ -1,5 +1,5 @@
-import { PricingResolvers } from '../generated/resolvers'
-import { TypeMap } from './types/TypeMap'
+import { PricingResolvers } from '../generated/resolvers';
+import { TypeMap } from './types/TypeMap';
 
 export interface PricingParent {
   id: string;
@@ -22,5 +22,5 @@ export const Pricing: PricingResolvers.Type<TypeMap> = {
   monthlyDiscount: parent => parent.monthlyDiscount || null,
   smartPricing: parent => parent.smartPricing,
   weekendPricing: parent => parent.weekendPricing || null,
-  weeklyDiscount: parent => parent.weeklyDiscount || null,
-}
+  weeklyDiscount: parent => parent.weeklyDiscount || null
+};
