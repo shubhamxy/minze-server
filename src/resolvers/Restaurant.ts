@@ -1,11 +1,11 @@
-import { RestaurantResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
-import { ReviewParent } from './Review';
-import { LocationParent } from './Location';
-import { PoliciesParent } from './Policies';
-import { MenuItemParent } from './MenuItem';
-import { OrderParent } from './Order';
-import { PictureParent } from './Picture';
+import { RestaurantResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
+import { ReviewParent } from "./Review";
+import { LocationParent } from "./Location";
+import { PoliciesParent } from "./Policies";
+import { MenuItemParent } from "./MenuItem";
+import { OrderParent } from "./Order";
+import { PictureParent } from "./Picture";
 
 export interface RestaurantParent {
   id: string;
@@ -28,7 +28,7 @@ export interface RestaurantParent {
 
 export const Restaurant: RestaurantResolvers.Type<TypeMap> = {
   id: parent => parent.id,
-  name: parent => parent.name || '',
+  name: parent => parent.name || "",
   shortDescription: parent => parent.shortDescription,
   description: parent => parent.description,
   slug: parent => parent.slug,

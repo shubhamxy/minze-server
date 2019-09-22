@@ -1,5 +1,5 @@
-import { ExperienceResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
+import { ExperienceResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
 
 export interface ExperienceParent {
   id: string;

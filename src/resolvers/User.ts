@@ -1,21 +1,20 @@
-import { UserResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
-import { OrderParent } from './Order';
-import { ExperienceParent } from './Experience';
-import { LocationParent } from './Location';
-import { NotificationParent } from './Notification';
-import { RestaurantParent } from './Restaurant';
-import { PaymentAccountParent } from './PaymentAccount';
-import { PictureParent } from './Picture';
-import { MessageParent } from './Message';
+import { UserResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
+import { OrderParent } from "./Order";
+import { ExperienceParent } from "./Experience";
+import { LocationParent } from "./Location";
+import { NotificationParent } from "./Notification";
+import { RestaurantParent } from "./Restaurant";
+import { PaymentAccountParent } from "./PaymentAccount";
+import { PictureParent } from "./Picture";
+import { MessageParent } from "./Message";
 
 export interface UserParent {
   orders: OrderParent[];
   createdAt: string;
   displayName: string;
-  hostingExperiences: ExperienceParent[];
+  experiences: ExperienceParent[];
   id: string;
-  isSuperHost: boolean;
   location?: LocationParent;
   notifications: NotificationParent[];
   ownedRestaurants: RestaurantParent[];
@@ -34,10 +33,9 @@ export const User: UserResolvers.Type<TypeMap> = {
   orders: (parent, _args, ctx) => ctx.db.user({ id: parent.id }).orders(),
   createdAt: parent => parent.createdAt,
   displayName: parent => parent.displayName,
-  hostingExperiences: (parent, _args, ctx) => ctx.db.user({ id: parent.id }).hostingExperiences(),
+  experiences: (parent, _args, ctx) => ctx.db.user({ id: parent.id }).experiences(),
   id: parent => parent.id,
   uid: parent => parent.uid,
-  isSuperHost: parent => parent.isSuperHost,
   location: (parent, _args, ctx) => ctx.db.user({ id: parent.id }).location(),
   notifications: (root, _args, ctx) => ctx.db.user({ id: root.id }).notifications(),
   ownedRestaurants: (parent, _args, ctx) => ctx.db.user({ id: parent.id }).ownedRestaurant(),

@@ -1,6 +1,6 @@
-import { AuthPayloadResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
-import { UserParent } from './User';
+import { AuthPayloadResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
+import { UserParent } from "./User";
 
 export interface AuthPayloadParent {
   id: string;

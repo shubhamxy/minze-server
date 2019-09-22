@@ -6,7 +6,6 @@ type User {
   phoneNumber: String!
   responseRate: Float
   responseTime: Int
-  isSuperHost: Boolean! @default(value: false)
   ownedRestaurant: [Restaurant!]!
   location: [Location!]!
   orders: [Order!]!
@@ -15,7 +14,7 @@ type User {
   receivedMessages: [Message!]! @relation(name: "ReceivedMessages")
   notifications: [Notification!]!
   profilePicture: Picture
-  hostingExperiences: [Experience!]!
+  experiences: [Experience!]!
   accountType: UserType @default(value: ADMIN)
   # firebase UID
   uid: String! @unique
@@ -88,7 +87,6 @@ type Location {
   neighbourHood: Neighbourhood
   address: String!
   directions: String!
-  experience: Experience
 }
 
 type Neighbourhood {
@@ -115,10 +113,10 @@ type Picture {
 
 type Experience {
   id: ID! @id
-  category: ExperienceCategory @relation(link: TABLE)
+  category: ExperienceCategory
   title: String!
   host: User!
-  location: Location! @relation(link: TABLE)
+  location: Location!
   pricePerPerson: Int!
   reviews: [Review!]!
   preview: Picture!
@@ -129,7 +127,6 @@ type ExperienceCategory {
   id: ID! @id
   mainColor: String! @default(value: "#123456")
   name: String!
-  experience: Experience!
 }
 
 type Review {
@@ -153,8 +150,8 @@ type Order {
   bookee: User!
   restaurant: Restaurant!
   startDate: DateTime!
-  endDate: DateTime!
-  payment: Payment
+  endDate: DateTime! 
+  payment: Payment! @relation(link: TABLE)
 }
 
 type Payment {
@@ -163,8 +160,8 @@ type Payment {
   serviceFee: Float!
   restaurantPrice: Float!
   totalPrice: Float!
-  order: Order! @relation(link: TABLE)
-  paymentMethod: PaymentAccount! @relation(link: TABLE)
+  order: Order!
+  paymentMethod: PaymentAccount!
 }
 
 type PaymentAccount {
@@ -183,14 +180,12 @@ type PaypalInformation {
   id: ID! @id
   createdAt: DateTime! @createdAt
   email: String!
-  paymentAccount: PaymentAccount! @relation(link: TABLE)
 }
 
 type PaytmInformation {
   id: ID! @id
   createdAt: DateTime! @createdAt
   phone: String!
-  paymentAccount: PaymentAccount! @relation(link: TABLE)
 }
 
 type CreditCardInformation {
@@ -204,7 +199,6 @@ type CreditCardInformation {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccount @relation(link: TABLE)
 }
 
 type DebitCardInformation {
@@ -218,7 +212,6 @@ type DebitCardInformation {
   lastName: String!
   postalCode: String!
   country: String!
-  paymentAccount: PaymentAccount @relation(link: TABLE)
 }
 type Message {
   id: ID! @id

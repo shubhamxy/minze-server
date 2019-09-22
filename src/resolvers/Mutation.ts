@@ -1,8 +1,9 @@
-import * as jwt from 'jsonwebtoken';
-import { MutationResolvers } from '../generated/resolvers';
-import { getUserId } from '../utils';
-import { TypeMap } from './types/TypeMap';
-import { admin } from '../services/firebase';
+import * as jwt from "jsonwebtoken";
+import { MutationResolvers } from "../generated/resolvers";
+import { getUserId } from "../utils";
+import { TypeMap } from "./types/TypeMap";
+import { admin } from "../services/firebase";
+import config from "../config";
 
 export interface MutationParent {}
 
@@ -10,16 +11,16 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
   signup: async (_parent, { idToken }, ctx) => {
     const { uid } = await admin.auth().verifyIdToken(idToken);
     const { displayName, phoneNumber } = await admin.auth().getUser(uid);
-    if (!phoneNumber || uid) throw Error('Err');
+    if (!phoneNumber || uid) throw Error("Err");
     const user = await ctx.db.createUser({
       uid,
       displayName: displayName || uid,
       phoneNumber
     });
     if (!user) {
-      throw new Error('Invalid Credentials');
+      throw new Error("Invalid Credentials");
     }
-    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET as jwt.Secret);
+    const token = jwt.sign({ userId: user.id }, config.ENV_VARS.APP_SECRET as jwt.Secret);
     return {
       id: user.id,
       token
@@ -30,10 +31,10 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
     const user = await ctx.db.user({ uid });
 
     if (!user) {
-      throw new Error('Invalid Credentials');
+      throw new Error("Invalid Credentials");
     }
 
-    const token = jwt.sign({ userId: user.id }, process.env.APP_SECRET as jwt.Secret);
+    const token = jwt.sign({ userId: user.id }, config.ENV_VARS.APP_SECRET as jwt.Secret);
 
     return {
       id: user.id,
@@ -41,7 +42,7 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
     };
   },
   addPaymentMethod: () => {
-    throw new Error('Resolver not implemented');
+    throw new Error("Resolver not implemented");
   },
   book: async (_parent, args, ctx) => {
     // function daysBetween(date1: Date, date2: Date): number {
@@ -89,7 +90,8 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
       startDate: args.checkIn,
       endDate: args.checkOut,
       bookee: { connect: { id: userId } },
-      restaurant: { connect: { id: args.restaurantId } }
+      restaurant: { connect: { id: args.restaurantId } },
+      payment: { connect: { id: args.paymentId } }
     });
 
     return { success: true };

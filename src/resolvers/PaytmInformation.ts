@@ -1,6 +1,6 @@
-import { PaytmInformationResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
-import { PaymentAccountParent } from './PaymentAccount';
+import { PaytmInformationResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
+import { PaymentAccountParent } from "./PaymentAccount";
 
 export interface PaytmInformationParent {
   createdAt: string;
@@ -12,6 +12,5 @@ export interface PaytmInformationParent {
 export const PaytmInformation: PaytmInformationResolvers.Type<TypeMap> = {
   createdAt: parent => parent.createdAt,
   mobile: parent => parent.mobile,
-  id: parent => parent.id,
-  paymentAccount: parent => parent.paymentAccount
+  id: parent => parent.id
 };

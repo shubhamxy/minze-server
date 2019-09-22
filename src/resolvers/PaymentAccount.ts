@@ -1,7 +1,7 @@
-import { PaymentAccountResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
+import { PaymentAccountResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
 
-export type PAYMENT_PROVIDER = 'PAYPAL' | 'PAYTM' | 'CREDIT_CARD' | 'DEBIT_CARD';
+export type PAYMENT_PROVIDER = "PAYPAL" | "PAYTM" | "CREDIT_CARD" | "DEBIT_CARD";
 
 export interface PaymentAccountParent {
   id: string;

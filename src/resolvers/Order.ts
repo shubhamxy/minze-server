@@ -1,5 +1,5 @@
-import { OrderResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
+import { OrderResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
 
 export interface OrderParent {
   id: string;

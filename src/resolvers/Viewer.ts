@@ -1,6 +1,6 @@
-import { ViewerResolvers } from '../generated/resolvers';
-import { TypeMap } from './types/TypeMap';
-import { getUserId } from '../utils';
+import { ViewerResolvers } from "../generated/resolvers";
+import { TypeMap } from "./types/TypeMap";
+import { getUserId } from "../utils";
 
 export interface ViewerParent {}
 

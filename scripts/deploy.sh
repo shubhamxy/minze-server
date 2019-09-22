@@ -18,11 +18,9 @@ check_environment(){
 }
 
 DEPLOY_TYPE='soft'
-while getopts ":e:o:t:d:m:" opt; do
+while getopts ":e:t:d:m:" opt; do
   case $opt in
     e) APP_ENV="$OPTARG"
-    ;;
-    o) APP_OS="$OPTARG"
     ;;
     t) DEPLOY_TYPE="$OPTARG"
     ;;

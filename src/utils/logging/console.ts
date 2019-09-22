@@ -1,4 +1,4 @@
-['log', 'info', 'warn', 'error'].forEach(function(method) {
+["log", "info", "warn", "error"].forEach(function(method) {
   //@ts-ignore
   let oldMethod = console[method].bind(console);
   // @ts-ignore
