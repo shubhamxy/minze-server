@@ -17,8 +17,10 @@
     "deploy": "./scripts/deploy.sh",
     "kill-process": "docker kill (docker ps -aq); docker rm (docker ps -aq)",
     "lint:fix": "eslint . --ext .ts,js --fix",
-    "lint": "eslint . --ext .ts,js",
     "pm2log": "pm2 logs --raw",
+    "lint-staged": "lint-staged",
+    "lint:ts": "eslint src --fix --ext .js,.ts",
+    "lint": "npm-run-all lint:*",
     "prettier:js": "prettier --write {.,**}/*.js",
     "prettier:json": "prettier --write {.,**}/*.json",
     "prettier:md": "prettier --write {.,**}/*.md",
@@ -40,6 +42,24 @@
     "start": "npx pm2 start pm2.yaml --env production",
     "stop": "npx pm2 stop all",
     "test": "npx jest --coverage --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubhamxy/minze-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shubhamxy/minze-server/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "app/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "author": "Shubham Jain <s.shubjain@gmail.com>",
   "license": "ISC",
