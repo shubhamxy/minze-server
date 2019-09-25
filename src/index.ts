@@ -41,7 +41,7 @@ export const options = {
 applyMiddleware(middleware, server.express);
 applyRoutes(routes, server.express);
 
-server.start(options, () => {
+export const httpPromise = server.start(options, () => {
   logger.info(`🚀  Server is running on PORT:${CONFIG.ENV_VARS.PORT}`);
 });
 

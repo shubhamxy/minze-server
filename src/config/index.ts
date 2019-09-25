@@ -6,13 +6,13 @@ const CONFIG = ((env = process.env.NODE_ENV) => {
   if (env == "production") {
     return {
       DEBUG: false,
-      LOGGING: "File",
+      LOGGING: ["File", "Console"],
       APP_ENV: "production"
     };
   }
   return {
     DEBUG: true,
-    LOGGING: "Console",
+    LOGGING: ["Console"],
     APP_ENV: "development"
   };
 })();
@@ -20,7 +20,7 @@ const CONFIG = ((env = process.env.NODE_ENV) => {
 dotenv.config({
   path: resolve(__dirname, "../../.env")
 });
-
+// required variables
 const ENV_VARS = {
   NODE_ENV: "",
   APP_SECRET: "",
