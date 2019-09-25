@@ -21,7 +21,7 @@ describe("Test Login Flow", () => {
 
   test("should login with test user idToken", async done => {
     expect(authResponse.idToken).to.be.string;
-    console.log({"Token": authResponse.idToken});
+    console.log({ Token: authResponse.idToken });
     const req = {
       query: `
         mutation{
@@ -36,36 +36,10 @@ describe("Test Login Flow", () => {
       .send({
         query: `${req.query}`
       })
-      .expect('Content-Type', 'application/json')
+      .expect("Content-Type", "application/json")
       .expect(200);
     console.log(resp.body);
     expect(resp.body.data.login.token).to.string;
     done();
   });
-
-  // test("Should query user info from database using Auth header", async done => {
-  //   const query = {
-  //     query: `{
-  //       viewer {
-  //         me{
-  //           id,
-  //           uid,
-  //           user_type 
-  //         }
-  //       }
-  //     }
-  //     `
-  //   };
-  //   const resp = await request(server.express)
-  //     .post("/graphql")
-  //     .set("Authorization", "Bearer " + authToken) // Works.
-  //     .send({
-  //       query: `${query.query}`
-  //     })
-  //     // .set('Content-Type', 'application/json')
-  //     // .expect('Content-Type', 'application/json')
-  //     .expect(200);
-  //   // console.log(resp.body.data);
-  //   done();
-  // });
 });

@@ -22,10 +22,12 @@ export interface AuthResponse {
 }
 
 export const getAuthResponse = async (email?: string, password?: string) => {
-  const response = await firebase.auth().signInWithEmailAndPassword(email || "s.shubjain@gmail.com", password || "test123");
+  const response = await firebase
+    .auth()
+    .signInWithEmailAndPassword(email || "s.shubjain@gmail.com", password || "test123");
   //@ts-ignore
   const idToken = await firebase.auth().currentUser.getIdToken(/* forceRefresh */ true);
- 
+
   const authResponse: AuthResponse = {
     response,
     idToken
