@@ -11,7 +11,9 @@ export const Mutation: MutationResolvers.Type<TypeMap> = {
   signup: async (_parent, { idToken }, ctx) => {
     const { uid } = await admin.auth().verifyIdToken(idToken);
     const { displayName, phoneNumber } = await admin.auth().getUser(uid);
-    if (!phoneNumber || uid) throw Error("Err");
+
+    if (!(phoneNumber && uid)) throw Error("Error: " + phoneNumber + uid);
+
     const user = await ctx.db.createUser({
       uid,
       displayName: displayName || uid,

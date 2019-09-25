@@ -6,12 +6,8 @@ mutation {
       title: "Raise a glass to Prohibition"
       host: {
         create: {
-          email: "test2@test.com"
-          firstName: "Kitty"
-          lastName: "Miller"
-          isSuperHost: true
-          phone: "+1123455667"
-          password: "secret"
+          uid: "",
+          phoneNumber: "+1123455667"
           responseRate: 1
           responseTime: 5
           location: {
