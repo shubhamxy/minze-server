@@ -95,7 +95,7 @@
     "request-promise": "^4.2.4",
     "supertest": "^4.0.2",
     "winston": "^3.2.1",
-    "winston-daily-rotate-file": "^4.1.0"
+    "winston-daily-rotate-file": "^4.2.1"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^3.2.0",
