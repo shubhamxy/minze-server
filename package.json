@@ -98,7 +98,7 @@
     "winston-daily-rotate-file": "^4.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
+    "@babel/core": "^7.6.3",
     "@firebase/app-types": "^0.4.4",
     "@firebase/util": "^0.2.20",
     "@types/aws-lambda": "^8.10.33",
