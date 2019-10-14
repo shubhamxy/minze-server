@@ -119,17 +119,11 @@ class MenuLeft extends React.Component {
               <a href={url} target={item.target} rel="noopener noreferrer">
                 {icon && <span className={`${icon} ${styles.icon} icon-collapsed-hidden`} />}
                 <span className={styles.title}>{title}</span>
-                {pro && (
-                  <span className="badge badge-primary badge-collapsed-hidden ml-2">PRO</span>
-                )}
               </a>
             ) : (
               <Link to={url}>
                 {icon && <span className={`${icon} ${styles.icon} icon-collapsed-hidden`} />}
                 <span className={styles.title}>{title}</span>
-                {pro && (
-                  <span className="badge badge-primary badge-collapsed-hidden ml-2">PRO</span>
-                )}
               </Link>
             )}
           </Menu.Item>
@@ -137,9 +131,8 @@ class MenuLeft extends React.Component {
       }
       return (
         <Menu.Item key={key} disabled={disabled}>
-          {icon && <span className={`${icon} ${styles.icon} icon-collapsed-hidden`} />}
           <span className={styles.title}>{title}</span>
-          {pro && <span className="badge badge-primary badge-collapsed-hidden ml-2">PRO</span>}
+          {icon && <span className={`${icon} ${styles.icon} icon-collapsed-hidden`} />}
         </Menu.Item>
       )
     }
@@ -208,7 +201,7 @@ class MenuLeft extends React.Component {
         <div className={styles.logo}>
           <div className={styles.logoContainer}>
             <img
-              src={`resources/images/logo-inverse${menuSettings.collapsed ? '-mobile' : ''}.png`}
+              src={`/resources/images/logo-inverse${menuSettings.collapsed ? '-mobile' : ''}.png`}
               alt=""
             />
           </div>
@@ -235,7 +228,7 @@ class MenuLeft extends React.Component {
             selectedKeys={selectedKeys}
             openKeys={openedKeys}
             onOpenChange={this.onOpenChange}
-            mode="inline"
+            mode="vertical"
             className={styles.navigation}
           >
             {menu}

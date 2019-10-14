@@ -4,19 +4,26 @@ import { Provider } from 'react-redux'
 import { logger } from 'redux-logger'
 import thunk from 'redux-thunk'
 import { routerMiddleware } from 'connected-react-router'
+import { notification } from 'antd'
 import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
-import { createHashHistory } from 'history'
-import reducers from 'redux/reducers'
-import sagas from 'redux/sagas'
-import Localization from 'components/LayoutComponents/Localization'
+import { createBrowserHistory } from 'history'
+import reducers from './redux/reducers'
+import sagas from './redux/sagas'
+import { register } from './serviceWorker'
+
 import Router from './router'
-import * as serviceWorker from './serviceWorker'
+
+import Localization from './components/LayoutComponents/Localization'
 
 // app styles
 import './global.scss'
 
-const history = createHashHistory()
+notification.config({
+  duration: 2,
+})
+
+const history = createBrowserHistory()
 const sagaMiddleware = createSagaMiddleware()
 const routeMiddleware = routerMiddleware(history)
 const middlewares = [thunk, sagaMiddleware, routeMiddleware]
@@ -35,5 +42,5 @@ ReactDOM.render(
   document.getElementById('root'),
 )
 
-serviceWorker.register()
 export { store, history }
+register()

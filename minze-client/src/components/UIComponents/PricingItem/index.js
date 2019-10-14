@@ -1,5 +1,5 @@
 import React from 'react'
-import item from './data.json'
+import item from './data.json.js'
 import styles from './style.module.scss'
 
 class PricingItem extends React.Component {

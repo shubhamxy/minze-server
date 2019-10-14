@@ -1,5 +1,5 @@
 import React from 'react'
-import { chats } from './data.json'
+import { chats } from './data.json.js'
 import Avatar from '../Avatar'
 
 import style from './style.module.scss'

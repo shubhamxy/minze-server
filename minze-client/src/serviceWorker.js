@@ -54,7 +54,10 @@ export function register(config) {
 
 function registerValidSW(swUrl, config) {
   navigator.serviceWorker
-    .register(swUrl)
+    .register(swUrl, {
+      scope: '/u',
+      // NOTE: dont want to cache any other scope as there are some problem with routing...
+    })
     .then(registration => {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing
@@ -114,6 +117,7 @@ function checkValidServiceWorker(swUrl, config) {
         })
       } else {
         // Service worker found. Proceed as normal.
+        console.log("YOYOYO")
         registerValidSW(swUrl, config)
       }
     })

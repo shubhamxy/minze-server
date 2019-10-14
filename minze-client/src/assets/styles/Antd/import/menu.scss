@@ -3,9 +3,17 @@
 
 /////////////////////////////////////////////////////////////////////////////////////////
 /*  ANT DESIGN MENU */
+.ant-menu{
+  background: transparent;
+}
 
 .ant-menu-item {
   outline: none !important;
+}
+
+.ant-menu-item-selected {
+  outline: none !important;
+  background-color: $gray-border !important;
 }
 
 .ant-menu-dark.ant-menu-submenu-popup {

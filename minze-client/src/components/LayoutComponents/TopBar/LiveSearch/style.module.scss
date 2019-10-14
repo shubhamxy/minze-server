@@ -6,7 +6,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: $white;
+  background-color: $secondary;
   z-index: 100;
   opacity: 0;
   visibility: hidden;
@@ -20,7 +20,10 @@
 
 .extInput {
   input {
-    background-color: $gray-lighten;
+    background-color: #64788b;
+    width: 50vw;
+    border-radius: 2px;
+    border-width: 0;
   }
 
   @media screen and (max-width: 620px) {
@@ -77,11 +80,11 @@
 .searchInput {
   width: 100%;
   border: none;
-  font-size: rem(64);
+  font-size: rem(32);
   background-color: transparent;
   font-weight: bold;
   padding: 0;
-  margin-bottom: rem(20);
+  margin-bottom: rem(10);
 
   @media screen and (max-width: $sm-max-width) {
     font-size: rem(40);
@@ -149,7 +152,7 @@
   border-radius: 4px;
   overflow: hidden;
   background-color: $default;
-  color: #fff;
+  color: #f0f1f6;
   line-height: rem(54);
   text-align: center;
   font-size: rem(18);

@@ -17,7 +17,7 @@ export default class Index extends PureComponent {
         <div
           style={{
             maxWidth: '560px',
-            backgroundColor: '#fff',
+            backgroundColor: '#f0f1f6',
             padding: '80px 30px',
             margin: '100px auto',
             borderRadius: '10px',

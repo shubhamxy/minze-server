@@ -46,7 +46,11 @@ class MainLayout extends React.PureComponent {
             <TopBar />
           </Layout.Header>
           <Layout.Content style={{ height: '100%', position: 'relative' }}>
-            <div className="utils__content">{children}</div>
+            <div
+              className="utils__content"
+            >
+              {children}
+            </div>
           </Layout.Content>
           <Layout.Footer>
             <Footer />

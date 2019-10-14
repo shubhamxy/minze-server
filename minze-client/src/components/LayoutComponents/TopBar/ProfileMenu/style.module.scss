@@ -4,9 +4,9 @@
   padding-right: 15px;
   position: relative;
   cursor: pointer;
-
+  color: $white;
   &::after {
-    color: $gray;
+    color: $white;
     position: absolute;
     top: 50%;
     right: 0;
@@ -25,7 +25,7 @@
   }
 
   &:hover {
-    color: $blue;
+    color: $default;
 
     &::after {
       color: $gray-darken;
@@ -34,7 +34,7 @@
 }
 
 .avatar {
-  background-color: $gray-border;
+  background-color: transparent;
 }
 
 .menuIcon {

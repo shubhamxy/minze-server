@@ -8,7 +8,6 @@
 .inner {
   padding: rem(40) rem(30) rem(30);
   color: $text-darken-more;
-  background: $secondary;
   @media (max-width: $sm-max-width) {
     margin: 0 rem(10) !important;
   }

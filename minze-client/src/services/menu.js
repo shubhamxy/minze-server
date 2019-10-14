@@ -3,7 +3,7 @@ export async function getLeftMenuData() {
     {
       title: 'Dashboard',
       key: 'dashboard',
-      url: '/dashboard',
+      url: '/u/dashboard',
       icon: 'icmn icmn-home',
     },
     {
@@ -18,7 +18,7 @@ export async function getTopMenuData() {
     {
       title: 'Dashboard',
       key: 'dashboard',
-      url: '/dashboard',
+      url: '/u/dashboard',
       icon: 'icmn icmn-home',
     },
     {
