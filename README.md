@@ -1,4 +1,5 @@
-[![Expo](/minze-client/public/resources/images/logo.png)](https://expo.io)
+
+[![Minze](/minze-client/public/resources/images/logo.png)](https://github.com/shubhamxy/minze)
 
 <p align="center">
     <a aria-label="Circle CI" href="https://github.com/shubhamxy/minze-server/actions">
@@ -33,7 +34,7 @@
 
 [Playground](https://minze-server.herokuapp.com/graphql)
 
-## **Technology Used**
+## 📦 Technology Used
 
 - Typescript
 - NodeJS
