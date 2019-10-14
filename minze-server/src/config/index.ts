@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 
-import {resolve} from 'path';
 import {runtimeEnvTest} from './runtimetests';
 
 const CONFIG = ((env = process.env.NODE_ENV) => {

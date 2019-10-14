@@ -23,14 +23,11 @@ const apolloServer = new ApolloServer({
     request: req,
     db
   }),
-  introspection: apolloConfig.debug,  
+  introspection: true, // NOTE: Disable it!!  
   playground: apolloConfig.playground === '' 
   ? false 
   : {
     title: "Minze Graphql",
-    settings: {
-      "queryPlan.hideQueryPlanResponse": false
-    }
   },
   debug: apolloConfig.debug
 });
