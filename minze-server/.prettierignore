@@ -1,6 +1,0 @@
-build/*
-!build/index.js
-src/schema/generated/*
-dist
-coverage
-node_modules

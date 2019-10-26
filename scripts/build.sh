@@ -35,14 +35,12 @@ source scripts/common.sh
 # [[ -z $(git status -s) ]] || warn 'Please make sure you deploy with no changes or untracked files. You can run *git stash --include-untracked*.'
 
 # check_environment $APP_ENV
-yarn workspace minze-server postinstall
 yarn run build
 rm -rf build
 mkdir -p build build/public
-cp -a minze-server/dist/. build
-cp -a minze-client/build/. build/public
-cp -a minze-server/.env . 2>/dev/null || :
+cp -a packages/minze-server/dist/. build
+cp -a packages/minze-web/build/. build/public
+cp -a packages/minze-server/.env . 2>/dev/null || :
 
 source .env
-
 success "📦  Build and copy succeeded."

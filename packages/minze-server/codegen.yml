@@ -1,0 +1,17 @@
+overwrite: true
+generates:
+  ./src/types/graphql.d.ts:
+    schema: 
+      - "./src/database/generated/prisma.graphql"
+      - "./src/schema/Enums.graphql"
+      - "./src/schema/Types.graphql"
+      - "./src/schema/Mutation.graphql"
+      - "./src/schema/Subscription.graphql"
+      - "./src/schema/Query.graphql"
+      - "./src/schema/Schema.graphql" 
+
+    plugins:
+      - typescript
+      - typescript-resolvers
+    config:
+      includeDirectives: true

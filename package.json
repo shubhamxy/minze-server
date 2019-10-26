@@ -2,45 +2,44 @@
   "name": "minze",
   "private": true,
   "version": "1.0.0",
-  "description": "Minze api server",
-  "engines": {
-    "node": "10.16"
-  },
+  "description": "Minze Mono Repo",
   "keywords": [
-    "server"
+    "server",
+    "web",
+    "mobile"
   ],
   "scripts": {
-    "postinstall": "./scripts/build.sh",
+    "clean": "rm -rf ./packages/*/node_modules",
+    "clean-locks": "rm -rf ./packages/*/yarn.lock",
+    "bootstrap": "lerna bootstrap",
+    "reset": "yarn clean ; yarn clean-locks ; yarn bootstrap",
+    "prepare": "./scripts/build.sh",
     "build": "npm-run-all build:*",
-    "test": "npm-run-all test:*",
-    "build:client": "yarn workspace minze-client build",
-    "build:server": "yarn workspace minze-server build",
-    "test:server": "yarn workspace minze-server test",
-    "start:pm2": "pm2 start pm2.yaml",
+    "build:client": "lerna run build --scope minze-web",
+    "build:server": "lerna run build --scope minze-server",
+    "start": "npm-run-all start:*",
+    "start:client": "lerna run start --scope minze-web",
+    "start:server": "lerna run start:dev --scope minze-server",
     "start:node": "node ./build/index.js",
-    "stop": "pm2 stop all",
-    "heroku:release": "git push heroku master",
-    "pm2log": "pm2 logs --raw"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn workspace minze-server precommit; yarn workspace minze-client precommit;"
-    }
+    "pm2:start": "pm2 start pm2.yaml",
+    "pm2:stop": "pm2 stop all",
+    "pm2:logs": "pm2 logs --raw"
   },
   "dependencies": {
-    "pm2": "^3.5.1",
-    "npm-run-all": "4.1.5"
+    "husky": "^3.0.9",
+    "pm2": "^3.5.1"
   },
   "devDependencies": {
-    "husky": "^3.0.9"
+    "lerna": "^3.18.3",
+    "npm-run-all": "4.1.5"
   },
-  "workspaces": {
-    "packages": [
-      "minze-client",
-      "minze-server"
-    ],
-    "nohoist": [
-      "**/husky"
-    ]
-  }
+  "resolutions": {
+    "@types/react": "16.8.22"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "nohoist": [
+    "**/husky"
+  ]
 }
