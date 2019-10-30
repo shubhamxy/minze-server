@@ -32,7 +32,7 @@
     ]
   },
   "dependencies": {
-    "@rowno/sparkline": "^3.0.1",
+    "@rowno/sparkline": "^4.0.0",
     "antd": "^3.13.2",
     "bootstrap-css-only": "^4.2.1",
     "chart.js": "^2.7.3",
