@@ -78,7 +78,7 @@
     "svgo": "1.3.0",
     "@babel/plugin-proposal-decorators": "^7.3.0",
     "babel-plugin-import": "^1.11.0",
-    "customize-cra": "^0.2.11",
+    "customize-cra": "^1.0.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.0.0",
     "husky": "^1.3.1",
